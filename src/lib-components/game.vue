@@ -1,0 +1,1206 @@
+<template>
+	<div class="game-grid">
+		<boxillustration
+			v-if="illustration"
+			v-bind:illustration="illustration"
+		>
+
+		</boxillustration>
+
+		<boxnarration
+			v-if="narrationBox == 'default' || narrationBox == 'descriptions' ||  narrationBox == 'chose'"
+			v-bind:lang="lang"
+			v-bind:current-tabs="currentTabs"
+			v-on:reedbeams="reedBeams"
+		></boxnarration>
+
+		<gameEnd
+			v-if="narrationBox == 'end' "
+			v-bind:lang="lang"
+			v-bind:current-tabs="currentTabs"
+			v-on:reedbeams="reedBeams"
+		></gameEnd>
+
+		<gameOver
+			v-if="narrationBox == 'game over'"
+			v-bind:lang="lang"
+			v-bind:current-tabs="currentTabs"
+			v-on:reedbeams="reedBeams"
+		></gameOver>
+
+		<div
+			v-if="narrationBox == 'false' || narrationBox == 'node-bad-mix'"
+			class="log-app"
+		>
+			<div
+				v-if="narrationBox == false && onRunError.length == 0"
+				class="game-error"
+			>{{ strings.noEnd['it'] }}</div>
+			<div
+				v-for="(el, index ) in onRunError"
+				v-bind:key="index"
+				class="game-error"
+			>{{el}}</div>
+			<div
+				v-if="narrationBox == 'node-bad-mix'"
+				class="game-error"
+			>
+				{{ strings.nodeBadMix['it'] }} {{listBadMixId}} )
+
+			</div>
+		</div>
+
+		<div class="icons-group-left">
+			<a
+				class="icon-draw-info"
+				target="_blanck"
+				href="http://storygroundeditor.com/"
+			></a>
+			<div
+				v-on:click="audio = !audio"
+				v-bind:class="[{ 'icon-draw-audio-on' : audio },{ 'icon-draw-audio-off' : audio == false }]"
+			>
+			</div>
+		</div>
+
+		<audio
+			id="audio-player"
+			loop
+		>
+			<!--<source src="horse.ogg" type="audio/ogg">-->
+			<source
+				v-bind:src="audioFileSrc"
+				type="audio/mpeg"
+			>
+			Your browser does not support the audio element.
+		</audio>
+
+		<div
+			class="cover"
+			v-bind:class="{ 'hide-cover' : cover == false }"
+		>
+			<div class="box-text">
+				<h1>Peccato origianale</h1>
+				<h2>una corta storia dell'orrore</h2>
+			</div>
+			<div
+				class="play-btn icon-draw-play"
+				v-on:click="activateDemo"
+			></div>
+			<p class="note">Demo dimostrativa dell'editor storyground, per avere ulteriori informazioni sull'editor seguire questo link <a href="http://storygroundeditor.com/">storygroundeditor.com</a>.</p>
+		</div>
+
+	</div>
+</template>
+
+
+<script>
+	import boxNarration from "./boxNarration.vue";
+	import boxNarrationGameEnd from "./boxNarrationGameEnd.vue";
+	import boxNarrationGameOver from "./boxNarrationGameOver.vue";
+	import boxIllustration from "./boxIllustration.vue";
+	import deepCopy from "./deepCopy.js";
+
+	function randomNum(min, max) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	let game = {
+		name: "game",
+		components: {
+			boxnarration: boxNarration,
+			boxillustration: boxIllustration,
+			gameEnd: boxNarrationGameEnd,
+			gameOver: boxNarrationGameOver,
+		},
+		props: ["lang", "strings", "gameData", "playerData", "gameIntent"],
+		data: function () {
+			const urlSliced = String(window.location.href).split("/");
+
+			let urlToUse;
+			if (urlSliced[2] == "localhost") {
+				urlToUse = urlSliced[0] + "//" + urlSliced[2] + "/" + urlSliced[3];
+			} else {
+				urlToUse = urlSliced[0] + "//" + urlSliced[2];
+			}
+
+			return {
+				//layout -------------------
+				/*
+					            useHistory: false,
+					            useSave: false,
+					            */
+				//dev ----------------------
+				/*
+					            error: false,
+					            devTestKeystrokes: false,
+					            */
+				//hover menu ---------------
+				/*
+					            hoverMenu: false,
+					            subPageGame: "null",
+					            */
+
+				//hover character sheet ----
+				/*
+					            hoveCharacterSheet: false,
+					            subTabCharacterSheet: "stats",
+
+					            seletedItem: false,
+					            descriptionPaperName: false,
+					            descriptionPaperDescription: false,
+					            paperStopAnimation: true,
+					            oldItemTap: 0,
+					            itemTap: 0,
+					            */
+				//game ----------------------
+
+				//playerItemFiltered: [],   //elimina
+				textualTabs: ["descriptions", "chose", "game over", "end"],
+
+				playerState: "playing",
+				player: {
+					item: [],
+				},
+
+				currentTabs: [],
+
+				illustration: false,
+
+				/*
+					                array di errori durante partita
+					            */
+				onRunError: [],
+				listBadMixId: "",
+
+				/* PROGECT X ----------------------------- */
+
+				/* audio */
+				audio: true,
+				audioFileSrc:
+					urlToUse +
+					"/wp-content/themes/nostromo/assets/project-x-ui/sountrack-story-x.mp3",
+
+				cover: true,
+
+				gameLoaded: false,
+				/* -------------------------------------- */
+			};
+		},
+		watch: {
+			narrationBox: function (val) {
+				if (val == "node-bad-mix") {
+					this.setListBadMixId();
+				}
+			},
+
+			audio: function (val) {
+				if (val == true) {
+					document.getElementById("audio-player").play();
+				} else {
+					document.getElementById("audio-player").pause();
+				}
+			},
+		},
+
+		mounted() {
+			this.gameIntentLoad(this.gameIntent);
+		},
+		computed: {
+			narrationBox: function () {
+				console.log(this.currentTabs.length);
+				if (this.onRunError.length > 0) {
+					return "false";
+				} else {
+					if (this.currentTabs.length > 0) {
+						if (this.currentTabs.length == 1) {
+							return this.currentTabs[0].type;
+						} else {
+							let allowed = ["chose"];
+							let listTypeCheck = this.currentTabs.filter((element) =>
+								allowed.includes(element.type)
+							);
+
+							if (listTypeCheck.length == this.currentTabs.length) {
+								return "default";
+							} else {
+								return "node-bad-mix";
+							}
+						}
+					} else {
+						return false;
+					}
+				}
+			},
+		},
+		methods: {
+			/* |||||||||||||||||||| GAME CORE |||||||||||||||||||||| */
+
+			gameIntentLoad(intent) {
+				this.playerState = "playing";
+
+				if (intent == "new") {
+					this.player = {
+						stats: [],
+						item: [],
+					};
+
+					/*
+					                    carico liste statistiche con livello preimpostato a 0
+					                    se non presenti nella whitelist
+					                */
+					this.gameData.stats.forEach((stats) => {
+						//let newStats = Object.assign({}, stats)
+
+						let newStats = deepCopy(stats);
+
+						//newStats.id = stats.id
+						/*
+					                    //controllo lista statistiche
+					                    let whitelistLevel = false
+					                    this.startStatsLevel.forEach(whiteList => {
+					                        if (whiteList.id == stats.id) {
+					                            whitelistLevel = Object.assign({}, whiteList).level
+					                        }
+					                    })
+
+					                    if (whitelistLevel == false) {
+					                        newStats.level = 0
+					                    } else {
+					                        newStats.level = whitelistLevel
+					                    }
+					                    */
+						newStats.level = 0;
+						this.player.stats.push(newStats);
+					});
+
+					//creo lista oggetti da visualizzare
+					this.setPlayerItemFiltered();
+
+					/*
+					                    apro la tab di inizio
+					                */
+					let startPointArray = [];
+					let startPointId = this.gameData.story.tabs.find(
+						(element) => element.gameStart
+					).id;
+					startPointArray.push(startPointId);
+					this.navigation(startPointArray);
+				}
+			},
+
+			/*
+					            stabilisco tabs da vedere
+					        */
+			navigation(newIdArray) {
+				console.log("heiiii");
+				console.log(newIdArray);
+
+				//let tabsToNavigate = []
+
+				/*
+					            this.gameData.story.tabs.forEach(tabs => {
+					                if (newIdArray.includes(tabs.id)) {
+					                    let newTab = Object.assign({}, tabs)
+
+					                    //controllo se tab può essere aggiunto se no lo risolvo e passo oltre
+
+					                    if (newTab.type == "descriptions" || newTab.type == "chose") {
+					                        console.log("# - - - tab testuale")
+					                        tabsToNavigate.push(newTab)
+					                    } else {
+					                        console.log("# - - - tab non testuale")
+					                        let tabResolved = this.ResoveTab(newTab)
+
+
+					                        tabsToNavigate = tabResolved;
+					                    }
+					                }
+					            })
+					            */
+
+				///|||||||||\\\
+				let tabs = this.gameData.story.tabs.filter((el) =>
+					newIdArray.includes(el.id)
+				);
+				let tabsToNavigate = this.ResoveTabsList(tabs);
+				///|||||||||\\\
+
+				if (tabsToNavigate.length == 0) {
+					this.error = "!!! -- id tabs sbagliato -- !!";
+				} else {
+					if (tabsToNavigate.length == 1) {
+						this.singleBeemFoward = true;
+
+						//setto immagine
+						//if (tabsToNavigate[0].img != undefined && tabsToNavigate[0].img != "") {
+						console.log(tabsToNavigate);
+						if (tabsToNavigate[0].img) {
+							console.log("setto immagine");
+							this.setImage(tabsToNavigate[0].img);
+						}
+
+						//salvo dati
+						if (tabsToNavigate[0].save == true) {
+							this.saveData();
+						}
+					} else {
+						this.singleBeemFoward = false;
+					}
+
+					this.currentTabs = tabsToNavigate;
+				}
+			},
+
+			//------------------------------------------------------
+
+			ResoveTabsList(tabs) {
+				console.log("///////////////||||||||||||||\\\\\\\\\\\\\\\\\\");
+				console.log(tabs);
+				let stop = false;
+				let n = 0;
+				const textualTabs = this.textualTabs;
+
+				let collectionOfTextualTabs = tabs;
+
+				while (stop == false) {
+					n++;
+
+					let allTextual = true;
+					let newCollection = [];
+
+					//controllo chi è testuale e chi no
+					collectionOfTextualTabs.forEach((el) => {
+						if (!textualTabs.includes(el.type)) {
+							console.log("una tab non è testuale verranno presi provvedimenti");
+							allTextual = false;
+							console.log(el);
+							newCollection = [...newCollection, ...this.ResoveTab(el)];
+						} else {
+							newCollection.push(el);
+						}
+					});
+
+					collectionOfTextualTabs = newCollection;
+
+					if (allTextual == true || n >= 100) {
+						console.log("STOP IT");
+						console.log("INDSX LOOP: " + n);
+						console.log(collectionOfTextualTabs);
+						stop = true;
+					}
+				}
+
+				return collectionOfTextualTabs;
+			},
+
+			/*
+					            risolvo singole tab logiche tab e passo a quelle successive
+					            il risultato è un'array di tab
+					        */
+			ResoveTab(tab) {
+				console.log("RESOLVE TAB");
+				console.log(tab);
+
+				function operatorResolve(dn1, operator, dn2) {
+					console.log("ppp");
+
+					const n1 = parseInt(dn1);
+					const n2 = parseInt(dn2);
+
+					console.log(n1 + operator + n2);
+					switch (operator) {
+						case ">":
+							if (n1 > n2) {
+								return true;
+							} else {
+								return false;
+							}
+							break;
+						case ">=":
+							if (n1 >= n2) {
+								return true;
+							} else {
+								return false;
+							}
+							break;
+						case "<":
+							if (n1 < n2) {
+								return true;
+							} else {
+								return false;
+							}
+							break;
+						case "<=":
+							if (n1 <= n2) {
+								return true;
+							} else {
+								return false;
+							}
+							break;
+						case "==":
+							if (n1 == n2) {
+								console.log(n1 + "==" + n2);
+								return true;
+							} else {
+								console.log("fasullo");
+								return false;
+							}
+							break;
+					}
+				}
+
+				let tabToAdd = [];
+
+				let stop = false;
+
+				let index = 0;
+				let currentTab;
+				//while (stop == false) {
+				//index++
+
+				//if (index == 1) {
+				if (typeof tab === "object") {
+					currentTab = tab;
+				} else {
+					/*
+					                    si tratta di una inizializzazione (è l'id di un nodo start)
+					                */
+					currentTab = this.gameData.story.tabs.find((el) => el.id == tab);
+				}
+
+				if (index == 100) {
+					stop = true;
+				}
+
+				switch (currentTab.type) {
+					case "start":
+						console.log("Questo è il mio regno john 2");
+
+						break;
+					//OK
+					case "descriptions":
+						tabToAdd.push(currentTab);
+						stop = true;
+						break;
+					//OK
+					case "chose":
+						tabToAdd.push(currentTab);
+						stop = true;
+						break;
+					//OK
+					case "game over":
+						this.playerState = "game over";
+						tabToAdd.push(currentTab);
+						stop = true;
+
+						break;
+					//OK
+					case "end":
+						this.playerState = "game end";
+						tabToAdd.push(currentTab);
+						stop = true;
+
+						break;
+
+					//OK
+					case "redirect":
+						console.log("DIN DIN DIN DIN CI SEI!!");
+						console.log(currentTab.listRedirectId);
+
+						let errorRedirect = false;
+						currentTab.listRedirectId.forEach((el) => {
+							if (!el) {
+								errorRedirect = true;
+								console.log("ERRORE");
+							}
+						});
+
+						if (errorRedirect == false) {
+							//------------------------------------------------------
+							let idRedirect;
+							if (currentTab.listRedirectId.length == 1) {
+								console.log("olè");
+								idRedirect = currentTab.listRedirectId[0];
+							} else {
+								//let indexRandom = Math.floor(Math.random() * ((currentTab.listRedirectId.length - 1) - 1) + 1) - 1;
+
+								let indexRandom = randomNum(
+									0,
+									currentTab.listRedirectId.length - 1
+								);
+
+								console.log("opla");
+								console.log("---------------------------");
+								console.log(currentTab.listRedirectId.length - 1);
+								console.log("--------------");
+								console.log(indexRandom);
+								idRedirect = currentTab.listRedirectId[indexRandom];
+							}
+							let tabToRedirect = this.gameData.story.tabs.find(
+								(element) => element.id == idRedirect
+							);
+
+							currentTab = tabToRedirect;
+
+							//------------------------------------------------------
+						} else {
+							let error =
+								this.strings.redirectError["it"] +
+								" ( ID: " +
+								currentTab.id +
+								" )";
+							this.onRunError.push(error);
+							stop = true;
+						}
+
+						break;
+
+					//OK
+					case "set stat":
+						let itemExist3 = this.gameData.stats.find(
+							(el) => el.id == currentTab.idStat
+						);
+						if (itemExist3) {
+							if (itemExist3.length == 0 || currentTab.operator == false) {
+								let error =
+									this.strings.expressionIncoplete["it"] +
+									" ( ID: " +
+									currentTab.id +
+									" )";
+								this.onRunError.push(error);
+								stop = true;
+							} else {
+								this.modifyStat(
+									currentTab.idStat,
+									currentTab.operator,
+									currentTab.ammount
+								);
+							}
+						} else {
+							let error =
+								this.strings.expressionIncoplete["it"] +
+								" ( ID: " +
+								currentTab.id +
+								" )";
+							this.onRunError.push(error);
+							stop = true;
+						}
+						break;
+
+					//OK
+					case "set object":
+						let itemExist2 = this.gameData.items.find(
+							(el) => el.id == currentTab.idObject
+						);
+
+						if (itemExist2) {
+							if (itemExist2.length == 0 || currentTab.operator == false) {
+								let error =
+									this.strings.expressionIncoplete["it"] +
+									" ( ID: " +
+									currentTab.id +
+									" )";
+								this.onRunError.push(error);
+								stop = true;
+							} else {
+								this.modifyItem(
+									currentTab.idObject,
+									currentTab.operator,
+									currentTab.ammount
+								);
+							}
+						} else {
+							let error =
+								this.strings.expressionIncoplete["it"] +
+								" ( ID: " +
+								currentTab.id +
+								" )";
+							this.onRunError.push(error);
+							stop = true;
+						}
+						break;
+
+					//OK
+					case "if stat":
+						console.log("!!!!!!!!!!!! STO PASSANDO DI QUI !!!!!!!!!!!!!");
+
+						let statToCheck = this.player.stats.find(
+							(element) => element.id == currentTab.idStat
+						);
+						console.log(statToCheck);
+						if (statToCheck) {
+							/*
+					                            controllo che non siano presenti errori nella espressione
+					                        */
+							console.log(
+								"controllo che non siano presenti errori nella espressione"
+							);
+							console.log(
+								statToCheck.level + "== 0 || " + currentTab.operator + "== false"
+							);
+							if (
+								currentTab.ammount === false ||
+								currentTab.ammount == undefined ||
+								currentTab.operator == false
+							) {
+								//666
+								console.log("!!errore!!");
+								let error =
+									this.strings.expressionIncoplete["it"] +
+									" ( ID: " +
+									currentTab.id +
+									" )";
+								this.onRunError.push(error);
+								stop = true;
+							} else {
+								console.log("dati passati all'operator resolve:");
+								console.log(statToCheck);
+								console.log(currentTab.operator);
+								console.log(currentTab.ammount);
+								console.log("---------------------------------");
+								let status = operatorResolve(
+									statToCheck.level,
+									currentTab.operator,
+									currentTab.ammount
+								);
+
+								if (status) {
+									let tabsTrue = this.gameData.story.tabs.filter((element) =>
+										currentTab.trueId.includes(element.id)
+									);
+									tabToAdd = tabsTrue;
+									stop = true;
+								} else {
+									let tabsFalse = this.gameData.story.tabs.filter((element) =>
+										currentTab.falseId.includes(element.id)
+									);
+									tabToAdd = tabsFalse;
+									stop = true;
+								}
+							}
+						} else {
+							let error =
+								this.strings.expressionIncoplete["it"] +
+								" ( ID: " +
+								currentTab.id +
+								" )";
+							this.onRunError.push(error);
+							stop = true;
+						}
+
+						console.log("tab aggiunta:");
+						console.log(tabToAdd);
+
+						break;
+
+					//OK
+					case "if item":
+						let itemToCheck = this.player.item.filter(
+							(element) => element.id == currentTab.idObject
+						).length;
+
+						/*
+					                        controllo che non siano presenti errori nella espressione --------------
+					                    */
+
+						//controllo se esiste l'oggetto
+						let itemExist = this.gameData.items.find(
+							(el) => el.id == currentTab.idObject
+						);
+
+						if (itemExist) {
+							if (itemExist.length == 0 || currentTab.operator == false) {
+								let error =
+									this.strings.expressionIncoplete["it"] +
+									" ( ID: " +
+									currentTab.id +
+									" )";
+								this.onRunError.push(error);
+								stop = true;
+							} else {
+								/*
+					                                -----------------------------------------------------------------------
+					                            */
+								let status2 = operatorResolve(
+									itemToCheck,
+									currentTab.operator,
+									currentTab.ammount
+								);
+
+								if (status2) {
+									let tabsTrue = this.gameData.story.tabs.filter((element) =>
+										currentTab.trueId.includes(element.id)
+									);
+									tabToAdd = tabsTrue;
+									stop = true;
+								} else {
+									let tabsFalse = this.gameData.story.tabs.filter((element) =>
+										currentTab.falseId.includes(element.id)
+									);
+									tabToAdd = tabsFalse;
+									stop = true;
+								}
+							}
+						} else {
+							let error =
+								this.strings.expressionIncoplete["it"] +
+								" ( ID: " +
+								currentTab.id +
+								" )";
+							this.onRunError.push(error);
+							stop = true;
+						}
+
+						break;
+					/*
+					                case:
+					                break
+					                case:
+					                break
+					                */
+				}
+
+				//trovo successivi
+				//this.gameData.story.beams.forEach(beam=>{
+
+				//if(skip == false){
+
+				/*
+
+					            */
+
+				if (stop == false) {
+					/*
+					                    trovo nodi successivi perchè il corrente nodo non si può visualizzare
+					                */
+					console.log("Skippo al successivo -------------------------------");
+					console.log(currentTab.id);
+					this.gameData.story.beams.forEach((el) => {
+						console.log(currentTab.id + "==" + el.from);
+						if (currentTab.id == el.from) {
+							/*
+					                        if(this.textualTabs.includes( el.type )){
+
+					                        }
+					                        */
+							console.log(el.to);
+							tabToAdd.push(el.to);
+						}
+					});
+					console.log("--------------------------------------------------");
+
+					stop = true;
+				}
+
+				/*
+					            for (let index = 0; index < this.gameData.story.beams.length; index++) {
+					                const beam = this.gameData.story.beams[index];
+					                if (stop == false) {
+					                    //console.log(currentTab.id + "==" + beam.from);
+
+					                    if (currentTab.type == "descriptions" || currentTab.type == "chose") {
+					                        console.log("!!!!STOP2!!!!")
+
+					                        tabToAdd.push(currentTab);
+					                        stop = true;
+					                    } else {
+					                        if (currentTab.id == beam.from) {
+
+					                            console.log(currentTab.id + "==" + beam.from)
+
+					                            let result = this.gameData.story.tabs.find(element => beam.to == element.id)
+
+					                            console.log(result)
+					                            //console.log("result:");
+					                            //console.log(result)
+
+					                            currentTab = Object.assign({}, result)
+
+					                            if (currentTab.type == "descriptions" || currentTab.type == "chose") {
+
+					                                console.log("!!!!STOP!!!!")
+
+					                                tabToAdd.push(currentTab);
+					                                stop = true;
+					                            }
+
+					                            break;
+
+					                        }
+					                    }
+					                }
+
+					            }
+					            */
+
+				//}
+
+				//}
+
+				return tabToAdd;
+			},
+
+			//modify item
+			modifyStat(idStat, operator, ammount) {
+				console.log("modifico statistica:");
+
+				console.log(idStat);
+				console.log(operator);
+				console.log(ammount);
+
+				let totalResult = [];
+
+				let chosenStat = this.gameData.stats.find(
+					(element) => element.id == idStat
+				);
+				let playerStat = this.player.stats.find(
+					(element) => element.id == idStat
+				);
+
+				let resultAmmount;
+				let use;
+
+				//resolve
+				switch (operator) {
+					case "+":
+						resultAmmount = ammount;
+						use = 1;
+						break;
+					case "-":
+						resultAmmount = ammount;
+						use = 2;
+						break;
+					case "*":
+						resultAmmount = parseInt(playerStat.level) * parseInt(ammount);
+						use = 1;
+						break;
+					case "/":
+						resultAmmount = Math.floor(
+							parseInt(playerStat.level) / parseInt(ammount)
+						);
+						use = 2;
+						break;
+					case "=":
+						resultAmmount = ammount;
+						use = 5;
+						break;
+				}
+
+				//  + *
+				if (use == 1) {
+					console.log("incremento STATISTICA");
+
+					/* controllo se giocatore ha statistica */
+					playerStat.level = parseInt(playerStat.level) + parseInt(resultAmmount);
+				}
+
+				//  - /
+				if (use == 2) {
+					console.log("DECREMENTO STATISTICA");
+
+					/* controllo se giocatore ha statistica */
+					playerStat.level = parseInt(playerStat.level) - parseInt(resultAmmount);
+				}
+
+				//  =
+				if (use == 5) {
+					console.log("SETTO STATISTICA");
+					playerStat.level = resultAmmount;
+				}
+
+				//CORREZIONI VALORE ---------------------
+				if (playerStat.level > chosenStat.max) {
+					playerStat.level = chosenStat.max;
+				}
+				if (playerStat.level < 0 && !isNaN(playerStat.level)) {
+					playerStat.level = 0;
+				}
+				//---------------------------------------
+			},
+
+			//modify item
+			modifyItem(idObject, operator, ammount) {
+				console.log("modifico oggetto:");
+
+				console.log(idObject);
+				console.log(operator);
+				console.log(ammount);
+
+				let totalResult = [];
+
+				//elemento da usare
+				const chosenItem = this.gameData.items.find(
+					(element) => element.id == idObject
+				);
+				const nItemPlayer = this.player.item.filter(
+					(el) => el.id == chosenItem.id
+				).length;
+
+				let resultAmmount;
+				let use;
+
+				//resolve
+				switch (operator) {
+					case "+":
+						resultAmmount = ammount;
+						use = 1;
+						break;
+					case "-":
+						resultAmmount = ammount;
+						use = 2;
+						break;
+					case "*":
+						resultAmmount = parseInt(nItemPlayer) * parseInt(ammount);
+						use = 1;
+						break;
+					case "/":
+						resultAmmount =
+							parseInt(nItemPlayer) -
+							Math.floor(parseInt(nItemPlayer) / parseInt(ammount));
+						use = 2;
+						break;
+					case "=":
+						console.log("CORRETTO");
+						if (ammount < nItemPlayer) {
+							resultAmmount = nItemPlayer - ammount;
+							console.log("a");
+							console.log(resultAmmount);
+							use = 2;
+						} else {
+							resultAmmount = ammount - nItemPlayer;
+							console.log("b");
+							console.log(resultAmmount);
+							use = 1;
+						}
+						break;
+				}
+
+				if (use == 1) {
+					for (let index = 0; index < resultAmmount; index++) {
+						this.player.item.push(chosenItem);
+					}
+
+					let messageLog;
+
+					//uso plurale o singolare
+					/*
+					                if(resultAmmount == 1){
+					                    messageLog= {
+					                        en:"added " + chosenItem.name.en,
+					                        it:"aggiunto " + chosenItem.name.it
+					                    }
+					                }else{
+					                    messageLog= {
+					                        en:"added " + resultAmmount + chosenItem.namePlural.en,
+					                        it:"aggiunti " + resultAmmount + chosenItem.namePlural.it
+					                    }
+					                }
+
+					                console.log(messageLog.it)
+					                */
+				}
+
+				if (use == 2) {
+					let newArray = [];
+
+					let nPushed = 0;
+					this.player.item.forEach((element) => {
+						if (chosenItem.id == element.id) {
+							nPushed++;
+
+							if (nPushed <= nItemPlayer - resultAmmount) {
+								newArray.push(element);
+							}
+						} else {
+							newArray.push(element);
+						}
+					});
+
+					this.player.item = newArray;
+				}
+
+				//setto lista oggetti
+				//this.player.item = totalResult
+
+				//rifaccio lista oggetti da visualizzare
+				this.setPlayerItemFiltered();
+			},
+
+			//------------------------------------------------------
+
+			/*
+					            leggo beem da punto di inizio a punto di fine
+					        */
+			reedBeams(fromId) {
+				let newIdArray = [];
+				this.gameData.story.beams.forEach((beam) => {
+					if (fromId == beam.from) {
+						newIdArray.push(beam.to);
+					}
+				});
+				console.log(newIdArray);
+
+				this.navigation(newIdArray);
+			},
+
+			saveData() {},
+			setImage(imageName) {
+				this.illustration = imageName;
+			},
+
+			/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+			/*
+					            animazione selettore
+					        */
+			animatePaperSelector() {
+				if (this.hoveCharacterSheet == true) {
+					/*
+					                if(this.seletedItem == id ){
+					                    return "animate-in"
+					                }else{
+					                    if(this.paperStopAnimation == false){
+					                    return "animate-out"
+					                    }
+					                }
+					                */
+					if (this.subTabCharacterSheet == "stats") {
+						this.player.stats.forEach((element) => {
+							if (element.id == this.seletedItem) {
+								element.active = 2;
+							} else {
+								if (element.active != 0) {
+									element.active = 1;
+								}
+							}
+						});
+					} else {
+						this.playerItemFiltered.forEach((element) => {
+							if (element.id == this.seletedItem) {
+								element.active = 2;
+							} else {
+								if (element.active != 0) {
+									element.active = 1;
+								}
+							}
+						});
+					}
+				}
+			},
+
+			clearAnimatePaperSelector() {
+				this.player.stats.forEach((element) => {
+					element.active = 0;
+				});
+				this.player.item.forEach((element) => {
+					element.active = 0;
+				});
+			},
+
+			/*
+					            setto paper
+					        */
+			setDescriptionPaper(item) {
+				this.seletedItem = item.id;
+
+				this.animatePaperSelector();
+
+				this.descriptionPaperName = item.name[this.lang];
+				this.descriptionPaperDescription = item.description[this.lang];
+
+				this.oldItemTap = this.itemTap; //Object.assign({},this.itemTap)
+				this.itemTap = this.itemTap + 1; //Object.assign({},this.itemTap) + 1
+				setTimeout(() => {
+					if (this.itemTap == 0) {
+						this.seletedItem = false;
+						this.animatePaperSelector();
+					}
+				}, 4000);
+			},
+
+			/*
+					            setto lista oggetti da esporre
+					        */
+			setPlayerItemFiltered() {
+				let listItems = [];
+				console.log(this.player);
+				this.player.item.forEach((item) => {
+					let found = listItems.find((element) => element.id == item.id);
+
+					if (found == undefined) {
+						let nCopy = this.player.item.filter(
+							(element) => element.id == item.id
+						).length;
+
+						let newItem = Object.assign({}, item);
+						newItem.amount = nCopy;
+
+						listItems.push(newItem);
+					}
+				});
+
+				this.playerItemFiltered = listItems;
+			},
+
+			/*
+					            lista nodi badMix
+					        */
+			setListBadMixId() {
+				let BadMixList = "";
+				let allDescription = this.currentTabs.filter(
+					(el) => el.type == "descriptions"
+				);
+				allDescription.forEach((el, index) => {
+					BadMixList = BadMixList + el.id;
+					if (index + 1 < allDescription.length) BadMixList = BadMixList + ", ";
+				});
+				this.listBadMixId = BadMixList;
+			},
+
+			/*
+					        PROJECT X -------------------------------------
+					        */
+
+			activateDemo() {
+				setTimeout(() => {
+					this.cover = false;
+
+					//audio autoplay
+					document.getElementById("audio-player").play();
+					document.getElementById("audio-player").volume = 0.1;
+				}, 500);
+
+				//full screen
+				function requestFullScreen(element) {
+					// Supports most browsers and their versions.
+					var requestMethod =
+						element.requestFullScreen ||
+						element.webkitRequestFullScreen ||
+						element.mozRequestFullScreen ||
+						element.msRequestFullScreen;
+
+					if (requestMethod) {
+						// Native full screen.
+						requestMethod.call(element);
+					} else if (typeof window.ActiveXObject !== "undefined") {
+						// Older IE.
+						var wscript = new ActiveXObject("WScript.Shell");
+						if (wscript !== null) {
+							wscript.SendKeys("{F11}");
+						}
+					}
+				}
+
+				var elem = document.body; // Make the body go full screen.
+				requestFullScreen(elem);
+			},
+
+			/*
+					        -----------------------------------------------
+					        */
+		},
+	};
+
+	export default game;
+</script>
