@@ -4,7 +4,6 @@
 			v-if="illustration"
 			v-bind:illustration="illustration"
 		>
-
 		</boxillustration>
 
 		<boxnarration
@@ -35,7 +34,7 @@
 			<div
 				v-if="narrationBox == false && onRunError.length == 0"
 				class="game-error"
-			>{{ strings.noEnd['it'] }}</div>
+			>{{ strings.noEnd.langEditor }}</div>
 			<div
 				v-for="(el, index ) in onRunError"
 				v-bind:key="index"
@@ -45,7 +44,7 @@
 				v-if="narrationBox == 'node-bad-mix'"
 				class="game-error"
 			>
-				{{ strings.nodeBadMix['it'] }} {{listBadMixId}} )
+				{{ strings.nodeBadMix.langEditor }} {{listBadMixId}} )
 
 			</div>
 		</div>
@@ -72,8 +71,15 @@
 	</div>
 </template>
 
+<style scoped>
+</style>
 
 <script>
+	import { defineComponent } from "vue";
+
+	import defaultStrings from "./defaultStrings.json";
+	import defaultStory from "./defaultStory.json";
+
 	import boxNarration from "./boxNarration.vue";
 	import boxNarrationGameEnd from "./boxNarrationGameEnd.vue";
 	import boxNarrationGameOver from "./boxNarrationGameOver.vue";
@@ -84,7 +90,7 @@
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
 
-	let game = {
+	export default /*#__PURE__*/ defineComponent({
 		name: "game",
 		components: {
 			boxnarration: boxNarration,
@@ -92,7 +98,25 @@
 			gameEnd: boxNarrationGameEnd,
 			gameOver: boxNarrationGameOver,
 		},
-		props: ["lang", "strings", "gameData", "playerData", "gameIntent"],
+		props: {
+			lang: {
+				type: String,
+				required: true,
+			},
+			langEditor: {
+				type: String,
+				default: "en",
+			},
+			strings: {
+				type: Object,
+				default: defaultStrings,
+			},
+			gameData: {
+				type: Object,
+				defailt: defaultStory,
+			},
+		},
+		//["lang", "strings", "gameData", "playerData", "gameIntent"],
 		data: function () {
 			return {
 				textualTabs: ["descriptions", "chose", "game over", "end"],
@@ -125,7 +149,7 @@
 		},
 
 		mounted() {
-			this.gameIntentLoad(this.gameIntent);
+			this.gameIntentLoad();
 		},
 		computed: {
 			narrationBox: function () {
@@ -157,42 +181,40 @@
 		methods: {
 			/* |||||||||||||||||||| GAME CORE |||||||||||||||||||||| */
 
-			gameIntentLoad(intent) {
+			gameIntentLoad() {
 				this.playerState = "playing";
 
-				if (intent == "new") {
-					this.player = {
-						stats: [],
-						item: [],
-					};
+				this.player = {
+					stats: [],
+					item: [],
+				};
 
-					/*
-						  carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist
-						*/
-					this.gameData.stats.forEach((stats) => {
-						let newStats = deepCopy(stats);
-						newStats.level = 0;
-						this.player.stats.push(newStats);
-					});
+				/*
+									carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist
+								*/
+				this.gameData.stats.forEach((stats) => {
+					let newStats = deepCopy(stats);
+					newStats.level = 0;
+					this.player.stats.push(newStats);
+				});
 
-					//creo lista oggetti da visualizzare
-					this.setPlayerItemFiltered();
+				//creo lista oggetti da visualizzare
+				this.setPlayerItemFiltered();
 
-					/*
-						  apro la tab di inizio
-						*/
-					let startPointArray = [];
-					let startPointId = this.gameData.story.tabs.find(
-						(element) => element.gameStart
-					).id;
-					startPointArray.push(startPointId);
-					this.navigation(startPointArray);
-				}
+				/*
+									apro la tab di inizio
+								*/
+				let startPointArray = [];
+				let startPointId = this.gameData.story.tabs.find(
+					(element) => element.gameStart
+				).id;
+				startPointArray.push(startPointId);
+				this.navigation(startPointArray);
 			},
 
 			/*
-					stabilisco tabs da vedere
-				*/
+											stabilisco tabs da vedere
+										*/
 			navigation(newIdArray) {
 				console.log("heiiii");
 				console.log(newIdArray);
@@ -266,8 +288,8 @@
 			},
 
 			/*
-					risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab
-				*/
+											risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab
+										*/
 			ResoveTab(tab) {
 				console.log("RESOLVE TAB");
 				console.log(tab);
@@ -394,7 +416,7 @@
 							currentTab = tabToRedirect;
 						} else {
 							let error =
-								this.strings.redirectError["it"] +
+								this.strings.redirectError.langEditor +
 								" ( ID: " +
 								currentTab.id +
 								" )";
@@ -411,7 +433,7 @@
 						if (itemExist3) {
 							if (itemExist3.length == 0 || currentTab.operator == false) {
 								let error =
-									this.strings.expressionIncoplete["it"] +
+									this.strings.expressionIncoplete.langEditor +
 									" ( ID: " +
 									currentTab.id +
 									" )";
@@ -426,7 +448,7 @@
 							}
 						} else {
 							let error =
-								this.strings.expressionIncoplete["it"] +
+								this.strings.expressionIncoplete.langEditor +
 								" ( ID: " +
 								currentTab.id +
 								" )";
@@ -443,7 +465,7 @@
 						if (itemExist2) {
 							if (itemExist2.length == 0 || currentTab.operator == false) {
 								let error =
-									this.strings.expressionIncoplete["it"] +
+									this.strings.expressionIncoplete.langEditor +
 									" ( ID: " +
 									currentTab.id +
 									" )";
@@ -458,7 +480,7 @@
 							}
 						} else {
 							let error =
-								this.strings.expressionIncoplete["it"] +
+								this.strings.expressionIncoplete.langEditor +
 								" ( ID: " +
 								currentTab.id +
 								" )";
@@ -474,8 +496,8 @@
 						console.log(statToCheck);
 						if (statToCheck) {
 							/*
-						      controllo che non siano presenti errori nella espressione
-						    */
+												      controllo che non siano presenti errori nella espressione
+												    */
 							console.log(
 								"controllo che non siano presenti errori nella espressione"
 							);
@@ -488,7 +510,7 @@
 								currentTab.operator == false
 							) {
 								let error =
-									this.strings.expressionIncoplete["it"] +
+									this.strings.expressionIncoplete.langEditor +
 									" ( ID: " +
 									currentTab.id +
 									" )";
@@ -517,7 +539,7 @@
 							}
 						} else {
 							let error =
-								this.strings.expressionIncoplete["it"] +
+								this.strings.expressionIncoplete.langEditor +
 								" ( ID: " +
 								currentTab.id +
 								" )";
@@ -530,15 +552,14 @@
 
 						break;
 
-					//OK
 					case "if item":
 						let itemToCheck = this.player.item.filter(
 							(element) => element.id == currentTab.idObject
 						).length;
 
 						/*
-						    controllo che non siano presenti errori nella espressione --------------
-						  */
+												    controllo che non siano presenti errori nella espressione
+												  */
 
 						//controllo se esiste l'oggetto
 						let itemExist = this.gameData.items.find(
@@ -548,16 +569,13 @@
 						if (itemExist) {
 							if (itemExist.length == 0 || currentTab.operator == false) {
 								let error =
-									this.strings.expressionIncoplete["it"] +
+									this.strings.expressionIncoplete.langEditor +
 									" ( ID: " +
 									currentTab.id +
 									" )";
 								this.onRunError.push(error);
 								stop = true;
 							} else {
-								/*
-						                                -----------------------------------------------------------------------
-						                            */
 								let status2 = operatorResolve(
 									itemToCheck,
 									currentTab.operator,
@@ -580,7 +598,7 @@
 							}
 						} else {
 							let error =
-								this.strings.expressionIncoplete["it"] +
+								this.strings.expressionIncoplete.langEditor +
 								" ( ID: " +
 								currentTab.id +
 								" )";
@@ -589,95 +607,25 @@
 						}
 
 						break;
-					/*
-						                case:
-						                break
-						                case:
-						                break
-						                */
 				}
-
-				//trovo successivi
-				//this.gameData.story.beams.forEach(beam=>{
-
-				//if(skip == false){
-
-				/*
-
-						            */
 
 				if (stop == false) {
 					/*
-						                    trovo nodi successivi perchè il corrente nodo non si può visualizzare
-						                */
-					console.log("Skippo al successivo -------------------------------");
-					console.log(currentTab.id);
+						            trovo nodi successivi perchè il corrente nodo non si può visualizzare
+											*/
 					this.gameData.story.beams.forEach((el) => {
 						console.log(currentTab.id + "==" + el.from);
 						if (currentTab.id == el.from) {
-							/*
-						                        if(this.textualTabs.includes( el.type )){
-
-						                        }
-						                        */
-							console.log(el.to);
 							tabToAdd.push(el.to);
 						}
 					});
-					console.log("--------------------------------------------------");
-
 					stop = true;
 				}
-
-				/*
-						            for (let index = 0; index < this.gameData.story.beams.length; index++) {
-						                const beam = this.gameData.story.beams[index];
-						                if (stop == false) {
-						                    //console.log(currentTab.id + "==" + beam.from);
-
-						                    if (currentTab.type == "descriptions" || currentTab.type == "chose") {
-						                        console.log("!!!!STOP2!!!!")
-
-						                        tabToAdd.push(currentTab);
-						                        stop = true;
-						                    } else {
-						                        if (currentTab.id == beam.from) {
-
-						                            console.log(currentTab.id + "==" + beam.from)
-
-						                            let result = this.gameData.story.tabs.find(element => beam.to == element.id)
-
-						                            console.log(result)
-						                            //console.log("result:");
-						                            //console.log(result)
-
-						                            currentTab = Object.assign({}, result)
-
-						                            if (currentTab.type == "descriptions" || currentTab.type == "chose") {
-
-						                                console.log("!!!!STOP!!!!")
-
-						                                tabToAdd.push(currentTab);
-						                                stop = true;
-						                            }
-
-						                            break;
-
-						                        }
-						                    }
-						                }
-
-						            }
-						            */
-
-				//}
-
-				//}
 
 				return tabToAdd;
 			},
 
-			//modify item
+			/* modify stat */
 			modifyStat(idStat, operator, ammount) {
 				console.log("modifico statistica:");
 
@@ -697,7 +645,6 @@
 				let resultAmmount;
 				let use;
 
-				//resolve
 				switch (operator) {
 					case "+":
 						resultAmmount = ammount;
@@ -755,7 +702,7 @@
 				//---------------------------------------
 			},
 
-			//modify item
+			/* modify item */
 			modifyItem(idObject, operator, ammount) {
 				console.log("modifico oggetto:");
 
@@ -821,20 +768,20 @@
 
 					//uso plurale o singolare
 					/*
-						                if(resultAmmount == 1){
-						                    messageLog= {
-						                        en:"added " + chosenItem.name.en,
-						                        it:"aggiunto " + chosenItem.name.it
-						                    }
-						                }else{
-						                    messageLog= {
-						                        en:"added " + resultAmmount + chosenItem.namePlural.en,
-						                        it:"aggiunti " + resultAmmount + chosenItem.namePlural.it
-						                    }
-						                }
+												                if(resultAmmount == 1){
+												                    messageLog= {
+												                        en:"added " + chosenItem.name.en,
+												                        it:"aggiunto " + chosenItem.name.it
+												                    }
+												                }else{
+												                    messageLog= {
+												                        en:"added " + resultAmmount + chosenItem.namePlural.en,
+												                        it:"aggiunti " + resultAmmount + chosenItem.namePlural.it
+												                    }
+												                }
 
-						                console.log(messageLog.it)
-						                */
+												                console.log(messageLog.it)
+												                */
 				}
 
 				if (use == 2) {
@@ -865,9 +812,7 @@
 
 			//------------------------------------------------------
 
-			/*
-						            leggo beem da punto di inizio a punto di fine
-						        */
+			/* leggo beem da punto di inizio a punto di fine */
 			reedBeams(fromId) {
 				let newIdArray = [];
 				this.gameData.story.beams.forEach((beam) => {
@@ -887,20 +832,9 @@
 
 			/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
-			/*
-						            animazione selettore
-						        */
+			/* animazione selettore */
 			animatePaperSelector() {
 				if (this.hoveCharacterSheet == true) {
-					/*
-						                if(this.seletedItem == id ){
-						                    return "animate-in"
-						                }else{
-						                    if(this.paperStopAnimation == false){
-						                    return "animate-out"
-						                    }
-						                }
-						                */
 					if (this.subTabCharacterSheet == "stats") {
 						this.player.stats.forEach((element) => {
 							if (element.id == this.seletedItem) {
@@ -934,9 +868,7 @@
 				});
 			},
 
-			/*
-						            setto paper
-						        */
+			/* setto paper */
 			setDescriptionPaper(item) {
 				this.seletedItem = item.id;
 
@@ -955,9 +887,7 @@
 				}, 4000);
 			},
 
-			/*
-						            setto lista oggetti da esporre
-						        */
+			/* setto lista oggetti da esporre  */
 			setPlayerItemFiltered() {
 				let listItems = [];
 				console.log(this.player);
@@ -979,9 +909,7 @@
 				this.playerItemFiltered = listItems;
 			},
 
-			/*
-						            lista nodi badMix
-						        */
+			/* lista nodi badMix */
 			setListBadMixId() {
 				let BadMixList = "";
 				let allDescription = this.currentTabs.filter(
@@ -994,19 +922,9 @@
 				this.listBadMixId = BadMixList;
 			},
 
-			/*
-						        PROJECT X -------------------------------------
-						        */
+			/* PROJECT X ------------------------------------- */
 
 			activateDemo() {
-				setTimeout(() => {
-					this.cover = false;
-
-					//audio autoplay
-					document.getElementById("audio-player").play();
-					document.getElementById("audio-player").volume = 0.1;
-				}, 500);
-
 				//full screen
 				function requestFullScreen(element) {
 					// Supports most browsers and their versions.
@@ -1031,12 +949,6 @@
 				var elem = document.body; // Make the body go full screen.
 				requestFullScreen(elem);
 			},
-
-			/*
-						        -----------------------------------------------
-						        */
 		},
-	};
-
-	export default game;
+	});
 </script>

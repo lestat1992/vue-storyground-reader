@@ -1,0 +1,26 @@
+{
+  "noData": {
+    "en": "No data appears to be present at the moment",
+    "it": "Al momento non sembra essere presente alcun dato"
+  },
+  "noStart": {
+    "en": "A node has not been selected to start the story from",
+    "it": "Non è stato selezionato un nodo da cui iniziare la storia"
+  },
+  "noEnd": {
+    "en": "an end node has not been inserted",
+    "it": "non è stato inserito un nodo finale"
+  },
+  "nodeBadMix": {
+    "it": "the resulting list of nodes is incorrect (nodes to be disconnected:",
+    "en": ""
+  },
+  "expressionIncoplete": {
+    "it": "l'espressione usata è incopleta",
+    "en": "the expression used is incomplete"
+  },
+  "redirectError": {
+    "it": "Non sono stati specificati alcuni nodi di destinazione",
+    "en": "Some target nodes were not specified"
+  }
+}

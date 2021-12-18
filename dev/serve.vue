@@ -1,18 +1,19 @@
 <script>
-import { defineComponent } from 'vue';
-// Uncomment import and local "components" registration if library is not registered globally.
-// import { TestStLibrarySample } from '@/entry.esm';
+	import { defineComponent } from "vue";
+	// Uncomment import and local "components" registration if library is not registered globally.
+	// import { TestStLibrarySample } from '@/entry.esm';
 
-export default defineComponent({
-  name: 'ServeDev',
-  // components: {
-  //  TestStLibrarySample,
-  // }
-});
+	export default defineComponent({
+		name: "ServeDev",
+		// components: {
+		//  TestStLibrarySample,
+		// }
+	});
 </script>
 
 <template>
-  <div id="app">
-    <test-st-library-sample />
-  </div>
+	<div id="app">
+		<test-st-library-sample />
+		<game />
+	</div>
 </template>
