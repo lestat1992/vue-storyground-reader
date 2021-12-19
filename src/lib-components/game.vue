@@ -49,19 +49,6 @@
 			</div>
 		</div>
 
-		<div class="icons-group-left">
-			<a
-				class="icon-draw-info"
-				target="_blanck"
-				href="http://storygroundeditor.com/"
-			></a>
-			<div
-				v-on:click="audio = !audio"
-				v-bind:class="[{ 'icon-draw-audio-on' : audio },{ 'icon-draw-audio-off' : audio == false }]"
-			>
-			</div>
-		</div>
-
 		<div
 			class="cover"
 			v-bind:class="{ 'hide-cover' : cover == false }"
@@ -99,9 +86,9 @@
 			gameOver: boxNarrationGameOver,
 		},
 		props: {
-			lang: {
+			propLang: {
 				type: String,
-				required: true,
+				default: "null-lang",
 			},
 			langEditor: {
 				type: String,
@@ -113,12 +100,13 @@
 			},
 			gameData: {
 				type: Object,
-				defailt: defaultStory,
+				default: defaultStory,
 			},
 		},
 		//["lang", "strings", "gameData", "playerData", "gameIntent"],
 		data: function () {
 			return {
+				lang: false,
 				textualTabs: ["descriptions", "chose", "game over", "end"],
 				playerState: "playing",
 				player: {
@@ -138,17 +126,14 @@
 					this.setListBadMixId();
 				}
 			},
-
-			audio: function (val) {
-				if (val == true) {
-					document.getElementById("audio-player").play();
-				} else {
-					document.getElementById("audio-player").pause();
-				}
-			},
 		},
 
 		mounted() {
+			if (this.propLang !== "null-lang") {
+				this.lang = this.propLang;
+			} else {
+				this.lang = this.gameData.postInfo.langList[0];
+			}
 			this.gameIntentLoad();
 		},
 		computed: {
@@ -189,11 +174,13 @@
 				};
 
 				/* carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist */
-				this.gameData.stats.forEach((stats) => {
-					let newStats = deepCopy(stats);
-					newStats.level = 0;
-					this.player.stats.push(newStats);
-				});
+				if (this.gameData.stats) {
+					this.gameData.stats.forEach((stats) => {
+						let newStats = deepCopy(stats);
+						newStats.level = 0;
+						this.player.stats.push(newStats);
+					});
+				}
 
 				//creo lista oggetti da visualizzare
 				this.setPlayerItemFiltered();
@@ -272,9 +259,7 @@
 				return collectionOfTextualTabs;
 			},
 
-			/*
-															risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab
-														*/
+			/* risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab */
 			ResoveTab(tab) {
 				function operatorResolve(dn1, operator, dn2) {
 					const n1 = parseInt(dn1);
@@ -465,9 +450,7 @@
 						);
 
 						if (statToCheck) {
-							/*
-																      controllo che non siano presenti errori nella espressione
-																    */
+							/* controllo che non siano presenti errori nella espressione */
 
 							if (
 								currentTab.ammount === false ||
@@ -520,8 +503,8 @@
 						).length;
 
 						/*
-																    controllo che non siano presenti errori nella espressione
-																  */
+																																	    controllo che non siano presenti errori nella espressione
+																																	  */
 
 						//controllo se esiste l'oggetto
 						let itemExist = this.gameData.items.find(
@@ -572,9 +555,7 @@
 				}
 
 				if (stop == false) {
-					/*
-										            trovo nodi successivi perchè il corrente nodo non si può visualizzare
-															*/
+					/* trovo nodi successivi perchè il corrente nodo non si può visualizzare */
 					this.gameData.story.beams.forEach((el) => {
 						if (currentTab.id == el.from) {
 							tabToAdd.push(el.to);
@@ -706,23 +687,6 @@
 					}
 
 					let messageLog;
-
-					//uso plurale o singolare
-					/*
-																                if(resultAmmount == 1){
-																                    messageLog= {
-																                        en:"added " + chosenItem.name.en,
-																                        it:"aggiunto " + chosenItem.name.it
-																                    }
-																                }else{
-																                    messageLog= {
-																                        en:"added " + resultAmmount + chosenItem.namePlural.en,
-																                        it:"aggiunti " + resultAmmount + chosenItem.namePlural.it
-																                    }
-																                }
-
-
-																                */
 				}
 
 				if (use == 2) {
