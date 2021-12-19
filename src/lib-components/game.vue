@@ -3,29 +3,14 @@
 		<boxillustration
 			v-if="illustration"
 			v-bind:illustration="illustration"
-		>
-		</boxillustration>
+		/>
 
-		<boxnarration
-			v-if="narrationBox == 'default' || narrationBox == 'descriptions' ||  narrationBox == 'chose'"
+		<boxText
+			v-bind:narrationBox="narrationBox"
 			v-bind:lang="lang"
 			v-bind:current-tabs="currentTabs"
-			v-on:reedbeams="reedBeams"
-		></boxnarration>
-
-		<gameEnd
-			v-if="narrationBox == 'end' "
-			v-bind:lang="lang"
-			v-bind:current-tabs="currentTabs"
-			v-on:reedbeams="reedBeams"
-		></gameEnd>
-
-		<gameOver
-			v-if="narrationBox == 'game over'"
-			v-bind:lang="lang"
-			v-bind:current-tabs="currentTabs"
-			v-on:reedbeams="reedBeams"
-		></gameOver>
+			v-on:reedBeams="reedBeams"
+		/>
 
 		<div
 			v-if="narrationBox == 'false' || narrationBox == 'node-bad-mix'"
@@ -67,10 +52,9 @@
 	import defaultStrings from "./defaultStrings.json";
 	import defaultStory from "./defaultStory.json";
 
-	import boxNarration from "./boxNarration.vue";
-	import boxNarrationGameEnd from "./boxNarrationGameEnd.vue";
-	import boxNarrationGameOver from "./boxNarrationGameOver.vue";
 	import boxIllustration from "./boxIllustration.vue";
+	import boxText from "./boxText.vue";
+
 	import deepCopy from "./deepCopy.js";
 
 	function randomNum(min, max) {
@@ -80,10 +64,8 @@
 	export default /*#__PURE__*/ defineComponent({
 		name: "game",
 		components: {
-			boxnarration: boxNarration,
 			boxillustration: boxIllustration,
-			gameEnd: boxNarrationGameEnd,
-			gameOver: boxNarrationGameOver,
+			boxText: boxText,
 		},
 		props: {
 			propLang: {
@@ -503,8 +485,8 @@
 						).length;
 
 						/*
-																																	    controllo che non siano presenti errori nella espressione
-																																	  */
+																																						    controllo che non siano presenti errori nella espressione
+																																						  */
 
 						//controllo se esiste l'oggetto
 						let itemExist = this.gameData.items.find(
