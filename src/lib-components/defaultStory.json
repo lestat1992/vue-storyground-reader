@@ -1,0 +1,115 @@
+{
+  "postInfo": {
+    "title": "Placeholder",
+    "lenghtDescriptionsNode": 400,
+    "lenghtChoseNode": 20,
+    "selectedWorkSpace": 1,
+    "privateLink": true,
+    "langList": ["it", "en"]
+  },
+  "erorList": { "noStart": false },
+  "MaxId": 16,
+  "levels": [],
+  "achievements": [],
+  "items": [],
+  "stats": [],
+  "story": {
+    "tabs": [
+      {
+        "id": 1,
+        "humanName": { "default": "start" },
+        "level": 0,
+        "name": "start",
+        "type": "start",
+        "gameStart": true,
+        "levelStart": false,
+        "x": 670,
+        "y": 122.8125
+      },
+      {
+        "id": 2,
+        "humanName": { "default": "text", "textImage": "text & image" },
+        "level": 0,
+        "name": "descriptions0",
+        "text": {
+          "it": "Questa è una storia segnaposto, sei interessato a proseguire?",
+          "en": "This is a placeholder story"
+        },
+        "type": "descriptions",
+        "img": "",
+        "save": false,
+        "textRevision": false,
+        "x": 585,
+        "y": 258.8125
+      },
+      {
+        "id": 4,
+        "humanName": { "default": "choice" },
+        "level": 0,
+        "name": "chose0",
+        "text": { "it": "si", "en": "yes" },
+        "type": "chose",
+        "textRevision": false,
+        "x": 480,
+        "y": 531.8125
+      },
+      {
+        "id": 5,
+        "humanName": { "default": "choice" },
+        "level": 0,
+        "name": "chose1",
+        "text": { "it": "no", "en": "no" },
+        "type": "chose",
+        "textRevision": false,
+        "x": 735,
+        "y": 536.8125
+      },
+      {
+        "id": 10,
+        "humanName": { "default": "text", "textImage": "text & image" },
+        "level": 0,
+        "name": "descriptions1",
+        "text": {
+          "it": "Non c'è molto altro da dire, come ti ho detto...",
+          "en": "There isn't much more to say, as I told you...\r"
+        },
+        "type": "descriptions",
+        "img": "",
+        "save": false,
+        "textRevision": false,
+        "x": 473,
+        "y": 681.8125
+      },
+      {
+        "id": 11,
+        "humanName": { "default": "null" },
+        "level": 0,
+        "type": "null",
+        "x": 149,
+        "y": 319.8125,
+        "name": "null0"
+      },
+      {
+        "id": 15,
+        "humanName": { "default": "end" },
+        "level": 0,
+        "name": "end0",
+        "type": "end",
+        "text": { "it": "Allora esci da questa pagina", "en": "" },
+        "img": "",
+        "textRevision": false,
+        "x": 787,
+        "y": 795.8125
+      }
+    ],
+    "beams": [
+      { "id": 3, "from": 1, "to": 2 },
+      { "id": 8, "from": 2, "to": 4 },
+      { "id": 9, "from": 2, "to": 5 },
+      { "id": 12, "from": 10, "to": 11 },
+      { "id": 13, "from": 11, "to": 2 },
+      { "id": 14, "from": 4, "to": 10 },
+      { "id": 16, "from": 5, "to": 15 }
+    ]
+  }
+}

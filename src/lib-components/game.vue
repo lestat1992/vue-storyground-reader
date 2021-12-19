@@ -153,7 +153,6 @@
 		},
 		computed: {
 			narrationBox: function () {
-				console.log(this.currentTabs.length);
 				if (this.onRunError.length > 0) {
 					return "false";
 				} else {
@@ -189,9 +188,7 @@
 					item: [],
 				};
 
-				/*
-									carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist
-								*/
+				/* carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist */
 				this.gameData.stats.forEach((stats) => {
 					let newStats = deepCopy(stats);
 					newStats.level = 0;
@@ -201,9 +198,7 @@
 				//creo lista oggetti da visualizzare
 				this.setPlayerItemFiltered();
 
-				/*
-									apro la tab di inizio
-								*/
+				/* apro la tab di inizio */
 				let startPointArray = [];
 				let startPointId = this.gameData.story.tabs.find(
 					(element) => element.gameStart
@@ -212,13 +207,8 @@
 				this.navigation(startPointArray);
 			},
 
-			/*
-											stabilisco tabs da vedere
-										*/
+			/* stabilisco tabs da vedere */
 			navigation(newIdArray) {
-				console.log("heiiii");
-				console.log(newIdArray);
-
 				let tabs = this.gameData.story.tabs.filter((el) =>
 					newIdArray.includes(el.id)
 				);
@@ -232,7 +222,6 @@
 
 						//setto immagine
 						if (tabsToNavigate[0].img) {
-							console.log("setto immagine");
 							this.setImage(tabsToNavigate[0].img);
 						}
 
@@ -265,9 +254,8 @@
 					//controllo chi è testuale e chi no
 					collectionOfTextualTabs.forEach((el) => {
 						if (!textualTabs.includes(el.type)) {
-							console.log("una tab non è testuale verranno presi provvedimenti");
 							allTextual = false;
-							console.log(el);
+
 							newCollection = [...newCollection, ...this.ResoveTab(el)];
 						} else {
 							newCollection.push(el);
@@ -277,9 +265,6 @@
 					collectionOfTextualTabs = newCollection;
 
 					if (allTextual == true || n >= 100) {
-						console.log("STOP IT");
-						console.log("INDSX LOOP: " + n);
-						console.log(collectionOfTextualTabs);
 						stop = true;
 					}
 				}
@@ -288,19 +273,13 @@
 			},
 
 			/*
-											risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab
-										*/
+															risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab
+														*/
 			ResoveTab(tab) {
-				console.log("RESOLVE TAB");
-				console.log(tab);
-
 				function operatorResolve(dn1, operator, dn2) {
-					console.log("ppp");
-
 					const n1 = parseInt(dn1);
 					const n2 = parseInt(dn2);
 
-					console.log(n1 + operator + n2);
 					switch (operator) {
 						case ">":
 							if (n1 > n2) {
@@ -332,10 +311,8 @@
 							break;
 						case "==":
 							if (n1 == n2) {
-								console.log(n1 + "==" + n2);
 								return true;
 							} else {
-								console.log("fasullo");
 								return false;
 							}
 							break;
@@ -362,8 +339,6 @@
 
 				switch (currentTab.type) {
 					case "start":
-						console.log("Questo è il mio regno john 2");
-
 						break;
 					case "descriptions":
 						tabToAdd.push(currentTab);
@@ -386,21 +361,16 @@
 
 						break;
 					case "redirect":
-						console.log("DIN DIN DIN DIN CI SEI!!");
-						console.log(currentTab.listRedirectId);
-
 						let errorRedirect = false;
 						currentTab.listRedirectId.forEach((el) => {
 							if (!el) {
 								errorRedirect = true;
-								console.log("ERRORE");
 							}
 						});
 
 						if (errorRedirect == false) {
 							let idRedirect;
 							if (currentTab.listRedirectId.length == 1) {
-								console.log("olè");
 								idRedirect = currentTab.listRedirectId[0];
 							} else {
 								let indexRandom = randomNum(
@@ -493,17 +463,12 @@
 						let statToCheck = this.player.stats.find(
 							(element) => element.id == currentTab.idStat
 						);
-						console.log(statToCheck);
+
 						if (statToCheck) {
 							/*
-												      controllo che non siano presenti errori nella espressione
-												    */
-							console.log(
-								"controllo che non siano presenti errori nella espressione"
-							);
-							console.log(
-								statToCheck.level + "== 0 || " + currentTab.operator + "== false"
-							);
+																      controllo che non siano presenti errori nella espressione
+																    */
+
 							if (
 								currentTab.ammount === false ||
 								currentTab.ammount == undefined ||
@@ -547,9 +512,6 @@
 							stop = true;
 						}
 
-						console.log("tab aggiunta:");
-						console.log(tabToAdd);
-
 						break;
 
 					case "if item":
@@ -558,8 +520,8 @@
 						).length;
 
 						/*
-												    controllo che non siano presenti errori nella espressione
-												  */
+																    controllo che non siano presenti errori nella espressione
+																  */
 
 						//controllo se esiste l'oggetto
 						let itemExist = this.gameData.items.find(
@@ -611,10 +573,9 @@
 
 				if (stop == false) {
 					/*
-						            trovo nodi successivi perchè il corrente nodo non si può visualizzare
-											*/
+										            trovo nodi successivi perchè il corrente nodo non si può visualizzare
+															*/
 					this.gameData.story.beams.forEach((el) => {
-						console.log(currentTab.id + "==" + el.from);
 						if (currentTab.id == el.from) {
 							tabToAdd.push(el.to);
 						}
@@ -627,12 +588,6 @@
 
 			/* modify stat */
 			modifyStat(idStat, operator, ammount) {
-				console.log("modifico statistica:");
-
-				console.log(idStat);
-				console.log(operator);
-				console.log(ammount);
-
 				let totalResult = [];
 
 				let chosenStat = this.gameData.stats.find(
@@ -672,23 +627,18 @@
 
 				//  + *
 				if (use == 1) {
-					console.log("incremento STATISTICA");
-
 					/* controllo se giocatore ha statistica */
 					playerStat.level = parseInt(playerStat.level) + parseInt(resultAmmount);
 				}
 
 				//  - /
 				if (use == 2) {
-					console.log("DECREMENTO STATISTICA");
-
 					/* controllo se giocatore ha statistica */
 					playerStat.level = parseInt(playerStat.level) - parseInt(resultAmmount);
 				}
 
 				//  =
 				if (use == 5) {
-					console.log("SETTO STATISTICA");
 					playerStat.level = resultAmmount;
 				}
 
@@ -704,12 +654,6 @@
 
 			/* modify item */
 			modifyItem(idObject, operator, ammount) {
-				console.log("modifico oggetto:");
-
-				console.log(idObject);
-				console.log(operator);
-				console.log(ammount);
-
 				let totalResult = [];
 
 				//elemento da usare
@@ -744,16 +688,13 @@
 						use = 2;
 						break;
 					case "=":
-						console.log("CORRETTO");
 						if (ammount < nItemPlayer) {
 							resultAmmount = nItemPlayer - ammount;
-							console.log("a");
-							console.log(resultAmmount);
+
 							use = 2;
 						} else {
 							resultAmmount = ammount - nItemPlayer;
-							console.log("b");
-							console.log(resultAmmount);
+
 							use = 1;
 						}
 						break;
@@ -768,20 +709,20 @@
 
 					//uso plurale o singolare
 					/*
-												                if(resultAmmount == 1){
-												                    messageLog= {
-												                        en:"added " + chosenItem.name.en,
-												                        it:"aggiunto " + chosenItem.name.it
-												                    }
-												                }else{
-												                    messageLog= {
-												                        en:"added " + resultAmmount + chosenItem.namePlural.en,
-												                        it:"aggiunti " + resultAmmount + chosenItem.namePlural.it
-												                    }
-												                }
+																                if(resultAmmount == 1){
+																                    messageLog= {
+																                        en:"added " + chosenItem.name.en,
+																                        it:"aggiunto " + chosenItem.name.it
+																                    }
+																                }else{
+																                    messageLog= {
+																                        en:"added " + resultAmmount + chosenItem.namePlural.en,
+																                        it:"aggiunti " + resultAmmount + chosenItem.namePlural.it
+																                    }
+																                }
 
-												                console.log(messageLog.it)
-												                */
+
+																                */
 				}
 
 				if (use == 2) {
@@ -820,7 +761,6 @@
 						newIdArray.push(beam.to);
 					}
 				});
-				console.log(newIdArray);
 
 				this.navigation(newIdArray);
 			},
@@ -890,7 +830,7 @@
 			/* setto lista oggetti da esporre  */
 			setPlayerItemFiltered() {
 				let listItems = [];
-				console.log(this.player);
+
 				this.player.item.forEach((item) => {
 					let found = listItems.find((element) => element.id == item.id);
 
