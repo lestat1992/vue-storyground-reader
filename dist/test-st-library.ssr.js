@@ -195,6 +195,10 @@ var expressionIncoplete = {
 	it: "l'espressione usata è incopleta",
 	en: "the expression used is incomplete"
 };
+var linkNodeEmpty = {
+	it: "Il nodo link è vuoto",
+	en: "The link node is empty"
+};
 var redirectError = {
 	it: "Non sono stati specificati alcuni nodi di destinazione",
 	en: "Some target nodes were not specified"
@@ -205,6 +209,7 @@ var defaultStrings = {
 	noEnd: noEnd,
 	nodeBadMix: nodeBadMix,
 	expressionIncoplete: expressionIncoplete,
+	linkNodeEmpty: linkNodeEmpty,
 	redirectError: redirectError
 };var postInfo = {
 	title: "Placeholder",
@@ -892,11 +897,16 @@ var script = /*#__PURE__*/vue.defineComponent({
 
         case "redirect":
           var errorRedirect = false;
-          currentTab.listRedirectId.forEach(function (el) {
-            if (!el) {
-              errorRedirect = true;
-            }
-          });
+
+          if (currentTab.listRedirectId.length > 0) {
+            currentTab.listRedirectId.forEach(function (el) {
+              if (!el) {
+                errorRedirect = true;
+              }
+            });
+          } else {
+            errorRedirect = this.strings.linkNodeEmpty[this.langEditor] + " ( ID: " + currentTab.id + " )";
+          }
 
           if (errorRedirect == false) {
             var idRedirect;
@@ -915,6 +925,11 @@ var script = /*#__PURE__*/vue.defineComponent({
           } else {
             var error = this.strings.redirectError.langEditor + " ( ID: " + currentTab.id + " )";
             this.onRunError.push(error);
+            stop = true;
+          }
+
+          if (errorRedirect) {
+            this.onRunError.push(errorRedirect);
             stop = true;
           }
 
@@ -1008,9 +1023,7 @@ var script = /*#__PURE__*/vue.defineComponent({
           var itemToCheck = this.player.item.filter(function (element) {
             return element.id == currentTab.idObject;
           }).length;
-          /*
-          																																    controllo che non siano presenti errori nella espressione
-          																																  */
+          /* controllo che non siano presenti errori nella espressione */
           //controllo se esiste l'oggetto
 
           var itemExist = this.gameData.items.find(function (el) {
@@ -1351,11 +1364,11 @@ var _hoisted_2 = {
 };
 var _hoisted_3 = {
   key: 0,
-  class: "game-error"
+  class: "game-error e-1"
 };
 var _hoisted_4 = {
   key: 1,
-  class: "game-error"
+  class: "game-error e-3"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_boxillustration = vue.resolveComponent("boxillustration");
@@ -1373,7 +1386,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["narrationBox", "lang", "current-tabs", "onReedBeams"]), _ctx.narrationBox == 'false' || _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.strings.noEnd.langEditor), 1)) : vue.createCommentVNode("", true), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.onRunError, function (el, index) {
     return vue.openBlock(), vue.createElementBlock("div", {
       key: index,
-      class: "game-error"
+      class: "game-error e-2"
     }, vue.toDisplayString(el), 1);
   }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, vue.toDisplayString(_ctx.strings.nodeBadMix.langEditor) + " " + vue.toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createElementVNode("div", {
     class: vue.normalizeClass(["cover", {

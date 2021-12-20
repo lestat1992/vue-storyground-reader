@@ -18,16 +18,16 @@
 		>
 			<div
 				v-if="narrationBox == false && onRunError.length == 0"
-				class="game-error"
+				class="game-error e-1"
 			>{{ strings.noEnd.langEditor }}</div>
 			<div
 				v-for="(el, index ) in onRunError"
 				v-bind:key="index"
-				class="game-error"
+				class="game-error e-2"
 			>{{el}}</div>
 			<div
 				v-if="narrationBox == 'node-bad-mix'"
-				class="game-error"
+				class="game-error e-3"
 			>
 				{{ strings.nodeBadMix.langEditor }} {{listBadMixId}} )
 
@@ -329,11 +329,19 @@
 						break;
 					case "redirect":
 						let errorRedirect = false;
-						currentTab.listRedirectId.forEach((el) => {
-							if (!el) {
-								errorRedirect = true;
-							}
-						});
+						if (currentTab.listRedirectId.length > 0) {
+							currentTab.listRedirectId.forEach((el) => {
+								if (!el) {
+									errorRedirect = true;
+								}
+							});
+						} else {
+							errorRedirect =
+								this.strings.linkNodeEmpty[this.langEditor] +
+								" ( ID: " +
+								currentTab.id +
+								" )";
+						}
 
 						if (errorRedirect == false) {
 							let idRedirect;
@@ -358,6 +366,11 @@
 								currentTab.id +
 								" )";
 							this.onRunError.push(error);
+							stop = true;
+						}
+
+						if (errorRedirect) {
+							this.onRunError.push(errorRedirect);
 							stop = true;
 						}
 
@@ -484,9 +497,7 @@
 							(element) => element.id == currentTab.idObject
 						).length;
 
-						/*
-																																						    controllo che non siano presenti errori nella espressione
-																																						  */
+						/* controllo che non siano presenti errori nella espressione */
 
 						//controllo se esiste l'oggetto
 						let itemExist = this.gameData.items.find(
@@ -543,6 +554,7 @@
 							tabToAdd.push(el.to);
 						}
 					});
+
 					stop = true;
 				}
 

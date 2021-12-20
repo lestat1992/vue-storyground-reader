@@ -19,6 +19,10 @@
     "it": "l'espressione usata è incopleta",
     "en": "the expression used is incomplete"
   },
+  "linkNodeEmpty": {
+    "it": "Il nodo link è vuoto",
+    "en": "The link node is empty"
+  },
   "redirectError": {
     "it": "Non sono stati specificati alcuni nodi di destinazione",
     "en": "Some target nodes were not specified"

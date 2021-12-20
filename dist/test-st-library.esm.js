@@ -128,6 +128,10 @@ var expressionIncoplete = {
 	it: "l'espressione usata è incopleta",
 	en: "the expression used is incomplete"
 };
+var linkNodeEmpty = {
+	it: "Il nodo link è vuoto",
+	en: "The link node is empty"
+};
 var redirectError = {
 	it: "Non sono stati specificati alcuni nodi di destinazione",
 	en: "Some target nodes were not specified"
@@ -138,6 +142,7 @@ var defaultStrings = {
 	noEnd: noEnd,
 	nodeBadMix: nodeBadMix,
 	expressionIncoplete: expressionIncoplete,
+	linkNodeEmpty: linkNodeEmpty,
 	redirectError: redirectError
 };
 
@@ -840,11 +845,16 @@ var script = /*#__PURE__*/defineComponent({
 
         case "redirect":
           let errorRedirect = false;
-          currentTab.listRedirectId.forEach(el => {
-            if (!el) {
-              errorRedirect = true;
-            }
-          });
+
+          if (currentTab.listRedirectId.length > 0) {
+            currentTab.listRedirectId.forEach(el => {
+              if (!el) {
+                errorRedirect = true;
+              }
+            });
+          } else {
+            errorRedirect = this.strings.linkNodeEmpty[this.langEditor] + " ( ID: " + currentTab.id + " )";
+          }
 
           if (errorRedirect == false) {
             let idRedirect;
@@ -861,6 +871,11 @@ var script = /*#__PURE__*/defineComponent({
           } else {
             let error = this.strings.redirectError.langEditor + " ( ID: " + currentTab.id + " )";
             this.onRunError.push(error);
+            stop = true;
+          }
+
+          if (errorRedirect) {
+            this.onRunError.push(errorRedirect);
             stop = true;
           }
 
@@ -936,9 +951,7 @@ var script = /*#__PURE__*/defineComponent({
 
         case "if item":
           let itemToCheck = this.player.item.filter(element => element.id == currentTab.idObject).length;
-          /*
-          																																    controllo che non siano presenti errori nella espressione
-          																																  */
+          /* controllo che non siano presenti errori nella espressione */
           //controllo se esiste l'oggetto
 
           let itemExist = this.gameData.items.find(el => el.id == currentTab.idObject);
@@ -1254,11 +1267,11 @@ const _hoisted_2 = {
 };
 const _hoisted_3 = {
   key: 0,
-  class: "game-error"
+  class: "game-error e-1"
 };
 const _hoisted_4 = {
   key: 1,
-  class: "game-error"
+  class: "game-error e-3"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_boxillustration = resolveComponent("boxillustration");
@@ -1276,7 +1289,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["narrationBox", "lang", "current-tabs", "onReedBeams"]), _ctx.narrationBox == 'false' || _ctx.narrationBox == 'node-bad-mix' ? (openBlock(), createElementBlock("div", _hoisted_2, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (openBlock(), createElementBlock("div", _hoisted_3, toDisplayString(_ctx.strings.noEnd.langEditor), 1)) : createCommentVNode("", true), (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.onRunError, (el, index) => {
     return openBlock(), createElementBlock("div", {
       key: index,
-      class: "game-error"
+      class: "game-error e-2"
     }, toDisplayString(el), 1);
   }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (openBlock(), createElementBlock("div", _hoisted_4, toDisplayString(_ctx.strings.nodeBadMix.langEditor) + " " + toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createElementVNode("div", {
     class: normalizeClass(["cover", {
