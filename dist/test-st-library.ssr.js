@@ -618,7 +618,7 @@ var script = /*#__PURE__*/vue.defineComponent({
   props: {
     editorUsage: {
       type: Boolean,
-      default: false
+      default: true
     },
     propLang: {
       type: String,
@@ -645,7 +645,6 @@ var script = /*#__PURE__*/vue.defineComponent({
       default: "./media"
     }
   },
-  //["lang", "strings", "gameData", "playerData", "gameIntent"],
   data: function data() {
     return {
       lang: false,

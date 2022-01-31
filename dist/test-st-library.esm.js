@@ -564,7 +564,7 @@ var script = /*#__PURE__*/defineComponent({
   props: {
     editorUsage: {
       type: Boolean,
-      default: false
+      default: true
     },
     propLang: {
       type: String,
@@ -591,7 +591,6 @@ var script = /*#__PURE__*/defineComponent({
       default: "./media"
     }
   },
-  //["lang", "strings", "gameData", "playerData", "gameIntent"],
   data: function () {
     return {
       lang: false,

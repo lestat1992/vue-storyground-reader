@@ -1,6 +1,6 @@
 {
   "name": "vue-storyground-reader",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/test-st-library.ssr.js",
   "browser": "dist/test-st-library.esm.js",
@@ -20,8 +20,7 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
   "dependencies": {
-    "@rollup/plugin-json": "^4.1.0",
-    "rollup-plugin-copy-assets": "^2.0.3"
+    "@rollup/plugin-json": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
