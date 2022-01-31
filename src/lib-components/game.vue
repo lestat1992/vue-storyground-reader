@@ -75,7 +75,7 @@
 		props: {
 			editorUsage: {
 				type: Boolean,
-				default: false,
+				default: true,
 			},
 			propLang: {
 				type: String,
@@ -102,7 +102,6 @@
 				default: "./media",
 			},
 		},
-		//["lang", "strings", "gameData", "playerData", "gameIntent"],
 		data: function () {
 			return {
 				lang: false,
