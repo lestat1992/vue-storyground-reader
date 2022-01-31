@@ -13,7 +13,6 @@
 
 <template>
 	<div id="app">
-		<test-st-library-sample />
 		<game />
 	</div>
 </template>

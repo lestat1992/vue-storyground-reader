@@ -2,7 +2,11 @@
 	<div class="game-grid">
 		<boxillustration
 			v-if="illustration"
+			v-bind:editorUsage="editorUsage"
 			v-bind:illustration="illustration"
+			v-bind:indexMedia="indexMedia"
+			v-bind:pathMediaDir="pathMediaDir"
+			v-bind:style="gameData.style"
 		/>
 
 		<boxText
@@ -49,8 +53,9 @@
 <script>
 	import { defineComponent } from "vue";
 
-	import defaultStrings from "./defaultStrings.json";
-	import defaultStory from "./defaultStory.json";
+	import defaultStrings from "./default/defaultStrings.json";
+	import defaultStory from "./default/storyData.json";
+	import defaultIndexMedia from "./default/indexMedia.json";
 
 	import boxIllustration from "./boxIllustration.vue";
 	import boxText from "./boxText.vue";
@@ -68,6 +73,10 @@
 			boxText: boxText,
 		},
 		props: {
+			editorUsage: {
+				type: Boolean,
+				default: false,
+			},
 			propLang: {
 				type: String,
 				default: "null-lang",
@@ -83,6 +92,14 @@
 			gameData: {
 				type: Object,
 				default: defaultStory,
+			},
+			indexMedia: {
+				type: Object,
+				default: defaultIndexMedia,
+			},
+			pathMediaDir: {
+				type: String,
+				default: "./media",
 			},
 		},
 		//["lang", "strings", "gameData", "playerData", "gameIntent"],

@@ -81,101 +81,7 @@ function _nonIterableSpread() {
 
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}var script$6 = /*#__PURE__*/vue.defineComponent({
-  name: 'TestStLibrarySample',
-  // vue component name
-  data: function data() {
-    return {
-      counter: 5,
-      initCounter: 5,
-      message: {
-        action: null,
-        amount: null
-      }
-    };
-  },
-  computed: {
-    changedBy: function changedBy() {
-      var message = this.message;
-      if (!message.action) return 'initialized';
-      return "".concat(message.action, " ").concat(message.amount || '').trim();
-    }
-  },
-  methods: {
-    increment: function increment(arg) {
-      var amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter += amount;
-      this.message.action = 'incremented by';
-      this.message.amount = amount;
-    },
-    decrement: function decrement(arg) {
-      var amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter -= amount;
-      this.message.action = 'decremented by';
-      this.message.amount = amount;
-    },
-    reset: function reset() {
-      this.counter = this.initCounter;
-      this.message.action = 'reset';
-      this.message.amount = null;
-    }
-  }
-});var _hoisted_1$5 = {
-  class: "test-st-library-sample"
-};
-
-var _hoisted_2$4 = /*#__PURE__*/vue.createTextVNode(".");
-
-function render$6(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$5, [vue.createElementVNode("p", null, [vue.createTextVNode("The counter was " + vue.toDisplayString(_ctx.changedBy) + " to ", 1), vue.createElementVNode("b", null, vue.toDisplayString(_ctx.counter), 1), _hoisted_2$4]), vue.createElementVNode("button", {
-    onClick: _cache[0] || (_cache[0] = function () {
-      return _ctx.increment && _ctx.increment.apply(_ctx, arguments);
-    })
-  }, " Click +1 "), vue.createElementVNode("button", {
-    onClick: _cache[1] || (_cache[1] = function () {
-      return _ctx.decrement && _ctx.decrement.apply(_ctx, arguments);
-    })
-  }, " Click -1 "), vue.createElementVNode("button", {
-    onClick: _cache[2] || (_cache[2] = function ($event) {
-      return _ctx.increment(5);
-    })
-  }, " Click +5 "), vue.createElementVNode("button", {
-    onClick: _cache[3] || (_cache[3] = function ($event) {
-      return _ctx.decrement(5);
-    })
-  }, " Click -5 "), vue.createElementVNode("button", {
-    onClick: _cache[4] || (_cache[4] = function () {
-      return _ctx.reset && _ctx.reset.apply(_ctx, arguments);
-    })
-  }, " Reset ")]);
-}function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
-  var insertAt = ref.insertAt;
-
-  if (!css || typeof document === 'undefined') { return; }
-
-  var head = document.head || document.getElementsByTagName('head')[0];
-  var style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}var css_248z = "\n.test-st-library-sample[data-v-09179d00] {\n    display: block;\n    width: 400px;\n    margin: 25px auto;\n    border: 1px solid #ccc;\n    background: #eaeaea;\n    text-align: center;\n    padding: 25px;\n}\n.test-st-library-sample p[data-v-09179d00] {\n    margin: 0 0 1em;\n}\n";
-styleInject(css_248z);script$6.render = render$6;
-script$6.__scopeId = "data-v-09179d00";var noData = {
+}var noData = {
 	en: "No data appears to be present at the moment",
 	it: "Al momento non sembra essere presente alcun dato"
 };
@@ -218,8 +124,8 @@ var defaultStrings = {
 	selectedWorkSpace: 1,
 	privateLink: true,
 	langList: [
-		"en",
-		"it"
+		"it",
+		"en"
 	]
 };
 var erorList = {
@@ -246,8 +152,8 @@ var story = {
 			type: "start",
 			gameStart: true,
 			levelStart: false,
-			x: 670,
-			y: 122.8125
+			x: 607,
+			y: 68.8125
 		},
 		{
 			id: 2,
@@ -262,11 +168,26 @@ var story = {
 				en: "This is a placeholder story"
 			},
 			type: "descriptions",
-			img: "",
+			img: {
+				ID: 1315,
+				srcFull: [
+					"http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1.jpg",
+					1920,
+					1080,
+					false
+				],
+				srcThumbnail: [
+					"http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1-150x150.jpg",
+					150,
+					150,
+					true
+				],
+				post_name: "29695f55c408397b6eeb453fb59d40d9_img-1"
+			},
 			save: false,
 			textRevision: false,
-			x: 585,
-			y: 258.8125
+			x: 576,
+			y: 189.8125
 		},
 		{
 			id: 4,
@@ -297,8 +218,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 735,
-			y: 536.8125
+			x: 781,
+			y: 595.8125
 		},
 		{
 			id: 10,
@@ -313,7 +234,7 @@ var story = {
 				en: "There isn't much more to say, as I told you...\r"
 			},
 			type: "descriptions",
-			img: "",
+			img: false,
 			save: false,
 			textRevision: false,
 			x: 473,
@@ -342,10 +263,10 @@ var story = {
 				it: "Allora esci da questa pagina",
 				en: ""
 			},
-			img: "",
+			img: false,
 			textRevision: false,
-			x: 787,
-			y: 795.8125
+			x: 884,
+			y: 839.8125
 		}
 	],
 	beams: [
@@ -389,6 +310,20 @@ var story = {
 var style = {
 	"font-family": "Twinkle Star",
 	"layou-type": 1,
+	"img-sizes": [
+		{
+			width: 800,
+			height: 600
+		},
+		{
+			width: 1200,
+			height: 992
+		},
+		{
+			width: 1920,
+			height: 1080
+		}
+	],
 	"bg-color": "#FF0000",
 	color: "#000000",
 	"icon-single-arrow": {
@@ -422,33 +357,79 @@ var defaultStory = {
 	stats: stats,
 	story: story,
 	style: style
-};var boxIllustration = {
+};var defaultIndexMedia = [
+	{
+		Id: 1315,
+		name: "29695f55c408397b6eeb453fb59d40d9_img-1"
+	}
+];var boxIllustration = {
   name: "boxIllustration",
-  props: ["illustration"],
-  methods: {}
+  props: ["illustration", "editorUsage", "indexMedia", "pathMediaDir", "style"],
+  methods: {},
+  computed: {
+    imgPathPart: function imgPathPart() {
+      var _this = this;
+
+      var name = this.indexMedia.find(function (el) {
+        return el.Id == _this.illustration.ID;
+      }).name;
+      return this.pathMediaDir + "/" + name;
+    },
+    responsiveImages: function responsiveImages() {
+      var _this2 = this;
+
+      var data = {
+        srcset: "",
+        sizes: ""
+      };
+      this["style"]["img-sizes"].forEach(function (el, index) {
+        data.srcset = data.srcset + _this2.imgPathPart + "-" + el.width + "x" + el.height + ".jpg " + el.width + "w";
+
+        if (index + 1 != _this2["style"]["img-sizes"].length) {
+          data.srcset = data.srcset + ",";
+        }
+
+        if (index + 1 != _this2["style"]["img-sizes"].length) {
+          data.sizes = data.sizes + "( max-width:" + el.width + "px ) " + el.width + "px, ";
+        } else {
+          data.sizes = data.sizes + el.width + "px";
+        }
+      });
+      return data;
+    }
+  },
+  mounted: function mounted() {
+    console.log(this.imgPathPart + "-");
+    console.log(this["style"]["img-sizes"][0]["width"] + "x");
+    console.log(this["style"]["img-sizes"][0]["height"] + ".jpg");
+  }
 };
 var script$5 = boxIllustration;var _hoisted_1$4 = {
   class: "box-illustration"
 };
+var _hoisted_2$4 = ["src"];
+var _hoisted_3$4 = ["src", "srcset", "sizes"];
 function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$4, [vue.createElementVNode("div", {
     class: "inner-box",
     style: vue.normalizeStyle({
       paddingBottom: _ctx.illustration.srcFull[2] / _ctx.illustration.srcFull[1] * 100 + '%'
     })
-  }, [vue.createElementVNode("div", {
+  }, [_ctx.editorUsage ? (vue.openBlock(), vue.createElementBlock("img", {
+    key: 0,
     class: "box-img",
-    style: vue.normalizeStyle({
-      backgroundImage: 'url(' + _ctx.illustration.srcFull[0] + ')'
-    })
-  }, null, 4)], 4)]);
+    src: _ctx.illustration.srcFull[0]
+  }, null, 8, _hoisted_2$4)) : (vue.openBlock(), vue.createElementBlock("img", {
+    key: 1,
+    src: _ctx.imgPathPart + '-' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['width'] + 'x' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['height'] + '.jpg',
+    srcset: _ctx.responsiveImages.srcset,
+    sizes: _ctx.responsiveImages.sizes
+  }, null, 8, _hoisted_3$4))], 4)]);
 }script$5.render = render$5;var boxNarration = {
   name: "boxNarration",
   props: ["currentTabs", "lang", "reedbeams"],
   methods: {
     reedBeams: function reedBeams(id) {
-      console.log("OPLA AMIGO --- ");
-      console.log(id);
       this.$emit("reedbeams", id);
     }
   }
@@ -491,8 +472,6 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   props: ["currentTabs", "lang", "reedbeams"],
   methods: {
     reedBeams: function reedBeams(id) {
-      console.log("OPLA AMIGO --- ");
-      console.log(id);
       this.$emit("reedbeams", id);
     }
   }
@@ -519,8 +498,6 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   props: ["currentTabs", "lang", "reedbeams"],
   methods: {
     reedBeams: function reedBeams(id) {
-      console.log("OPLA AMIGO --- ");
-      console.log(id);
       this.$emit("reedbeams", id);
     }
   }
@@ -639,6 +616,10 @@ var script = /*#__PURE__*/vue.defineComponent({
     boxText: script$1
   },
   props: {
+    editorUsage: {
+      type: Boolean,
+      default: false
+    },
     propLang: {
       type: String,
       default: "null-lang"
@@ -654,6 +635,14 @@ var script = /*#__PURE__*/vue.defineComponent({
     gameData: {
       type: Object,
       default: defaultStory
+    },
+    indexMedia: {
+      type: Object,
+      default: defaultIndexMedia
+    },
+    pathMediaDir: {
+      type: String,
+      default: "./media"
     }
   },
   //["lang", "strings", "gameData", "playerData", "gameIntent"],
@@ -1377,8 +1366,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [_ctx.illustration ? (vue.openBlock(), vue.createBlock(_component_boxillustration, {
     key: 0,
-    illustration: _ctx.illustration
-  }, null, 8, ["illustration"])) : vue.createCommentVNode("", true), vue.createVNode(_component_boxText, {
+    editorUsage: _ctx.editorUsage,
+    illustration: _ctx.illustration,
+    indexMedia: _ctx.indexMedia,
+    pathMediaDir: _ctx.pathMediaDir,
+    style: vue.normalizeStyle(_ctx.gameData.style)
+  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style"])) : vue.createCommentVNode("", true), vue.createVNode(_component_boxText, {
     narrationBox: _ctx.narrationBox,
     lang: _ctx.lang,
     "current-tabs": _ctx.currentTabs,
@@ -1393,7 +1386,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       'hide-cover': _ctx.cover == false
     }])
   }, null, 2)]);
-}script.render = render;/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,TestStLibrarySample:script$6,game:script});var install = function installTestStLibrary(app) {
+}script.render = render;/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         componentName = _ref2[0],
@@ -1402,7 +1395,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     app.component(componentName, component);
   });
 }; // Create module definition for Vue.use()
-var components=/*#__PURE__*/Object.freeze({__proto__:null,'default':install,TestStLibrarySample:script$6,game:script});// only expose one global var, with component exports exposed as properties of
+var components=/*#__PURE__*/Object.freeze({__proto__:null,'default':install,game:script});// only expose one global var, with component exports exposed as properties of
 // that global var (eg. plugin.component)
 
 Object.entries(components).forEach(function (_ref) {

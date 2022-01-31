@@ -11,6 +11,7 @@ import PostCSS from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 import minimist from "minimist";
 import json from "@rollup/plugin-json";
+import copy from "rollup-plugin-copy-assets";
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs
@@ -114,6 +115,9 @@ if (!argv.format || argv.format === "es") {
           ],
         ],
       }),
+      copy({
+        assets: ["src/media"],
+      }),
     ],
   };
   buildFormats.push(esConfig);
@@ -137,6 +141,9 @@ if (!argv.format || argv.format === "cjs") {
       vue(baseConfig.plugins.vue),
       ...baseConfig.plugins.postVue,
       babel(baseConfig.plugins.babel),
+      copy({
+        assets: ["src/media"],
+      }),
     ],
   };
   buildFormats.push(umdConfig);
@@ -164,6 +171,9 @@ if (!argv.format || argv.format === "iife") {
         output: {
           ecma: 5,
         },
+      }),
+      copy({
+        assets: ["src/media"],
       }),
     ],
   };

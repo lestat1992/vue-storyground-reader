@@ -1,112 +1,4 @@
-import { defineComponent, openBlock, createElementBlock, createElementVNode, createTextVNode, toDisplayString, normalizeStyle, Fragment, renderList, normalizeClass, createCommentVNode, resolveComponent, createBlock, createVNode } from 'vue';
-
-var script$6 = /*#__PURE__*/defineComponent({
-  name: 'TestStLibrarySample',
-
-  // vue component name
-  data() {
-    return {
-      counter: 5,
-      initCounter: 5,
-      message: {
-        action: null,
-        amount: null
-      }
-    };
-  },
-
-  computed: {
-    changedBy() {
-      const {
-        message
-      } = this;
-      if (!message.action) return 'initialized';
-      return `${message.action} ${message.amount || ''}`.trim();
-    }
-
-  },
-  methods: {
-    increment(arg) {
-      const amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter += amount;
-      this.message.action = 'incremented by';
-      this.message.amount = amount;
-    },
-
-    decrement(arg) {
-      const amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter -= amount;
-      this.message.action = 'decremented by';
-      this.message.amount = amount;
-    },
-
-    reset() {
-      this.counter = this.initCounter;
-      this.message.action = 'reset';
-      this.message.amount = null;
-    }
-
-  }
-});
-
-const _hoisted_1$5 = {
-  class: "test-st-library-sample"
-};
-
-const _hoisted_2$4 = /*#__PURE__*/createTextVNode(".");
-
-function render$6(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$5, [createElementVNode("p", null, [createTextVNode("The counter was " + toDisplayString(_ctx.changedBy) + " to ", 1), createElementVNode("b", null, toDisplayString(_ctx.counter), 1), _hoisted_2$4]), createElementVNode("button", {
-    onClick: _cache[0] || (_cache[0] = function () {
-      return _ctx.increment && _ctx.increment(...arguments);
-    })
-  }, " Click +1 "), createElementVNode("button", {
-    onClick: _cache[1] || (_cache[1] = function () {
-      return _ctx.decrement && _ctx.decrement(...arguments);
-    })
-  }, " Click -1 "), createElementVNode("button", {
-    onClick: _cache[2] || (_cache[2] = $event => _ctx.increment(5))
-  }, " Click +5 "), createElementVNode("button", {
-    onClick: _cache[3] || (_cache[3] = $event => _ctx.decrement(5))
-  }, " Click -5 "), createElementVNode("button", {
-    onClick: _cache[4] || (_cache[4] = function () {
-      return _ctx.reset && _ctx.reset(...arguments);
-    })
-  }, " Reset ")]);
-}
-
-function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
-  var insertAt = ref.insertAt;
-
-  if (!css || typeof document === 'undefined') { return; }
-
-  var head = document.head || document.getElementsByTagName('head')[0];
-  var style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var css_248z = "\n.test-st-library-sample[data-v-09179d00] {\n    display: block;\n    width: 400px;\n    margin: 25px auto;\n    border: 1px solid #ccc;\n    background: #eaeaea;\n    text-align: center;\n    padding: 25px;\n}\n.test-st-library-sample p[data-v-09179d00] {\n    margin: 0 0 1em;\n}\n";
-styleInject(css_248z);
-
-script$6.render = render$6;
-script$6.__scopeId = "data-v-09179d00";
+import { openBlock, createElementBlock, createElementVNode, normalizeStyle, Fragment, renderList, normalizeClass, toDisplayString, createCommentVNode, resolveComponent, createBlock, defineComponent, createVNode } from 'vue';
 
 var noData = {
 	en: "No data appears to be present at the moment",
@@ -153,8 +45,8 @@ var postInfo = {
 	selectedWorkSpace: 1,
 	privateLink: true,
 	langList: [
-		"en",
-		"it"
+		"it",
+		"en"
 	]
 };
 var erorList = {
@@ -181,8 +73,8 @@ var story = {
 			type: "start",
 			gameStart: true,
 			levelStart: false,
-			x: 670,
-			y: 122.8125
+			x: 607,
+			y: 68.8125
 		},
 		{
 			id: 2,
@@ -197,11 +89,26 @@ var story = {
 				en: "This is a placeholder story"
 			},
 			type: "descriptions",
-			img: "",
+			img: {
+				ID: 1315,
+				srcFull: [
+					"http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1.jpg",
+					1920,
+					1080,
+					false
+				],
+				srcThumbnail: [
+					"http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1-150x150.jpg",
+					150,
+					150,
+					true
+				],
+				post_name: "29695f55c408397b6eeb453fb59d40d9_img-1"
+			},
 			save: false,
 			textRevision: false,
-			x: 585,
-			y: 258.8125
+			x: 576,
+			y: 189.8125
 		},
 		{
 			id: 4,
@@ -232,8 +139,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 735,
-			y: 536.8125
+			x: 781,
+			y: 595.8125
 		},
 		{
 			id: 10,
@@ -248,7 +155,7 @@ var story = {
 				en: "There isn't much more to say, as I told you...\r"
 			},
 			type: "descriptions",
-			img: "",
+			img: false,
 			save: false,
 			textRevision: false,
 			x: 473,
@@ -277,10 +184,10 @@ var story = {
 				it: "Allora esci da questa pagina",
 				en: ""
 			},
-			img: "",
+			img: false,
 			textRevision: false,
-			x: 787,
-			y: 795.8125
+			x: 884,
+			y: 839.8125
 		}
 	],
 	beams: [
@@ -324,6 +231,20 @@ var story = {
 var style = {
 	"font-family": "Twinkle Star",
 	"layou-type": 1,
+	"img-sizes": [
+		{
+			width: 800,
+			height: 600
+		},
+		{
+			width: 1200,
+			height: 992
+		},
+		{
+			width: 1920,
+			height: 1080
+		}
+	],
 	"bg-color": "#FF0000",
 	color: "#000000",
 	"icon-single-arrow": {
@@ -359,28 +280,74 @@ var defaultStory = {
 	style: style
 };
 
+var defaultIndexMedia = [
+	{
+		Id: 1315,
+		name: "29695f55c408397b6eeb453fb59d40d9_img-1"
+	}
+];
+
 let boxIllustration = {
   name: "boxIllustration",
-  props: ["illustration"],
-  methods: {}
+  props: ["illustration", "editorUsage", "indexMedia", "pathMediaDir", "style"],
+  methods: {},
+  computed: {
+    imgPathPart: function () {
+      let name = this.indexMedia.find(el => el.Id == this.illustration.ID).name;
+      return this.pathMediaDir + "/" + name;
+    },
+    responsiveImages: function () {
+      let data = {
+        srcset: "",
+        sizes: ""
+      };
+      this["style"]["img-sizes"].forEach((el, index) => {
+        data.srcset = data.srcset + this.imgPathPart + "-" + el.width + "x" + el.height + ".jpg " + el.width + "w";
+
+        if (index + 1 != this["style"]["img-sizes"].length) {
+          data.srcset = data.srcset + ",";
+        }
+
+        if (index + 1 != this["style"]["img-sizes"].length) {
+          data.sizes = data.sizes + "( max-width:" + el.width + "px ) " + el.width + "px, ";
+        } else {
+          data.sizes = data.sizes + el.width + "px";
+        }
+      });
+      return data;
+    }
+  },
+
+  mounted() {
+    console.log(this.imgPathPart + "-");
+    console.log(this["style"]["img-sizes"][0]["width"] + "x");
+    console.log(this["style"]["img-sizes"][0]["height"] + ".jpg");
+  }
+
 };
 var script$5 = boxIllustration;
 
 const _hoisted_1$4 = {
   class: "box-illustration"
 };
+const _hoisted_2$4 = ["src"];
+const _hoisted_3$4 = ["src", "srcset", "sizes"];
 function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$4, [createElementVNode("div", {
     class: "inner-box",
     style: normalizeStyle({
       paddingBottom: _ctx.illustration.srcFull[2] / _ctx.illustration.srcFull[1] * 100 + '%'
     })
-  }, [createElementVNode("div", {
+  }, [_ctx.editorUsage ? (openBlock(), createElementBlock("img", {
+    key: 0,
     class: "box-img",
-    style: normalizeStyle({
-      backgroundImage: 'url(' + _ctx.illustration.srcFull[0] + ')'
-    })
-  }, null, 4)], 4)]);
+    src: _ctx.illustration.srcFull[0]
+  }, null, 8, _hoisted_2$4)) : (openBlock(), createElementBlock("img", {
+    key: 1,
+    src: _ctx.imgPathPart + '-' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['width'] + 'x' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['height'] + '.jpg',
+    srcset: _ctx.responsiveImages.srcset,
+    sizes: _ctx.responsiveImages.sizes
+  }, null, 8, _hoisted_3$4))], 4)]);
 }
 
 script$5.render = render$5;
@@ -390,8 +357,6 @@ let boxNarration = {
   props: ["currentTabs", "lang", "reedbeams"],
   methods: {
     reedBeams(id) {
-      console.log("OPLA AMIGO --- ");
-      console.log(id);
       this.$emit("reedbeams", id);
     }
 
@@ -437,8 +402,6 @@ let boxNarrationGameEnd = {
   props: ["currentTabs", "lang", "reedbeams"],
   methods: {
     reedBeams(id) {
-      console.log("OPLA AMIGO --- ");
-      console.log(id);
       this.$emit("reedbeams", id);
     }
 
@@ -472,8 +435,6 @@ let boxNarrationGameOver = {
   props: ["currentTabs", "lang", "reedbeams"],
   methods: {
     reedBeams(id) {
-      console.log("OPLA AMIGO --- ");
-      console.log(id);
       this.$emit("reedbeams", id);
     }
 
@@ -601,6 +562,10 @@ var script = /*#__PURE__*/defineComponent({
     boxText: script$1
   },
   props: {
+    editorUsage: {
+      type: Boolean,
+      default: false
+    },
     propLang: {
       type: String,
       default: "null-lang"
@@ -616,6 +581,14 @@ var script = /*#__PURE__*/defineComponent({
     gameData: {
       type: Object,
       default: defaultStory
+    },
+    indexMedia: {
+      type: Object,
+      default: defaultIndexMedia
+    },
+    pathMediaDir: {
+      type: String,
+      default: "./media"
     }
   },
   //["lang", "strings", "gameData", "playerData", "gameIntent"],
@@ -1280,8 +1253,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return openBlock(), createElementBlock("div", _hoisted_1, [_ctx.illustration ? (openBlock(), createBlock(_component_boxillustration, {
     key: 0,
-    illustration: _ctx.illustration
-  }, null, 8, ["illustration"])) : createCommentVNode("", true), createVNode(_component_boxText, {
+    editorUsage: _ctx.editorUsage,
+    illustration: _ctx.illustration,
+    indexMedia: _ctx.indexMedia,
+    pathMediaDir: _ctx.pathMediaDir,
+    style: normalizeStyle(_ctx.gameData.style)
+  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style"])) : createCommentVNode("", true), createVNode(_component_boxText, {
     narrationBox: _ctx.narrationBox,
     lang: _ctx.lang,
     "current-tabs": _ctx.currentTabs,
@@ -1304,7 +1281,6 @@ script.render = render;
 
 var components = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  TestStLibrarySample: script$6,
   game: script
 });
 
@@ -1317,4 +1293,4 @@ const install = function installTestStLibrary(app) {
   });
 }; // Create module definition for Vue.use()
 
-export { script$6 as TestStLibrarySample, install as default, script as game };
+export { install as default, script as game };

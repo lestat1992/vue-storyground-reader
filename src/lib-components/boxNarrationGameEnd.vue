@@ -26,8 +26,6 @@
 		props: ["currentTabs", "lang", "reedbeams"],
 		methods: {
 			reedBeams(id) {
-				console.log("OPLA AMIGO --- ");
-				console.log(id);
 				this.$emit("reedbeams", id);
 			},
 		},

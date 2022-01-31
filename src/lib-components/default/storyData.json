@@ -5,7 +5,7 @@
     "lenghtChoseNode": 20,
     "selectedWorkSpace": 1,
     "privateLink": true,
-    "langList": ["en", "it"]
+    "langList": ["it", "en"]
   },
   "erorList": { "noStart": false },
   "MaxId": 16,
@@ -23,8 +23,8 @@
         "type": "start",
         "gameStart": true,
         "levelStart": false,
-        "x": 670,
-        "y": 122.8125
+        "x": 607,
+        "y": 68.8125
       },
       {
         "id": 2,
@@ -36,11 +36,26 @@
           "en": "This is a placeholder story"
         },
         "type": "descriptions",
-        "img": "",
+        "img": {
+          "ID": 1315,
+          "srcFull": [
+            "http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1.jpg",
+            1920,
+            1080,
+            false
+          ],
+          "srcThumbnail": [
+            "http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1-150x150.jpg",
+            150,
+            150,
+            true
+          ],
+          "post_name": "29695f55c408397b6eeb453fb59d40d9_img-1"
+        },
         "save": false,
         "textRevision": false,
-        "x": 585,
-        "y": 258.8125
+        "x": 576,
+        "y": 189.8125
       },
       {
         "id": 4,
@@ -61,8 +76,8 @@
         "text": { "it": "no", "en": "no" },
         "type": "chose",
         "textRevision": false,
-        "x": 735,
-        "y": 536.8125
+        "x": 781,
+        "y": 595.8125
       },
       {
         "id": 10,
@@ -74,7 +89,7 @@
           "en": "There isn't much more to say, as I told you...\r"
         },
         "type": "descriptions",
-        "img": "",
+        "img": false,
         "save": false,
         "textRevision": false,
         "x": 473,
@@ -96,10 +111,10 @@
         "name": "end0",
         "type": "end",
         "text": { "it": "Allora esci da questa pagina", "en": "" },
-        "img": "",
+        "img": false,
         "textRevision": false,
-        "x": 787,
-        "y": 795.8125
+        "x": 884,
+        "y": 839.8125
       }
     ],
     "beams": [
@@ -115,6 +130,20 @@
   "style": {
     "font-family": "Twinkle Star",
     "layou-type": 1,
+    "img-sizes": [
+      {
+        "width": 800,
+        "height": 600
+      },
+      {
+        "width": 1200,
+        "height": 992
+      },
+      {
+        "width": 1920,
+        "height": 1080
+      }
+    ],
     "bg-color": "#FF0000",
     "color": "#000000",
     "icon-single-arrow": {
