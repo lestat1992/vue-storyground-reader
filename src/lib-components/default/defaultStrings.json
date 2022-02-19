@@ -1,4 +1,8 @@
 {
+  "wrongTabsId": {
+    "en": "wrong tabs id",
+    "it": "id tabs sbagliato"
+  },
   "noData": {
     "en": "No data appears to be present at the moment",
     "it": "Al momento non sembra essere presente alcun dato"

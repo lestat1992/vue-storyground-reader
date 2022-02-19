@@ -187,9 +187,14 @@
 				let startPointArray = [];
 				let startPointId = this.gameData.story.tabs.find(
 					(element) => element.gameStart
-				).id;
-				startPointArray.push(startPointId);
-				this.navigation(startPointArray);
+				);
+				if (startPointId) {
+					startPointArray.push(startPointId.id);
+					this.navigation(startPointArray);
+				} else {
+					let error = this.strings.noStart[this.langEditor];
+					this.onRunError.push(error);
+				}
 			},
 
 			/* stabilisco tabs da vedere */
@@ -200,7 +205,8 @@
 				let tabsToNavigate = this.ResoveTabsList(tabs);
 
 				if (tabsToNavigate.length == 0) {
-					this.error = "!!! -- id tabs sbagliato -- !!";
+					let error = this.strings.wrongTabsId[this.langEditor];
+					this.onRunError.push(error);
 				} else {
 					if (tabsToNavigate.length == 1) {
 						this.singleBeemFoward = true;

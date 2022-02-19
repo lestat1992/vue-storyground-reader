@@ -1,5 +1,9 @@
 import { openBlock, createElementBlock, createElementVNode, normalizeStyle, Fragment, renderList, normalizeClass, toDisplayString, createCommentVNode, resolveComponent, createBlock, defineComponent, createVNode } from 'vue';
 
+var wrongTabsId = {
+	en: "wrong tabs id",
+	it: "id tabs sbagliato"
+};
 var noData = {
 	en: "No data appears to be present at the moment",
 	it: "Al momento non sembra essere presente alcun dato"
@@ -29,6 +33,7 @@ var redirectError = {
 	en: "Some target nodes were not specified"
 };
 var defaultStrings = {
+	wrongTabsId: wrongTabsId,
 	noData: noData,
 	noStart: noStart,
 	noEnd: noEnd,
@@ -316,14 +321,7 @@ let boxIllustration = {
       });
       return data;
     }
-  },
-
-  mounted() {
-    console.log(this.imgPathPart + "-");
-    console.log(this["style"]["img-sizes"][0]["width"] + "x");
-    console.log(this["style"]["img-sizes"][0]["height"] + ".jpg");
   }
-
 };
 var script$5 = boxIllustration;
 
@@ -672,9 +670,15 @@ var script = /*#__PURE__*/defineComponent({
       /* apro la tab di inizio */
 
       let startPointArray = [];
-      let startPointId = this.gameData.story.tabs.find(element => element.gameStart).id;
-      startPointArray.push(startPointId);
-      this.navigation(startPointArray);
+      let startPointId = this.gameData.story.tabs.find(element => element.gameStart);
+
+      if (startPointId) {
+        startPointArray.push(startPointId.id);
+        this.navigation(startPointArray);
+      } else {
+        let error = this.strings.noStart[this.langEditor];
+        this.onRunError.push(error);
+      }
     },
 
     /* stabilisco tabs da vedere */
@@ -683,7 +687,8 @@ var script = /*#__PURE__*/defineComponent({
       let tabsToNavigate = this.ResoveTabsList(tabs);
 
       if (tabsToNavigate.length == 0) {
-        this.error = "!!! -- id tabs sbagliato -- !!";
+        let error = this.strings.wrongTabsId[this.langEditor];
+        this.onRunError.push(error);
       } else {
         if (tabsToNavigate.length == 1) {
           this.singleBeemFoward = true; //setto immagine

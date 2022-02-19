@@ -81,7 +81,11 @@ function _nonIterableSpread() {
 
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}var noData = {
+}var wrongTabsId = {
+	en: "wrong tabs id",
+	it: "id tabs sbagliato"
+};
+var noData = {
 	en: "No data appears to be present at the moment",
 	it: "Al momento non sembra essere presente alcun dato"
 };
@@ -110,6 +114,7 @@ var redirectError = {
 	en: "Some target nodes were not specified"
 };
 var defaultStrings = {
+	wrongTabsId: wrongTabsId,
 	noData: noData,
 	noStart: noStart,
 	noEnd: noEnd,
@@ -397,11 +402,6 @@ var defaultStory = {
       });
       return data;
     }
-  },
-  mounted: function mounted() {
-    console.log(this.imgPathPart + "-");
-    console.log(this["style"]["img-sizes"][0]["width"] + "x");
-    console.log(this["style"]["img-sizes"][0]["height"] + ".jpg");
   }
 };
 var script$5 = boxIllustration;var _hoisted_1$4 = {
@@ -731,9 +731,15 @@ var script = /*#__PURE__*/vue.defineComponent({
       var startPointArray = [];
       var startPointId = this.gameData.story.tabs.find(function (element) {
         return element.gameStart;
-      }).id;
-      startPointArray.push(startPointId);
-      this.navigation(startPointArray);
+      });
+
+      if (startPointId) {
+        startPointArray.push(startPointId.id);
+        this.navigation(startPointArray);
+      } else {
+        var error = this.strings.noStart[this.langEditor];
+        this.onRunError.push(error);
+      }
     },
 
     /* stabilisco tabs da vedere */
@@ -744,7 +750,8 @@ var script = /*#__PURE__*/vue.defineComponent({
       var tabsToNavigate = this.ResoveTabsList(tabs);
 
       if (tabsToNavigate.length == 0) {
-        this.error = "!!! -- id tabs sbagliato -- !!";
+        var error = this.strings.wrongTabsId[this.langEditor];
+        this.onRunError.push(error);
       } else {
         if (tabsToNavigate.length == 1) {
           this.singleBeemFoward = true; //setto immagine

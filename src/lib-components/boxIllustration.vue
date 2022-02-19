@@ -68,11 +68,6 @@
 				return data;
 			},
 		},
-		mounted() {
-			console.log(this.imgPathPart + "-");
-			console.log(this["style"]["img-sizes"][0]["width"] + "x");
-			console.log(this["style"]["img-sizes"][0]["height"] + ".jpg");
-		},
 	};
 
 	export default boxIllustration;
