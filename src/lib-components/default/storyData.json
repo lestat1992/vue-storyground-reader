@@ -129,7 +129,6 @@
   },
   "style": {
     "font-family": "Twinkle Star",
-    "layou-type": 1,
     "img-sizes": [
       {
         "width": 800,
@@ -145,6 +144,7 @@
       }
     ],
     "bg-color": "#FF0000",
+    "bg-type": 1,
     "color": "#000000",
     "icon-single-arrow": {
       "id": 1,
@@ -160,11 +160,15 @@
     },
     "desktop": {
       "font-size": 20,
-      "units": "px"
+      "units": "px",
+      "margin": "50px",
+      "layou-type": 1
     },
     "mobile": {
       "font-size": 18,
-      "units": "px"
+      "units": "px",
+      "margin": "30px",
+      "layou-type": 6
     }
   }
 }

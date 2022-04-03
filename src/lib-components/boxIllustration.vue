@@ -1,9 +1,9 @@
 <template>
-	<div class="box-illustration">
-		<div
-			class="inner-box"
-			v-bind:style="{ paddingBottom: ( (illustration.srcFull[2] / illustration.srcFull[1]) * 100  ) + '%'}"
-		>
+	<div
+		class="box-illustration"
+		:style="stylesObj.boxIllustration"
+	>
+		<div class="inner-box">
 			<img
 				v-if="editorUsage"
 				class="box-img"
@@ -22,7 +22,14 @@
 <script>
 	let boxIllustration = {
 		name: "boxIllustration",
-		props: ["illustration", "editorUsage", "indexMedia", "pathMediaDir", "style"],
+		props: {
+			illustration: {},
+			editorUsage: {},
+			indexMedia: {},
+			pathMediaDir: {},
+			style: {},
+			stylesObj: {},
+		},
 		methods: {},
 		computed: {
 			imgPathPart: function () {
@@ -72,3 +79,22 @@
 
 	export default boxIllustration;
 </script>
+<style scoped>
+	.box-illustration {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+	.inner-box {
+		width: 100%;
+		height: 100%;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+</style>

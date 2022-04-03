@@ -1,5 +1,8 @@
 <template>
-	<span>
+	<div
+		class="wrapper-box-text"
+		:style="stylesObj.boxText"
+	>
 		<boxnarration
 			v-if="narrationBox == 'default' || narrationBox == 'descriptions' ||  narrationBox == 'chose'"
 			v-bind:lang="lang"
@@ -18,7 +21,7 @@
 			v-bind:current-tabs="currentTabs"
 			v-on:reedBeams="emit('reedBeams')"
 		/>
-	</span>
+	</div>
 </template>
 <script>
 	import boxNarration from "./boxNarration.vue";
@@ -27,13 +30,24 @@
 
 	let boxText = {
 		name: "boxText",
-		props: ["narrationBox", "lang", "currentTabs", "reedBeams"],
 		components: {
 			boxnarration: boxNarration,
 			gameEnd: boxNarrationGameEnd,
 			gameOver: boxNarrationGameOver,
 		},
+		props: {
+			narrationBox: {},
+			lang: {},
+			currentTabs: {},
+			reedBeams: {},
+			stylesObj: {},
+		},
 	};
 
 	export default boxText;
 </script>
+<style scoped>
+	.wrapper-box-text {
+		background-color: red;
+	}
+</style>

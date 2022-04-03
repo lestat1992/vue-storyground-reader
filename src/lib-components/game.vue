@@ -1,5 +1,9 @@
 <template>
-	<div class="game-grid">
+	<div
+		v-if="stylesObj"
+		:style="stylesObj.gameGrid"
+		class="game-grid"
+	>
 		<boxillustration
 			v-if="illustration"
 			v-bind:editorUsage="editorUsage"
@@ -7,12 +11,14 @@
 			v-bind:indexMedia="indexMedia"
 			v-bind:pathMediaDir="pathMediaDir"
 			v-bind:style="gameData.style"
+			:stylesObj="stylesObj"
 		/>
 
 		<boxText
 			v-bind:narrationBox="narrationBox"
 			v-bind:lang="lang"
 			v-bind:current-tabs="currentTabs"
+			:stylesObj="stylesObj"
 			v-on:reedBeams="reedBeams"
 		/>
 
@@ -47,8 +53,7 @@
 	</div>
 </template>
 
-<style scoped>
-</style>
+
 
 <script>
 	import { defineComponent } from "vue";
@@ -61,6 +66,7 @@
 	import boxText from "./boxText.vue";
 
 	import deepCopy from "./deepCopy.js";
+	import getGridLayout from "./getGridLayout.js";
 
 	function randomNum(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
@@ -101,6 +107,14 @@
 				type: String,
 				default: "./media",
 			},
+			width: {
+				type: String,
+				default: "100vw",
+			},
+			height: {
+				type: String,
+				default: "100vh",
+			},
 		},
 		data: function () {
 			return {
@@ -116,6 +130,7 @@
 				listBadMixId: "",
 				cover: true,
 				gameLoaded: false,
+				device: false,
 			};
 		},
 		watch: {
@@ -125,7 +140,6 @@
 				}
 			},
 		},
-
 		mounted() {
 			if (this.propLang !== "null-lang") {
 				this.lang = this.propLang;
@@ -159,6 +173,56 @@
 					}
 				}
 			},
+			/* Style */
+			stylesObj: function () {
+				if (this.device) {
+					let gameGrid = {
+						width: this.width,
+						height: this.height,
+						gridTemplateColumns:
+							this.gameData.style[this.device].margin +
+							" repeat(6, 1fr) " +
+							this.gameData.style[this.device].margin,
+						gridTemplateRows:
+							this.gameData.style[this.device].margin +
+							" repeat(4, 1fr) " +
+							this.gameData.style[this.device].margin,
+					};
+
+					let gridLayoutItem = getGridLayout(
+						this.gameData.style[this.device]["layou-type"]
+					);
+
+					let boxIllustration = {
+						gridColumnStart: gridLayoutItem.boxIllustration.gridColumnStart,
+						gridColumnEnd: gridLayoutItem.boxIllustration.gridColumnEnd,
+						gridRowStart: gridLayoutItem.boxIllustration.gridRowStart,
+						gridRowEnd: gridLayoutItem.boxIllustration.gridRowEnd,
+					};
+
+					let boxText = {
+						gridColumnStart: gridLayoutItem.boxText.gridColumnStart,
+						gridColumnEnd: gridLayoutItem.boxText.gridColumnEnd,
+						gridRowStart: gridLayoutItem.boxText.gridRowStart,
+						gridRowEnd: gridLayoutItem.boxText.gridRowEnd,
+					};
+
+					return {
+						gameGrid: gameGrid,
+						boxIllustration: boxIllustration,
+						boxText: boxText,
+					};
+				} else {
+					return false;
+				}
+			},
+		},
+		created() {
+			this.setDevice();
+			window.addEventListener("resize", this.setDevice);
+		},
+		destroyed() {
+			window.removeEventListener("resize", this.setDevice);
 		},
 		methods: {
 			/* |||||||||||||||||||| GAME CORE |||||||||||||||||||||| */
@@ -869,6 +933,28 @@
 				var elem = document.body; // Make the body go full screen.
 				requestFullScreen(elem);
 			},
+
+			/* dom method handler */
+			setDevice() {
+				console.log(window.innerWidth);
+				if (window.innerWidth > 992) {
+					this.device = "desktop";
+				} else {
+					this.device = "mobile";
+				}
+			},
 		},
 	});
 </script>
+<style>
+	body {
+		margin: 0;
+	}
+</style>
+<style scoped>
+	.game-grid {
+		display: grid;
+		height: 100%;
+		width: 100%;
+	}
+</style>
