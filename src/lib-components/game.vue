@@ -5,7 +5,7 @@
 		class="game-grid"
 	>
 		<boxillustration
-			v-if="illustration"
+			v-if="illustration && initialized"
 			v-bind:editorUsage="editorUsage"
 			v-bind:illustration="illustration"
 			v-bind:indexMedia="indexMedia"
@@ -15,6 +15,7 @@
 		/>
 
 		<boxText
+			v-if="initialized"
 			v-bind:narrationBox="narrationBox"
 			v-bind:lang="lang"
 			v-bind:current-tabs="currentTabs"
@@ -44,13 +45,17 @@
 			</div>
 		</div>
 
+		<div class="preCachedImg"></div>
+
 		<div
-			class="cover"
-			v-bind:class="{ 'hide-cover' : cover == false }"
+			v-if="!initialized"
+			class="load-screen"
 		>
+			<Spinner />
 		</div>
 
 	</div>
+
 </template>
 
 
@@ -64,9 +69,11 @@
 
 	import boxIllustration from "./boxIllustration.vue";
 	import boxText from "./boxText.vue";
+	import Spinner from "./Spinner.vue";
 
 	import deepCopy from "./deepCopy.js";
 	import getGridLayout from "./getGridLayout.js";
+	import WebFont from "webfontloader";
 
 	function randomNum(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
@@ -77,6 +84,7 @@
 		components: {
 			boxillustration: boxIllustration,
 			boxText: boxText,
+			Spinner: Spinner,
 		},
 		props: {
 			editorUsage: {
@@ -118,6 +126,12 @@
 		},
 		data: function () {
 			return {
+				initialized: false,
+				stepToInit: {
+					font: false,
+					img: false,
+				},
+				preCachedImgList: [], //666 capisci il device attuale e carica quella giusta?
 				lang: false,
 				textualTabs: ["descriptions", "chose", "game over", "end"],
 				playerState: "playing",
@@ -128,7 +142,6 @@
 				illustration: false,
 				onRunError: [],
 				listBadMixId: "",
-				cover: true,
 				gameLoaded: false,
 				device: false,
 			};
@@ -139,14 +152,13 @@
 					this.setListBadMixId();
 				}
 			},
-		},
-		mounted() {
-			if (this.propLang !== "null-lang") {
-				this.lang = this.propLang;
-			} else {
-				this.lang = this.gameData.postInfo.langList[0];
-			}
-			this.gameIntentLoad();
+			stepToInit: function (val) {
+				if (this.stepToInit.font && this.stepToInit.img) {
+					this.initialized = true;
+				} else {
+					this.initialized = false;
+				}
+			},
 		},
 		computed: {
 			narrationBox: function () {
@@ -194,31 +206,42 @@
 					);
 
 					let boxIllustration = {
-						gridColumnStart: gridLayoutItem.boxIllustration.gridColumnStart,
-						gridColumnEnd: gridLayoutItem.boxIllustration.gridColumnEnd,
-						gridRowStart: gridLayoutItem.boxIllustration.gridRowStart,
-						gridRowEnd: gridLayoutItem.boxIllustration.gridRowEnd,
+						...gridLayoutItem.boxIllustration,
 					};
 
 					let boxText = {
-						gridColumnStart: gridLayoutItem.boxText.gridColumnStart,
-						gridColumnEnd: gridLayoutItem.boxText.gridColumnEnd,
-						gridRowStart: gridLayoutItem.boxText.gridRowStart,
-						gridRowEnd: gridLayoutItem.boxText.gridRowEnd,
+						...gridLayoutItem.boxText,
+					};
+
+					let fontName = this.gameData.style["font-family"];
+
+					let commonFontFamily = {
+						fontFamily: this.gameData.style["font-family"],
 					};
 
 					return {
 						gameGrid: gameGrid,
 						boxIllustration: boxIllustration,
 						boxText: boxText,
+						fontName: fontName,
+						commonFontFamily: commonFontFamily,
 					};
 				} else {
 					return false;
 				}
 			},
 		},
+		mounted() {
+			if (this.propLang !== "null-lang") {
+				this.lang = this.propLang;
+			} else {
+				this.lang = this.gameData.postInfo.langList[0];
+			}
+			this.gameIntentLoad();
+		},
+
 		created() {
-			this.setDevice();
+			this.init();
 			window.addEventListener("resize", this.setDevice);
 		},
 		destroyed() {
@@ -934,9 +957,23 @@
 				requestFullScreen(elem);
 			},
 
+			/* STYLE ---------------------------------------- */
+
+			init() {
+				this.setDevice();
+				WebFont.load({
+					google: {
+						families: [this.stylesObj.fontName],
+					},
+					active: () => {
+						console.log("Fonts have been rendered");
+						this.stepToInit.font = true;
+					},
+				});
+			},
+
 			/* dom method handler */
 			setDevice() {
-				console.log(window.innerWidth);
 				if (window.innerWidth > 992) {
 					this.device = "desktop";
 				} else {
@@ -956,5 +993,16 @@
 		display: grid;
 		height: 100%;
 		width: 100%;
+		position: relative;
+	}
+	.load-screen {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

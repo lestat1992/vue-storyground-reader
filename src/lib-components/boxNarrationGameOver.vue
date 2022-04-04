@@ -9,7 +9,7 @@
 			>
 				<div
 					v-if="currentTabs.length == 1"
-					class="p"
+					:style="{...stylesObj.commonFontFamily}"
 				>
 					{{tab.text[lang]}}
 				</div>
@@ -22,8 +22,12 @@
 <script>
 	let boxNarrationGameOver = {
 		name: "boxNarrationGameOver",
-		props: ["currentTabs", "lang", "reedbeams"],
-
+		props: {
+			currentTabs: {},
+			lang: {},
+			reedbeams: {},
+			stylesObj: {},
+		},
 		methods: {
 			reedBeams(id) {
 				this.$emit("reedbeams", id);

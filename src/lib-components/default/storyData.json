@@ -159,15 +159,15 @@
       "color": "#00FF00"
     },
     "desktop": {
-      "font-size": 20,
-      "units": "px",
+      "font-size-1": "20px",
       "margin": "50px",
+      "box-text-padding": "25px",
       "layou-type": 1
     },
     "mobile": {
-      "font-size": 18,
-      "units": "px",
+      "font-size-1": "18px",
       "margin": "30px",
+      "box-text-padding": "25px",
       "layou-type": 6
     }
   }

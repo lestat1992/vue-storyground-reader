@@ -7,18 +7,21 @@
 			v-if="narrationBox == 'default' || narrationBox == 'descriptions' ||  narrationBox == 'chose'"
 			v-bind:lang="lang"
 			v-bind:current-tabs="currentTabs"
+			:stylesObj="stylesObj"
 			v-on:reedBeams="emit('reedBeams')"
 		/>
 		<gameEnd
 			v-if="narrationBox == 'end' "
 			v-bind:lang="lang"
 			v-bind:current-tabs="currentTabs"
+			:stylesObj="stylesObj"
 			v-on:reedBeams="emit('reedBeams')"
 		/>
 		<gameOver
 			v-if="narrationBox == 'game over'"
 			v-bind:lang="lang"
 			v-bind:current-tabs="currentTabs"
+			:stylesObj="stylesObj"
 			v-on:reedBeams="emit('reedBeams')"
 		/>
 	</div>

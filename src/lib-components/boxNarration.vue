@@ -9,14 +9,14 @@
 			>
 				<div
 					v-if="currentTabs.length == 1"
-					class="p"
+					:style="{...stylesObj.commonFontFamily}"
 				>
 					{{tab.text[lang]}}
 				</div>
 				<div
 					v-else
+					:style="{...stylesObj.commonFontFamily}"
 					v-on:click="reedBeams(tab.id)"
-					class="p"
 				>
 					<!--{{index + 1}}.--> {{tab.text[lang]}}
 				</div>
@@ -38,8 +38,12 @@
 <script>
 	let boxNarration = {
 		name: "boxNarration",
-		props: ["currentTabs", "lang", "reedbeams"],
-
+		props: {
+			currentTabs: {},
+			lang: {},
+			reedbeams: {},
+			stylesObj: {},
+		},
 		methods: {
 			reedBeams(id) {
 				this.$emit("reedbeams", id);
