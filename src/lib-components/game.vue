@@ -45,7 +45,12 @@
 			</div>
 		</div>
 
-		<div class="preCachedImg"></div>
+		<PreCachedImg
+			v-if="preCachedImgList"
+			:editorUsage="editorUsage"
+			:preCachedImgList="preCachedImgList"
+			@setImgsLoaded="setImgsLoaded"
+		/>
 
 		<div
 			v-if="!initialized"
@@ -69,6 +74,7 @@
 
 	import boxIllustration from "./boxIllustration.vue";
 	import boxText from "./boxText.vue";
+	import PreCachedImg from "./PreCachedImg.vue";
 	import Spinner from "./Spinner.vue";
 
 	import deepCopy from "./deepCopy.js";
@@ -84,6 +90,7 @@
 		components: {
 			boxillustration: boxIllustration,
 			boxText: boxText,
+			PreCachedImg: PreCachedImg,
 			Spinner: Spinner,
 		},
 		props: {
@@ -131,7 +138,7 @@
 					font: false,
 					img: false,
 				},
-				preCachedImgList: [], //666 capisci il device attuale e carica quella giusta?
+				preCachedImgList: [],
 				lang: false,
 				textualTabs: ["descriptions", "chose", "game over", "end"],
 				playerState: "playing",
@@ -152,12 +159,15 @@
 					this.setListBadMixId();
 				}
 			},
-			stepToInit: function (val) {
-				if (this.stepToInit.font && this.stepToInit.img) {
-					this.initialized = true;
-				} else {
-					this.initialized = false;
-				}
+			stepToInit: {
+				handler() {
+					if (this.stepToInit.font && this.stepToInit.img) {
+						this.initialized = true;
+					} else {
+						this.initialized = false;
+					}
+				},
+				deep: true,
 			},
 		},
 		computed: {
@@ -970,6 +980,71 @@
 						this.stepToInit.font = true;
 					},
 				});
+				this.setPreCacheImgList();
+				if (this.preCachedImgList.length == 0) {
+					this.stepToInit.img = true;
+				}
+			},
+
+			setPreCacheImgList() {
+				this.gameData.story.tabs.forEach((el) => {
+					if (el.img) {
+						if (!this.editorUsage) {
+							let data = {};
+
+							let name = this.indexMedia.find(
+								(el) => el.Id == this.illustration.ID
+							).name;
+
+							let imgPathPart = this.pathMediaDir + "/" + name;
+
+							/* list of srcset rules */
+							this["style"]["img-sizes"].forEach((elImg, index) => {
+								data.srcset =
+									data.srcset +
+									imgPathPart +
+									"-" +
+									elImg.width +
+									"x" +
+									elImg.height +
+									".jpg " +
+									elImg.width +
+									"w";
+								if (index + 1 != this["style"]["img-sizes"].length) {
+									data.srcset = data.srcset + ",";
+								}
+
+								if (index + 1 != this["style"]["img-sizes"].length) {
+									data.sizes =
+										data.sizes +
+										"( max-width:" +
+										elImg.width +
+										"px ) " +
+										elImg.width +
+										"px, ";
+								} else {
+									data.sizes = data.sizes + elImg.width + "px";
+								}
+								/* fallback src */
+								data.src =
+									imgPathPart +
+									"-" +
+									style["img-sizes"][style["img-sizes"].length - 1]["width"] +
+									"x" +
+									style["img-sizes"][style["img-sizes"].length - 1]["height"] +
+									".jpg";
+							});
+
+							this.preCachedImgList.push(data);
+						} else {
+							this.preCachedImgList.push(el.img.srcFull[0]);
+						}
+					}
+				});
+			},
+
+			setImgsLoaded() {
+				this.stepToInit.img = true;
 			},
 
 			/* dom method handler */

@@ -17,7 +17,7 @@
 </script>
 <style scoped>
 	.spinner-box-media {
-		background-color: rgba(60, 60, 60, 0.95);
+		background-color: #464646;
 		position: absolute;
 		top: 50%;
 		left: 50%;
