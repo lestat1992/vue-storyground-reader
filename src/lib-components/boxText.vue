@@ -27,9 +27,9 @@
 	</div>
 </template>
 <script>
-	import boxNarration from "./boxNarration.vue";
-	import boxNarrationGameEnd from "./boxNarrationGameEnd.vue";
-	import boxNarrationGameOver from "./boxNarrationGameOver.vue";
+	import boxNarration from "./text-box/boxNarration.vue";
+	import boxNarrationGameEnd from "./text-box/boxNarrationGameEnd.vue";
+	import boxNarrationGameOver from "./text-box/boxNarrationGameOver.vue";
 
 	let boxText = {
 		name: "boxText",

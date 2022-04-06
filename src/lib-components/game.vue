@@ -67,6 +67,7 @@
 
 <script>
 	import { defineComponent } from "vue";
+	import WebFont from "webfontloader";
 
 	import defaultStrings from "./default/defaultStrings.json";
 	import defaultStory from "./default/storyData.json";
@@ -74,12 +75,12 @@
 
 	import boxIllustration from "./boxIllustration.vue";
 	import boxText from "./boxText.vue";
-	import PreCachedImg from "./PreCachedImg.vue";
-	import Spinner from "./Spinner.vue";
 
-	import deepCopy from "./deepCopy.js";
-	import getGridLayout from "./getGridLayout.js";
-	import WebFont from "webfontloader";
+	import PreCachedImg from "./utility/PreCachedImg.vue";
+	import Spinner from "./utility/Spinner.vue";
+
+	import deepCopy from "./functions/deepCopy.js";
+	import getGridLayout from "./functions/getGridLayout.js";
 
 	function randomNum(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
