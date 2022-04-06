@@ -8,21 +8,21 @@
 			:lang="lang"
 			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
-			v-on:reedBeams="emit('reedBeams')"
+			@:reedBeams="emit('reedBeams')"
 		/>
 		<gameEnd
 			v-if="narrationBox == 'end' "
 			:lang="lang"
 			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
-			v-on:reedBeams="emit('reedBeams')"
+			@:reedBeams="emit('reedBeams')"
 		/>
 		<gameOver
 			v-if="narrationBox == 'game over'"
 			:lang="lang"
 			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
-			v-on:reedBeams="emit('reedBeams')"
+			@:reedBeams="emit('reedBeams')"
 		/>
 	</div>
 </template>

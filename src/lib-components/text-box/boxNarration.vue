@@ -16,7 +16,7 @@
 				<div
 					v-else
 					:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
-					v-on:click="reedBeams(tab.id)"
+					@:click="reedBeams(tab.id)"
 				>
 					<!--{{index + 1}}.--> {{tab.text[lang]}}
 				</div>
@@ -28,7 +28,7 @@
 			class="single-beem-foward-box"
 		>
 			<div
-				v-on:click="reedBeams(currentTabs[0].id)"
+				@:click="reedBeams(currentTabs[0].id)"
 				class="icon-proceed"
 			></div>
 		</div>

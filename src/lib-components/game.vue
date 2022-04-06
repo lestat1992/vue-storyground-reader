@@ -20,7 +20,7 @@
 			:lang="lang"
 			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
-			v-on:reedBeams="reedBeams"
+			@:reedBeams="reedBeams"
 		/>
 
 		<div
