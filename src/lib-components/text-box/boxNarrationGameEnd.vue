@@ -5,8 +5,8 @@
 
 			<div
 				v-for="tab,index in currentTabs"
-				v-bind:key="tab.id"
-				v-bind:class=" currentTabs.length == 1 ? 'label-description': 'label-multiple-chose'"
+				:key="tab.id"
+				:class=" currentTabs.length == 1 ? 'label-description': 'label-multiple-chose'"
 			>
 				<div
 					v-if="currentTabs.length == 1"

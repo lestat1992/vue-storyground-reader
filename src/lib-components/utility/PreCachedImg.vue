@@ -5,15 +5,15 @@
 				v-for="(el,index) in preCachedImgList"
 				:key="index"
 				class="box-img"
-				v-bind:src="el"
+				:src="el"
 				@load="imgsLoaded++"
 			/>
 		</div>
 		<div v-else>
 			<img
-				v-bind:src="el.src"
-				v-bind:srcset="el.srcset"
-				v-bind:sizes="el.sizes"
+				:src="el.src"
+				:srcset="el.srcset"
+				:sizes="el.sizes"
 				@load="imgsLoaded++"
 			/>
 		</div>

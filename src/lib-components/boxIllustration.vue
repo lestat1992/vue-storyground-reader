@@ -7,13 +7,13 @@
 			<img
 				v-if="editorUsage"
 				class="box-img"
-				v-bind:src="illustration.srcFull[0]"
+				:src="illustration.srcFull[0]"
 			/>
 			<img
 				v-else
-				v-bind:src="imgPathPart + '-' + style['img-sizes'][style['img-sizes'].length - 1]['width'] + 'x' + style['img-sizes'][style['img-sizes'].length - 1]['height'] + '.jpg'"
-				v-bind:srcset="responsiveImages.srcset"
-				v-bind:sizes="responsiveImages.sizes"
+				:src="imgPathPart + '-' + style['img-sizes'][style['img-sizes'].length - 1]['width'] + 'x' + style['img-sizes'][style['img-sizes'].length - 1]['height'] + '.jpg'"
+				:srcset="responsiveImages.srcset"
+				:sizes="responsiveImages.sizes"
 			/>
 		</div>
 	</div>

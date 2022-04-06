@@ -6,19 +6,19 @@
 	>
 		<boxillustration
 			v-if="illustration && initialized"
-			v-bind:editorUsage="editorUsage"
-			v-bind:illustration="illustration"
-			v-bind:indexMedia="indexMedia"
-			v-bind:pathMediaDir="pathMediaDir"
-			v-bind:style="gameData.style"
+			:editorUsage="editorUsage"
+			:illustration="illustration"
+			:indexMedia="indexMedia"
+			:pathMediaDir="pathMediaDir"
+			:style="gameData.style"
 			:stylesObj="stylesObj"
 		/>
 
 		<boxText
 			v-if="initialized"
-			v-bind:narrationBox="narrationBox"
-			v-bind:lang="lang"
-			v-bind:current-tabs="currentTabs"
+			:narrationBox="narrationBox"
+			:lang="lang"
+			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
 			v-on:reedBeams="reedBeams"
 		/>
@@ -33,7 +33,7 @@
 			>{{ strings.noEnd.langEditor }}</div>
 			<div
 				v-for="(el, index ) in onRunError"
-				v-bind:key="index"
+				:key="index"
 				class="game-error e-2"
 			>{{el}}</div>
 			<div
