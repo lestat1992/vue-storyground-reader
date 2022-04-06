@@ -16,9 +16,13 @@
 				<div
 					v-else
 					:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
-					@:click="reedBeams(tab.id)"
 				>
-					<!--{{index + 1}}.--> {{tab.text[lang]}}
+					<ChooseTab
+						:index="index"
+						:text="tab.text[lang]"
+						:stylesObj="stylesObj"
+						@:click="reedBeams(tab.id)"
+					/>
 				</div>
 			</div>
 
@@ -27,17 +31,24 @@
 			v-if="currentTabs.length == 1"
 			class="single-beem-foward-box"
 		>
-			<div
+			<NextTab
+				:stylesObj="stylesObj"
 				@:click="reedBeams(currentTabs[0].id)"
-				class="icon-proceed"
-			></div>
+			/>
 		</div>
 	</div>
 </template>
 
 <script>
+	import NextTab from "../navigation-elements/NextTab";
+	import ChooseTab from "../navigation-elements/ChooseTab";
+
 	let boxNarration = {
 		name: "boxNarration",
+		components: {
+			NextTab: NextTab,
+			ChooseTab: ChooseTab,
+		},
 		props: {
 			currentTabs: {},
 			lang: {},
