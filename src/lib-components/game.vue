@@ -223,10 +223,30 @@
 						...gridLayoutItem.boxText,
 					};
 
+					let boxTextPadding = {
+						padding: this.gameData.style[this.device]["box-text-padding"],
+					};
+
+					/* FONT */
+
 					let fontName = this.gameData.style["font-family"];
 
 					let commonFontFamily = {
 						fontFamily: this.gameData.style["font-family"],
+					};
+
+					let fontWeightList = this.gameData.style["font-weight"];
+
+					let fontWeightListSelected = {
+						fontWeight: this.gameData.style["font-weight-selected"],
+					};
+
+					let fontColor = {
+						color: this.gameData.style["color"],
+					};
+
+					let fontSize1 = {
+						fontSize: this.gameData.style[this.device]["font-size-1"],
 					};
 
 					return {
@@ -235,6 +255,11 @@
 						boxText: boxText,
 						fontName: fontName,
 						commonFontFamily: commonFontFamily,
+						boxTextPadding: boxTextPadding,
+						fontWeightList: fontWeightList,
+						fontWeightListSelected: fontWeightListSelected,
+						fontColor: fontColor,
+						fontSize1: fontSize1,
 					};
 				} else {
 					return false;
@@ -973,7 +998,11 @@
 				this.setDevice();
 				WebFont.load({
 					google: {
-						families: [this.stylesObj.fontName],
+						families: [
+							this.stylesObj.fontName +
+								":" +
+								this.stylesObj.fontWeightList.join(),
+						],
 					},
 					active: () => {
 						console.log("Fonts have been rendered");

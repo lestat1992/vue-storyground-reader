@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="wrapper-box-text"
-		:style="stylesObj.boxText"
+		:style="{ ...stylesObj.boxText, ...stylesObj.boxTextPadding }"
 	>
 		<boxnarration
 			v-if="narrationBox == 'default' || narrationBox == 'descriptions' ||  narrationBox == 'chose'"

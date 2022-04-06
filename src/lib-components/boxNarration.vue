@@ -9,13 +9,13 @@
 			>
 				<div
 					v-if="currentTabs.length == 1"
-					:style="{...stylesObj.commonFontFamily}"
+					:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
 				>
 					{{tab.text[lang]}}
 				</div>
 				<div
 					v-else
-					:style="{...stylesObj.commonFontFamily}"
+					:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
 					v-on:click="reedBeams(tab.id)"
 				>
 					<!--{{index + 1}}.--> {{tab.text[lang]}}

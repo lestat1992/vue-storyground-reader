@@ -128,7 +128,9 @@
     ]
   },
   "style": {
-    "font-family": "Twinkle Star",
+    "font-family": "Montserrat",
+    "font-weight": [100, 200, 300, 400, 500, 600],
+    "font-weight-selected": 500,
     "img-sizes": [
       {
         "width": 800,
@@ -167,7 +169,7 @@
     "mobile": {
       "font-size-1": "18px",
       "margin": "30px",
-      "box-text-padding": "25px",
+      "box-text-padding": "10px",
       "layou-type": 6
     }
   }
