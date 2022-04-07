@@ -1,7 +1,10 @@
 
   <template>
 	<div class="box-narration">
-		<div class="tab-results">
+		<div
+			class="tab-results"
+			:style="stylesObj.tabResultsMaxHeight"
+		>
 
 			<div
 				v-for="tab,index in currentTabs"
@@ -38,3 +41,9 @@
 
 	export default boxNarrationGameEnd;
 </script>
+<style scoped>
+	.tab-results {
+		flex-grow: 1;
+		overflow: auto;
+	}
+</style>

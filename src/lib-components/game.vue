@@ -20,7 +20,7 @@
 			:lang="lang"
 			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
-			@:reedBeams="reedBeams"
+			@reedBeams="reedBeams"
 		/>
 
 		<div
@@ -228,6 +228,65 @@
 						padding: this.gameData.style[this.device]["box-text-padding"],
 					};
 
+					let currentBoxHeight;
+					console.log(boxText.gridRowEnd);
+					console.log(boxText.gridRowStart);
+					if (boxText.gridRowEnd != 7 && boxText.gridRowStart != 1) {
+						currentBoxHeight =
+							"(( " +
+							this.height +
+							" - " +
+							"(" +
+							this.gameData.style[this.device].margin +
+							"+" +
+							this.gameData.style[this.device].margin +
+							"))/" +
+							4 +
+							") * (" +
+							boxText.gridRowEnd +
+							" - " +
+							boxText.gridRowStart +
+							")";
+					} else {
+						//boxText.gridRowEnd == 7 && boxText.gridRowStart == 1
+						currentBoxHeight = this.height;
+					}
+
+					let heightCalc =
+						"calc( " +
+						currentBoxHeight +
+						" - " +
+						this.gameData.style[this.device]["box-text-padding"] +
+						" - " +
+						this.gameData.style[this.device]["box-text-padding"] +
+						" - (" +
+						" + " +
+						this.gameData.style[this.device]["box-text-padding"] +
+						" + " +
+						this.gameData.style["icon-single-arrow"]["size"] +
+						/*
+								this.gameData.style[this.device]["box-text-padding"] +
+								" + " +
+								this.gameData.style[this.device]["box-text-padding"] +
+								" + " +
+								this.gameData.style[this.device]["box-text-padding"] +
+								" + " +
+								this.gameData.style[this.device]["box-text-padding"] +
+								" + " +
+								this.gameData.style[this.device]["box-text-padding"] +
+								" + " +
+								this.gameData.style["icon-single-arrow"]["size"] +
+		            */
+						"))";
+
+					let tabResultsMaxHeight = {
+						maxHeight: heightCalc,
+						minHeight: heightCalc,
+					};
+
+					console.log("guarda qui !!!!!!!!");
+					console.log(tabResultsMaxHeight);
+
 					/* FONT */
 
 					let fontName = this.gameData.style["font-family"];
@@ -250,6 +309,15 @@
 						fontSize: this.gameData.style[this.device]["font-size-1"],
 					};
 
+					/* single arrow next */
+					let iconSingleArrow = this.gameData.style["icon-single-arrow"];
+
+					/* multiple arrow next */
+					let iconMultipleArrow = this.gameData.style["icon-multiple-arrow"];
+					let paddingTopNextTab = {
+						paddingTop: this.gameData.style[this.device]["box-text-padding"],
+					};
+
 					return {
 						gameGrid: gameGrid,
 						boxIllustration: boxIllustration,
@@ -261,6 +329,10 @@
 						fontWeightListSelected: fontWeightListSelected,
 						fontColor: fontColor,
 						fontSize1: fontSize1,
+						iconSingleArrow: iconSingleArrow,
+						iconMultipleArrow: iconMultipleArrow,
+						paddingTopNextTab: paddingTopNextTab,
+						tabResultsMaxHeight: tabResultsMaxHeight,
 					};
 				} else {
 					return false;
@@ -858,6 +930,8 @@
 
 			/* leggo beem da punto di inizio a punto di fine */
 			reedBeams(fromId) {
+				console.log("passing");
+				console.log(fromId);
 				let newIdArray = [];
 				this.gameData.story.beams.forEach((beam) => {
 					if (fromId == beam.from) {

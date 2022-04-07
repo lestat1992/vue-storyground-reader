@@ -8,21 +8,21 @@
 			:lang="lang"
 			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
-			@:reedBeams="emit('reedBeams')"
+			@emitReedBeams2="emitReedBeams1"
 		/>
 		<gameEnd
 			v-if="narrationBox == 'end' "
 			:lang="lang"
 			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
-			@:reedBeams="emit('reedBeams')"
+			@emitReedBeams2="emitReedBeams1"
 		/>
 		<gameOver
 			v-if="narrationBox == 'game over'"
 			:lang="lang"
 			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
-			@:reedBeams="emit('reedBeams')"
+			@emitReedBeams2="emitReedBeams1"
 		/>
 	</div>
 </template>
@@ -45,6 +45,12 @@
 			reedBeams: {},
 			stylesObj: {},
 		},
+		methods: {
+			emitReedBeams1(id) {
+				console.log("ehi ciao");
+				this.$emit("reedBeams", id);
+			},
+		},
 	};
 
 	export default boxText;
@@ -52,5 +58,12 @@
 <style scoped>
 	.wrapper-box-text {
 		background-color: red;
+		display: flex;
+		flex-direction: column;
+	}
+	.box-narration {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
 	}
 </style>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+let choseTabSketch3 = `
 <svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <g>
@@ -26,3 +25,6 @@
 		c0-0.1-0.4-0.1-0.6-0.2C27.1,53.1,27,53.4,26.9,53.8z"/>
 </g>
 </svg>
+`;
+
+export default choseTabSketch3;

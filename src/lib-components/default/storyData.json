@@ -146,18 +146,16 @@
       }
     ],
     "bg-color": "#FF0000",
-    "bg-type": 1,
+    "bg-type": "sketch",
     "color": "#000000",
     "icon-single-arrow": {
-      "id": 1,
-      "size": 16,
-      "units": "px",
+      "type": "sketch",
+      "size": "100px",
       "color": "#00FF00"
     },
     "icon-multiple-arrow": {
-      "id": 1,
-      "size": 16,
-      "units": "px",
+      "type": "sketch",
+      "size": "16px",
       "color": "#00FF00"
     },
     "desktop": {
@@ -168,9 +166,9 @@
     },
     "mobile": {
       "font-size-1": "18px",
-      "margin": "30px",
-      "box-text-padding": "10px",
-      "layou-type": 6
+      "margin": "0",
+      "box-text-padding": "5vw",
+      "layou-type": 15
     }
   }
 }

@@ -200,6 +200,35 @@ function gridLayout(id) {
         gridColumnEnd: 8,
       };
       break;
+    case 15:
+      boxIllustration = {
+        gridRowStart: 1,
+        gridColumnStart: 1,
+        gridRowEnd: 7,
+        gridColumnEnd: 9,
+      };
+      boxText = {
+        gridRowStart: 4,
+        gridColumnStart: 1,
+        gridRowEnd: 6,
+        gridColumnEnd: 9,
+      };
+      break;
+    case 16:
+      boxIllustration = {
+        gridRowStart: 1,
+        gridColumnStart: 1,
+        gridRowEnd: 7,
+        gridColumnEnd: 9,
+      };
+      boxText = {
+        gridRowStart: 4,
+        gridColumnStart: 1,
+        gridRowEnd: 6,
+        gridColumnEnd: 9,
+      };
+      break;
+
     default:
       break;
   }

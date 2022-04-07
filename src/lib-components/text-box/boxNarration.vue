@@ -1,6 +1,9 @@
 <template>
 	<div class="box-narration">
-		<div class="tab-results">
+		<div
+			class="tab-results"
+			:style="stylesObj.tabResultsMaxHeight"
+		>
 
 			<div
 				v-for="tab,index in currentTabs"
@@ -21,7 +24,7 @@
 						:index="index"
 						:text="tab.text[lang]"
 						:stylesObj="stylesObj"
-						@:click="reedBeams(tab.id)"
+						@click="emitReedBeams3(tab.id)"
 					/>
 				</div>
 			</div>
@@ -30,10 +33,11 @@
 		<div
 			v-if="currentTabs.length == 1"
 			class="single-beem-foward-box"
+			:style="stylesObj.paddingTopNextTab"
 		>
 			<NextTab
 				:stylesObj="stylesObj"
-				@:click="reedBeams(currentTabs[0].id)"
+				@click="emitReedBeams3(currentTabs[0].id)"
 			/>
 		</div>
 	</div>
@@ -52,16 +56,26 @@
 		props: {
 			currentTabs: {},
 			lang: {},
-			reedbeams: {},
+			emitReedBeams2: {},
 			stylesObj: {},
 		},
 		methods: {
-			reedBeams(id) {
-				this.$emit("reedbeams", id);
+			emitReedBeams3(id) {
+				console.log("click");
+				this.$emit("emitReedBeams2", id);
 			},
 		},
 	};
 
 	export default boxNarration;
 </script>
-
+<style scoped>
+	.tab-results {
+		flex-grow: 1;
+		overflow: auto;
+	}
+	.single-beem-foward-box {
+		display: flex;
+		justify-content: center;
+	}
+</style>
