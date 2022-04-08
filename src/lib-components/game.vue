@@ -264,19 +264,6 @@
 						this.gameData.style[this.device]["box-text-padding"] +
 						" + " +
 						this.gameData.style["icon-single-arrow"]["size"] +
-						/*
-								this.gameData.style[this.device]["box-text-padding"] +
-								" + " +
-								this.gameData.style[this.device]["box-text-padding"] +
-								" + " +
-								this.gameData.style[this.device]["box-text-padding"] +
-								" + " +
-								this.gameData.style[this.device]["box-text-padding"] +
-								" + " +
-								this.gameData.style[this.device]["box-text-padding"] +
-								" + " +
-								this.gameData.style["icon-single-arrow"]["size"] +
-		            */
 						"))";
 
 					let tabResultsMaxHeight = {
@@ -318,6 +305,12 @@
 						paddingTop: this.gameData.style[this.device]["box-text-padding"],
 					};
 
+					/* bg text box */
+					let bgStyle = {
+						bgType: this.gameData.style["bg-type"],
+						bgColor: this.gameData.style["bg-color"],
+					};
+
 					return {
 						gameGrid: gameGrid,
 						boxIllustration: boxIllustration,
@@ -333,6 +326,7 @@
 						iconMultipleArrow: iconMultipleArrow,
 						paddingTopNextTab: paddingTopNextTab,
 						tabResultsMaxHeight: tabResultsMaxHeight,
+						bgStyle: bgStyle,
 					};
 				} else {
 					return false;

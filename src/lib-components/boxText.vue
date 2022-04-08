@@ -3,6 +3,7 @@
 		class="wrapper-box-text"
 		:style="{ ...stylesObj.boxText, ...stylesObj.boxTextPadding }"
 	>
+		<BgBoxText :stylesObj="stylesObj" />
 		<boxnarration
 			v-if="narrationBox == 'default' || narrationBox == 'descriptions' ||  narrationBox == 'chose'"
 			:lang="lang"
@@ -24,12 +25,14 @@
 			:stylesObj="stylesObj"
 			@emitReedBeams2="emitReedBeams1"
 		/>
+
 	</div>
 </template>
 <script>
 	import boxNarration from "./text-box/boxNarration.vue";
 	import boxNarrationGameEnd from "./text-box/boxNarrationGameEnd.vue";
 	import boxNarrationGameOver from "./text-box/boxNarrationGameOver.vue";
+	import BgBoxText from "./utility/BgBoxText.vue";
 
 	let boxText = {
 		name: "boxText",
@@ -37,6 +40,7 @@
 			boxnarration: boxNarration,
 			gameEnd: boxNarrationGameEnd,
 			gameOver: boxNarrationGameOver,
+			BgBoxText: BgBoxText,
 		},
 		props: {
 			narrationBox: {},
@@ -60,6 +64,7 @@
 		background-color: red;
 		display: flex;
 		flex-direction: column;
+		position: relative;
 	}
 	.box-narration {
 		display: flex;

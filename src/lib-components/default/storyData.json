@@ -145,7 +145,7 @@
         "height": 1080
       }
     ],
-    "bg-color": "#FF0000",
+    "bg-color": "blue",
     "bg-type": "sketch",
     "color": "#000000",
     "icon-single-arrow": {
