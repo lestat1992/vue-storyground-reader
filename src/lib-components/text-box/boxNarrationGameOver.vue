@@ -45,4 +45,8 @@
 		flex-grow: 1;
 		overflow: auto;
 	}
+	.box-narration {
+		position: relative;
+		z-index: 10;
+	}
 </style>

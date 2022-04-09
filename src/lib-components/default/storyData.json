@@ -146,7 +146,7 @@
       }
     ],
     "bg-color": "blue",
-    "bg-type": "sketch",
+    "bg-type": "minimal1",
     "color": "#000000",
     "icon-single-arrow": {
       "type": "sketch",
@@ -162,13 +162,13 @@
       "font-size-1": "20px",
       "margin": "50px",
       "box-text-padding": "25px",
-      "layou-type": 1
+      "layout-type": 1
     },
     "mobile": {
       "font-size-1": "18px",
       "margin": "0",
       "box-text-padding": "5vw",
-      "layou-type": 15
+      "layout-type": 15
     }
   }
 }

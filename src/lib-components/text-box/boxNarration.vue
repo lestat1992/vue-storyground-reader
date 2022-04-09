@@ -78,4 +78,8 @@
 		display: flex;
 		justify-content: center;
 	}
+	.box-narration {
+		position: relative;
+		z-index: 10;
+	}
 </style>

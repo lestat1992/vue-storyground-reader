@@ -213,7 +213,7 @@
 					};
 
 					let gridLayoutItem = getGridLayout(
-						this.gameData.style[this.device]["layou-type"]
+						this.gameData.style[this.device]["layout-type"]
 					);
 
 					let boxIllustration = {
@@ -313,6 +313,7 @@
 
 					return {
 						gameGrid: gameGrid,
+						layoutID: this.gameData.style[this.device]["layout-type"],
 						boxIllustration: boxIllustration,
 						boxText: boxText,
 						fontName: fontName,

@@ -61,7 +61,6 @@
 </script>
 <style scoped>
 	.wrapper-box-text {
-		background-color: red;
 		display: flex;
 		flex-direction: column;
 		position: relative;

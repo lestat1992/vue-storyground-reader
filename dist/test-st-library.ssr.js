@@ -1,19 +1,42 @@
-'use strict';var vue=require('vue');function _typeof(obj) {
+"use strict";
+var vue = require("vue");
+function _typeof(obj) {
   "@babel/helpers - typeof";
 
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
-    return typeof obj;
-  } : function (obj) {
-    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-  }, _typeof(obj);
+  return (
+    (_typeof =
+      "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+        ? function (obj) {
+            return typeof obj;
+          }
+        : function (obj) {
+            return obj &&
+              "function" == typeof Symbol &&
+              obj.constructor === Symbol &&
+              obj !== Symbol.prototype
+              ? "symbol"
+              : typeof obj;
+          }),
+    _typeof(obj)
+  );
 }
 
 function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  return (
+    _arrayWithHoles(arr) ||
+    _iterableToArrayLimit(arr, i) ||
+    _unsupportedIterableToArray(arr, i) ||
+    _nonIterableRest()
+  );
 }
 
 function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+  return (
+    _arrayWithoutHoles(arr) ||
+    _iterableToArray(arr) ||
+    _unsupportedIterableToArray(arr) ||
+    _nonIterableSpread()
+  );
 }
 
 function _arrayWithoutHoles(arr) {
@@ -25,11 +48,19 @@ function _arrayWithHoles(arr) {
 }
 
 function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+  if (
+    (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null) ||
+    iter["@@iterator"] != null
+  )
+    return Array.from(iter);
 }
 
 function _iterableToArrayLimit(arr, i) {
-  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+  var _i =
+    arr == null
+      ? null
+      : (typeof Symbol !== "undefined" && arr[Symbol.iterator]) ||
+        arr["@@iterator"];
 
   if (_i == null) return;
   var _arr = [];
@@ -64,7 +95,8 @@ function _unsupportedIterableToArray(o, minLen) {
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
   if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
+    return _arrayLikeToArray(o, minLen);
 }
 
 function _arrayLikeToArray(arr, len) {
@@ -76,298 +108,299 @@ function _arrayLikeToArray(arr, len) {
 }
 
 function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  throw new TypeError(
+    "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+  );
 }
 
 function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}var wrongTabsId = {
-	en: "wrong tabs id",
-	it: "id tabs sbagliato"
+  throw new TypeError(
+    "Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+  );
+}
+var wrongTabsId = {
+  en: "wrong tabs id",
+  it: "id tabs sbagliato",
 };
 var noData = {
-	en: "No data appears to be present at the moment",
-	it: "Al momento non sembra essere presente alcun dato"
+  en: "No data appears to be present at the moment",
+  it: "Al momento non sembra essere presente alcun dato",
 };
 var noStart = {
-	en: "A node has not been selected to start the story from",
-	it: "Non è stato selezionato un nodo da cui iniziare la storia"
+  en: "A node has not been selected to start the story from",
+  it: "Non è stato selezionato un nodo da cui iniziare la storia",
 };
 var noEnd = {
-	en: "an end node has not been inserted",
-	it: "non è stato inserito un nodo finale"
+  en: "an end node has not been inserted",
+  it: "non è stato inserito un nodo finale",
 };
 var nodeBadMix = {
-	it: "the resulting list of nodes is incorrect (nodes to be disconnected:",
-	en: ""
+  it: "the resulting list of nodes is incorrect (nodes to be disconnected:",
+  en: "",
 };
 var expressionIncoplete = {
-	it: "l'espressione usata è incopleta",
-	en: "the expression used is incomplete"
+  it: "l'espressione usata è incopleta",
+  en: "the expression used is incomplete",
 };
 var linkNodeEmpty = {
-	it: "Il nodo link è vuoto",
-	en: "The link node is empty"
+  it: "Il nodo link è vuoto",
+  en: "The link node is empty",
 };
 var redirectError = {
-	it: "Non sono stati specificati alcuni nodi di destinazione",
-	en: "Some target nodes were not specified"
+  it: "Non sono stati specificati alcuni nodi di destinazione",
+  en: "Some target nodes were not specified",
 };
 var defaultStrings = {
-	wrongTabsId: wrongTabsId,
-	noData: noData,
-	noStart: noStart,
-	noEnd: noEnd,
-	nodeBadMix: nodeBadMix,
-	expressionIncoplete: expressionIncoplete,
-	linkNodeEmpty: linkNodeEmpty,
-	redirectError: redirectError
-};var postInfo = {
-	title: "Placeholder",
-	lenghtDescriptionsNode: 400,
-	lenghtChoseNode: 20,
-	selectedWorkSpace: 1,
-	privateLink: true,
-	langList: [
-		"it",
-		"en"
-	]
+  wrongTabsId: wrongTabsId,
+  noData: noData,
+  noStart: noStart,
+  noEnd: noEnd,
+  nodeBadMix: nodeBadMix,
+  expressionIncoplete: expressionIncoplete,
+  linkNodeEmpty: linkNodeEmpty,
+  redirectError: redirectError,
+};
+var postInfo = {
+  title: "Placeholder",
+  lenghtDescriptionsNode: 400,
+  lenghtChoseNode: 20,
+  selectedWorkSpace: 1,
+  privateLink: true,
+  langList: ["it", "en"],
 };
 var erorList = {
-	noStart: false
+  noStart: false,
 };
 var MaxId = 16;
-var levels = [
-];
-var achievements = [
-];
-var items = [
-];
-var stats = [
-];
+var levels = [];
+var achievements = [];
+var items = [];
+var stats = [];
 var story = {
-	tabs: [
-		{
-			id: 1,
-			humanName: {
-				"default": "start"
-			},
-			level: 0,
-			name: "start",
-			type: "start",
-			gameStart: true,
-			levelStart: false,
-			x: 607,
-			y: 68.8125
-		},
-		{
-			id: 2,
-			humanName: {
-				"default": "text",
-				textImage: "text & image"
-			},
-			level: 0,
-			name: "descriptions0",
-			text: {
-				it: "Questa è una storia segnaposto, sei interessato a proseguire?",
-				en: "This is a placeholder story"
-			},
-			type: "descriptions",
-			img: {
-				ID: 1315,
-				srcFull: [
-					"http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1.jpg",
-					1920,
-					1080,
-					false
-				],
-				srcThumbnail: [
-					"http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1-150x150.jpg",
-					150,
-					150,
-					true
-				],
-				post_name: "29695f55c408397b6eeb453fb59d40d9_img-1"
-			},
-			save: false,
-			textRevision: false,
-			x: 576,
-			y: 189.8125
-		},
-		{
-			id: 4,
-			humanName: {
-				"default": "choice"
-			},
-			level: 0,
-			name: "chose0",
-			text: {
-				it: "si",
-				en: "yes"
-			},
-			type: "chose",
-			textRevision: false,
-			x: 480,
-			y: 531.8125
-		},
-		{
-			id: 5,
-			humanName: {
-				"default": "choice"
-			},
-			level: 0,
-			name: "chose1",
-			text: {
-				it: "no",
-				en: "no"
-			},
-			type: "chose",
-			textRevision: false,
-			x: 781,
-			y: 595.8125
-		},
-		{
-			id: 10,
-			humanName: {
-				"default": "text",
-				textImage: "text & image"
-			},
-			level: 0,
-			name: "descriptions1",
-			text: {
-				it: "Non c'è molto altro da dire, come ti ho detto...",
-				en: "There isn't much more to say, as I told you...\r"
-			},
-			type: "descriptions",
-			img: false,
-			save: false,
-			textRevision: false,
-			x: 473,
-			y: 681.8125
-		},
-		{
-			id: 11,
-			humanName: {
-				"default": "null"
-			},
-			level: 0,
-			type: "null",
-			x: 149,
-			y: 319.8125,
-			name: "null0"
-		},
-		{
-			id: 15,
-			humanName: {
-				"default": "end"
-			},
-			level: 0,
-			name: "end0",
-			type: "end",
-			text: {
-				it: "Allora esci da questa pagina",
-				en: ""
-			},
-			img: false,
-			textRevision: false,
-			x: 884,
-			y: 839.8125
-		}
-	],
-	beams: [
-		{
-			id: 3,
-			from: 1,
-			to: 2
-		},
-		{
-			id: 8,
-			from: 2,
-			to: 4
-		},
-		{
-			id: 9,
-			from: 2,
-			to: 5
-		},
-		{
-			id: 12,
-			from: 10,
-			to: 11
-		},
-		{
-			id: 13,
-			from: 11,
-			to: 2
-		},
-		{
-			id: 14,
-			from: 4,
-			to: 10
-		},
-		{
-			id: 16,
-			from: 5,
-			to: 15
-		}
-	]
+  tabs: [
+    {
+      id: 1,
+      humanName: {
+        default: "start",
+      },
+      level: 0,
+      name: "start",
+      type: "start",
+      gameStart: true,
+      levelStart: false,
+      x: 607,
+      y: 68.8125,
+    },
+    {
+      id: 2,
+      humanName: {
+        default: "text",
+        textImage: "text & image",
+      },
+      level: 0,
+      name: "descriptions0",
+      text: {
+        it: "Questa è una storia segnaposto, sei interessato a proseguire?",
+        en: "This is a placeholder story",
+      },
+      type: "descriptions",
+      img: {
+        ID: 1315,
+        srcFull: [
+          "http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1.jpg",
+          1920,
+          1080,
+          false,
+        ],
+        srcThumbnail: [
+          "http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1-150x150.jpg",
+          150,
+          150,
+          true,
+        ],
+        post_name: "29695f55c408397b6eeb453fb59d40d9_img-1",
+      },
+      save: false,
+      textRevision: false,
+      x: 576,
+      y: 189.8125,
+    },
+    {
+      id: 4,
+      humanName: {
+        default: "choice",
+      },
+      level: 0,
+      name: "chose0",
+      text: {
+        it: "si",
+        en: "yes",
+      },
+      type: "chose",
+      textRevision: false,
+      x: 480,
+      y: 531.8125,
+    },
+    {
+      id: 5,
+      humanName: {
+        default: "choice",
+      },
+      level: 0,
+      name: "chose1",
+      text: {
+        it: "no",
+        en: "no",
+      },
+      type: "chose",
+      textRevision: false,
+      x: 781,
+      y: 595.8125,
+    },
+    {
+      id: 10,
+      humanName: {
+        default: "text",
+        textImage: "text & image",
+      },
+      level: 0,
+      name: "descriptions1",
+      text: {
+        it: "Non c'è molto altro da dire, come ti ho detto...",
+        en: "There isn't much more to say, as I told you...\r",
+      },
+      type: "descriptions",
+      img: false,
+      save: false,
+      textRevision: false,
+      x: 473,
+      y: 681.8125,
+    },
+    {
+      id: 11,
+      humanName: {
+        default: "null",
+      },
+      level: 0,
+      type: "null",
+      x: 149,
+      y: 319.8125,
+      name: "null0",
+    },
+    {
+      id: 15,
+      humanName: {
+        default: "end",
+      },
+      level: 0,
+      name: "end0",
+      type: "end",
+      text: {
+        it: "Allora esci da questa pagina",
+        en: "",
+      },
+      img: false,
+      textRevision: false,
+      x: 884,
+      y: 839.8125,
+    },
+  ],
+  beams: [
+    {
+      id: 3,
+      from: 1,
+      to: 2,
+    },
+    {
+      id: 8,
+      from: 2,
+      to: 4,
+    },
+    {
+      id: 9,
+      from: 2,
+      to: 5,
+    },
+    {
+      id: 12,
+      from: 10,
+      to: 11,
+    },
+    {
+      id: 13,
+      from: 11,
+      to: 2,
+    },
+    {
+      id: 14,
+      from: 4,
+      to: 10,
+    },
+    {
+      id: 16,
+      from: 5,
+      to: 15,
+    },
+  ],
 };
 var style = {
-	"font-family": "Twinkle Star",
-	"layou-type": 1,
-	"img-sizes": [
-		{
-			width: 800,
-			height: 600
-		},
-		{
-			width: 1200,
-			height: 992
-		},
-		{
-			width: 1920,
-			height: 1080
-		}
-	],
-	"bg-color": "#FF0000",
-	color: "#000000",
-	"icon-single-arrow": {
-		id: 1,
-		size: 16,
-		units: "px",
-		color: "#00FF00"
-	},
-	"icon-multiple-arrow": {
-		id: 1,
-		size: 16,
-		units: "px",
-		color: "#00FF00"
-	},
-	desktop: {
-		"font-size": 20,
-		units: "px"
-	},
-	mobile: {
-		"font-size": 18,
-		units: "px"
-	}
+  "font-family": "Twinkle Star",
+  "layout-type": 1,
+  "img-sizes": [
+    {
+      width: 800,
+      height: 600,
+    },
+    {
+      width: 1200,
+      height: 992,
+    },
+    {
+      width: 1920,
+      height: 1080,
+    },
+  ],
+  "bg-color": "#FF0000",
+  color: "#000000",
+  "icon-single-arrow": {
+    id: 1,
+    size: 16,
+    units: "px",
+    color: "#00FF00",
+  },
+  "icon-multiple-arrow": {
+    id: 1,
+    size: 16,
+    units: "px",
+    color: "#00FF00",
+  },
+  desktop: {
+    "font-size": 20,
+    units: "px",
+  },
+  mobile: {
+    "font-size": 18,
+    units: "px",
+  },
 };
 var defaultStory = {
-	postInfo: postInfo,
-	erorList: erorList,
-	MaxId: MaxId,
-	levels: levels,
-	achievements: achievements,
-	items: items,
-	stats: stats,
-	story: story,
-	style: style
-};var defaultIndexMedia = [
-	{
-		Id: 1315,
-		name: "29695f55c408397b6eeb453fb59d40d9_img-1"
-	}
-];var boxIllustration = {
+  postInfo: postInfo,
+  erorList: erorList,
+  MaxId: MaxId,
+  levels: levels,
+  achievements: achievements,
+  items: items,
+  stats: stats,
+  story: story,
+  style: style,
+};
+var defaultIndexMedia = [
+  {
+    Id: 1315,
+    name: "29695f55c408397b6eeb453fb59d40d9_img-1",
+  },
+];
+var boxIllustration = {
   name: "boxIllustration",
   props: ["illustration", "editorUsage", "indexMedia", "pathMediaDir", "style"],
   methods: {},
@@ -385,179 +418,411 @@ var defaultStory = {
 
       var data = {
         srcset: "",
-        sizes: ""
+        sizes: "",
       };
       this["style"]["img-sizes"].forEach(function (el, index) {
-        data.srcset = data.srcset + _this2.imgPathPart + "-" + el.width + "x" + el.height + ".jpg " + el.width + "w";
+        data.srcset =
+          data.srcset +
+          _this2.imgPathPart +
+          "-" +
+          el.width +
+          "x" +
+          el.height +
+          ".jpg " +
+          el.width +
+          "w";
 
         if (index + 1 != _this2["style"]["img-sizes"].length) {
           data.srcset = data.srcset + ",";
         }
 
         if (index + 1 != _this2["style"]["img-sizes"].length) {
-          data.sizes = data.sizes + "( max-width:" + el.width + "px ) " + el.width + "px, ";
+          data.sizes =
+            data.sizes +
+            "( max-width:" +
+            el.width +
+            "px ) " +
+            el.width +
+            "px, ";
         } else {
           data.sizes = data.sizes + el.width + "px";
         }
       });
       return data;
-    }
-  }
+    },
+  },
 };
-var script$5 = boxIllustration;var _hoisted_1$4 = {
-  class: "box-illustration"
+var script$5 = boxIllustration;
+var _hoisted_1$4 = {
+  class: "box-illustration",
 };
 var _hoisted_2$4 = ["src"];
 var _hoisted_3$4 = ["src", "srcset", "sizes"];
 function render$5(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$4, [vue.createElementVNode("div", {
-    class: "inner-box",
-    style: vue.normalizeStyle({
-      paddingBottom: _ctx.illustration.srcFull[2] / _ctx.illustration.srcFull[1] * 100 + '%'
-    })
-  }, [_ctx.editorUsage ? (vue.openBlock(), vue.createElementBlock("img", {
-    key: 0,
-    class: "box-img",
-    src: _ctx.illustration.srcFull[0]
-  }, null, 8, _hoisted_2$4)) : (vue.openBlock(), vue.createElementBlock("img", {
-    key: 1,
-    src: _ctx.imgPathPart + '-' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['width'] + 'x' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['height'] + '.jpg',
-    srcset: _ctx.responsiveImages.srcset,
-    sizes: _ctx.responsiveImages.sizes
-  }, null, 8, _hoisted_3$4))], 4)]);
-}script$5.render = render$5;var boxNarration = {
+  return (
+    vue.openBlock(),
+    vue.createElementBlock("div", _hoisted_1$4, [
+      vue.createElementVNode(
+        "div",
+        {
+          class: "inner-box",
+          style: vue.normalizeStyle({
+            paddingBottom:
+              (_ctx.illustration.srcFull[2] / _ctx.illustration.srcFull[1]) *
+                100 +
+              "%",
+          }),
+        },
+        [
+          _ctx.editorUsage
+            ? (vue.openBlock(),
+              vue.createElementBlock(
+                "img",
+                {
+                  key: 0,
+                  class: "box-img",
+                  src: _ctx.illustration.srcFull[0],
+                },
+                null,
+                8,
+                _hoisted_2$4
+              ))
+            : (vue.openBlock(),
+              vue.createElementBlock(
+                "img",
+                {
+                  key: 1,
+                  src:
+                    _ctx.imgPathPart +
+                    "-" +
+                    _ctx.style["img-sizes"][_ctx.style["img-sizes"].length - 1][
+                      "width"
+                    ] +
+                    "x" +
+                    _ctx.style["img-sizes"][_ctx.style["img-sizes"].length - 1][
+                      "height"
+                    ] +
+                    ".jpg",
+                  srcset: _ctx.responsiveImages.srcset,
+                  sizes: _ctx.responsiveImages.sizes,
+                },
+                null,
+                8,
+                _hoisted_3$4
+              )),
+        ],
+        4
+      ),
+    ])
+  );
+}
+script$5.render = render$5;
+var boxNarration = {
   name: "boxNarration",
   props: ["currentTabs", "lang", "reedbeams"],
   methods: {
     reedBeams: function reedBeams(id) {
       this.$emit("reedbeams", id);
-    }
-  }
+    },
+  },
 };
-var script$4 = boxNarration;var _hoisted_1$3 = {
-  class: "box-narration"
+var script$4 = boxNarration;
+var _hoisted_1$3 = {
+  class: "box-narration",
 };
 var _hoisted_2$3 = {
-  class: "tab-results"
+  class: "tab-results",
 };
 var _hoisted_3$3 = {
   key: 0,
-  class: "p"
+  class: "p",
 };
 var _hoisted_4$1 = ["onClick"];
 var _hoisted_5 = {
   key: 0,
-  class: "single-beem-foward-box"
+  class: "single-beem-foward-box",
 };
 function render$4(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$3, [vue.createElementVNode("div", _hoisted_2$3, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.currentTabs, function (tab, index) {
-    return vue.openBlock(), vue.createElementBlock("div", {
-      key: tab.id,
-      class: vue.normalizeClass(_ctx.currentTabs.length == 1 ? 'label-description' : 'label-multiple-chose')
-    }, [_ctx.currentTabs.length == 1 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$3, vue.toDisplayString(tab.text[_ctx.lang]), 1)) : (vue.openBlock(), vue.createElementBlock("div", {
-      key: 1,
-      onClick: function onClick($event) {
-        return _ctx.reedBeams(tab.id);
-      },
-      class: "p"
-    }, vue.toDisplayString(tab.text[_ctx.lang]), 9, _hoisted_4$1))], 2);
-  }), 128))]), _ctx.currentTabs.length == 1 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5, [vue.createElementVNode("div", {
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.reedBeams(_ctx.currentTabs[0].id);
-    }),
-    class: "icon-proceed"
-  })])) : vue.createCommentVNode("", true)]);
-}script$4.render = render$4;var boxNarrationGameEnd = {
+  return (
+    vue.openBlock(),
+    vue.createElementBlock("div", _hoisted_1$3, [
+      vue.createElementVNode("div", _hoisted_2$3, [
+        (vue.openBlock(true),
+        vue.createElementBlock(
+          vue.Fragment,
+          null,
+          vue.renderList(_ctx.currentTabs, function (tab, index) {
+            return (
+              vue.openBlock(),
+              vue.createElementBlock(
+                "div",
+                {
+                  key: tab.id,
+                  class: vue.normalizeClass(
+                    _ctx.currentTabs.length == 1
+                      ? "label-description"
+                      : "label-multiple-chose"
+                  ),
+                },
+                [
+                  _ctx.currentTabs.length == 1
+                    ? (vue.openBlock(),
+                      vue.createElementBlock(
+                        "div",
+                        _hoisted_3$3,
+                        vue.toDisplayString(tab.text[_ctx.lang]),
+                        1
+                      ))
+                    : (vue.openBlock(),
+                      vue.createElementBlock(
+                        "div",
+                        {
+                          key: 1,
+                          onClick: function onClick($event) {
+                            return _ctx.reedBeams(tab.id);
+                          },
+                          class: "p",
+                        },
+                        vue.toDisplayString(tab.text[_ctx.lang]),
+                        9,
+                        _hoisted_4$1
+                      )),
+                ],
+                2
+              )
+            );
+          }),
+          128
+        )),
+      ]),
+      _ctx.currentTabs.length == 1
+        ? (vue.openBlock(),
+          vue.createElementBlock("div", _hoisted_5, [
+            vue.createElementVNode("div", {
+              onClick:
+                _cache[0] ||
+                (_cache[0] = function ($event) {
+                  return _ctx.reedBeams(_ctx.currentTabs[0].id);
+                }),
+              class: "icon-proceed",
+            }),
+          ]))
+        : vue.createCommentVNode("", true),
+    ])
+  );
+}
+script$4.render = render$4;
+var boxNarrationGameEnd = {
   name: "boxNarrationGameEnd",
   props: ["currentTabs", "lang", "reedbeams"],
   methods: {
     reedBeams: function reedBeams(id) {
       this.$emit("reedbeams", id);
-    }
-  }
+    },
+  },
 };
-var script$3 = boxNarrationGameEnd;var _hoisted_1$2 = {
-  class: "box-narration"
+var script$3 = boxNarrationGameEnd;
+var _hoisted_1$2 = {
+  class: "box-narration",
 };
 var _hoisted_2$2 = {
-  class: "tab-results"
+  class: "tab-results",
 };
 var _hoisted_3$2 = {
   key: 0,
-  class: "p"
+  class: "p",
 };
 function render$3(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$2, [vue.createElementVNode("div", _hoisted_2$2, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.currentTabs, function (tab, index) {
-    return vue.openBlock(), vue.createElementBlock("div", {
-      key: tab.id,
-      class: vue.normalizeClass(_ctx.currentTabs.length == 1 ? 'label-description' : 'label-multiple-chose')
-    }, [_ctx.currentTabs.length == 1 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$2, vue.toDisplayString(tab.text[_ctx.lang]), 1)) : vue.createCommentVNode("", true)], 2);
-  }), 128))])]);
-}script$3.render = render$3;var boxNarrationGameOver = {
+  return (
+    vue.openBlock(),
+    vue.createElementBlock("div", _hoisted_1$2, [
+      vue.createElementVNode("div", _hoisted_2$2, [
+        (vue.openBlock(true),
+        vue.createElementBlock(
+          vue.Fragment,
+          null,
+          vue.renderList(_ctx.currentTabs, function (tab, index) {
+            return (
+              vue.openBlock(),
+              vue.createElementBlock(
+                "div",
+                {
+                  key: tab.id,
+                  class: vue.normalizeClass(
+                    _ctx.currentTabs.length == 1
+                      ? "label-description"
+                      : "label-multiple-chose"
+                  ),
+                },
+                [
+                  _ctx.currentTabs.length == 1
+                    ? (vue.openBlock(),
+                      vue.createElementBlock(
+                        "div",
+                        _hoisted_3$2,
+                        vue.toDisplayString(tab.text[_ctx.lang]),
+                        1
+                      ))
+                    : vue.createCommentVNode("", true),
+                ],
+                2
+              )
+            );
+          }),
+          128
+        )),
+      ]),
+    ])
+  );
+}
+script$3.render = render$3;
+var boxNarrationGameOver = {
   name: "boxNarrationGameOver",
   props: ["currentTabs", "lang", "reedbeams"],
   methods: {
     reedBeams: function reedBeams(id) {
       this.$emit("reedbeams", id);
-    }
-  }
+    },
+  },
 };
-var script$2 = boxNarrationGameOver;var _hoisted_1$1 = {
-  class: "box-narration"
+var script$2 = boxNarrationGameOver;
+var _hoisted_1$1 = {
+  class: "box-narration",
 };
 var _hoisted_2$1 = {
-  class: "tab-results"
+  class: "tab-results",
 };
 var _hoisted_3$1 = {
   key: 0,
-  class: "p"
+  class: "p",
 };
 function render$2(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$1, [vue.createElementVNode("div", _hoisted_2$1, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.currentTabs, function (tab, index) {
-    return vue.openBlock(), vue.createElementBlock("div", {
-      key: tab.id,
-      class: vue.normalizeClass(_ctx.currentTabs.length == 1 ? 'label-description' : 'label-multiple-chose')
-    }, [_ctx.currentTabs.length == 1 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$1, vue.toDisplayString(tab.text[_ctx.lang]), 1)) : vue.createCommentVNode("", true)], 2);
-  }), 128))])]);
-}script$2.render = render$2;var boxText = {
+  return (
+    vue.openBlock(),
+    vue.createElementBlock("div", _hoisted_1$1, [
+      vue.createElementVNode("div", _hoisted_2$1, [
+        (vue.openBlock(true),
+        vue.createElementBlock(
+          vue.Fragment,
+          null,
+          vue.renderList(_ctx.currentTabs, function (tab, index) {
+            return (
+              vue.openBlock(),
+              vue.createElementBlock(
+                "div",
+                {
+                  key: tab.id,
+                  class: vue.normalizeClass(
+                    _ctx.currentTabs.length == 1
+                      ? "label-description"
+                      : "label-multiple-chose"
+                  ),
+                },
+                [
+                  _ctx.currentTabs.length == 1
+                    ? (vue.openBlock(),
+                      vue.createElementBlock(
+                        "div",
+                        _hoisted_3$1,
+                        vue.toDisplayString(tab.text[_ctx.lang]),
+                        1
+                      ))
+                    : vue.createCommentVNode("", true),
+                ],
+                2
+              )
+            );
+          }),
+          128
+        )),
+      ]),
+    ])
+  );
+}
+script$2.render = render$2;
+var boxText = {
   name: "boxText",
   props: ["narrationBox", "lang", "currentTabs", "reedBeams"],
   components: {
     boxnarration: script$4,
     gameEnd: script$3,
-    gameOver: script$2
-  }
+    gameOver: script$2,
+  },
 };
-var script$1 = boxText;function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+var script$1 = boxText;
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_boxnarration = vue.resolveComponent("boxnarration");
 
   var _component_gameEnd = vue.resolveComponent("gameEnd");
 
   var _component_gameOver = vue.resolveComponent("gameOver");
 
-  return vue.openBlock(), vue.createElementBlock("span", null, [_ctx.narrationBox == 'default' || _ctx.narrationBox == 'descriptions' || _ctx.narrationBox == 'chose' ? (vue.openBlock(), vue.createBlock(_component_boxnarration, {
-    key: 0,
-    lang: _ctx.lang,
-    "current-tabs": _ctx.currentTabs,
-    onReedBeams: _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.emit('reedBeams');
-    })
-  }, null, 8, ["lang", "current-tabs"])) : vue.createCommentVNode("", true), _ctx.narrationBox == 'end' ? (vue.openBlock(), vue.createBlock(_component_gameEnd, {
-    key: 1,
-    lang: _ctx.lang,
-    "current-tabs": _ctx.currentTabs,
-    onReedBeams: _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.emit('reedBeams');
-    })
-  }, null, 8, ["lang", "current-tabs"])) : vue.createCommentVNode("", true), _ctx.narrationBox == 'game over' ? (vue.openBlock(), vue.createBlock(_component_gameOver, {
-    key: 2,
-    lang: _ctx.lang,
-    "current-tabs": _ctx.currentTabs,
-    onReedBeams: _cache[2] || (_cache[2] = function ($event) {
-      return _ctx.emit('reedBeams');
-    })
-  }, null, 8, ["lang", "current-tabs"])) : vue.createCommentVNode("", true)]);
-}script$1.render = render$1;//returns a copy of the object
+  return (
+    vue.openBlock(),
+    vue.createElementBlock("span", null, [
+      _ctx.narrationBox == "default" ||
+      _ctx.narrationBox == "descriptions" ||
+      _ctx.narrationBox == "chose"
+        ? (vue.openBlock(),
+          vue.createBlock(
+            _component_boxnarration,
+            {
+              key: 0,
+              lang: _ctx.lang,
+              "current-tabs": _ctx.currentTabs,
+              onReedBeams:
+                _cache[0] ||
+                (_cache[0] = function ($event) {
+                  return _ctx.emit("reedBeams");
+                }),
+            },
+            null,
+            8,
+            ["lang", "current-tabs"]
+          ))
+        : vue.createCommentVNode("", true),
+      _ctx.narrationBox == "end"
+        ? (vue.openBlock(),
+          vue.createBlock(
+            _component_gameEnd,
+            {
+              key: 1,
+              lang: _ctx.lang,
+              "current-tabs": _ctx.currentTabs,
+              onReedBeams:
+                _cache[1] ||
+                (_cache[1] = function ($event) {
+                  return _ctx.emit("reedBeams");
+                }),
+            },
+            null,
+            8,
+            ["lang", "current-tabs"]
+          ))
+        : vue.createCommentVNode("", true),
+      _ctx.narrationBox == "game over"
+        ? (vue.openBlock(),
+          vue.createBlock(
+            _component_gameOver,
+            {
+              key: 2,
+              lang: _ctx.lang,
+              "current-tabs": _ctx.currentTabs,
+              onReedBeams:
+                _cache[2] ||
+                (_cache[2] = function ($event) {
+                  return _ctx.emit("reedBeams");
+                }),
+            },
+            null,
+            8,
+            ["lang", "current-tabs"]
+          ))
+        : vue.createCommentVNode("", true),
+    ])
+  );
+}
+script$1.render = render$1; //returns a copy of the object
 function deepCopy(obj) {
   var rv;
 
@@ -605,45 +870,46 @@ function deepCopy(obj) {
   }
 
   return rv;
-}function randomNum(min, max) {
+}
+function randomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-var script = /*#__PURE__*/vue.defineComponent({
+var script = /*#__PURE__*/ vue.defineComponent({
   name: "game",
   components: {
     boxillustration: script$5,
-    boxText: script$1
+    boxText: script$1,
   },
   props: {
     editorUsage: {
       type: Boolean,
-      default: true
+      default: true,
     },
     propLang: {
       type: String,
-      default: "null-lang"
+      default: "null-lang",
     },
     langEditor: {
       type: String,
-      default: "en"
+      default: "en",
     },
     strings: {
       type: Object,
-      default: defaultStrings
+      default: defaultStrings,
     },
     gameData: {
       type: Object,
-      default: defaultStory
+      default: defaultStory,
     },
     indexMedia: {
       type: Object,
-      default: defaultIndexMedia
+      default: defaultIndexMedia,
     },
     pathMediaDir: {
       type: String,
-      default: "./media"
-    }
+      default: "./media",
+    },
   },
   data: function data() {
     return {
@@ -651,14 +917,14 @@ var script = /*#__PURE__*/vue.defineComponent({
       textualTabs: ["descriptions", "chose", "game over", "end"],
       playerState: "playing",
       player: {
-        item: []
+        item: [],
       },
       currentTabs: [],
       illustration: false,
       onRunError: [],
       listBadMixId: "",
       cover: true,
-      gameLoaded: false
+      gameLoaded: false,
     };
   },
   watch: {
@@ -666,7 +932,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       if (val == "node-bad-mix") {
         this.setListBadMixId();
       }
-    }
+    },
   },
   mounted: function mounted() {
     if (this.propLang !== "null-lang") {
@@ -701,7 +967,7 @@ var script = /*#__PURE__*/vue.defineComponent({
           return false;
         }
       }
-    }
+    },
   },
   methods: {
     /* |||||||||||||||||||| GAME CORE |||||||||||||||||||||| */
@@ -711,7 +977,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       this.playerState = "playing";
       this.player = {
         stats: [],
-        item: []
+        item: [],
       };
       /* carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist */
 
@@ -723,7 +989,6 @@ var script = /*#__PURE__*/vue.defineComponent({
           _this.player.stats.push(newStats);
         });
       } //creo lista oggetti da visualizzare
-
 
       this.setPlayerItemFiltered();
       /* apro la tab di inizio */
@@ -760,7 +1025,6 @@ var script = /*#__PURE__*/vue.defineComponent({
             this.setImage(tabsToNavigate[0].img);
           } //salvo dati
 
-
           if (tabsToNavigate[0].save == true) {
             this.saveData();
           }
@@ -788,7 +1052,10 @@ var script = /*#__PURE__*/vue.defineComponent({
         collectionOfTextualTabs.forEach(function (el) {
           if (!textualTabs.includes(el.type)) {
             allTextual = false;
-            newCollection = [].concat(_toConsumableArray(newCollection), _toConsumableArray(_this2.ResoveTab(el)));
+            newCollection = [].concat(
+              _toConsumableArray(newCollection),
+              _toConsumableArray(_this2.ResoveTab(el))
+            );
           } else {
             newCollection.push(el);
           }
@@ -900,7 +1167,11 @@ var script = /*#__PURE__*/vue.defineComponent({
               }
             });
           } else {
-            errorRedirect = this.strings.linkNodeEmpty[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            errorRedirect =
+              this.strings.linkNodeEmpty[this.langEditor] +
+              " ( ID: " +
+              currentTab.id +
+              " )";
           }
 
           if (errorRedirect == false) {
@@ -909,16 +1180,25 @@ var script = /*#__PURE__*/vue.defineComponent({
             if (currentTab.listRedirectId.length == 1) {
               idRedirect = currentTab.listRedirectId[0];
             } else {
-              var indexRandom = randomNum(0, currentTab.listRedirectId.length - 1);
+              var indexRandom = randomNum(
+                0,
+                currentTab.listRedirectId.length - 1
+              );
               idRedirect = currentTab.listRedirectId[indexRandom];
             }
 
-            var tabToRedirect = this.gameData.story.tabs.find(function (element) {
+            var tabToRedirect = this.gameData.story.tabs.find(function (
+              element
+            ) {
               return element.id == idRedirect;
             });
             currentTab = tabToRedirect;
           } else {
-            var error = this.strings.redirectError.langEditor + " ( ID: " + currentTab.id + " )";
+            var error =
+              this.strings.redirectError.langEditor +
+              " ( ID: " +
+              currentTab.id +
+              " )";
             this.onRunError.push(error);
             stop = true;
           }
@@ -937,15 +1217,27 @@ var script = /*#__PURE__*/vue.defineComponent({
 
           if (itemExist3) {
             if (itemExist3.length == 0 || currentTab.operator == false) {
-              var _error = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+              var _error =
+                this.strings.expressionIncoplete.langEditor +
+                " ( ID: " +
+                currentTab.id +
+                " )";
 
               this.onRunError.push(_error);
               stop = true;
             } else {
-              this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount);
+              this.modifyStat(
+                currentTab.idStat,
+                currentTab.operator,
+                currentTab.ammount
+              );
             }
           } else {
-            var _error2 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+            var _error2 =
+              this.strings.expressionIncoplete.langEditor +
+              " ( ID: " +
+              currentTab.id +
+              " )";
 
             this.onRunError.push(_error2);
             stop = true;
@@ -960,15 +1252,27 @@ var script = /*#__PURE__*/vue.defineComponent({
 
           if (itemExist2) {
             if (itemExist2.length == 0 || currentTab.operator == false) {
-              var _error3 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+              var _error3 =
+                this.strings.expressionIncoplete.langEditor +
+                " ( ID: " +
+                currentTab.id +
+                " )";
 
               this.onRunError.push(_error3);
               stop = true;
             } else {
-              this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount);
+              this.modifyItem(
+                currentTab.idObject,
+                currentTab.operator,
+                currentTab.ammount
+              );
             }
           } else {
-            var _error4 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+            var _error4 =
+              this.strings.expressionIncoplete.langEditor +
+              " ( ID: " +
+              currentTab.id +
+              " )";
 
             this.onRunError.push(_error4);
             stop = true;
@@ -983,22 +1287,38 @@ var script = /*#__PURE__*/vue.defineComponent({
 
           if (statToCheck) {
             /* controllo che non siano presenti errori nella espressione */
-            if (currentTab.ammount === false || currentTab.ammount == undefined || currentTab.operator == false) {
-              var _error5 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+            if (
+              currentTab.ammount === false ||
+              currentTab.ammount == undefined ||
+              currentTab.operator == false
+            ) {
+              var _error5 =
+                this.strings.expressionIncoplete.langEditor +
+                " ( ID: " +
+                currentTab.id +
+                " )";
 
               this.onRunError.push(_error5);
               stop = true;
             } else {
-              var status = operatorResolve(statToCheck.level, currentTab.operator, currentTab.ammount);
+              var status = operatorResolve(
+                statToCheck.level,
+                currentTab.operator,
+                currentTab.ammount
+              );
 
               if (status) {
-                var tabsTrue = this.gameData.story.tabs.filter(function (element) {
+                var tabsTrue = this.gameData.story.tabs.filter(function (
+                  element
+                ) {
                   return currentTab.trueId.includes(element.id);
                 });
                 tabToAdd = tabsTrue;
                 stop = true;
               } else {
-                var tabsFalse = this.gameData.story.tabs.filter(function (element) {
+                var tabsFalse = this.gameData.story.tabs.filter(function (
+                  element
+                ) {
                   return currentTab.falseId.includes(element.id);
                 });
                 tabToAdd = tabsFalse;
@@ -1006,7 +1326,11 @@ var script = /*#__PURE__*/vue.defineComponent({
               }
             }
           } else {
-            var _error6 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+            var _error6 =
+              this.strings.expressionIncoplete.langEditor +
+              " ( ID: " +
+              currentTab.id +
+              " )";
 
             this.onRunError.push(_error6);
             stop = true;
@@ -1027,22 +1351,34 @@ var script = /*#__PURE__*/vue.defineComponent({
 
           if (itemExist) {
             if (itemExist.length == 0 || currentTab.operator == false) {
-              var _error7 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+              var _error7 =
+                this.strings.expressionIncoplete.langEditor +
+                " ( ID: " +
+                currentTab.id +
+                " )";
 
               this.onRunError.push(_error7);
               stop = true;
             } else {
-              var status2 = operatorResolve(itemToCheck, currentTab.operator, currentTab.ammount);
+              var status2 = operatorResolve(
+                itemToCheck,
+                currentTab.operator,
+                currentTab.ammount
+              );
 
               if (status2) {
-                var _tabsTrue = this.gameData.story.tabs.filter(function (element) {
+                var _tabsTrue = this.gameData.story.tabs.filter(function (
+                  element
+                ) {
                   return currentTab.trueId.includes(element.id);
                 });
 
                 tabToAdd = _tabsTrue;
                 stop = true;
               } else {
-                var _tabsFalse = this.gameData.story.tabs.filter(function (element) {
+                var _tabsFalse = this.gameData.story.tabs.filter(function (
+                  element
+                ) {
                   return currentTab.falseId.includes(element.id);
                 });
 
@@ -1051,7 +1387,11 @@ var script = /*#__PURE__*/vue.defineComponent({
               }
             }
           } else {
-            var _error8 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+            var _error8 =
+              this.strings.expressionIncoplete.langEditor +
+              " ( ID: " +
+              currentTab.id +
+              " )";
 
             this.onRunError.push(_error8);
             stop = true;
@@ -1101,7 +1441,9 @@ var script = /*#__PURE__*/vue.defineComponent({
           break;
 
         case "/":
-          resultAmmount = Math.floor(parseInt(playerStat.level) / parseInt(ammount));
+          resultAmmount = Math.floor(
+            parseInt(playerStat.level) / parseInt(ammount)
+          );
           use = 2;
           break;
 
@@ -1111,23 +1453,19 @@ var script = /*#__PURE__*/vue.defineComponent({
           break;
       } //  + *
 
-
       if (use == 1) {
         /* controllo se giocatore ha statistica */
         playerStat.level = parseInt(playerStat.level) + parseInt(resultAmmount);
       } //  - /
-
 
       if (use == 2) {
         /* controllo se giocatore ha statistica */
         playerStat.level = parseInt(playerStat.level) - parseInt(resultAmmount);
       } //  =
 
-
       if (use == 5) {
         playerStat.level = resultAmmount;
       } //CORREZIONI VALORE ---------------------
-
 
       if (playerStat.level > chosenStat.max) {
         playerStat.level = chosenStat.max;
@@ -1136,12 +1474,10 @@ var script = /*#__PURE__*/vue.defineComponent({
       if (playerStat.level < 0 && !isNaN(playerStat.level)) {
         playerStat.level = 0;
       } //---------------------------------------
-
     },
 
     /* modify item */
     modifyItem: function modifyItem(idObject, operator, ammount) {
-
       var chosenItem = this.gameData.items.find(function (element) {
         return element.id == idObject;
       });
@@ -1168,7 +1504,9 @@ var script = /*#__PURE__*/vue.defineComponent({
           break;
 
         case "/":
-          resultAmmount = parseInt(nItemPlayer) - Math.floor(parseInt(nItemPlayer) / parseInt(ammount));
+          resultAmmount =
+            parseInt(nItemPlayer) -
+            Math.floor(parseInt(nItemPlayer) / parseInt(ammount));
           use = 2;
           break;
 
@@ -1208,7 +1546,6 @@ var script = /*#__PURE__*/vue.defineComponent({
       } //setto lista oggetti
       //this.player.item = totalResult
       //rifaccio lista oggetti da visualizzare
-
 
       this.setPlayerItemFiltered();
     },
@@ -1330,7 +1667,11 @@ var script = /*#__PURE__*/vue.defineComponent({
       //full screen
       function requestFullScreen(element) {
         // Supports most browsers and their versions.
-        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+        var requestMethod =
+          element.requestFullScreen ||
+          element.webkitRequestFullScreen ||
+          element.mozRequestFullScreen ||
+          element.msRequestFullScreen;
 
         if (requestMethod) {
           // Native full screen.
@@ -1348,68 +1689,155 @@ var script = /*#__PURE__*/vue.defineComponent({
       var elem = document.body; // Make the body go full screen.
 
       requestFullScreen(elem);
-    }
-  }
-});var _hoisted_1 = {
-  class: "game-grid"
+    },
+  },
+});
+var _hoisted_1 = {
+  class: "game-grid",
 };
 var _hoisted_2 = {
   key: 1,
-  class: "log-app"
+  class: "log-app",
 };
 var _hoisted_3 = {
   key: 0,
-  class: "game-error e-1"
+  class: "game-error e-1",
 };
 var _hoisted_4 = {
   key: 1,
-  class: "game-error e-3"
+  class: "game-error e-3",
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_boxillustration = vue.resolveComponent("boxillustration");
 
   var _component_boxText = vue.resolveComponent("boxText");
 
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [_ctx.illustration ? (vue.openBlock(), vue.createBlock(_component_boxillustration, {
-    key: 0,
-    editorUsage: _ctx.editorUsage,
-    illustration: _ctx.illustration,
-    indexMedia: _ctx.indexMedia,
-    pathMediaDir: _ctx.pathMediaDir,
-    style: vue.normalizeStyle(_ctx.gameData.style)
-  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style"])) : vue.createCommentVNode("", true), vue.createVNode(_component_boxText, {
-    narrationBox: _ctx.narrationBox,
-    lang: _ctx.lang,
-    "current-tabs": _ctx.currentTabs,
-    onReedBeams: _ctx.reedBeams
-  }, null, 8, ["narrationBox", "lang", "current-tabs", "onReedBeams"]), _ctx.narrationBox == 'false' || _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.strings.noEnd.langEditor), 1)) : vue.createCommentVNode("", true), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.onRunError, function (el, index) {
-    return vue.openBlock(), vue.createElementBlock("div", {
-      key: index,
-      class: "game-error e-2"
-    }, vue.toDisplayString(el), 1);
-  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, vue.toDisplayString(_ctx.strings.nodeBadMix.langEditor) + " " + vue.toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createElementVNode("div", {
-    class: vue.normalizeClass(["cover", {
-      'hide-cover': _ctx.cover == false
-    }])
-  }, null, 2)]);
-}script.render = render;/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
+  return (
+    vue.openBlock(),
+    vue.createElementBlock("div", _hoisted_1, [
+      _ctx.illustration
+        ? (vue.openBlock(),
+          vue.createBlock(
+            _component_boxillustration,
+            {
+              key: 0,
+              editorUsage: _ctx.editorUsage,
+              illustration: _ctx.illustration,
+              indexMedia: _ctx.indexMedia,
+              pathMediaDir: _ctx.pathMediaDir,
+              style: vue.normalizeStyle(_ctx.gameData.style),
+            },
+            null,
+            8,
+            [
+              "editorUsage",
+              "illustration",
+              "indexMedia",
+              "pathMediaDir",
+              "style",
+            ]
+          ))
+        : vue.createCommentVNode("", true),
+      vue.createVNode(
+        _component_boxText,
+        {
+          narrationBox: _ctx.narrationBox,
+          lang: _ctx.lang,
+          "current-tabs": _ctx.currentTabs,
+          onReedBeams: _ctx.reedBeams,
+        },
+        null,
+        8,
+        ["narrationBox", "lang", "current-tabs", "onReedBeams"]
+      ),
+      _ctx.narrationBox == "false" || _ctx.narrationBox == "node-bad-mix"
+        ? (vue.openBlock(),
+          vue.createElementBlock("div", _hoisted_2, [
+            _ctx.narrationBox == false && _ctx.onRunError.length == 0
+              ? (vue.openBlock(),
+                vue.createElementBlock(
+                  "div",
+                  _hoisted_3,
+                  vue.toDisplayString(_ctx.strings.noEnd.langEditor),
+                  1
+                ))
+              : vue.createCommentVNode("", true),
+            (vue.openBlock(true),
+            vue.createElementBlock(
+              vue.Fragment,
+              null,
+              vue.renderList(_ctx.onRunError, function (el, index) {
+                return (
+                  vue.openBlock(),
+                  vue.createElementBlock(
+                    "div",
+                    {
+                      key: index,
+                      class: "game-error e-2",
+                    },
+                    vue.toDisplayString(el),
+                    1
+                  )
+                );
+              }),
+              128
+            )),
+            _ctx.narrationBox == "node-bad-mix"
+              ? (vue.openBlock(),
+                vue.createElementBlock(
+                  "div",
+                  _hoisted_4,
+                  vue.toDisplayString(_ctx.strings.nodeBadMix.langEditor) +
+                    " " +
+                    vue.toDisplayString(_ctx.listBadMixId) +
+                    " ) ",
+                  1
+                ))
+              : vue.createCommentVNode("", true),
+          ]))
+        : vue.createCommentVNode("", true),
+      vue.createElementVNode(
+        "div",
+        {
+          class: vue.normalizeClass([
+            "cover",
+            {
+              "hide-cover": _ctx.cover == false,
+            },
+          ]),
+        },
+        null,
+        2
+      ),
+    ])
+  );
+}
+script.render = render;
+/* eslint-disable import/prefer-default-export */ var components$1 =
+  /*#__PURE__*/ Object.freeze({ __proto__: null, game: script });
+var install = function installTestStLibrary(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
-        componentName = _ref2[0],
-        component = _ref2[1];
+      componentName = _ref2[0],
+      component = _ref2[1];
 
     app.component(componentName, component);
   });
 }; // Create module definition for Vue.use()
-var components=/*#__PURE__*/Object.freeze({__proto__:null,'default':install,game:script});// only expose one global var, with component exports exposed as properties of
+var components = /*#__PURE__*/ Object.freeze({
+  __proto__: null,
+  default: install,
+  game: script,
+}); // only expose one global var, with component exports exposed as properties of
 // that global var (eg. plugin.component)
 
 Object.entries(components).forEach(function (_ref) {
   var _ref2 = _slicedToArray(_ref, 2),
-      componentName = _ref2[0],
-      component = _ref2[1];
+    componentName = _ref2[0],
+    component = _ref2[1];
 
-  if (componentName !== 'default') {
+  if (componentName !== "default") {
     install[componentName] = component;
   }
-});module.exports=install;
+});
+module.exports = install;
