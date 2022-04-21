@@ -5,7 +5,7 @@
 		class="game-grid"
 	>
 		<boxillustration
-			v-if="illustration && initialized"
+			v-if="disableIlustration == false && illustration && initialized"
 			:editorUsage="editorUsage"
 			:illustration="illustration"
 			:indexMedia="indexMedia"
@@ -99,6 +99,10 @@
 			editorUsage: {
 				type: Boolean,
 				default: true,
+			},
+			disableIlustration: {
+				type: Boolean,
+				default: false,
 			},
 			propLang: {
 				type: String,
@@ -215,9 +219,14 @@
 							this.gameData.style[this.device].margin,
 					};
 
-					let gridLayoutItem = getGridLayout(
-						this.gameData.style[this.device]["layout-type"]
-					);
+					let gridLayoutItem;
+					if (this.disableIlustration == true) {
+						gridLayoutItem = getGridLayout(7);
+					} else {
+						gridLayoutItem = getGridLayout(
+							this.gameData.style[this.device]["layout-type"]
+						);
+					}
 
 					let boxIllustration = {
 						...gridLayoutItem.boxIllustration,
