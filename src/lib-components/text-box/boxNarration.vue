@@ -12,7 +12,7 @@
 			>
 				<div
 					v-if="currentTabs.length == 1"
-					:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
+					:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1,...stylesObj.paddingBottomNextTab}"
 				>
 					{{tab.text[lang]}}
 				</div>
@@ -29,9 +29,27 @@
 				</div>
 			</div>
 
+			<div
+				v-for="tab,index in nextTabsChose"
+				:key="tab.id"
+				:class=" currentTabs.length == 1 ? 'label-description': 'label-multiple-chose'"
+			>
+				<div
+					v-if="tab.id"
+					:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
+				>
+					<ChooseTab
+						:index="index"
+						:text="tab.text[lang]"
+						:stylesObj="stylesObj"
+						@click="emitReedBeams3(tab.id)"
+					/>
+				</div>
+			</div>
+
 		</div>
 		<div
-			v-if="currentTabs.length == 1"
+			v-if="currentTabs.length == 1 && nextTabsChose.length == 0"
 			class="single-beem-foward-box"
 			:style="stylesObj.paddingTopNextTab"
 		>
@@ -55,6 +73,7 @@
 		},
 		props: {
 			currentTabs: {},
+			nextTabsChose: {},
 			lang: {},
 			emitReedBeams2: {},
 			stylesObj: {},

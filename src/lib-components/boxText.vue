@@ -8,6 +8,7 @@
 			v-if="narrationBox == 'default' || narrationBox == 'descriptions' ||  narrationBox == 'chose'"
 			:lang="lang"
 			:current-tabs="currentTabs"
+			:nextTabsChose="nextTabsChose"
 			:stylesObj="stylesObj"
 			@emitReedBeams2="emitReedBeams1"
 		/>
@@ -46,6 +47,7 @@
 			narrationBox: {},
 			lang: {},
 			currentTabs: {},
+			nextTabsChose: {},
 			reedBeams: {},
 			stylesObj: {},
 		},

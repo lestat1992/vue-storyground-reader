@@ -19,6 +19,7 @@
 			:narrationBox="narrationBox"
 			:lang="lang"
 			:current-tabs="currentTabs"
+			:nextTabsChose="nextTabsChose"
 			:stylesObj="stylesObj"
 			@reedBeams="reedBeams"
 		/>
@@ -147,6 +148,8 @@
 					item: [],
 				},
 				currentTabs: [],
+				nextTabsChose: [],
+
 				illustration: false,
 				onRunError: [],
 				listBadMixId: "",
@@ -304,7 +307,9 @@
 					let paddingTopNextTab = {
 						paddingTop: this.gameData.style[this.device]["box-text-padding"],
 					};
-
+					let paddingBottomNextTab = {
+						paddingBottom: this.gameData.style[this.device]["box-text-padding"],
+					};
 					/* bg text box */
 					let bgStyle = {
 						bgType: this.gameData.style["bg-type"],
@@ -326,6 +331,7 @@
 						iconSingleArrow: iconSingleArrow,
 						iconMultipleArrow: iconMultipleArrow,
 						paddingTopNextTab: paddingTopNextTab,
+						paddingBottomNextTab: paddingBottomNextTab,
 						tabResultsMaxHeight: tabResultsMaxHeight,
 						bgStyle: bgStyle,
 					};
@@ -397,9 +403,65 @@
 				if (tabsToNavigate.length == 0) {
 					let error = this.strings.wrongTabsId[this.langEditor];
 					this.onRunError.push(error);
+
+					//setto nextTabsChose
+					this.nextTabsChose = [];
 				} else {
 					if (tabsToNavigate.length == 1) {
 						this.singleBeemFoward = true;
+
+						//setto nextTabsChose ---------------------------
+						console.log("METTO A POSTO next tabs chose .................");
+
+						/* trovo nodi successivi */
+						let tabToAdd = [];
+						let error = false;
+						let single = false;
+
+						this.gameData.story.beams.forEach((el) => {
+							if (tabsToNavigate[0].id == el.from) {
+								let newEl = this.gameData.story.tabs.find(
+									(el2) => el2.id == el.to
+								);
+								tabToAdd.push(newEl);
+							}
+						});
+						console.log(tabToAdd);
+
+						let testNextTabsChose = this.ResoveTabsList(tabToAdd);
+
+						if (testNextTabsChose.length == 1) {
+							if (testNextTabsChose[0].type == "descriptions") {
+								single = true;
+							}
+						} else {
+							//controllo se sono tutti chose
+							testNextTabsChose.forEach((el) => {
+								if (el.type != "chose") {
+									error = true;
+								}
+							});
+						}
+
+						if (single) {
+							this.nextTabsChose = [];
+						} else {
+							if (error) {
+								//errore
+								this.narrationBox = "node-bad-mix";
+								this.setListBadMixId();
+								this.nextTabsChose = [];
+							} else {
+								this.nextTabsChose = testNextTabsChose;
+							}
+						}
+
+						//
+						console.log(testNextTabsChose);
+
+						console.log("............................................");
+
+						//-------------------------------------
 
 						//setto immagine
 						if (tabsToNavigate[0].img) {
@@ -1076,6 +1138,10 @@
 					},
 					active: () => {
 						console.log("Fonts have been rendered");
+						this.stepToInit.font = true;
+					},
+					inactive: () => {
+						console.log("Fonts have NOT been loade");
 						this.stepToInit.font = true;
 					},
 				});
