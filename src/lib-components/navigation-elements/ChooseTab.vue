@@ -65,9 +65,6 @@
 			init() {
 				let stringName = this.stylesObj.iconMultipleArrow["type"];
 
-				console.log("|||||||||||||||||||||||");
-				console.log(stringName);
-
 				if (stringName == "letter" || stringName == "number") {
 					this.svgData = false;
 					this.svgDataActive = false;

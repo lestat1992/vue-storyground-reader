@@ -80,7 +80,6 @@
 		},
 		methods: {
 			emitReedBeams3(id) {
-				console.log("click");
 				this.$emit("emitReedBeams2", id);
 			},
 		},

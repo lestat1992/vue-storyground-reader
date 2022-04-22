@@ -44,12 +44,8 @@
 				/* constrollo se il box test è attaccato ai bordi */
 				let canUseRadious = false;
 				if (this.borderRadiousLayout.includes(this.stylesObj.layoutID)) {
-					console.log("canUseRadious");
 					canUseRadious = true;
 				}
-				console.log("CONTROLLO");
-				console.log(this.borderRadiousLayout);
-				console.log(this.stylesObj.layoutID);
 
 				/* controllo se è un canvas */
 				if (this.canvasTypeArray.includes(this.stylesObj.bgStyle.bgType)) {
@@ -73,7 +69,6 @@
 				} else {
 					this.isCanvas = false;
 					if (this.stylesObj.bgStyle.bgType == "minimal1") {
-						console.log("pass1");
 						this.styleStBg = {
 							backgroundColor: this.stylesObj.bgStyle.bgColor,
 							boxShadow: "0 0 4px 2px rgba(14,14,14,0.45)",
@@ -82,7 +77,6 @@
 							this.styleStBg.borderRadius = "20px";
 						}
 					} else {
-						console.log("pass2");
 						this.styleStBg = {
 							backgroundColor: this.stylesObj.bgStyle.bgColor,
 						};

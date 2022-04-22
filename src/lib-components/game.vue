@@ -241,8 +241,7 @@
 					};
 
 					let currentBoxHeight;
-					console.log(boxText.gridRowEnd);
-					console.log(boxText.gridRowStart);
+
 					if (boxText.gridRowEnd != 7 && boxText.gridRowStart != 1) {
 						currentBoxHeight =
 							"(( " +
@@ -282,9 +281,6 @@
 						maxHeight: heightCalc,
 						minHeight: heightCalc,
 					};
-
-					console.log("guarda qui !!!!!!!!");
-					console.log(tabResultsMaxHeight);
 
 					/* FONT */
 
@@ -420,7 +416,6 @@
 						this.singleBeemFoward = true;
 
 						//setto nextTabsChose ---------------------------
-						console.log("METTO A POSTO next tabs chose .................");
 
 						/* trovo nodi successivi */
 						let tabToAdd = [];
@@ -435,7 +430,6 @@
 								tabToAdd.push(newEl);
 							}
 						});
-						console.log(tabToAdd);
 
 						let testNextTabsChose = this.ResoveTabsList(tabToAdd);
 
@@ -464,11 +458,6 @@
 								this.nextTabsChose = testNextTabsChose;
 							}
 						}
-
-						//
-						console.log(testNextTabsChose);
-
-						console.log("............................................");
 
 						//-------------------------------------
 
@@ -996,8 +985,6 @@
 
 			/* leggo beem da punto di inizio a punto di fine */
 			reedBeams(fromId) {
-				console.log("passing");
-				console.log(fromId);
 				let newIdArray = [];
 				this.gameData.story.beams.forEach((beam) => {
 					if (fromId == beam.from) {
@@ -1146,11 +1133,9 @@
 						],
 					},
 					active: () => {
-						console.log("Fonts have been rendered");
 						this.stepToInit.font = true;
 					},
 					inactive: () => {
-						console.log("Fonts have NOT been loade");
 						this.stepToInit.font = true;
 					},
 				});

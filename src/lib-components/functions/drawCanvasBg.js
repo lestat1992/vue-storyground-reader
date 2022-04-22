@@ -24,16 +24,12 @@ function drawCanvasBg(dimension, bgStyle, layoutID) {
     img1.onload = function () {
       let angles = [90, 180, 270, 360];
       let angle = angles[Math.floor(Math.random() * angles.length)];
-      console.log("guarda qui fesso");
-      console.log(angle);
+
       context.save();
       context.drawImage(img1, x, y, w, h);
-      //context.rotate((angle * Math.PI) / 180);
-      //context.restore();
     };
     img1.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(string);
 
-    console.log(img1);
     context.fillStyle = "pink";
     context.fillRect(0, 0, 100, 100);
 

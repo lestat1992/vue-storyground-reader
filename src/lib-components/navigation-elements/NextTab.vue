@@ -42,8 +42,6 @@
 		},
 		methods: {
 			initSvg() {
-				console.log("inizializzato!!!");
-
 				let stringName = this.stylesObj.iconSingleArrow["type"];
 				let svgString;
 				switch (stringName) {
