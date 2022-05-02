@@ -1,5 +1,9 @@
 <template>
-	<div class="chose-item">
+	<div
+		v-if="stylesObj.iconMultipleArrow['type']"
+		:class="{'use-active-item': svgDataActive}"
+		class="chose-item"
+	>
 		<div
 			v-if="svgData"
 			:class="stylesObj.iconMultipleArrow['type']"
@@ -21,6 +25,12 @@
 		<div v-else>{{indexListText}}</div>
 		{{text}}
 	</div>
+	<div
+		v-else
+		class="chose-item"
+	>
+		{{text}}
+	</div>
 </template>
 <script>
 	import choseTabHexagon from "../svg/choseTabHexagonActive.js";
@@ -32,6 +42,8 @@
 	import choseTabSketch4 from "../svg/choseTabSketch1.js";
 	import choseTabSketch5 from "../svg/choseTabSketch1.js";
 	import choseTabSketchActive from "../svg/choseTabSketchActive.js";
+
+	import choseTabMinimal from "../svg/choseTabMinimal.js";
 
 	import svgColorChange from "../functions/svgColorChange.js";
 
@@ -63,47 +75,49 @@
 		},
 		methods: {
 			init() {
-				let stringName = this.stylesObj.iconMultipleArrow["type"];
+				if (this.stylesObj.iconMultipleArrow["type"]) {
+					let stringName = this.stylesObj.iconMultipleArrow["type"];
 
-				if (stringName == "letter" || stringName == "number") {
-					this.svgData = false;
-					this.svgDataActive = false;
-					if (stringName == "letter") {
-						let alphabet = [
-							"a",
-							"b",
-							"c",
-							"d",
-							"e",
-							"f",
-							"g",
-							"h",
-							"i",
-							"j",
-							"k",
-							"l",
-							"m",
-							"n",
-							"o",
-							"p",
-							"q",
-							"r",
-							"s",
-							"t",
-							"u",
-							"v",
-							"w",
-							"x",
-							"y",
-							"z",
-						];
-						this.indexListText = alphabet[this.index];
+					if (stringName == "letter" || stringName == "number") {
+						this.svgData = false;
+						this.svgDataActive = false;
+						if (stringName == "letter") {
+							let alphabet = [
+								"a",
+								"b",
+								"c",
+								"d",
+								"e",
+								"f",
+								"g",
+								"h",
+								"i",
+								"j",
+								"k",
+								"l",
+								"m",
+								"n",
+								"o",
+								"p",
+								"q",
+								"r",
+								"s",
+								"t",
+								"u",
+								"v",
+								"w",
+								"x",
+								"y",
+								"z",
+							];
+							this.indexListText = alphabet[this.index];
+						} else {
+							this.indexListText = this.index + 1 + ".";
+						}
 					} else {
-						this.indexListText = this.index + 1 + ".";
+						this.indexListText = false;
+						this.initSvg();
 					}
-				} else {
-					this.indexListText = false;
-					this.initSvg();
 				}
 			},
 			initSvg() {
@@ -128,6 +142,9 @@
 						listElement = [choseTabHexagon];
 						this.initSvgActive(choseTabHexagonActive);
 						break;
+					case "minimal1":
+						listElement = [choseTabMinimal];
+						this.initSvgActive(false);
 					default:
 						break;
 				}
@@ -141,10 +158,14 @@
 			},
 
 			initSvgActive(activeSvgString) {
-				this.svgDataActive = svgColorChange(
-					activeSvgString,
-					this.stylesObj.iconMultipleArrow["color"]
-				);
+				if (activeSvgString) {
+					this.svgDataActive = svgColorChange(
+						activeSvgString,
+						this.stylesObj.iconMultipleArrow["color"]
+					);
+				} else {
+					this.svgDataActive = false;
+				}
 			},
 		},
 	};
@@ -186,7 +207,7 @@
 		opacity: 1;
 	}
 
-	.chose-item:hover .svg-wraper {
+	.chose-item.use-active-item:hover .svg-wraper {
 		opacity: 0;
 	}
 </style>

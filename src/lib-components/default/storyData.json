@@ -145,30 +145,30 @@
         "height": 1080
       }
     ],
-    "bg-color": "blue",
-    "bg-type": "minimal1",
-    "color": "#000000",
+    "bg-color": "#ffffff",
+    "bg-type": "minimal2",
+    "color": "#282828",
     "icon-single-arrow": {
-      "type": "sketch",
-      "size": "100px",
-      "color": "#00FF00"
+      "type": "minimal2",
+      "size": "45px",
+      "color": "#282828"
     },
     "icon-multiple-arrow": {
-      "type": "sketch",
+      "type": "minimal1",
       "size": "16px",
-      "color": "#00FF00"
+      "color": "#282828"
     },
     "desktop": {
       "font-size-1": "20px",
       "margin": "50px",
       "box-text-padding": "25px",
-      "layout-type": 1
+      "layout-type": "a6f8"
     },
     "mobile": {
       "font-size-1": "18px",
-      "margin": "0",
+      "margin": "100px",
       "box-text-padding": "5vw",
-      "layout-type": 15
+      "layout-type": "d1f8"
     }
   }
 }

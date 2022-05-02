@@ -2,7 +2,7 @@ function gridLayout(id) {
   let boxIllustration;
   let boxText;
   switch (id) {
-    case 1:
+    case "a6f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -16,7 +16,7 @@ function gridLayout(id) {
         gridColumnEnd: 9,
       };
       break;
-    case 2:
+    case "a5f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -31,7 +31,7 @@ function gridLayout(id) {
         gridColumnEnd: 9,
       };
       break;
-    case 3:
+    case "a1f3":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 4,
@@ -42,10 +42,10 @@ function gridLayout(id) {
         gridRowStart: 1,
         gridColumnStart: 1,
         gridRowEnd: 7,
-        gridColumnEnd: 5,
+        gridColumnEnd: 4,
       };
       break;
-    case 4:
+    case "a1f4":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 5,
@@ -59,7 +59,7 @@ function gridLayout(id) {
         gridColumnEnd: 5,
       };
       break;
-    case 5:
+    case "d3e6":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -73,7 +73,7 @@ function gridLayout(id) {
         gridColumnEnd: 7,
       };
       break;
-    case 6:
+    case "b3c6":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -88,7 +88,7 @@ function gridLayout(id) {
       };
       break;
     /* all screen */
-    case 7:
+    case "a1f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -102,21 +102,7 @@ function gridLayout(id) {
         gridColumnEnd: 9,
       };
       break;
-    case 8:
-      boxIllustration = {
-        gridRowStart: 1,
-        gridColumnStart: 1,
-        gridRowEnd: 7,
-        gridColumnEnd: 9,
-      };
-      boxText = {
-        gridRowStart: 2,
-        gridColumnStart: 6,
-        gridRowEnd: 6,
-        gridColumnEnd: 8,
-      };
-      break;
-    case 9:
+    case "b2e3":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -130,7 +116,7 @@ function gridLayout(id) {
         gridColumnEnd: 4,
       };
       break;
-    case 10:
+    case "b2e4":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -144,7 +130,7 @@ function gridLayout(id) {
         gridColumnEnd: 5,
       };
       break;
-    case 11:
+    case "b6e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -158,7 +144,7 @@ function gridLayout(id) {
         gridColumnEnd: 8,
       };
       break;
-    case 12:
+    case "b5e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -172,7 +158,7 @@ function gridLayout(id) {
         gridColumnEnd: 8,
       };
       break;
-    case 13:
+    case "e2e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -186,7 +172,7 @@ function gridLayout(id) {
         gridColumnEnd: 8,
       };
       break;
-    case 14:
+    case "b2b7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -200,7 +186,7 @@ function gridLayout(id) {
         gridColumnEnd: 8,
       };
       break;
-    case 15:
+    case "d2e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -209,22 +195,23 @@ function gridLayout(id) {
       };
       boxText = {
         gridRowStart: 4,
-        gridColumnStart: 1,
+        gridColumnStart: 2,
         gridRowEnd: 6,
-        gridColumnEnd: 9,
+        gridColumnEnd: 8,
       };
       break;
-    case 16:
+    /* mobile */
+    case "d1f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
-        gridRowEnd: 7,
+        gridRowEnd: 4,
         gridColumnEnd: 9,
       };
       boxText = {
         gridRowStart: 4,
         gridColumnStart: 1,
-        gridRowEnd: 6,
+        gridRowEnd: 7,
         gridColumnEnd: 9,
       };
       break;

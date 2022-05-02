@@ -15,7 +15,7 @@
 		/>
 
 		<boxText
-			v-if="initialized"
+			v-if="initialized && narrationBox !== false && narrationBox !== 'node-bad-mix'"
 			:narrationBox="narrationBox"
 			:lang="lang"
 			:current-tabs="currentTabs"
@@ -174,6 +174,12 @@
 					} else {
 						this.initialized = false;
 					}
+				},
+				deep: true,
+			},
+			gameData: {
+				handler() {
+					this.LoadFont();
 				},
 				deep: true,
 			},
@@ -1124,6 +1130,15 @@
 
 			init() {
 				this.setDevice();
+				this.LoadFont();
+				this.setPreCacheImgList();
+				if (this.preCachedImgList.length == 0) {
+					this.stepToInit.img = true;
+				}
+			},
+
+			LoadFont() {
+				this.stepToInit.font = false;
 				WebFont.load({
 					google: {
 						families: [
@@ -1139,10 +1154,6 @@
 						this.stepToInit.font = true;
 					},
 				});
-				this.setPreCacheImgList();
-				if (this.preCachedImgList.length == 0) {
-					this.stepToInit.img = true;
-				}
 			},
 
 			setPreCacheImgList() {
@@ -1238,5 +1249,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+	.log-app {
+		grid-row-start: 1;
+		grid-column-start: 1;
+		grid-row-end: 7;
+		grid-column-end: 9;
 	}
 </style>
