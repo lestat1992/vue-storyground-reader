@@ -1256,4 +1256,20 @@
 		grid-row-end: 7;
 		grid-column-end: 9;
 	}
+	.log-app {
+		background-color: #282828;
+		z-index: 100;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.log-app > * {
+		font-size: 15px;
+		max-width: 100%;
+		padding-right: 20px;
+		padding-left: 20px;
+		width: 100%;
+		text-align: center;
+		color: #ed6767;
+	}
 </style>
