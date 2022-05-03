@@ -150,12 +150,12 @@
     "color": "#282828",
     "icon-single-arrow": {
       "type": "minimal2",
-      "size": "45px",
+      "size": "35px",
       "color": "#282828"
     },
     "icon-multiple-arrow": {
       "type": "minimal1",
-      "size": "16px",
+      "size": "12px",
       "color": "#282828"
     },
     "desktop": {

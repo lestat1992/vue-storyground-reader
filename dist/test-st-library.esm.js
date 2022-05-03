@@ -294,30 +294,30 @@ var style$1 = {
 			height: 1080
 		}
 	],
-	"bg-color": "blue",
-	"bg-type": "minimal1",
-	color: "#000000",
+	"bg-color": "#ffffff",
+	"bg-type": "minimal2",
+	color: "#282828",
 	"icon-single-arrow": {
-		type: "sketch",
-		size: "100px",
-		color: "#00FF00"
+		type: "minimal2",
+		size: "35px",
+		color: "#282828"
 	},
 	"icon-multiple-arrow": {
-		type: "sketch",
-		size: "16px",
-		color: "#00FF00"
+		type: "minimal1",
+		size: "12px",
+		color: "#282828"
 	},
 	desktop: {
 		"font-size-1": "20px",
 		margin: "50px",
 		"box-text-padding": "25px",
-		"layout-type": 1
+		"layout-type": "a6f8"
 	},
 	mobile: {
 		"font-size-1": "18px",
-		margin: "0",
+		margin: "100px",
 		"box-text-padding": "5vw",
-		"layout-type": 15
+		"layout-type": "d1f8"
 	}
 };
 var defaultStory = {
@@ -382,7 +382,7 @@ var script$a = boxIllustration;
 const _hoisted_1$9 = {
   class: "inner-box"
 };
-const _hoisted_2$5 = ["src"];
+const _hoisted_2$6 = ["src"];
 const _hoisted_3$4 = ["src", "srcset", "sizes"];
 function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
@@ -392,7 +392,7 @@ function render$a(_ctx, _cache, $props, $setup, $data, $options) {
     key: 0,
     class: "box-img",
     src: _ctx.illustration.srcFull[0]
-  }, null, 8, _hoisted_2$5)) : (openBlock(), createElementBlock("img", {
+  }, null, 8, _hoisted_2$6)) : (openBlock(), createElementBlock("img", {
     key: 1,
     src: _ctx.imgPathPart + '-' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['width'] + 'x' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['height'] + '.jpg',
     srcset: _ctx.responsiveImages.srcset,
@@ -456,6 +456,13 @@ let nextTabMinimal1 = `
 </svg>`;
 var nextTabMinimal1$1 = nextTabMinimal1;
 
+let nextTabMinimal2 = `
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<polygon style="fill:#7F7F7F;" points="50,74.6 100,25.4 0,25.4 "/>
+</svg>`;
+var nextTabMinimal2$1 = nextTabMinimal2;
+
 function svgColorChange(stringSvg, color) {
   let primaryColor = "#7F7F7F";
   let primaryColorReplace = color;
@@ -470,7 +477,9 @@ let NextTab$1 = {
   },
   data: function () {
     return {
-      svgData: false
+      svgData: false,
+      animation: false,
+      svgShadow: false
     };
   },
   watch: {
@@ -495,14 +504,19 @@ let NextTab$1 = {
       switch (stringName) {
         case "sketch":
           svgString = nextTabSketch$2;
-          break;
-
-        case "minimal1":
-          svgString = nextTabMinimal1$1;
+          this.animation = "shining";
           break;
 
         case "minimal2":
+          svgString = nextTabMinimal2$1;
+          this.animation = "scroll-down";
+          this.svgShadow = true;
+          break;
+
+        default:
           svgString = nextTabMinimal1$1;
+          this.animation = "scroll-down";
+          this.svgShadow = true;
           break;
       }
 
@@ -514,32 +528,47 @@ let NextTab$1 = {
 var script$9 = NextTab$1;
 
 const _hoisted_1$8 = ["innerHTML"];
+const _hoisted_2$5 = ["innerHTML"];
 function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return _ctx.svgData ? (openBlock(), createElementBlock("div", {
     key: 0,
-    class: normalizeClass([_ctx.stylesObj.iconSingleArrow['type'], "next-tab-wrapper"])
+    class: normalizeClass([_ctx.stylesObj.iconSingleArrow['type'] + ' animation-' + _ctx.animation, "next-tab-wrapper"])
   }, [createElementVNode("div", {
     class: "svg-wraper",
     style: normalizeStyle({
       width: _ctx.stylesObj.iconSingleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_1$8)], 2)) : createCommentVNode("", true);
+  }, null, 12, _hoisted_1$8), createElementVNode("div", {
+    class: "svg-shadow",
+    style: normalizeStyle({
+      width: _ctx.stylesObj.iconSingleArrow['size']
+    }),
+    innerHTML: _ctx.svgData
+  }, null, 12, _hoisted_2$5)], 2)) : createCommentVNode("", true);
 }
 
-var css_248z$a = "\n.next-tab-wrapper[data-v-28904b94] {\n\t\twidth: auto;\n\t\tdisplay: inline-flex;\n\t\tcursor: pointer;\n}\n.next-tab-wrapper[data-v-28904b94] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.next-tab-wrapper[data-v-28904b94]:hover {\n\t\topacity: 0.75;\n}\n";
+var css_248z$a = "\n.next-tab-wrapper[data-v-239914b6] {\n\t\twidth: auto;\n\t\tdisplay: inline-flex;\n\t\tcursor: pointer;\n\t\tposition: relative;\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.next-tab-wrapper[data-v-239914b6]:hover {\n\t\topacity: 0.75;\n}\n.next-tab-wrapper:hover .svg-shadow[data-v-239914b6] {\n\t\topacity: 0;\n\t\tanimation: none;\n}\n.svg-shadow[data-v-239914b6] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n\n\t/* scroll-down */\n.animation-scroll-down .svg-shadow[data-v-239914b6] {\n\t\tanimation: scroll-down-239914b6 2s infinite;\n\t\tanimation-timing-function: ease-out;\n}\n.animation-scroll-down[data-v-239914b6] {\n\t\ttransition: transform 0.35s;\n\t\ttransition-timing-function: ease-out;\n\t\ttransform: translateY(0) scale(0.95);\n}\n.animation-scroll-down[data-v-239914b6]:hover {\n\t\ttransform: translateY(10%) scale(1);\n}\n@keyframes scroll-down-239914b6 {\n0% {\n\t\t\ttransform: translateY(0);\n\t\t\topacity: 0.5;\n}\n100% {\n\t\t\ttransform: translateY(35%);\n\t\t\topacity: 0;\n}\n}\n\n\t/* shining */\n.animation-shining[data-v-239914b6] {\n\t\ttransition: transform 0.35s;\n\t\ttransition-timing-function: ease-out;\n\t\ttransform: translateY(0) scale(0.95);\n\t\tanimation: shining-239914b6 1s infinite;\n\t\tanimation-timing-function: ease-out;\n}\n.animation-shining[data-v-239914b6]:hover {\n\t\ttransform: translateY(10%) scale(1);\n\t\tanimation: none;\n}\n@keyframes shining-239914b6 {\n0% {\n\t\t\topacity: 1;\n\t\t\ttransform: translateY(0) scale(1);\n}\n50% {\n\t\t\topacity: 0.5;\n\t\t\ttransform: translateY(0) scale(0.95);\n}\n100% {\n\t\t\topacity: 1;\n\t\t\ttransform: translateY(0) scale(1);\n}\n}\n";
 styleInject(css_248z$a);
 
 script$9.render = render$9;
-script$9.__scopeId = "data-v-28904b94";
+script$9.__scopeId = "data-v-239914b6";
 
-let nextTabSketch = `
+let choseTabHexagon = `
 <svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <g>
 	<path style="fill:#7F7F7F;" d="M75,6.7H25L0,50l25,43.3h50L100,50L75,6.7z M67.8,80.8H32.2L14.4,50l17.8-30.8h35.6L85.6,50
 		L67.8,80.8z"/>
 </g>
+</svg>
+`;
+var choseTabHexagon$1 = choseTabHexagon;
+
+let nextTabSketch = `
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<polygon style="fill:#7F7F7F;" points="75,6.7 25,6.7 0,50 25,93.3 75,93.3 100,50 "/>
 </svg>
 `;
 var choseTabHexagonActive = nextTabSketch;
@@ -603,6 +632,17 @@ let choseTabSketchActive = `
 `;
 var choseTabSketchActive$1 = choseTabSketchActive;
 
+let choseTabMinimal = `
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#7F7F7F;}
+</style>
+<polygon class="st0" points="85.2,50 45.3,89.1 14.8,89.1 14.8,10.9 45.3,10.9 "/>
+</svg>
+`;
+var choseTabMinimal$1 = choseTabMinimal;
+
 let NextTab = {
   name: "boxNarration",
   components: {},
@@ -634,21 +674,23 @@ let NextTab = {
 
   methods: {
     init() {
-      let stringName = this.stylesObj.iconMultipleArrow["type"];
+      if (this.stylesObj.iconMultipleArrow["type"]) {
+        let stringName = this.stylesObj.iconMultipleArrow["type"];
 
-      if (stringName == "letter" || stringName == "number") {
-        this.svgData = false;
-        this.svgDataActive = false;
+        if (stringName == "letter" || stringName == "number") {
+          this.svgData = false;
+          this.svgDataActive = false;
 
-        if (stringName == "letter") {
-          let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-          this.indexListText = alphabet[this.index];
+          if (stringName == "letter") {
+            let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            this.indexListText = alphabet[this.index];
+          } else {
+            this.indexListText = this.index + 1 + ".";
+          }
         } else {
-          this.indexListText = this.index + 1 + ".";
+          this.indexListText = false;
+          this.initSvg();
         }
-      } else {
-        this.indexListText = false;
-        this.initSvg();
       }
     },
 
@@ -665,9 +707,13 @@ let NextTab = {
           break;
 
         case "hexagon":
-          listElement = [choseTabHexagonActive];
+          listElement = [choseTabHexagon$1];
           this.initSvgActive(choseTabHexagonActive);
           break;
+
+        case "minimal1":
+          listElement = [choseTabMinimal$1];
+          this.initSvgActive(false);
       }
 
       svgString = listElement[Math.floor(Math.random() * listElement.length)];
@@ -675,46 +721,56 @@ let NextTab = {
     },
 
     initSvgActive(activeSvgString) {
-      this.svgDataActive = svgColorChange(activeSvgString, this.stylesObj.iconMultipleArrow["color"]);
+      if (activeSvgString) {
+        this.svgDataActive = svgColorChange(activeSvgString, this.stylesObj.iconMultipleArrow["color"]);
+      } else {
+        this.svgDataActive = false;
+      }
     }
 
   }
 };
 var script$8 = NextTab;
 
-const _hoisted_1$7 = {
+const _hoisted_1$7 = ["innerHTML"];
+const _hoisted_2$4 = ["innerHTML"];
+const _hoisted_3$3 = {
+  key: 1,
   class: "chose-item"
 };
-const _hoisted_2$4 = ["innerHTML"];
-const _hoisted_3$3 = ["innerHTML"];
-const _hoisted_4$2 = {
-  key: 1
-};
 function render$8(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$7, [_ctx.svgData ? (openBlock(), createElementBlock("div", {
+  return _ctx.stylesObj.iconMultipleArrow['type'] ? (openBlock(), createElementBlock("div", {
     key: 0,
-    class: normalizeClass([_ctx.stylesObj.iconMultipleArrow['type'], "icon-wrapper"])
+    class: normalizeClass([{
+      'use-active-item': _ctx.svgDataActive
+    }, "chose-item"])
+  }, [_ctx.svgData ? (openBlock(), createElementBlock("div", {
+    key: 0,
+    class: normalizeClass(['type-' + _ctx.stylesObj.iconMultipleArrow['type'], "icon-wrapper"])
   }, [createElementVNode("div", {
     class: "svg-wraper",
     style: normalizeStyle({
       minWidth: _ctx.stylesObj.iconMultipleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_2$4), _ctx.svgDataActive ? (openBlock(), createElementBlock("div", {
+  }, null, 12, _hoisted_1$7), _ctx.svgDataActive ? (openBlock(), createElementBlock("div", {
     key: 0,
     class: "svg-hover-wraper",
     style: normalizeStyle({
       minWidth: _ctx.stylesObj.iconMultipleArrow['size']
     }),
     innerHTML: _ctx.svgDataActive
-  }, null, 12, _hoisted_3$3)) : createCommentVNode("", true)], 2)) : (openBlock(), createElementBlock("div", _hoisted_4$2, toDisplayString(_ctx.indexListText), 1)), createTextVNode(" " + toDisplayString(_ctx.text), 1)]);
+  }, null, 12, _hoisted_2$4)) : createCommentVNode("", true)], 2)) : (openBlock(), createElementBlock("div", {
+    key: 1,
+    class: normalizeClass('type-' + _ctx.stylesObj.iconMultipleArrow['type'])
+  }, toDisplayString(_ctx.indexListText), 3)), createTextVNode(" " + toDisplayString(_ctx.text), 1)], 2)) : (openBlock(), createElementBlock("div", _hoisted_3$3, toDisplayString(_ctx.text), 1));
 }
 
-var css_248z$9 = "\n.chose-item[data-v-5c8c8282] {\n\t\tdisplay: inline-flex;\n\t\tmargin-bottom: 1em;\n\t\tmax-width: 100%;\n\t\twidth: auto;\n\t\tcursor: pointer;\n}\n.icon-wrapper[data-v-5c8c8282] {\n\t\tmargin-right: 0.5em;\n\t\tposition: relative;\n}\n.svg-hover-wraper[data-v-5c8c8282] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\topacity: 0;\n}\n.chose-item[data-v-5c8c8282],\n\t.svg-wraper[data-v-5c8c8282],\n\t.svg-hover-wraper[data-v-5c8c8282] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.chose-item[data-v-5c8c8282]:hover {\n\t\topacity: 0.75;\n}\n.chose-item:hover .svg-hover-wraper[data-v-5c8c8282] {\n\t\topacity: 1;\n}\n.chose-item:hover .svg-wraper[data-v-5c8c8282] {\n\t\topacity: 0;\n}\n";
+var css_248z$9 = "\n.chose-item[data-v-4ffb6545] {\n\t\tdisplay: inline-flex;\n\t\tmargin-bottom: 1em;\n\t\tmax-width: 100%;\n\t\twidth: auto;\n\t\tcursor: pointer;\n}\n.icon-wrapper[data-v-4ffb6545] {\n\t\tmargin-right: 0.5em;\n\t\tposition: relative;\n}\n.svg-hover-wraper[data-v-4ffb6545] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\topacity: 0;\n}\n.chose-item[data-v-4ffb6545],\n\t.svg-wraper[data-v-4ffb6545],\n\t.svg-hover-wraper[data-v-4ffb6545] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.chose-item[data-v-4ffb6545]:hover {\n\t\topacity: 0.75;\n}\n.chose-item:hover .svg-hover-wraper[data-v-4ffb6545] {\n\t\topacity: 1;\n}\n.chose-item.use-active-item:hover .svg-wraper[data-v-4ffb6545] {\n\t\topacity: 0;\n}\n.type-number[data-v-4ffb6545],\n\t.type-letter[data-v-4ffb6545] {\n\t\tmargin-right: 0.5em;\n}\n";
 styleInject(css_248z$9);
 
 script$8.render = render$8;
-script$8.__scopeId = "data-v-5c8c8282";
+script$8.__scopeId = "data-v-4ffb6545";
 
 let boxNarration = {
   name: "boxNarration",
@@ -1054,7 +1110,7 @@ let BgBoxText = {
     return {
       isCanvas: false,
       canvasTypeArray: ["sketch"],
-      borderRadiousLayout: [5, 6, 8, 9, 10, 11, 15, 16],
+      borderRadiousLayout: ["d3e6", "b3c6", "b2e3", "b2e4", "b6e7", "b5e7", "e2e7", "b2b7"],
       width: 0,
       height: 0,
       styleStBg: {}
@@ -1132,11 +1188,11 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 4))]);
 }
 
-var css_248z$5 = "\n.bg-wrapper[data-v-e821c788],\n\t.st-bg[data-v-e821c788] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
+var css_248z$5 = "\n.bg-wrapper[data-v-58a78f56],\n\t.st-bg[data-v-58a78f56] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
 styleInject(css_248z$5);
 
 script$4.render = render$4;
-script$4.__scopeId = "data-v-e821c788";
+script$4.__scopeId = "data-v-58a78f56";
 
 let boxText = {
   name: "boxText",
@@ -1352,7 +1408,7 @@ function gridLayout(id) {
   let boxText;
 
   switch (id) {
-    case 1:
+    case "a6f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1367,7 +1423,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 2:
+    case "a5f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1382,7 +1438,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 3:
+    case "a1f3":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 4,
@@ -1393,11 +1449,11 @@ function gridLayout(id) {
         gridRowStart: 1,
         gridColumnStart: 1,
         gridRowEnd: 7,
-        gridColumnEnd: 5
+        gridColumnEnd: 4
       };
       break;
 
-    case 4:
+    case "a1f4":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 5,
@@ -1412,7 +1468,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 5:
+    case "d3e6":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1427,7 +1483,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 6:
+    case "b3c6":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1444,7 +1500,7 @@ function gridLayout(id) {
 
     /* all screen */
 
-    case 7:
+    case "a1f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1459,22 +1515,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 8:
-      boxIllustration = {
-        gridRowStart: 1,
-        gridColumnStart: 1,
-        gridRowEnd: 7,
-        gridColumnEnd: 9
-      };
-      boxText = {
-        gridRowStart: 2,
-        gridColumnStart: 6,
-        gridRowEnd: 6,
-        gridColumnEnd: 8
-      };
-      break;
-
-    case 9:
+    case "b2e3":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1489,7 +1530,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 10:
+    case "b2e4":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1504,7 +1545,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 11:
+    case "b6e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1519,7 +1560,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 12:
+    case "b5e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1534,7 +1575,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 13:
+    case "e2e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1549,7 +1590,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 14:
+    case "b2b7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1564,7 +1605,7 @@ function gridLayout(id) {
       };
       break;
 
-    case 15:
+    case "d2e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1573,23 +1614,25 @@ function gridLayout(id) {
       };
       boxText = {
         gridRowStart: 4,
-        gridColumnStart: 1,
+        gridColumnStart: 2,
         gridRowEnd: 6,
-        gridColumnEnd: 9
+        gridColumnEnd: 8
       };
       break;
 
-    case 16:
+    /* mobile */
+
+    case "d1f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
-        gridRowEnd: 7,
+        gridRowEnd: 4,
         gridColumnEnd: 9
       };
       boxText = {
         gridRowStart: 4,
         gridColumnStart: 1,
-        gridRowEnd: 6,
+        gridRowEnd: 7,
         gridColumnEnd: 9
       };
       break;
@@ -1691,6 +1734,13 @@ var script = /*#__PURE__*/defineComponent({
         } else {
           this.initialized = false;
         }
+      },
+
+      deep: true
+    },
+    gameData: {
+      handler() {
+        this.LoadFont();
       },
 
       deep: true
@@ -2467,6 +2517,16 @@ var script = /*#__PURE__*/defineComponent({
     /* STYLE ---------------------------------------- */
     init() {
       this.setDevice();
+      this.LoadFont();
+      this.setPreCacheImgList();
+
+      if (this.preCachedImgList.length == 0) {
+        this.stepToInit.img = true;
+      }
+    },
+
+    LoadFont() {
+      this.stepToInit.font = false;
       WebFont.load({
         google: {
           families: [this.stylesObj.fontName + ":" + this.stylesObj.fontWeightList.join()]
@@ -2478,11 +2538,6 @@ var script = /*#__PURE__*/defineComponent({
           this.stepToInit.font = true;
         }
       });
-      this.setPreCacheImgList();
-
-      if (this.preCachedImgList.length == 0) {
-        this.stepToInit.img = true;
-      }
     },
 
     setPreCacheImgList() {
@@ -2572,7 +2627,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     pathMediaDir: _ctx.pathMediaDir,
     style: normalizeStyle(_ctx.gameData.style),
     stylesObj: _ctx.stylesObj
-  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style", "stylesObj"])) : createCommentVNode("", true), _ctx.initialized ? (openBlock(), createBlock(_component_boxText, {
+  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style", "stylesObj"])) : createCommentVNode("", true), _ctx.initialized && _ctx.narrationBox !== false && _ctx.narrationBox !== 'node-bad-mix' ? (openBlock(), createBlock(_component_boxText, {
     key: 1,
     narrationBox: _ctx.narrationBox,
     lang: _ctx.lang,
@@ -2596,11 +2651,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n";
 styleInject(css_248z$1);
 
-var css_248z = "\n.game-grid[data-v-566e9f86] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n}\n.load-screen[data-v-566e9f86] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n";
+var css_248z = "\n.game-grid[data-v-fbc06cae] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n}\n.load-screen[data-v-fbc06cae] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.log-app[data-v-fbc06cae] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n}\n";
 styleInject(css_248z);
 
 script.render = render;
-script.__scopeId = "data-v-566e9f86";
+script.__scopeId = "data-v-fbc06cae";
 
 /* eslint-disable import/prefer-default-export */
 

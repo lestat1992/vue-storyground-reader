@@ -410,30 +410,30 @@ var style$1 = {
 			height: 1080
 		}
 	],
-	"bg-color": "blue",
-	"bg-type": "minimal1",
-	color: "#000000",
+	"bg-color": "#ffffff",
+	"bg-type": "minimal2",
+	color: "#282828",
 	"icon-single-arrow": {
-		type: "sketch",
-		size: "100px",
-		color: "#00FF00"
+		type: "minimal2",
+		size: "35px",
+		color: "#282828"
 	},
 	"icon-multiple-arrow": {
-		type: "sketch",
-		size: "16px",
-		color: "#00FF00"
+		type: "minimal1",
+		size: "12px",
+		color: "#282828"
 	},
 	desktop: {
 		"font-size-1": "20px",
 		margin: "50px",
 		"box-text-padding": "25px",
-		"layout-type": 1
+		"layout-type": "a6f8"
 	},
 	mobile: {
 		"font-size-1": "18px",
-		margin: "0",
+		margin: "100px",
 		"box-text-padding": "5vw",
-		"layout-type": 15
+		"layout-type": "d1f8"
 	}
 };
 var defaultStory = {
@@ -498,7 +498,7 @@ var defaultStory = {
 var script$a = boxIllustration;var _hoisted_1$9 = {
   class: "inner-box"
 };
-var _hoisted_2$5 = ["src"];
+var _hoisted_2$6 = ["src"];
 var _hoisted_3$4 = ["src", "srcset", "sizes"];
 function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", {
@@ -508,7 +508,7 @@ function render$a(_ctx, _cache, $props, $setup, $data, $options) {
     key: 0,
     class: "box-img",
     src: _ctx.illustration.srcFull[0]
-  }, null, 8, _hoisted_2$5)) : (vue.openBlock(), vue.createElementBlock("img", {
+  }, null, 8, _hoisted_2$6)) : (vue.openBlock(), vue.createElementBlock("img", {
     key: 1,
     src: _ctx.imgPathPart + '-' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['width'] + 'x' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['height'] + '.jpg',
     srcset: _ctx.responsiveImages.srcset,
@@ -543,7 +543,8 @@ function render$a(_ctx, _cache, $props, $setup, $data, $options) {
 styleInject(css_248z$b);script$a.render = render$a;
 script$a.__scopeId = "data-v-2c8ca352";var nextTabSketch$1 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M53.4,71.1c-1.1,1.3-1.9,2.3-2.6,3.3c-2.4,0-4.9,0.5-7.1-0.1c-2.8-0.8-4.6-3.2-4.4-6.3\n\t\tc0.1-2.6-1-4-3.1-5.2c-4.8-2.7-9.6-5.2-14.1-8.4c-4.4-3.1-8.3-6.8-12.4-10.2c-0.4-0.3-0.7-0.9-1.1-1c-3.8-0.4-5.4-3.6-7.5-6.1\n\t\tc-0.7-0.8-1.3-2.4-0.9-3c0.9-1.3,2.4-3,3.6-2.9c3.1,0.1,4.6-0.9,5.2-3.9c0.1-0.6,1-1.1,1.6-1.8c2.9,2.5,5.4,5.1,8.3,7\n\t\tc3.9,2.6,8.3,4.5,12.2,7c1.9,1.2,3.2,3.2,5.1,4.4c5.7,3.5,11.6,6.7,17.4,10c0.8,0.4,1.5,0.9,2.9,1.9c2.7-2.7,5.4-5.6,8.2-8.5\n\t\tc2.6-2.7,5.2-5.5,7.9-8.2c2.2-2.2,3.8-5,7.4-6c4.9-1.2,9.6-3.5,14.5-4.9c1.2-0.3,3.1,0.8,4.4,1.6c0.7,0.5,0.9,1.8,1.3,2.8\n\t\tc-0.9,0.2-2.2,0-2.8,0.6c-2.3,2-6.2,4.1-6.3,6.3c-0.1,6.7-4.5,9.9-8.8,13.2c-5,3.9-10.6,7.1-15.9,10.8C65,64.5,64,66,63.3,66.8\n\t\tc-2.9,2.4-5.5,4.5-8.2,6.7C54.5,72.7,54.1,72.1,53.4,71.1z\"/>\n</g>\n</svg>\n";
 var nextTabSketch$2 = nextTabSketch$1;var nextTabMinimal1 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<polygon style=\"fill:#7F7F7F;\" points=\"100,27.4 100,35.5 50,72.6 0,35.5 0,27.4 7.2,32.7 50,64.5 92.8,32.7 \"/>\n</svg>";
-var nextTabMinimal1$1 = nextTabMinimal1;function svgColorChange(stringSvg, color) {
+var nextTabMinimal1$1 = nextTabMinimal1;var nextTabMinimal2 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<polygon style=\"fill:#7F7F7F;\" points=\"50,74.6 100,25.4 0,25.4 \"/>\n</svg>";
+var nextTabMinimal2$1 = nextTabMinimal2;function svgColorChange(stringSvg, color) {
   var primaryColor = "#7F7F7F";
   var primaryColorReplace = color;
   return stringSvg.replace(primaryColor, primaryColorReplace);
@@ -555,7 +556,9 @@ var nextTabMinimal1$1 = nextTabMinimal1;function svgColorChange(stringSvg, color
   },
   data: function data() {
     return {
-      svgData: false
+      svgData: false,
+      animation: false,
+      svgShadow: false
     };
   },
   watch: {
@@ -577,14 +580,19 @@ var nextTabMinimal1$1 = nextTabMinimal1;function svgColorChange(stringSvg, color
       switch (stringName) {
         case "sketch":
           svgString = nextTabSketch$2;
-          break;
-
-        case "minimal1":
-          svgString = nextTabMinimal1$1;
+          this.animation = "shining";
           break;
 
         case "minimal2":
+          svgString = nextTabMinimal2$1;
+          this.animation = "scroll-down";
+          this.svgShadow = true;
+          break;
+
+        default:
           svgString = nextTabMinimal1$1;
+          this.animation = "scroll-down";
+          this.svgShadow = true;
           break;
       }
 
@@ -593,23 +601,32 @@ var nextTabMinimal1$1 = nextTabMinimal1;function svgColorChange(stringSvg, color
   }
 };
 var script$9 = NextTab$1;var _hoisted_1$8 = ["innerHTML"];
+var _hoisted_2$5 = ["innerHTML"];
 function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return _ctx.svgData ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
-    class: vue.normalizeClass([_ctx.stylesObj.iconSingleArrow['type'], "next-tab-wrapper"])
+    class: vue.normalizeClass([_ctx.stylesObj.iconSingleArrow['type'] + ' animation-' + _ctx.animation, "next-tab-wrapper"])
   }, [vue.createElementVNode("div", {
     class: "svg-wraper",
     style: vue.normalizeStyle({
       width: _ctx.stylesObj.iconSingleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_1$8)], 2)) : vue.createCommentVNode("", true);
-}var css_248z$a = "\n.next-tab-wrapper[data-v-28904b94] {\n\t\twidth: auto;\n\t\tdisplay: inline-flex;\n\t\tcursor: pointer;\n}\n.next-tab-wrapper[data-v-28904b94] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.next-tab-wrapper[data-v-28904b94]:hover {\n\t\topacity: 0.75;\n}\n";
+  }, null, 12, _hoisted_1$8), vue.createElementVNode("div", {
+    class: "svg-shadow",
+    style: vue.normalizeStyle({
+      width: _ctx.stylesObj.iconSingleArrow['size']
+    }),
+    innerHTML: _ctx.svgData
+  }, null, 12, _hoisted_2$5)], 2)) : vue.createCommentVNode("", true);
+}var css_248z$a = "\n.next-tab-wrapper[data-v-239914b6] {\n\t\twidth: auto;\n\t\tdisplay: inline-flex;\n\t\tcursor: pointer;\n\t\tposition: relative;\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.next-tab-wrapper[data-v-239914b6]:hover {\n\t\topacity: 0.75;\n}\n.next-tab-wrapper:hover .svg-shadow[data-v-239914b6] {\n\t\topacity: 0;\n\t\tanimation: none;\n}\n.svg-shadow[data-v-239914b6] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n\n\t/* scroll-down */\n.animation-scroll-down .svg-shadow[data-v-239914b6] {\n\t\tanimation: scroll-down-239914b6 2s infinite;\n\t\tanimation-timing-function: ease-out;\n}\n.animation-scroll-down[data-v-239914b6] {\n\t\ttransition: transform 0.35s;\n\t\ttransition-timing-function: ease-out;\n\t\ttransform: translateY(0) scale(0.95);\n}\n.animation-scroll-down[data-v-239914b6]:hover {\n\t\ttransform: translateY(10%) scale(1);\n}\n@keyframes scroll-down-239914b6 {\n0% {\n\t\t\ttransform: translateY(0);\n\t\t\topacity: 0.5;\n}\n100% {\n\t\t\ttransform: translateY(35%);\n\t\t\topacity: 0;\n}\n}\n\n\t/* shining */\n.animation-shining[data-v-239914b6] {\n\t\ttransition: transform 0.35s;\n\t\ttransition-timing-function: ease-out;\n\t\ttransform: translateY(0) scale(0.95);\n\t\tanimation: shining-239914b6 1s infinite;\n\t\tanimation-timing-function: ease-out;\n}\n.animation-shining[data-v-239914b6]:hover {\n\t\ttransform: translateY(10%) scale(1);\n\t\tanimation: none;\n}\n@keyframes shining-239914b6 {\n0% {\n\t\t\topacity: 1;\n\t\t\ttransform: translateY(0) scale(1);\n}\n50% {\n\t\t\topacity: 0.5;\n\t\t\ttransform: translateY(0) scale(0.95);\n}\n100% {\n\t\t\topacity: 1;\n\t\t\ttransform: translateY(0) scale(1);\n}\n}\n";
 styleInject(css_248z$a);script$9.render = render$9;
-script$9.__scopeId = "data-v-28904b94";var nextTabSketch = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M75,6.7H25L0,50l25,43.3h50L100,50L75,6.7z M67.8,80.8H32.2L14.4,50l17.8-30.8h35.6L85.6,50\n\t\tL67.8,80.8z\"/>\n</g>\n</svg>\n";
+script$9.__scopeId = "data-v-239914b6";var choseTabHexagon = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M75,6.7H25L0,50l25,43.3h50L100,50L75,6.7z M67.8,80.8H32.2L14.4,50l17.8-30.8h35.6L85.6,50\n\t\tL67.8,80.8z\"/>\n</g>\n</svg>\n";
+var choseTabHexagon$1 = choseTabHexagon;var nextTabSketch = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<polygon style=\"fill:#7F7F7F;\" points=\"75,6.7 25,6.7 0,50 25,93.3 75,93.3 100,50 \"/>\n</svg>\n";
 var choseTabHexagonActive = nextTabSketch;var choseTabSketch1 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M70.8,19.8c2.3-2.6,5.6-4.6,5.1-8.7c2.2-0.7,4.4-1.3,6.6-2c0.4-0.5,0.8-1.1,1.2-1.6\n\t\tc1.2,2.8,2.3,5.7,3.5,8.5c0.5-0.6,1-1.1,1.5-1.7c0.5,2.1,0.9,4.2,1.4,6.4c0.3-0.1,0.5-0.1,0.8-0.2c-0.7,2-1.2,4.2-2.1,6.1\n\t\tc-0.6,1.2-1.9,2-2.8,3.1c-1.9,2.1-3.8,4.2-5.5,6.4c-2.4,3.2-4.5,6.6-7.1,10.4c4.2,3.7,8,7.4,12.3,10.5c1.9,1.4,4.8,1.4,7.3,1.9\n\t\tc3.3,0.8,5.5,2.6,6.6,5.8c-0.3,0.1-0.6,0.2-0.9,0.2c0.3,1.7,0.7,3.4,1,5.1c0.2,1,0.3,2.1,0.4,3.1c-1.7,0.1-3.8,0.9-4.9,0.2\n\t\tc-4.5-3-8.9-6.3-13-9.9c-2.6-2.3-4.5-5.3-6.8-7.8c-1.3-1.4-2.9-2.5-5-4.3c1,3,1.7,5.2,2.5,7.4c0.2-0.1,0.3-0.2,0.5-0.4\n\t\tc4.1,6.7,8.2,13.5,12.3,20.2c-1.5,1.3-2.2,2-3.1,2.7c0.2,0.5,0.5,0.9,0.4,1.4c-0.2,1.4,0,3.4-0.8,4.1c-0.8,0.7-2.9,0.4-4.1-0.2\n\t\tc-2.4-1.1-4.5-2.8-6.7-4.2c-0.3,0.4-0.6,0.7-0.9,1.1c2.4,2.1,4.8,4.1,7.5,6.4c-3.5,3-2.9,6-1.2,9c-3.1,2.4-5-0.2-7-1.4\n\t\tc-2.4-1.4-4.7-3-6.9-4.7c-1.4-1.1-2.5-2.7-3.9-4c-3.4-3.3-6.9-6.5-10.4-9.6c-0.2-0.2-0.8-0.1-1.2-0.1C46.7,85.1,44,89.4,39,92.1\n\t\tc-2.6,2.1-4.9,4.2-7.6,5.7c-0.7,0.4-2.8-0.7-3.6-1.6c-0.8-1-1.1-2.8-0.8-4c0.4-1.6,1.6-2.9,2.6-4.5c-1.7-1.8-3.4-3.6-5.1-5.5\n\t\tc0.6-1,1.1-1.9,1.7-2.7c1.7-2.4,1.8-4.3-1.1-5.9c-1-0.6-1.4-2.1-2.2-3.1c-0.5-0.7-0.8-1.5-1.4-2c-3-2.4-4.6-5.3-2.6-8.3\n\t\tc2.1-3,1.6-5.3-1.3-8c-4.3-4-7.9-8.8-11.8-13.2c-1.2-1.3-2.6-2.5-4-3.6C0.1,34-0.7,32,0.8,30.3C2,29,4,28.2,5.8,27.8\n\t\tc1.1-0.2,2.4,0.6,3.5,1c0,1.5,0,2.8,0,4.4c1.3-0.5,2-0.9,2.8-1.2c5.1,5,9.2,11,16.9,12.5c-0.2-0.5-0.2-1.3-0.5-1.7\n\t\tc-3.7-4.8-7.3-9.6-11.1-14.3C14.6,25,11.5,21.8,9,18.2C8.3,17.3,8.5,15,9.3,14c1-1.4,3-2.2,4.9-3.5c0.8,1.4,1.5,2.4,2.1,3.5\n\t\tc1.4,2.5,4.3,3.7,7.1,2.6c2.8-1.1,4.7,0.4,6.6,2.2c2.5,2.4,5.1,4.8,7.8,7c0.7,0.6,1.9,0.5,2.9,0.7c0-1.1,0.6-2.5,0.1-3.3\n\t\tc-1.4-2.3-3.2-4.4-5-6.5c-2.4-2.7-4.9-5.3-7.3-7.9c-0.5-0.5-0.8-1.2-1-1.8c-1.4-3-0.1-5.1,2.2-7C34,0.9,46,12.6,47.4,17.9\n\t\tc0.8-1.2,1.3-2.1,1.9-2.8c3.1-3.7,6-7.6,9.4-11.1c0.9-0.9,2.9-0.9,4.4-0.9c0.3,0,0.7,1.8,0.9,2.8c0.5,1.9,0.3,4.8,5,2.4\n\t\tc-1.6,3.5-2.7,5.8-3.9,8.3c1.7,0.9,3.6,1.8,5.4,2.7c-0.4,0.4-0.7,0.8-1.1,1.2c0.2,0.1,0.4,0.3,0.5,0.4\n\t\tC70.2,20.6,70.5,20.2,70.8,19.8z M41.9,70.8c-4.1,1.2-5.6,3.7-4.5,6.3C39,75,40.4,72.9,41.9,70.8z M27.7,29c-0.3,0.3-0.6,0.7-1,1\n\t\tc0.5,0.6,1,1.3,1.5,1.9c0.4-0.4,0.8-0.8,1.2-1.2C28.8,30.1,28.3,29.6,27.7,29z M66.7,35.5c0.3,0.2,0.5,0.3,0.8,0.5\n\t\tc0.2-0.5,0.4-1,0.6-1.4c-0.2-0.1-0.4-0.2-0.6-0.3C67.3,34.6,67,35.1,66.7,35.5z M65.3,58.2c-0.1,0.2-0.2,0.4-0.4,0.7\n\t\tc0.4,0.4,0.9,0.7,1.3,1.1c0.2-0.4,0.4-0.8,0.6-1.2C66.4,58.5,65.9,58.3,65.3,58.2z M69.8,30.4c-0.3,0.5-0.6,0.8-0.7,1.1\n\t\tc0,0.1,0.5,0.6,0.6,0.5c0.3-0.2,0.6-0.4,0.7-0.7C70.4,31.1,70.1,30.8,69.8,30.4z\"/>\n</g>\n</svg>\n";
 var choseTabSketch5 = choseTabSketch1;var choseTabSketchActive = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M87.2,12.2c0.8-0.4,1.6-0.8,1.8-0.9c1.4,2.2,2.8,4.2,4,6.3c1.8,3.2,4.4,6.4,5.1,9.9\n\t\tc1.9,8.9,2.9,17.9,0.7,27c-1.2,5-2.1,10-3.1,15c-1.1,5.7-5.4,9-10,12c-3.4,2.2-7.1,3.9-10.4,6.2c-1.5,1-2.2,3.2-3.7,4.3\n\t\tc-5.5,3.9-12,5.7-18.6,7.5c-0.7,0.2-1.6,0-2.4-0.2c-3.4-0.5-6.9-0.6-10-1.7c-2.7-1-5.1-3-7.3-4.9c-6.2-5.3-10.7-11.8-15.8-17.9\n\t\tc-4.9-5.8-5.2-12.3-8-18.4c-0.5-1.2-1.9-2-2.2-3.2C5.5,46-0.7,40.6,0.1,32.4c0.5-5.6,3.5-9.1,7.5-12.4c3-2.5,6.2-4.9,9.7-6.6\n\t\tc5-2.4,9.3-6.3,14.5-7.9c9.2-2.9,18.7-5.8,28.8-3.8c4.4,0.9,8.9,1.3,13.4,1.7C78.4,3.9,84.9,8,87.2,12.2z M80.9,42.8\n\t\tc-0.7,2-0.9,3.1-1.5,4c-1.2,1.9-2.4,3.8-3.9,5.4c-1.6,1.7-3.3,3.5-5.3,4.7c-3.5,2-7.1,4.6-10.9,4.8c-4.6,0.3-9.5-1.2-12.5-5.5\n\t\tc-0.8-1.1-1.8-2-2.7-3c-3.5,3.8-4.1,6.7-0.8,9.9c3,2.9,6.9,5,10.4,7.4c1.3,0.9,2.9,1.4,4,2.5c1.7,1.6,9.1,2.6,10.7,0.9\n\t\tc4.8-4.7,10.2-9,12.6-15.4C83,53.7,84.1,48.9,80.9,42.8z M35.2,40.7c2.5-1.6,5-3.2,7.5-4.8c3-1.8,5.9-4.6,9.2-5.2\n\t\tc6.3-1.2,12.9-1.1,19.3-1.7c1.1-0.1,3.1-1.4,3-1.7c-0.7-2.3-1.4-4.7-2.8-6.7c-0.5-0.7-2.9-0.7-4.2-0.3C60.9,22,54.7,23.8,48.7,26\n\t\tc-4.1,1.4-8,3.2-11.8,5.2C33.2,33.2,32.7,36.5,35.2,40.7z M18.7,24.2c-7.6,0.7-12.6,15.3-7.4,22.3c0.5-1.1,0.9-1.9,1.3-2.7\n\t\tc1.2-2.5,1.9-5.5,3.7-7.5C19.6,32.5,18.5,28.4,18.7,24.2z M91.2,49.6c0.1-0.5,0.4-1.2,0.4-1.9c0.1-8.3-2.7-16-6.2-23.4\n\t\tc-1-2.2-1.7-6.5-6.3-5C83.2,29.4,87.2,39.4,91.2,49.6z M37,81.7c3.2,2.2,4.9,4.1,7,4.6c4.4,1.3,9.1,2,13.7,2.6\n\t\tc0.7,0.1,1.8-1.4,2.4-2.4c0.2-0.3-0.9-1.8-1.4-1.8c-6.3,0.6-11.8-1.4-17.2-4.2C40.7,80.1,39.1,81.1,37,81.7z M65,46.8\n\t\tc0,0,0.3,0.3,0.6,0.3c2.7-0.3,6.8-5.7,6-8.3c-0.2-0.7-1.7-1.9-2-1.7c-1.3,0.7-3,1.5-3.5,2.7C65.3,41.9,65.3,44.3,65,46.8z\n\t\t M86.9,62.4c0.6,0.1,1.2,0.3,1.7,0.4c0.5-1.8,1-3.6,1.5-5.3c-0.6-0.1-1.1-0.3-1.7-0.4C87.9,58.9,87.4,60.7,86.9,62.4z M57.5,14.4\n\t\tc-0.2-0.2-0.4-0.5-0.4-0.5c-0.3,0.1-0.5,0.3-0.7,0.4c0.1,0.2,0.3,0.5,0.3,0.4C57,14.7,57.3,14.5,57.5,14.4z M80.9,73.5\n\t\tc0.5-0.5,1-0.8,1-1.1c0-0.3-0.4-0.6-0.7-0.9c-0.4,0.3-0.9,0.5-1,0.8C80.2,72.6,80.6,73,80.9,73.5z M83.6,68.9\n\t\tc0.2,0.1,0.5,0.2,0.7,0.3c0.3-0.5,0.5-1,0.8-1.4c-0.2-0.1-0.5-0.2-0.7-0.3C84.1,68,83.8,68.5,83.6,68.9z M53.8,79.6\n\t\tc0.2-0.3,0.5-0.6,0.4-0.8c0-0.2-0.4-0.4-0.6-0.6c-0.2,0.3-0.5,0.6-0.7,0.8C53.2,79.3,53.5,79.4,53.8,79.6z\"/>\n</g>\n</svg>\n";
-var choseTabSketchActive$1 = choseTabSketchActive;var NextTab = {
+var choseTabSketchActive$1 = choseTabSketchActive;var choseTabMinimal = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<style type=\"text/css\">\n\t.st0{fill:#7F7F7F;}\n</style>\n<polygon class=\"st0\" points=\"85.2,50 45.3,89.1 14.8,89.1 14.8,10.9 45.3,10.9 \"/>\n</svg>\n";
+var choseTabMinimal$1 = choseTabMinimal;var NextTab = {
   name: "boxNarration",
   components: {},
   props: {
@@ -637,21 +654,23 @@ var choseTabSketchActive$1 = choseTabSketchActive;var NextTab = {
   },
   methods: {
     init: function init() {
-      var stringName = this.stylesObj.iconMultipleArrow["type"];
+      if (this.stylesObj.iconMultipleArrow["type"]) {
+        var stringName = this.stylesObj.iconMultipleArrow["type"];
 
-      if (stringName == "letter" || stringName == "number") {
-        this.svgData = false;
-        this.svgDataActive = false;
+        if (stringName == "letter" || stringName == "number") {
+          this.svgData = false;
+          this.svgDataActive = false;
 
-        if (stringName == "letter") {
-          var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-          this.indexListText = alphabet[this.index];
+          if (stringName == "letter") {
+            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            this.indexListText = alphabet[this.index];
+          } else {
+            this.indexListText = this.index + 1 + ".";
+          }
         } else {
-          this.indexListText = this.index + 1 + ".";
+          this.indexListText = false;
+          this.initSvg();
         }
-      } else {
-        this.indexListText = false;
-        this.initSvg();
       }
     },
     initSvg: function initSvg() {
@@ -667,48 +686,62 @@ var choseTabSketchActive$1 = choseTabSketchActive;var NextTab = {
           break;
 
         case "hexagon":
-          listElement = [choseTabHexagonActive];
+          listElement = [choseTabHexagon$1];
           this.initSvgActive(choseTabHexagonActive);
           break;
+
+        case "minimal1":
+          listElement = [choseTabMinimal$1];
+          this.initSvgActive(false);
       }
 
       svgString = listElement[Math.floor(Math.random() * listElement.length)];
       this.svgData = svgColorChange(svgString, this.stylesObj.iconMultipleArrow["color"]);
     },
     initSvgActive: function initSvgActive(activeSvgString) {
-      this.svgDataActive = svgColorChange(activeSvgString, this.stylesObj.iconMultipleArrow["color"]);
+      if (activeSvgString) {
+        this.svgDataActive = svgColorChange(activeSvgString, this.stylesObj.iconMultipleArrow["color"]);
+      } else {
+        this.svgDataActive = false;
+      }
     }
   }
 };
-var script$8 = NextTab;var _hoisted_1$7 = {
+var script$8 = NextTab;var _hoisted_1$7 = ["innerHTML"];
+var _hoisted_2$4 = ["innerHTML"];
+var _hoisted_3$3 = {
+  key: 1,
   class: "chose-item"
 };
-var _hoisted_2$4 = ["innerHTML"];
-var _hoisted_3$3 = ["innerHTML"];
-var _hoisted_4$2 = {
-  key: 1
-};
 function render$8(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$7, [_ctx.svgData ? (vue.openBlock(), vue.createElementBlock("div", {
+  return _ctx.stylesObj.iconMultipleArrow['type'] ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
-    class: vue.normalizeClass([_ctx.stylesObj.iconMultipleArrow['type'], "icon-wrapper"])
+    class: vue.normalizeClass([{
+      'use-active-item': _ctx.svgDataActive
+    }, "chose-item"])
+  }, [_ctx.svgData ? (vue.openBlock(), vue.createElementBlock("div", {
+    key: 0,
+    class: vue.normalizeClass(['type-' + _ctx.stylesObj.iconMultipleArrow['type'], "icon-wrapper"])
   }, [vue.createElementVNode("div", {
     class: "svg-wraper",
     style: vue.normalizeStyle({
       minWidth: _ctx.stylesObj.iconMultipleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_2$4), _ctx.svgDataActive ? (vue.openBlock(), vue.createElementBlock("div", {
+  }, null, 12, _hoisted_1$7), _ctx.svgDataActive ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
     class: "svg-hover-wraper",
     style: vue.normalizeStyle({
       minWidth: _ctx.stylesObj.iconMultipleArrow['size']
     }),
     innerHTML: _ctx.svgDataActive
-  }, null, 12, _hoisted_3$3)) : vue.createCommentVNode("", true)], 2)) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$2, vue.toDisplayString(_ctx.indexListText), 1)), vue.createTextVNode(" " + vue.toDisplayString(_ctx.text), 1)]);
-}var css_248z$9 = "\n.chose-item[data-v-5c8c8282] {\n\t\tdisplay: inline-flex;\n\t\tmargin-bottom: 1em;\n\t\tmax-width: 100%;\n\t\twidth: auto;\n\t\tcursor: pointer;\n}\n.icon-wrapper[data-v-5c8c8282] {\n\t\tmargin-right: 0.5em;\n\t\tposition: relative;\n}\n.svg-hover-wraper[data-v-5c8c8282] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\topacity: 0;\n}\n.chose-item[data-v-5c8c8282],\n\t.svg-wraper[data-v-5c8c8282],\n\t.svg-hover-wraper[data-v-5c8c8282] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.chose-item[data-v-5c8c8282]:hover {\n\t\topacity: 0.75;\n}\n.chose-item:hover .svg-hover-wraper[data-v-5c8c8282] {\n\t\topacity: 1;\n}\n.chose-item:hover .svg-wraper[data-v-5c8c8282] {\n\t\topacity: 0;\n}\n";
+  }, null, 12, _hoisted_2$4)) : vue.createCommentVNode("", true)], 2)) : (vue.openBlock(), vue.createElementBlock("div", {
+    key: 1,
+    class: vue.normalizeClass('type-' + _ctx.stylesObj.iconMultipleArrow['type'])
+  }, vue.toDisplayString(_ctx.indexListText), 3)), vue.createTextVNode(" " + vue.toDisplayString(_ctx.text), 1)], 2)) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$3, vue.toDisplayString(_ctx.text), 1));
+}var css_248z$9 = "\n.chose-item[data-v-4ffb6545] {\n\t\tdisplay: inline-flex;\n\t\tmargin-bottom: 1em;\n\t\tmax-width: 100%;\n\t\twidth: auto;\n\t\tcursor: pointer;\n}\n.icon-wrapper[data-v-4ffb6545] {\n\t\tmargin-right: 0.5em;\n\t\tposition: relative;\n}\n.svg-hover-wraper[data-v-4ffb6545] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\topacity: 0;\n}\n.chose-item[data-v-4ffb6545],\n\t.svg-wraper[data-v-4ffb6545],\n\t.svg-hover-wraper[data-v-4ffb6545] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.chose-item[data-v-4ffb6545]:hover {\n\t\topacity: 0.75;\n}\n.chose-item:hover .svg-hover-wraper[data-v-4ffb6545] {\n\t\topacity: 1;\n}\n.chose-item.use-active-item:hover .svg-wraper[data-v-4ffb6545] {\n\t\topacity: 0;\n}\n.type-number[data-v-4ffb6545],\n\t.type-letter[data-v-4ffb6545] {\n\t\tmargin-right: 0.5em;\n}\n";
 styleInject(css_248z$9);script$8.render = render$8;
-script$8.__scopeId = "data-v-5c8c8282";var boxNarration = {
+script$8.__scopeId = "data-v-4ffb6545";var boxNarration = {
   name: "boxNarration",
   components: {
     NextTab: script$9,
@@ -887,7 +920,7 @@ var bgSketch$1 = bgSketch;function drawCanvasBg(dimension, bgStyle, layoutID) {
     return {
       isCanvas: false,
       canvasTypeArray: ["sketch"],
-      borderRadiousLayout: [5, 6, 8, 9, 10, 11, 15, 16],
+      borderRadiousLayout: ["d3e6", "b3c6", "b2e3", "b2e4", "b6e7", "b5e7", "e2e7", "b2b7"],
       width: 0,
       height: 0,
       styleStBg: {}
@@ -959,9 +992,9 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
     class: "st-bg",
     style: vue.normalizeStyle(_ctx.styleStBg)
   }, null, 4))]);
-}var css_248z$5 = "\n.bg-wrapper[data-v-e821c788],\n\t.st-bg[data-v-e821c788] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
+}var css_248z$5 = "\n.bg-wrapper[data-v-58a78f56],\n\t.st-bg[data-v-58a78f56] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
 styleInject(css_248z$5);script$4.render = render$4;
-script$4.__scopeId = "data-v-e821c788";var boxText = {
+script$4.__scopeId = "data-v-58a78f56";var boxText = {
   name: "boxText",
   components: {
     boxnarration: script$7,
@@ -1152,7 +1185,7 @@ function deepCopy(obj) {
   var boxText;
 
   switch (id) {
-    case 1:
+    case "a6f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1167,7 +1200,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 2:
+    case "a5f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1182,7 +1215,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 3:
+    case "a1f3":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 4,
@@ -1193,11 +1226,11 @@ function deepCopy(obj) {
         gridRowStart: 1,
         gridColumnStart: 1,
         gridRowEnd: 7,
-        gridColumnEnd: 5
+        gridColumnEnd: 4
       };
       break;
 
-    case 4:
+    case "a1f4":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 5,
@@ -1212,7 +1245,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 5:
+    case "d3e6":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1227,7 +1260,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 6:
+    case "b3c6":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1244,7 +1277,7 @@ function deepCopy(obj) {
 
     /* all screen */
 
-    case 7:
+    case "a1f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1259,22 +1292,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 8:
-      boxIllustration = {
-        gridRowStart: 1,
-        gridColumnStart: 1,
-        gridRowEnd: 7,
-        gridColumnEnd: 9
-      };
-      boxText = {
-        gridRowStart: 2,
-        gridColumnStart: 6,
-        gridRowEnd: 6,
-        gridColumnEnd: 8
-      };
-      break;
-
-    case 9:
+    case "b2e3":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1289,7 +1307,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 10:
+    case "b2e4":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1304,7 +1322,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 11:
+    case "b6e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1319,7 +1337,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 12:
+    case "b5e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1334,7 +1352,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 13:
+    case "e2e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1349,7 +1367,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 14:
+    case "b2b7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1364,7 +1382,7 @@ function deepCopy(obj) {
       };
       break;
 
-    case 15:
+    case "d2e7":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
@@ -1373,23 +1391,25 @@ function deepCopy(obj) {
       };
       boxText = {
         gridRowStart: 4,
-        gridColumnStart: 1,
+        gridColumnStart: 2,
         gridRowEnd: 6,
-        gridColumnEnd: 9
+        gridColumnEnd: 8
       };
       break;
 
-    case 16:
+    /* mobile */
+
+    case "d1f8":
       boxIllustration = {
         gridRowStart: 1,
         gridColumnStart: 1,
-        gridRowEnd: 7,
+        gridRowEnd: 4,
         gridColumnEnd: 9
       };
       boxText = {
         gridRowStart: 4,
         gridColumnStart: 1,
-        gridRowEnd: 6,
+        gridRowEnd: 7,
         gridColumnEnd: 9
       };
       break;
@@ -1489,6 +1509,12 @@ var script = /*#__PURE__*/vue.defineComponent({
         } else {
           this.initialized = false;
         }
+      },
+      deep: true
+    },
+    gameData: {
+      handler: function handler() {
+        this.LoadFont();
       },
       deep: true
     }
@@ -2328,9 +2354,18 @@ var script = /*#__PURE__*/vue.defineComponent({
 
     /* STYLE ---------------------------------------- */
     init: function init() {
+      this.setDevice();
+      this.LoadFont();
+      this.setPreCacheImgList();
+
+      if (this.preCachedImgList.length == 0) {
+        this.stepToInit.img = true;
+      }
+    },
+    LoadFont: function LoadFont() {
       var _this7 = this;
 
-      this.setDevice();
+      this.stepToInit.font = false;
       WebFont.load({
         google: {
           families: [this.stylesObj.fontName + ":" + this.stylesObj.fontWeightList.join()]
@@ -2342,11 +2377,6 @@ var script = /*#__PURE__*/vue.defineComponent({
           _this7.stepToInit.font = true;
         }
       });
-      this.setPreCacheImgList();
-
-      if (this.preCachedImgList.length == 0) {
-        this.stepToInit.img = true;
-      }
     },
     setPreCacheImgList: function setPreCacheImgList() {
       var _this8 = this;
@@ -2438,7 +2468,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     pathMediaDir: _ctx.pathMediaDir,
     style: vue.normalizeStyle(_ctx.gameData.style),
     stylesObj: _ctx.stylesObj
-  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style", "stylesObj"])) : vue.createCommentVNode("", true), _ctx.initialized ? (vue.openBlock(), vue.createBlock(_component_boxText, {
+  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style", "stylesObj"])) : vue.createCommentVNode("", true), _ctx.initialized && _ctx.narrationBox !== false && _ctx.narrationBox !== 'node-bad-mix' ? (vue.openBlock(), vue.createBlock(_component_boxText, {
     key: 1,
     narrationBox: _ctx.narrationBox,
     lang: _ctx.lang,
@@ -2458,9 +2488,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSetImgsLoaded: _ctx.setImgsLoaded
   }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 4)) : vue.createCommentVNode("", true);
 }var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n";
-styleInject(css_248z$1);var css_248z = "\n.game-grid[data-v-566e9f86] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n}\n.load-screen[data-v-566e9f86] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n";
+styleInject(css_248z$1);var css_248z = "\n.game-grid[data-v-fbc06cae] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n}\n.load-screen[data-v-fbc06cae] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.log-app[data-v-fbc06cae] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n}\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-566e9f86";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
+script.__scopeId = "data-v-fbc06cae";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         componentName = _ref2[0],

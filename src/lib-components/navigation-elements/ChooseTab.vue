@@ -195,6 +195,11 @@
 		opacity: 0;
 	}
 
+	.chose-item {
+		font-size: inherit;
+		font-family: inherit;
+	}
+
 	.chose-item,
 	.svg-wraper,
 	.svg-hover-wraper {
