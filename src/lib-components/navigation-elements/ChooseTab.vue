@@ -6,7 +6,7 @@
 	>
 		<div
 			v-if="svgData"
-			:class="stylesObj.iconMultipleArrow['type']"
+			:class="'type-'+stylesObj.iconMultipleArrow['type']"
 			class="icon-wrapper"
 		>
 			<div
@@ -22,7 +22,10 @@
 			>
 			</div>
 		</div>
-		<div v-else>{{indexListText}}</div>
+		<div
+			v-else
+			:class="'type-'+stylesObj.iconMultipleArrow['type']"
+		>{{indexListText}}</div>
 		{{text}}
 	</div>
 	<div
@@ -33,7 +36,7 @@
 	</div>
 </template>
 <script>
-	import choseTabHexagon from "../svg/choseTabHexagonActive.js";
+	import choseTabHexagon from "../svg/choseTabHexagon.js";
 	import choseTabHexagonActive from "../svg/choseTabHexagonActive.js";
 
 	import choseTabSketch1 from "../svg/choseTabSketch1.js";
@@ -209,5 +212,10 @@
 
 	.chose-item.use-active-item:hover .svg-wraper {
 		opacity: 0;
+	}
+
+	.type-number,
+	.type-letter {
+		margin-right: 0.5em;
 	}
 </style>

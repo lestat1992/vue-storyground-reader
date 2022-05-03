@@ -54,9 +54,10 @@
 				switch (stringName) {
 					case "sketch":
 						svgString = nextTabSketch;
+						this.animation = "shining";
 						break;
 					case "minimal2":
-						svgString = nextTabMinimal1;
+						svgString = nextTabMinimal2;
 						this.animation = "scroll-down";
 						this.svgShadow = true;
 						break;
@@ -117,14 +118,39 @@
 	}
 	@keyframes scroll-down {
 		0% {
-			/*box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2); */
 			transform: translateY(0);
 			opacity: 0.5;
 		}
 		100% {
-			/* box-shadow: 0 0 0 20px rgba(0, 0, 0, 0); */
 			transform: translateY(35%);
 			opacity: 0;
+		}
+	}
+
+	/* shining */
+	.animation-shining {
+		transition: transform 0.35s;
+		transition-timing-function: ease-out;
+		transform: translateY(0) scale(0.95);
+		animation: shining 1s infinite;
+		animation-timing-function: ease-out;
+	}
+	.animation-shining:hover {
+		transform: translateY(10%) scale(1);
+		animation: none;
+	}
+	@keyframes shining {
+		0% {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+		50% {
+			opacity: 0.5;
+			transform: translateY(0) scale(0.95);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0) scale(1);
 		}
 	}
 </style>

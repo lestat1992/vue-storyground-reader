@@ -26,7 +26,16 @@
 			return {
 				isCanvas: false,
 				canvasTypeArray: ["sketch"],
-				borderRadiousLayout: [5, 6, 8, 9, 10, 11, 15, 16],
+				borderRadiousLayout: [
+					"d3e6",
+					"b3c6",
+					"b2e3",
+					"b2e4",
+					"b6e7",
+					"b5e7",
+					"e2e7",
+					"b2b7",
+				],
 				width: 0,
 				height: 0,
 				styleStBg: {},
