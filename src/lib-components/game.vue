@@ -22,10 +22,11 @@
 			:nextTabsChose="nextTabsChose"
 			:stylesObj="stylesObj"
 			@reedBeams="reedBeams"
+			@gameIntentLoad="gameIntentLoad"
 		/>
 
 		<div
-			v-if="narrationBox == 'false' || narrationBox == 'node-bad-mix'"
+			v-if="narrationBox == 'false' || narrationBox == 'node-bad-mix' || urlToShow"
 			class="sg1-log-app"
 		>
 			<div
@@ -43,6 +44,13 @@
 			>
 				{{ strings.nodeBadMix.langEditor }} {{listBadMixId}} )
 
+			</div>
+
+			<div
+				class="sg1-game-message sg1-e-4"
+				v-if="urlToShow"
+			>
+				{{urlToShow}}
 			</div>
 		</div>
 
@@ -85,12 +93,6 @@
 
 	function randomNum(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
-	}
-
-	function fixBr(gameData) {
-		let string = JSON.stringify(gameData);
-		let res = JSON.parse(string.replace("/r", "<br>"));
-		return res;
 	}
 
 	export default /*#__PURE__*/ defineComponent({
@@ -142,11 +144,13 @@
 				type: String,
 				default: "100vh",
 			},
+			stopLink: {
+				type: Boolean,
+				default: false,
+			},
 		},
 		data: function () {
 			return {
-				gameDataWithBr: {},
-
 				initialized: false,
 				stepToInit: {
 					font: false,
@@ -154,7 +158,7 @@
 				},
 				preCachedImgList: [],
 				lang: false,
-				textualTabs: ["descriptions", "chose", "game over", "end"],
+				textualTabs: ["descriptions", "chose", "game over"],
 				playerState: "playing",
 				player: {
 					item: [],
@@ -167,6 +171,9 @@
 				listBadMixId: "",
 				gameLoaded: false,
 				device: false,
+
+				goToLink: false,
+				urlToShow: false,
 			};
 		},
 		watch: {
@@ -190,6 +197,11 @@
 					this.LoadFont();
 				},
 				deep: true,
+			},
+			playerState: function (val) {
+				if (val == "game end" && this.goToLink) {
+					this.initialized = false;
+				}
 			},
 		},
 		computed: {
@@ -360,11 +372,6 @@
 			},
 		},
 		mounted() {
-			console.log("QUI!!!");
-			console.log(this.gameData);
-
-			this.gameDataWithBr = fixBr(this.gameData);
-
 			if (this.propLang !== "null-lang") {
 				this.lang = this.propLang;
 			} else {
@@ -425,7 +432,7 @@
 				);
 				let tabsToNavigate = this.ResoveTabsList(tabs);
 
-				if (tabsToNavigate.length == 0) {
+				if (tabsToNavigate.length == 0 && this.playerState != "game end") {
 					console.log("ERROR");
 
 					let error = this.strings.wrongTabsId[this.langEditor];
@@ -639,9 +646,20 @@
 						break;
 					case "end":
 						this.playerState = "game end";
-						tabToAdd.push(currentTab);
-						stop = true;
-
+						if (currentTab.openNewPage) {
+							this.goToLink = true;
+							if (this.stopLink) {
+								this.urlToShow =
+									this.strings.urlRedirect[this.langEditor] +
+									": " +
+									currentTab.url[this.lang];
+							} else {
+								window.open(currentTab.url[this.lang], "_self");
+							}
+						} else {
+							tabToAdd.push(currentTab);
+							stop = true;
+						}
 						break;
 					case "redirect":
 						let errorRedirect = false;
@@ -860,6 +878,11 @@
 							stop = true;
 						}
 
+						break;
+
+					case "image":
+						console.log("passing");
+						this.setImage(currentTab.img);
 						break;
 				}
 
@@ -1167,6 +1190,7 @@
 			/* STYLE ---------------------------------------- */
 
 			init() {
+				console.log("..");
 				this.setDevice();
 				this.LoadFont();
 				this.setPreCacheImgList();
@@ -1294,8 +1318,10 @@
 		grid-column-start: 1;
 		grid-row-end: 7;
 		grid-column-end: 9;
-	}
-	.sg1-log-app {
+		flex-direction: column;
+		max-width: 100% !important;
+		overflow: hidden;
+
 		background-color: #282828;
 		z-index: 100;
 		display: flex;
@@ -1309,6 +1335,12 @@
 		padding-left: 20px;
 		width: 100%;
 		text-align: center;
+		font-family: monospace;
+	}
+	.sg1-game-error {
 		color: #ed6767;
+	}
+	.sg1-game-message {
+		color: #67ed72;
 	}
 </style>

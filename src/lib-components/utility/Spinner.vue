@@ -1,9 +1,9 @@
 <template>
 	<div class="sg1-spinner-box-media">
-		<div class="sg1-spinner pulse-container">
-			<div class="sg1-pulse-bubble pulse-bubble-1"></div>
-			<div class="sg1-pulse-bubble pulse-bubble-2"></div>
-			<div class="sg1-pulse-bubble pulse-bubble-3"></div>
+		<div class="sg1-spinner sg1-pulse-container">
+			<div class="sg1-pulse-bubble sg1-pulse-bubble-1"></div>
+			<div class="sg1-pulse-bubble sg1-pulse-bubble-2"></div>
+			<div class="sg1-pulse-bubble sg1-pulse-bubble-3"></div>
 		</div>
 	</div>
 </template>

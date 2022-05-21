@@ -25,6 +25,7 @@
 			:current-tabs="currentTabs"
 			:stylesObj="stylesObj"
 			@emitReedBeams2="emitReedBeams1"
+			@gameIntentLoad3="gameIntentLoad2"
 		/>
 
 	</div>
@@ -50,11 +51,16 @@
 			nextTabsChose: {},
 			reedBeams: {},
 			stylesObj: {},
+			gameIntentLoad: {},
 		},
 		methods: {
 			emitReedBeams1(id) {
 				console.log("ehi ciao");
 				this.$emit("reedBeams", id);
+			},
+			gameIntentLoad2() {
+				console.log(".");
+				this.$emit("gameIntentLoad");
 			},
 		},
 	};

@@ -13,8 +13,9 @@
 				<div
 					v-if="currentTabs.length == 1"
 					:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1,...stylesObj.paddingBottomNextTab}"
+					v-html="fixText(tab.text[lang])"
 				>
-					{{tab.text[lang]}}
+
 				</div>
 				<div
 					v-else
@@ -22,7 +23,7 @@
 				>
 					<ChooseTab
 						:index="index"
-						:text="tab.text[lang]"
+						:text="fixText(tab.text[lang])"
 						:stylesObj="stylesObj"
 						@click="emitReedBeams3(tab.id)"
 					/>
@@ -37,7 +38,7 @@
 				<div v-if="tab.id">
 					<ChooseTab
 						:index="index"
-						:text="tab.text[lang]"
+						:text="fixText(tab.text[lang])"
 						:stylesObj="stylesObj"
 						@click="emitReedBeams3(tab.id)"
 					/>
@@ -61,6 +62,9 @@
 <script>
 	import NextTab from "../navigation-elements/NextTab";
 	import ChooseTab from "../navigation-elements/ChooseTab";
+
+	import deepCopy from "../functions/deepCopy.js";
+	import fixText from "../functions/fixText.js";
 
 	function sortChose(currentTabs) {
 		if (currentTabs.length == 1) {
@@ -114,6 +118,9 @@
 			emitReedBeams3(id) {
 				this.$emit("emitReedBeams2", id);
 			},
+			fixText(text) {
+				return fixText(text);
+			},
 		},
 	};
 
@@ -131,5 +138,8 @@
 	.sg1-box-narration {
 		position: relative;
 		z-index: 10;
+		max-height: 100%;
+		min-height: 100%;
+		overflow-y: auto;
 	}
 </style>

@@ -29,14 +29,14 @@
 			:class="'sg1-type-'+stylesObj.iconMultipleArrow['type']"
 			:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
 		>{{indexListText}}</div>
-		{{text}}
+		<span v-html="text"></span>
 	</div>
 	<div
 		v-else
 		class="sg1-chose-item"
 		:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
 	>
-		{{text}}
+		<span v-html="text"></span>
 	</div>
 </template>
 <script>

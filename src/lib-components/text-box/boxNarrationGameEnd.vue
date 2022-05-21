@@ -14,8 +14,8 @@
 				<div
 					v-if="currentTabs.length == 1"
 					:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
+					v-html="fixText(tab.text[lang])"
 				>
-					{{tab.text[lang]}}
 				</div>
 			</div>
 
@@ -24,6 +24,8 @@
 </template>
 
   <script>
+	import fixText from "../functions/fixText.js";
+
 	let boxNarrationGameEnd = {
 		name: "boxNarrationGameEnd",
 		props: {
@@ -32,9 +34,17 @@
 			reedbeams: {},
 			stylesObj: {},
 		},
+		mounted() {
+			if (this.currentTabs[0].openNewPage) {
+				window.open(this.currentTabs[0].url[this.lang], "_self");
+			}
+		},
 		methods: {
 			reedBeams(id) {
 				this.$emit("reedbeams", id);
+			},
+			fixText(text) {
+				return fixText(text);
 			},
 		},
 	};
