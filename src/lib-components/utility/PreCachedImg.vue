@@ -1,10 +1,10 @@
 <template>
-	<div class="pre-cached-img-wrapper">
+	<div class="sg1-pre-cached-img-wrapper">
 		<div v-if="editorUsage">
 			<img
 				v-for="(el,index) in preCachedImgList"
 				:key="index"
-				class="box-img"
+				class="sg1-box-img"
 				:src="el"
 				@load="imgsLoaded++"
 			/>
@@ -44,7 +44,7 @@
 	export default PreCachedImg;
 </script>
 <style scoped>
-	.pre-cached-img-wrapper {
+	.sg1-pre-cached-img-wrapper {
 		position: fixed;
 		max-height: 0;
 		max-width: 0;

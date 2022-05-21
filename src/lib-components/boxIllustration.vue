@@ -1,12 +1,12 @@
 <template>
 	<div
-		class="box-illustration"
+		class="sg1-box-illustration"
 		:style="stylesObj.boxIllustration"
 	>
-		<div class="inner-box">
+		<div class="sg1-inner-box">
 			<img
 				v-if="editorUsage"
-				class="box-img"
+				class="sg1-box-img"
 				:src="illustration.srcFull[0]"
 			/>
 			<img
@@ -80,17 +80,17 @@
 	export default boxIllustration;
 </script>
 <style scoped>
-	.box-illustration {
+	.sg1-box-illustration {
 		grid-column-start: 2;
 		grid-column-end: 3;
 		grid-row-start: 2;
 		grid-row-end: 3;
 	}
-	.inner-box {
+	.sg1-inner-box {
 		width: 100%;
 		height: 100%;
 	}
-	img {
+	.sg1-inner-box img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;

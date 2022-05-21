@@ -2,21 +2,23 @@
 	<div
 		v-if="stylesObj.iconMultipleArrow['type']"
 		:class="{'use-active-item': svgDataActive}"
-		class="chose-item"
+		class="sg1-chose-item"
+		:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
 	>
 		<div
 			v-if="svgData"
 			:class="'type-'+stylesObj.iconMultipleArrow['type']"
-			class="icon-wrapper"
+			class="sg1-icon-wrapper"
+			:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
 		>
 			<div
-				class="svg-wraper"
+				class="sg1-svg-wraper"
 				:style="{minWidth: stylesObj.iconMultipleArrow['size']}"
 				v-html="svgData"
 			></div>
 			<div
 				v-if="svgDataActive"
-				class="svg-hover-wraper"
+				class="sg1-svg-hover-wraper"
 				:style="{minWidth: stylesObj.iconMultipleArrow['size']}"
 				v-html="svgDataActive"
 			>
@@ -24,13 +26,15 @@
 		</div>
 		<div
 			v-else
-			:class="'type-'+stylesObj.iconMultipleArrow['type']"
+			:class="'sg1-type-'+stylesObj.iconMultipleArrow['type']"
+			:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
 		>{{indexListText}}</div>
 		{{text}}
 	</div>
 	<div
 		v-else
-		class="chose-item"
+		class="sg1-chose-item"
+		:style="{...stylesObj.commonFontFamily, ...stylesObj.fontWeightListSelected, ...stylesObj.fontColor,...stylesObj.fontSize1}"
 	>
 		{{text}}
 	</div>
@@ -175,18 +179,18 @@
 	export default NextTab;
 </script>
 <style scoped>
-	.chose-item {
+	.sg1-chose-item {
 		display: inline-flex;
 		margin-bottom: 1em;
 		max-width: 100%;
 		width: auto;
 		cursor: pointer;
 	}
-	.icon-wrapper {
+	.sg1-icon-wrapper {
 		margin-right: 0.5em;
 		position: relative;
 	}
-	.svg-hover-wraper {
+	.sg1-svg-hover-wraper {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -195,32 +199,32 @@
 		opacity: 0;
 	}
 
-	.chose-item {
+	.sg1-chose-item {
 		font-size: inherit;
 		font-family: inherit;
 	}
 
-	.chose-item,
-	.svg-wraper,
-	.svg-hover-wraper {
+	.sg1-chose-item,
+	.sg1-svg-wraper,
+	.sg1-svg-hover-wraper {
 		transition: opacity 0.35s;
 		transition-timing-function: ease-out;
 	}
 
-	.chose-item:hover {
+	.sg1-chose-item:hover {
 		opacity: 0.75;
 	}
 
-	.chose-item:hover .svg-hover-wraper {
+	.sg1-chose-item:hover .sg1-svg-hover-wraper {
 		opacity: 1;
 	}
 
-	.chose-item.use-active-item:hover .svg-wraper {
+	.sg1-chose-item.use-active-item:hover .sg1-svg-wraper {
 		opacity: 0;
 	}
 
-	.type-number,
-	.type-letter {
+	.sg1-type-number,
+	.sg1-type-letter {
 		margin-right: 0.5em;
 	}
 </style>

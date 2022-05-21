@@ -2,7 +2,7 @@
 	<div
 		v-if="stylesObj"
 		:style="stylesObj.gameGrid"
-		class="game-grid"
+		class="sg1-game-grid"
 	>
 		<boxillustration
 			v-if="disableIlustration == false && illustration && initialized"
@@ -26,20 +26,20 @@
 
 		<div
 			v-if="narrationBox == 'false' || narrationBox == 'node-bad-mix'"
-			class="log-app"
+			class="sg1-log-app"
 		>
 			<div
 				v-if="narrationBox == false && onRunError.length == 0"
-				class="game-error e-1"
+				class="sg1-game-error sg1-e-1"
 			>{{ strings.noEnd.langEditor }}</div>
 			<div
 				v-for="(el, index ) in onRunError"
 				:key="index"
-				class="game-error e-2"
+				class="sg1-game-error sg1-e-2"
 			>{{el}}</div>
 			<div
 				v-if="narrationBox == 'node-bad-mix'"
-				class="game-error e-3"
+				class="sg1-game-error sg1-e-3"
 			>
 				{{ strings.nodeBadMix.langEditor }} {{listBadMixId}} )
 
@@ -55,7 +55,7 @@
 
 		<div
 			v-if="!initialized"
-			class="load-screen"
+			class="sg1-load-screen"
 		>
 			<Spinner />
 		</div>
@@ -85,6 +85,12 @@
 
 	function randomNum(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	function fixBr(gameData) {
+		let string = JSON.stringify(gameData);
+		let res = JSON.parse(string.replace("/r", "<br>"));
+		return res;
 	}
 
 	export default /*#__PURE__*/ defineComponent({
@@ -139,6 +145,8 @@
 		},
 		data: function () {
 			return {
+				gameDataWithBr: {},
+
 				initialized: false,
 				stepToInit: {
 					font: false,
@@ -352,6 +360,11 @@
 			},
 		},
 		mounted() {
+			console.log("QUI!!!");
+			console.log(this.gameData);
+
+			this.gameDataWithBr = fixBr(this.gameData);
+
 			if (this.propLang !== "null-lang") {
 				this.lang = this.propLang;
 			} else {
@@ -406,19 +419,25 @@
 
 			/* stabilisco tabs da vedere */
 			navigation(newIdArray) {
+				console.log("NEW NAVIGATION ---------------------");
 				let tabs = this.gameData.story.tabs.filter((el) =>
 					newIdArray.includes(el.id)
 				);
 				let tabsToNavigate = this.ResoveTabsList(tabs);
 
 				if (tabsToNavigate.length == 0) {
+					console.log("ERROR");
+
 					let error = this.strings.wrongTabsId[this.langEditor];
 					this.onRunError.push(error);
 
 					//setto nextTabsChose
 					this.nextTabsChose = [];
 				} else {
+					console.log("NON ERROR");
 					if (tabsToNavigate.length == 1) {
+						console.log("singolo");
+
 						this.singleBeemFoward = true;
 
 						//setto nextTabsChose ---------------------------
@@ -440,13 +459,17 @@
 						let testNextTabsChose = this.ResoveTabsList(tabToAdd);
 
 						if (testNextTabsChose.length == 1) {
+							console.log("a");
 							if (testNextTabsChose[0].type == "descriptions") {
+								console.log("b");
 								single = true;
 							}
 						} else {
 							//controllo se sono tutti chose
 							testNextTabsChose.forEach((el) => {
+								console.log("c");
 								if (el.type != "chose") {
+									console.log("d");
 									error = true;
 								}
 							});
@@ -477,7 +500,22 @@
 							this.saveData();
 						}
 					} else {
+						console.log("multiplo");
 						this.singleBeemFoward = false;
+
+						/* controllo se tab to add sono tutti chose */
+						console.log("guarda qua!!");
+						let allChose = true;
+						tabsToNavigate.forEach((el) => {
+							console.log(el.type);
+							if (el.type != "chose") {
+								allChose = false;
+							}
+						});
+
+						if (allChose) {
+							this.nextTabsChose = [];
+						}
 					}
 
 					this.currentTabs = tabsToNavigate;
@@ -1234,13 +1272,14 @@
 	}
 </style>
 <style scoped>
-	.game-grid {
+	.sg1-game-grid {
 		display: grid;
 		height: 100%;
 		width: 100%;
 		position: relative;
+		background-color: #282828;
 	}
-	.load-screen {
+	.sg1-load-screen {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -1250,20 +1289,20 @@
 		align-items: center;
 		justify-content: center;
 	}
-	.log-app {
+	.sg1-log-app {
 		grid-row-start: 1;
 		grid-column-start: 1;
 		grid-row-end: 7;
 		grid-column-end: 9;
 	}
-	.log-app {
+	.sg1-log-app {
 		background-color: #282828;
 		z-index: 100;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	.log-app > * {
+	.sg1-log-app > * {
 		font-size: 15px;
 		max-width: 100%;
 		padding-right: 20px;

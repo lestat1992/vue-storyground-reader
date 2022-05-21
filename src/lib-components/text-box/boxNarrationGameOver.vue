@@ -1,14 +1,14 @@
 <template>
-	<div class="box-narration">
+	<div class="sg1-box-narration">
 		<div
-			class="tab-results"
+			class="sg1-tab-results"
 			:style="stylesObj.tabResultsMaxHeight"
 		>
 
 			<div
 				v-for="tab,index in currentTabs"
 				:key="tab.id"
-				:class=" currentTabs.length == 1 ? 'label-description': 'label-multiple-chose'"
+				:class=" currentTabs.length == 1 ? 'sg1-label-description': 'sg1-label-multiple-chose'"
 			>
 				<div
 					v-if="currentTabs.length == 1"
@@ -41,11 +41,11 @@
 	export default boxNarrationGameOver;
 </script>
 <style scoped>
-	.tab-results {
+	.sg1-tab-results {
 		flex-grow: 1;
 		overflow: auto;
 	}
-	.box-narration {
+	.sg1-box-narration {
 		position: relative;
 		z-index: 10;
 	}

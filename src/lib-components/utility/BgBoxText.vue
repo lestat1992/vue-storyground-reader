@@ -1,14 +1,14 @@
 <template>
-	<div class="bg-wrapper">
+	<div class="sg1-bg-wrapper">
 		<canvas
 			v-if="isCanvas"
 			:width="width"
 			:height="height"
-			id="st-canvas-bg"
+			id="sg1-st-canvas-bg"
 		></canvas>
 		<div
 			v-else
-			class="st-bg"
+			class="sg1-st-bg"
 			:style="styleStBg"
 		></div>
 	</div>
@@ -97,8 +97,8 @@
 	export default BgBoxText;
 </script>
 <style scoped>
-	.bg-wrapper,
-	.st-bg {
+	.sg1-bg-wrapper,
+	.sg1-st-bg {
 		position: absolute;
 		top: 0;
 		left: 0;

@@ -1,16 +1,16 @@
 <template>
 	<div
 		v-if="svgData"
-		:class="stylesObj.iconSingleArrow['type'] + ' animation-' + animation"
-		class="next-tab-wrapper"
+		:class="'sg1-'+stylesObj.iconSingleArrow['type'] + ' sg1-animation-' + animation"
+		class="sg1-next-tab-wrapper"
 	>
 		<div
-			class="svg-wraper"
+			class="sg1-svg-wraper"
 			:style="{width: stylesObj.iconSingleArrow['size']}"
 			v-html="svgData"
 		></div>
 		<div
-			class="svg-shadow"
+			class="sg1-svg-shadow"
 			:style="{width: stylesObj.iconSingleArrow['size']}"
 			v-html="svgData"
 		></div>
@@ -78,7 +78,7 @@
 	export default NextTab;
 </script>
 <style scoped>
-	.next-tab-wrapper {
+	.sg1-next-tab-wrapper {
 		width: auto;
 		display: inline-flex;
 		cursor: pointer;
@@ -86,14 +86,14 @@
 		transition: opacity 0.35s;
 		transition-timing-function: ease-out;
 	}
-	.next-tab-wrapper:hover {
+	.sg1-next-tab-wrapper:hover {
 		opacity: 0.75;
 	}
-	.next-tab-wrapper:hover .svg-shadow {
+	.sg1-next-tab-wrapper:hover .sg1-svg-shadow {
 		opacity: 0;
 		animation: none;
 	}
-	.svg-shadow {
+	.sg1-svg-shadow {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -104,19 +104,19 @@
 	}
 
 	/* scroll-down */
-	.animation-scroll-down .svg-shadow {
-		animation: scroll-down 2s infinite;
+	.sg1-animation-scroll-down .sg1-svg-shadow {
+		animation: sg1-scroll-down 2s infinite;
 		animation-timing-function: ease-out;
 	}
-	.animation-scroll-down {
+	.sg1-animation-scroll-down {
 		transition: transform 0.35s;
 		transition-timing-function: ease-out;
 		transform: translateY(0) scale(0.95);
 	}
-	.animation-scroll-down:hover {
+	.sg1-animation-scroll-down:hover {
 		transform: translateY(10%) scale(1);
 	}
-	@keyframes scroll-down {
+	@keyframes sg1-scroll-down {
 		0% {
 			transform: translateY(0);
 			opacity: 0.5;
@@ -128,18 +128,18 @@
 	}
 
 	/* shining */
-	.animation-shining {
+	.sg1-animation-shining {
 		transition: transform 0.35s;
 		transition-timing-function: ease-out;
 		transform: translateY(0) scale(0.95);
-		animation: shining 1s infinite;
+		animation: sg1-shining 1s infinite;
 		animation-timing-function: ease-out;
 	}
-	.animation-shining:hover {
+	.sg1-animation-shining:hover {
 		transform: translateY(10%) scale(1);
 		animation: none;
 	}
-	@keyframes shining {
+	@keyframes sg1-shining {
 		0% {
 			opacity: 1;
 			transform: translateY(0) scale(1);

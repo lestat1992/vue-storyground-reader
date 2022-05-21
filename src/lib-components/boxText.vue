@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="wrapper-box-text"
+		class="sg1-wrapper-box-text"
 		:style="{ ...stylesObj.boxText, ...stylesObj.boxTextPadding }"
 	>
 		<BgBoxText :stylesObj="stylesObj" />
@@ -62,14 +62,9 @@
 	export default boxText;
 </script>
 <style scoped>
-	.wrapper-box-text {
+	.sg1-wrapper-box-text {
 		display: flex;
 		flex-direction: column;
 		position: relative;
-	}
-	.box-narration {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
 	}
 </style>
