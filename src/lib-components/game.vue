@@ -426,31 +426,19 @@
 
 			/* stabilisco tabs da vedere */
 			navigation(newIdArray) {
-				console.log("NEW NAVIGATION ---------------------");
-				console.log(newIdArray);
 				let tabs = this.gameData.story.tabs.filter((el) =>
 					newIdArray.includes(el.id)
 				);
 				let tabsToNavigate = this.ResoveTabsList(tabs);
 
-				console.log("....");
-				console.log(tabsToNavigate.length);
-				console.log(this.playerState != "game end");
-				console.log("....");
-
 				if (tabsToNavigate.length == 0 && this.playerState != "game end") {
-					console.log("ERROR");
-
 					let error = this.strings.wrongTabsId[this.langEditor];
 					this.onRunError.push(error);
 
 					//setto nextTabsChose
 					this.nextTabsChose = [];
 				} else {
-					console.log("NON ERROR");
 					if (tabsToNavigate.length == 1) {
-						console.log("singolo");
-
 						this.singleBeemFoward = true;
 
 						//setto nextTabsChose ---------------------------
@@ -472,17 +460,13 @@
 						let testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
 
 						if (testNextTabsChose.length == 1) {
-							console.log("a");
 							if (testNextTabsChose[0].type == "descriptions") {
-								console.log("b");
 								single = true;
 							}
 						} else {
 							//controllo se sono tutti chose
 							testNextTabsChose.forEach((el) => {
-								console.log("c");
 								if (el.type != "chose") {
-									console.log("d");
 									error = true;
 								}
 							});
@@ -513,14 +497,11 @@
 							this.saveData();
 						}
 					} else {
-						console.log("multiplo");
 						this.singleBeemFoward = false;
 
 						/* controllo se tab to add sono tutti chose */
-						console.log("guarda qua!!");
 						let allChose = true;
 						tabsToNavigate.forEach((el) => {
-							console.log(el.type);
 							if (el.type != "chose") {
 								allChose = false;
 							}
@@ -543,12 +524,6 @@
 				const textualTabs = this.textualTabs;
 				let collectionOfTextualTabs = tabs;
 
-				console.log("resolving 1");
-				console.log("are we setting next:");
-				console.log(isNext);
-				console.log("//");
-				console.log(tabs);
-
 				while (stop == false) {
 					n++;
 
@@ -562,13 +537,9 @@
 
 							newCollection = [...newCollection, ...this.ResoveTab(el, isNext)];
 						} else {
-							console.log("--");
-							console.log(this.playerState == "playing");
 							if (this.playerState != "game over" && !isNext) {
-								console.log(".");
 								newCollection.push(el);
 							}
-							console.log("--");
 						}
 					});
 
@@ -584,9 +555,6 @@
 
 			/* risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab */
 			ResoveTab(tab, isNext) {
-				console.log("we are resolving:");
-				console.log(tab);
-
 				function operatorResolve(dn1, operator, dn2) {
 					const n1 = parseInt(dn1);
 					const n2 = parseInt(dn2);
@@ -660,8 +628,6 @@
 						stop = true;
 						break;
 					case "game over":
-						console.log("STAI PASSANDO DI QUI1");
-						console.log(currentTab);
 						if (!isNext) {
 							this.playerState = "game over";
 							tabToAdd.push(currentTab);
@@ -670,8 +636,6 @@
 
 						break;
 					case "end":
-						console.log("STAI PASSANDO DI QUI2");
-						console.log(currentTab);
 						if (!isNext) {
 							this.playerState = "game end";
 							if (currentTab.openNewPage) {
@@ -912,7 +876,6 @@
 						break;
 
 					case "image":
-						console.log("passing");
 						this.setImage(currentTab.img);
 						break;
 				}
@@ -1085,7 +1048,6 @@
 			reedBeams(fromId) {
 				let newIdArray = [];
 				this.gameData.story.beams.forEach((beam) => {
-					console.log(fromId + "==" + beam.from);
 					if (fromId == beam.from) {
 						newIdArray.push(beam.to);
 					}
@@ -1222,7 +1184,6 @@
 			/* STYLE ---------------------------------------- */
 
 			init() {
-				console.log("..");
 				this.setDevice();
 				this.LoadFont();
 				this.setPreCacheImgList();

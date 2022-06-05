@@ -44,7 +44,6 @@
 				return fixText(text);
 			},
 			gameIntentLoad4() {
-				console.log("gameIntentLoad as new");
 				this.$emit("gameIntentLoad3");
 			},
 		},

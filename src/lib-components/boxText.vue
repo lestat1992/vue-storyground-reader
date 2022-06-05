@@ -55,11 +55,9 @@
 		},
 		methods: {
 			emitReedBeams1(id) {
-				console.log("ehi ciao");
 				this.$emit("reedBeams", id);
 			},
 			gameIntentLoad2() {
-				console.log(".");
 				this.$emit("gameIntentLoad");
 			},
 		},
