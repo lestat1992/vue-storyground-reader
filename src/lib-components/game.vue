@@ -32,7 +32,7 @@
 			<div
 				v-if="narrationBox == false && onRunError.length == 0"
 				class="sg1-game-error sg1-e-1"
-			>{{ strings.noEnd.langEditor }}</div>
+			>{{ strings.noEnd[langEditor] }}</div>
 			<div
 				v-for="(el, index ) in onRunError"
 				:key="index"
@@ -42,7 +42,7 @@
 				v-if="narrationBox == 'node-bad-mix'"
 				class="sg1-game-error sg1-e-3"
 			>
-				{{ strings.nodeBadMix.langEditor }} {{listBadMixId}} )
+				{{ strings.nodeBadMix[langEditor] }} {{listBadMixId}} )
 
 			</div>
 
@@ -247,7 +247,7 @@
 
 					let gridLayoutItem;
 					if (this.disableIlustration == true) {
-						gridLayoutItem = getGridLayout(7);
+						gridLayoutItem = getGridLayout("a1f8");
 					} else {
 						gridLayoutItem = getGridLayout(
 							this.gameData.style[this.device]["layout-type"]
@@ -695,7 +695,7 @@
 							currentTab = tabToRedirect;
 						} else {
 							let error =
-								this.strings.redirectError.langEditor +
+								this.strings.redirectError[this.langEditor] +
 								" ( ID: " +
 								currentTab.id +
 								" )";
@@ -717,7 +717,7 @@
 						if (itemExist3) {
 							if (itemExist3.length == 0 || currentTab.operator == false) {
 								let error =
-									this.strings.expressionIncoplete.langEditor +
+									this.strings.expressionIncoplete[this.langEditor] +
 									" ( ID: " +
 									currentTab.id +
 									" )";
@@ -732,7 +732,7 @@
 							}
 						} else {
 							let error =
-								this.strings.expressionIncoplete.langEditor +
+								this.strings.expressionIncoplete[this.langEditor] +
 								" ( ID: " +
 								currentTab.id +
 								" )";
@@ -749,7 +749,7 @@
 						if (itemExist2) {
 							if (itemExist2.length == 0 || currentTab.operator == false) {
 								let error =
-									this.strings.expressionIncoplete.langEditor +
+									this.strings.expressionIncoplete[this.langEditor] +
 									" ( ID: " +
 									currentTab.id +
 									" )";
@@ -764,7 +764,7 @@
 							}
 						} else {
 							let error =
-								this.strings.expressionIncoplete.langEditor +
+								this.strings.expressionIncoplete[this.langEditor] +
 								" ( ID: " +
 								currentTab.id +
 								" )";
@@ -787,7 +787,7 @@
 								currentTab.operator == false
 							) {
 								let error =
-									this.strings.expressionIncoplete.langEditor +
+									this.strings.expressionIncoplete[this.langEditor] +
 									" ( ID: " +
 									currentTab.id +
 									" )";
@@ -816,7 +816,7 @@
 							}
 						} else {
 							let error =
-								this.strings.expressionIncoplete.langEditor +
+								this.strings.expressionIncoplete[this.langEditor] +
 								" ( ID: " +
 								currentTab.id +
 								" )";
@@ -841,7 +841,7 @@
 						if (itemExist) {
 							if (itemExist.length == 0 || currentTab.operator == false) {
 								let error =
-									this.strings.expressionIncoplete.langEditor +
+									this.strings.expressionIncoplete[this.langEditor] +
 									" ( ID: " +
 									currentTab.id +
 									" )";
@@ -870,7 +870,7 @@
 							}
 						} else {
 							let error =
-								this.strings.expressionIncoplete.langEditor +
+								this.strings.expressionIncoplete[this.langEditor] +
 								" ( ID: " +
 								currentTab.id +
 								" )";

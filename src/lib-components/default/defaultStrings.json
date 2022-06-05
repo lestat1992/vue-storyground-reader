@@ -16,8 +16,8 @@
     "it": "non è stato inserito un nodo finale"
   },
   "nodeBadMix": {
-    "it": "the resulting list of nodes is incorrect (nodes to be disconnected:",
-    "en": ""
+    "it": "La lista di nodi risultanti non è corretta (id nodi da scollegare:",
+    "en": "the resulting list of nodes is incorrect (id nodes to be disconnected:"
   },
   "expressionIncoplete": {
     "it": "l'espressione usata è incopleta",
