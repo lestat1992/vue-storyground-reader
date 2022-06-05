@@ -427,10 +427,16 @@
 			/* stabilisco tabs da vedere */
 			navigation(newIdArray) {
 				console.log("NEW NAVIGATION ---------------------");
+				console.log(newIdArray);
 				let tabs = this.gameData.story.tabs.filter((el) =>
 					newIdArray.includes(el.id)
 				);
 				let tabsToNavigate = this.ResoveTabsList(tabs);
+
+				console.log("....");
+				console.log(tabsToNavigate.length);
+				console.log(this.playerState != "game end");
+				console.log("....");
 
 				if (tabsToNavigate.length == 0 && this.playerState != "game end") {
 					console.log("ERROR");
@@ -463,7 +469,7 @@
 							}
 						});
 
-						let testNextTabsChose = this.ResoveTabsList(tabToAdd);
+						let testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
 
 						if (testNextTabsChose.length == 1) {
 							console.log("a");
@@ -531,11 +537,17 @@
 
 			//------------------------------------------------------
 
-			ResoveTabsList(tabs) {
+			ResoveTabsList(tabs, isNext = false) {
 				let stop = false;
 				let n = 0;
 				const textualTabs = this.textualTabs;
 				let collectionOfTextualTabs = tabs;
+
+				console.log("resolving 1");
+				console.log("are we setting next:");
+				console.log(isNext);
+				console.log("//");
+				console.log(tabs);
 
 				while (stop == false) {
 					n++;
@@ -548,9 +560,15 @@
 						if (!textualTabs.includes(el.type)) {
 							allTextual = false;
 
-							newCollection = [...newCollection, ...this.ResoveTab(el)];
+							newCollection = [...newCollection, ...this.ResoveTab(el, isNext)];
 						} else {
-							newCollection.push(el);
+							console.log("--");
+							console.log(this.playerState == "playing");
+							if (this.playerState != "game over" && !isNext) {
+								console.log(".");
+								newCollection.push(el);
+							}
+							console.log("--");
 						}
 					});
 
@@ -565,7 +583,10 @@
 			},
 
 			/* risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab */
-			ResoveTab(tab) {
+			ResoveTab(tab, isNext) {
+				console.log("we are resolving:");
+				console.log(tab);
+
 				function operatorResolve(dn1, operator, dn2) {
 					const n1 = parseInt(dn1);
 					const n2 = parseInt(dn2);
@@ -639,25 +660,35 @@
 						stop = true;
 						break;
 					case "game over":
-						this.playerState = "game over";
-						tabToAdd.push(currentTab);
+						console.log("STAI PASSANDO DI QUI1");
+						console.log(currentTab);
+						if (!isNext) {
+							this.playerState = "game over";
+							tabToAdd.push(currentTab);
+						}
 						stop = true;
 
 						break;
 					case "end":
-						this.playerState = "game end";
-						if (currentTab.openNewPage) {
-							this.goToLink = true;
-							if (this.stopLink) {
-								this.urlToShow =
-									this.strings.urlRedirect[this.langEditor] +
-									": " +
-									currentTab.url[this.lang];
+						console.log("STAI PASSANDO DI QUI2");
+						console.log(currentTab);
+						if (!isNext) {
+							this.playerState = "game end";
+							if (currentTab.openNewPage) {
+								this.goToLink = true;
+								if (this.stopLink) {
+									this.urlToShow =
+										this.strings.urlRedirect[this.langEditor] +
+										": " +
+										currentTab.url[this.lang];
+								} else {
+									window.open(currentTab.url[this.lang], "_self");
+								}
 							} else {
-								window.open(currentTab.url[this.lang], "_self");
+								tabToAdd.push(currentTab);
+								stop = true;
 							}
 						} else {
-							tabToAdd.push(currentTab);
 							stop = true;
 						}
 						break;
@@ -1054,6 +1085,7 @@
 			reedBeams(fromId) {
 				let newIdArray = [];
 				this.gameData.story.beams.forEach((beam) => {
+					console.log(fromId + "==" + beam.from);
 					if (fromId == beam.from) {
 						newIdArray.push(beam.to);
 					}
