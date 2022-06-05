@@ -460,7 +460,10 @@
 						let testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
 
 						if (testNextTabsChose.length == 1) {
-							if (testNextTabsChose[0].type == "descriptions") {
+							if (
+								testNextTabsChose[0].type == "descriptions" ||
+								testNextTabsChose[0].type == "game over"
+							) {
 								single = true;
 							}
 						} else {
@@ -537,7 +540,15 @@
 
 							newCollection = [...newCollection, ...this.ResoveTab(el, isNext)];
 						} else {
-							if (this.playerState != "game over" && !isNext) {
+							let procedeToNewCollection = true;
+
+							if (isNext) {
+								if (this.playerState != "playing") {
+									procedeToNewCollection = false;
+								}
+							}
+
+							if (procedeToNewCollection) {
 								newCollection.push(el);
 							}
 						}
