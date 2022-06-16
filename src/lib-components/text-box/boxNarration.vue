@@ -33,7 +33,7 @@
 			<div
 				v-for="tab,index in nextTabsChoseReordered"
 				:key="tab.id"
-				:class=" currentTabs.length == 1 ? 'sg1-label-description': 'sg1-label-multiple-chose'"
+				:class=" nextTabsChose.length == 1 ? 'sg1-label-description': 'sg1-label-multiple-chose'"
 			>
 				<div v-if="tab.id">
 					<ChooseTab
