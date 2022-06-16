@@ -97,7 +97,13 @@
 	export default BgBoxText;
 </script>
 <style scoped>
-	.sg1-bg-wrapper,
+	.sg1-bg-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 	.sg1-st-bg {
 		position: absolute;
 		top: 0;

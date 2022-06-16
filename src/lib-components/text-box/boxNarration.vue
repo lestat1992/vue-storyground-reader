@@ -46,16 +46,17 @@
 			</div>
 
 		</div>
-		<div
-			v-if="currentTabs.length == 1 && nextTabsChose.length == 0"
-			class="sg1-single-beem-foward-box"
-			:style="stylesObj.paddingTopNextTab"
-		>
-			<NextTab
-				:stylesObj="stylesObj"
-				@click="emitReedBeams3(currentTabs[0].id)"
-			/>
-		</div>
+
+	</div>
+	<div
+		v-if="currentTabs.length == 1 && nextTabsChose.length == 0"
+		class="sg1-single-beem-foward-box"
+		:style="stylesObj.paddingTopNextTab"
+	>
+		<NextTab
+			:stylesObj="stylesObj"
+			@click="emitReedBeams3(currentTabs[0].id)"
+		/>
 	</div>
 </template>
 
@@ -138,8 +139,9 @@
 	.sg1-box-narration {
 		position: relative;
 		z-index: 10;
-		max-height: 100%;
-		min-height: 100%;
+		max-height: inherit;
+		min-height: inherit;
 		overflow-y: auto;
+		flex-grow: 1;
 	}
 </style>

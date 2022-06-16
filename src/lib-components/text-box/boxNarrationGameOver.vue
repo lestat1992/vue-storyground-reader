@@ -58,7 +58,10 @@
 	}
 	.sg1-box-narration {
 		position: relative;
+		max-height: initial;
+		min-height: inherit;
 		z-index: 10;
+		flex-grow: 1;
 	}
 	.sg1-replay-link {
 		text-decoration: underline;
