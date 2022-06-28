@@ -171,8 +171,8 @@ var noEnd = {
 	it: "non è stato inserito un nodo finale"
 };
 var nodeBadMix = {
-	it: "the resulting list of nodes is incorrect (nodes to be disconnected:",
-	en: ""
+	it: "La lista di nodi risultanti non è corretta (id nodi da scollegare:",
+	en: "the resulting list of nodes is incorrect (id nodes to be disconnected:"
 };
 var expressionIncoplete = {
 	it: "l'espressione usata è incopleta",
@@ -186,6 +186,10 @@ var redirectError = {
 	it: "Non sono stati specificati alcuni nodi di destinazione",
 	en: "Some target nodes were not specified"
 };
+var urlRedirect = {
+	it: "Reindirizzamento a",
+	en: "Redirect to"
+};
 var defaultStrings = {
 	wrongTabsId: wrongTabsId,
 	noData: noData,
@@ -194,17 +198,19 @@ var defaultStrings = {
 	nodeBadMix: nodeBadMix,
 	expressionIncoplete: expressionIncoplete,
 	linkNodeEmpty: linkNodeEmpty,
-	redirectError: redirectError
+	redirectError: redirectError,
+	urlRedirect: urlRedirect
 };var postInfo = {
 	title: "Placeholder",
 	lenghtDescriptionsNode: 400,
 	lenghtChoseNode: 20,
 	selectedWorkSpace: 1,
-	privateLink: true,
+	privateLink: false,
 	langList: [
 		"it",
 		"en"
-	]
+	],
+	templateSelected: "White"
 };
 var erorList = {
 	noStart: false
@@ -249,13 +255,13 @@ var story = {
 			img: {
 				ID: 1315,
 				srcFull: [
-					"http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1.jpg",
+					"https://storygroundeditor.com/media-placeholder.jpg",
 					1920,
 					1080,
 					false
 				],
 				srcThumbnail: [
-					"http://localhost/storyground-editor/wp-content/uploads/2022/01/29695f55c408397b6eeb453fb59d40d9_img-1-150x150.jpg",
+					"https://storygroundeditor.com/media-placeholder.jpg",
 					150,
 					150,
 					true
@@ -344,7 +350,12 @@ var story = {
 			img: false,
 			textRevision: false,
 			x: 884,
-			y: 839.8125
+			y: 839.8125,
+			openNewPage: false,
+			url: {
+				it: "",
+				en: ""
+			}
 		}
 	],
 	beams: [
@@ -498,8 +509,8 @@ var defaultStory = {
 var script$a = boxIllustration;var _hoisted_1$9 = {
   class: "sg1-inner-box"
 };
-var _hoisted_2$7 = ["src"];
-var _hoisted_3$3 = ["src", "srcset", "sizes"];
+var _hoisted_2$9 = ["src"];
+var _hoisted_3$5 = ["src", "srcset", "sizes"];
 function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", {
     class: "sg1-box-illustration",
@@ -508,12 +519,12 @@ function render$a(_ctx, _cache, $props, $setup, $data, $options) {
     key: 0,
     class: "sg1-box-img",
     src: _ctx.illustration.srcFull[0]
-  }, null, 8, _hoisted_2$7)) : (vue.openBlock(), vue.createElementBlock("img", {
+  }, null, 8, _hoisted_2$9)) : (vue.openBlock(), vue.createElementBlock("img", {
     key: 1,
     src: _ctx.imgPathPart + '-' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['width'] + 'x' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['height'] + '.jpg',
     srcset: _ctx.responsiveImages.srcset,
     sizes: _ctx.responsiveImages.sizes
-  }, null, 8, _hoisted_3$3))])], 4);
+  }, null, 8, _hoisted_3$5))])], 4);
 }function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -601,13 +612,13 @@ var nextTabMinimal2$1 = nextTabMinimal2;function svgColorChange(stringSvg, color
   }
 };
 var script$9 = NextTab$1;var _hoisted_1$8 = ["innerHTML"];
-var _hoisted_2$6 = ["innerHTML"];
+var _hoisted_2$8 = ["innerHTML"];
 function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return _ctx.svgData ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
-    class: vue.normalizeClass([_ctx.stylesObj.iconSingleArrow['type'] + ' animation-' + _ctx.animation, "sg1-next-tab-wrapper"])
+    class: vue.normalizeClass(['sg1-' + _ctx.stylesObj.iconSingleArrow['type'] + ' sg1-animation-' + _ctx.animation, "sg1-next-tab-wrapper"])
   }, [vue.createElementVNode("div", {
-    class: "svg-wraper",
+    class: "sg1-svg-wraper",
     style: vue.normalizeStyle({
       width: _ctx.stylesObj.iconSingleArrow['size']
     }),
@@ -618,10 +629,10 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
       width: _ctx.stylesObj.iconSingleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_2$6)], 2)) : vue.createCommentVNode("", true);
-}var css_248z$a = "\n.sg1-next-tab-wrapper[data-v-101361d6] {\n\t\twidth: auto;\n\t\tdisplay: inline-flex;\n\t\tcursor: pointer;\n\t\tposition: relative;\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-next-tab-wrapper[data-v-101361d6]:hover {\n\t\topacity: 0.75;\n}\n.sg1-next-tab-wrapper:hover .sg1-svg-shadow[data-v-101361d6] {\n\t\topacity: 0;\n\t\tanimation: none;\n}\n.sg1-svg-shadow[data-v-101361d6] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n\n\t/* scroll-down */\n.sg1-animation-scroll-down .sg1-svg-shadow[data-v-101361d6] {\n\t\tanimation: sg1-scroll-down-101361d6 2s infinite;\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-scroll-down[data-v-101361d6] {\n\t\ttransition: transform 0.35s;\n\t\ttransition-timing-function: ease-out;\n\t\ttransform: translateY(0) scale(0.95);\n}\n.sg1-animation-scroll-down[data-v-101361d6]:hover {\n\t\ttransform: translateY(10%) scale(1);\n}\n@keyframes sg1-scroll-down-101361d6 {\n0% {\n\t\t\ttransform: translateY(0);\n\t\t\topacity: 0.5;\n}\n100% {\n\t\t\ttransform: translateY(35%);\n\t\t\topacity: 0;\n}\n}\n\n\t/* shining */\n.sg1-animation-shining[data-v-101361d6] {\n\t\ttransition: transform 0.35s;\n\t\ttransition-timing-function: ease-out;\n\t\ttransform: translateY(0) scale(0.95);\n\t\tanimation: sg1-shining-101361d6 1s infinite;\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-shining[data-v-101361d6]:hover {\n\t\ttransform: translateY(10%) scale(1);\n\t\tanimation: none;\n}\n@keyframes sg1-shining-101361d6 {\n0% {\n\t\t\topacity: 1;\n\t\t\ttransform: translateY(0) scale(1);\n}\n50% {\n\t\t\topacity: 0.5;\n\t\t\ttransform: translateY(0) scale(0.95);\n}\n100% {\n\t\t\topacity: 1;\n\t\t\ttransform: translateY(0) scale(1);\n}\n}\n";
+  }, null, 12, _hoisted_2$8)], 2)) : vue.createCommentVNode("", true);
+}var css_248z$a = "\n.sg1-next-tab-wrapper[data-v-07a96db8] {\r\n\t\twidth: auto;\r\n\t\tdisplay: inline-flex;\r\n\t\tcursor: pointer;\r\n\t\tposition: relative;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-next-tab-wrapper[data-v-07a96db8]:hover {\r\n\t\topacity: 0.75;\n}\n.sg1-next-tab-wrapper:hover .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\topacity: 0;\r\n\t\tanimation: none;\n}\n.sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tposition: absolute;\r\n\t\ttop: 0;\r\n\t\tleft: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\r\n\r\n\t/* scroll-down */\n.sg1-animation-scroll-down .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tanimation: sg1-scroll-down-07a96db8 2s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-scroll-down[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\n}\n.sg1-animation-scroll-down[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\n}\n@keyframes sg1-scroll-down-07a96db8 {\n0% {\r\n\t\t\ttransform: translateY(0);\r\n\t\t\topacity: 0.5;\n}\n100% {\r\n\t\t\ttransform: translateY(35%);\r\n\t\t\topacity: 0;\n}\n}\r\n\r\n\t/* shining */\n.sg1-animation-shining[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\r\n\t\tanimation: sg1-shining-07a96db8 1s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-shining[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\r\n\t\tanimation: none;\n}\n@keyframes sg1-shining-07a96db8 {\n0% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n50% {\r\n\t\t\topacity: 0.5;\r\n\t\t\ttransform: translateY(0) scale(0.95);\n}\n100% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n}\r\n";
 styleInject(css_248z$a);script$9.render = render$9;
-script$9.__scopeId = "data-v-101361d6";var choseTabHexagon = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M75,6.7H25L0,50l25,43.3h50L100,50L75,6.7z M67.8,80.8H32.2L14.4,50l17.8-30.8h35.6L85.6,50\n\t\tL67.8,80.8z\"/>\n</g>\n</svg>\n";
+script$9.__scopeId = "data-v-07a96db8";var choseTabHexagon = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M75,6.7H25L0,50l25,43.3h50L100,50L75,6.7z M67.8,80.8H32.2L14.4,50l17.8-30.8h35.6L85.6,50\n\t\tL67.8,80.8z\"/>\n</g>\n</svg>\n";
 var choseTabHexagon$1 = choseTabHexagon;var nextTabSketch = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<polygon style=\"fill:#7F7F7F;\" points=\"75,6.7 25,6.7 0,50 25,93.3 75,93.3 100,50 \"/>\n</svg>\n";
 var choseTabHexagonActive = nextTabSketch;var choseTabSketch1 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M70.8,19.8c2.3-2.6,5.6-4.6,5.1-8.7c2.2-0.7,4.4-1.3,6.6-2c0.4-0.5,0.8-1.1,1.2-1.6\n\t\tc1.2,2.8,2.3,5.7,3.5,8.5c0.5-0.6,1-1.1,1.5-1.7c0.5,2.1,0.9,4.2,1.4,6.4c0.3-0.1,0.5-0.1,0.8-0.2c-0.7,2-1.2,4.2-2.1,6.1\n\t\tc-0.6,1.2-1.9,2-2.8,3.1c-1.9,2.1-3.8,4.2-5.5,6.4c-2.4,3.2-4.5,6.6-7.1,10.4c4.2,3.7,8,7.4,12.3,10.5c1.9,1.4,4.8,1.4,7.3,1.9\n\t\tc3.3,0.8,5.5,2.6,6.6,5.8c-0.3,0.1-0.6,0.2-0.9,0.2c0.3,1.7,0.7,3.4,1,5.1c0.2,1,0.3,2.1,0.4,3.1c-1.7,0.1-3.8,0.9-4.9,0.2\n\t\tc-4.5-3-8.9-6.3-13-9.9c-2.6-2.3-4.5-5.3-6.8-7.8c-1.3-1.4-2.9-2.5-5-4.3c1,3,1.7,5.2,2.5,7.4c0.2-0.1,0.3-0.2,0.5-0.4\n\t\tc4.1,6.7,8.2,13.5,12.3,20.2c-1.5,1.3-2.2,2-3.1,2.7c0.2,0.5,0.5,0.9,0.4,1.4c-0.2,1.4,0,3.4-0.8,4.1c-0.8,0.7-2.9,0.4-4.1-0.2\n\t\tc-2.4-1.1-4.5-2.8-6.7-4.2c-0.3,0.4-0.6,0.7-0.9,1.1c2.4,2.1,4.8,4.1,7.5,6.4c-3.5,3-2.9,6-1.2,9c-3.1,2.4-5-0.2-7-1.4\n\t\tc-2.4-1.4-4.7-3-6.9-4.7c-1.4-1.1-2.5-2.7-3.9-4c-3.4-3.3-6.9-6.5-10.4-9.6c-0.2-0.2-0.8-0.1-1.2-0.1C46.7,85.1,44,89.4,39,92.1\n\t\tc-2.6,2.1-4.9,4.2-7.6,5.7c-0.7,0.4-2.8-0.7-3.6-1.6c-0.8-1-1.1-2.8-0.8-4c0.4-1.6,1.6-2.9,2.6-4.5c-1.7-1.8-3.4-3.6-5.1-5.5\n\t\tc0.6-1,1.1-1.9,1.7-2.7c1.7-2.4,1.8-4.3-1.1-5.9c-1-0.6-1.4-2.1-2.2-3.1c-0.5-0.7-0.8-1.5-1.4-2c-3-2.4-4.6-5.3-2.6-8.3\n\t\tc2.1-3,1.6-5.3-1.3-8c-4.3-4-7.9-8.8-11.8-13.2c-1.2-1.3-2.6-2.5-4-3.6C0.1,34-0.7,32,0.8,30.3C2,29,4,28.2,5.8,27.8\n\t\tc1.1-0.2,2.4,0.6,3.5,1c0,1.5,0,2.8,0,4.4c1.3-0.5,2-0.9,2.8-1.2c5.1,5,9.2,11,16.9,12.5c-0.2-0.5-0.2-1.3-0.5-1.7\n\t\tc-3.7-4.8-7.3-9.6-11.1-14.3C14.6,25,11.5,21.8,9,18.2C8.3,17.3,8.5,15,9.3,14c1-1.4,3-2.2,4.9-3.5c0.8,1.4,1.5,2.4,2.1,3.5\n\t\tc1.4,2.5,4.3,3.7,7.1,2.6c2.8-1.1,4.7,0.4,6.6,2.2c2.5,2.4,5.1,4.8,7.8,7c0.7,0.6,1.9,0.5,2.9,0.7c0-1.1,0.6-2.5,0.1-3.3\n\t\tc-1.4-2.3-3.2-4.4-5-6.5c-2.4-2.7-4.9-5.3-7.3-7.9c-0.5-0.5-0.8-1.2-1-1.8c-1.4-3-0.1-5.1,2.2-7C34,0.9,46,12.6,47.4,17.9\n\t\tc0.8-1.2,1.3-2.1,1.9-2.8c3.1-3.7,6-7.6,9.4-11.1c0.9-0.9,2.9-0.9,4.4-0.9c0.3,0,0.7,1.8,0.9,2.8c0.5,1.9,0.3,4.8,5,2.4\n\t\tc-1.6,3.5-2.7,5.8-3.9,8.3c1.7,0.9,3.6,1.8,5.4,2.7c-0.4,0.4-0.7,0.8-1.1,1.2c0.2,0.1,0.4,0.3,0.5,0.4\n\t\tC70.2,20.6,70.5,20.2,70.8,19.8z M41.9,70.8c-4.1,1.2-5.6,3.7-4.5,6.3C39,75,40.4,72.9,41.9,70.8z M27.7,29c-0.3,0.3-0.6,0.7-1,1\n\t\tc0.5,0.6,1,1.3,1.5,1.9c0.4-0.4,0.8-0.8,1.2-1.2C28.8,30.1,28.3,29.6,27.7,29z M66.7,35.5c0.3,0.2,0.5,0.3,0.8,0.5\n\t\tc0.2-0.5,0.4-1,0.6-1.4c-0.2-0.1-0.4-0.2-0.6-0.3C67.3,34.6,67,35.1,66.7,35.5z M65.3,58.2c-0.1,0.2-0.2,0.4-0.4,0.7\n\t\tc0.4,0.4,0.9,0.7,1.3,1.1c0.2-0.4,0.4-0.8,0.6-1.2C66.4,58.5,65.9,58.3,65.3,58.2z M69.8,30.4c-0.3,0.5-0.6,0.8-0.7,1.1\n\t\tc0,0.1,0.5,0.6,0.6,0.5c0.3-0.2,0.6-0.4,0.7-0.7C70.4,31.1,70.1,30.8,69.8,30.4z\"/>\n</g>\n</svg>\n";
 var choseTabSketch5 = choseTabSketch1;var choseTabSketchActive = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M87.2,12.2c0.8-0.4,1.6-0.8,1.8-0.9c1.4,2.2,2.8,4.2,4,6.3c1.8,3.2,4.4,6.4,5.1,9.9\n\t\tc1.9,8.9,2.9,17.9,0.7,27c-1.2,5-2.1,10-3.1,15c-1.1,5.7-5.4,9-10,12c-3.4,2.2-7.1,3.9-10.4,6.2c-1.5,1-2.2,3.2-3.7,4.3\n\t\tc-5.5,3.9-12,5.7-18.6,7.5c-0.7,0.2-1.6,0-2.4-0.2c-3.4-0.5-6.9-0.6-10-1.7c-2.7-1-5.1-3-7.3-4.9c-6.2-5.3-10.7-11.8-15.8-17.9\n\t\tc-4.9-5.8-5.2-12.3-8-18.4c-0.5-1.2-1.9-2-2.2-3.2C5.5,46-0.7,40.6,0.1,32.4c0.5-5.6,3.5-9.1,7.5-12.4c3-2.5,6.2-4.9,9.7-6.6\n\t\tc5-2.4,9.3-6.3,14.5-7.9c9.2-2.9,18.7-5.8,28.8-3.8c4.4,0.9,8.9,1.3,13.4,1.7C78.4,3.9,84.9,8,87.2,12.2z M80.9,42.8\n\t\tc-0.7,2-0.9,3.1-1.5,4c-1.2,1.9-2.4,3.8-3.9,5.4c-1.6,1.7-3.3,3.5-5.3,4.7c-3.5,2-7.1,4.6-10.9,4.8c-4.6,0.3-9.5-1.2-12.5-5.5\n\t\tc-0.8-1.1-1.8-2-2.7-3c-3.5,3.8-4.1,6.7-0.8,9.9c3,2.9,6.9,5,10.4,7.4c1.3,0.9,2.9,1.4,4,2.5c1.7,1.6,9.1,2.6,10.7,0.9\n\t\tc4.8-4.7,10.2-9,12.6-15.4C83,53.7,84.1,48.9,80.9,42.8z M35.2,40.7c2.5-1.6,5-3.2,7.5-4.8c3-1.8,5.9-4.6,9.2-5.2\n\t\tc6.3-1.2,12.9-1.1,19.3-1.7c1.1-0.1,3.1-1.4,3-1.7c-0.7-2.3-1.4-4.7-2.8-6.7c-0.5-0.7-2.9-0.7-4.2-0.3C60.9,22,54.7,23.8,48.7,26\n\t\tc-4.1,1.4-8,3.2-11.8,5.2C33.2,33.2,32.7,36.5,35.2,40.7z M18.7,24.2c-7.6,0.7-12.6,15.3-7.4,22.3c0.5-1.1,0.9-1.9,1.3-2.7\n\t\tc1.2-2.5,1.9-5.5,3.7-7.5C19.6,32.5,18.5,28.4,18.7,24.2z M91.2,49.6c0.1-0.5,0.4-1.2,0.4-1.9c0.1-8.3-2.7-16-6.2-23.4\n\t\tc-1-2.2-1.7-6.5-6.3-5C83.2,29.4,87.2,39.4,91.2,49.6z M37,81.7c3.2,2.2,4.9,4.1,7,4.6c4.4,1.3,9.1,2,13.7,2.6\n\t\tc0.7,0.1,1.8-1.4,2.4-2.4c0.2-0.3-0.9-1.8-1.4-1.8c-6.3,0.6-11.8-1.4-17.2-4.2C40.7,80.1,39.1,81.1,37,81.7z M65,46.8\n\t\tc0,0,0.3,0.3,0.6,0.3c2.7-0.3,6.8-5.7,6-8.3c-0.2-0.7-1.7-1.9-2-1.7c-1.3,0.7-3,1.5-3.5,2.7C65.3,41.9,65.3,44.3,65,46.8z\n\t\t M86.9,62.4c0.6,0.1,1.2,0.3,1.7,0.4c0.5-1.8,1-3.6,1.5-5.3c-0.6-0.1-1.1-0.3-1.7-0.4C87.9,58.9,87.4,60.7,86.9,62.4z M57.5,14.4\n\t\tc-0.2-0.2-0.4-0.5-0.4-0.5c-0.3,0.1-0.5,0.3-0.7,0.4c0.1,0.2,0.3,0.5,0.3,0.4C57,14.7,57.3,14.5,57.5,14.4z M80.9,73.5\n\t\tc0.5-0.5,1-0.8,1-1.1c0-0.3-0.4-0.6-0.7-0.9c-0.4,0.3-0.9,0.5-1,0.8C80.2,72.6,80.6,73,80.9,73.5z M83.6,68.9\n\t\tc0.2,0.1,0.5,0.2,0.7,0.3c0.3-0.5,0.5-1,0.8-1.4c-0.2-0.1-0.5-0.2-0.7-0.3C84.1,68,83.8,68.5,83.6,68.9z M53.8,79.6\n\t\tc0.2-0.3,0.5-0.6,0.4-0.8c0-0.2-0.4-0.4-0.6-0.6c-0.2,0.3-0.5,0.6-0.7,0.8C53.2,79.3,53.5,79.4,53.8,79.6z\"/>\n</g>\n</svg>\n";
@@ -708,16 +719,20 @@ var choseTabMinimal$1 = choseTabMinimal;var NextTab = {
   }
 };
 var script$8 = NextTab;var _hoisted_1$7 = ["innerHTML"];
-var _hoisted_2$5 = ["innerHTML"];
+var _hoisted_2$7 = ["innerHTML"];
+var _hoisted_3$4 = ["innerHTML"];
+var _hoisted_4$2 = ["innerHTML"];
 function render$8(_ctx, _cache, $props, $setup, $data, $options) {
   return _ctx.stylesObj.iconMultipleArrow['type'] ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
     class: vue.normalizeClass([{
       'use-active-item': _ctx.svgDataActive
-    }, "sg1-chose-item"])
+    }, "sg1-chose-item"]),
+    style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
   }, [_ctx.svgData ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
-    class: vue.normalizeClass(['type-' + _ctx.stylesObj.iconMultipleArrow['type'], "sg1-icon-wrapper"])
+    class: vue.normalizeClass(['type-' + _ctx.stylesObj.iconMultipleArrow['type'], "sg1-icon-wrapper"]),
+    style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
   }, [vue.createElementVNode("div", {
     class: "sg1-svg-wraper",
     style: vue.normalizeStyle({
@@ -731,17 +746,107 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
       minWidth: _ctx.stylesObj.iconMultipleArrow['size']
     }),
     innerHTML: _ctx.svgDataActive
-  }, null, 12, _hoisted_2$5)) : vue.createCommentVNode("", true)], 2)) : (vue.openBlock(), vue.createElementBlock("div", {
+  }, null, 12, _hoisted_2$7)) : vue.createCommentVNode("", true)], 6)) : (vue.openBlock(), vue.createElementBlock("div", {
     key: 1,
-    class: vue.normalizeClass('sg1-type-' + _ctx.stylesObj.iconMultipleArrow['type'])
-  }, vue.toDisplayString(_ctx.indexListText), 3)), vue.createTextVNode(" " + vue.toDisplayString(_ctx.text), 1)], 2)) : (vue.openBlock(), vue.createElementBlock("div", {
+    class: vue.normalizeClass('sg1-type-' + _ctx.stylesObj.iconMultipleArrow['type']),
+    style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
+  }, vue.toDisplayString(_ctx.indexListText), 7)), vue.createElementVNode("span", {
+    innerHTML: _ctx.text
+  }, null, 8, _hoisted_3$4)], 6)) : (vue.openBlock(), vue.createElementBlock("div", {
     key: 1,
     class: "sg1-chose-item",
     style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
-  }, vue.toDisplayString(_ctx.text), 5));
-}var css_248z$9 = "\n.sg1-chose-item[data-v-3f02f00e] {\n\t\tdisplay: inline-flex;\n\t\tmargin-bottom: 1em;\n\t\tmax-width: 100%;\n\t\twidth: auto;\n\t\tcursor: pointer;\n}\n.sg1-icon-wrapper[data-v-3f02f00e] {\n\t\tmargin-right: 0.5em;\n\t\tposition: relative;\n}\n.sg1-svg-hover-wraper[data-v-3f02f00e] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\topacity: 0;\n}\n.sg1-chose-item[data-v-3f02f00e] {\n\t\tfont-size: inherit;\n\t\tfont-family: inherit;\n}\n.sg1-chose-item[data-v-3f02f00e],\n\t.sg1-svg-wraper[data-v-3f02f00e],\n\t.sg1-svg-hover-wraper[data-v-3f02f00e] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-chose-item[data-v-3f02f00e]:hover {\n\t\topacity: 0.75;\n}\n.sg1-chose-item:hover .sg1-svg-hover-wraper[data-v-3f02f00e] {\n\t\topacity: 1;\n}\n.sg1-chose-item.use-active-item:hover .sg1-svg-wraper[data-v-3f02f00e] {\n\t\topacity: 0;\n}\n.sg1-type-number[data-v-3f02f00e],\n\t.sg1-type-letter[data-v-3f02f00e] {\n\t\tmargin-right: 0.5em;\n}\n";
+  }, [vue.createElementVNode("span", {
+    innerHTML: _ctx.text
+  }, null, 8, _hoisted_4$2)], 4));
+}var css_248z$9 = "\n.sg1-chose-item[data-v-73468562] {\n\t\tdisplay: inline-flex;\n\t\tmargin-bottom: 1em;\n\t\tmax-width: 100%;\n\t\twidth: auto;\n\t\tcursor: pointer;\n}\n.sg1-icon-wrapper[data-v-73468562] {\n\t\tmargin-right: 0.5em;\n\t\tposition: relative;\n}\n.sg1-svg-hover-wraper[data-v-73468562] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\topacity: 0;\n}\n.sg1-chose-item[data-v-73468562] {\n\t\tfont-size: inherit;\n\t\tfont-family: inherit;\n}\n.sg1-chose-item[data-v-73468562],\n\t.sg1-svg-wraper[data-v-73468562],\n\t.sg1-svg-hover-wraper[data-v-73468562] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-chose-item[data-v-73468562]:hover {\n\t\topacity: 0.75;\n}\n.sg1-chose-item:hover .sg1-svg-hover-wraper[data-v-73468562] {\n\t\topacity: 1;\n}\n.sg1-chose-item.use-active-item:hover .sg1-svg-wraper[data-v-73468562] {\n\t\topacity: 0;\n}\n.sg1-type-number[data-v-73468562],\n\t.sg1-type-letter[data-v-73468562] {\n\t\tmargin-right: 0.5em;\n}\n";
 styleInject(css_248z$9);script$8.render = render$8;
-script$8.__scopeId = "data-v-3f02f00e";var boxNarration = {
+script$8.__scopeId = "data-v-73468562";//returns a copy of the object
+function deepCopy(obj) {
+  var rv;
+
+  switch (_typeof(obj)) {
+    case "object":
+      if (obj === null) {
+        // null => null
+        rv = null;
+      } else {
+        switch (toString.call(obj)) {
+          case "[object Array]":
+            // It's an array, create a new array with
+            // deep copies of the entries
+            rv = obj.map(deepCopy);
+            break;
+
+          case "[object Date]":
+            // Clone the date
+            rv = new Date(obj);
+            break;
+
+          case "[object RegExp]":
+            // Clone the RegExp
+            rv = new RegExp(obj);
+            break;
+          // ...probably a few others
+
+          default:
+            // Some other kind of object, deep-copy its
+            // properties into a new object
+            rv = Object.keys(obj).reduce(function (prev, key) {
+              prev[key] = deepCopy(obj[key]);
+              return prev;
+            }, {});
+            break;
+        }
+      }
+
+      break;
+
+    default:
+      // It's a primitive, copy via assignment
+      rv = obj;
+      break;
+  }
+
+  return rv;
+}function fixText(stingText) {
+  var textString = JSON.stringify(stingText); //let res = textString.replace(/(?:\\[rn])+/g, "<br>");
+
+  var res = textString.replace(/(\\r\\)+/g, "<br>\\");
+  res = res.replace(/(\\r)+/g, "<br>");
+  return JSON.parse(res);
+  /*
+  let str = JSON.stringify(stingText);
+   String.prototype.fakeReplace = function (str, newstr) {
+    return this.split(str).join(newstr);
+  };
+   str = str.fakeReplace("MOSTRO/ANIMALE", "<br>");
+   return str;
+  */
+}function sortChose(currentTabs) {
+  if (currentTabs.length == 1) {
+    return currentTabs;
+  } else {
+    var newOrder = [];
+    var orderList = [];
+    currentTabs.forEach(function (el) {
+      orderList.push(el.x);
+    });
+    orderList.sort(function (a, b) {
+      return a - b;
+    });
+    orderList.forEach(function (el1) {
+      currentTabs.forEach(function (el2) {
+        if (el1 == el2.x) {
+          newOrder.push(el2);
+        }
+      });
+    });
+    return newOrder;
+  }
+}
+
+var boxNarration = {
   name: "boxNarration",
   components: {
     NextTab: script$9,
@@ -754,16 +859,28 @@ script$8.__scopeId = "data-v-3f02f00e";var boxNarration = {
     emitReedBeams2: {},
     stylesObj: {}
   },
+  computed: {
+    currentTabsReordered: function currentTabsReordered() {
+      return sortChose(this.currentTabs);
+    },
+    nextTabsChoseReordered: function nextTabsChoseReordered() {
+      return sortChose(this.nextTabsChose);
+    }
+  },
   methods: {
     emitReedBeams3: function emitReedBeams3(id) {
       this.$emit("emitReedBeams2", id);
+    },
+    fixText: function fixText$1(text) {
+      return fixText(text);
     }
   }
 };
 var script$7 = boxNarration;var _hoisted_1$6 = {
   class: "sg1-box-narration"
 };
-var _hoisted_2$4 = {
+var _hoisted_2$6 = ["innerHTML"];
+var _hoisted_3$3 = {
   key: 0
 };
 function render$7(_ctx, _cache, $props, $setup, $data, $options) {
@@ -771,40 +888,41 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_NextTab = vue.resolveComponent("NextTab");
 
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$6, [vue.createElementVNode("div", {
+  return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createElementVNode("div", _hoisted_1$6, [vue.createElementVNode("div", {
     class: "sg1-tab-results",
     style: vue.normalizeStyle(_ctx.stylesObj.tabResultsMaxHeight)
-  }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.currentTabs, function (tab, index) {
+  }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.currentTabsReordered, function (tab, index) {
     return vue.openBlock(), vue.createElementBlock("div", {
       key: tab.id,
       class: vue.normalizeClass(_ctx.currentTabs.length == 1 ? 'sg1-label-description' : 'sg1-label-multiple-chose')
     }, [_ctx.currentTabs.length == 1 ? (vue.openBlock(), vue.createElementBlock("div", {
       key: 0,
-      style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1), _ctx.stylesObj.paddingBottomNextTab))
-    }, vue.toDisplayString(tab.text[_ctx.lang]), 5)) : (vue.openBlock(), vue.createElementBlock("div", {
+      style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1), _ctx.stylesObj.paddingBottomNextTab)),
+      innerHTML: _ctx.fixText(tab.text[_ctx.lang])
+    }, null, 12, _hoisted_2$6)) : (vue.openBlock(), vue.createElementBlock("div", {
       key: 1,
       style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
     }, [vue.createVNode(_component_ChooseTab, {
       index: index,
-      text: tab.text[_ctx.lang],
+      text: _ctx.fixText(tab.text[_ctx.lang]),
       stylesObj: _ctx.stylesObj,
       onClick: function onClick($event) {
         return _ctx.emitReedBeams3(tab.id);
       }
     }, null, 8, ["index", "text", "stylesObj", "onClick"])], 4))], 2);
-  }), 128)), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.nextTabsChose, function (tab, index) {
+  }), 128)), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.nextTabsChoseReordered, function (tab, index) {
     return vue.openBlock(), vue.createElementBlock("div", {
       key: tab.id,
-      class: vue.normalizeClass(_ctx.currentTabs.length == 1 ? 'sg1-label-description' : 'sg1-label-multiple-chose')
-    }, [tab.id ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$4, [vue.createVNode(_component_ChooseTab, {
+      class: vue.normalizeClass(_ctx.nextTabsChose.length == 1 ? 'sg1-label-description' : 'sg1-label-multiple-chose')
+    }, [tab.id ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$3, [vue.createVNode(_component_ChooseTab, {
       index: index,
-      text: tab.text[_ctx.lang],
+      text: _ctx.fixText(tab.text[_ctx.lang]),
       stylesObj: _ctx.stylesObj,
       onClick: function onClick($event) {
         return _ctx.emitReedBeams3(tab.id);
       }
     }, null, 8, ["index", "text", "stylesObj", "onClick"])])) : vue.createCommentVNode("", true)], 2);
-  }), 128))], 4), _ctx.currentTabs.length == 1 && _ctx.nextTabsChose.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", {
+  }), 128))], 4)]), _ctx.currentTabs.length == 1 && _ctx.nextTabsChose.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
     class: "sg1-single-beem-foward-box",
     style: vue.normalizeStyle(_ctx.stylesObj.paddingTopNextTab)
@@ -813,10 +931,10 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return _ctx.emitReedBeams3(_ctx.currentTabs[0].id);
     })
-  }, null, 8, ["stylesObj"])], 4)) : vue.createCommentVNode("", true)]);
-}var css_248z$8 = "\n.sg1-tab-results[data-v-5022173c] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-5022173c] {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n}\n.sg1-box-narration[data-v-5022173c] {\n\t\tposition: relative;\n\t\tz-index: 10;\n}\n";
+  }, null, 8, ["stylesObj"])], 4)) : vue.createCommentVNode("", true)], 64);
+}var css_248z$8 = "\n.sg1-tab-results[data-v-1932bea5] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-1932bea5] {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n}\n.sg1-box-narration[data-v-1932bea5] {\n\t\tposition: relative;\n\t\tz-index: 10;\n\t\tmax-height: inherit;\n\t\tmin-height: inherit;\n\t\toverflow-y: auto;\n\t\tflex-grow: 1;\n}\n";
 styleInject(css_248z$8);script$7.render = render$7;
-script$7.__scopeId = "data-v-5022173c";var boxNarrationGameEnd = {
+script$7.__scopeId = "data-v-1932bea5";var boxNarrationGameEnd = {
   name: "boxNarrationGameEnd",
   props: {
     currentTabs: {},
@@ -824,15 +942,24 @@ script$7.__scopeId = "data-v-5022173c";var boxNarrationGameEnd = {
     reedbeams: {},
     stylesObj: {}
   },
+  mounted: function mounted() {
+    if (this.currentTabs[0].openNewPage) {
+      window.open(this.currentTabs[0].url[this.lang], "_self");
+    }
+  },
   methods: {
     reedBeams: function reedBeams(id) {
       this.$emit("reedbeams", id);
+    },
+    fixText: function fixText$1(text) {
+      return fixText(text);
     }
   }
 };
 var script$6 = boxNarrationGameEnd;var _hoisted_1$5 = {
   class: "sg1-box-narration"
 };
+var _hoisted_2$5 = ["innerHTML"];
 function render$6(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$5, [vue.createElementVNode("div", {
     class: "sg1-tab-results",
@@ -843,28 +970,37 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
       class: vue.normalizeClass(_ctx.currentTabs.length == 1 ? 'sg1-label-description' : 'sg1-label-multiple-chose')
     }, [_ctx.currentTabs.length == 1 ? (vue.openBlock(), vue.createElementBlock("div", {
       key: 0,
-      style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
-    }, vue.toDisplayString(tab.text[_ctx.lang]), 5)) : vue.createCommentVNode("", true)], 2);
+      style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1)),
+      innerHTML: _ctx.fixText(tab.text[_ctx.lang])
+    }, null, 12, _hoisted_2$5)) : vue.createCommentVNode("", true)], 2);
   }), 128))], 4)]);
-}var css_248z$7 = "\n.sg1-tab-results[data-v-2821e758] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-2821e758] {\n\t\tposition: relative;\n\t\tz-index: 10;\n}\n";
+}var css_248z$7 = "\n.sg1-tab-results[data-v-9c79f44c] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-9c79f44c] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n";
 styleInject(css_248z$7);script$6.render = render$6;
-script$6.__scopeId = "data-v-2821e758";var boxNarrationGameOver = {
+script$6.__scopeId = "data-v-9c79f44c";var boxNarrationGameOver = {
   name: "boxNarrationGameOver",
   props: {
     currentTabs: {},
     lang: {},
     reedbeams: {},
-    stylesObj: {}
+    stylesObj: {},
+    gameIntentLoad3: {}
   },
   methods: {
     reedBeams: function reedBeams(id) {
       this.$emit("reedbeams", id);
+    },
+    fixText: function fixText$1(text) {
+      return fixText(text);
+    },
+    gameIntentLoad4: function gameIntentLoad4() {
+      this.$emit("gameIntentLoad3");
     }
   }
 };
 var script$5 = boxNarrationGameOver;var _hoisted_1$4 = {
   class: "sg1-box-narration"
 };
+var _hoisted_2$4 = ["innerHTML"];
 function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$4, [vue.createElementVNode("div", {
     class: "sg1-tab-results",
@@ -875,12 +1011,17 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
       class: vue.normalizeClass(_ctx.currentTabs.length == 1 ? 'sg1-label-description' : 'sg1-label-multiple-chose')
     }, [_ctx.currentTabs.length == 1 ? (vue.openBlock(), vue.createElementBlock("div", {
       key: 0,
-      style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
-    }, vue.toDisplayString(tab.text[_ctx.lang]), 5)) : vue.createCommentVNode("", true)], 2);
+      onClick: _cache[0] || (_cache[0] = function ($event) {
+        return _ctx.gameIntentLoad4();
+      }),
+      style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1)),
+      innerHTML: _ctx.fixText(tab.text[_ctx.lang]),
+      class: "sg1-replay-link"
+    }, null, 12, _hoisted_2$4)) : vue.createCommentVNode("", true)], 2);
   }), 128))], 4)]);
-}var css_248z$6 = "\n.sg1-tab-results[data-v-334123c0] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-334123c0] {\n\t\tposition: relative;\n\t\tz-index: 10;\n}\n";
+}var css_248z$6 = "\n.sg1-tab-results[data-v-3117e596] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-3117e596] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n.sg1-replay-link[data-v-3117e596] {\n\t\ttext-decoration: underline;\n\t\tcursor: pointer;\n}\n";
 styleInject(css_248z$6);script$5.render = render$5;
-script$5.__scopeId = "data-v-334123c0";var bgSketch = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 133.3 133.3\" style=\"enable-background:new 0 0 133.3 133.3;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M132.6,99.6c-0.2,0.2-0.4,0.3-0.6,0.5c0.3,0.3,0,0.5-0.1,0.7c0,0.2,0.1,0.3,0.1,0.4\n\t\tc-0.1,0.6,0,1.3,0.3,1.8c0.1,0.1,0.1,0.3,0.1,0.4c-0.1,0.5-0.2,1-0.3,1.4c-0.1,0.4-0.2,0.7,0,1c-0.1,0.3-0.2,0.5-0.2,0.7\n\t\tc0,0.6,0,1.1,0,1.7c0,0.4,0,0.8-0.3,1.1c0,0.1,0,0.1-0.1,0.2c0.2,0.1,0.3,0.2,0.4,0.3c-0.1,0.3-0.3,0.5-0.3,0.8\n\t\tc0.1,0.6,0.3,1.1,0.4,1.7c-0.1,0.4-0.2,0.8-0.3,1.2c0,0.2,0.1,0.3,0.1,0.5c0,0.1,0.1,0.2,0.2,0.3c-0.2,0.4-0.5,0.8-0.7,1.2\n\t\tc-0.3,0.6-0.5,0.7,0.2,1.2c0,0,0,0.1,0.1,0.1c0,0.1,0,0.2,0,0.2c-0.1,0.4-0.1,0.7,0.2,1c0.1,0.1,0.1,0.2,0.1,0.4c0,0.5,0,1-0.1,1.5\n\t\tc-0.1,0.3-0.2,0.5-0.1,0.9c0,0.1,0,0.3-0.1,0.3c-0.3,0.4-0.3,0.8,0,1.2c-0.8,1.4-0.4,2.7,0.4,4.1c-0.1,0.2-0.3,0.3-0.4,0.5\n\t\tc-0.1,0.2-0.3,0.4-0.3,0.6c0,0.3,0.1,0.6,0.2,1c0.1,0.3,0.3,0.7,0.4,1c-0.3,0.6-0.3,1.4-0.9,1.8c-0.2,0-0.5,0-0.8,0\n\t\tc-0.2,0.2,0.1,0.7-0.4,0.5c-0.2-0.1-0.5,0-0.8,0.1c-0.3,0.1-0.5,0.2-0.9,0.1c-0.4-0.1-0.8-0.2-1.2,0c-0.3,0.1-0.5,0.1-0.8,0\n\t\tc-0.2-0.1-0.4-0.1-0.6-0.1c-0.3,0.1-0.6,0-0.9-0.1c-0.2-0.1-0.6-0.3-0.8-0.2c-0.6,0.2-1.1,0.1-1.7,0.2c-0.1,0-0.2,0-0.2,0\n\t\tc-0.8,0.3-1.7,0.1-2.5,0.1c-0.6,0-1.3,0.1-1.9,0c-0.1,0-0.2,0-0.2,0c-0.3,0.2-0.7,0.1-1,0.1c-0.6,0-1.2-0.1-1.8-0.1\n\t\tc-0.2,0-0.3,0-0.5,0c-0.4,0.2-0.8,0.2-1.2,0c-0.2-0.1-0.4,0-0.6,0c-0.5,0-0.9,0.3-1.4,0.1c-0.5-0.2-1-0.2-1.5,0\n\t\tc-0.3,0-0.6-0.1-0.8-0.1s-0.4,0-0.6-0.1c-0.6-0.1-1.2-0.2-1.8-0.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0-0.2,0.1-0.4,0.2\n\t\tc0-0.5-0.3-0.4-0.6-0.4c-0.6-0.1-1.2,0.2-1.7,0.5c-0.2,0.2-0.4,0.2-0.7,0.1c-0.2-0.1-0.4-0.1-0.6,0c-0.4,0-0.8,0.1-1.2,0.2\n\t\tc-0.1,0-0.3,0-0.4-0.1c-0.5-0.3-1.1-0.2-1.6-0.5c-0.1,0-0.2,0-0.3,0c-0.2,0-0.3,0.1-0.5,0.1c-0.1,0-0.1-0.1-0.2-0.1\n\t\tc-0.7-0.4-0.7-0.4-1.4,0c-0.3,0.2-0.7,0.3-1.1,0.3c-0.5,0-1-0.1-1.4,0.1c-0.3-0.2-0.6-0.4-0.9-0.4c-0.6,0-1.3-0.2-1.9,0.1\n\t\tc-0.2,0.1-0.4,0.2-0.5,0.1c-0.3-0.2-0.6-0.1-0.9-0.2c-0.5-0.3-0.9-0.4-1.4-0.1c-0.6-0.2-1.1,0-1.6,0.2c-0.5,0.2-1,0.3-1.5,0.3\n\t\tc-0.5,0-1,0.1-1.5-0.2c-0.1,0-0.2-0.1-0.2-0.1c-0.3-0.2-0.7-0.3-1.1,0c-0.1,0-0.2,0-0.3,0c-0.7,0-1.4,0.1-2,0.4\n\t\tc-0.5-0.2-1-0.7-1.6-0.3c-0.1,0-0.2,0-0.3,0c-0.1,0-0.3-0.1-0.3-0.1c-0.3,0.2-0.5,0-0.8,0c-0.4,0-0.8-0.2-1.2,0.3\n\t\tc-0.3,0.4-0.5,0.4-0.9,0.1c-0.2-0.2-0.4-0.4-0.6-0.5c-0.3,0-0.6,0-0.8,0c-0.5,0.2-0.9,0.2-1.2-0.1c-0.4,0-0.8,0-1.1,0\n\t\tc-0.1,0-0.2,0-0.3,0c-0.4,0.3-0.9,0.2-1.3,0.4c-0.1,0-0.2,0-0.4,0c-0.3-0.1-0.6-0.2-0.9-0.3c-0.3-0.1-0.5-0.1-0.8,0\n\t\tc-0.6,0.2-1.2,0.3-1.7,0.4c-0.3-0.2-0.6-0.3-0.9-0.5c-0.5-0.3-0.9-0.3-1.4,0c-0.6,0.3-1.2,0.4-1.8,0.2c-0.3-0.1-0.6-0.1-0.9,0\n\t\tc-0.1,0.1-0.4,0.1-0.4,0c-0.3-0.3-0.7-0.2-0.9-0.2c-0.4,0-0.7,0-1.1-0.1c-0.2,0.1-0.3,0.2-0.5,0.3c-0.2,0.2-0.4,0.2-0.6,0\n\t\tc-0.4-0.3-0.7-0.2-1.1,0.1c-0.8-0.5-1.4-0.4-2,0.2c-0.2,0-0.3-0.1-0.5-0.1c-0.1,0-0.3,0-0.4,0c-0.1-0.1-0.1-0.1-0.1-0.1\n\t\tc0-0.1-0.1-0.1-0.1-0.2c-0.3-0.5-0.3-0.5-0.8-0.3c-0.1,0-0.2,0-0.3,0c-0.4,0-0.9,0.1-1.3-0.2c-0.1-0.1-0.3,0-0.5,0\n\t\tc-0.3,0-0.7,0.1-1,0.2c-0.1,0-0.3,0-0.3,0c-0.4-0.4-0.9,0.1-1.3,0c-0.3,0.3-0.7,0.2-1,0.2c-0.7,0-1.3-0.2-2-0.2\n\t\tc-0.1,0-0.2-0.1-0.2-0.1c-0.2,0.1-0.3,0.2-0.4,0.3c-0.8-0.4-1.5-0.4-2.2,0c-0.2,0-0.4-0.1-0.6,0c-0.4,0.1-0.7,0-1.1-0.2\n\t\tc-0.2-0.1-0.5-0.1-0.7,0.1c-0.3,0.3-0.8,0.2-1.1,0.2c-0.4,0-0.8-0.1-1.2-0.1c-0.3-0.1-0.6-0.1-0.8,0.1c-0.2-0.1-0.3-0.2-0.6-0.3\n\t\tc-0.1,0.2-0.2,0.3-0.3,0.5c-0.4-0.5-0.8-0.4-1.3-0.2c-0.3,0.1-0.6,0.3-0.9,0.4c-0.2-0.2-0.3-0.4-0.5-0.6c-0.3,0.3-0.5,0-0.7-0.1\n\t\tc-0.2,0-0.3,0.1-0.5,0.1c-0.6-0.1-1.3,0-1.8,0.3c-0.1,0.1-0.3,0.1-0.4,0.1c-0.5-0.1-1-0.2-1.4-0.3c-0.4-0.1-0.7-0.2-1,0\n\t\tc-0.3-0.1-0.5-0.2-0.7-0.2c-0.6,0-1.1,0.1-1.7,0.1c-0.4,0-0.8-0.1-1.1-0.3c-0.1-0.1-0.1-0.1-0.2-0.1c-0.1,0.2-0.2,0.3-0.3,0.4\n\t\tc-0.3-0.1-0.5-0.3-0.7-0.3c-0.6,0.1-1.1,0.3-1.7,0.4c-0.4-0.1-0.8-0.2-1.2-0.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0-0.2,0.1-0.3,0.2\n\t\tc-0.4-0.2-0.8-0.5-1.2-0.7c-0.6-0.3-0.7-0.5-1.1,0.2c0,0-0.1,0-0.1,0.1c0,0-0.1,0-0.2,0c-0.4-0.1-0.7-0.1-1,0.2\n\t\tc-0.1,0.1-0.3,0.2-0.4,0.2c-0.5,0-1,0-1.5-0.1c-0.3-0.1-0.5-0.2-0.9-0.1c-0.1,0-0.2,0-0.3-0.1c-0.4-0.3-0.8-0.3-1.2,0\n\t\tc-1.4-0.8-2.7-0.4-4.1,0.4c-0.2-0.1-0.3-0.3-0.5-0.4c-0.2-0.1-0.4-0.3-0.6-0.3c-0.3,0-0.7,0.1-1,0.2c-0.3,0.1-0.7,0.3-1,0.4\n\t\tc-0.6-0.3-1.3-0.3-1.8-0.9c0-0.1-0.8-0.2-0.8-0.3c-0.1-0.5-0.3-1.1-0.1-1.6c0.1-0.2,0-0.6-0.1-0.8c-0.1-0.3-0.2-0.5-0.1-0.9\n\t\tc0.2-0.4,0.2-0.8,0-1.2c-0.1-0.3-0.1-0.6,0-0.8c0.1-0.2,0.1-0.4,0.1-0.6c-0.1-0.3,0-0.6,0.1-0.9c0.1-0.2,0.3-0.6,0.2-0.8\n\t\tc-0.2-0.6-0.1-1.1-0.2-1.7c0-0.1,0-0.2,0-0.2c-0.4-0.8-0.1-1.6-0.1-2.5c0-0.6-0.1-1.3,0-1.9c0-0.1,0-0.2,0-0.2\n\t\tc-0.2-0.3-0.1-0.7-0.1-1c0-0.6,0.1-1.2,0.1-1.8c0-0.2,0-0.3,0-0.5c-0.2-0.4-0.1-0.8,0-1.2c0.1-0.2,0-0.4,0-0.6\n\t\tc0-0.5-0.3-0.9-0.1-1.4c0.2-0.5,0.2-1.1,0-1.5c0-0.3,0.1-0.6,0.1-0.8c0-0.2,0-0.4,0.1-0.6c0.1-0.6,0.2-1.2,0.3-1.7\n\t\tc0-0.2-0.1-0.3-0.2-0.5c0-0.1-0.1-0.2-0.2-0.4c0.4,0,0.4-0.3,0.4-0.6c0.1-0.6-0.1-1.2-0.5-1.7c-0.2-0.2-0.2-0.4-0.1-0.6\n\t\tc0.1-0.2,0.1-0.4,0-0.6c0-0.4-0.1-0.8-0.2-1.2c0-0.1,0-0.3,0.1-0.4c0.3-0.5,0.2-1.1,0.5-1.6c0-0.1,0-0.2,0-0.3\n\t\tc0-0.2-0.1-0.3-0.1-0.4c0-0.1,0.1-0.1,0.1-0.2c0.4-0.7,0.4-0.7,0-1.3c-0.2-0.3-0.3-0.7-0.3-1.1c0-0.5,0.1-1-0.1-1.4\n\t\tc0.2-0.3,0.4-0.6,0.4-0.9c0-0.6,0.1-1.3-0.1-1.9c-0.1-0.2-0.2-0.4-0.1-0.5c0.2-0.3,0.1-0.6,0.2-0.9c0.2-0.5,0.4-0.9,0.1-1.4\n\t\tc0.2-0.6,0-1.1-0.2-1.6c-0.1-0.5-0.3-1-0.3-1.5c0-0.5-0.1-1,0.2-1.5c0-0.1,0.1-0.1,0.1-0.2c0.2-0.4,0.3-0.7,0-1.1\n\t\tc0-0.1,0-0.2,0-0.3c0-0.7-0.1-1.4-0.4-2c0.2-0.5,0.7-1,0.3-1.6c0-0.1,0-0.2,0-0.3c0-0.1,0.1-0.3,0-0.3c-0.2-0.3,0-0.5,0-0.7\n\t\tc0-0.4,0.2-0.8-0.3-1.1c-0.4-0.3-0.4-0.5-0.1-0.9c0.2-0.2,0.4-0.4,0.5-0.6c0-0.3,0-0.6-0.1-0.8c-0.2-0.5-0.2-0.9,0.1-1.2\n\t\tc0-0.5,0-0.8,0-1.1c0-0.1,0-0.2,0-0.3c-0.3-0.4-0.2-0.9-0.4-1.3c0-0.1,0-0.2,0-0.3c0.1-0.3,0.2-0.6,0.3-0.9c0.1-0.3,0.1-0.5,0-0.8\n\t\tc-0.2-0.6-0.3-1.1-0.4-1.7c0.2-0.3,0.3-0.6,0.5-0.8c0.3-0.5,0.3-0.9,0-1.4c-0.3-0.6-0.4-1.2-0.2-1.9c0.1-0.3,0.1-0.6,0-0.8\n\t\tc-0.1-0.1-0.1-0.4,0-0.5c0.3-0.3,0.2-0.7,0.2-1c0-0.4,0-0.7,0.1-1c-0.1-0.2-0.2-0.3-0.3-0.5c-0.2-0.2-0.2-0.4,0-0.6\n\t\tc0.3-0.4,0.2-0.7-0.2-1.1c0.5-0.8,0.4-1.4-0.2-2c0-0.2,0.1-0.3,0.1-0.4c0-0.1,0-0.3,0-0.4C1,53.3,1,53.3,1,53.3\n\t\tc0,0,0.1-0.1,0.2-0.1c0.5-0.3,0.5-0.3,0.3-0.8c0-0.1,0-0.2,0-0.3c0-0.5-0.1-0.9,0.2-1.3c0.1-0.1,0-0.3,0-0.5c0-0.3-0.1-0.7-0.2-1\n\t\tc0-0.1,0-0.3,0-0.3c0.4-0.4-0.1-0.8,0-1.3c-0.3-0.3-0.2-0.7-0.2-1c0-0.7,0.2-1.3,0.2-1.9c0-0.1,0-0.2,0.1-0.2\n\t\tc-0.1-0.2-0.2-0.3-0.3-0.4c0.4-0.8,0.4-1.5,0-2.2c0-0.2,0.1-0.4,0-0.6c-0.1-0.4,0-0.7,0.2-1.1c0.1-0.2,0.1-0.5-0.1-0.7\n\t\tc-0.3-0.3-0.3-0.8-0.2-1.2c0-0.4,0.1-0.8,0.1-1.2c0.1-0.3,0.1-0.6-0.1-0.8c0.1-0.2,0.2-0.3,0.3-0.6c-0.2-0.1-0.3-0.2-0.5-0.3\n\t\tc0.5-0.4,0.4-0.8,0.2-1.3c-0.2-0.3-0.3-0.6-0.5-0.9c0.2-0.2,0.3-0.3,0.6-0.5c-0.3-0.3,0-0.5,0.2-0.7c0-0.2-0.1-0.3-0.1-0.4\n\t\tc0.1-0.7,0-1.3-0.3-1.8c-0.1-0.1-0.1-0.3-0.1-0.4c0.1-0.5,0.2-1,0.3-1.4c0.1-0.4,0.2-0.7,0-1c0.1-0.3,0.2-0.5,0.2-0.7\n\t\tc0-0.6,0-1.1,0-1.7c0-0.4,0-0.8,0.3-1.1c0,0,0.1-0.1,0.1-0.2c-0.2-0.1-0.3-0.2-0.4-0.3c0.1-0.3,0.3-0.5,0.3-0.8\n\t\tc-0.1-0.6-0.3-1.1-0.4-1.7c0.1-0.4,0.2-0.8,0.3-1.2c0-0.2-0.1-0.3-0.2-0.5c0-0.1-0.1-0.2-0.2-0.3c0.2-0.4,0.5-0.8,0.7-1.2\n\t\tc0.3-0.6,0.5-0.7-0.2-1.2c0,0,0-0.1-0.1-0.1c0-0.1,0-0.1,0-0.2c0.2-0.4,0.1-0.7-0.2-1c-0.1-0.1-0.2-0.2-0.1-0.4c0-0.5,0-1,0.1-1.4\n\t\tc0.1-0.3,0.2-0.6,0.1-0.9c0-0.1,0-0.3,0.1-0.3c0.3-0.4,0.3-0.8,0-1.2C2.2,9.2,1.8,7.9,1,6.5C1.2,6.4,1.3,6.2,1.5,6s0.3-0.4,0.3-0.6\n\t\tc0-0.3-0.1-0.6-0.2-1c-0.1-0.3-0.3-0.7-0.4-1C1.4,2.8,1.4,2.1,2,1.7c0.1,0,0.2,0,0.3,0v0l0.2,0c0.5-0.1,1.1-0.3,1.6-0.1\n\t\tc0.2,0.1,0.6,0,0.8-0.1c0.3-0.1,0.5-0.2,0.8-0.1c0.4,0.1,0.8,0.2,1.2,0c0.3-0.1,0.6-0.1,0.8,0c0.2,0.1,0.4,0.1,0.6,0.1\n\t\tc0.3-0.1,0.6,0,0.9,0.1c0.1,0.1,0.3,0.1,0.4,0.2c0.1,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0c0.6-0.2,1.1-0.2,1.7-0.2c0.1,0,0.2,0,0.2,0\n\t\tc0.8-0.4,1.7-0.1,2.5-0.1c0.6,0,1.3-0.1,1.9,0c0.1,0,0.2,0,0.2,0c0.3-0.2,0.7-0.1,1-0.1c0.6,0,1.2,0.1,1.8,0.1c0.2,0,0.3,0,0.5,0\n\t\tc0.4-0.2,0.8-0.2,1.2,0c0.2,0.1,0.4,0,0.6,0c0.5,0,0.9-0.3,1.4-0.1c0.5,0.2,1.1,0.2,1.5,0c0.3,0,0.6,0.1,0.8,0.1c0.2,0,0.4,0,0.6,0\n\t\tc0.6,0.1,1.2,0.2,1.7,0.3c0.2,0,0.3-0.1,0.5-0.2c0.1,0,0.2-0.1,0.4-0.2c0,0.4,0.3,0.4,0.6,0.4c0.6,0.1,1.2-0.1,1.7-0.5\n\t\tc0.2-0.2,0.4-0.2,0.6-0.1C31.7,1,32,1,32.2,1c0.4,0,0.8-0.1,1.2-0.2c0.1,0,0.3,0,0.4,0.1c0.5,0.3,1.1,0.2,1.6,0.5\n\t\tc0.1,0,0.2,0,0.3,0c0.2,0,0.3-0.1,0.4-0.1c0.1,0,0.1,0.1,0.2,0.1c0.7,0.4,0.7,0.4,1.4,0c0.3-0.2,0.7-0.3,1-0.3c0.5,0,1,0.1,1.4-0.1\n\t\tc0.3,0.2,0.6,0.4,0.9,0.4c0.6,0,1.3,0.1,1.9-0.1c0.2-0.1,0.4-0.1,0.5-0.1c0.3,0.1,0.6,0.1,0.9,0.2c0.5,0.3,0.9,0.4,1.4,0.1\n\t\tc0.6,0.2,1.1,0,1.6-0.2c0.5-0.2,1-0.3,1.5-0.3c0.5,0,1-0.1,1.5,0.2c0.1,0,0.1,0.1,0.2,0.1c0.4,0.1,0.7,0.3,1.1,0\n\t\tc0.1-0.1,0.2,0,0.3,0c0.7,0,1.4-0.1,2-0.4c0.5,0.2,1,0.7,1.6,0.3c0.1,0,0.2,0,0.3,0c0.1,0,0.3,0.1,0.3,0c0.3-0.2,0.5,0,0.7,0\n\t\tc0.4,0,0.8,0.2,1.2-0.3c0.3-0.4,0.5-0.4,0.9-0.1c0.2,0.2,0.4,0.4,0.6,0.5c0.3,0,0.6,0,0.8-0.1c0.5-0.2,0.9-0.2,1.2,0.1\n\t\tc0.5,0,0.8,0,1.1,0c0.1,0,0.2,0,0.3,0c0.4-0.3,0.9-0.2,1.3-0.4c0.1,0,0.2,0,0.3,0c0.3,0.1,0.6,0.2,0.9,0.3c0.3,0.1,0.5,0.1,0.8,0\n\t\tc0.6-0.2,1.1-0.3,1.7-0.4c0.3,0.2,0.6,0.3,0.8,0.5c0.5,0.3,0.9,0.3,1.4,0c0.6-0.4,1.2-0.4,1.8-0.2c0.3,0.1,0.6,0.1,0.8,0\n\t\tc0.1-0.1,0.4-0.1,0.5,0c0.3,0.3,0.7,0.2,1,0.2c0.4,0,0.7,0,1,0.1c0.2-0.1,0.3-0.2,0.5-0.3c0.2-0.2,0.4-0.2,0.6,0\n\t\tc0.4,0.3,0.7,0.2,1.1-0.1c0.8,0.5,1.4,0.4,2-0.2c0.2,0,0.3,0.1,0.5,0.1c0.1,0,0.3,0,0.4,0C80.3,1,80.3,1,80.3,1\n\t\tc0,0,0.1,0.1,0.1,0.1c0.3,0.5,0.3,0.5,0.8,0.3c0.1,0,0.2,0,0.3,0c0.5,0,0.9-0.1,1.3,0.2c0.1,0.1,0.3,0,0.5,0c0.3-0.1,0.7-0.1,1-0.2\n\t\tc0.1,0,0.3,0,0.3,0c0.4,0.4,0.8-0.1,1.3,0c0.3-0.3,0.7-0.2,1-0.2c0.7,0,1.3,0.2,1.9,0.2c0.1,0,0.2,0.1,0.2,0.1\n\t\tc0.2-0.1,0.3-0.2,0.4-0.3c0.8,0.4,1.5,0.4,2.2,0c0.2,0,0.4,0.1,0.6,0c0.4-0.1,0.7,0,1.1,0.2c0.2,0.1,0.5,0.1,0.7-0.1\n\t\tc0.3-0.3,0.8-0.3,1.2-0.2c0.4,0,0.8,0.1,1.2,0.1c0.3,0.1,0.6,0.1,0.8-0.1c0.2,0.1,0.3,0.2,0.6,0.3C98,1.4,98.1,1.2,98.2,1\n\t\tc0.4,0.5,0.8,0.4,1.3,0.2c0.3-0.2,0.6-0.3,0.9-0.5c0.2,0.2,0.3,0.3,0.5,0.6c0.3-0.3,0.5,0,0.7,0.1c0.2,0,0.3-0.1,0.4-0.1\n\t\tc0.7,0.1,1.3,0,1.8-0.3c0.1-0.1,0.3-0.1,0.4-0.1c0.5,0.1,1,0.2,1.5,0.3c0.3,0.1,0.7,0.2,1-0.1c0.3,0.1,0.5,0.2,0.7,0.2\n\t\tc0.6,0,1.1,0,1.7,0c0.4,0,0.8,0,1.1,0.3c0,0,0.1,0.1,0.2,0.1c0.1-0.2,0.2-0.3,0.3-0.4c0.3,0.1,0.5,0.3,0.8,0.3\n\t\tc0.6-0.1,1.1-0.3,1.7-0.4c0.4,0.1,0.8,0.2,1.2,0.3c0.2,0,0.3-0.1,0.5-0.2c0.1,0,0.2-0.1,0.3-0.2c0.4,0.2,0.8,0.5,1.2,0.7\n\t\tc0.6,0.3,0.7,0.5,1.1-0.2c0,0,0.1,0,0.1-0.1c0.1,0,0.1,0,0.2,0c0.4,0.2,0.7,0.1,1-0.2c0.1-0.1,0.2-0.1,0.4-0.1c0.5,0,1,0,1.5,0.1\n\t\tc0.3,0.1,0.5,0.2,0.9,0.1c0.1,0,0.3,0,0.3,0.1c0.4,0.3,0.8,0.3,1.2,0c0.2,0.1,0.3,0.2,0.5,0.2c0.8,0.3,1.6,0.3,2.4,0\n\t\tc0.4-0.1,0.8-0.4,1.2-0.6c0.2,0.1,0.3,0.3,0.5,0.4c0.1,0.1,0.2,0.1,0.3,0.2h0c0.1,0.1,0.2,0.1,0.3,0.1c0.2,0,0.4,0,0.5-0.1\n\t\tc0.1,0,0.3-0.1,0.4-0.1c0.3-0.1,0.7-0.3,1-0.4c0.6,0.3,1.3,0.3,1.8,0.9c0,0.2,0,0.4-0.1,0.6c0,0.3,0,0.6-0.1,0.9\n\t\tc-0.1,0.2,0,0.6,0.1,0.8c0.1,0.3,0.2,0.5,0.1,0.8c-0.2,0.4-0.2,0.8,0,1.2c0.1,0.3,0.1,0.5,0,0.8c-0.1,0.2-0.1,0.4-0.1,0.6\n\t\tc0.1,0.3,0,0.6-0.1,0.9c-0.1,0.2-0.3,0.6-0.2,0.8c0.2,0.6,0.2,1.1,0.2,1.7c0,0.1,0,0.2,0,0.2c0.4,0.8,0.1,1.7,0.1,2.5\n\t\tc0,0.6,0.1,1.3,0,1.9c0,0.1,0,0.2,0,0.2c0.2,0.3,0.1,0.7,0.1,1c0,0.6-0.1,1.2-0.1,1.8c0,0.1,0,0.3,0,0.5c0.2,0.4,0.1,0.8,0,1.2\n\t\tc-0.1,0.2,0,0.4,0,0.6c0,0.5,0.3,0.9,0.1,1.4c-0.2,0.5-0.2,1.1,0,1.5c0,0.3-0.1,0.6-0.1,0.8c0,0.2,0,0.4-0.1,0.6\n\t\tc-0.1,0.6-0.2,1.2-0.3,1.7c0,0.2,0.1,0.3,0.2,0.5c0,0.1,0.1,0.2,0.2,0.4c-0.4,0-0.4,0.3-0.4,0.6c-0.1,0.6,0.1,1.2,0.5,1.7\n\t\tc0.2,0.2,0.2,0.4,0.1,0.6c-0.1,0.2-0.1,0.4,0,0.6c0,0.4,0.1,0.8,0.2,1.2c0,0.1,0,0.3-0.1,0.4c-0.3,0.5-0.2,1.1-0.5,1.6\n\t\tc0,0.1,0,0.2,0,0.3c0,0.2,0.1,0.3,0.1,0.4c0,0.1-0.1,0.1-0.1,0.2c-0.4,0.7-0.4,0.7,0,1.4c0.2,0.3,0.3,0.7,0.3,1.1\n\t\tc0,0.5-0.1,1,0.1,1.4c-0.2,0.3-0.4,0.6-0.4,0.9c0,0.6-0.1,1.3,0.1,1.9c0.1,0.2,0.2,0.4,0.1,0.5c-0.1,0.3-0.1,0.6-0.2,0.9\n\t\tc-0.2,0.5-0.4,0.9-0.1,1.4c-0.2,0.6,0,1.1,0.2,1.6c0.2,0.5,0.3,1,0.3,1.5c0,0.5,0.1,1-0.2,1.5c0,0.1-0.1,0.1-0.1,0.2\n\t\tc-0.2,0.4-0.3,0.7,0,1.1c0,0.1,0,0.2,0,0.3c0,0.7,0.1,1.4,0.4,2c-0.2,0.5-0.7,1-0.3,1.6c0,0.1,0,0.2,0,0.3c0,0.1-0.1,0.3,0,0.3\n\t\tc0.2,0.3,0,0.5,0,0.7c0,0.4-0.2,0.8,0.3,1.2c0.4,0.3,0.4,0.5,0.1,0.9c-0.2,0.2-0.4,0.4-0.5,0.6c0,0.3,0,0.6,0.1,0.8\n\t\tc0.2,0.5,0.1,0.9-0.1,1.2c0,0.4,0,0.8,0,1.1c0,0.1,0,0.2,0,0.3c0.3,0.4,0.2,0.9,0.4,1.3c0.1,0.1,0,0.2,0,0.3\n\t\tc-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.3-0.1,0.5,0,0.8c0.2,0.6,0.3,1.2,0.4,1.7c-0.2,0.3-0.3,0.6-0.5,0.8c-0.3,0.5-0.3,0.9,0,1.4\n\t\tc0.3,0.6,0.4,1.2,0.2,1.8c-0.1,0.3-0.1,0.6,0,0.9c0.1,0.1,0.1,0.4,0,0.4c-0.3,0.3-0.2,0.7-0.2,0.9c0.1,0.4,0,0.7-0.1,1.1\n\t\tc0.1,0.2,0.2,0.3,0.3,0.5c0.2,0.2,0.2,0.4,0,0.6c-0.3,0.4-0.2,0.7,0.2,1.1c-0.5,0.8-0.4,1.4,0.2,2c0,0.2-0.1,0.3-0.1,0.5\n\t\tc0,0.1,0,0.3,0,0.3c-0.1,0.1-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1c-0.5,0.3-0.5,0.3-0.3,0.8c0,0.1,0,0.2,0,0.3\n\t\tc0,0.4,0.1,0.9-0.2,1.3c-0.1,0.1,0,0.3,0,0.5c0,0.3,0.1,0.7,0.2,1c0,0.1,0,0.3,0,0.3c-0.4,0.4,0.1,0.8,0,1.3c0.3,0.3,0.2,0.7,0.2,1\n\t\tc0,0.7-0.2,1.3-0.2,1.9c0,0.1,0,0.2-0.1,0.2c0.1,0.2,0.2,0.3,0.3,0.4c-0.4,0.8-0.4,1.5,0,2.2c0,0.2-0.1,0.4,0,0.6\n\t\tc0.1,0.4,0,0.7-0.2,1.1c-0.1,0.2-0.1,0.5,0.1,0.7c0.3,0.4,0.3,0.8,0.2,1.2c0,0.4-0.1,0.8-0.1,1.2c-0.1,0.3-0.1,0.6,0.1,0.8\n\t\tc-0.1,0.2-0.2,0.3-0.3,0.6c0.2,0.1,0.3,0.2,0.5,0.3c-0.5,0.4-0.4,0.8-0.2,1.3C132.3,99,132.4,99.3,132.6,99.6z\"/>\n</g>\n</svg>";
+script$5.__scopeId = "data-v-3117e596";var bgSketch = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 133.3 133.3\" style=\"enable-background:new 0 0 133.3 133.3;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M132.6,99.6c-0.2,0.2-0.4,0.3-0.6,0.5c0.3,0.3,0,0.5-0.1,0.7c0,0.2,0.1,0.3,0.1,0.4\n\t\tc-0.1,0.6,0,1.3,0.3,1.8c0.1,0.1,0.1,0.3,0.1,0.4c-0.1,0.5-0.2,1-0.3,1.4c-0.1,0.4-0.2,0.7,0,1c-0.1,0.3-0.2,0.5-0.2,0.7\n\t\tc0,0.6,0,1.1,0,1.7c0,0.4,0,0.8-0.3,1.1c0,0.1,0,0.1-0.1,0.2c0.2,0.1,0.3,0.2,0.4,0.3c-0.1,0.3-0.3,0.5-0.3,0.8\n\t\tc0.1,0.6,0.3,1.1,0.4,1.7c-0.1,0.4-0.2,0.8-0.3,1.2c0,0.2,0.1,0.3,0.1,0.5c0,0.1,0.1,0.2,0.2,0.3c-0.2,0.4-0.5,0.8-0.7,1.2\n\t\tc-0.3,0.6-0.5,0.7,0.2,1.2c0,0,0,0.1,0.1,0.1c0,0.1,0,0.2,0,0.2c-0.1,0.4-0.1,0.7,0.2,1c0.1,0.1,0.1,0.2,0.1,0.4c0,0.5,0,1-0.1,1.5\n\t\tc-0.1,0.3-0.2,0.5-0.1,0.9c0,0.1,0,0.3-0.1,0.3c-0.3,0.4-0.3,0.8,0,1.2c-0.8,1.4-0.4,2.7,0.4,4.1c-0.1,0.2-0.3,0.3-0.4,0.5\n\t\tc-0.1,0.2-0.3,0.4-0.3,0.6c0,0.3,0.1,0.6,0.2,1c0.1,0.3,0.3,0.7,0.4,1c-0.3,0.6-0.3,1.4-0.9,1.8c-0.2,0-0.5,0-0.8,0\n\t\tc-0.2,0.2,0.1,0.7-0.4,0.5c-0.2-0.1-0.5,0-0.8,0.1c-0.3,0.1-0.5,0.2-0.9,0.1c-0.4-0.1-0.8-0.2-1.2,0c-0.3,0.1-0.5,0.1-0.8,0\n\t\tc-0.2-0.1-0.4-0.1-0.6-0.1c-0.3,0.1-0.6,0-0.9-0.1c-0.2-0.1-0.6-0.3-0.8-0.2c-0.6,0.2-1.1,0.1-1.7,0.2c-0.1,0-0.2,0-0.2,0\n\t\tc-0.8,0.3-1.7,0.1-2.5,0.1c-0.6,0-1.3,0.1-1.9,0c-0.1,0-0.2,0-0.2,0c-0.3,0.2-0.7,0.1-1,0.1c-0.6,0-1.2-0.1-1.8-0.1\n\t\tc-0.2,0-0.3,0-0.5,0c-0.4,0.2-0.8,0.2-1.2,0c-0.2-0.1-0.4,0-0.6,0c-0.5,0-0.9,0.3-1.4,0.1c-0.5-0.2-1-0.2-1.5,0\n\t\tc-0.3,0-0.6-0.1-0.8-0.1s-0.4,0-0.6-0.1c-0.6-0.1-1.2-0.2-1.8-0.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0-0.2,0.1-0.4,0.2\n\t\tc0-0.5-0.3-0.4-0.6-0.4c-0.6-0.1-1.2,0.2-1.7,0.5c-0.2,0.2-0.4,0.2-0.7,0.1c-0.2-0.1-0.4-0.1-0.6,0c-0.4,0-0.8,0.1-1.2,0.2\n\t\tc-0.1,0-0.3,0-0.4-0.1c-0.5-0.3-1.1-0.2-1.6-0.5c-0.1,0-0.2,0-0.3,0c-0.2,0-0.3,0.1-0.5,0.1c-0.1,0-0.1-0.1-0.2-0.1\n\t\tc-0.7-0.4-0.7-0.4-1.4,0c-0.3,0.2-0.7,0.3-1.1,0.3c-0.5,0-1-0.1-1.4,0.1c-0.3-0.2-0.6-0.4-0.9-0.4c-0.6,0-1.3-0.2-1.9,0.1\n\t\tc-0.2,0.1-0.4,0.2-0.5,0.1c-0.3-0.2-0.6-0.1-0.9-0.2c-0.5-0.3-0.9-0.4-1.4-0.1c-0.6-0.2-1.1,0-1.6,0.2c-0.5,0.2-1,0.3-1.5,0.3\n\t\tc-0.5,0-1,0.1-1.5-0.2c-0.1,0-0.2-0.1-0.2-0.1c-0.3-0.2-0.7-0.3-1.1,0c-0.1,0-0.2,0-0.3,0c-0.7,0-1.4,0.1-2,0.4\n\t\tc-0.5-0.2-1-0.7-1.6-0.3c-0.1,0-0.2,0-0.3,0c-0.1,0-0.3-0.1-0.3-0.1c-0.3,0.2-0.5,0-0.8,0c-0.4,0-0.8-0.2-1.2,0.3\n\t\tc-0.3,0.4-0.5,0.4-0.9,0.1c-0.2-0.2-0.4-0.4-0.6-0.5c-0.3,0-0.6,0-0.8,0c-0.5,0.2-0.9,0.2-1.2-0.1c-0.4,0-0.8,0-1.1,0\n\t\tc-0.1,0-0.2,0-0.3,0c-0.4,0.3-0.9,0.2-1.3,0.4c-0.1,0-0.2,0-0.4,0c-0.3-0.1-0.6-0.2-0.9-0.3c-0.3-0.1-0.5-0.1-0.8,0\n\t\tc-0.6,0.2-1.2,0.3-1.7,0.4c-0.3-0.2-0.6-0.3-0.9-0.5c-0.5-0.3-0.9-0.3-1.4,0c-0.6,0.3-1.2,0.4-1.8,0.2c-0.3-0.1-0.6-0.1-0.9,0\n\t\tc-0.1,0.1-0.4,0.1-0.4,0c-0.3-0.3-0.7-0.2-0.9-0.2c-0.4,0-0.7,0-1.1-0.1c-0.2,0.1-0.3,0.2-0.5,0.3c-0.2,0.2-0.4,0.2-0.6,0\n\t\tc-0.4-0.3-0.7-0.2-1.1,0.1c-0.8-0.5-1.4-0.4-2,0.2c-0.2,0-0.3-0.1-0.5-0.1c-0.1,0-0.3,0-0.4,0c-0.1-0.1-0.1-0.1-0.1-0.1\n\t\tc0-0.1-0.1-0.1-0.1-0.2c-0.3-0.5-0.3-0.5-0.8-0.3c-0.1,0-0.2,0-0.3,0c-0.4,0-0.9,0.1-1.3-0.2c-0.1-0.1-0.3,0-0.5,0\n\t\tc-0.3,0-0.7,0.1-1,0.2c-0.1,0-0.3,0-0.3,0c-0.4-0.4-0.9,0.1-1.3,0c-0.3,0.3-0.7,0.2-1,0.2c-0.7,0-1.3-0.2-2-0.2\n\t\tc-0.1,0-0.2-0.1-0.2-0.1c-0.2,0.1-0.3,0.2-0.4,0.3c-0.8-0.4-1.5-0.4-2.2,0c-0.2,0-0.4-0.1-0.6,0c-0.4,0.1-0.7,0-1.1-0.2\n\t\tc-0.2-0.1-0.5-0.1-0.7,0.1c-0.3,0.3-0.8,0.2-1.1,0.2c-0.4,0-0.8-0.1-1.2-0.1c-0.3-0.1-0.6-0.1-0.8,0.1c-0.2-0.1-0.3-0.2-0.6-0.3\n\t\tc-0.1,0.2-0.2,0.3-0.3,0.5c-0.4-0.5-0.8-0.4-1.3-0.2c-0.3,0.1-0.6,0.3-0.9,0.4c-0.2-0.2-0.3-0.4-0.5-0.6c-0.3,0.3-0.5,0-0.7-0.1\n\t\tc-0.2,0-0.3,0.1-0.5,0.1c-0.6-0.1-1.3,0-1.8,0.3c-0.1,0.1-0.3,0.1-0.4,0.1c-0.5-0.1-1-0.2-1.4-0.3c-0.4-0.1-0.7-0.2-1,0\n\t\tc-0.3-0.1-0.5-0.2-0.7-0.2c-0.6,0-1.1,0.1-1.7,0.1c-0.4,0-0.8-0.1-1.1-0.3c-0.1-0.1-0.1-0.1-0.2-0.1c-0.1,0.2-0.2,0.3-0.3,0.4\n\t\tc-0.3-0.1-0.5-0.3-0.7-0.3c-0.6,0.1-1.1,0.3-1.7,0.4c-0.4-0.1-0.8-0.2-1.2-0.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0-0.2,0.1-0.3,0.2\n\t\tc-0.4-0.2-0.8-0.5-1.2-0.7c-0.6-0.3-0.7-0.5-1.1,0.2c0,0-0.1,0-0.1,0.1c0,0-0.1,0-0.2,0c-0.4-0.1-0.7-0.1-1,0.2\n\t\tc-0.1,0.1-0.3,0.2-0.4,0.2c-0.5,0-1,0-1.5-0.1c-0.3-0.1-0.5-0.2-0.9-0.1c-0.1,0-0.2,0-0.3-0.1c-0.4-0.3-0.8-0.3-1.2,0\n\t\tc-1.4-0.8-2.7-0.4-4.1,0.4c-0.2-0.1-0.3-0.3-0.5-0.4c-0.2-0.1-0.4-0.3-0.6-0.3c-0.3,0-0.7,0.1-1,0.2c-0.3,0.1-0.7,0.3-1,0.4\n\t\tc-0.6-0.3-1.3-0.3-1.8-0.9c0-0.1-0.8-0.2-0.8-0.3c-0.1-0.5-0.3-1.1-0.1-1.6c0.1-0.2,0-0.6-0.1-0.8c-0.1-0.3-0.2-0.5-0.1-0.9\n\t\tc0.2-0.4,0.2-0.8,0-1.2c-0.1-0.3-0.1-0.6,0-0.8c0.1-0.2,0.1-0.4,0.1-0.6c-0.1-0.3,0-0.6,0.1-0.9c0.1-0.2,0.3-0.6,0.2-0.8\n\t\tc-0.2-0.6-0.1-1.1-0.2-1.7c0-0.1,0-0.2,0-0.2c-0.4-0.8-0.1-1.6-0.1-2.5c0-0.6-0.1-1.3,0-1.9c0-0.1,0-0.2,0-0.2\n\t\tc-0.2-0.3-0.1-0.7-0.1-1c0-0.6,0.1-1.2,0.1-1.8c0-0.2,0-0.3,0-0.5c-0.2-0.4-0.1-0.8,0-1.2c0.1-0.2,0-0.4,0-0.6\n\t\tc0-0.5-0.3-0.9-0.1-1.4c0.2-0.5,0.2-1.1,0-1.5c0-0.3,0.1-0.6,0.1-0.8c0-0.2,0-0.4,0.1-0.6c0.1-0.6,0.2-1.2,0.3-1.7\n\t\tc0-0.2-0.1-0.3-0.2-0.5c0-0.1-0.1-0.2-0.2-0.4c0.4,0,0.4-0.3,0.4-0.6c0.1-0.6-0.1-1.2-0.5-1.7c-0.2-0.2-0.2-0.4-0.1-0.6\n\t\tc0.1-0.2,0.1-0.4,0-0.6c0-0.4-0.1-0.8-0.2-1.2c0-0.1,0-0.3,0.1-0.4c0.3-0.5,0.2-1.1,0.5-1.6c0-0.1,0-0.2,0-0.3\n\t\tc0-0.2-0.1-0.3-0.1-0.4c0-0.1,0.1-0.1,0.1-0.2c0.4-0.7,0.4-0.7,0-1.3c-0.2-0.3-0.3-0.7-0.3-1.1c0-0.5,0.1-1-0.1-1.4\n\t\tc0.2-0.3,0.4-0.6,0.4-0.9c0-0.6,0.1-1.3-0.1-1.9c-0.1-0.2-0.2-0.4-0.1-0.5c0.2-0.3,0.1-0.6,0.2-0.9c0.2-0.5,0.4-0.9,0.1-1.4\n\t\tc0.2-0.6,0-1.1-0.2-1.6c-0.1-0.5-0.3-1-0.3-1.5c0-0.5-0.1-1,0.2-1.5c0-0.1,0.1-0.1,0.1-0.2c0.2-0.4,0.3-0.7,0-1.1\n\t\tc0-0.1,0-0.2,0-0.3c0-0.7-0.1-1.4-0.4-2c0.2-0.5,0.7-1,0.3-1.6c0-0.1,0-0.2,0-0.3c0-0.1,0.1-0.3,0-0.3c-0.2-0.3,0-0.5,0-0.7\n\t\tc0-0.4,0.2-0.8-0.3-1.1c-0.4-0.3-0.4-0.5-0.1-0.9c0.2-0.2,0.4-0.4,0.5-0.6c0-0.3,0-0.6-0.1-0.8c-0.2-0.5-0.2-0.9,0.1-1.2\n\t\tc0-0.5,0-0.8,0-1.1c0-0.1,0-0.2,0-0.3c-0.3-0.4-0.2-0.9-0.4-1.3c0-0.1,0-0.2,0-0.3c0.1-0.3,0.2-0.6,0.3-0.9c0.1-0.3,0.1-0.5,0-0.8\n\t\tc-0.2-0.6-0.3-1.1-0.4-1.7c0.2-0.3,0.3-0.6,0.5-0.8c0.3-0.5,0.3-0.9,0-1.4c-0.3-0.6-0.4-1.2-0.2-1.9c0.1-0.3,0.1-0.6,0-0.8\n\t\tc-0.1-0.1-0.1-0.4,0-0.5c0.3-0.3,0.2-0.7,0.2-1c0-0.4,0-0.7,0.1-1c-0.1-0.2-0.2-0.3-0.3-0.5c-0.2-0.2-0.2-0.4,0-0.6\n\t\tc0.3-0.4,0.2-0.7-0.2-1.1c0.5-0.8,0.4-1.4-0.2-2c0-0.2,0.1-0.3,0.1-0.4c0-0.1,0-0.3,0-0.4C1,53.3,1,53.3,1,53.3\n\t\tc0,0,0.1-0.1,0.2-0.1c0.5-0.3,0.5-0.3,0.3-0.8c0-0.1,0-0.2,0-0.3c0-0.5-0.1-0.9,0.2-1.3c0.1-0.1,0-0.3,0-0.5c0-0.3-0.1-0.7-0.2-1\n\t\tc0-0.1,0-0.3,0-0.3c0.4-0.4-0.1-0.8,0-1.3c-0.3-0.3-0.2-0.7-0.2-1c0-0.7,0.2-1.3,0.2-1.9c0-0.1,0-0.2,0.1-0.2\n\t\tc-0.1-0.2-0.2-0.3-0.3-0.4c0.4-0.8,0.4-1.5,0-2.2c0-0.2,0.1-0.4,0-0.6c-0.1-0.4,0-0.7,0.2-1.1c0.1-0.2,0.1-0.5-0.1-0.7\n\t\tc-0.3-0.3-0.3-0.8-0.2-1.2c0-0.4,0.1-0.8,0.1-1.2c0.1-0.3,0.1-0.6-0.1-0.8c0.1-0.2,0.2-0.3,0.3-0.6c-0.2-0.1-0.3-0.2-0.5-0.3\n\t\tc0.5-0.4,0.4-0.8,0.2-1.3c-0.2-0.3-0.3-0.6-0.5-0.9c0.2-0.2,0.3-0.3,0.6-0.5c-0.3-0.3,0-0.5,0.2-0.7c0-0.2-0.1-0.3-0.1-0.4\n\t\tc0.1-0.7,0-1.3-0.3-1.8c-0.1-0.1-0.1-0.3-0.1-0.4c0.1-0.5,0.2-1,0.3-1.4c0.1-0.4,0.2-0.7,0-1c0.1-0.3,0.2-0.5,0.2-0.7\n\t\tc0-0.6,0-1.1,0-1.7c0-0.4,0-0.8,0.3-1.1c0,0,0.1-0.1,0.1-0.2c-0.2-0.1-0.3-0.2-0.4-0.3c0.1-0.3,0.3-0.5,0.3-0.8\n\t\tc-0.1-0.6-0.3-1.1-0.4-1.7c0.1-0.4,0.2-0.8,0.3-1.2c0-0.2-0.1-0.3-0.2-0.5c0-0.1-0.1-0.2-0.2-0.3c0.2-0.4,0.5-0.8,0.7-1.2\n\t\tc0.3-0.6,0.5-0.7-0.2-1.2c0,0,0-0.1-0.1-0.1c0-0.1,0-0.1,0-0.2c0.2-0.4,0.1-0.7-0.2-1c-0.1-0.1-0.2-0.2-0.1-0.4c0-0.5,0-1,0.1-1.4\n\t\tc0.1-0.3,0.2-0.6,0.1-0.9c0-0.1,0-0.3,0.1-0.3c0.3-0.4,0.3-0.8,0-1.2C2.2,9.2,1.8,7.9,1,6.5C1.2,6.4,1.3,6.2,1.5,6s0.3-0.4,0.3-0.6\n\t\tc0-0.3-0.1-0.6-0.2-1c-0.1-0.3-0.3-0.7-0.4-1C1.4,2.8,1.4,2.1,2,1.7c0.1,0,0.2,0,0.3,0v0l0.2,0c0.5-0.1,1.1-0.3,1.6-0.1\n\t\tc0.2,0.1,0.6,0,0.8-0.1c0.3-0.1,0.5-0.2,0.8-0.1c0.4,0.1,0.8,0.2,1.2,0c0.3-0.1,0.6-0.1,0.8,0c0.2,0.1,0.4,0.1,0.6,0.1\n\t\tc0.3-0.1,0.6,0,0.9,0.1c0.1,0.1,0.3,0.1,0.4,0.2c0.1,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0c0.6-0.2,1.1-0.2,1.7-0.2c0.1,0,0.2,0,0.2,0\n\t\tc0.8-0.4,1.7-0.1,2.5-0.1c0.6,0,1.3-0.1,1.9,0c0.1,0,0.2,0,0.2,0c0.3-0.2,0.7-0.1,1-0.1c0.6,0,1.2,0.1,1.8,0.1c0.2,0,0.3,0,0.5,0\n\t\tc0.4-0.2,0.8-0.2,1.2,0c0.2,0.1,0.4,0,0.6,0c0.5,0,0.9-0.3,1.4-0.1c0.5,0.2,1.1,0.2,1.5,0c0.3,0,0.6,0.1,0.8,0.1c0.2,0,0.4,0,0.6,0\n\t\tc0.6,0.1,1.2,0.2,1.7,0.3c0.2,0,0.3-0.1,0.5-0.2c0.1,0,0.2-0.1,0.4-0.2c0,0.4,0.3,0.4,0.6,0.4c0.6,0.1,1.2-0.1,1.7-0.5\n\t\tc0.2-0.2,0.4-0.2,0.6-0.1C31.7,1,32,1,32.2,1c0.4,0,0.8-0.1,1.2-0.2c0.1,0,0.3,0,0.4,0.1c0.5,0.3,1.1,0.2,1.6,0.5\n\t\tc0.1,0,0.2,0,0.3,0c0.2,0,0.3-0.1,0.4-0.1c0.1,0,0.1,0.1,0.2,0.1c0.7,0.4,0.7,0.4,1.4,0c0.3-0.2,0.7-0.3,1-0.3c0.5,0,1,0.1,1.4-0.1\n\t\tc0.3,0.2,0.6,0.4,0.9,0.4c0.6,0,1.3,0.1,1.9-0.1c0.2-0.1,0.4-0.1,0.5-0.1c0.3,0.1,0.6,0.1,0.9,0.2c0.5,0.3,0.9,0.4,1.4,0.1\n\t\tc0.6,0.2,1.1,0,1.6-0.2c0.5-0.2,1-0.3,1.5-0.3c0.5,0,1-0.1,1.5,0.2c0.1,0,0.1,0.1,0.2,0.1c0.4,0.1,0.7,0.3,1.1,0\n\t\tc0.1-0.1,0.2,0,0.3,0c0.7,0,1.4-0.1,2-0.4c0.5,0.2,1,0.7,1.6,0.3c0.1,0,0.2,0,0.3,0c0.1,0,0.3,0.1,0.3,0c0.3-0.2,0.5,0,0.7,0\n\t\tc0.4,0,0.8,0.2,1.2-0.3c0.3-0.4,0.5-0.4,0.9-0.1c0.2,0.2,0.4,0.4,0.6,0.5c0.3,0,0.6,0,0.8-0.1c0.5-0.2,0.9-0.2,1.2,0.1\n\t\tc0.5,0,0.8,0,1.1,0c0.1,0,0.2,0,0.3,0c0.4-0.3,0.9-0.2,1.3-0.4c0.1,0,0.2,0,0.3,0c0.3,0.1,0.6,0.2,0.9,0.3c0.3,0.1,0.5,0.1,0.8,0\n\t\tc0.6-0.2,1.1-0.3,1.7-0.4c0.3,0.2,0.6,0.3,0.8,0.5c0.5,0.3,0.9,0.3,1.4,0c0.6-0.4,1.2-0.4,1.8-0.2c0.3,0.1,0.6,0.1,0.8,0\n\t\tc0.1-0.1,0.4-0.1,0.5,0c0.3,0.3,0.7,0.2,1,0.2c0.4,0,0.7,0,1,0.1c0.2-0.1,0.3-0.2,0.5-0.3c0.2-0.2,0.4-0.2,0.6,0\n\t\tc0.4,0.3,0.7,0.2,1.1-0.1c0.8,0.5,1.4,0.4,2-0.2c0.2,0,0.3,0.1,0.5,0.1c0.1,0,0.3,0,0.4,0C80.3,1,80.3,1,80.3,1\n\t\tc0,0,0.1,0.1,0.1,0.1c0.3,0.5,0.3,0.5,0.8,0.3c0.1,0,0.2,0,0.3,0c0.5,0,0.9-0.1,1.3,0.2c0.1,0.1,0.3,0,0.5,0c0.3-0.1,0.7-0.1,1-0.2\n\t\tc0.1,0,0.3,0,0.3,0c0.4,0.4,0.8-0.1,1.3,0c0.3-0.3,0.7-0.2,1-0.2c0.7,0,1.3,0.2,1.9,0.2c0.1,0,0.2,0.1,0.2,0.1\n\t\tc0.2-0.1,0.3-0.2,0.4-0.3c0.8,0.4,1.5,0.4,2.2,0c0.2,0,0.4,0.1,0.6,0c0.4-0.1,0.7,0,1.1,0.2c0.2,0.1,0.5,0.1,0.7-0.1\n\t\tc0.3-0.3,0.8-0.3,1.2-0.2c0.4,0,0.8,0.1,1.2,0.1c0.3,0.1,0.6,0.1,0.8-0.1c0.2,0.1,0.3,0.2,0.6,0.3C98,1.4,98.1,1.2,98.2,1\n\t\tc0.4,0.5,0.8,0.4,1.3,0.2c0.3-0.2,0.6-0.3,0.9-0.5c0.2,0.2,0.3,0.3,0.5,0.6c0.3-0.3,0.5,0,0.7,0.1c0.2,0,0.3-0.1,0.4-0.1\n\t\tc0.7,0.1,1.3,0,1.8-0.3c0.1-0.1,0.3-0.1,0.4-0.1c0.5,0.1,1,0.2,1.5,0.3c0.3,0.1,0.7,0.2,1-0.1c0.3,0.1,0.5,0.2,0.7,0.2\n\t\tc0.6,0,1.1,0,1.7,0c0.4,0,0.8,0,1.1,0.3c0,0,0.1,0.1,0.2,0.1c0.1-0.2,0.2-0.3,0.3-0.4c0.3,0.1,0.5,0.3,0.8,0.3\n\t\tc0.6-0.1,1.1-0.3,1.7-0.4c0.4,0.1,0.8,0.2,1.2,0.3c0.2,0,0.3-0.1,0.5-0.2c0.1,0,0.2-0.1,0.3-0.2c0.4,0.2,0.8,0.5,1.2,0.7\n\t\tc0.6,0.3,0.7,0.5,1.1-0.2c0,0,0.1,0,0.1-0.1c0.1,0,0.1,0,0.2,0c0.4,0.2,0.7,0.1,1-0.2c0.1-0.1,0.2-0.1,0.4-0.1c0.5,0,1,0,1.5,0.1\n\t\tc0.3,0.1,0.5,0.2,0.9,0.1c0.1,0,0.3,0,0.3,0.1c0.4,0.3,0.8,0.3,1.2,0c0.2,0.1,0.3,0.2,0.5,0.2c0.8,0.3,1.6,0.3,2.4,0\n\t\tc0.4-0.1,0.8-0.4,1.2-0.6c0.2,0.1,0.3,0.3,0.5,0.4c0.1,0.1,0.2,0.1,0.3,0.2h0c0.1,0.1,0.2,0.1,0.3,0.1c0.2,0,0.4,0,0.5-0.1\n\t\tc0.1,0,0.3-0.1,0.4-0.1c0.3-0.1,0.7-0.3,1-0.4c0.6,0.3,1.3,0.3,1.8,0.9c0,0.2,0,0.4-0.1,0.6c0,0.3,0,0.6-0.1,0.9\n\t\tc-0.1,0.2,0,0.6,0.1,0.8c0.1,0.3,0.2,0.5,0.1,0.8c-0.2,0.4-0.2,0.8,0,1.2c0.1,0.3,0.1,0.5,0,0.8c-0.1,0.2-0.1,0.4-0.1,0.6\n\t\tc0.1,0.3,0,0.6-0.1,0.9c-0.1,0.2-0.3,0.6-0.2,0.8c0.2,0.6,0.2,1.1,0.2,1.7c0,0.1,0,0.2,0,0.2c0.4,0.8,0.1,1.7,0.1,2.5\n\t\tc0,0.6,0.1,1.3,0,1.9c0,0.1,0,0.2,0,0.2c0.2,0.3,0.1,0.7,0.1,1c0,0.6-0.1,1.2-0.1,1.8c0,0.1,0,0.3,0,0.5c0.2,0.4,0.1,0.8,0,1.2\n\t\tc-0.1,0.2,0,0.4,0,0.6c0,0.5,0.3,0.9,0.1,1.4c-0.2,0.5-0.2,1.1,0,1.5c0,0.3-0.1,0.6-0.1,0.8c0,0.2,0,0.4-0.1,0.6\n\t\tc-0.1,0.6-0.2,1.2-0.3,1.7c0,0.2,0.1,0.3,0.2,0.5c0,0.1,0.1,0.2,0.2,0.4c-0.4,0-0.4,0.3-0.4,0.6c-0.1,0.6,0.1,1.2,0.5,1.7\n\t\tc0.2,0.2,0.2,0.4,0.1,0.6c-0.1,0.2-0.1,0.4,0,0.6c0,0.4,0.1,0.8,0.2,1.2c0,0.1,0,0.3-0.1,0.4c-0.3,0.5-0.2,1.1-0.5,1.6\n\t\tc0,0.1,0,0.2,0,0.3c0,0.2,0.1,0.3,0.1,0.4c0,0.1-0.1,0.1-0.1,0.2c-0.4,0.7-0.4,0.7,0,1.4c0.2,0.3,0.3,0.7,0.3,1.1\n\t\tc0,0.5-0.1,1,0.1,1.4c-0.2,0.3-0.4,0.6-0.4,0.9c0,0.6-0.1,1.3,0.1,1.9c0.1,0.2,0.2,0.4,0.1,0.5c-0.1,0.3-0.1,0.6-0.2,0.9\n\t\tc-0.2,0.5-0.4,0.9-0.1,1.4c-0.2,0.6,0,1.1,0.2,1.6c0.2,0.5,0.3,1,0.3,1.5c0,0.5,0.1,1-0.2,1.5c0,0.1-0.1,0.1-0.1,0.2\n\t\tc-0.2,0.4-0.3,0.7,0,1.1c0,0.1,0,0.2,0,0.3c0,0.7,0.1,1.4,0.4,2c-0.2,0.5-0.7,1-0.3,1.6c0,0.1,0,0.2,0,0.3c0,0.1-0.1,0.3,0,0.3\n\t\tc0.2,0.3,0,0.5,0,0.7c0,0.4-0.2,0.8,0.3,1.2c0.4,0.3,0.4,0.5,0.1,0.9c-0.2,0.2-0.4,0.4-0.5,0.6c0,0.3,0,0.6,0.1,0.8\n\t\tc0.2,0.5,0.1,0.9-0.1,1.2c0,0.4,0,0.8,0,1.1c0,0.1,0,0.2,0,0.3c0.3,0.4,0.2,0.9,0.4,1.3c0.1,0.1,0,0.2,0,0.3\n\t\tc-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.3-0.1,0.5,0,0.8c0.2,0.6,0.3,1.2,0.4,1.7c-0.2,0.3-0.3,0.6-0.5,0.8c-0.3,0.5-0.3,0.9,0,1.4\n\t\tc0.3,0.6,0.4,1.2,0.2,1.8c-0.1,0.3-0.1,0.6,0,0.9c0.1,0.1,0.1,0.4,0,0.4c-0.3,0.3-0.2,0.7-0.2,0.9c0.1,0.4,0,0.7-0.1,1.1\n\t\tc0.1,0.2,0.2,0.3,0.3,0.5c0.2,0.2,0.2,0.4,0,0.6c-0.3,0.4-0.2,0.7,0.2,1.1c-0.5,0.8-0.4,1.4,0.2,2c0,0.2-0.1,0.3-0.1,0.5\n\t\tc0,0.1,0,0.3,0,0.3c-0.1,0.1-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1c-0.5,0.3-0.5,0.3-0.3,0.8c0,0.1,0,0.2,0,0.3\n\t\tc0,0.4,0.1,0.9-0.2,1.3c-0.1,0.1,0,0.3,0,0.5c0,0.3,0.1,0.7,0.2,1c0,0.1,0,0.3,0,0.3c-0.4,0.4,0.1,0.8,0,1.3c0.3,0.3,0.2,0.7,0.2,1\n\t\tc0,0.7-0.2,1.3-0.2,1.9c0,0.1,0,0.2-0.1,0.2c0.1,0.2,0.2,0.3,0.3,0.4c-0.4,0.8-0.4,1.5,0,2.2c0,0.2-0.1,0.4,0,0.6\n\t\tc0.1,0.4,0,0.7-0.2,1.1c-0.1,0.2-0.1,0.5,0.1,0.7c0.3,0.4,0.3,0.8,0.2,1.2c0,0.4-0.1,0.8-0.1,1.2c-0.1,0.3-0.1,0.6,0.1,0.8\n\t\tc-0.1,0.2-0.2,0.3-0.3,0.6c0.2,0.1,0.3,0.2,0.5,0.3c-0.5,0.4-0.4,0.8-0.2,1.3C132.3,99,132.4,99.3,132.6,99.6z\"/>\n</g>\n</svg>";
 var bgSketch$1 = bgSketch;function drawCanvasBg(dimension, bgStyle, layoutID) {
   var canvas = document.getElementById("st-canvas-bg");
   var context = canvas.getContext("2d");
@@ -992,9 +1133,9 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
     class: "sg1-st-bg",
     style: vue.normalizeStyle(_ctx.styleStBg)
   }, null, 4))]);
-}var css_248z$5 = "\n.sg1-bg-wrapper[data-v-44752da6],\n\t.sg1-st-bg[data-v-44752da6] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
+}var css_248z$5 = "\n.sg1-bg-wrapper[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n.sg1-st-bg[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
 styleInject(css_248z$5);script$4.render = render$4;
-script$4.__scopeId = "data-v-44752da6";var boxText = {
+script$4.__scopeId = "data-v-25293889";var boxText = {
   name: "boxText",
   components: {
     boxnarration: script$7,
@@ -1008,12 +1149,15 @@ script$4.__scopeId = "data-v-44752da6";var boxText = {
     currentTabs: {},
     nextTabsChose: {},
     reedBeams: {},
-    stylesObj: {}
+    stylesObj: {},
+    gameIntentLoad: {}
   },
   methods: {
     emitReedBeams1: function emitReedBeams1(id) {
-      console.log("ehi ciao");
       this.$emit("reedBeams", id);
+    },
+    gameIntentLoad2: function gameIntentLoad2() {
+      this.$emit("gameIntentLoad");
     }
   }
 };
@@ -1049,11 +1193,12 @@ var script$3 = boxText;function render$3(_ctx, _cache, $props, $setup, $data, $o
     lang: _ctx.lang,
     "current-tabs": _ctx.currentTabs,
     stylesObj: _ctx.stylesObj,
-    onEmitReedBeams2: _ctx.emitReedBeams1
-  }, null, 8, ["lang", "current-tabs", "stylesObj", "onEmitReedBeams2"])) : vue.createCommentVNode("", true)], 4);
-}var css_248z$4 = "\n.sg1-wrapper-box-text[data-v-688b25fc] {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: relative;\n}\n";
+    onEmitReedBeams2: _ctx.emitReedBeams1,
+    onGameIntentLoad3: _ctx.gameIntentLoad2
+  }, null, 8, ["lang", "current-tabs", "stylesObj", "onEmitReedBeams2", "onGameIntentLoad3"])) : vue.createCommentVNode("", true)], 4);
+}var css_248z$4 = "\n.sg1-wrapper-box-text[data-v-76b41285] {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: relative;\n\t\tflex-grow: 1;\n\t\theight: auto;\n}\n";
 styleInject(css_248z$4);script$3.render = render$3;
-script$3.__scopeId = "data-v-688b25fc";var PreCachedImg = {
+script$3.__scopeId = "data-v-76b41285";var PreCachedImg = {
   name: "PreCachedImg",
   props: {
     preCachedImgList: {},
@@ -1083,7 +1228,7 @@ var _hoisted_3$2 = ["src"];
 var _hoisted_4$1 = {
   key: 1
 };
-var _hoisted_5 = ["src", "srcset", "sizes"];
+var _hoisted_5$1 = ["src", "srcset", "sizes"];
 function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$2, [_ctx.editorUsage ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$2, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.preCachedImgList, function (el, index) {
     return vue.openBlock(), vue.createElementBlock("img", {
@@ -1101,14 +1246,14 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
     onLoad: _cache[1] || (_cache[1] = function ($event) {
       return _ctx.imgsLoaded++;
     })
-  }, null, 40, _hoisted_5)]))]);
+  }, null, 40, _hoisted_5$1)]))]);
 }var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-daa75442] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
 styleInject(css_248z$3);script$2.render = render$2;
 script$2.__scopeId = "data-v-daa75442";var spinnerBox = {
   name: "Spinner"
 };
 var script$1 = spinnerBox;var _withScopeId = function _withScopeId(n) {
-  return vue.pushScopeId("data-v-4eea49f2"), n = n(), vue.popScopeId(), n;
+  return vue.pushScopeId("data-v-141b4ae7"), n = n(), vue.popScopeId(), n;
 };
 
 var _hoisted_1$1 = {
@@ -1117,70 +1262,22 @@ var _hoisted_1$1 = {
 
 var _hoisted_2$1 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/vue.createElementVNode("div", {
-    class: "sg1-spinner pulse-container"
+    class: "sg1-spinner sg1-pulse-container"
   }, [/*#__PURE__*/vue.createElementVNode("div", {
-    class: "sg1-pulse-bubble pulse-bubble-1"
+    class: "sg1-pulse-bubble sg1-pulse-bubble-1"
   }), /*#__PURE__*/vue.createElementVNode("div", {
-    class: "sg1-pulse-bubble pulse-bubble-2"
+    class: "sg1-pulse-bubble sg1-pulse-bubble-2"
   }), /*#__PURE__*/vue.createElementVNode("div", {
-    class: "sg1-pulse-bubble pulse-bubble-3"
+    class: "sg1-pulse-bubble sg1-pulse-bubble-3"
   })], -1);
 });
 
 var _hoisted_3$1 = [_hoisted_2$1];
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$1, _hoisted_3$1);
-}var css_248z$2 = "\n.sg1-spinner-box-media[data-v-4eea49f2] {\n\t\tbackground-color: #464646;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tanimation-name: sg1-fadein-4eea49f2;\n\t\tanimation-duration: 0.4s;\n\t\tanimation-timing-function: ease-out;\n}\n@keyframes sg1-fadein-4eea49f2 {\n0% {\n\t\t\topacity: 0;\n}\n100% {\n\t\t\topacity: 1;\n}\n}\n\n\t/* PULSE BUBBLES */\n.sg1-pulse-container[data-v-4eea49f2] {\n\t\twidth: 3em;\n\t\tfont-size: rem(15px);\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-pulse-bubble[data-v-4eea49f2] {\n\t\tfont-size: 1em;\n\t\twidth: 0.6em;\n\t\theight: 3em;\n\t\tbackground-color: #ffffff;\n}\n.sg1-pulse-bubble-1[data-v-4eea49f2] {\n\t\tanimation: sg1-pulse-4eea49f2 0.6s ease 0s infinite alternate;\n}\n.sg1-pulse-bubble-2[data-v-4eea49f2] {\n\t\tanimation: sg1-pulse-4eea49f2 0.6s ease 0.15s infinite alternate;\n}\n.sg1-pulse-bubble-3[data-v-4eea49f2] {\n\t\tanimation: sg1-pulse-4eea49f2 0.6s ease 0.3s infinite alternate;\n}\n\n\t/* KEYFRAMES */\n@keyframes sg1-pulse-4eea49f2 {\nfrom {\n\t\t\topacity: 1;\n\t\t\ttransform: scale(1);\n}\nto {\n\t\t\topacity: 0.5;\n\t\t\ttransform: scale(0.8);\n}\n}\n";
+}var css_248z$2 = "\n.sg1-spinner-box-media[data-v-141b4ae7] {\n\t\tbackground-color: #464646;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tanimation-name: sg1-fadein-141b4ae7;\n\t\tanimation-duration: 0.4s;\n\t\tanimation-timing-function: ease-out;\n}\n@keyframes sg1-fadein-141b4ae7 {\n0% {\n\t\t\topacity: 0;\n}\n100% {\n\t\t\topacity: 1;\n}\n}\n\n\t/* PULSE BUBBLES */\n.sg1-pulse-container[data-v-141b4ae7] {\n\t\twidth: 3em;\n\t\tfont-size: rem(15px);\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-pulse-bubble[data-v-141b4ae7] {\n\t\tfont-size: 1em;\n\t\twidth: 0.6em;\n\t\theight: 3em;\n\t\tbackground-color: #ffffff;\n}\n.sg1-pulse-bubble-1[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0s infinite alternate;\n}\n.sg1-pulse-bubble-2[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.15s infinite alternate;\n}\n.sg1-pulse-bubble-3[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.3s infinite alternate;\n}\n\n\t/* KEYFRAMES */\n@keyframes sg1-pulse-141b4ae7 {\nfrom {\n\t\t\topacity: 1;\n\t\t\ttransform: scale(1);\n}\nto {\n\t\t\topacity: 0.5;\n\t\t\ttransform: scale(0.8);\n}\n}\n";
 styleInject(css_248z$2);script$1.render = render$1;
-script$1.__scopeId = "data-v-4eea49f2";//returns a copy of the object
-function deepCopy(obj) {
-  var rv;
-
-  switch (_typeof(obj)) {
-    case "object":
-      if (obj === null) {
-        // null => null
-        rv = null;
-      } else {
-        switch (toString.call(obj)) {
-          case "[object Array]":
-            // It's an array, create a new array with
-            // deep copies of the entries
-            rv = obj.map(deepCopy);
-            break;
-
-          case "[object Date]":
-            // Clone the date
-            rv = new Date(obj);
-            break;
-
-          case "[object RegExp]":
-            // Clone the RegExp
-            rv = new RegExp(obj);
-            break;
-          // ...probably a few others
-
-          default:
-            // Some other kind of object, deep-copy its
-            // properties into a new object
-            rv = Object.keys(obj).reduce(function (prev, key) {
-              prev[key] = deepCopy(obj[key]);
-              return prev;
-            }, {});
-            break;
-        }
-      }
-
-      break;
-
-    default:
-      // It's a primitive, copy via assignment
-      rv = obj;
-      break;
-  }
-
-  return rv;
-}function gridLayout(id) {
+script$1.__scopeId = "data-v-141b4ae7";function gridLayout(id) {
   var boxIllustration;
   var boxText;
 
@@ -1471,6 +1568,10 @@ var script = /*#__PURE__*/vue.defineComponent({
     height: {
       type: String,
       default: "100vh"
+    },
+    stopLink: {
+      type: Boolean,
+      default: false
     }
   },
   data: function data() {
@@ -1482,7 +1583,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       },
       preCachedImgList: [],
       lang: false,
-      textualTabs: ["descriptions", "chose", "game over", "end"],
+      textualTabs: ["descriptions", "chose", "game over"],
       playerState: "playing",
       player: {
         item: []
@@ -1493,7 +1594,9 @@ var script = /*#__PURE__*/vue.defineComponent({
       onRunError: [],
       listBadMixId: "",
       gameLoaded: false,
-      device: false
+      device: false,
+      goToLink: false,
+      urlToShow: false
     };
   },
   watch: {
@@ -1517,6 +1620,11 @@ var script = /*#__PURE__*/vue.defineComponent({
         this.LoadFont();
       },
       deep: true
+    },
+    playerState: function playerState(val) {
+      if (val == "game end" && this.goToLink) {
+        this.initialized = false;
+      }
     }
   },
   computed: {
@@ -1557,7 +1665,7 @@ var script = /*#__PURE__*/vue.defineComponent({
         var gridLayoutItem;
 
         if (this.disableIlustration == true) {
-          gridLayoutItem = gridLayout(7);
+          gridLayoutItem = gridLayout("a1f8");
         } else {
           gridLayoutItem = gridLayout(this.gameData.style[this.device]["layout-type"]);
         }
@@ -1703,13 +1811,13 @@ var script = /*#__PURE__*/vue.defineComponent({
       var tabs = this.gameData.story.tabs.filter(function (el) {
         return newIdArray.includes(el.id);
       });
-      var tabsToNavigate = this.ResoveTabsList(tabs); //setto nextTabsChose
+      var tabsToNavigate = this.ResoveTabsList(tabs);
 
-      this.nextTabsChose = [];
-
-      if (tabsToNavigate.length == 0) {
+      if (tabsToNavigate.length == 0 && this.playerState != "game end") {
         var error = this.strings.wrongTabsId[this.langEditor];
-        this.onRunError.push(error);
+        this.onRunError.push(error); //setto nextTabsChose
+
+        this.nextTabsChose = [];
       } else {
         if (tabsToNavigate.length == 1) {
           this.singleBeemFoward = true; //setto nextTabsChose ---------------------------
@@ -1728,10 +1836,10 @@ var script = /*#__PURE__*/vue.defineComponent({
               tabToAdd.push(newEl);
             }
           });
-          var testNextTabsChose = this.ResoveTabsList(tabToAdd);
+          var testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
 
           if (testNextTabsChose.length == 1) {
-            if (testNextTabsChose[0].type == "descriptions") {
+            if (testNextTabsChose[0].type == "descriptions" || testNextTabsChose[0].type == "game over") {
               single = true;
             }
           } else {
@@ -1768,6 +1876,18 @@ var script = /*#__PURE__*/vue.defineComponent({
           }
         } else {
           this.singleBeemFoward = false;
+          /* controllo se tab to add sono tutti chose */
+
+          var allChose = true;
+          tabsToNavigate.forEach(function (el) {
+            if (el.type != "chose") {
+              allChose = false;
+            }
+          });
+
+          if (allChose) {
+            this.nextTabsChose = [];
+          }
         }
 
         this.currentTabs = tabsToNavigate;
@@ -1777,6 +1897,7 @@ var script = /*#__PURE__*/vue.defineComponent({
     ResoveTabsList: function ResoveTabsList(tabs) {
       var _this3 = this;
 
+      var isNext = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var stop = false;
       var n = 0;
       var textualTabs = this.textualTabs;
@@ -1790,9 +1911,19 @@ var script = /*#__PURE__*/vue.defineComponent({
         collectionOfTextualTabs.forEach(function (el) {
           if (!textualTabs.includes(el.type)) {
             allTextual = false;
-            newCollection = [].concat(_toConsumableArray(newCollection), _toConsumableArray(_this3.ResoveTab(el)));
+            newCollection = [].concat(_toConsumableArray(newCollection), _toConsumableArray(_this3.ResoveTab(el, isNext)));
           } else {
-            newCollection.push(el);
+            var procedeToNewCollection = true;
+
+            if (isNext) {
+              if (_this3.playerState != "playing") {
+                procedeToNewCollection = false;
+              }
+            }
+
+            if (procedeToNewCollection) {
+              newCollection.push(el);
+            }
           }
         });
         collectionOfTextualTabs = newCollection;
@@ -1810,7 +1941,7 @@ var script = /*#__PURE__*/vue.defineComponent({
     },
 
     /* risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab */
-    ResoveTab: function ResoveTab(tab) {
+    ResoveTab: function ResoveTab(tab, isNext) {
       function operatorResolve(dn1, operator, dn2) {
         var n1 = parseInt(dn1);
         var n2 = parseInt(dn2);
@@ -1881,15 +2012,34 @@ var script = /*#__PURE__*/vue.defineComponent({
           break;
 
         case "game over":
-          this.playerState = "game over";
-          tabToAdd.push(currentTab);
+          if (!isNext) {
+            this.playerState = "game over";
+            tabToAdd.push(currentTab);
+          }
+
           stop = true;
           break;
 
         case "end":
-          this.playerState = "game end";
-          tabToAdd.push(currentTab);
-          stop = true;
+          if (!isNext) {
+            this.playerState = "game end";
+
+            if (currentTab.openNewPage) {
+              this.goToLink = true;
+
+              if (this.stopLink) {
+                this.urlToShow = this.strings.urlRedirect[this.langEditor] + ": " + currentTab.url[this.lang];
+              } else {
+                window.open(currentTab.url[this.lang], "_self");
+              }
+            } else {
+              tabToAdd.push(currentTab);
+              stop = true;
+            }
+          } else {
+            stop = true;
+          }
+
           break;
 
         case "redirect":
@@ -1920,7 +2070,7 @@ var script = /*#__PURE__*/vue.defineComponent({
             });
             currentTab = tabToRedirect;
           } else {
-            var error = this.strings.redirectError.langEditor + " ( ID: " + currentTab.id + " )";
+            var error = this.strings.redirectError[this.langEditor] + " ( ID: " + currentTab.id + " )";
             this.onRunError.push(error);
             stop = true;
           }
@@ -1939,7 +2089,7 @@ var script = /*#__PURE__*/vue.defineComponent({
 
           if (itemExist3) {
             if (itemExist3.length == 0 || currentTab.operator == false) {
-              var _error2 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+              var _error2 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
               this.onRunError.push(_error2);
               stop = true;
@@ -1947,7 +2097,7 @@ var script = /*#__PURE__*/vue.defineComponent({
               this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount);
             }
           } else {
-            var _error3 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+            var _error3 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
             this.onRunError.push(_error3);
             stop = true;
@@ -1962,7 +2112,7 @@ var script = /*#__PURE__*/vue.defineComponent({
 
           if (itemExist2) {
             if (itemExist2.length == 0 || currentTab.operator == false) {
-              var _error4 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+              var _error4 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
               this.onRunError.push(_error4);
               stop = true;
@@ -1970,7 +2120,7 @@ var script = /*#__PURE__*/vue.defineComponent({
               this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount);
             }
           } else {
-            var _error5 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+            var _error5 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
             this.onRunError.push(_error5);
             stop = true;
@@ -1986,7 +2136,7 @@ var script = /*#__PURE__*/vue.defineComponent({
           if (statToCheck) {
             /* controllo che non siano presenti errori nella espressione */
             if (currentTab.ammount === false || currentTab.ammount == undefined || currentTab.operator == false) {
-              var _error6 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+              var _error6 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
               this.onRunError.push(_error6);
               stop = true;
@@ -2008,7 +2158,7 @@ var script = /*#__PURE__*/vue.defineComponent({
               }
             }
           } else {
-            var _error7 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+            var _error7 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
             this.onRunError.push(_error7);
             stop = true;
@@ -2029,7 +2179,7 @@ var script = /*#__PURE__*/vue.defineComponent({
 
           if (itemExist) {
             if (itemExist.length == 0 || currentTab.operator == false) {
-              var _error8 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+              var _error8 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
               this.onRunError.push(_error8);
               stop = true;
@@ -2053,12 +2203,16 @@ var script = /*#__PURE__*/vue.defineComponent({
               }
             }
           } else {
-            var _error9 = this.strings.expressionIncoplete.langEditor + " ( ID: " + currentTab.id + " )";
+            var _error9 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
             this.onRunError.push(_error9);
             stop = true;
           }
 
+          break;
+
+        case "image":
+          this.setImage(currentTab.img);
           break;
       }
 
@@ -2444,6 +2598,10 @@ var _hoisted_3 = {
   class: "sg1-game-error sg1-e-3"
 };
 var _hoisted_4 = {
+  key: 2,
+  class: "sg1-game-message sg1-e-4"
+};
+var _hoisted_5 = {
   key: 4,
   class: "sg1-load-screen"
 };
@@ -2475,22 +2633,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "current-tabs": _ctx.currentTabs,
     nextTabsChose: _ctx.nextTabsChose,
     stylesObj: _ctx.stylesObj,
-    onReedBeams: _ctx.reedBeams
-  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams"])) : vue.createCommentVNode("", true), _ctx.narrationBox == 'false' || _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, vue.toDisplayString(_ctx.strings.noEnd.langEditor), 1)) : vue.createCommentVNode("", true), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.onRunError, function (el, index) {
+    onReedBeams: _ctx.reedBeams,
+    onGameIntentLoad: _ctx.gameIntentLoad
+  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams", "onGameIntentLoad"])) : vue.createCommentVNode("", true), _ctx.narrationBox == 'false' || _ctx.narrationBox == 'node-bad-mix' || _ctx.urlToShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, vue.toDisplayString(_ctx.strings.noEnd[_ctx.langEditor]), 1)) : vue.createCommentVNode("", true), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.onRunError, function (el, index) {
     return vue.openBlock(), vue.createElementBlock("div", {
       key: index,
       class: "sg1-game-error sg1-e-2"
     }, vue.toDisplayString(el), 1);
-  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.strings.nodeBadMix.langEditor) + " " + vue.toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), _ctx.preCachedImgList ? (vue.openBlock(), vue.createBlock(_component_PreCachedImg, {
+  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.strings.nodeBadMix[_ctx.langEditor]) + " " + vue.toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : vue.createCommentVNode("", true), _ctx.urlToShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, vue.toDisplayString(_ctx.urlToShow), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), _ctx.preCachedImgList ? (vue.openBlock(), vue.createBlock(_component_PreCachedImg, {
     key: 3,
     editorUsage: _ctx.editorUsage,
     preCachedImgList: _ctx.preCachedImgList,
     onSetImgsLoaded: _ctx.setImgsLoaded
-  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 4)) : vue.createCommentVNode("", true);
+  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 4)) : vue.createCommentVNode("", true);
 }var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n";
-styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-215d5a81] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n}\n.sg1-load-screen[data-v-215d5a81] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-215d5a81] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n}\n.sg1-log-app[data-v-215d5a81] {\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-215d5a81] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tcolor: #ed6767;\n}\n";
+styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-a2d5b09c] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-a2d5b09c] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-a2d5b09c] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-a2d5b09c] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-a2d5b09c] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-a2d5b09c] {\n\t\tcolor: #67ed72;\n}\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-215d5a81";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
+script.__scopeId = "data-v-a2d5b09c";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         componentName = _ref2[0],
