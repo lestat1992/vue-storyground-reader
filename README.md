@@ -1,6 +1,6 @@
 # [vue storyground reader](https://storygroundeditor.com) &middot; ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**vue storyground reader** è un semplice componente pervisualizzare le storie di storygroundeditor.com.
+**vue storyground reader** è un semplice componente per visualizzare le storie di storygroundeditor.com.
 
 ## Installazione
 
@@ -13,7 +13,7 @@ Ecco il tuo primo esempio per iniziare:
 
 Questo esempio è molto utile in una prima fase di **development** in qunto i media saranno presenti direttamente su storygroundeditor.com.
 
-Se si vorranno utilizzare i media direttamente dal proprio dominio, sarà necessario aggiungere i seguenti parametri:
+Se si vorranno utilizzare i media direttamente dal proprio dominio, sarà necessario aggiungere le seguenti props:
 
 ```vue
 <game
@@ -24,7 +24,7 @@ Se si vorranno utilizzare i media direttamente dal proprio dominio, sarà necess
 />
 ```
 
-**Una lista dei parametri della libreria**
+**Una lista delle props**
 
 | Name                 | type      | Default             | description                                                                                                                                                                                                                                          |
 | -------------------- | --------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
