@@ -4,7 +4,7 @@
 
 ## Installazione
 
-Se non sarà fornito alcun parametro all'inizializzazione verrà visualizzata una storia "segna posto". Sarà necessario per visualizzare la propria storia avere a disposizione l'esportazione di una storia, quest'ultima contiene un file json e una cartella con i media della storia nella quale è anche presente un file indexMediaObj.json.
+Se non sarà fornito alcun parametro all'inizializzazione verrà visualizzata una storia "segna posto". Sarà necessario per visualizzare la propria storia avere a disposizione l'esportazione di una storia, quest'ultima contiene un file json contenente la storia e una cartella con i media della storia nella quale è anche presente un file indexMediaObj.json.
 Ecco il tuo primo esempio per iniziare:
 
 ```vue
