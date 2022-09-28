@@ -396,7 +396,7 @@ var story = {
 		}
 	]
 };
-var style$1 = {
+var style = {
 	"font-family": "Montserrat",
 	"font-weight": [
 		100,
@@ -456,7 +456,7 @@ var defaultStory = {
 	items: items,
 	stats: stats,
 	story: story,
-	style: style$1
+	style: style
 };var defaultIndexMedia = [
 	{
 		Id: 1315,
@@ -1198,7 +1198,9 @@ var script$3 = boxText;function render$3(_ctx, _cache, $props, $setup, $data, $o
   }, null, 8, ["lang", "current-tabs", "stylesObj", "onEmitReedBeams2", "onGameIntentLoad3"])) : vue.createCommentVNode("", true)], 4);
 }var css_248z$4 = "\n.sg1-wrapper-box-text[data-v-76b41285] {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: relative;\n\t\tflex-grow: 1;\n\t\theight: auto;\n}\n";
 styleInject(css_248z$4);script$3.render = render$3;
-script$3.__scopeId = "data-v-76b41285";var PreCachedImg = {
+script$3.__scopeId = "data-v-76b41285";var img = require("../../.././dev/cose/logo.png");
+
+var PreCachedImg = {
   name: "PreCachedImg",
   props: {
     preCachedImgList: {},
@@ -1207,7 +1209,8 @@ script$3.__scopeId = "data-v-76b41285";var PreCachedImg = {
   },
   data: function data() {
     return {
-      imgsLoaded: 0
+      imgsLoaded: 0,
+      testImg: img
     };
   },
   watch: {
@@ -1239,17 +1242,20 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
         return _ctx.imgsLoaded++;
       })
     }, null, 40, _hoisted_3$2);
-  }), 128))])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$1, [vue.createElementVNode("img", {
-    src: _ctx.el.src,
-    srcset: _ctx.el.srcset,
-    sizes: _ctx.el.sizes,
-    onLoad: _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.imgsLoaded++;
-    })
-  }, null, 40, _hoisted_5$1)]))]);
-}var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-daa75442] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
+  }), 128))])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$1, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.preCachedImgList, function (el, index) {
+    return vue.openBlock(), vue.createElementBlock("img", {
+      key: index,
+      src: el.src,
+      srcset: el.srcset,
+      sizes: el.sizes,
+      onLoad: _cache[1] || (_cache[1] = function ($event) {
+        return _ctx.imgsLoaded++;
+      })
+    }, null, 40, _hoisted_5$1);
+  }), 128))]))]);
+}var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-57011f9e] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
 styleInject(css_248z$3);script$2.render = render$2;
-script$2.__scopeId = "data-v-daa75442";var spinnerBox = {
+script$2.__scopeId = "data-v-57011f9e";var spinnerBox = {
   name: "Spinner"
 };
 var script$1 = spinnerBox;var _withScopeId = function _withScopeId(n) {
@@ -1559,7 +1565,7 @@ var script = /*#__PURE__*/vue.defineComponent({
     },
     pathMediaDir: {
       type: String,
-      default: "./media"
+      default: "http://your-website/media"
     },
     width: {
       type: String,
@@ -2540,21 +2546,22 @@ var script = /*#__PURE__*/vue.defineComponent({
           if (!_this8.editorUsage) {
             var data = {};
 
-            var name = _this8.indexMedia.find(function (el) {
-              return el.Id == _this8.illustration.ID;
+            var name = _this8.indexMedia.find(function (el2) {
+              return el2.Id == el.img.ID;
             }).name;
 
             var imgPathPart = _this8.pathMediaDir + "/" + name;
+            var imgSize = _this8.gameData.style["img-sizes"];
             /* list of srcset rules */
 
-            _this8["style"]["img-sizes"].forEach(function (elImg, index) {
+            imgSize.forEach(function (elImg, index) {
               data.srcset = data.srcset + imgPathPart + "-" + elImg.width + "x" + elImg.height + ".jpg " + elImg.width + "w";
 
-              if (index + 1 != _this8["style"]["img-sizes"].length) {
+              if (index + 1 != imgSize.length) {
                 data.srcset = data.srcset + ",";
               }
 
-              if (index + 1 != _this8["style"]["img-sizes"].length) {
+              if (index + 1 != imgSize.length) {
                 data.sizes = data.sizes + "( max-width:" + elImg.width + "px ) " + elImg.width + "px, ";
               } else {
                 data.sizes = data.sizes + elImg.width + "px";
@@ -2562,7 +2569,7 @@ var script = /*#__PURE__*/vue.defineComponent({
               /* fallback src */
 
 
-              data.src = imgPathPart + "-" + style["img-sizes"][style["img-sizes"].length - 1]["width"] + "x" + style["img-sizes"][style["img-sizes"].length - 1]["height"] + ".jpg";
+              data.src = imgPathPart + "-" + imgSize[imgSize.length - 1]["width"] + "x" + imgSize[imgSize.length - 1]["height"] + ".jpg";
             });
 
             _this8.preCachedImgList.push(data);
@@ -2647,9 +2654,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSetImgsLoaded: _ctx.setImgsLoaded
   }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 4)) : vue.createCommentVNode("", true);
 }var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n";
-styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-a2d5b09c] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-a2d5b09c] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-a2d5b09c] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-a2d5b09c] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-a2d5b09c] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-a2d5b09c] {\n\t\tcolor: #67ed72;\n}\n";
+styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-18b591d2] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-18b591d2] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-18b591d2] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-18b591d2] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-18b591d2] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-18b591d2] {\n\t\tcolor: #67ed72;\n}\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-a2d5b09c";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
+script.__scopeId = "data-v-18b591d2";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         componentName = _ref2[0],

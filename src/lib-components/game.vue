@@ -134,7 +134,7 @@
 			},
 			pathMediaDir: {
 				type: String,
-				default: "./media",
+				default: "http://your-website/media",
 			},
 			width: {
 				type: String,
@@ -1228,14 +1228,14 @@
 						if (!this.editorUsage) {
 							let data = {};
 
-							let name = this.indexMedia.find(
-								(el) => el.Id == this.illustration.ID
-							).name;
+							let name = this.indexMedia.find((el2) => el2.Id == el.img.ID).name;
 
 							let imgPathPart = this.pathMediaDir + "/" + name;
 
+							let imgSize = this.gameData.style["img-sizes"];
+
 							/* list of srcset rules */
-							this["style"]["img-sizes"].forEach((elImg, index) => {
+							imgSize.forEach((elImg, index) => {
 								data.srcset =
 									data.srcset +
 									imgPathPart +
@@ -1246,11 +1246,11 @@
 									".jpg " +
 									elImg.width +
 									"w";
-								if (index + 1 != this["style"]["img-sizes"].length) {
+								if (index + 1 != imgSize.length) {
 									data.srcset = data.srcset + ",";
 								}
 
-								if (index + 1 != this["style"]["img-sizes"].length) {
+								if (index + 1 != imgSize.length) {
 									data.sizes =
 										data.sizes +
 										"( max-width:" +
@@ -1265,9 +1265,9 @@
 								data.src =
 									imgPathPart +
 									"-" +
-									style["img-sizes"][style["img-sizes"].length - 1]["width"] +
+									imgSize[imgSize.length - 1]["width"] +
 									"x" +
-									style["img-sizes"][style["img-sizes"].length - 1]["height"] +
+									imgSize[imgSize.length - 1]["height"] +
 									".jpg";
 							});
 

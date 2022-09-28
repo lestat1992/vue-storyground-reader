@@ -280,7 +280,7 @@ var story = {
 		}
 	]
 };
-var style$1 = {
+var style = {
 	"font-family": "Montserrat",
 	"font-weight": [
 		100,
@@ -340,7 +340,7 @@ var defaultStory = {
 	items: items,
 	stats: stats,
 	story: story,
-	style: style$1
+	style: style
 };
 
 var defaultIndexMedia = [
@@ -1430,6 +1430,8 @@ styleInject(css_248z$4);
 script$3.render = render$3;
 script$3.__scopeId = "data-v-76b41285";
 
+let img = require("../../.././dev/cose/logo.png");
+
 let PreCachedImg = {
   name: "PreCachedImg",
   props: {
@@ -1440,7 +1442,8 @@ let PreCachedImg = {
 
   data() {
     return {
-      imgsLoaded: 0
+      imgsLoaded: 0,
+      testImg: img
     };
   },
 
@@ -1473,19 +1476,22 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       src: el,
       onLoad: _cache[0] || (_cache[0] = $event => _ctx.imgsLoaded++)
     }, null, 40, _hoisted_3$2);
-  }), 128))])) : (openBlock(), createElementBlock("div", _hoisted_4$1, [createElementVNode("img", {
-    src: _ctx.el.src,
-    srcset: _ctx.el.srcset,
-    sizes: _ctx.el.sizes,
-    onLoad: _cache[1] || (_cache[1] = $event => _ctx.imgsLoaded++)
-  }, null, 40, _hoisted_5$1)]))]);
+  }), 128))])) : (openBlock(), createElementBlock("div", _hoisted_4$1, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.preCachedImgList, (el, index) => {
+    return openBlock(), createElementBlock("img", {
+      key: index,
+      src: el.src,
+      srcset: el.srcset,
+      sizes: el.sizes,
+      onLoad: _cache[1] || (_cache[1] = $event => _ctx.imgsLoaded++)
+    }, null, 40, _hoisted_5$1);
+  }), 128))]))]);
 }
 
-var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-daa75442] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
+var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-57011f9e] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
 styleInject(css_248z$3);
 
 script$2.render = render$2;
-script$2.__scopeId = "data-v-daa75442";
+script$2.__scopeId = "data-v-57011f9e";
 
 let spinnerBox = {
   name: "Spinner"
@@ -1803,7 +1809,7 @@ var script = /*#__PURE__*/defineComponent({
     },
     pathMediaDir: {
       type: String,
-      default: "./media"
+      default: "http://your-website/media"
     },
     width: {
       type: String,
@@ -2718,18 +2724,19 @@ var script = /*#__PURE__*/defineComponent({
         if (el.img) {
           if (!this.editorUsage) {
             let data = {};
-            let name = this.indexMedia.find(el => el.Id == this.illustration.ID).name;
+            let name = this.indexMedia.find(el2 => el2.Id == el.img.ID).name;
             let imgPathPart = this.pathMediaDir + "/" + name;
+            let imgSize = this.gameData.style["img-sizes"];
             /* list of srcset rules */
 
-            this["style"]["img-sizes"].forEach((elImg, index) => {
+            imgSize.forEach((elImg, index) => {
               data.srcset = data.srcset + imgPathPart + "-" + elImg.width + "x" + elImg.height + ".jpg " + elImg.width + "w";
 
-              if (index + 1 != this["style"]["img-sizes"].length) {
+              if (index + 1 != imgSize.length) {
                 data.srcset = data.srcset + ",";
               }
 
-              if (index + 1 != this["style"]["img-sizes"].length) {
+              if (index + 1 != imgSize.length) {
                 data.sizes = data.sizes + "( max-width:" + elImg.width + "px ) " + elImg.width + "px, ";
               } else {
                 data.sizes = data.sizes + elImg.width + "px";
@@ -2737,7 +2744,7 @@ var script = /*#__PURE__*/defineComponent({
               /* fallback src */
 
 
-              data.src = imgPathPart + "-" + style["img-sizes"][style["img-sizes"].length - 1]["width"] + "x" + style["img-sizes"][style["img-sizes"].length - 1]["height"] + ".jpg";
+              data.src = imgPathPart + "-" + imgSize[imgSize.length - 1]["width"] + "x" + imgSize[imgSize.length - 1]["height"] + ".jpg";
             });
             this.preCachedImgList.push(data);
           } else {
@@ -2829,11 +2836,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n";
 styleInject(css_248z$1);
 
-var css_248z = "\n.sg1-game-grid[data-v-a2d5b09c] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-a2d5b09c] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-a2d5b09c] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-a2d5b09c] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-a2d5b09c] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-a2d5b09c] {\n\t\tcolor: #67ed72;\n}\n";
+var css_248z = "\n.sg1-game-grid[data-v-18b591d2] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-18b591d2] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-18b591d2] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-18b591d2] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-18b591d2] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-18b591d2] {\n\t\tcolor: #67ed72;\n}\n";
 styleInject(css_248z);
 
 script.render = render;
-script.__scopeId = "data-v-a2d5b09c";
+script.__scopeId = "data-v-18b591d2";
 
 /* eslint-disable import/prefer-default-export */
 

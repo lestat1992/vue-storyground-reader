@@ -1,6 +1,7 @@
 <template>
 	<div class="sg1-pre-cached-img-wrapper">
 		<div v-if="editorUsage">
+
 			<img
 				v-for="(el,index) in preCachedImgList"
 				:key="index"
@@ -11,16 +12,28 @@
 		</div>
 		<div v-else>
 			<img
+				v-for="(el,index) in preCachedImgList"
+				:key="index"
 				:src="el.src"
 				:srcset="el.srcset"
 				:sizes="el.sizes"
 				@load="imgsLoaded++"
 			/>
+			<!--
+			<img
+				:src="el.src"
+				:srcset="el.srcset"
+				:sizes="el.sizes"
+				@load="imgsLoaded++"
+			/>
+      -->
 		</div>
 	</div>
 
 </template>
 <script>
+	let img = require("../../.././dev/cose/logo.png");
+
 	let PreCachedImg = {
 		name: "PreCachedImg",
 		props: {
@@ -31,6 +44,7 @@
 		data() {
 			return {
 				imgsLoaded: 0,
+				testImg: img,
 			};
 		},
 		watch: {
