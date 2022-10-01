@@ -19,21 +19,11 @@
 				:sizes="el.sizes"
 				@load="imgsLoaded++"
 			/>
-			<!--
-			<img
-				:src="el.src"
-				:srcset="el.srcset"
-				:sizes="el.sizes"
-				@load="imgsLoaded++"
-			/>
-      -->
 		</div>
 	</div>
 
 </template>
 <script>
-	let img = require("../../.././dev/cose/logo.png");
-
 	let PreCachedImg = {
 		name: "PreCachedImg",
 		props: {
@@ -44,7 +34,6 @@
 		data() {
 			return {
 				imgsLoaded: 0,
-				testImg: img,
 			};
 		},
 		watch: {

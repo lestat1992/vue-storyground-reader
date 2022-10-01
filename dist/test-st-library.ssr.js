@@ -1198,9 +1198,7 @@ var script$3 = boxText;function render$3(_ctx, _cache, $props, $setup, $data, $o
   }, null, 8, ["lang", "current-tabs", "stylesObj", "onEmitReedBeams2", "onGameIntentLoad3"])) : vue.createCommentVNode("", true)], 4);
 }var css_248z$4 = "\n.sg1-wrapper-box-text[data-v-76b41285] {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: relative;\n\t\tflex-grow: 1;\n\t\theight: auto;\n}\n";
 styleInject(css_248z$4);script$3.render = render$3;
-script$3.__scopeId = "data-v-76b41285";var img = require("../../.././dev/cose/logo.png");
-
-var PreCachedImg = {
+script$3.__scopeId = "data-v-76b41285";var PreCachedImg = {
   name: "PreCachedImg",
   props: {
     preCachedImgList: {},
@@ -1209,8 +1207,7 @@ var PreCachedImg = {
   },
   data: function data() {
     return {
-      imgsLoaded: 0,
-      testImg: img
+      imgsLoaded: 0
     };
   },
   watch: {
@@ -1253,9 +1250,9 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       })
     }, null, 40, _hoisted_5$1);
   }), 128))]))]);
-}var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-57011f9e] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
+}var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-50ed9ac2] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
 styleInject(css_248z$3);script$2.render = render$2;
-script$2.__scopeId = "data-v-57011f9e";var spinnerBox = {
+script$2.__scopeId = "data-v-50ed9ac2";var spinnerBox = {
   name: "Spinner"
 };
 var script$1 = spinnerBox;var _withScopeId = function _withScopeId(n) {

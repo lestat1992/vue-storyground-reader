@@ -1430,8 +1430,6 @@ styleInject(css_248z$4);
 script$3.render = render$3;
 script$3.__scopeId = "data-v-76b41285";
 
-let img = require("../../.././dev/cose/logo.png");
-
 let PreCachedImg = {
   name: "PreCachedImg",
   props: {
@@ -1442,8 +1440,7 @@ let PreCachedImg = {
 
   data() {
     return {
-      imgsLoaded: 0,
-      testImg: img
+      imgsLoaded: 0
     };
   },
 
@@ -1487,11 +1484,11 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128))]))]);
 }
 
-var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-57011f9e] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
+var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-50ed9ac2] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
 styleInject(css_248z$3);
 
 script$2.render = render$2;
-script$2.__scopeId = "data-v-57011f9e";
+script$2.__scopeId = "data-v-50ed9ac2";
 
 let spinnerBox = {
   name: "Spinner"
