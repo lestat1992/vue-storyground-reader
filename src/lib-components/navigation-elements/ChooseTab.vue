@@ -61,8 +61,7 @@
       <span v-html="text"></span>
     </div>
   </div>
-  <div v-else>
-    <h1>PIERLUIGI</h1>
+  <div v-else class="sg1-chose-item">
     <span v-html="text"></span>
   </div>
 </template>
