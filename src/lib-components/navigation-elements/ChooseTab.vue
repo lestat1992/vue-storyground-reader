@@ -62,6 +62,7 @@
     </div>
   </div>
   <div v-else class="sg1-chose-item">
+    <div class="list-item"></div>
     <span v-html="text"></span>
   </div>
 </template>

@@ -20,10 +20,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
-
-</style>
-
+<style></style>
 
 <template>
   <div id="app">

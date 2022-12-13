@@ -2,6 +2,7 @@
   <div
     v-if="stylesObj || useTheme == false"
     :style="stylesObj.gameGrid"
+    :class="{ 'sg1-no-theme': !stylesObj }"
     class="sg1-game-grid"
   >
     <boxillustration
@@ -144,7 +145,7 @@ export default /*#__PURE__*/ defineComponent({
     },
     useTheme: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   data: function () {
@@ -1309,9 +1310,59 @@ export default /*#__PURE__*/ defineComponent({
 body {
   margin: 0;
 }
+.sg1-no-theme :where(.sg1-label-description) {
+  margin-bottom: 30px;
+}
+
+.sg1-no-theme :where(.sg1-wrapper-box-text) {
+  grid-column: 1/3;
+  padding: 20px;
+  background-color: whitesmoke;
+}
+
+.sg1-no-theme :where(.sg1-tab-results) {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.sg1-no-theme:is(.sg1-game-grid) {
+  max-width: calc(100% - 50px);
+  max-width: 992px;
+  aspect-ratio: 3/2;
+  max-height: calc(100vh - 50px);
+  margin-top: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-rows: 70% 30%;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.sg1-no-theme :where(.sg1-label-multiple-chose) {
+  max-width: calc(100% - 25px);
+  margin-left: 25px;
+}
+
+.sg1-no-theme :where(.list-item):before {
+  content: "◆";
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.sg1-no-theme :where(.sg1-box-illustration) {
+  grid-column: 1/3;
+  grid-row: 1/1;
+}
+
+.sg1-no-theme :where(img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 </style>
 <style scoped>
-.sg1-game-grid {
+.sg1-game-grid:not(.sg1-no-theme) {
   display: grid;
   height: 100%;
   width: 100%;
