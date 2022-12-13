@@ -85,7 +85,7 @@ let boxIllustration = {
 export default boxIllustration;
 </script>
 <style>
-.sg1-game-gridnot: (.sg1-no-theme) .sg1-box-illustration {
+.sg1-game-gridnot:not(.sg1-no-theme) .sg1-box-illustration {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
