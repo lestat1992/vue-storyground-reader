@@ -20,8 +20,6 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
-
 <template>
   <div id="app">
     <game

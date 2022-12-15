@@ -2,11 +2,19 @@
   <div
     v-if="stylesObj || useTheme == false"
     :style="stylesObj.gameGrid"
-    :class="{ 'sg1-no-theme': !stylesObj }"
+    :class="{
+      'sg1-no-theme': !stylesObj,
+      'sg1-no-illustration': disableIlustration == false || !illustration,
+    }"
     class="sg1-game-grid"
   >
     <boxillustration
-      v-if="disableIlustration == false && illustration && initialized"
+      v-if="
+        disableIlustration == false &&
+        illustration &&
+        initialized &&
+        !logMessage
+      "
       :editorUsage="editorUsage"
       :illustration="illustration"
       :indexMedia="indexMedia"
@@ -17,7 +25,10 @@
 
     <boxText
       v-if="
-        initialized && narrationBox !== false && narrationBox !== 'node-bad-mix'
+        initialized &&
+        narrationBox !== false &&
+        narrationBox !== 'node-bad-mix' &&
+        !logMessage
       "
       :narrationBox="narrationBox"
       :lang="lang"
@@ -28,12 +39,7 @@
       @gameIntentLoad="gameIntentLoad"
     />
 
-    <div
-      v-if="
-        narrationBox == 'false' || narrationBox == 'node-bad-mix' || urlToShow
-      "
-      class="sg1-log-app"
-    >
+    <div v-if="logMessage" class="sg1-log-app">
       <div
         v-if="narrationBox == false && onRunError.length == 0"
         class="sg1-game-error sg1-e-1"
@@ -369,6 +375,18 @@ export default /*#__PURE__*/ defineComponent({
         } else {
           return false;
         }
+      } else {
+        return false;
+      }
+    },
+
+    logMessage: function () {
+      if (
+        this.narrationBox == "false" ||
+        this.narrationBox == "node-bad-mix" ||
+        this.urlToShow
+      ) {
+        return true;
       } else {
         return false;
       }
@@ -1323,6 +1341,7 @@ body {
 .sg1-no-theme :where(.sg1-tab-results) {
   font-family: monospace;
   font-size: 16px;
+  color: grey;
 }
 
 .sg1-no-theme:is(.sg1-game-grid) {
@@ -1338,6 +1357,10 @@ body {
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
 }
 
+.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {
+  grid-template-rows: 100% 0;
+}
+
 .sg1-no-theme :where(.sg1-label-multiple-chose) {
   max-width: calc(100% - 25px);
   margin-left: 25px;
@@ -1347,6 +1370,27 @@ body {
   content: "◆";
   display: inline-block;
   margin-right: 10px;
+}
+
+.sg1-no-theme :where(.sg1-single-beem-icon) {
+  cursor: pointer;
+  font-size: 12px;
+  width: 2em;
+  height: 2em;
+  position: relative;
+}
+
+.sg1-no-theme :where(.sg1-single-beem-icon):before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1em 1em 0 1em;
+  border-color: grey transparent transparent transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .sg1-no-theme :where(.sg1-box-illustration) {
