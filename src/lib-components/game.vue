@@ -647,7 +647,7 @@ export default /*#__PURE__*/ defineComponent({
       if (index == 100) {
         stop = true;
       }
-
+      console.log("type: " + currentTab.type + "------------------------");
       switch (currentTab.type) {
         case "start":
           break;
@@ -738,11 +738,29 @@ export default /*#__PURE__*/ defineComponent({
           break;
 
         case "set stat":
-          let itemExist3 = this.gameData.stats.find(
-            (el) => el.id == currentTab.idStat
-          );
-          if (itemExist3) {
-            if (itemExist3.length == 0 || currentTab.operator == false) {
+          if (isNext) {
+            //NUOVO ERRORE
+          } else {
+            let itemExist3 = this.gameData.stats.find(
+              (el) => el.id == currentTab.idStat
+            );
+            if (itemExist3) {
+              if (itemExist3.length == 0 || currentTab.operator == false) {
+                let error =
+                  this.strings.expressionIncoplete[this.langEditor] +
+                  " ( ID: " +
+                  currentTab.id +
+                  " )";
+                this.onRunError.push(error);
+                stop = true;
+              } else {
+                this.modifyStat(
+                  currentTab.idStat,
+                  currentTab.operator,
+                  currentTab.ammount
+                );
+              }
+            } else {
               let error =
                 this.strings.expressionIncoplete[this.langEditor] +
                 " ( ID: " +
@@ -750,31 +768,35 @@ export default /*#__PURE__*/ defineComponent({
                 " )";
               this.onRunError.push(error);
               stop = true;
-            } else {
-              this.modifyStat(
-                currentTab.idStat,
-                currentTab.operator,
-                currentTab.ammount
-              );
             }
-          } else {
-            let error =
-              this.strings.expressionIncoplete[this.langEditor] +
-              " ( ID: " +
-              currentTab.id +
-              " )";
-            this.onRunError.push(error);
-            stop = true;
           }
           break;
 
         case "set object":
-          let itemExist2 = this.gameData.items.find(
-            (el) => el.id == currentTab.idObject
-          );
+          if (isNext) {
+            //NUOVO ERRORE
+          } else {
+            let itemExist2 = this.gameData.items.find(
+              (el) => el.id == currentTab.idObject
+            );
 
-          if (itemExist2) {
-            if (itemExist2.length == 0 || currentTab.operator == false) {
+            if (itemExist2) {
+              if (itemExist2.length == 0 || currentTab.operator == false) {
+                let error =
+                  this.strings.expressionIncoplete[this.langEditor] +
+                  " ( ID: " +
+                  currentTab.id +
+                  " )";
+                this.onRunError.push(error);
+                stop = true;
+              } else {
+                this.modifyItem(
+                  currentTab.idObject,
+                  currentTab.operator,
+                  currentTab.ammount
+                );
+              }
+            } else {
               let error =
                 this.strings.expressionIncoplete[this.langEditor] +
                 " ( ID: " +
@@ -782,21 +804,7 @@ export default /*#__PURE__*/ defineComponent({
                 " )";
               this.onRunError.push(error);
               stop = true;
-            } else {
-              this.modifyItem(
-                currentTab.idObject,
-                currentTab.operator,
-                currentTab.ammount
-              );
             }
-          } else {
-            let error =
-              this.strings.expressionIncoplete[this.langEditor] +
-              " ( ID: " +
-              currentTab.id +
-              " )";
-            this.onRunError.push(error);
-            stop = true;
           }
           break;
 
@@ -908,7 +916,20 @@ export default /*#__PURE__*/ defineComponent({
           break;
 
         case "image":
-          this.setImage(currentTab.img);
+          if (isNext) {
+            //NUOVO ERRORE
+          } else {
+            this.setImage(currentTab.img);
+          }
+          break;
+
+        case "emit_function":
+          if (isNext) {
+            //NUOVO ERRORE
+            console.log("cosa pensi di fare buzzurro !!!!");
+          } else {
+            console.log("Passing HERE!!");
+          }
           break;
       }
 
@@ -1223,7 +1244,6 @@ export default /*#__PURE__*/ defineComponent({
         this.stepToInit.font = true;
       }
 
-      console.log("HI1");
       console.log(this.preCachedImgList);
 
       this.setPreCacheImgList();
