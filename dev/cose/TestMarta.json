@@ -1,1 +1,130 @@
-{"postInfo":{"title":"Test Marta","lenghtDescriptionsNode":400,"lenghtChoseNode":40,"selectedWorkSpace":1,"langList":["it","en"],"templateSelected":"White"},"erorList":{"noStart":false},"MaxId":45,"levels":[],"achievements":[],"items":[],"stats":[{"id":17,"name":{"it":"dolcetti","en":""},"max":100,"slug":"dolcetti","active":false},{"id":18,"name":{"it":"Variable2","en":""},"max":100,"slug":"Variable2","active":false}],"story":{"tabs":[{"id":1,"humanName":{"default":"start"},"level":0,"name":"start","type":"start","gameStart":true,"levelStart":false,"x":607,"y":68.8125},{"id":2,"humanName":{"default":"text","textImage":"text & image"},"level":0,"name":"descriptions0","text":{"it":"Questa è una storia segnaposto, sei interessato a proseguire?","en":"This is a placeholder story"},"type":"descriptions","img":{"ID":1022,"srcFull":["http://storygroundeditor.com/wp-content/uploads/2022/08/be79196b68ad2ffd310b6de4e8232a80_Quarto-1.jpeg",1251,939,false],"srcThumbnail":["http://storygroundeditor.com/wp-content/uploads/2022/08/be79196b68ad2ffd310b6de4e8232a80_Quarto-1-150x150.jpeg",150,150,true],"post_name":"be79196b68ad2ffd310b6de4e8232a80_quarto-1"},"save":false,"textRevision":false,"x":576,"y":189.8125},{"id":4,"humanName":{"default":"choice"},"level":0,"name":"chose0","text":{"it":"Sì","en":"yes"},"type":"chose","textRevision":false,"x":480,"y":531.8125},{"id":5,"humanName":{"default":"choice"},"level":0,"name":"chose1","text":{"it":"No","en":"no"},"type":"chose","textRevision":false,"x":744,"y":531.7999992370605},{"id":10,"humanName":{"default":"text","textImage":"text & image"},"level":0,"name":"descriptions1","text":{"it":"Hai abbastanza dolcetti per Halloween?","en":"There isn't much more to say, as I told you...\r"},"type":"descriptions","img":false,"save":false,"textRevision":false,"x":462,"y":681.8000183105469},{"id":19,"humanName":{"default":"set variable"},"level":0,"type":"set stat","idStat":17,"operator":"=","ammount":0,"x":433,"y":834.7999877929688,"name":"set stat0"},{"id":23,"humanName":{"default":"choice"},"level":0,"name":"chose2","text":{"it":"In ogni caso, me li mangerei tutti io.","en":""},"type":"chose","textRevision":false,"x":273,"y":959.7999877929688},{"id":25,"humanName":{"default":"if stat"},"level":0,"type":"if stat","idStat":17,"operator":">=","ammount":10,"trueId":[27],"falseId":[28],"x":560,"y":961.7999877929688,"name":"if stat0"},{"id":27,"humanName":{"default":"choice"},"level":0,"name":"chose3","text":{"it":"Sì certo, sto aspettando il campanello.","en":""},"type":"chose","textRevision":false,"x":455,"y":1107.7999877929688},{"id":28,"humanName":{"default":"choice"},"level":0,"name":"chose4","text":{"it":"Io odio Halloween e i bambini molesti.","en":""},"type":"chose","textRevision":false,"x":696,"y":1112.7999877929688},{"id":35,"humanName":{"default":"null"},"level":0,"type":"null","x":1184.2000122070312,"y":333.79999923706055,"name":"null0"},{"id":36,"humanName":{"default":"text","textImage":"text & image"},"level":0,"name":"descriptions2","text":{"it":"Risposta sbagliata","en":""},"type":"descriptions","img":false,"textRevision":false,"x":788.2000122070312,"y":685.8000183105469},{"id":40,"humanName":{"default":"end"},"level":0,"name":"end1","type":"end","text":{"it":"Quanta dolcezza.","en":""},"img":false,"textRevision":false,"openNewPage":false,"url":{"it":"","en":""},"x":602.5999984741211,"y":1304.7999877929688},{"id":42,"humanName":{"default":"end"},"level":0,"name":"end1","type":"end","text":{"it":"Che brutta persona.","en":""},"img":false,"textRevision":false,"openNewPage":false,"url":{"it":"","en":""},"x":257.5999984741211,"y":1295.7999877929688}],"beams":[{"id":3,"from":1,"to":2},{"id":8,"from":2,"to":4},{"id":9,"from":2,"to":5},{"id":14,"from":4,"to":10},{"id":20,"from":10,"to":19},{"id":24,"from":19,"to":23},{"id":26,"from":19,"to":25},{"id":29,"from":25,"to":27,"use":"if"},{"id":30,"from":25,"to":28,"use":"else"},{"id":37,"from":5,"to":36},{"id":38,"from":36,"to":35},{"id":39,"from":35,"to":2},{"id":41,"from":27,"to":40},{"id":43,"from":23,"to":42},{"id":44,"from":28,"to":42}]},"style":{"font-family":"Special Elite","font-weight":[400],"font-weight-selected":400,"img-sizes":[{"width":800,"height":600},{"width":1200,"height":992},{"width":1920,"height":1080}],"bg-color":"#0c0c0c","bg-type":"minimal2","color":"whitesmoke","icon-single-arrow":{"type":"sketch","size":"75px","color":"whitesmoke"},"icon-multiple-arrow":{"type":"sketch","size":"16px","color":"whitesmoke"},"desktop":{"font-size-1":"20px","margin":"50px","box-text-padding":"25px","layout-type":"a6f8"},"mobile":{"font-size-1":"18px","margin":"0","box-text-padding":"5vw","layout-type":"d1f8"}}}
+{
+  "postInfo": {
+    "title": "test per nuovo nodo",
+    "lenghtDescriptionsNode": 400,
+    "lenghtChoseNode": 100,
+    "selectedWorkSpace": 1,
+    "privateLink": true,
+    "langList": ["en"],
+    "templateSelected": "White"
+  },
+  "erorList": { "noStart": false },
+  "MaxId": 12,
+  "levels": [],
+  "achievements": [],
+  "items": [],
+  "stats": [
+    {
+      "id": 10,
+      "name": { "it": "Variable1" },
+      "max": 100,
+      "slug": "Variable1",
+      "active": false
+    },
+    {
+      "id": 11,
+      "name": { "it": "Variable2" },
+      "max": 100,
+      "slug": "Variable2",
+      "active": false
+    },
+    {
+      "id": 12,
+      "name": { "it": "Variable3" },
+      "max": 100,
+      "slug": "Variable3",
+      "active": false
+    }
+  ],
+  "story": {
+    "tabs": [
+      {
+        "id": 1,
+        "humanName": { "default": "start" },
+        "level": 0,
+        "name": "start0",
+        "type": "start",
+        "gameStart": true,
+        "levelStart": true,
+        "x": 200,
+        "y": 200
+      },
+      {
+        "id": 3,
+        "humanName": { "default": "text", "textImage": "text & image" },
+        "level": 0,
+        "name": "descriptions1",
+        "text": { "it": "", "en": "testo 1" },
+        "type": "descriptions",
+        "img": "",
+        "textRevision": false,
+        "x": 263,
+        "y": 330.8000030517578
+      },
+      {
+        "id": 6,
+        "humanName": { "default": "text", "textImage": "text & image" },
+        "level": 0,
+        "name": "descriptions1 copy",
+        "text": { "it": "", "en": "testo 2" },
+        "type": "descriptions",
+        "img": "",
+        "textRevision": false,
+        "x": 258,
+        "y": 553
+      },
+      {
+        "id": 7,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "emit_function",
+        "idStat": 10,
+        "operator": "=",
+        "ammount": 1,
+        "x": 262,
+        "y": 449.79998779296875,
+        "name": "set stat0"
+      }
+    ],
+    "beams": [
+      { "id": 5, "from": 1, "to": 3 },
+      { "id": 8, "from": 3, "to": 7 },
+      { "id": 9, "from": 7, "to": 6 }
+    ]
+  },
+  "style": {
+    "font-family": "Montserrat",
+    "font-weight": [100, 200, 300, 400, 500, 600],
+    "font-weight-selected": 500,
+    "img-sizes": [
+      { "width": 800, "height": 600 },
+      { "width": 1200, "height": 992 },
+      { "width": 1920, "height": 1080 }
+    ],
+    "bg-color": "#ffffff",
+    "bg-type": "minimal2",
+    "color": "#282828",
+    "icon-single-arrow": {
+      "type": "minimal2",
+      "size": "35px",
+      "color": "#282828"
+    },
+    "icon-multiple-arrow": {
+      "type": "minimal1",
+      "size": "12px",
+      "color": "#282828"
+    },
+    "desktop": {
+      "font-size-1": "20px",
+      "margin": "50px",
+      "box-text-padding": "25px",
+      "layout-type": "a6f8"
+    },
+    "mobile": {
+      "font-size-1": "18px",
+      "margin": "100px",
+      "box-text-padding": "5vw",
+      "layout-type": "d1f8"
+    }
+  }
+}

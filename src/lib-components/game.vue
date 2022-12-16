@@ -153,6 +153,10 @@ export default /*#__PURE__*/ defineComponent({
       type: Boolean,
       default: true,
     },
+    functionToEmit: {
+      type: Object,
+      default: false,
+    },
   },
   data: function () {
     return {
@@ -172,8 +176,11 @@ export default /*#__PURE__*/ defineComponent({
       nextTabsChose: [],
 
       illustration: false,
+
       onRunError: [],
       listBadMixId: "",
+      isBadNodeMixForCose: [],
+
       gameLoaded: false,
       device: false,
 
@@ -478,6 +485,7 @@ export default /*#__PURE__*/ defineComponent({
             }
           });
 
+          this.isBadNodeMixForCose = [];
           let testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
 
           if (testNextTabsChose.length == 1) {
@@ -492,6 +500,12 @@ export default /*#__PURE__*/ defineComponent({
             testNextTabsChose.forEach((el) => {
               if (el.type != "chose") {
                 error = true;
+              } else {
+                if (this.isBadNodeMixForCose.length > 0) {
+                  let error =
+                    this.strings.nodeBadMix[this.langEditor] + " ( ID: " + " )";
+                  this.onRunError.push(error);
+                }
               }
             });
           }
@@ -739,7 +753,7 @@ export default /*#__PURE__*/ defineComponent({
 
         case "set stat":
           if (isNext) {
-            //NUOVO ERRORE
+            this.isBadNodeMixForCose.push = currentTab.id;
           } else {
             let itemExist3 = this.gameData.stats.find(
               (el) => el.id == currentTab.idStat
@@ -774,7 +788,7 @@ export default /*#__PURE__*/ defineComponent({
 
         case "set object":
           if (isNext) {
-            //NUOVO ERRORE
+            this.isBadNodeMixForCose.push = currentTab.id;
           } else {
             let itemExist2 = this.gameData.items.find(
               (el) => el.id == currentTab.idObject
@@ -917,7 +931,7 @@ export default /*#__PURE__*/ defineComponent({
 
         case "image":
           if (isNext) {
-            //NUOVO ERRORE
+            this.isBadNodeMixForCose.push = currentTab.id;
           } else {
             this.setImage(currentTab.img);
           }
@@ -925,8 +939,7 @@ export default /*#__PURE__*/ defineComponent({
 
         case "emit_function":
           if (isNext) {
-            //NUOVO ERRORE
-            console.log("cosa pensi di fare buzzurro !!!!");
+            this.isBadNodeMixForCose.push = currentTab.id;
           } else {
             console.log("Passing HERE!!");
           }
