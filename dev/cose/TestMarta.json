@@ -78,12 +78,7 @@
         "humanName": { "default": "set variable" },
         "level": 0,
         "type": "emit_function",
-        "idStat": 10,
-        "operator": "=",
-        "ammount": 1,
-        "x": 262,
-        "y": 449.79998779296875,
-        "name": "set stat0"
+        "name": "shot"
       }
     ],
     "beams": [

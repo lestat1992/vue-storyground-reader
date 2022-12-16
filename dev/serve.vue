@@ -15,12 +15,12 @@ export default defineComponent({
     return {
       testMarta: testMarta,
       defaultIndexMedia: defaultIndexMedia,
-      params: {
-        shot: () => {
-          console.log("BANG!!!");
-        },
-      },
     };
+  },
+  methods: {
+    params() {
+      console.log("CIAOOOOONE!");
+    },
   },
 });
 </script>
@@ -33,7 +33,7 @@ export default defineComponent({
       :indexMedia="defaultIndexMedia"
       :editorUsage="true"
       :useTheme="false"
-      :functionToEmit="params"
+      @functionToEmit="params"
     />
   </div>
 </template>

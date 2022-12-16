@@ -153,10 +153,7 @@ export default /*#__PURE__*/ defineComponent({
       type: Boolean,
       default: true,
     },
-    functionToEmit: {
-      type: Object,
-      default: false,
-    },
+    functionToEmit: {},
   },
   data: function () {
     return {
@@ -941,6 +938,10 @@ export default /*#__PURE__*/ defineComponent({
           if (isNext) {
             this.isBadNodeMixForCose.push = currentTab.id;
           } else {
+            //NUOVA FUNZIONALITà
+            //this.$emit("reedbeams", id);
+            this.$emit("functionToEmit");
+
             console.log("Passing HERE!!");
           }
           break;
