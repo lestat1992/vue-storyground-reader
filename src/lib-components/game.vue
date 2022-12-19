@@ -153,6 +153,10 @@ export default /*#__PURE__*/ defineComponent({
       type: Boolean,
       default: true,
     },
+    canEmit: {
+      type: Boolean,
+      default: true,
+    },
     functionToEmit: {},
   },
   data: function () {
@@ -497,12 +501,6 @@ export default /*#__PURE__*/ defineComponent({
             testNextTabsChose.forEach((el) => {
               if (el.type != "chose") {
                 error = true;
-              } else {
-                if (this.isBadNodeMixForCose.length > 0) {
-                  let error =
-                    this.strings.nodeBadMix[this.langEditor] + " ( ID: " + " )";
-                  this.onRunError.push(error);
-                }
               }
             });
           }
@@ -749,9 +747,7 @@ export default /*#__PURE__*/ defineComponent({
           break;
 
         case "set stat":
-          if (isNext) {
-            this.isBadNodeMixForCose.push = currentTab.id;
-          } else {
+          if (!isNext) {
             let itemExist3 = this.gameData.stats.find(
               (el) => el.id == currentTab.idStat
             );
@@ -784,9 +780,7 @@ export default /*#__PURE__*/ defineComponent({
           break;
 
         case "set object":
-          if (isNext) {
-            this.isBadNodeMixForCose.push = currentTab.id;
-          } else {
+          if (!isNext) {
             let itemExist2 = this.gameData.items.find(
               (el) => el.id == currentTab.idObject
             );
@@ -927,22 +921,21 @@ export default /*#__PURE__*/ defineComponent({
           break;
 
         case "image":
-          if (isNext) {
-            this.isBadNodeMixForCose.push = currentTab.id;
-          } else {
+          if (!isNext) {
             this.setImage(currentTab.img);
           }
           break;
 
         case "emit_function":
-          if (isNext) {
-            this.isBadNodeMixForCose.push = currentTab.id;
-          } else {
+          if (!isNext) {
             //NUOVA FUNZIONALITà
-            //this.$emit("reedbeams", id);
-            this.$emit("functionToEmit");
-
             console.log("Passing HERE!!");
+
+            if (this.canEmit) {
+              this.$emit("functionToEmit", currentTab.objToEmit);
+            } else {
+              this.addNotidication();
+            }
           }
           break;
       }

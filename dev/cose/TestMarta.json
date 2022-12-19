@@ -78,7 +78,11 @@
         "humanName": { "default": "set variable" },
         "level": 0,
         "type": "emit_function",
-        "name": "shot"
+        "name": "shot",
+        "objToEmit": {
+          "parameter1": 1,
+          "parameter2": "ciaone vero"
+        }
       }
     ],
     "beams": [

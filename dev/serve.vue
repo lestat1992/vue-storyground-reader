@@ -18,8 +18,9 @@ export default defineComponent({
     };
   },
   methods: {
-    params() {
+    params(params) {
       console.log("CIAOOOOONE!");
+      //console.log(params);
     },
   },
 });
@@ -33,6 +34,7 @@ export default defineComponent({
       :indexMedia="defaultIndexMedia"
       :editorUsage="true"
       :useTheme="false"
+      :canEmit="false"
       @functionToEmit="params"
     />
   </div>
