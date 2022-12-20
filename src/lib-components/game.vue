@@ -62,6 +62,8 @@
       </div>
     </div>
 
+    <ToastContainer ref="ToastContainerRef"></ToastContainer>
+
     <PreCachedImg
       v-if="preCachedImgList"
       :editorUsage="editorUsage"
@@ -89,6 +91,8 @@ import boxText from "./boxText.vue";
 import PreCachedImg from "./utility/PreCachedImg.vue";
 import Spinner from "./utility/Spinner.vue";
 
+import ToastContainer from "./utility/ToastContainer.vue";
+
 import deepCopy from "./functions/deepCopy.js";
 import getGridLayout from "./functions/getGridLayout.js";
 
@@ -103,6 +107,7 @@ export default /*#__PURE__*/ defineComponent({
     boxText: boxText,
     PreCachedImg: PreCachedImg,
     Spinner: Spinner,
+    ToastContainer: ToastContainer,
   },
   props: {
     editorUsage: {
@@ -934,7 +939,15 @@ export default /*#__PURE__*/ defineComponent({
             if (this.canEmit) {
               this.$emit("functionToEmit", currentTab.objToEmit);
             } else {
-              this.addNotidication();
+              this.$refs.ToastContainerRef.addToast({
+                type: currentTab.type.replaceAll(" ", "_"),
+                title:
+                  currentTab.humanName.default +
+                  ' <span class="sg1-id">ID: ' +
+                  currentTab.id +
+                  "</span>",
+                content: currentTab.objToEmit,
+              });
             }
           }
           break;
