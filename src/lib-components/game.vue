@@ -5,6 +5,7 @@
     :class="{
       'sg1-no-theme': !stylesObj,
       'sg1-no-illustration': disableIlustration == false || !illustration,
+      'sg1-toast-wrapper': showToast,
     }"
     class="sg1-game-grid"
   >
@@ -62,7 +63,7 @@
       </div>
     </div>
 
-    <ToastContainer ref="ToastContainerRef"></ToastContainer>
+    <ToastContainer v-if="showToast" ref="ToastContainerRef"></ToastContainer>
 
     <PreCachedImg
       v-if="preCachedImgList"
@@ -161,6 +162,10 @@ export default /*#__PURE__*/ defineComponent({
     canEmit: {
       type: Boolean,
       default: true,
+    },
+    showToast: {
+      type: Boolean,
+      default: false,
     },
     functionToEmit: {},
   },
@@ -938,7 +943,8 @@ export default /*#__PURE__*/ defineComponent({
 
             if (this.canEmit) {
               this.$emit("functionToEmit", currentTab.objToEmit);
-            } else {
+            }
+            if (this.showToast) {
               this.$refs.ToastContainerRef.addToast({
                 type: currentTab.type.replaceAll(" ", "_"),
                 title:
@@ -948,6 +954,69 @@ export default /*#__PURE__*/ defineComponent({
                   "</span>",
                 content: currentTab.objToEmit,
               });
+
+              /////////////////////////////////////////////////////////////////////
+              setTimeout(() => {
+                this.$refs.ToastContainerRef.addToast({
+                  type: currentTab.type.replaceAll(" ", "_"),
+                  title:
+                    currentTab.humanName.default +
+                    '1 <span class="sg1-id">ID: ' +
+                    currentTab.id +
+                    "</span>",
+                  content: currentTab.objToEmit,
+                });
+              }, 1000);
+
+              setTimeout(() => {
+                this.$refs.ToastContainerRef.addToast({
+                  type: currentTab.type.replaceAll(" ", "_"),
+                  title:
+                    currentTab.humanName.default +
+                    '2 <span class="sg1-id">ID: ' +
+                    currentTab.id +
+                    "</span>",
+                  content: currentTab.objToEmit,
+                });
+              }, 2000);
+
+              setTimeout(() => {
+                this.$refs.ToastContainerRef.addToast({
+                  type: currentTab.type.replaceAll(" ", "_"),
+                  title:
+                    currentTab.humanName.default +
+                    '3 <span class="sg1-id">ID: ' +
+                    currentTab.id +
+                    "</span>",
+                  content: currentTab.objToEmit,
+                });
+              }, 3000);
+
+              setTimeout(() => {
+                this.$refs.ToastContainerRef.addToast({
+                  type: currentTab.type.replaceAll(" ", "_"),
+                  title:
+                    currentTab.humanName.default +
+                    '4 <span class="sg1-id">ID: ' +
+                    currentTab.id +
+                    "</span>",
+                  content: currentTab.objToEmit,
+                });
+              }, 4000);
+
+              setTimeout(() => {
+                this.$refs.ToastContainerRef.addToast({
+                  type: currentTab.type.replaceAll(" ", "_"),
+                  title:
+                    currentTab.humanName.default +
+                    '4 <span class="sg1-id">ID: ' +
+                    currentTab.id +
+                    "</span>",
+                  content: currentTab.objToEmit,
+                });
+              }, 5000);
+
+              ///////////////////////////////////////////////////////////////
             }
           }
           break;
@@ -1443,6 +1512,11 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.sg1-game-grid:is(.sg1-toast-wrapper) {
+  position: relative;
+  overflow: hidden;
 }
 </style>
 <style scoped>

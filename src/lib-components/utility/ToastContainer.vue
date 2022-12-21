@@ -1,10 +1,17 @@
 <template>
   <div v-if="toasts.length" class="sg1-toast-container">
     <div
-      v-for="toast in toasts"
+      v-for="(toast, index) in toasts"
       :key="toast.id"
-      :class="{ 'sg1-active': toast.expanded }"
+      :class="{
+        'sg1-active': toast.expanded,
+        'sg1-toast-faded-1': toasts.length - index > tostToSee,
+        'sg1-toast-faded-2': toasts.length - index > tostToSee + 1,
+        'sg1-toast-faded-3': toasts.length - index > tostToSee + 2,
+        'sg1-toast-faded-4': toasts.length - index > tostToSee + 3,
+      }"
       class="sg1-toast"
+      :cose="toasts.length - index"
     >
       <div class="sg1-head">
         <span class="sg1-title" v-html="toast.title"></span>
@@ -26,8 +33,8 @@ let ToastContainer = {
     return {
       idToSet: 0,
       toasts: [],
-      maxToastsToSee: 5,
-      tostToFade: 3,
+      toastsFiltered: [],
+      tostToSee: 3,
     };
   },
   methods: {
@@ -46,12 +53,12 @@ let ToastContainer = {
       };
 
       this.toasts.push(newToast);
-      this.sortReverse();
     },
 
     removeToast(id) {
-      this.toasts.filter((el) => el.id !== id);
-      this.sortReverse();
+      //AGGIUNGI UNMOUNT !!!!!!!!!!!!!!!!!!!!!!!!!
+
+      this.toasts = this.toasts.filter((el) => el.id !== id);
     },
 
     expandToast(id) {
@@ -63,31 +70,6 @@ let ToastContainer = {
         }
       });
     },
-
-    sortReverse() {
-      //DA FINIRE
-      /**
-       * FAI IL REVERSE PER MOTIVI DI STILE
-       *
-       *
-       */
-      /*
-  const friends = ["Abir", "Ashik", "Alif", "Alfi", "Shafi", "Kafi"];
-const friendsSort = friends.sort();
-const friendsReverse = friendsSort.reverse();
-console.log(friendsReverse);
-//Output: [ 'Shafi', 'Kafi', 'Ashik', 'Alif', 'Alfi', 'Abir' ]
-*/
-    },
-
-    /*
-    emitReedBeams1(id) {
-      this.$emit("reedBeams", id);
-    },
-    gameIntentLoad2() {
-      this.$emit("gameIntentLoad");
-    },
-    */
   },
 };
 
@@ -114,9 +96,13 @@ export default ToastContainer;
 
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: var(--sg1ToastMargin);
   height: 100%;
-  transform: translate(-100%);
+  transform: translate(100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 100;
 }
 .sg1-toast-container * {
   box-sizing: border-box;
@@ -129,6 +115,28 @@ export default ToastContainer;
   transform: translateX(-100%);
   border-radius: 4px;
   background-color: var(--sg1ToastColor1);
+  box-shadow: 0 0 0 1px white;
+  animation-name: sg1-fadein;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  transition: 0.35s opacity;
+  transition-timing-function: ease-out;
+}
+
+@keyframes sg1-fadein {
+  0% {
+    opacity: 0;
+    transform: translate(100%);
+    max-height: 0;
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(-110%);
+    max-height: var(--maxToastHeight);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .sg1-toast .sg1-head {
@@ -159,7 +167,7 @@ export default ToastContainer;
   padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);
   max-height: var(--maxToastHeight);
   transition-timing-function: ease-out;
-  transition: 0.5s max-height, 0.5s padding;
+  transition: 1s max-height, 0.5s padding;
 }
 
 .sg1-toast .sg1-content:before {
@@ -245,5 +253,23 @@ export default ToastContainer;
   border-top: calc(var(--sg1ToastSizeIconLine) * 2) solid var(--sg1ToastColor3);
   border-right: calc(var(--sg1ToastSizeIconLine) * 2) solid
     var(--sg1ToastColor3);
+}
+
+.sg1-toast.sg1-active .sg1-expand:after {
+  transform: rotate(135deg) scale(0.5);
+}
+
+.sg1-toast-faded-1 {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.sg1-toast-faded-2 {
+  opacity: 0.25;
+}
+.sg1-toast-faded-3 {
+  opacity: 0;
+}
+.sg1-toast-faded-4 {
+  opacity: 0;
 }
 </style>

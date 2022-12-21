@@ -35,6 +35,7 @@ export default defineComponent({
       :editorUsage="true"
       :useTheme="false"
       :canEmit="false"
+      :showToast="true"
       @functionToEmit="params"
     />
   </div>
