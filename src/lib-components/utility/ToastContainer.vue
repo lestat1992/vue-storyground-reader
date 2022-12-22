@@ -8,7 +8,7 @@
         'sg1-toast-faded-1': toasts.length - index > tostToSee,
         'sg1-toast-faded-2': toasts.length - index > tostToSee + 1,
         'sg1-toast-faded-3': toasts.length - index > tostToSee + 2,
-        'sg1-toast-faded-4': toasts.length - index > tostToSee + 3,
+        'sg1-toast-fade-out': toast.isUnmountening,
       }"
       class="sg1-toast"
       :cose="toasts.length - index"
@@ -39,8 +39,6 @@ let ToastContainer = {
   },
   methods: {
     addToast(params) {
-      console.log("add TOAST");
-
       this.idToSet = this.idToSet + 1;
 
       let newToast = {
@@ -49,21 +47,21 @@ let ToastContainer = {
         title: params.title,
         expanded: false,
         content: params.content,
-        isUnmounteding: false,
+        isUnmountening: false,
       };
 
       this.toasts.push(newToast);
     },
 
     removeToast(id) {
-      //AGGIUNGI UNMOUNT !!!!!!!!!!!!!!!!!!!!!!!!!
+      this.toasts.find((el) => el.id == id).isUnmountening = true;
 
-      this.toasts = this.toasts.filter((el) => el.id !== id);
+      setTimeout(() => {
+        this.toasts = this.toasts.filter((el) => el.id !== id);
+      }, 1000);
     },
 
     expandToast(id) {
-      console.log("i'm expanding");
-
       this.toasts.forEach((el) => {
         if (el.id == id) {
           el.expanded = !el.expanded;
@@ -269,7 +267,22 @@ export default ToastContainer;
 .sg1-toast-faded-3 {
   opacity: 0;
 }
-.sg1-toast-faded-4 {
-  opacity: 0;
+.sg1-toast.sg1-toast-fade-out {
+  animation-name: sg1-fadeout;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes sg1-fadeout {
+  0% {
+    transform: translateX(-100%);
+    max-height: var(--maxToastHeight);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(100%);
+    max-height: 0;
+  }
 }
 </style>

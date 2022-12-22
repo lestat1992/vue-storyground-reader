@@ -938,9 +938,6 @@ export default /*#__PURE__*/ defineComponent({
 
         case "emit_function":
           if (!isNext) {
-            //NUOVA FUNZIONALITà
-            console.log("Passing HERE!!");
-
             if (this.canEmit) {
               this.$emit("functionToEmit", currentTab.objToEmit);
             }
@@ -954,69 +951,6 @@ export default /*#__PURE__*/ defineComponent({
                   "</span>",
                 content: currentTab.objToEmit,
               });
-
-              /////////////////////////////////////////////////////////////////////
-              setTimeout(() => {
-                this.$refs.ToastContainerRef.addToast({
-                  type: currentTab.type.replaceAll(" ", "_"),
-                  title:
-                    currentTab.humanName.default +
-                    '1 <span class="sg1-id">ID: ' +
-                    currentTab.id +
-                    "</span>",
-                  content: currentTab.objToEmit,
-                });
-              }, 1000);
-
-              setTimeout(() => {
-                this.$refs.ToastContainerRef.addToast({
-                  type: currentTab.type.replaceAll(" ", "_"),
-                  title:
-                    currentTab.humanName.default +
-                    '2 <span class="sg1-id">ID: ' +
-                    currentTab.id +
-                    "</span>",
-                  content: currentTab.objToEmit,
-                });
-              }, 2000);
-
-              setTimeout(() => {
-                this.$refs.ToastContainerRef.addToast({
-                  type: currentTab.type.replaceAll(" ", "_"),
-                  title:
-                    currentTab.humanName.default +
-                    '3 <span class="sg1-id">ID: ' +
-                    currentTab.id +
-                    "</span>",
-                  content: currentTab.objToEmit,
-                });
-              }, 3000);
-
-              setTimeout(() => {
-                this.$refs.ToastContainerRef.addToast({
-                  type: currentTab.type.replaceAll(" ", "_"),
-                  title:
-                    currentTab.humanName.default +
-                    '4 <span class="sg1-id">ID: ' +
-                    currentTab.id +
-                    "</span>",
-                  content: currentTab.objToEmit,
-                });
-              }, 4000);
-
-              setTimeout(() => {
-                this.$refs.ToastContainerRef.addToast({
-                  type: currentTab.type.replaceAll(" ", "_"),
-                  title:
-                    currentTab.humanName.default +
-                    '4 <span class="sg1-id">ID: ' +
-                    currentTab.id +
-                    "</span>",
-                  content: currentTab.objToEmit,
-                });
-              }, 5000);
-
-              ///////////////////////////////////////////////////////////////
             }
           }
           break;

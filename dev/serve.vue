@@ -34,7 +34,7 @@ export default defineComponent({
       :indexMedia="defaultIndexMedia"
       :editorUsage="true"
       :useTheme="false"
-      :canEmit="false"
+      :canEmit="true"
       :showToast="true"
       @functionToEmit="params"
     />
