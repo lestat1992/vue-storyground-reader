@@ -167,7 +167,8 @@ export default /*#__PURE__*/ defineComponent({
       type: Boolean,
       default: false,
     },
-    functionToEmit: {},
+    functionToEmitByTabs: {},
+    functionToEmitByInit: {},
   },
   data: function () {
     return {
@@ -209,6 +210,7 @@ export default /*#__PURE__*/ defineComponent({
       handler() {
         if (this.stepToInit.font && this.stepToInit.img) {
           this.initialized = true;
+          this.$emit("functionToEmitByInit");
         } else {
           this.initialized = false;
         }
@@ -939,7 +941,7 @@ export default /*#__PURE__*/ defineComponent({
         case "emit_function":
           if (!isNext) {
             if (this.canEmit) {
-              this.$emit("functionToEmit", currentTab.objToEmit);
+              this.$emit("functionToEmitByTabs", currentTab.objToEmit);
             }
             if (this.showToast) {
               this.$refs.ToastContainerRef.addToast({
@@ -1363,6 +1365,11 @@ export default /*#__PURE__*/ defineComponent({
       } else {
         this.device = "mobile";
       }
+    },
+
+    /* data retriving */
+    getPlayerValues() {
+      return this.player.stats;
     },
   },
 });

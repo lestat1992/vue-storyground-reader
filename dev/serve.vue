@@ -1,3 +1,20 @@
+<template>
+  <div id="app">
+    <game
+      :gameData="testMarta"
+      :pathMediaDir="'http://192.168.1.9:8000/media'"
+      :indexMedia="defaultIndexMedia"
+      :editorUsage="true"
+      :useTheme="false"
+      :canEmit="true"
+      :showToast="true"
+      @functionToEmitByTabs="EmitByTabs"
+      @functionToEmitByInit="EmitByInit"
+      ref="gameRef"
+    />
+    <div class="box"><a @click="getAllData()">Get data</a><br /></div>
+  </div>
+</template>
 <script>
 import { defineComponent } from "vue";
 // Uncomment import and local "components" registration if library is not registered globally.
@@ -18,25 +35,16 @@ export default defineComponent({
     };
   },
   methods: {
-    params(params) {
+    EmitByTabs(params) {
       console.log("CIAOOOOONE!");
-      //console.log(params);
+      console.log(params);
+    },
+    EmitByInit() {
+      console.log("INIT CIAOOONE!");
+    },
+    getAllData() {
+      let values = this.$refs.gameRef.getPlayerValues();
     },
   },
 });
 </script>
-
-<template>
-  <div id="app">
-    <game
-      :gameData="testMarta"
-      :pathMediaDir="'http://192.168.1.9:8000/media'"
-      :indexMedia="defaultIndexMedia"
-      :editorUsage="true"
-      :useTheme="false"
-      :canEmit="true"
-      :showToast="true"
-      @functionToEmit="params"
-    />
-  </div>
-</template>
