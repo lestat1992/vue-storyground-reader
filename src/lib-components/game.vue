@@ -170,6 +170,7 @@ export default /*#__PURE__*/ defineComponent({
 
     //??????????? QUI
     //PROVO CON EITS OPTION ?????
+    //https://v3-migration.vuejs.org/breaking-changes/emits-option.html
     functionToEmitByTabs: {},
     functionToEmitOnInit: {},
     functionToEmitBeforeNavigation: {},
