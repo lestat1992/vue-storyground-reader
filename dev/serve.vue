@@ -10,8 +10,8 @@
       :showToast="true"
       @functionToEmitByTabs="EmitByTabs"
       @functionToEmitOnInit="EmitOnInit"
-      @functionRoEmitBeforeNavigation="EmitBeforeNavigation"
-      @functionRoEmitAfterNavigation="EmitAfterNavigation"
+      @functionToEmitBeforeNavigation="EmitBeforeNavigation"
+      @functionToEmitAfterNavigation="EmitAfterNavigation"
       ref="gameRef"
     />
     <div class="box"><a @click="getPlayerData()">Get data user </a><br /></div>

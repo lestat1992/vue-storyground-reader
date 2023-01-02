@@ -167,10 +167,13 @@ export default /*#__PURE__*/ defineComponent({
       type: Boolean,
       default: false,
     },
+
+    //??????????? QUI
+    //PROVO CON EITS OPTION ?????
     functionToEmitByTabs: {},
     functionToEmitOnInit: {},
-    functionRoEmitBeforeNavigation: {},
-    functionRoEmiAfterNavigation: {},
+    functionToEmitBeforeNavigation: {},
+    functionToEmiAfterNavigation: {},
   },
   data: function () {
     return {
@@ -229,6 +232,14 @@ export default /*#__PURE__*/ defineComponent({
       if (val == "game end" && this.goToLink) {
         this.initialized = false;
       }
+    },
+    currentTabs: {
+      handler() {
+        console.log(".");
+        this.$emit("functionToEmitBeforeNavigation");
+        this.$emit("functionToEmiAfterNavigation");
+      },
+      deep: true,
     },
   },
   computed: {
@@ -469,6 +480,8 @@ export default /*#__PURE__*/ defineComponent({
 
     /* stabilisco tabs da vedere */
     navigation(newIdArray) {
+      //this.$emit("functionToEmitBeforeNavigation");
+
       let tabs = this.gameData.story.tabs.filter((el) =>
         newIdArray.includes(el.id)
       );
@@ -561,6 +574,7 @@ export default /*#__PURE__*/ defineComponent({
 
         this.currentTabs = tabsToNavigate;
       }
+      console.log("£££££");
     },
 
     //------------------------------------------------------
