@@ -168,7 +168,9 @@ export default /*#__PURE__*/ defineComponent({
       default: false,
     },
     functionToEmitByTabs: {},
-    functionToEmitByInit: {},
+    functionToEmitOnInit: {},
+    functionRoEmitBeforeNavigation: {},
+    functionRoEmiAfterNavigation: {},
   },
   data: function () {
     return {
@@ -210,7 +212,7 @@ export default /*#__PURE__*/ defineComponent({
       handler() {
         if (this.stepToInit.font && this.stepToInit.img) {
           this.initialized = true;
-          this.$emit("functionToEmitByInit");
+          this.$emit("functionToEmitOnInit");
         } else {
           this.initialized = false;
         }
@@ -1367,9 +1369,27 @@ export default /*#__PURE__*/ defineComponent({
       }
     },
 
-    /* data retriving */
+    /* data retriving & other feature----------------------------------------*/
+
     getPlayerValues() {
       return this.player.stats;
+    },
+
+    getTabValues() {
+      return this.currentTabs;
+    },
+
+    setStartPoint(value) {
+      let newStart;
+      if (typeof value === "string") {
+        newStart = this.gameData.story.tabs.find((el) => el.name == value);
+      } else {
+        newStart = this.gameData.story.tabs.find((el) => el.id == value);
+      }
+
+      if (newStart) {
+        this.navigation([newStart.id]);
+      }
     },
   },
 });

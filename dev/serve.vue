@@ -9,10 +9,14 @@
       :canEmit="true"
       :showToast="true"
       @functionToEmitByTabs="EmitByTabs"
-      @functionToEmitByInit="EmitByInit"
+      @functionToEmitOnInit="EmitOnInit"
+      @functionRoEmitBeforeNavigation="EmitBeforeNavigation"
+      @functionRoEmitAfterNavigation="EmitAfterNavigation"
       ref="gameRef"
     />
-    <div class="box"><a @click="getAllData()">Get data</a><br /></div>
+    <div class="box"><a @click="getPlayerData()">Get data user </a><br /></div>
+    <div class="box"><a @click="getTabData()">Get data tab</a><br /></div>
+    <div class="box"><a @click="setStart()">set start</a><br /></div>
   </div>
 </template>
 <script>
@@ -39,11 +43,25 @@ export default defineComponent({
       console.log("CIAOOOOONE!");
       console.log(params);
     },
-    EmitByInit() {
+    EmitOnInit() {
       console.log("INIT CIAOOONE!");
     },
-    getAllData() {
+    EmitBeforeNavigation() {
+      console.log("NAVIGATION1");
+    },
+    EmitAfterNavigation() {
+      console.log("NAVIGATION2");
+    },
+    getPlayerData() {
       let values = this.$refs.gameRef.getPlayerValues();
+      console.log(values);
+    },
+    getTabData() {
+      let values = this.$refs.gameRef.getTabValues();
+      console.log(values);
+    },
+    setStart() {
+      this.$refs.gameRef.setStartPoint(1);
     },
   },
 });
