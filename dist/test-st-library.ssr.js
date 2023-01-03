@@ -152,9 +152,7 @@ var za={latin:"BESbswy","latin-ext":"\u00e7\u00f6\u00fc\u011f\u015f",cyrillic:"\
 Ca=/^(thin|(?:(?:extra|ultra)-?)?light|regular|book|medium|(?:(?:semi|demi|extra|ultra)-?)?bold|black|heavy|l|r|b|[1-9]00)?(n|i|normal|italic)?$/;
 function Da(a){for(var b=a.f.length,c=0;c<b;c++){var d=a.f[c].split(":"),e=d[0].replace(/\+/g," "),f=["n4"];if(2<=d.length){var g;var m=d[1];g=[];if(m)for(var m=m.split(","),h=m.length,l=0;l<h;l++){var k;k=m[l];if(k.match(/^[\w-]+$/)){var n=Ca.exec(k.toLowerCase());if(null==n)k="";else {k=n[2];k=null==k||""==k?"n":Ba[k];n=n[1];if(null==n||""==n)n="4";else var r=Aa[n],n=r?r:isNaN(n)?"4":n.substr(0,1);k=[k,n].join("");}}else k="";k&&g.push(k);}0<g.length&&(f=g);3==d.length&&(d=d[2],g=[],d=d?d.split(","):
 g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d));}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<f.length;d+=1)a.a.push(new G(e,f[d]));}}function Ea(a,b){this.c=a;this.a=b;}var Fa={Arimo:!0,Cousine:!0,Tinos:!0};Ea.prototype.load=function(a){var b=new B,c=this.c,d=new ta(this.a.api,this.a.text),e=this.a.families;va(d,e);var f=new ya(e);Da(f);z(c,wa(d),C(b));E(b,function(){a(f.a,f.c,Fa);});};function Ga(a,b){this.c=a;this.a=b;}Ga.prototype.load=function(a){var b=this.a.id,c=this.c.o;b?A(this.c,(this.a.api||"https://use.typekit.net")+"/"+b+".js",function(b){if(b)a([]);else if(c.Typekit&&c.Typekit.config&&c.Typekit.config.fn){b=c.Typekit.config.fn;for(var e=[],f=0;f<b.length;f+=2)for(var g=b[f],m=b[f+1],h=0;h<m.length;h++)e.push(new G(g,m[h]));try{c.Typekit.load({events:!1,classes:!1,async:!0});}catch(l){}a(e);}},2E3):a([]);};function Ha(a,b){this.c=a;this.f=b;this.a=[];}Ha.prototype.load=function(a){var b=this.f.id,c=this.c.o,d=this;b?(c.__webfontfontdeckmodule__||(c.__webfontfontdeckmodule__={}),c.__webfontfontdeckmodule__[b]=function(b,c){for(var g=0,m=c.fonts.length;g<m;++g){var h=c.fonts[g];d.a.push(new G(h.name,ga("font-weight:"+h.weight+";font-style:"+h.style)));}a(d.a);},A(this.c,(this.f.api||"https://f.fontdeck.com/s/css/js/")+ea(this.c)+"/"+b+".js",function(b){b&&a([]);})):a([]);};var Y=new oa(window);Y.a.c.custom=function(a,b){return new sa(b,a)};Y.a.c.fontdeck=function(a,b){return new Ha(b,a)};Y.a.c.monotype=function(a,b){return new ra(b,a)};Y.a.c.typekit=function(a,b){return new Ga(b,a)};Y.a.c.google=function(a,b){return new Ea(b,a)};var Z={load:p(Y.load,Y)};module.exports?module.exports=Z:(window.WebFont=Z,window.WebFontConfig&&Y.load(window.WebFontConfig));}());
-});
-
-var WebFont = webfontloader;var wrongTabsId = {
+});var wrongTabsId = {
 	en: "wrong tabs id",
 	it: "id tabs sbagliato"
 };
@@ -506,25 +504,25 @@ var defaultStory = {
     }
   }
 };
-var script$a = boxIllustration;var _hoisted_1$9 = {
+var script$b = boxIllustration;var _hoisted_1$a = {
   class: "sg1-inner-box"
 };
-var _hoisted_2$9 = ["src"];
-var _hoisted_3$5 = ["src", "srcset", "sizes"];
-function render$a(_ctx, _cache, $props, $setup, $data, $options) {
+var _hoisted_2$a = ["src"];
+var _hoisted_3$6 = ["src", "srcset", "sizes"];
+function render$b(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", {
     class: "sg1-box-illustration",
     style: vue.normalizeStyle(_ctx.stylesObj.boxIllustration)
-  }, [vue.createElementVNode("div", _hoisted_1$9, [_ctx.editorUsage ? (vue.openBlock(), vue.createElementBlock("img", {
+  }, [vue.createElementVNode("div", _hoisted_1$a, [_ctx.editorUsage ? (vue.openBlock(), vue.createElementBlock("img", {
     key: 0,
     class: "sg1-box-img",
     src: _ctx.illustration.srcFull[0]
-  }, null, 8, _hoisted_2$9)) : (vue.openBlock(), vue.createElementBlock("img", {
+  }, null, 8, _hoisted_2$a)) : (vue.openBlock(), vue.createElementBlock("img", {
     key: 1,
     src: _ctx.imgPathPart + '-' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['width'] + 'x' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['height'] + '.jpg',
     srcset: _ctx.responsiveImages.srcset,
     sizes: _ctx.responsiveImages.sizes
-  }, null, 8, _hoisted_3$5))])], 4);
+  }, null, 8, _hoisted_3$6))])], 4);
 }function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -550,9 +548,8 @@ function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z$b = "\n.sg1-box-illustration[data-v-6de28332] {\n\t\tgrid-column-start: 2;\n\t\tgrid-column-end: 3;\n\t\tgrid-row-start: 2;\n\t\tgrid-row-end: 3;\n}\n.sg1-inner-box[data-v-6de28332] {\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n.sg1-inner-box img[data-v-6de28332] {\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tobject-fit: cover;\n\t\tobject-position: center;\n\t\tdisplay: block;\n}\n";
-styleInject(css_248z$b);script$a.render = render$a;
-script$a.__scopeId = "data-v-6de28332";var nextTabSketch$1 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M53.4,71.1c-1.1,1.3-1.9,2.3-2.6,3.3c-2.4,0-4.9,0.5-7.1-0.1c-2.8-0.8-4.6-3.2-4.4-6.3\n\t\tc0.1-2.6-1-4-3.1-5.2c-4.8-2.7-9.6-5.2-14.1-8.4c-4.4-3.1-8.3-6.8-12.4-10.2c-0.4-0.3-0.7-0.9-1.1-1c-3.8-0.4-5.4-3.6-7.5-6.1\n\t\tc-0.7-0.8-1.3-2.4-0.9-3c0.9-1.3,2.4-3,3.6-2.9c3.1,0.1,4.6-0.9,5.2-3.9c0.1-0.6,1-1.1,1.6-1.8c2.9,2.5,5.4,5.1,8.3,7\n\t\tc3.9,2.6,8.3,4.5,12.2,7c1.9,1.2,3.2,3.2,5.1,4.4c5.7,3.5,11.6,6.7,17.4,10c0.8,0.4,1.5,0.9,2.9,1.9c2.7-2.7,5.4-5.6,8.2-8.5\n\t\tc2.6-2.7,5.2-5.5,7.9-8.2c2.2-2.2,3.8-5,7.4-6c4.9-1.2,9.6-3.5,14.5-4.9c1.2-0.3,3.1,0.8,4.4,1.6c0.7,0.5,0.9,1.8,1.3,2.8\n\t\tc-0.9,0.2-2.2,0-2.8,0.6c-2.3,2-6.2,4.1-6.3,6.3c-0.1,6.7-4.5,9.9-8.8,13.2c-5,3.9-10.6,7.1-15.9,10.8C65,64.5,64,66,63.3,66.8\n\t\tc-2.9,2.4-5.5,4.5-8.2,6.7C54.5,72.7,54.1,72.1,53.4,71.1z\"/>\n</g>\n</svg>\n";
+}var css_248z$c = "\n.sg1-game-gridnot:not(.sg1-no-theme) .sg1-box-illustration {\r\n  grid-column-start: 2;\r\n  grid-column-end: 3;\r\n  grid-row-start: 2;\r\n  grid-row-end: 3;\n}\n.sg1-inner-box {\r\n  width: 100%;\r\n  height: 100%;\n}\n.sg1-inner-box img {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\r\n  display: block;\n}\r\n";
+styleInject(css_248z$c);script$b.render = render$b;var nextTabSketch$1 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M53.4,71.1c-1.1,1.3-1.9,2.3-2.6,3.3c-2.4,0-4.9,0.5-7.1-0.1c-2.8-0.8-4.6-3.2-4.4-6.3\n\t\tc0.1-2.6-1-4-3.1-5.2c-4.8-2.7-9.6-5.2-14.1-8.4c-4.4-3.1-8.3-6.8-12.4-10.2c-0.4-0.3-0.7-0.9-1.1-1c-3.8-0.4-5.4-3.6-7.5-6.1\n\t\tc-0.7-0.8-1.3-2.4-0.9-3c0.9-1.3,2.4-3,3.6-2.9c3.1,0.1,4.6-0.9,5.2-3.9c0.1-0.6,1-1.1,1.6-1.8c2.9,2.5,5.4,5.1,8.3,7\n\t\tc3.9,2.6,8.3,4.5,12.2,7c1.9,1.2,3.2,3.2,5.1,4.4c5.7,3.5,11.6,6.7,17.4,10c0.8,0.4,1.5,0.9,2.9,1.9c2.7-2.7,5.4-5.6,8.2-8.5\n\t\tc2.6-2.7,5.2-5.5,7.9-8.2c2.2-2.2,3.8-5,7.4-6c4.9-1.2,9.6-3.5,14.5-4.9c1.2-0.3,3.1,0.8,4.4,1.6c0.7,0.5,0.9,1.8,1.3,2.8\n\t\tc-0.9,0.2-2.2,0-2.8,0.6c-2.3,2-6.2,4.1-6.3,6.3c-0.1,6.7-4.5,9.9-8.8,13.2c-5,3.9-10.6,7.1-15.9,10.8C65,64.5,64,66,63.3,66.8\n\t\tc-2.9,2.4-5.5,4.5-8.2,6.7C54.5,72.7,54.1,72.1,53.4,71.1z\"/>\n</g>\n</svg>\n";
 var nextTabSketch$2 = nextTabSketch$1;var nextTabMinimal1 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<polygon style=\"fill:#7F7F7F;\" points=\"100,27.4 100,35.5 50,72.6 0,35.5 0,27.4 7.2,32.7 50,64.5 92.8,32.7 \"/>\n</svg>";
 var nextTabMinimal1$1 = nextTabMinimal1;var nextTabMinimal2 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<polygon style=\"fill:#7F7F7F;\" points=\"50,74.6 100,25.4 0,25.4 \"/>\n</svg>";
 var nextTabMinimal2$1 = nextTabMinimal2;function svgColorChange(stringSvg, color) {
@@ -611,9 +608,9 @@ var nextTabMinimal2$1 = nextTabMinimal2;function svgColorChange(stringSvg, color
     }
   }
 };
-var script$9 = NextTab$1;var _hoisted_1$8 = ["innerHTML"];
-var _hoisted_2$8 = ["innerHTML"];
-function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+var script$a = NextTab$1;var _hoisted_1$9 = ["innerHTML"];
+var _hoisted_2$9 = ["innerHTML"];
+function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   return _ctx.svgData ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
     class: vue.normalizeClass(['sg1-' + _ctx.stylesObj.iconSingleArrow['type'] + ' sg1-animation-' + _ctx.animation, "sg1-next-tab-wrapper"])
@@ -623,16 +620,16 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
       width: _ctx.stylesObj.iconSingleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_1$8), vue.createElementVNode("div", {
+  }, null, 12, _hoisted_1$9), vue.createElementVNode("div", {
     class: "sg1-svg-shadow",
     style: vue.normalizeStyle({
       width: _ctx.stylesObj.iconSingleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_2$8)], 2)) : vue.createCommentVNode("", true);
-}var css_248z$a = "\n.sg1-next-tab-wrapper[data-v-07a96db8] {\r\n\t\twidth: auto;\r\n\t\tdisplay: inline-flex;\r\n\t\tcursor: pointer;\r\n\t\tposition: relative;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-next-tab-wrapper[data-v-07a96db8]:hover {\r\n\t\topacity: 0.75;\n}\n.sg1-next-tab-wrapper:hover .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\topacity: 0;\r\n\t\tanimation: none;\n}\n.sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tposition: absolute;\r\n\t\ttop: 0;\r\n\t\tleft: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\r\n\r\n\t/* scroll-down */\n.sg1-animation-scroll-down .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tanimation: sg1-scroll-down-07a96db8 2s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-scroll-down[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\n}\n.sg1-animation-scroll-down[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\n}\n@keyframes sg1-scroll-down-07a96db8 {\n0% {\r\n\t\t\ttransform: translateY(0);\r\n\t\t\topacity: 0.5;\n}\n100% {\r\n\t\t\ttransform: translateY(35%);\r\n\t\t\topacity: 0;\n}\n}\r\n\r\n\t/* shining */\n.sg1-animation-shining[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\r\n\t\tanimation: sg1-shining-07a96db8 1s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-shining[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\r\n\t\tanimation: none;\n}\n@keyframes sg1-shining-07a96db8 {\n0% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n50% {\r\n\t\t\topacity: 0.5;\r\n\t\t\ttransform: translateY(0) scale(0.95);\n}\n100% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n}\r\n";
-styleInject(css_248z$a);script$9.render = render$9;
-script$9.__scopeId = "data-v-07a96db8";var choseTabHexagon = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M75,6.7H25L0,50l25,43.3h50L100,50L75,6.7z M67.8,80.8H32.2L14.4,50l17.8-30.8h35.6L85.6,50\n\t\tL67.8,80.8z\"/>\n</g>\n</svg>\n";
+  }, null, 12, _hoisted_2$9)], 2)) : vue.createCommentVNode("", true);
+}var css_248z$b = "\n.sg1-next-tab-wrapper[data-v-07a96db8] {\r\n\t\twidth: auto;\r\n\t\tdisplay: inline-flex;\r\n\t\tcursor: pointer;\r\n\t\tposition: relative;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-next-tab-wrapper[data-v-07a96db8]:hover {\r\n\t\topacity: 0.75;\n}\n.sg1-next-tab-wrapper:hover .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\topacity: 0;\r\n\t\tanimation: none;\n}\n.sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tposition: absolute;\r\n\t\ttop: 0;\r\n\t\tleft: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\r\n\r\n\t/* scroll-down */\n.sg1-animation-scroll-down .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tanimation: sg1-scroll-down-07a96db8 2s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-scroll-down[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\n}\n.sg1-animation-scroll-down[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\n}\n@keyframes sg1-scroll-down-07a96db8 {\n0% {\r\n\t\t\ttransform: translateY(0);\r\n\t\t\topacity: 0.5;\n}\n100% {\r\n\t\t\ttransform: translateY(35%);\r\n\t\t\topacity: 0;\n}\n}\r\n\r\n\t/* shining */\n.sg1-animation-shining[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\r\n\t\tanimation: sg1-shining-07a96db8 1s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-shining[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\r\n\t\tanimation: none;\n}\n@keyframes sg1-shining-07a96db8 {\n0% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n50% {\r\n\t\t\topacity: 0.5;\r\n\t\t\ttransform: translateY(0) scale(0.95);\n}\n100% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n}\r\n";
+styleInject(css_248z$b);script$a.render = render$a;
+script$a.__scopeId = "data-v-07a96db8";var choseTabHexagon = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M75,6.7H25L0,50l25,43.3h50L100,50L75,6.7z M67.8,80.8H32.2L14.4,50l17.8-30.8h35.6L85.6,50\n\t\tL67.8,80.8z\"/>\n</g>\n</svg>\n";
 var choseTabHexagon$1 = choseTabHexagon;var nextTabSketch = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<polygon style=\"fill:#7F7F7F;\" points=\"75,6.7 25,6.7 0,50 25,93.3 75,93.3 100,50 \"/>\n</svg>\n";
 var choseTabHexagonActive = nextTabSketch;var choseTabSketch1 = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M70.8,19.8c2.3-2.6,5.6-4.6,5.1-8.7c2.2-0.7,4.4-1.3,6.6-2c0.4-0.5,0.8-1.1,1.2-1.6\n\t\tc1.2,2.8,2.3,5.7,3.5,8.5c0.5-0.6,1-1.1,1.5-1.7c0.5,2.1,0.9,4.2,1.4,6.4c0.3-0.1,0.5-0.1,0.8-0.2c-0.7,2-1.2,4.2-2.1,6.1\n\t\tc-0.6,1.2-1.9,2-2.8,3.1c-1.9,2.1-3.8,4.2-5.5,6.4c-2.4,3.2-4.5,6.6-7.1,10.4c4.2,3.7,8,7.4,12.3,10.5c1.9,1.4,4.8,1.4,7.3,1.9\n\t\tc3.3,0.8,5.5,2.6,6.6,5.8c-0.3,0.1-0.6,0.2-0.9,0.2c0.3,1.7,0.7,3.4,1,5.1c0.2,1,0.3,2.1,0.4,3.1c-1.7,0.1-3.8,0.9-4.9,0.2\n\t\tc-4.5-3-8.9-6.3-13-9.9c-2.6-2.3-4.5-5.3-6.8-7.8c-1.3-1.4-2.9-2.5-5-4.3c1,3,1.7,5.2,2.5,7.4c0.2-0.1,0.3-0.2,0.5-0.4\n\t\tc4.1,6.7,8.2,13.5,12.3,20.2c-1.5,1.3-2.2,2-3.1,2.7c0.2,0.5,0.5,0.9,0.4,1.4c-0.2,1.4,0,3.4-0.8,4.1c-0.8,0.7-2.9,0.4-4.1-0.2\n\t\tc-2.4-1.1-4.5-2.8-6.7-4.2c-0.3,0.4-0.6,0.7-0.9,1.1c2.4,2.1,4.8,4.1,7.5,6.4c-3.5,3-2.9,6-1.2,9c-3.1,2.4-5-0.2-7-1.4\n\t\tc-2.4-1.4-4.7-3-6.9-4.7c-1.4-1.1-2.5-2.7-3.9-4c-3.4-3.3-6.9-6.5-10.4-9.6c-0.2-0.2-0.8-0.1-1.2-0.1C46.7,85.1,44,89.4,39,92.1\n\t\tc-2.6,2.1-4.9,4.2-7.6,5.7c-0.7,0.4-2.8-0.7-3.6-1.6c-0.8-1-1.1-2.8-0.8-4c0.4-1.6,1.6-2.9,2.6-4.5c-1.7-1.8-3.4-3.6-5.1-5.5\n\t\tc0.6-1,1.1-1.9,1.7-2.7c1.7-2.4,1.8-4.3-1.1-5.9c-1-0.6-1.4-2.1-2.2-3.1c-0.5-0.7-0.8-1.5-1.4-2c-3-2.4-4.6-5.3-2.6-8.3\n\t\tc2.1-3,1.6-5.3-1.3-8c-4.3-4-7.9-8.8-11.8-13.2c-1.2-1.3-2.6-2.5-4-3.6C0.1,34-0.7,32,0.8,30.3C2,29,4,28.2,5.8,27.8\n\t\tc1.1-0.2,2.4,0.6,3.5,1c0,1.5,0,2.8,0,4.4c1.3-0.5,2-0.9,2.8-1.2c5.1,5,9.2,11,16.9,12.5c-0.2-0.5-0.2-1.3-0.5-1.7\n\t\tc-3.7-4.8-7.3-9.6-11.1-14.3C14.6,25,11.5,21.8,9,18.2C8.3,17.3,8.5,15,9.3,14c1-1.4,3-2.2,4.9-3.5c0.8,1.4,1.5,2.4,2.1,3.5\n\t\tc1.4,2.5,4.3,3.7,7.1,2.6c2.8-1.1,4.7,0.4,6.6,2.2c2.5,2.4,5.1,4.8,7.8,7c0.7,0.6,1.9,0.5,2.9,0.7c0-1.1,0.6-2.5,0.1-3.3\n\t\tc-1.4-2.3-3.2-4.4-5-6.5c-2.4-2.7-4.9-5.3-7.3-7.9c-0.5-0.5-0.8-1.2-1-1.8c-1.4-3-0.1-5.1,2.2-7C34,0.9,46,12.6,47.4,17.9\n\t\tc0.8-1.2,1.3-2.1,1.9-2.8c3.1-3.7,6-7.6,9.4-11.1c0.9-0.9,2.9-0.9,4.4-0.9c0.3,0,0.7,1.8,0.9,2.8c0.5,1.9,0.3,4.8,5,2.4\n\t\tc-1.6,3.5-2.7,5.8-3.9,8.3c1.7,0.9,3.6,1.8,5.4,2.7c-0.4,0.4-0.7,0.8-1.1,1.2c0.2,0.1,0.4,0.3,0.5,0.4\n\t\tC70.2,20.6,70.5,20.2,70.8,19.8z M41.9,70.8c-4.1,1.2-5.6,3.7-4.5,6.3C39,75,40.4,72.9,41.9,70.8z M27.7,29c-0.3,0.3-0.6,0.7-1,1\n\t\tc0.5,0.6,1,1.3,1.5,1.9c0.4-0.4,0.8-0.8,1.2-1.2C28.8,30.1,28.3,29.6,27.7,29z M66.7,35.5c0.3,0.2,0.5,0.3,0.8,0.5\n\t\tc0.2-0.5,0.4-1,0.6-1.4c-0.2-0.1-0.4-0.2-0.6-0.3C67.3,34.6,67,35.1,66.7,35.5z M65.3,58.2c-0.1,0.2-0.2,0.4-0.4,0.7\n\t\tc0.4,0.4,0.9,0.7,1.3,1.1c0.2-0.4,0.4-0.8,0.6-1.2C66.4,58.5,65.9,58.3,65.3,58.2z M69.8,30.4c-0.3,0.5-0.6,0.8-0.7,1.1\n\t\tc0,0.1,0.5,0.6,0.6,0.5c0.3-0.2,0.6-0.4,0.7-0.7C70.4,31.1,70.1,30.8,69.8,30.4z\"/>\n</g>\n</svg>\n";
 var choseTabSketch5 = choseTabSketch1;var choseTabSketchActive = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M87.2,12.2c0.8-0.4,1.6-0.8,1.8-0.9c1.4,2.2,2.8,4.2,4,6.3c1.8,3.2,4.4,6.4,5.1,9.9\n\t\tc1.9,8.9,2.9,17.9,0.7,27c-1.2,5-2.1,10-3.1,15c-1.1,5.7-5.4,9-10,12c-3.4,2.2-7.1,3.9-10.4,6.2c-1.5,1-2.2,3.2-3.7,4.3\n\t\tc-5.5,3.9-12,5.7-18.6,7.5c-0.7,0.2-1.6,0-2.4-0.2c-3.4-0.5-6.9-0.6-10-1.7c-2.7-1-5.1-3-7.3-4.9c-6.2-5.3-10.7-11.8-15.8-17.9\n\t\tc-4.9-5.8-5.2-12.3-8-18.4c-0.5-1.2-1.9-2-2.2-3.2C5.5,46-0.7,40.6,0.1,32.4c0.5-5.6,3.5-9.1,7.5-12.4c3-2.5,6.2-4.9,9.7-6.6\n\t\tc5-2.4,9.3-6.3,14.5-7.9c9.2-2.9,18.7-5.8,28.8-3.8c4.4,0.9,8.9,1.3,13.4,1.7C78.4,3.9,84.9,8,87.2,12.2z M80.9,42.8\n\t\tc-0.7,2-0.9,3.1-1.5,4c-1.2,1.9-2.4,3.8-3.9,5.4c-1.6,1.7-3.3,3.5-5.3,4.7c-3.5,2-7.1,4.6-10.9,4.8c-4.6,0.3-9.5-1.2-12.5-5.5\n\t\tc-0.8-1.1-1.8-2-2.7-3c-3.5,3.8-4.1,6.7-0.8,9.9c3,2.9,6.9,5,10.4,7.4c1.3,0.9,2.9,1.4,4,2.5c1.7,1.6,9.1,2.6,10.7,0.9\n\t\tc4.8-4.7,10.2-9,12.6-15.4C83,53.7,84.1,48.9,80.9,42.8z M35.2,40.7c2.5-1.6,5-3.2,7.5-4.8c3-1.8,5.9-4.6,9.2-5.2\n\t\tc6.3-1.2,12.9-1.1,19.3-1.7c1.1-0.1,3.1-1.4,3-1.7c-0.7-2.3-1.4-4.7-2.8-6.7c-0.5-0.7-2.9-0.7-4.2-0.3C60.9,22,54.7,23.8,48.7,26\n\t\tc-4.1,1.4-8,3.2-11.8,5.2C33.2,33.2,32.7,36.5,35.2,40.7z M18.7,24.2c-7.6,0.7-12.6,15.3-7.4,22.3c0.5-1.1,0.9-1.9,1.3-2.7\n\t\tc1.2-2.5,1.9-5.5,3.7-7.5C19.6,32.5,18.5,28.4,18.7,24.2z M91.2,49.6c0.1-0.5,0.4-1.2,0.4-1.9c0.1-8.3-2.7-16-6.2-23.4\n\t\tc-1-2.2-1.7-6.5-6.3-5C83.2,29.4,87.2,39.4,91.2,49.6z M37,81.7c3.2,2.2,4.9,4.1,7,4.6c4.4,1.3,9.1,2,13.7,2.6\n\t\tc0.7,0.1,1.8-1.4,2.4-2.4c0.2-0.3-0.9-1.8-1.4-1.8c-6.3,0.6-11.8-1.4-17.2-4.2C40.7,80.1,39.1,81.1,37,81.7z M65,46.8\n\t\tc0,0,0.3,0.3,0.6,0.3c2.7-0.3,6.8-5.7,6-8.3c-0.2-0.7-1.7-1.9-2-1.7c-1.3,0.7-3,1.5-3.5,2.7C65.3,41.9,65.3,44.3,65,46.8z\n\t\t M86.9,62.4c0.6,0.1,1.2,0.3,1.7,0.4c0.5-1.8,1-3.6,1.5-5.3c-0.6-0.1-1.1-0.3-1.7-0.4C87.9,58.9,87.4,60.7,86.9,62.4z M57.5,14.4\n\t\tc-0.2-0.2-0.4-0.5-0.4-0.5c-0.3,0.1-0.5,0.3-0.7,0.4c0.1,0.2,0.3,0.5,0.3,0.4C57,14.7,57.3,14.5,57.5,14.4z M80.9,73.5\n\t\tc0.5-0.5,1-0.8,1-1.1c0-0.3-0.4-0.6-0.7-0.9c-0.4,0.3-0.9,0.5-1,0.8C80.2,72.6,80.6,73,80.9,73.5z M83.6,68.9\n\t\tc0.2,0.1,0.5,0.2,0.7,0.3c0.3-0.5,0.5-1,0.8-1.4c-0.2-0.1-0.5-0.2-0.7-0.3C84.1,68,83.8,68.5,83.6,68.9z M53.8,79.6\n\t\tc0.2-0.3,0.5-0.6,0.4-0.8c0-0.2-0.4-0.4-0.6-0.6c-0.2,0.3-0.5,0.6-0.7,0.8C53.2,79.3,53.5,79.4,53.8,79.6z\"/>\n</g>\n</svg>\n";
@@ -665,22 +662,24 @@ var choseTabMinimal$1 = choseTabMinimal;var NextTab = {
   },
   methods: {
     init: function init() {
-      if (this.stylesObj.iconMultipleArrow["type"]) {
-        var stringName = this.stylesObj.iconMultipleArrow["type"];
+      if (this.stylesObj) {
+        if (this.stylesObj.iconMultipleArrow["type"]) {
+          var stringName = this.stylesObj.iconMultipleArrow["type"];
 
-        if (stringName == "letter" || stringName == "number") {
-          this.svgData = false;
-          this.svgDataActive = false;
+          if (stringName == "letter" || stringName == "number") {
+            this.svgData = false;
+            this.svgDataActive = false;
 
-          if (stringName == "letter") {
-            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            this.indexListText = alphabet[this.index];
+            if (stringName == "letter") {
+              var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+              this.indexListText = alphabet[this.index];
+            } else {
+              this.indexListText = this.index + 1 + ".";
+            }
           } else {
-            this.indexListText = this.index + 1 + ".";
+            this.indexListText = false;
+            this.initSvg();
           }
-        } else {
-          this.indexListText = false;
-          this.initSvg();
         }
       }
     },
@@ -718,12 +717,34 @@ var choseTabMinimal$1 = choseTabMinimal;var NextTab = {
     }
   }
 };
-var script$8 = NextTab;var _hoisted_1$7 = ["innerHTML"];
-var _hoisted_2$7 = ["innerHTML"];
-var _hoisted_3$4 = ["innerHTML"];
-var _hoisted_4$2 = ["innerHTML"];
-function render$8(_ctx, _cache, $props, $setup, $data, $options) {
-  return _ctx.stylesObj.iconMultipleArrow['type'] ? (vue.openBlock(), vue.createElementBlock("div", {
+var script$9 = NextTab;var _withScopeId$1 = function _withScopeId(n) {
+  return vue.pushScopeId("data-v-68d5b6a0"), n = n(), vue.popScopeId(), n;
+};
+
+var _hoisted_1$8 = {
+  key: 0,
+  style: {
+    "dispaly": "contents"
+  }
+};
+var _hoisted_2$8 = ["innerHTML"];
+var _hoisted_3$5 = ["innerHTML"];
+var _hoisted_4$3 = ["innerHTML"];
+var _hoisted_5$3 = ["innerHTML"];
+var _hoisted_6$1 = {
+  key: 1,
+  class: "sg1-chose-item"
+};
+
+var _hoisted_7$1 = /*#__PURE__*/_withScopeId$1(function () {
+  return /*#__PURE__*/vue.createElementVNode("div", {
+    class: "list-item"
+  }, null, -1);
+});
+
+var _hoisted_8$1 = ["innerHTML"];
+function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  return _ctx.stylesObj ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$8, [_ctx.stylesObj.iconMultipleArrow['type'] ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
     class: vue.normalizeClass([{
       'use-active-item': _ctx.svgDataActive
@@ -739,29 +760,31 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
       minWidth: _ctx.stylesObj.iconMultipleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_1$7), _ctx.svgDataActive ? (vue.openBlock(), vue.createElementBlock("div", {
+  }, null, 12, _hoisted_2$8), _ctx.svgDataActive ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
     class: "sg1-svg-hover-wraper",
     style: vue.normalizeStyle({
       minWidth: _ctx.stylesObj.iconMultipleArrow['size']
     }),
     innerHTML: _ctx.svgDataActive
-  }, null, 12, _hoisted_2$7)) : vue.createCommentVNode("", true)], 6)) : (vue.openBlock(), vue.createElementBlock("div", {
+  }, null, 12, _hoisted_3$5)) : vue.createCommentVNode("", true)], 6)) : (vue.openBlock(), vue.createElementBlock("div", {
     key: 1,
     class: vue.normalizeClass('sg1-type-' + _ctx.stylesObj.iconMultipleArrow['type']),
     style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
   }, vue.toDisplayString(_ctx.indexListText), 7)), vue.createElementVNode("span", {
     innerHTML: _ctx.text
-  }, null, 8, _hoisted_3$4)], 6)) : (vue.openBlock(), vue.createElementBlock("div", {
+  }, null, 8, _hoisted_4$3)], 6)) : (vue.openBlock(), vue.createElementBlock("div", {
     key: 1,
     class: "sg1-chose-item",
     style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
   }, [vue.createElementVNode("span", {
     innerHTML: _ctx.text
-  }, null, 8, _hoisted_4$2)], 4));
-}var css_248z$9 = "\n.sg1-chose-item[data-v-73468562] {\n\t\tdisplay: inline-flex;\n\t\tmargin-bottom: 1em;\n\t\tmax-width: 100%;\n\t\twidth: auto;\n\t\tcursor: pointer;\n}\n.sg1-icon-wrapper[data-v-73468562] {\n\t\tmargin-right: 0.5em;\n\t\tposition: relative;\n}\n.sg1-svg-hover-wraper[data-v-73468562] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\topacity: 0;\n}\n.sg1-chose-item[data-v-73468562] {\n\t\tfont-size: inherit;\n\t\tfont-family: inherit;\n}\n.sg1-chose-item[data-v-73468562],\n\t.sg1-svg-wraper[data-v-73468562],\n\t.sg1-svg-hover-wraper[data-v-73468562] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-chose-item[data-v-73468562]:hover {\n\t\topacity: 0.75;\n}\n.sg1-chose-item:hover .sg1-svg-hover-wraper[data-v-73468562] {\n\t\topacity: 1;\n}\n.sg1-chose-item.use-active-item:hover .sg1-svg-wraper[data-v-73468562] {\n\t\topacity: 0;\n}\n.sg1-type-number[data-v-73468562],\n\t.sg1-type-letter[data-v-73468562] {\n\t\tmargin-right: 0.5em;\n}\n";
-styleInject(css_248z$9);script$8.render = render$8;
-script$8.__scopeId = "data-v-73468562";//returns a copy of the object
+  }, null, 8, _hoisted_5$3)], 4))])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_6$1, [_hoisted_7$1, vue.createElementVNode("span", {
+    innerHTML: _ctx.text
+  }, null, 8, _hoisted_8$1)]));
+}var css_248z$a = "\n.sg1-chose-item[data-v-68d5b6a0] {\r\n  display: inline-flex;\r\n  margin-bottom: 1em;\r\n  max-width: 100%;\r\n  width: auto;\r\n  cursor: pointer;\n}\n.sg1-icon-wrapper[data-v-68d5b6a0] {\r\n  margin-right: 0.5em;\r\n  position: relative;\n}\n.sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  opacity: 0;\n}\n.sg1-chose-item[data-v-68d5b6a0] {\r\n  font-size: inherit;\r\n  font-family: inherit;\n}\n.sg1-chose-item[data-v-68d5b6a0],\r\n.sg1-svg-wraper[data-v-68d5b6a0],\r\n.sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  transition: opacity 0.35s;\r\n  transition-timing-function: ease-out;\n}\n.sg1-chose-item[data-v-68d5b6a0]:hover {\r\n  opacity: 0.75;\n}\n.sg1-chose-item:hover .sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  opacity: 1;\n}\n.sg1-chose-item.use-active-item:hover .sg1-svg-wraper[data-v-68d5b6a0] {\r\n  opacity: 0;\n}\n.sg1-type-number[data-v-68d5b6a0],\r\n.sg1-type-letter[data-v-68d5b6a0] {\r\n  margin-right: 0.5em;\n}\r\n";
+styleInject(css_248z$a);script$9.render = render$9;
+script$9.__scopeId = "data-v-68d5b6a0";//returns a copy of the object
 function deepCopy(obj) {
   var rv;
 
@@ -849,16 +872,16 @@ function deepCopy(obj) {
 var boxNarration = {
   name: "boxNarration",
   components: {
-    NextTab: script$9,
-    ChooseTab: script$8
+    NextTab: script$a,
+    ChooseTab: script$9
   },
   props: {
     currentTabs: {},
     nextTabsChose: {},
     lang: {},
-    emitReedBeams2: {},
     stylesObj: {}
   },
+  emits: ["emitReedBeams2"],
   computed: {
     currentTabsReordered: function currentTabsReordered() {
       return sortChose(this.currentTabs);
@@ -876,19 +899,19 @@ var boxNarration = {
     }
   }
 };
-var script$7 = boxNarration;var _hoisted_1$6 = {
+var script$8 = boxNarration;var _hoisted_1$7 = {
   class: "sg1-box-narration"
 };
-var _hoisted_2$6 = ["innerHTML"];
-var _hoisted_3$3 = {
+var _hoisted_2$7 = ["innerHTML"];
+var _hoisted_3$4 = {
   key: 0
 };
-function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+function render$8(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ChooseTab = vue.resolveComponent("ChooseTab");
 
   var _component_NextTab = vue.resolveComponent("NextTab");
 
-  return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createElementVNode("div", _hoisted_1$6, [vue.createElementVNode("div", {
+  return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createElementVNode("div", _hoisted_1$7, [vue.createElementVNode("div", {
     class: "sg1-tab-results",
     style: vue.normalizeStyle(_ctx.stylesObj.tabResultsMaxHeight)
   }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.currentTabsReordered, function (tab, index) {
@@ -899,7 +922,7 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
       key: 0,
       style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1), _ctx.stylesObj.paddingBottomNextTab)),
       innerHTML: _ctx.fixText(tab.text[_ctx.lang])
-    }, null, 12, _hoisted_2$6)) : (vue.openBlock(), vue.createElementBlock("div", {
+    }, null, 12, _hoisted_2$7)) : (vue.openBlock(), vue.createElementBlock("div", {
       key: 1,
       style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
     }, [vue.createVNode(_component_ChooseTab, {
@@ -914,7 +937,7 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       key: tab.id,
       class: vue.normalizeClass(_ctx.nextTabsChose.length == 1 ? 'sg1-label-description' : 'sg1-label-multiple-chose')
-    }, [tab.id ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$3, [vue.createVNode(_component_ChooseTab, {
+    }, [tab.id ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$4, [vue.createVNode(_component_ChooseTab, {
       index: index,
       text: _ctx.fixText(tab.text[_ctx.lang]),
       stylesObj: _ctx.stylesObj,
@@ -926,15 +949,22 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     key: 0,
     class: "sg1-single-beem-foward-box",
     style: vue.normalizeStyle(_ctx.stylesObj.paddingTopNextTab)
-  }, [vue.createVNode(_component_NextTab, {
+  }, [_ctx.stylesObj ? (vue.openBlock(), vue.createBlock(_component_NextTab, {
+    key: 0,
     stylesObj: _ctx.stylesObj,
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return _ctx.emitReedBeams3(_ctx.currentTabs[0].id);
     })
-  }, null, 8, ["stylesObj"])], 4)) : vue.createCommentVNode("", true)], 64);
-}var css_248z$8 = "\n.sg1-tab-results[data-v-1932bea5] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-1932bea5] {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n}\n.sg1-box-narration[data-v-1932bea5] {\n\t\tposition: relative;\n\t\tz-index: 10;\n\t\tmax-height: inherit;\n\t\tmin-height: inherit;\n\t\toverflow-y: auto;\n\t\tflex-grow: 1;\n}\n";
-styleInject(css_248z$8);script$7.render = render$7;
-script$7.__scopeId = "data-v-1932bea5";var boxNarrationGameEnd = {
+  }, null, 8, ["stylesObj"])) : (vue.openBlock(), vue.createElementBlock("div", {
+    key: 1,
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return _ctx.emitReedBeams3(_ctx.currentTabs[0].id);
+    }),
+    class: "sg1-single-beem-icon"
+  }))], 4)) : vue.createCommentVNode("", true)], 64);
+}var css_248z$9 = "\n.sg1-tab-results[data-v-3b0d3f8e] {\r\n  flex-grow: 1;\r\n  overflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-3b0d3f8e] {\r\n  display: flex;\r\n  justify-content: center;\n}\n.sg1-box-narration[data-v-3b0d3f8e] {\r\n  position: relative;\r\n  z-index: 10;\r\n  max-height: inherit;\r\n  min-height: inherit;\r\n  overflow-y: auto;\r\n  flex-grow: 1;\n}\r\n";
+styleInject(css_248z$9);script$8.render = render$8;
+script$8.__scopeId = "data-v-3b0d3f8e";var boxNarrationGameEnd = {
   name: "boxNarrationGameEnd",
   props: {
     currentTabs: {},
@@ -956,12 +986,12 @@ script$7.__scopeId = "data-v-1932bea5";var boxNarrationGameEnd = {
     }
   }
 };
-var script$6 = boxNarrationGameEnd;var _hoisted_1$5 = {
+var script$7 = boxNarrationGameEnd;var _hoisted_1$6 = {
   class: "sg1-box-narration"
 };
-var _hoisted_2$5 = ["innerHTML"];
-function render$6(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$5, [vue.createElementVNode("div", {
+var _hoisted_2$6 = ["innerHTML"];
+function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$6, [vue.createElementVNode("div", {
     class: "sg1-tab-results",
     style: vue.normalizeStyle(_ctx.stylesObj.tabResultsMaxHeight)
   }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.currentTabs, function (tab, index) {
@@ -972,11 +1002,11 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
       key: 0,
       style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1)),
       innerHTML: _ctx.fixText(tab.text[_ctx.lang])
-    }, null, 12, _hoisted_2$5)) : vue.createCommentVNode("", true)], 2);
+    }, null, 12, _hoisted_2$6)) : vue.createCommentVNode("", true)], 2);
   }), 128))], 4)]);
-}var css_248z$7 = "\n.sg1-tab-results[data-v-9c79f44c] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-9c79f44c] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n";
-styleInject(css_248z$7);script$6.render = render$6;
-script$6.__scopeId = "data-v-9c79f44c";var boxNarrationGameOver = {
+}var css_248z$8 = "\n.sg1-tab-results[data-v-9c79f44c] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-9c79f44c] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n";
+styleInject(css_248z$8);script$7.render = render$7;
+script$7.__scopeId = "data-v-9c79f44c";var boxNarrationGameOver = {
   name: "boxNarrationGameOver",
   props: {
     currentTabs: {},
@@ -997,12 +1027,12 @@ script$6.__scopeId = "data-v-9c79f44c";var boxNarrationGameOver = {
     }
   }
 };
-var script$5 = boxNarrationGameOver;var _hoisted_1$4 = {
+var script$6 = boxNarrationGameOver;var _hoisted_1$5 = {
   class: "sg1-box-narration"
 };
-var _hoisted_2$4 = ["innerHTML"];
-function render$5(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$4, [vue.createElementVNode("div", {
+var _hoisted_2$5 = ["innerHTML"];
+function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$5, [vue.createElementVNode("div", {
     class: "sg1-tab-results",
     style: vue.normalizeStyle(_ctx.stylesObj.tabResultsMaxHeight)
   }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.currentTabs, function (tab, index) {
@@ -1017,11 +1047,11 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
       style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1)),
       innerHTML: _ctx.fixText(tab.text[_ctx.lang]),
       class: "sg1-replay-link"
-    }, null, 12, _hoisted_2$4)) : vue.createCommentVNode("", true)], 2);
+    }, null, 12, _hoisted_2$5)) : vue.createCommentVNode("", true)], 2);
   }), 128))], 4)]);
-}var css_248z$6 = "\n.sg1-tab-results[data-v-3117e596] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-3117e596] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n.sg1-replay-link[data-v-3117e596] {\n\t\ttext-decoration: underline;\n\t\tcursor: pointer;\n}\n";
-styleInject(css_248z$6);script$5.render = render$5;
-script$5.__scopeId = "data-v-3117e596";var bgSketch = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 133.3 133.3\" style=\"enable-background:new 0 0 133.3 133.3;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M132.6,99.6c-0.2,0.2-0.4,0.3-0.6,0.5c0.3,0.3,0,0.5-0.1,0.7c0,0.2,0.1,0.3,0.1,0.4\n\t\tc-0.1,0.6,0,1.3,0.3,1.8c0.1,0.1,0.1,0.3,0.1,0.4c-0.1,0.5-0.2,1-0.3,1.4c-0.1,0.4-0.2,0.7,0,1c-0.1,0.3-0.2,0.5-0.2,0.7\n\t\tc0,0.6,0,1.1,0,1.7c0,0.4,0,0.8-0.3,1.1c0,0.1,0,0.1-0.1,0.2c0.2,0.1,0.3,0.2,0.4,0.3c-0.1,0.3-0.3,0.5-0.3,0.8\n\t\tc0.1,0.6,0.3,1.1,0.4,1.7c-0.1,0.4-0.2,0.8-0.3,1.2c0,0.2,0.1,0.3,0.1,0.5c0,0.1,0.1,0.2,0.2,0.3c-0.2,0.4-0.5,0.8-0.7,1.2\n\t\tc-0.3,0.6-0.5,0.7,0.2,1.2c0,0,0,0.1,0.1,0.1c0,0.1,0,0.2,0,0.2c-0.1,0.4-0.1,0.7,0.2,1c0.1,0.1,0.1,0.2,0.1,0.4c0,0.5,0,1-0.1,1.5\n\t\tc-0.1,0.3-0.2,0.5-0.1,0.9c0,0.1,0,0.3-0.1,0.3c-0.3,0.4-0.3,0.8,0,1.2c-0.8,1.4-0.4,2.7,0.4,4.1c-0.1,0.2-0.3,0.3-0.4,0.5\n\t\tc-0.1,0.2-0.3,0.4-0.3,0.6c0,0.3,0.1,0.6,0.2,1c0.1,0.3,0.3,0.7,0.4,1c-0.3,0.6-0.3,1.4-0.9,1.8c-0.2,0-0.5,0-0.8,0\n\t\tc-0.2,0.2,0.1,0.7-0.4,0.5c-0.2-0.1-0.5,0-0.8,0.1c-0.3,0.1-0.5,0.2-0.9,0.1c-0.4-0.1-0.8-0.2-1.2,0c-0.3,0.1-0.5,0.1-0.8,0\n\t\tc-0.2-0.1-0.4-0.1-0.6-0.1c-0.3,0.1-0.6,0-0.9-0.1c-0.2-0.1-0.6-0.3-0.8-0.2c-0.6,0.2-1.1,0.1-1.7,0.2c-0.1,0-0.2,0-0.2,0\n\t\tc-0.8,0.3-1.7,0.1-2.5,0.1c-0.6,0-1.3,0.1-1.9,0c-0.1,0-0.2,0-0.2,0c-0.3,0.2-0.7,0.1-1,0.1c-0.6,0-1.2-0.1-1.8-0.1\n\t\tc-0.2,0-0.3,0-0.5,0c-0.4,0.2-0.8,0.2-1.2,0c-0.2-0.1-0.4,0-0.6,0c-0.5,0-0.9,0.3-1.4,0.1c-0.5-0.2-1-0.2-1.5,0\n\t\tc-0.3,0-0.6-0.1-0.8-0.1s-0.4,0-0.6-0.1c-0.6-0.1-1.2-0.2-1.8-0.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0-0.2,0.1-0.4,0.2\n\t\tc0-0.5-0.3-0.4-0.6-0.4c-0.6-0.1-1.2,0.2-1.7,0.5c-0.2,0.2-0.4,0.2-0.7,0.1c-0.2-0.1-0.4-0.1-0.6,0c-0.4,0-0.8,0.1-1.2,0.2\n\t\tc-0.1,0-0.3,0-0.4-0.1c-0.5-0.3-1.1-0.2-1.6-0.5c-0.1,0-0.2,0-0.3,0c-0.2,0-0.3,0.1-0.5,0.1c-0.1,0-0.1-0.1-0.2-0.1\n\t\tc-0.7-0.4-0.7-0.4-1.4,0c-0.3,0.2-0.7,0.3-1.1,0.3c-0.5,0-1-0.1-1.4,0.1c-0.3-0.2-0.6-0.4-0.9-0.4c-0.6,0-1.3-0.2-1.9,0.1\n\t\tc-0.2,0.1-0.4,0.2-0.5,0.1c-0.3-0.2-0.6-0.1-0.9-0.2c-0.5-0.3-0.9-0.4-1.4-0.1c-0.6-0.2-1.1,0-1.6,0.2c-0.5,0.2-1,0.3-1.5,0.3\n\t\tc-0.5,0-1,0.1-1.5-0.2c-0.1,0-0.2-0.1-0.2-0.1c-0.3-0.2-0.7-0.3-1.1,0c-0.1,0-0.2,0-0.3,0c-0.7,0-1.4,0.1-2,0.4\n\t\tc-0.5-0.2-1-0.7-1.6-0.3c-0.1,0-0.2,0-0.3,0c-0.1,0-0.3-0.1-0.3-0.1c-0.3,0.2-0.5,0-0.8,0c-0.4,0-0.8-0.2-1.2,0.3\n\t\tc-0.3,0.4-0.5,0.4-0.9,0.1c-0.2-0.2-0.4-0.4-0.6-0.5c-0.3,0-0.6,0-0.8,0c-0.5,0.2-0.9,0.2-1.2-0.1c-0.4,0-0.8,0-1.1,0\n\t\tc-0.1,0-0.2,0-0.3,0c-0.4,0.3-0.9,0.2-1.3,0.4c-0.1,0-0.2,0-0.4,0c-0.3-0.1-0.6-0.2-0.9-0.3c-0.3-0.1-0.5-0.1-0.8,0\n\t\tc-0.6,0.2-1.2,0.3-1.7,0.4c-0.3-0.2-0.6-0.3-0.9-0.5c-0.5-0.3-0.9-0.3-1.4,0c-0.6,0.3-1.2,0.4-1.8,0.2c-0.3-0.1-0.6-0.1-0.9,0\n\t\tc-0.1,0.1-0.4,0.1-0.4,0c-0.3-0.3-0.7-0.2-0.9-0.2c-0.4,0-0.7,0-1.1-0.1c-0.2,0.1-0.3,0.2-0.5,0.3c-0.2,0.2-0.4,0.2-0.6,0\n\t\tc-0.4-0.3-0.7-0.2-1.1,0.1c-0.8-0.5-1.4-0.4-2,0.2c-0.2,0-0.3-0.1-0.5-0.1c-0.1,0-0.3,0-0.4,0c-0.1-0.1-0.1-0.1-0.1-0.1\n\t\tc0-0.1-0.1-0.1-0.1-0.2c-0.3-0.5-0.3-0.5-0.8-0.3c-0.1,0-0.2,0-0.3,0c-0.4,0-0.9,0.1-1.3-0.2c-0.1-0.1-0.3,0-0.5,0\n\t\tc-0.3,0-0.7,0.1-1,0.2c-0.1,0-0.3,0-0.3,0c-0.4-0.4-0.9,0.1-1.3,0c-0.3,0.3-0.7,0.2-1,0.2c-0.7,0-1.3-0.2-2-0.2\n\t\tc-0.1,0-0.2-0.1-0.2-0.1c-0.2,0.1-0.3,0.2-0.4,0.3c-0.8-0.4-1.5-0.4-2.2,0c-0.2,0-0.4-0.1-0.6,0c-0.4,0.1-0.7,0-1.1-0.2\n\t\tc-0.2-0.1-0.5-0.1-0.7,0.1c-0.3,0.3-0.8,0.2-1.1,0.2c-0.4,0-0.8-0.1-1.2-0.1c-0.3-0.1-0.6-0.1-0.8,0.1c-0.2-0.1-0.3-0.2-0.6-0.3\n\t\tc-0.1,0.2-0.2,0.3-0.3,0.5c-0.4-0.5-0.8-0.4-1.3-0.2c-0.3,0.1-0.6,0.3-0.9,0.4c-0.2-0.2-0.3-0.4-0.5-0.6c-0.3,0.3-0.5,0-0.7-0.1\n\t\tc-0.2,0-0.3,0.1-0.5,0.1c-0.6-0.1-1.3,0-1.8,0.3c-0.1,0.1-0.3,0.1-0.4,0.1c-0.5-0.1-1-0.2-1.4-0.3c-0.4-0.1-0.7-0.2-1,0\n\t\tc-0.3-0.1-0.5-0.2-0.7-0.2c-0.6,0-1.1,0.1-1.7,0.1c-0.4,0-0.8-0.1-1.1-0.3c-0.1-0.1-0.1-0.1-0.2-0.1c-0.1,0.2-0.2,0.3-0.3,0.4\n\t\tc-0.3-0.1-0.5-0.3-0.7-0.3c-0.6,0.1-1.1,0.3-1.7,0.4c-0.4-0.1-0.8-0.2-1.2-0.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0-0.2,0.1-0.3,0.2\n\t\tc-0.4-0.2-0.8-0.5-1.2-0.7c-0.6-0.3-0.7-0.5-1.1,0.2c0,0-0.1,0-0.1,0.1c0,0-0.1,0-0.2,0c-0.4-0.1-0.7-0.1-1,0.2\n\t\tc-0.1,0.1-0.3,0.2-0.4,0.2c-0.5,0-1,0-1.5-0.1c-0.3-0.1-0.5-0.2-0.9-0.1c-0.1,0-0.2,0-0.3-0.1c-0.4-0.3-0.8-0.3-1.2,0\n\t\tc-1.4-0.8-2.7-0.4-4.1,0.4c-0.2-0.1-0.3-0.3-0.5-0.4c-0.2-0.1-0.4-0.3-0.6-0.3c-0.3,0-0.7,0.1-1,0.2c-0.3,0.1-0.7,0.3-1,0.4\n\t\tc-0.6-0.3-1.3-0.3-1.8-0.9c0-0.1-0.8-0.2-0.8-0.3c-0.1-0.5-0.3-1.1-0.1-1.6c0.1-0.2,0-0.6-0.1-0.8c-0.1-0.3-0.2-0.5-0.1-0.9\n\t\tc0.2-0.4,0.2-0.8,0-1.2c-0.1-0.3-0.1-0.6,0-0.8c0.1-0.2,0.1-0.4,0.1-0.6c-0.1-0.3,0-0.6,0.1-0.9c0.1-0.2,0.3-0.6,0.2-0.8\n\t\tc-0.2-0.6-0.1-1.1-0.2-1.7c0-0.1,0-0.2,0-0.2c-0.4-0.8-0.1-1.6-0.1-2.5c0-0.6-0.1-1.3,0-1.9c0-0.1,0-0.2,0-0.2\n\t\tc-0.2-0.3-0.1-0.7-0.1-1c0-0.6,0.1-1.2,0.1-1.8c0-0.2,0-0.3,0-0.5c-0.2-0.4-0.1-0.8,0-1.2c0.1-0.2,0-0.4,0-0.6\n\t\tc0-0.5-0.3-0.9-0.1-1.4c0.2-0.5,0.2-1.1,0-1.5c0-0.3,0.1-0.6,0.1-0.8c0-0.2,0-0.4,0.1-0.6c0.1-0.6,0.2-1.2,0.3-1.7\n\t\tc0-0.2-0.1-0.3-0.2-0.5c0-0.1-0.1-0.2-0.2-0.4c0.4,0,0.4-0.3,0.4-0.6c0.1-0.6-0.1-1.2-0.5-1.7c-0.2-0.2-0.2-0.4-0.1-0.6\n\t\tc0.1-0.2,0.1-0.4,0-0.6c0-0.4-0.1-0.8-0.2-1.2c0-0.1,0-0.3,0.1-0.4c0.3-0.5,0.2-1.1,0.5-1.6c0-0.1,0-0.2,0-0.3\n\t\tc0-0.2-0.1-0.3-0.1-0.4c0-0.1,0.1-0.1,0.1-0.2c0.4-0.7,0.4-0.7,0-1.3c-0.2-0.3-0.3-0.7-0.3-1.1c0-0.5,0.1-1-0.1-1.4\n\t\tc0.2-0.3,0.4-0.6,0.4-0.9c0-0.6,0.1-1.3-0.1-1.9c-0.1-0.2-0.2-0.4-0.1-0.5c0.2-0.3,0.1-0.6,0.2-0.9c0.2-0.5,0.4-0.9,0.1-1.4\n\t\tc0.2-0.6,0-1.1-0.2-1.6c-0.1-0.5-0.3-1-0.3-1.5c0-0.5-0.1-1,0.2-1.5c0-0.1,0.1-0.1,0.1-0.2c0.2-0.4,0.3-0.7,0-1.1\n\t\tc0-0.1,0-0.2,0-0.3c0-0.7-0.1-1.4-0.4-2c0.2-0.5,0.7-1,0.3-1.6c0-0.1,0-0.2,0-0.3c0-0.1,0.1-0.3,0-0.3c-0.2-0.3,0-0.5,0-0.7\n\t\tc0-0.4,0.2-0.8-0.3-1.1c-0.4-0.3-0.4-0.5-0.1-0.9c0.2-0.2,0.4-0.4,0.5-0.6c0-0.3,0-0.6-0.1-0.8c-0.2-0.5-0.2-0.9,0.1-1.2\n\t\tc0-0.5,0-0.8,0-1.1c0-0.1,0-0.2,0-0.3c-0.3-0.4-0.2-0.9-0.4-1.3c0-0.1,0-0.2,0-0.3c0.1-0.3,0.2-0.6,0.3-0.9c0.1-0.3,0.1-0.5,0-0.8\n\t\tc-0.2-0.6-0.3-1.1-0.4-1.7c0.2-0.3,0.3-0.6,0.5-0.8c0.3-0.5,0.3-0.9,0-1.4c-0.3-0.6-0.4-1.2-0.2-1.9c0.1-0.3,0.1-0.6,0-0.8\n\t\tc-0.1-0.1-0.1-0.4,0-0.5c0.3-0.3,0.2-0.7,0.2-1c0-0.4,0-0.7,0.1-1c-0.1-0.2-0.2-0.3-0.3-0.5c-0.2-0.2-0.2-0.4,0-0.6\n\t\tc0.3-0.4,0.2-0.7-0.2-1.1c0.5-0.8,0.4-1.4-0.2-2c0-0.2,0.1-0.3,0.1-0.4c0-0.1,0-0.3,0-0.4C1,53.3,1,53.3,1,53.3\n\t\tc0,0,0.1-0.1,0.2-0.1c0.5-0.3,0.5-0.3,0.3-0.8c0-0.1,0-0.2,0-0.3c0-0.5-0.1-0.9,0.2-1.3c0.1-0.1,0-0.3,0-0.5c0-0.3-0.1-0.7-0.2-1\n\t\tc0-0.1,0-0.3,0-0.3c0.4-0.4-0.1-0.8,0-1.3c-0.3-0.3-0.2-0.7-0.2-1c0-0.7,0.2-1.3,0.2-1.9c0-0.1,0-0.2,0.1-0.2\n\t\tc-0.1-0.2-0.2-0.3-0.3-0.4c0.4-0.8,0.4-1.5,0-2.2c0-0.2,0.1-0.4,0-0.6c-0.1-0.4,0-0.7,0.2-1.1c0.1-0.2,0.1-0.5-0.1-0.7\n\t\tc-0.3-0.3-0.3-0.8-0.2-1.2c0-0.4,0.1-0.8,0.1-1.2c0.1-0.3,0.1-0.6-0.1-0.8c0.1-0.2,0.2-0.3,0.3-0.6c-0.2-0.1-0.3-0.2-0.5-0.3\n\t\tc0.5-0.4,0.4-0.8,0.2-1.3c-0.2-0.3-0.3-0.6-0.5-0.9c0.2-0.2,0.3-0.3,0.6-0.5c-0.3-0.3,0-0.5,0.2-0.7c0-0.2-0.1-0.3-0.1-0.4\n\t\tc0.1-0.7,0-1.3-0.3-1.8c-0.1-0.1-0.1-0.3-0.1-0.4c0.1-0.5,0.2-1,0.3-1.4c0.1-0.4,0.2-0.7,0-1c0.1-0.3,0.2-0.5,0.2-0.7\n\t\tc0-0.6,0-1.1,0-1.7c0-0.4,0-0.8,0.3-1.1c0,0,0.1-0.1,0.1-0.2c-0.2-0.1-0.3-0.2-0.4-0.3c0.1-0.3,0.3-0.5,0.3-0.8\n\t\tc-0.1-0.6-0.3-1.1-0.4-1.7c0.1-0.4,0.2-0.8,0.3-1.2c0-0.2-0.1-0.3-0.2-0.5c0-0.1-0.1-0.2-0.2-0.3c0.2-0.4,0.5-0.8,0.7-1.2\n\t\tc0.3-0.6,0.5-0.7-0.2-1.2c0,0,0-0.1-0.1-0.1c0-0.1,0-0.1,0-0.2c0.2-0.4,0.1-0.7-0.2-1c-0.1-0.1-0.2-0.2-0.1-0.4c0-0.5,0-1,0.1-1.4\n\t\tc0.1-0.3,0.2-0.6,0.1-0.9c0-0.1,0-0.3,0.1-0.3c0.3-0.4,0.3-0.8,0-1.2C2.2,9.2,1.8,7.9,1,6.5C1.2,6.4,1.3,6.2,1.5,6s0.3-0.4,0.3-0.6\n\t\tc0-0.3-0.1-0.6-0.2-1c-0.1-0.3-0.3-0.7-0.4-1C1.4,2.8,1.4,2.1,2,1.7c0.1,0,0.2,0,0.3,0v0l0.2,0c0.5-0.1,1.1-0.3,1.6-0.1\n\t\tc0.2,0.1,0.6,0,0.8-0.1c0.3-0.1,0.5-0.2,0.8-0.1c0.4,0.1,0.8,0.2,1.2,0c0.3-0.1,0.6-0.1,0.8,0c0.2,0.1,0.4,0.1,0.6,0.1\n\t\tc0.3-0.1,0.6,0,0.9,0.1c0.1,0.1,0.3,0.1,0.4,0.2c0.1,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0c0.6-0.2,1.1-0.2,1.7-0.2c0.1,0,0.2,0,0.2,0\n\t\tc0.8-0.4,1.7-0.1,2.5-0.1c0.6,0,1.3-0.1,1.9,0c0.1,0,0.2,0,0.2,0c0.3-0.2,0.7-0.1,1-0.1c0.6,0,1.2,0.1,1.8,0.1c0.2,0,0.3,0,0.5,0\n\t\tc0.4-0.2,0.8-0.2,1.2,0c0.2,0.1,0.4,0,0.6,0c0.5,0,0.9-0.3,1.4-0.1c0.5,0.2,1.1,0.2,1.5,0c0.3,0,0.6,0.1,0.8,0.1c0.2,0,0.4,0,0.6,0\n\t\tc0.6,0.1,1.2,0.2,1.7,0.3c0.2,0,0.3-0.1,0.5-0.2c0.1,0,0.2-0.1,0.4-0.2c0,0.4,0.3,0.4,0.6,0.4c0.6,0.1,1.2-0.1,1.7-0.5\n\t\tc0.2-0.2,0.4-0.2,0.6-0.1C31.7,1,32,1,32.2,1c0.4,0,0.8-0.1,1.2-0.2c0.1,0,0.3,0,0.4,0.1c0.5,0.3,1.1,0.2,1.6,0.5\n\t\tc0.1,0,0.2,0,0.3,0c0.2,0,0.3-0.1,0.4-0.1c0.1,0,0.1,0.1,0.2,0.1c0.7,0.4,0.7,0.4,1.4,0c0.3-0.2,0.7-0.3,1-0.3c0.5,0,1,0.1,1.4-0.1\n\t\tc0.3,0.2,0.6,0.4,0.9,0.4c0.6,0,1.3,0.1,1.9-0.1c0.2-0.1,0.4-0.1,0.5-0.1c0.3,0.1,0.6,0.1,0.9,0.2c0.5,0.3,0.9,0.4,1.4,0.1\n\t\tc0.6,0.2,1.1,0,1.6-0.2c0.5-0.2,1-0.3,1.5-0.3c0.5,0,1-0.1,1.5,0.2c0.1,0,0.1,0.1,0.2,0.1c0.4,0.1,0.7,0.3,1.1,0\n\t\tc0.1-0.1,0.2,0,0.3,0c0.7,0,1.4-0.1,2-0.4c0.5,0.2,1,0.7,1.6,0.3c0.1,0,0.2,0,0.3,0c0.1,0,0.3,0.1,0.3,0c0.3-0.2,0.5,0,0.7,0\n\t\tc0.4,0,0.8,0.2,1.2-0.3c0.3-0.4,0.5-0.4,0.9-0.1c0.2,0.2,0.4,0.4,0.6,0.5c0.3,0,0.6,0,0.8-0.1c0.5-0.2,0.9-0.2,1.2,0.1\n\t\tc0.5,0,0.8,0,1.1,0c0.1,0,0.2,0,0.3,0c0.4-0.3,0.9-0.2,1.3-0.4c0.1,0,0.2,0,0.3,0c0.3,0.1,0.6,0.2,0.9,0.3c0.3,0.1,0.5,0.1,0.8,0\n\t\tc0.6-0.2,1.1-0.3,1.7-0.4c0.3,0.2,0.6,0.3,0.8,0.5c0.5,0.3,0.9,0.3,1.4,0c0.6-0.4,1.2-0.4,1.8-0.2c0.3,0.1,0.6,0.1,0.8,0\n\t\tc0.1-0.1,0.4-0.1,0.5,0c0.3,0.3,0.7,0.2,1,0.2c0.4,0,0.7,0,1,0.1c0.2-0.1,0.3-0.2,0.5-0.3c0.2-0.2,0.4-0.2,0.6,0\n\t\tc0.4,0.3,0.7,0.2,1.1-0.1c0.8,0.5,1.4,0.4,2-0.2c0.2,0,0.3,0.1,0.5,0.1c0.1,0,0.3,0,0.4,0C80.3,1,80.3,1,80.3,1\n\t\tc0,0,0.1,0.1,0.1,0.1c0.3,0.5,0.3,0.5,0.8,0.3c0.1,0,0.2,0,0.3,0c0.5,0,0.9-0.1,1.3,0.2c0.1,0.1,0.3,0,0.5,0c0.3-0.1,0.7-0.1,1-0.2\n\t\tc0.1,0,0.3,0,0.3,0c0.4,0.4,0.8-0.1,1.3,0c0.3-0.3,0.7-0.2,1-0.2c0.7,0,1.3,0.2,1.9,0.2c0.1,0,0.2,0.1,0.2,0.1\n\t\tc0.2-0.1,0.3-0.2,0.4-0.3c0.8,0.4,1.5,0.4,2.2,0c0.2,0,0.4,0.1,0.6,0c0.4-0.1,0.7,0,1.1,0.2c0.2,0.1,0.5,0.1,0.7-0.1\n\t\tc0.3-0.3,0.8-0.3,1.2-0.2c0.4,0,0.8,0.1,1.2,0.1c0.3,0.1,0.6,0.1,0.8-0.1c0.2,0.1,0.3,0.2,0.6,0.3C98,1.4,98.1,1.2,98.2,1\n\t\tc0.4,0.5,0.8,0.4,1.3,0.2c0.3-0.2,0.6-0.3,0.9-0.5c0.2,0.2,0.3,0.3,0.5,0.6c0.3-0.3,0.5,0,0.7,0.1c0.2,0,0.3-0.1,0.4-0.1\n\t\tc0.7,0.1,1.3,0,1.8-0.3c0.1-0.1,0.3-0.1,0.4-0.1c0.5,0.1,1,0.2,1.5,0.3c0.3,0.1,0.7,0.2,1-0.1c0.3,0.1,0.5,0.2,0.7,0.2\n\t\tc0.6,0,1.1,0,1.7,0c0.4,0,0.8,0,1.1,0.3c0,0,0.1,0.1,0.2,0.1c0.1-0.2,0.2-0.3,0.3-0.4c0.3,0.1,0.5,0.3,0.8,0.3\n\t\tc0.6-0.1,1.1-0.3,1.7-0.4c0.4,0.1,0.8,0.2,1.2,0.3c0.2,0,0.3-0.1,0.5-0.2c0.1,0,0.2-0.1,0.3-0.2c0.4,0.2,0.8,0.5,1.2,0.7\n\t\tc0.6,0.3,0.7,0.5,1.1-0.2c0,0,0.1,0,0.1-0.1c0.1,0,0.1,0,0.2,0c0.4,0.2,0.7,0.1,1-0.2c0.1-0.1,0.2-0.1,0.4-0.1c0.5,0,1,0,1.5,0.1\n\t\tc0.3,0.1,0.5,0.2,0.9,0.1c0.1,0,0.3,0,0.3,0.1c0.4,0.3,0.8,0.3,1.2,0c0.2,0.1,0.3,0.2,0.5,0.2c0.8,0.3,1.6,0.3,2.4,0\n\t\tc0.4-0.1,0.8-0.4,1.2-0.6c0.2,0.1,0.3,0.3,0.5,0.4c0.1,0.1,0.2,0.1,0.3,0.2h0c0.1,0.1,0.2,0.1,0.3,0.1c0.2,0,0.4,0,0.5-0.1\n\t\tc0.1,0,0.3-0.1,0.4-0.1c0.3-0.1,0.7-0.3,1-0.4c0.6,0.3,1.3,0.3,1.8,0.9c0,0.2,0,0.4-0.1,0.6c0,0.3,0,0.6-0.1,0.9\n\t\tc-0.1,0.2,0,0.6,0.1,0.8c0.1,0.3,0.2,0.5,0.1,0.8c-0.2,0.4-0.2,0.8,0,1.2c0.1,0.3,0.1,0.5,0,0.8c-0.1,0.2-0.1,0.4-0.1,0.6\n\t\tc0.1,0.3,0,0.6-0.1,0.9c-0.1,0.2-0.3,0.6-0.2,0.8c0.2,0.6,0.2,1.1,0.2,1.7c0,0.1,0,0.2,0,0.2c0.4,0.8,0.1,1.7,0.1,2.5\n\t\tc0,0.6,0.1,1.3,0,1.9c0,0.1,0,0.2,0,0.2c0.2,0.3,0.1,0.7,0.1,1c0,0.6-0.1,1.2-0.1,1.8c0,0.1,0,0.3,0,0.5c0.2,0.4,0.1,0.8,0,1.2\n\t\tc-0.1,0.2,0,0.4,0,0.6c0,0.5,0.3,0.9,0.1,1.4c-0.2,0.5-0.2,1.1,0,1.5c0,0.3-0.1,0.6-0.1,0.8c0,0.2,0,0.4-0.1,0.6\n\t\tc-0.1,0.6-0.2,1.2-0.3,1.7c0,0.2,0.1,0.3,0.2,0.5c0,0.1,0.1,0.2,0.2,0.4c-0.4,0-0.4,0.3-0.4,0.6c-0.1,0.6,0.1,1.2,0.5,1.7\n\t\tc0.2,0.2,0.2,0.4,0.1,0.6c-0.1,0.2-0.1,0.4,0,0.6c0,0.4,0.1,0.8,0.2,1.2c0,0.1,0,0.3-0.1,0.4c-0.3,0.5-0.2,1.1-0.5,1.6\n\t\tc0,0.1,0,0.2,0,0.3c0,0.2,0.1,0.3,0.1,0.4c0,0.1-0.1,0.1-0.1,0.2c-0.4,0.7-0.4,0.7,0,1.4c0.2,0.3,0.3,0.7,0.3,1.1\n\t\tc0,0.5-0.1,1,0.1,1.4c-0.2,0.3-0.4,0.6-0.4,0.9c0,0.6-0.1,1.3,0.1,1.9c0.1,0.2,0.2,0.4,0.1,0.5c-0.1,0.3-0.1,0.6-0.2,0.9\n\t\tc-0.2,0.5-0.4,0.9-0.1,1.4c-0.2,0.6,0,1.1,0.2,1.6c0.2,0.5,0.3,1,0.3,1.5c0,0.5,0.1,1-0.2,1.5c0,0.1-0.1,0.1-0.1,0.2\n\t\tc-0.2,0.4-0.3,0.7,0,1.1c0,0.1,0,0.2,0,0.3c0,0.7,0.1,1.4,0.4,2c-0.2,0.5-0.7,1-0.3,1.6c0,0.1,0,0.2,0,0.3c0,0.1-0.1,0.3,0,0.3\n\t\tc0.2,0.3,0,0.5,0,0.7c0,0.4-0.2,0.8,0.3,1.2c0.4,0.3,0.4,0.5,0.1,0.9c-0.2,0.2-0.4,0.4-0.5,0.6c0,0.3,0,0.6,0.1,0.8\n\t\tc0.2,0.5,0.1,0.9-0.1,1.2c0,0.4,0,0.8,0,1.1c0,0.1,0,0.2,0,0.3c0.3,0.4,0.2,0.9,0.4,1.3c0.1,0.1,0,0.2,0,0.3\n\t\tc-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.3-0.1,0.5,0,0.8c0.2,0.6,0.3,1.2,0.4,1.7c-0.2,0.3-0.3,0.6-0.5,0.8c-0.3,0.5-0.3,0.9,0,1.4\n\t\tc0.3,0.6,0.4,1.2,0.2,1.8c-0.1,0.3-0.1,0.6,0,0.9c0.1,0.1,0.1,0.4,0,0.4c-0.3,0.3-0.2,0.7-0.2,0.9c0.1,0.4,0,0.7-0.1,1.1\n\t\tc0.1,0.2,0.2,0.3,0.3,0.5c0.2,0.2,0.2,0.4,0,0.6c-0.3,0.4-0.2,0.7,0.2,1.1c-0.5,0.8-0.4,1.4,0.2,2c0,0.2-0.1,0.3-0.1,0.5\n\t\tc0,0.1,0,0.3,0,0.3c-0.1,0.1-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1c-0.5,0.3-0.5,0.3-0.3,0.8c0,0.1,0,0.2,0,0.3\n\t\tc0,0.4,0.1,0.9-0.2,1.3c-0.1,0.1,0,0.3,0,0.5c0,0.3,0.1,0.7,0.2,1c0,0.1,0,0.3,0,0.3c-0.4,0.4,0.1,0.8,0,1.3c0.3,0.3,0.2,0.7,0.2,1\n\t\tc0,0.7-0.2,1.3-0.2,1.9c0,0.1,0,0.2-0.1,0.2c0.1,0.2,0.2,0.3,0.3,0.4c-0.4,0.8-0.4,1.5,0,2.2c0,0.2-0.1,0.4,0,0.6\n\t\tc0.1,0.4,0,0.7-0.2,1.1c-0.1,0.2-0.1,0.5,0.1,0.7c0.3,0.4,0.3,0.8,0.2,1.2c0,0.4-0.1,0.8-0.1,1.2c-0.1,0.3-0.1,0.6,0.1,0.8\n\t\tc-0.1,0.2-0.2,0.3-0.3,0.6c0.2,0.1,0.3,0.2,0.5,0.3c-0.5,0.4-0.4,0.8-0.2,1.3C132.3,99,132.4,99.3,132.6,99.6z\"/>\n</g>\n</svg>";
+}var css_248z$7 = "\n.sg1-tab-results[data-v-3117e596] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-3117e596] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n.sg1-replay-link[data-v-3117e596] {\n\t\ttext-decoration: underline;\n\t\tcursor: pointer;\n}\n";
+styleInject(css_248z$7);script$6.render = render$6;
+script$6.__scopeId = "data-v-3117e596";var bgSketch = "\n<svg version=\"1.1\" id=\"Livello_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 133.3 133.3\" style=\"enable-background:new 0 0 133.3 133.3;\" xml:space=\"preserve\">\n<g>\n\t<path style=\"fill:#7F7F7F;\" d=\"M132.6,99.6c-0.2,0.2-0.4,0.3-0.6,0.5c0.3,0.3,0,0.5-0.1,0.7c0,0.2,0.1,0.3,0.1,0.4\n\t\tc-0.1,0.6,0,1.3,0.3,1.8c0.1,0.1,0.1,0.3,0.1,0.4c-0.1,0.5-0.2,1-0.3,1.4c-0.1,0.4-0.2,0.7,0,1c-0.1,0.3-0.2,0.5-0.2,0.7\n\t\tc0,0.6,0,1.1,0,1.7c0,0.4,0,0.8-0.3,1.1c0,0.1,0,0.1-0.1,0.2c0.2,0.1,0.3,0.2,0.4,0.3c-0.1,0.3-0.3,0.5-0.3,0.8\n\t\tc0.1,0.6,0.3,1.1,0.4,1.7c-0.1,0.4-0.2,0.8-0.3,1.2c0,0.2,0.1,0.3,0.1,0.5c0,0.1,0.1,0.2,0.2,0.3c-0.2,0.4-0.5,0.8-0.7,1.2\n\t\tc-0.3,0.6-0.5,0.7,0.2,1.2c0,0,0,0.1,0.1,0.1c0,0.1,0,0.2,0,0.2c-0.1,0.4-0.1,0.7,0.2,1c0.1,0.1,0.1,0.2,0.1,0.4c0,0.5,0,1-0.1,1.5\n\t\tc-0.1,0.3-0.2,0.5-0.1,0.9c0,0.1,0,0.3-0.1,0.3c-0.3,0.4-0.3,0.8,0,1.2c-0.8,1.4-0.4,2.7,0.4,4.1c-0.1,0.2-0.3,0.3-0.4,0.5\n\t\tc-0.1,0.2-0.3,0.4-0.3,0.6c0,0.3,0.1,0.6,0.2,1c0.1,0.3,0.3,0.7,0.4,1c-0.3,0.6-0.3,1.4-0.9,1.8c-0.2,0-0.5,0-0.8,0\n\t\tc-0.2,0.2,0.1,0.7-0.4,0.5c-0.2-0.1-0.5,0-0.8,0.1c-0.3,0.1-0.5,0.2-0.9,0.1c-0.4-0.1-0.8-0.2-1.2,0c-0.3,0.1-0.5,0.1-0.8,0\n\t\tc-0.2-0.1-0.4-0.1-0.6-0.1c-0.3,0.1-0.6,0-0.9-0.1c-0.2-0.1-0.6-0.3-0.8-0.2c-0.6,0.2-1.1,0.1-1.7,0.2c-0.1,0-0.2,0-0.2,0\n\t\tc-0.8,0.3-1.7,0.1-2.5,0.1c-0.6,0-1.3,0.1-1.9,0c-0.1,0-0.2,0-0.2,0c-0.3,0.2-0.7,0.1-1,0.1c-0.6,0-1.2-0.1-1.8-0.1\n\t\tc-0.2,0-0.3,0-0.5,0c-0.4,0.2-0.8,0.2-1.2,0c-0.2-0.1-0.4,0-0.6,0c-0.5,0-0.9,0.3-1.4,0.1c-0.5-0.2-1-0.2-1.5,0\n\t\tc-0.3,0-0.6-0.1-0.8-0.1s-0.4,0-0.6-0.1c-0.6-0.1-1.2-0.2-1.8-0.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0-0.2,0.1-0.4,0.2\n\t\tc0-0.5-0.3-0.4-0.6-0.4c-0.6-0.1-1.2,0.2-1.7,0.5c-0.2,0.2-0.4,0.2-0.7,0.1c-0.2-0.1-0.4-0.1-0.6,0c-0.4,0-0.8,0.1-1.2,0.2\n\t\tc-0.1,0-0.3,0-0.4-0.1c-0.5-0.3-1.1-0.2-1.6-0.5c-0.1,0-0.2,0-0.3,0c-0.2,0-0.3,0.1-0.5,0.1c-0.1,0-0.1-0.1-0.2-0.1\n\t\tc-0.7-0.4-0.7-0.4-1.4,0c-0.3,0.2-0.7,0.3-1.1,0.3c-0.5,0-1-0.1-1.4,0.1c-0.3-0.2-0.6-0.4-0.9-0.4c-0.6,0-1.3-0.2-1.9,0.1\n\t\tc-0.2,0.1-0.4,0.2-0.5,0.1c-0.3-0.2-0.6-0.1-0.9-0.2c-0.5-0.3-0.9-0.4-1.4-0.1c-0.6-0.2-1.1,0-1.6,0.2c-0.5,0.2-1,0.3-1.5,0.3\n\t\tc-0.5,0-1,0.1-1.5-0.2c-0.1,0-0.2-0.1-0.2-0.1c-0.3-0.2-0.7-0.3-1.1,0c-0.1,0-0.2,0-0.3,0c-0.7,0-1.4,0.1-2,0.4\n\t\tc-0.5-0.2-1-0.7-1.6-0.3c-0.1,0-0.2,0-0.3,0c-0.1,0-0.3-0.1-0.3-0.1c-0.3,0.2-0.5,0-0.8,0c-0.4,0-0.8-0.2-1.2,0.3\n\t\tc-0.3,0.4-0.5,0.4-0.9,0.1c-0.2-0.2-0.4-0.4-0.6-0.5c-0.3,0-0.6,0-0.8,0c-0.5,0.2-0.9,0.2-1.2-0.1c-0.4,0-0.8,0-1.1,0\n\t\tc-0.1,0-0.2,0-0.3,0c-0.4,0.3-0.9,0.2-1.3,0.4c-0.1,0-0.2,0-0.4,0c-0.3-0.1-0.6-0.2-0.9-0.3c-0.3-0.1-0.5-0.1-0.8,0\n\t\tc-0.6,0.2-1.2,0.3-1.7,0.4c-0.3-0.2-0.6-0.3-0.9-0.5c-0.5-0.3-0.9-0.3-1.4,0c-0.6,0.3-1.2,0.4-1.8,0.2c-0.3-0.1-0.6-0.1-0.9,0\n\t\tc-0.1,0.1-0.4,0.1-0.4,0c-0.3-0.3-0.7-0.2-0.9-0.2c-0.4,0-0.7,0-1.1-0.1c-0.2,0.1-0.3,0.2-0.5,0.3c-0.2,0.2-0.4,0.2-0.6,0\n\t\tc-0.4-0.3-0.7-0.2-1.1,0.1c-0.8-0.5-1.4-0.4-2,0.2c-0.2,0-0.3-0.1-0.5-0.1c-0.1,0-0.3,0-0.4,0c-0.1-0.1-0.1-0.1-0.1-0.1\n\t\tc0-0.1-0.1-0.1-0.1-0.2c-0.3-0.5-0.3-0.5-0.8-0.3c-0.1,0-0.2,0-0.3,0c-0.4,0-0.9,0.1-1.3-0.2c-0.1-0.1-0.3,0-0.5,0\n\t\tc-0.3,0-0.7,0.1-1,0.2c-0.1,0-0.3,0-0.3,0c-0.4-0.4-0.9,0.1-1.3,0c-0.3,0.3-0.7,0.2-1,0.2c-0.7,0-1.3-0.2-2-0.2\n\t\tc-0.1,0-0.2-0.1-0.2-0.1c-0.2,0.1-0.3,0.2-0.4,0.3c-0.8-0.4-1.5-0.4-2.2,0c-0.2,0-0.4-0.1-0.6,0c-0.4,0.1-0.7,0-1.1-0.2\n\t\tc-0.2-0.1-0.5-0.1-0.7,0.1c-0.3,0.3-0.8,0.2-1.1,0.2c-0.4,0-0.8-0.1-1.2-0.1c-0.3-0.1-0.6-0.1-0.8,0.1c-0.2-0.1-0.3-0.2-0.6-0.3\n\t\tc-0.1,0.2-0.2,0.3-0.3,0.5c-0.4-0.5-0.8-0.4-1.3-0.2c-0.3,0.1-0.6,0.3-0.9,0.4c-0.2-0.2-0.3-0.4-0.5-0.6c-0.3,0.3-0.5,0-0.7-0.1\n\t\tc-0.2,0-0.3,0.1-0.5,0.1c-0.6-0.1-1.3,0-1.8,0.3c-0.1,0.1-0.3,0.1-0.4,0.1c-0.5-0.1-1-0.2-1.4-0.3c-0.4-0.1-0.7-0.2-1,0\n\t\tc-0.3-0.1-0.5-0.2-0.7-0.2c-0.6,0-1.1,0.1-1.7,0.1c-0.4,0-0.8-0.1-1.1-0.3c-0.1-0.1-0.1-0.1-0.2-0.1c-0.1,0.2-0.2,0.3-0.3,0.4\n\t\tc-0.3-0.1-0.5-0.3-0.7-0.3c-0.6,0.1-1.1,0.3-1.7,0.4c-0.4-0.1-0.8-0.2-1.2-0.3c-0.2,0-0.3,0.1-0.5,0.2c-0.1,0-0.2,0.1-0.3,0.2\n\t\tc-0.4-0.2-0.8-0.5-1.2-0.7c-0.6-0.3-0.7-0.5-1.1,0.2c0,0-0.1,0-0.1,0.1c0,0-0.1,0-0.2,0c-0.4-0.1-0.7-0.1-1,0.2\n\t\tc-0.1,0.1-0.3,0.2-0.4,0.2c-0.5,0-1,0-1.5-0.1c-0.3-0.1-0.5-0.2-0.9-0.1c-0.1,0-0.2,0-0.3-0.1c-0.4-0.3-0.8-0.3-1.2,0\n\t\tc-1.4-0.8-2.7-0.4-4.1,0.4c-0.2-0.1-0.3-0.3-0.5-0.4c-0.2-0.1-0.4-0.3-0.6-0.3c-0.3,0-0.7,0.1-1,0.2c-0.3,0.1-0.7,0.3-1,0.4\n\t\tc-0.6-0.3-1.3-0.3-1.8-0.9c0-0.1-0.8-0.2-0.8-0.3c-0.1-0.5-0.3-1.1-0.1-1.6c0.1-0.2,0-0.6-0.1-0.8c-0.1-0.3-0.2-0.5-0.1-0.9\n\t\tc0.2-0.4,0.2-0.8,0-1.2c-0.1-0.3-0.1-0.6,0-0.8c0.1-0.2,0.1-0.4,0.1-0.6c-0.1-0.3,0-0.6,0.1-0.9c0.1-0.2,0.3-0.6,0.2-0.8\n\t\tc-0.2-0.6-0.1-1.1-0.2-1.7c0-0.1,0-0.2,0-0.2c-0.4-0.8-0.1-1.6-0.1-2.5c0-0.6-0.1-1.3,0-1.9c0-0.1,0-0.2,0-0.2\n\t\tc-0.2-0.3-0.1-0.7-0.1-1c0-0.6,0.1-1.2,0.1-1.8c0-0.2,0-0.3,0-0.5c-0.2-0.4-0.1-0.8,0-1.2c0.1-0.2,0-0.4,0-0.6\n\t\tc0-0.5-0.3-0.9-0.1-1.4c0.2-0.5,0.2-1.1,0-1.5c0-0.3,0.1-0.6,0.1-0.8c0-0.2,0-0.4,0.1-0.6c0.1-0.6,0.2-1.2,0.3-1.7\n\t\tc0-0.2-0.1-0.3-0.2-0.5c0-0.1-0.1-0.2-0.2-0.4c0.4,0,0.4-0.3,0.4-0.6c0.1-0.6-0.1-1.2-0.5-1.7c-0.2-0.2-0.2-0.4-0.1-0.6\n\t\tc0.1-0.2,0.1-0.4,0-0.6c0-0.4-0.1-0.8-0.2-1.2c0-0.1,0-0.3,0.1-0.4c0.3-0.5,0.2-1.1,0.5-1.6c0-0.1,0-0.2,0-0.3\n\t\tc0-0.2-0.1-0.3-0.1-0.4c0-0.1,0.1-0.1,0.1-0.2c0.4-0.7,0.4-0.7,0-1.3c-0.2-0.3-0.3-0.7-0.3-1.1c0-0.5,0.1-1-0.1-1.4\n\t\tc0.2-0.3,0.4-0.6,0.4-0.9c0-0.6,0.1-1.3-0.1-1.9c-0.1-0.2-0.2-0.4-0.1-0.5c0.2-0.3,0.1-0.6,0.2-0.9c0.2-0.5,0.4-0.9,0.1-1.4\n\t\tc0.2-0.6,0-1.1-0.2-1.6c-0.1-0.5-0.3-1-0.3-1.5c0-0.5-0.1-1,0.2-1.5c0-0.1,0.1-0.1,0.1-0.2c0.2-0.4,0.3-0.7,0-1.1\n\t\tc0-0.1,0-0.2,0-0.3c0-0.7-0.1-1.4-0.4-2c0.2-0.5,0.7-1,0.3-1.6c0-0.1,0-0.2,0-0.3c0-0.1,0.1-0.3,0-0.3c-0.2-0.3,0-0.5,0-0.7\n\t\tc0-0.4,0.2-0.8-0.3-1.1c-0.4-0.3-0.4-0.5-0.1-0.9c0.2-0.2,0.4-0.4,0.5-0.6c0-0.3,0-0.6-0.1-0.8c-0.2-0.5-0.2-0.9,0.1-1.2\n\t\tc0-0.5,0-0.8,0-1.1c0-0.1,0-0.2,0-0.3c-0.3-0.4-0.2-0.9-0.4-1.3c0-0.1,0-0.2,0-0.3c0.1-0.3,0.2-0.6,0.3-0.9c0.1-0.3,0.1-0.5,0-0.8\n\t\tc-0.2-0.6-0.3-1.1-0.4-1.7c0.2-0.3,0.3-0.6,0.5-0.8c0.3-0.5,0.3-0.9,0-1.4c-0.3-0.6-0.4-1.2-0.2-1.9c0.1-0.3,0.1-0.6,0-0.8\n\t\tc-0.1-0.1-0.1-0.4,0-0.5c0.3-0.3,0.2-0.7,0.2-1c0-0.4,0-0.7,0.1-1c-0.1-0.2-0.2-0.3-0.3-0.5c-0.2-0.2-0.2-0.4,0-0.6\n\t\tc0.3-0.4,0.2-0.7-0.2-1.1c0.5-0.8,0.4-1.4-0.2-2c0-0.2,0.1-0.3,0.1-0.4c0-0.1,0-0.3,0-0.4C1,53.3,1,53.3,1,53.3\n\t\tc0,0,0.1-0.1,0.2-0.1c0.5-0.3,0.5-0.3,0.3-0.8c0-0.1,0-0.2,0-0.3c0-0.5-0.1-0.9,0.2-1.3c0.1-0.1,0-0.3,0-0.5c0-0.3-0.1-0.7-0.2-1\n\t\tc0-0.1,0-0.3,0-0.3c0.4-0.4-0.1-0.8,0-1.3c-0.3-0.3-0.2-0.7-0.2-1c0-0.7,0.2-1.3,0.2-1.9c0-0.1,0-0.2,0.1-0.2\n\t\tc-0.1-0.2-0.2-0.3-0.3-0.4c0.4-0.8,0.4-1.5,0-2.2c0-0.2,0.1-0.4,0-0.6c-0.1-0.4,0-0.7,0.2-1.1c0.1-0.2,0.1-0.5-0.1-0.7\n\t\tc-0.3-0.3-0.3-0.8-0.2-1.2c0-0.4,0.1-0.8,0.1-1.2c0.1-0.3,0.1-0.6-0.1-0.8c0.1-0.2,0.2-0.3,0.3-0.6c-0.2-0.1-0.3-0.2-0.5-0.3\n\t\tc0.5-0.4,0.4-0.8,0.2-1.3c-0.2-0.3-0.3-0.6-0.5-0.9c0.2-0.2,0.3-0.3,0.6-0.5c-0.3-0.3,0-0.5,0.2-0.7c0-0.2-0.1-0.3-0.1-0.4\n\t\tc0.1-0.7,0-1.3-0.3-1.8c-0.1-0.1-0.1-0.3-0.1-0.4c0.1-0.5,0.2-1,0.3-1.4c0.1-0.4,0.2-0.7,0-1c0.1-0.3,0.2-0.5,0.2-0.7\n\t\tc0-0.6,0-1.1,0-1.7c0-0.4,0-0.8,0.3-1.1c0,0,0.1-0.1,0.1-0.2c-0.2-0.1-0.3-0.2-0.4-0.3c0.1-0.3,0.3-0.5,0.3-0.8\n\t\tc-0.1-0.6-0.3-1.1-0.4-1.7c0.1-0.4,0.2-0.8,0.3-1.2c0-0.2-0.1-0.3-0.2-0.5c0-0.1-0.1-0.2-0.2-0.3c0.2-0.4,0.5-0.8,0.7-1.2\n\t\tc0.3-0.6,0.5-0.7-0.2-1.2c0,0,0-0.1-0.1-0.1c0-0.1,0-0.1,0-0.2c0.2-0.4,0.1-0.7-0.2-1c-0.1-0.1-0.2-0.2-0.1-0.4c0-0.5,0-1,0.1-1.4\n\t\tc0.1-0.3,0.2-0.6,0.1-0.9c0-0.1,0-0.3,0.1-0.3c0.3-0.4,0.3-0.8,0-1.2C2.2,9.2,1.8,7.9,1,6.5C1.2,6.4,1.3,6.2,1.5,6s0.3-0.4,0.3-0.6\n\t\tc0-0.3-0.1-0.6-0.2-1c-0.1-0.3-0.3-0.7-0.4-1C1.4,2.8,1.4,2.1,2,1.7c0.1,0,0.2,0,0.3,0v0l0.2,0c0.5-0.1,1.1-0.3,1.6-0.1\n\t\tc0.2,0.1,0.6,0,0.8-0.1c0.3-0.1,0.5-0.2,0.8-0.1c0.4,0.1,0.8,0.2,1.2,0c0.3-0.1,0.6-0.1,0.8,0c0.2,0.1,0.4,0.1,0.6,0.1\n\t\tc0.3-0.1,0.6,0,0.9,0.1c0.1,0.1,0.3,0.1,0.4,0.2c0.1,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0c0.6-0.2,1.1-0.2,1.7-0.2c0.1,0,0.2,0,0.2,0\n\t\tc0.8-0.4,1.7-0.1,2.5-0.1c0.6,0,1.3-0.1,1.9,0c0.1,0,0.2,0,0.2,0c0.3-0.2,0.7-0.1,1-0.1c0.6,0,1.2,0.1,1.8,0.1c0.2,0,0.3,0,0.5,0\n\t\tc0.4-0.2,0.8-0.2,1.2,0c0.2,0.1,0.4,0,0.6,0c0.5,0,0.9-0.3,1.4-0.1c0.5,0.2,1.1,0.2,1.5,0c0.3,0,0.6,0.1,0.8,0.1c0.2,0,0.4,0,0.6,0\n\t\tc0.6,0.1,1.2,0.2,1.7,0.3c0.2,0,0.3-0.1,0.5-0.2c0.1,0,0.2-0.1,0.4-0.2c0,0.4,0.3,0.4,0.6,0.4c0.6,0.1,1.2-0.1,1.7-0.5\n\t\tc0.2-0.2,0.4-0.2,0.6-0.1C31.7,1,32,1,32.2,1c0.4,0,0.8-0.1,1.2-0.2c0.1,0,0.3,0,0.4,0.1c0.5,0.3,1.1,0.2,1.6,0.5\n\t\tc0.1,0,0.2,0,0.3,0c0.2,0,0.3-0.1,0.4-0.1c0.1,0,0.1,0.1,0.2,0.1c0.7,0.4,0.7,0.4,1.4,0c0.3-0.2,0.7-0.3,1-0.3c0.5,0,1,0.1,1.4-0.1\n\t\tc0.3,0.2,0.6,0.4,0.9,0.4c0.6,0,1.3,0.1,1.9-0.1c0.2-0.1,0.4-0.1,0.5-0.1c0.3,0.1,0.6,0.1,0.9,0.2c0.5,0.3,0.9,0.4,1.4,0.1\n\t\tc0.6,0.2,1.1,0,1.6-0.2c0.5-0.2,1-0.3,1.5-0.3c0.5,0,1-0.1,1.5,0.2c0.1,0,0.1,0.1,0.2,0.1c0.4,0.1,0.7,0.3,1.1,0\n\t\tc0.1-0.1,0.2,0,0.3,0c0.7,0,1.4-0.1,2-0.4c0.5,0.2,1,0.7,1.6,0.3c0.1,0,0.2,0,0.3,0c0.1,0,0.3,0.1,0.3,0c0.3-0.2,0.5,0,0.7,0\n\t\tc0.4,0,0.8,0.2,1.2-0.3c0.3-0.4,0.5-0.4,0.9-0.1c0.2,0.2,0.4,0.4,0.6,0.5c0.3,0,0.6,0,0.8-0.1c0.5-0.2,0.9-0.2,1.2,0.1\n\t\tc0.5,0,0.8,0,1.1,0c0.1,0,0.2,0,0.3,0c0.4-0.3,0.9-0.2,1.3-0.4c0.1,0,0.2,0,0.3,0c0.3,0.1,0.6,0.2,0.9,0.3c0.3,0.1,0.5,0.1,0.8,0\n\t\tc0.6-0.2,1.1-0.3,1.7-0.4c0.3,0.2,0.6,0.3,0.8,0.5c0.5,0.3,0.9,0.3,1.4,0c0.6-0.4,1.2-0.4,1.8-0.2c0.3,0.1,0.6,0.1,0.8,0\n\t\tc0.1-0.1,0.4-0.1,0.5,0c0.3,0.3,0.7,0.2,1,0.2c0.4,0,0.7,0,1,0.1c0.2-0.1,0.3-0.2,0.5-0.3c0.2-0.2,0.4-0.2,0.6,0\n\t\tc0.4,0.3,0.7,0.2,1.1-0.1c0.8,0.5,1.4,0.4,2-0.2c0.2,0,0.3,0.1,0.5,0.1c0.1,0,0.3,0,0.4,0C80.3,1,80.3,1,80.3,1\n\t\tc0,0,0.1,0.1,0.1,0.1c0.3,0.5,0.3,0.5,0.8,0.3c0.1,0,0.2,0,0.3,0c0.5,0,0.9-0.1,1.3,0.2c0.1,0.1,0.3,0,0.5,0c0.3-0.1,0.7-0.1,1-0.2\n\t\tc0.1,0,0.3,0,0.3,0c0.4,0.4,0.8-0.1,1.3,0c0.3-0.3,0.7-0.2,1-0.2c0.7,0,1.3,0.2,1.9,0.2c0.1,0,0.2,0.1,0.2,0.1\n\t\tc0.2-0.1,0.3-0.2,0.4-0.3c0.8,0.4,1.5,0.4,2.2,0c0.2,0,0.4,0.1,0.6,0c0.4-0.1,0.7,0,1.1,0.2c0.2,0.1,0.5,0.1,0.7-0.1\n\t\tc0.3-0.3,0.8-0.3,1.2-0.2c0.4,0,0.8,0.1,1.2,0.1c0.3,0.1,0.6,0.1,0.8-0.1c0.2,0.1,0.3,0.2,0.6,0.3C98,1.4,98.1,1.2,98.2,1\n\t\tc0.4,0.5,0.8,0.4,1.3,0.2c0.3-0.2,0.6-0.3,0.9-0.5c0.2,0.2,0.3,0.3,0.5,0.6c0.3-0.3,0.5,0,0.7,0.1c0.2,0,0.3-0.1,0.4-0.1\n\t\tc0.7,0.1,1.3,0,1.8-0.3c0.1-0.1,0.3-0.1,0.4-0.1c0.5,0.1,1,0.2,1.5,0.3c0.3,0.1,0.7,0.2,1-0.1c0.3,0.1,0.5,0.2,0.7,0.2\n\t\tc0.6,0,1.1,0,1.7,0c0.4,0,0.8,0,1.1,0.3c0,0,0.1,0.1,0.2,0.1c0.1-0.2,0.2-0.3,0.3-0.4c0.3,0.1,0.5,0.3,0.8,0.3\n\t\tc0.6-0.1,1.1-0.3,1.7-0.4c0.4,0.1,0.8,0.2,1.2,0.3c0.2,0,0.3-0.1,0.5-0.2c0.1,0,0.2-0.1,0.3-0.2c0.4,0.2,0.8,0.5,1.2,0.7\n\t\tc0.6,0.3,0.7,0.5,1.1-0.2c0,0,0.1,0,0.1-0.1c0.1,0,0.1,0,0.2,0c0.4,0.2,0.7,0.1,1-0.2c0.1-0.1,0.2-0.1,0.4-0.1c0.5,0,1,0,1.5,0.1\n\t\tc0.3,0.1,0.5,0.2,0.9,0.1c0.1,0,0.3,0,0.3,0.1c0.4,0.3,0.8,0.3,1.2,0c0.2,0.1,0.3,0.2,0.5,0.2c0.8,0.3,1.6,0.3,2.4,0\n\t\tc0.4-0.1,0.8-0.4,1.2-0.6c0.2,0.1,0.3,0.3,0.5,0.4c0.1,0.1,0.2,0.1,0.3,0.2h0c0.1,0.1,0.2,0.1,0.3,0.1c0.2,0,0.4,0,0.5-0.1\n\t\tc0.1,0,0.3-0.1,0.4-0.1c0.3-0.1,0.7-0.3,1-0.4c0.6,0.3,1.3,0.3,1.8,0.9c0,0.2,0,0.4-0.1,0.6c0,0.3,0,0.6-0.1,0.9\n\t\tc-0.1,0.2,0,0.6,0.1,0.8c0.1,0.3,0.2,0.5,0.1,0.8c-0.2,0.4-0.2,0.8,0,1.2c0.1,0.3,0.1,0.5,0,0.8c-0.1,0.2-0.1,0.4-0.1,0.6\n\t\tc0.1,0.3,0,0.6-0.1,0.9c-0.1,0.2-0.3,0.6-0.2,0.8c0.2,0.6,0.2,1.1,0.2,1.7c0,0.1,0,0.2,0,0.2c0.4,0.8,0.1,1.7,0.1,2.5\n\t\tc0,0.6,0.1,1.3,0,1.9c0,0.1,0,0.2,0,0.2c0.2,0.3,0.1,0.7,0.1,1c0,0.6-0.1,1.2-0.1,1.8c0,0.1,0,0.3,0,0.5c0.2,0.4,0.1,0.8,0,1.2\n\t\tc-0.1,0.2,0,0.4,0,0.6c0,0.5,0.3,0.9,0.1,1.4c-0.2,0.5-0.2,1.1,0,1.5c0,0.3-0.1,0.6-0.1,0.8c0,0.2,0,0.4-0.1,0.6\n\t\tc-0.1,0.6-0.2,1.2-0.3,1.7c0,0.2,0.1,0.3,0.2,0.5c0,0.1,0.1,0.2,0.2,0.4c-0.4,0-0.4,0.3-0.4,0.6c-0.1,0.6,0.1,1.2,0.5,1.7\n\t\tc0.2,0.2,0.2,0.4,0.1,0.6c-0.1,0.2-0.1,0.4,0,0.6c0,0.4,0.1,0.8,0.2,1.2c0,0.1,0,0.3-0.1,0.4c-0.3,0.5-0.2,1.1-0.5,1.6\n\t\tc0,0.1,0,0.2,0,0.3c0,0.2,0.1,0.3,0.1,0.4c0,0.1-0.1,0.1-0.1,0.2c-0.4,0.7-0.4,0.7,0,1.4c0.2,0.3,0.3,0.7,0.3,1.1\n\t\tc0,0.5-0.1,1,0.1,1.4c-0.2,0.3-0.4,0.6-0.4,0.9c0,0.6-0.1,1.3,0.1,1.9c0.1,0.2,0.2,0.4,0.1,0.5c-0.1,0.3-0.1,0.6-0.2,0.9\n\t\tc-0.2,0.5-0.4,0.9-0.1,1.4c-0.2,0.6,0,1.1,0.2,1.6c0.2,0.5,0.3,1,0.3,1.5c0,0.5,0.1,1-0.2,1.5c0,0.1-0.1,0.1-0.1,0.2\n\t\tc-0.2,0.4-0.3,0.7,0,1.1c0,0.1,0,0.2,0,0.3c0,0.7,0.1,1.4,0.4,2c-0.2,0.5-0.7,1-0.3,1.6c0,0.1,0,0.2,0,0.3c0,0.1-0.1,0.3,0,0.3\n\t\tc0.2,0.3,0,0.5,0,0.7c0,0.4-0.2,0.8,0.3,1.2c0.4,0.3,0.4,0.5,0.1,0.9c-0.2,0.2-0.4,0.4-0.5,0.6c0,0.3,0,0.6,0.1,0.8\n\t\tc0.2,0.5,0.1,0.9-0.1,1.2c0,0.4,0,0.8,0,1.1c0,0.1,0,0.2,0,0.3c0.3,0.4,0.2,0.9,0.4,1.3c0.1,0.1,0,0.2,0,0.3\n\t\tc-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.3-0.1,0.5,0,0.8c0.2,0.6,0.3,1.2,0.4,1.7c-0.2,0.3-0.3,0.6-0.5,0.8c-0.3,0.5-0.3,0.9,0,1.4\n\t\tc0.3,0.6,0.4,1.2,0.2,1.8c-0.1,0.3-0.1,0.6,0,0.9c0.1,0.1,0.1,0.4,0,0.4c-0.3,0.3-0.2,0.7-0.2,0.9c0.1,0.4,0,0.7-0.1,1.1\n\t\tc0.1,0.2,0.2,0.3,0.3,0.5c0.2,0.2,0.2,0.4,0,0.6c-0.3,0.4-0.2,0.7,0.2,1.1c-0.5,0.8-0.4,1.4,0.2,2c0,0.2-0.1,0.3-0.1,0.5\n\t\tc0,0.1,0,0.3,0,0.3c-0.1,0.1-0.1,0.1-0.1,0.1c0,0-0.1,0.1-0.2,0.1c-0.5,0.3-0.5,0.3-0.3,0.8c0,0.1,0,0.2,0,0.3\n\t\tc0,0.4,0.1,0.9-0.2,1.3c-0.1,0.1,0,0.3,0,0.5c0,0.3,0.1,0.7,0.2,1c0,0.1,0,0.3,0,0.3c-0.4,0.4,0.1,0.8,0,1.3c0.3,0.3,0.2,0.7,0.2,1\n\t\tc0,0.7-0.2,1.3-0.2,1.9c0,0.1,0,0.2-0.1,0.2c0.1,0.2,0.2,0.3,0.3,0.4c-0.4,0.8-0.4,1.5,0,2.2c0,0.2-0.1,0.4,0,0.6\n\t\tc0.1,0.4,0,0.7-0.2,1.1c-0.1,0.2-0.1,0.5,0.1,0.7c0.3,0.4,0.3,0.8,0.2,1.2c0,0.4-0.1,0.8-0.1,1.2c-0.1,0.3-0.1,0.6,0.1,0.8\n\t\tc-0.1,0.2-0.2,0.3-0.3,0.6c0.2,0.1,0.3,0.2,0.5,0.3c-0.5,0.4-0.4,0.8-0.2,1.3C132.3,99,132.4,99.3,132.6,99.6z\"/>\n</g>\n</svg>";
 var bgSketch$1 = bgSketch;function drawCanvasBg(dimension, bgStyle, layoutID) {
   var canvas = document.getElementById("st-canvas-bg");
   var context = canvas.getContext("2d");
@@ -1118,30 +1148,30 @@ var bgSketch$1 = bgSketch;function drawCanvasBg(dimension, bgStyle, layoutID) {
     }
   }
 };
-var script$4 = BgBoxText;var _hoisted_1$3 = {
+var script$5 = BgBoxText;var _hoisted_1$4 = {
   class: "sg1-bg-wrapper"
 };
-var _hoisted_2$3 = ["width", "height"];
-function render$4(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$3, [_ctx.isCanvas ? (vue.openBlock(), vue.createElementBlock("canvas", {
+var _hoisted_2$4 = ["width", "height"];
+function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$4, [_ctx.isCanvas ? (vue.openBlock(), vue.createElementBlock("canvas", {
     key: 0,
     width: _ctx.width,
     height: _ctx.height,
     id: "sg1-st-canvas-bg"
-  }, null, 8, _hoisted_2$3)) : (vue.openBlock(), vue.createElementBlock("div", {
+  }, null, 8, _hoisted_2$4)) : (vue.openBlock(), vue.createElementBlock("div", {
     key: 1,
     class: "sg1-st-bg",
     style: vue.normalizeStyle(_ctx.styleStBg)
   }, null, 4))]);
-}var css_248z$5 = "\n.sg1-bg-wrapper[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n.sg1-st-bg[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
-styleInject(css_248z$5);script$4.render = render$4;
-script$4.__scopeId = "data-v-25293889";var boxText = {
+}var css_248z$6 = "\n.sg1-bg-wrapper[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n.sg1-st-bg[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
+styleInject(css_248z$6);script$5.render = render$5;
+script$5.__scopeId = "data-v-25293889";var boxText = {
   name: "boxText",
   components: {
-    boxnarration: script$7,
-    gameEnd: script$6,
-    gameOver: script$5,
-    BgBoxText: script$4
+    boxnarration: script$8,
+    gameEnd: script$7,
+    gameOver: script$6,
+    BgBoxText: script$5
   },
   props: {
     narrationBox: {},
@@ -1161,7 +1191,7 @@ script$4.__scopeId = "data-v-25293889";var boxText = {
     }
   }
 };
-var script$3 = boxText;function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+var script$4 = boxText;function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_BgBoxText = vue.resolveComponent("BgBoxText");
 
   var _component_boxnarration = vue.resolveComponent("boxnarration");
@@ -1173,32 +1203,33 @@ var script$3 = boxText;function render$3(_ctx, _cache, $props, $setup, $data, $o
   return vue.openBlock(), vue.createElementBlock("div", {
     class: "sg1-wrapper-box-text",
     style: vue.normalizeStyle(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.boxText), _ctx.stylesObj.boxTextPadding))
-  }, [vue.createVNode(_component_BgBoxText, {
-    stylesObj: _ctx.stylesObj
-  }, null, 8, ["stylesObj"]), _ctx.narrationBox == 'default' || _ctx.narrationBox == 'descriptions' || _ctx.narrationBox == 'chose' ? (vue.openBlock(), vue.createBlock(_component_boxnarration, {
+  }, [_ctx.stylesObj ? (vue.openBlock(), vue.createBlock(_component_BgBoxText, {
     key: 0,
+    stylesObj: _ctx.stylesObj
+  }, null, 8, ["stylesObj"])) : vue.createCommentVNode("", true), _ctx.narrationBox == 'default' || _ctx.narrationBox == 'descriptions' || _ctx.narrationBox == 'chose' ? (vue.openBlock(), vue.createBlock(_component_boxnarration, {
+    key: 1,
     lang: _ctx.lang,
     "current-tabs": _ctx.currentTabs,
     nextTabsChose: _ctx.nextTabsChose,
     stylesObj: _ctx.stylesObj,
     onEmitReedBeams2: _ctx.emitReedBeams1
   }, null, 8, ["lang", "current-tabs", "nextTabsChose", "stylesObj", "onEmitReedBeams2"])) : vue.createCommentVNode("", true), _ctx.narrationBox == 'end' ? (vue.openBlock(), vue.createBlock(_component_gameEnd, {
-    key: 1,
+    key: 2,
     lang: _ctx.lang,
     "current-tabs": _ctx.currentTabs,
     stylesObj: _ctx.stylesObj,
     onEmitReedBeams2: _ctx.emitReedBeams1
   }, null, 8, ["lang", "current-tabs", "stylesObj", "onEmitReedBeams2"])) : vue.createCommentVNode("", true), _ctx.narrationBox == 'game over' ? (vue.openBlock(), vue.createBlock(_component_gameOver, {
-    key: 2,
+    key: 3,
     lang: _ctx.lang,
     "current-tabs": _ctx.currentTabs,
     stylesObj: _ctx.stylesObj,
     onEmitReedBeams2: _ctx.emitReedBeams1,
     onGameIntentLoad3: _ctx.gameIntentLoad2
   }, null, 8, ["lang", "current-tabs", "stylesObj", "onEmitReedBeams2", "onGameIntentLoad3"])) : vue.createCommentVNode("", true)], 4);
-}var css_248z$4 = "\n.sg1-wrapper-box-text[data-v-76b41285] {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: relative;\n\t\tflex-grow: 1;\n\t\theight: auto;\n}\n";
-styleInject(css_248z$4);script$3.render = render$3;
-script$3.__scopeId = "data-v-76b41285";var PreCachedImg = {
+}var css_248z$5 = "\n.sg1-wrapper-box-text[data-v-34060e5e] {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: relative;\r\n  flex-grow: 1;\r\n  height: auto;\n}\r\n";
+styleInject(css_248z$5);script$4.render = render$4;
+script$4.__scopeId = "data-v-34060e5e";var PreCachedImg = {
   name: "PreCachedImg",
   props: {
     preCachedImgList: {},
@@ -1218,19 +1249,19 @@ script$3.__scopeId = "data-v-76b41285";var PreCachedImg = {
     }
   }
 };
-var script$2 = PreCachedImg;var _hoisted_1$2 = {
+var script$3 = PreCachedImg;var _hoisted_1$3 = {
   class: "sg1-pre-cached-img-wrapper"
 };
-var _hoisted_2$2 = {
+var _hoisted_2$3 = {
   key: 0
 };
-var _hoisted_3$2 = ["src"];
-var _hoisted_4$1 = {
+var _hoisted_3$3 = ["src"];
+var _hoisted_4$2 = {
   key: 1
 };
-var _hoisted_5$1 = ["src", "srcset", "sizes"];
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$2, [_ctx.editorUsage ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$2, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.preCachedImgList, function (el, index) {
+var _hoisted_5$2 = ["src", "srcset", "sizes"];
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$3, [_ctx.editorUsage ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$3, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.preCachedImgList, function (el, index) {
     return vue.openBlock(), vue.createElementBlock("img", {
       key: index,
       class: "sg1-box-img",
@@ -1238,8 +1269,8 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       onLoad: _cache[0] || (_cache[0] = function ($event) {
         return _ctx.imgsLoaded++;
       })
-    }, null, 40, _hoisted_3$2);
-  }), 128))])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$1, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.preCachedImgList, function (el, index) {
+    }, null, 40, _hoisted_3$3);
+  }), 128))])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$2, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.preCachedImgList, function (el, index) {
     return vue.openBlock(), vue.createElementBlock("img", {
       key: index,
       src: el.src,
@@ -1248,22 +1279,22 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       onLoad: _cache[1] || (_cache[1] = function ($event) {
         return _ctx.imgsLoaded++;
       })
-    }, null, 40, _hoisted_5$1);
+    }, null, 40, _hoisted_5$2);
   }), 128))]))]);
-}var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-50ed9ac2] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
-styleInject(css_248z$3);script$2.render = render$2;
-script$2.__scopeId = "data-v-50ed9ac2";var spinnerBox = {
+}var css_248z$4 = "\n.sg1-pre-cached-img-wrapper[data-v-50ed9ac2] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
+styleInject(css_248z$4);script$3.render = render$3;
+script$3.__scopeId = "data-v-50ed9ac2";var spinnerBox = {
   name: "Spinner"
 };
-var script$1 = spinnerBox;var _withScopeId = function _withScopeId(n) {
+var script$2 = spinnerBox;var _withScopeId = function _withScopeId(n) {
   return vue.pushScopeId("data-v-141b4ae7"), n = n(), vue.popScopeId(), n;
 };
 
-var _hoisted_1$1 = {
+var _hoisted_1$2 = {
   class: "sg1-spinner-box-media"
 };
 
-var _hoisted_2$1 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_2$2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/vue.createElementVNode("div", {
     class: "sg1-spinner sg1-pulse-container"
   }, [/*#__PURE__*/vue.createElementVNode("div", {
@@ -1275,12 +1306,101 @@ var _hoisted_2$1 = /*#__PURE__*/_withScopeId(function () {
   })], -1);
 });
 
-var _hoisted_3$1 = [_hoisted_2$1];
+var _hoisted_3$2 = [_hoisted_2$2];
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$2, _hoisted_3$2);
+}var css_248z$3 = "\n.sg1-spinner-box-media[data-v-141b4ae7] {\n\t\tbackground-color: #464646;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tanimation-name: sg1-fadein-141b4ae7;\n\t\tanimation-duration: 0.4s;\n\t\tanimation-timing-function: ease-out;\n}\n@keyframes sg1-fadein-141b4ae7 {\n0% {\n\t\t\topacity: 0;\n}\n100% {\n\t\t\topacity: 1;\n}\n}\n\n\t/* PULSE BUBBLES */\n.sg1-pulse-container[data-v-141b4ae7] {\n\t\twidth: 3em;\n\t\tfont-size: rem(15px);\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-pulse-bubble[data-v-141b4ae7] {\n\t\tfont-size: 1em;\n\t\twidth: 0.6em;\n\t\theight: 3em;\n\t\tbackground-color: #ffffff;\n}\n.sg1-pulse-bubble-1[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0s infinite alternate;\n}\n.sg1-pulse-bubble-2[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.15s infinite alternate;\n}\n.sg1-pulse-bubble-3[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.3s infinite alternate;\n}\n\n\t/* KEYFRAMES */\n@keyframes sg1-pulse-141b4ae7 {\nfrom {\n\t\t\topacity: 1;\n\t\t\ttransform: scale(1);\n}\nto {\n\t\t\topacity: 0.5;\n\t\t\ttransform: scale(0.8);\n}\n}\n";
+styleInject(css_248z$3);script$2.render = render$2;
+script$2.__scopeId = "data-v-141b4ae7";var ToastContainer = {
+  name: "ToastContainer",
+  data: function data() {
+    return {
+      idToSet: 0,
+      toasts: [],
+      toastsFiltered: [],
+      tostToSee: 3
+    };
+  },
+  methods: {
+    addToast: function addToast(params) {
+      this.idToSet = this.idToSet + 1;
+      var newToast = {
+        id: this.idToSet,
+        type: params.type,
+        title: params.title,
+        expanded: false,
+        content: params.content,
+        isUnmountening: false
+      };
+      this.toasts.push(newToast);
+    },
+    removeToast: function removeToast(id) {
+      var _this = this;
+
+      this.toasts.find(function (el) {
+        return el.id == id;
+      }).isUnmountening = true;
+      setTimeout(function () {
+        _this.toasts = _this.toasts.filter(function (el) {
+          return el.id !== id;
+        });
+      }, 1000);
+    },
+    expandToast: function expandToast(id) {
+      this.toasts.forEach(function (el) {
+        if (el.id == id) {
+          el.expanded = !el.expanded;
+        }
+      });
+    }
+  }
+};
+var script$1 = ToastContainer;var _hoisted_1$1 = {
+  key: 0,
+  class: "sg1-toast-container"
+};
+var _hoisted_2$1 = ["cose"];
+var _hoisted_3$1 = {
+  class: "sg1-head"
+};
+var _hoisted_4$1 = ["innerHTML"];
+var _hoisted_5$1 = ["onClick"];
+var _hoisted_6 = ["onClick"];
+var _hoisted_7 = {
+  class: "sg1-content"
+};
+var _hoisted_8 = {
+  class: "sg1-wrapper-pre"
+};
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$1, _hoisted_3$1);
-}var css_248z$2 = "\n.sg1-spinner-box-media[data-v-141b4ae7] {\n\t\tbackground-color: #464646;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tanimation-name: sg1-fadein-141b4ae7;\n\t\tanimation-duration: 0.4s;\n\t\tanimation-timing-function: ease-out;\n}\n@keyframes sg1-fadein-141b4ae7 {\n0% {\n\t\t\topacity: 0;\n}\n100% {\n\t\t\topacity: 1;\n}\n}\n\n\t/* PULSE BUBBLES */\n.sg1-pulse-container[data-v-141b4ae7] {\n\t\twidth: 3em;\n\t\tfont-size: rem(15px);\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-pulse-bubble[data-v-141b4ae7] {\n\t\tfont-size: 1em;\n\t\twidth: 0.6em;\n\t\theight: 3em;\n\t\tbackground-color: #ffffff;\n}\n.sg1-pulse-bubble-1[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0s infinite alternate;\n}\n.sg1-pulse-bubble-2[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.15s infinite alternate;\n}\n.sg1-pulse-bubble-3[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.3s infinite alternate;\n}\n\n\t/* KEYFRAMES */\n@keyframes sg1-pulse-141b4ae7 {\nfrom {\n\t\t\topacity: 1;\n\t\t\ttransform: scale(1);\n}\nto {\n\t\t\topacity: 0.5;\n\t\t\ttransform: scale(0.8);\n}\n}\n";
-styleInject(css_248z$2);script$1.render = render$1;
-script$1.__scopeId = "data-v-141b4ae7";function gridLayout(id) {
+  return _ctx.toasts.length ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$1, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.toasts, function (toast, index) {
+    return vue.openBlock(), vue.createElementBlock("div", {
+      key: toast.id,
+      class: vue.normalizeClass([{
+        'sg1-active': toast.expanded,
+        'sg1-toast-faded-1': _ctx.toasts.length - index > _ctx.tostToSee,
+        'sg1-toast-faded-2': _ctx.toasts.length - index > _ctx.tostToSee + 1,
+        'sg1-toast-faded-3': _ctx.toasts.length - index > _ctx.tostToSee + 2,
+        'sg1-toast-fade-out': toast.isUnmountening
+      }, "sg1-toast"]),
+      cose: _ctx.toasts.length - index
+    }, [vue.createElementVNode("div", _hoisted_3$1, [vue.createElementVNode("span", {
+      class: "sg1-title",
+      innerHTML: toast.title
+    }, null, 8, _hoisted_4$1), vue.createElementVNode("div", {
+      onClick: function onClick($event) {
+        return _ctx.expandToast(toast.id);
+      },
+      class: "sg1-expand"
+    }, null, 8, _hoisted_5$1), vue.createElementVNode("div", {
+      onClick: function onClick($event) {
+        return _ctx.removeToast(toast.id);
+      },
+      class: "sg1-close-btn"
+    }, null, 8, _hoisted_6)]), vue.createElementVNode("div", _hoisted_7, [vue.createElementVNode("div", _hoisted_8, [vue.createElementVNode("pre", null, vue.toDisplayString(toast.content), 1)])])], 10, _hoisted_2$1);
+  }), 128))])) : vue.createCommentVNode("", true);
+}var css_248z$2 = "\n.sg1-toast-container {\r\n  --sg1ToastColor1: rgb(49, 49, 49);\r\n  --sg1ToastColor2: rgb(82, 82, 82);\r\n  --sg1ToastColor3: rgb(231, 231, 231);\r\n  --sg1ToastColor4: rgb(0, 0, 0);\r\n\r\n  --sg1ToastBg: 10px;\r\n  --sg1ToastColorText: var(--sg1ToastColor3);\r\n  --sg1ToastPaddingVertical: 10px;\r\n  --sg1ToastPaddingHorizontal: 10px;\r\n  --sg1ToastMargin: 10px;\r\n  --sg1ToastSizeIconLine: 2px;\r\n\r\n  --sg1toastWidth: 300px;\r\n  --maxToastHeight: 600px;\r\n\r\n  --sg1toastFontFamily: monospace;\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: var(--sg1ToastMargin);\r\n  height: 100%;\r\n  transform: translate(100%);\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-end;\r\n  z-index: 100;\n}\n.sg1-toast-container * {\r\n  box-sizing: border-box;\n}\n.sg1-toast {\r\n  min-width: var(--sg1toastWidth);\r\n  max-width: var(--sg1toastWidth);\r\n  margin-bottom: var(--sg1ToastMargin);\r\n  transform: translateX(-100%);\r\n  border-radius: 4px;\r\n  background-color: var(--sg1ToastColor1);\r\n  box-shadow: 0 0 0 1px white;\r\n  animation-name: sg1-fadein;\r\n  animation-duration: 1s;\r\n  animation-timing-function: ease-out;\r\n  transition: 0.35s opacity;\r\n  transition-timing-function: ease-out;\n}\n@keyframes sg1-fadein {\n0% {\r\n    opacity: 0;\r\n    transform: translate(100%);\r\n    max-height: 0;\n}\n85% {\r\n    opacity: 1;\r\n    transform: translateX(-110%);\r\n    max-height: var(--maxToastHeight);\n}\n100% {\r\n    transform: translateX(-100%);\n}\n}\n.sg1-toast .sg1-head {\r\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 10px;\n}\n.sg1-toast .sg1-head .sg1-title {\r\n  font-size: 14px;\r\n  font-family: var(--sg1toastFontFamily);\r\n  color: var(--sg1ToastColorText);\n}\n.sg1-toast .sg1-head .title .sg1-id {\r\n  font-weight: 700;\n}\n.sg1-toast .sg1-content {\r\n  max-height: 0;\r\n  overflow: hidden;\r\n  padding: 0 var(--sg1ToastPaddingHorizontal);\r\n  position: relative;\n}\n.sg1-toast.sg1-active .sg1-content {\r\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\r\n  max-height: var(--maxToastHeight);\r\n  transition-timing-function: ease-out;\r\n  transition: 1s max-height, 0.5s padding;\n}\n.sg1-toast .sg1-content:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  height: 1px;\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor2);\n}\n.sg1-wrapper-pre {\r\n  width: 100%;\r\n  padding: calc(var(--sg1ToastPaddingVertical) / 2)\r\n    calc(var(--sg1ToastPaddingHorizontal) / 2);\r\n  background-color: var(--sg1ToastColor4);\r\n  border-radius: 4px;\n}\n.sg1-toast .sg1-content pre {\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor4);\r\n  font-size: 12px;\r\n  font-family: var(--sg1toastFontFamily);\r\n  color: var(--sg1ToastColorText);\r\n\r\n  margin-top: 0;\r\n  margin-bottom: 0;\n}\n.sg1-toast .sg1-close-btn,\r\n.sg1-toast .sg1-expand {\r\n  font-size: 16px;\r\n  min-width: 1em;\r\n  height: 1em;\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\n}\n.sg1-toast .sg1-close-btn:after,\r\n.sg1-toast .sg1-close-btn:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  display: block;\r\n  height: var(--sg1ToastSizeIconLine);\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor3);\n}\n.sg1-toast .sg1-close-btn:after {\r\n  transform: rotate(45%);\n}\n.sg1-toast .sg1-close-btn:before {\r\n  transform: rotate(-45%);\n}\n.sg1-toast .sg1-close-btn:before {\r\n  transform: translate(-50%, -50%) rotate(45deg);\r\n  top: 50%;\r\n  left: 50%;\n}\n.sg1-toast .sg1-close-btn:after {\r\n  transform: translate(-50%, -50%) rotate(-45deg);\r\n  top: 50%;\r\n  left: 50%;\n}\n.sg1-toast .sg1-expand {\r\n  margin-left: auto;\n}\n.sg1-toast .sg1-expand:after {\r\n  content: \"\";\r\n  width: 100%;\r\n  height: 100%;\r\n  position: absolute;\r\n  transform: rotate(45deg) scale(0.5);\r\n  border-top: calc(var(--sg1ToastSizeIconLine) * 2) solid var(--sg1ToastColor3);\r\n  border-right: calc(var(--sg1ToastSizeIconLine) * 2) solid\r\n    var(--sg1ToastColor3);\n}\n.sg1-toast.sg1-active .sg1-expand:after {\r\n  transform: rotate(135deg) scale(0.5);\n}\n.sg1-toast-faded-1 {\r\n  opacity: 0.5;\r\n  pointer-events: none;\n}\n.sg1-toast-faded-2 {\r\n  opacity: 0.25;\n}\n.sg1-toast-faded-3 {\r\n  opacity: 0;\n}\n.sg1-toast.sg1-toast-fade-out {\r\n  animation-name: sg1-fadeout;\r\n  animation-duration: 1s;\r\n  animation-timing-function: ease-out;\n}\n@keyframes sg1-fadeout {\n0% {\r\n    transform: translateX(-100%);\r\n    max-height: var(--maxToastHeight);\n}\n100% {\r\n    opacity: 0;\r\n    transform: translate(100%);\r\n    max-height: 0;\n}\n}\r\n";
+styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
   var boxIllustration;
   var boxText;
 
@@ -1526,10 +1646,11 @@ script$1.__scopeId = "data-v-141b4ae7";function gridLayout(id) {
 var script = /*#__PURE__*/vue.defineComponent({
   name: "game",
   components: {
-    boxillustration: script$a,
-    boxText: script$3,
-    PreCachedImg: script$2,
-    Spinner: script$1
+    boxillustration: script$b,
+    boxText: script$4,
+    PreCachedImg: script$3,
+    Spinner: script$2,
+    ToastContainer: script$1
   },
   props: {
     editorUsage: {
@@ -1575,8 +1696,21 @@ var script = /*#__PURE__*/vue.defineComponent({
     stopLink: {
       type: Boolean,
       default: false
+    },
+    useTheme: {
+      type: Boolean,
+      default: true
+    },
+    canEmit: {
+      type: Boolean,
+      default: true
+    },
+    showToast: {
+      type: Boolean,
+      default: false
     }
   },
+  emits: ["functionToEmitByTabs", "functionToEmitOnInit", "functionToEmitBeforeNavigation", "functionToEmitAfterNavigation"],
   data: function data() {
     return {
       initialized: false,
@@ -1596,6 +1730,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       illustration: false,
       onRunError: [],
       listBadMixId: "",
+      isBadNodeMixForCose: [],
       gameLoaded: false,
       device: false,
       goToLink: false,
@@ -1612,6 +1747,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       handler: function handler() {
         if (this.stepToInit.font && this.stepToInit.img) {
           this.initialized = true;
+          this.$emit("functionToEmitOnInit");
         } else {
           this.initialized = false;
         }
@@ -1628,6 +1764,12 @@ var script = /*#__PURE__*/vue.defineComponent({
       if (val == "game end" && this.goToLink) {
         this.initialized = false;
       }
+    },
+    currentTabs: {
+      handler: function handler() {
+        this.$emit("functionToEmitAfterNavigation");
+      },
+      deep: true
     }
   },
   computed: {
@@ -1658,95 +1800,106 @@ var script = /*#__PURE__*/vue.defineComponent({
 
     /* Style */
     stylesObj: function stylesObj() {
-      if (this.device) {
-        var gameGrid = {
-          width: this.width,
-          height: this.height,
-          gridTemplateColumns: this.gameData.style[this.device].margin + " repeat(6, 1fr) " + this.gameData.style[this.device].margin,
-          gridTemplateRows: this.gameData.style[this.device].margin + " repeat(4, 1fr) " + this.gameData.style[this.device].margin
-        };
-        var gridLayoutItem;
+      if (this.useTheme) {
+        if (this.device) {
+          var gameGrid = {
+            width: this.width,
+            height: this.height,
+            gridTemplateColumns: this.gameData.style[this.device].margin + " repeat(6, 1fr) " + this.gameData.style[this.device].margin,
+            gridTemplateRows: this.gameData.style[this.device].margin + " repeat(4, 1fr) " + this.gameData.style[this.device].margin
+          };
+          var gridLayoutItem;
 
-        if (this.disableIlustration == true) {
-          gridLayoutItem = gridLayout("a1f8");
+          if (this.disableIlustration == true) {
+            gridLayoutItem = gridLayout("a1f8");
+          } else {
+            gridLayoutItem = gridLayout(this.gameData.style[this.device]["layout-type"]);
+          }
+
+          var _boxIllustration = _objectSpread2({}, gridLayoutItem.boxIllustration);
+
+          var _boxText = _objectSpread2({}, gridLayoutItem.boxText);
+
+          var boxTextPadding = {
+            padding: this.gameData.style[this.device]["box-text-padding"]
+          };
+          var currentBoxHeight;
+
+          if (_boxText.gridRowEnd != 7 && _boxText.gridRowStart != 1) {
+            currentBoxHeight = "(( " + this.height + " - " + "(" + this.gameData.style[this.device].margin + "+" + this.gameData.style[this.device].margin + "))/" + 4 + ") * (" + _boxText.gridRowEnd + " - " + _boxText.gridRowStart + ")";
+          } else {
+            //boxText.gridRowEnd == 7 && boxText.gridRowStart == 1
+            currentBoxHeight = this.height;
+          }
+
+          var heightCalc = "calc( " + currentBoxHeight + " - " + this.gameData.style[this.device]["box-text-padding"] + " - " + this.gameData.style[this.device]["box-text-padding"] + " - (" + " + " + this.gameData.style[this.device]["box-text-padding"] + " + " + this.gameData.style["icon-single-arrow"]["size"] + "))";
+          var tabResultsMaxHeight = {
+            maxHeight: heightCalc,
+            minHeight: heightCalc
+          };
+          /* FONT */
+
+          var fontName = this.gameData.style["font-family"];
+          var commonFontFamily = {
+            fontFamily: this.gameData.style["font-family"]
+          };
+          var fontWeightList = this.gameData.style["font-weight"];
+          var fontWeightListSelected = {
+            fontWeight: this.gameData.style["font-weight-selected"]
+          };
+          var fontColor = {
+            color: this.gameData.style["color"]
+          };
+          var fontSize1 = {
+            fontSize: this.gameData.style[this.device]["font-size-1"]
+          };
+          /* single arrow next */
+
+          var iconSingleArrow = this.gameData.style["icon-single-arrow"];
+          /* multiple arrow next */
+
+          var iconMultipleArrow = this.gameData.style["icon-multiple-arrow"];
+          var paddingTopNextTab = {
+            paddingTop: this.gameData.style[this.device]["box-text-padding"]
+          };
+          var paddingBottomNextTab = {
+            paddingBottom: this.gameData.style[this.device]["box-text-padding"]
+          };
+          /* bg text box */
+
+          var bgStyle = {
+            bgType: this.gameData.style["bg-type"],
+            bgColor: this.gameData.style["bg-color"]
+          };
+          return {
+            gameGrid: gameGrid,
+            layoutID: this.gameData.style[this.device]["layout-type"],
+            boxIllustration: _boxIllustration,
+            boxText: _boxText,
+            fontName: fontName,
+            commonFontFamily: commonFontFamily,
+            boxTextPadding: boxTextPadding,
+            fontWeightList: fontWeightList,
+            fontWeightListSelected: fontWeightListSelected,
+            fontColor: fontColor,
+            fontSize1: fontSize1,
+            iconSingleArrow: iconSingleArrow,
+            iconMultipleArrow: iconMultipleArrow,
+            paddingTopNextTab: paddingTopNextTab,
+            paddingBottomNextTab: paddingBottomNextTab,
+            tabResultsMaxHeight: tabResultsMaxHeight,
+            bgStyle: bgStyle
+          };
         } else {
-          gridLayoutItem = gridLayout(this.gameData.style[this.device]["layout-type"]);
+          return false;
         }
-
-        var _boxIllustration = _objectSpread2({}, gridLayoutItem.boxIllustration);
-
-        var _boxText = _objectSpread2({}, gridLayoutItem.boxText);
-
-        var boxTextPadding = {
-          padding: this.gameData.style[this.device]["box-text-padding"]
-        };
-        var currentBoxHeight;
-
-        if (_boxText.gridRowEnd != 7 && _boxText.gridRowStart != 1) {
-          currentBoxHeight = "(( " + this.height + " - " + "(" + this.gameData.style[this.device].margin + "+" + this.gameData.style[this.device].margin + "))/" + 4 + ") * (" + _boxText.gridRowEnd + " - " + _boxText.gridRowStart + ")";
-        } else {
-          //boxText.gridRowEnd == 7 && boxText.gridRowStart == 1
-          currentBoxHeight = this.height;
-        }
-
-        var heightCalc = "calc( " + currentBoxHeight + " - " + this.gameData.style[this.device]["box-text-padding"] + " - " + this.gameData.style[this.device]["box-text-padding"] + " - (" + " + " + this.gameData.style[this.device]["box-text-padding"] + " + " + this.gameData.style["icon-single-arrow"]["size"] + "))";
-        var tabResultsMaxHeight = {
-          maxHeight: heightCalc,
-          minHeight: heightCalc
-        };
-        /* FONT */
-
-        var fontName = this.gameData.style["font-family"];
-        var commonFontFamily = {
-          fontFamily: this.gameData.style["font-family"]
-        };
-        var fontWeightList = this.gameData.style["font-weight"];
-        var fontWeightListSelected = {
-          fontWeight: this.gameData.style["font-weight-selected"]
-        };
-        var fontColor = {
-          color: this.gameData.style["color"]
-        };
-        var fontSize1 = {
-          fontSize: this.gameData.style[this.device]["font-size-1"]
-        };
-        /* single arrow next */
-
-        var iconSingleArrow = this.gameData.style["icon-single-arrow"];
-        /* multiple arrow next */
-
-        var iconMultipleArrow = this.gameData.style["icon-multiple-arrow"];
-        var paddingTopNextTab = {
-          paddingTop: this.gameData.style[this.device]["box-text-padding"]
-        };
-        var paddingBottomNextTab = {
-          paddingBottom: this.gameData.style[this.device]["box-text-padding"]
-        };
-        /* bg text box */
-
-        var bgStyle = {
-          bgType: this.gameData.style["bg-type"],
-          bgColor: this.gameData.style["bg-color"]
-        };
-        return {
-          gameGrid: gameGrid,
-          layoutID: this.gameData.style[this.device]["layout-type"],
-          boxIllustration: _boxIllustration,
-          boxText: _boxText,
-          fontName: fontName,
-          commonFontFamily: commonFontFamily,
-          boxTextPadding: boxTextPadding,
-          fontWeightList: fontWeightList,
-          fontWeightListSelected: fontWeightListSelected,
-          fontColor: fontColor,
-          fontSize1: fontSize1,
-          iconSingleArrow: iconSingleArrow,
-          iconMultipleArrow: iconMultipleArrow,
-          paddingTopNextTab: paddingTopNextTab,
-          paddingBottomNextTab: paddingBottomNextTab,
-          tabResultsMaxHeight: tabResultsMaxHeight,
-          bgStyle: bgStyle
-        };
+      } else {
+        return false;
+      }
+    },
+    logMessage: function logMessage() {
+      if (this.narrationBox == "false" || this.narrationBox == "node-bad-mix" || this.urlToShow) {
+        return true;
       } else {
         return false;
       }
@@ -1768,7 +1921,7 @@ var script = /*#__PURE__*/vue.defineComponent({
   destroyed: function destroyed() {
     window.removeEventListener("resize", this.setDevice);
   },
-  methods: {
+  methods: _defineProperty({
     /* |||||||||||||||||||| GAME CORE |||||||||||||||||||||| */
     gameIntentLoad: function gameIntentLoad() {
       var _this = this;
@@ -1811,6 +1964,7 @@ var script = /*#__PURE__*/vue.defineComponent({
     navigation: function navigation(newIdArray) {
       var _this2 = this;
 
+      this.$emit("functionToEmitBeforeNavigation");
       var tabs = this.gameData.story.tabs.filter(function (el) {
         return newIdArray.includes(el.id);
       });
@@ -1839,6 +1993,7 @@ var script = /*#__PURE__*/vue.defineComponent({
               tabToAdd.push(newEl);
             }
           });
+          this.isBadNodeMixForCose = [];
           var testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
 
           if (testNextTabsChose.length == 1) {
@@ -2000,6 +2155,8 @@ var script = /*#__PURE__*/vue.defineComponent({
         });
       }
 
+      console.log("type: " + currentTab.type + "------------------------");
+
       switch (currentTab.type) {
         case "start":
           break;
@@ -2086,47 +2243,51 @@ var script = /*#__PURE__*/vue.defineComponent({
           break;
 
         case "set stat":
-          var itemExist3 = this.gameData.stats.find(function (el) {
-            return el.id == currentTab.idStat;
-          });
+          if (!isNext) {
+            var itemExist3 = this.gameData.stats.find(function (el) {
+              return el.id == currentTab.idStat;
+            });
 
-          if (itemExist3) {
-            if (itemExist3.length == 0 || currentTab.operator == false) {
-              var _error2 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            if (itemExist3) {
+              if (itemExist3.length == 0 || currentTab.operator == false) {
+                var _error2 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
-              this.onRunError.push(_error2);
-              stop = true;
+                this.onRunError.push(_error2);
+                stop = true;
+              } else {
+                this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount);
+              }
             } else {
-              this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount);
-            }
-          } else {
-            var _error3 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+              var _error3 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
-            this.onRunError.push(_error3);
-            stop = true;
+              this.onRunError.push(_error3);
+              stop = true;
+            }
           }
 
           break;
 
         case "set object":
-          var itemExist2 = this.gameData.items.find(function (el) {
-            return el.id == currentTab.idObject;
-          });
+          if (!isNext) {
+            var itemExist2 = this.gameData.items.find(function (el) {
+              return el.id == currentTab.idObject;
+            });
 
-          if (itemExist2) {
-            if (itemExist2.length == 0 || currentTab.operator == false) {
-              var _error4 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            if (itemExist2) {
+              if (itemExist2.length == 0 || currentTab.operator == false) {
+                var _error4 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
-              this.onRunError.push(_error4);
-              stop = true;
+                this.onRunError.push(_error4);
+                stop = true;
+              } else {
+                this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount);
+              }
             } else {
-              this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount);
-            }
-          } else {
-            var _error5 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+              var _error5 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
 
-            this.onRunError.push(_error5);
-            stop = true;
+              this.onRunError.push(_error5);
+              stop = true;
+            }
           }
 
           break;
@@ -2215,7 +2376,27 @@ var script = /*#__PURE__*/vue.defineComponent({
           break;
 
         case "image":
-          this.setImage(currentTab.img);
+          if (!isNext) {
+            this.setImage(currentTab.img);
+          }
+
+          break;
+
+        case "emit_function":
+          if (!isNext) {
+            if (this.canEmit) {
+              this.$emit("functionToEmitByTabs", currentTab.objToEmit);
+            }
+
+            if (this.showToast) {
+              this.$refs.ToastContainerRef.addToast({
+                type: currentTab.type.replaceAll(" ", "_"),
+                title: currentTab.humanName.default + ' <span class="sg1-id">ID: ' + currentTab.id + "</span>",
+                content: currentTab.objToEmit
+              });
+            }
+          }
+
           break;
       }
 
@@ -2511,8 +2692,14 @@ var script = /*#__PURE__*/vue.defineComponent({
 
     /* STYLE ---------------------------------------- */
     init: function init() {
-      this.setDevice();
-      this.LoadFont();
+      if (this.useTheme) {
+        this.setDevice();
+        this.LoadFont();
+      } else {
+        this.stepToInit.font = true;
+      }
+
+      console.log(this.preCachedImgList);
       this.setPreCacheImgList();
 
       if (this.preCachedImgList.length == 0) {
@@ -2523,7 +2710,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       var _this7 = this;
 
       this.stepToInit.font = false;
-      WebFont.load({
+      webfontloader.load({
         google: {
           families: [this.stylesObj.fontName + ":" + this.stylesObj.fontWeightList.join()]
         },
@@ -2587,8 +2774,38 @@ var script = /*#__PURE__*/vue.defineComponent({
       } else {
         this.device = "mobile";
       }
+    },
+
+    /* data retriving & other feature----------------------------------------*/
+    getPlayerValues: function getPlayerValues() {
+      return this.player.stats;
+    },
+    getCurrentTabValues: function getCurrentTabValues() {
+      return this.currentTabs;
+    },
+    setStartPoint: function setStartPoint(value) {
+      var newStart;
+
+      if (typeof value === "string") {
+        newStart = this.gameData.story.tabs.find(function (el) {
+          return el.name == value;
+        });
+      } else {
+        newStart = this.gameData.story.tabs.find(function (el) {
+          return el.id == value;
+        });
+      }
+
+      if (newStart) {
+        this.navigation([newStart.id]);
+      }
+    },
+    setPlayerValues: function setPlayerValues(value) {
+      this.player.stats = value;
     }
-  }
+  }, "setPlayerValues", function setPlayerValues(value) {
+    this.player.stats = value;
+  })
 });var _hoisted_1 = {
   key: 2,
   class: "sg1-log-app"
@@ -2606,7 +2823,7 @@ var _hoisted_4 = {
   class: "sg1-game-message sg1-e-4"
 };
 var _hoisted_5 = {
-  key: 4,
+  key: 5,
   class: "sg1-load-screen"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -2614,15 +2831,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_boxText = vue.resolveComponent("boxText");
 
+  var _component_ToastContainer = vue.resolveComponent("ToastContainer");
+
   var _component_PreCachedImg = vue.resolveComponent("PreCachedImg");
 
   var _component_Spinner = vue.resolveComponent("Spinner");
 
-  return _ctx.stylesObj ? (vue.openBlock(), vue.createElementBlock("div", {
+  return _ctx.stylesObj || _ctx.useTheme == false ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
     style: vue.normalizeStyle(_ctx.stylesObj.gameGrid),
-    class: "sg1-game-grid"
-  }, [_ctx.disableIlustration == false && _ctx.illustration && _ctx.initialized ? (vue.openBlock(), vue.createBlock(_component_boxillustration, {
+    class: vue.normalizeClass([{
+      'sg1-no-theme': !_ctx.stylesObj,
+      'sg1-no-illustration': _ctx.disableIlustration == false || !_ctx.illustration,
+      'sg1-toast-wrapper': _ctx.showToast
+    }, "sg1-game-grid"])
+  }, [_ctx.disableIlustration == false && _ctx.illustration && _ctx.initialized && !_ctx.logMessage ? (vue.openBlock(), vue.createBlock(_component_boxillustration, {
     key: 0,
     editorUsage: _ctx.editorUsage,
     illustration: _ctx.illustration,
@@ -2630,7 +2853,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     pathMediaDir: _ctx.pathMediaDir,
     style: vue.normalizeStyle(_ctx.gameData.style),
     stylesObj: _ctx.stylesObj
-  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style", "stylesObj"])) : vue.createCommentVNode("", true), _ctx.initialized && _ctx.narrationBox !== false && _ctx.narrationBox !== 'node-bad-mix' ? (vue.openBlock(), vue.createBlock(_component_boxText, {
+  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style", "stylesObj"])) : vue.createCommentVNode("", true), _ctx.initialized && _ctx.narrationBox !== false && _ctx.narrationBox !== 'node-bad-mix' && !_ctx.logMessage ? (vue.openBlock(), vue.createBlock(_component_boxText, {
     key: 1,
     narrationBox: _ctx.narrationBox,
     lang: _ctx.lang,
@@ -2639,21 +2862,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stylesObj: _ctx.stylesObj,
     onReedBeams: _ctx.reedBeams,
     onGameIntentLoad: _ctx.gameIntentLoad
-  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams", "onGameIntentLoad"])) : vue.createCommentVNode("", true), _ctx.narrationBox == 'false' || _ctx.narrationBox == 'node-bad-mix' || _ctx.urlToShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, vue.toDisplayString(_ctx.strings.noEnd[_ctx.langEditor]), 1)) : vue.createCommentVNode("", true), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.onRunError, function (el, index) {
+  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams", "onGameIntentLoad"])) : vue.createCommentVNode("", true), _ctx.logMessage ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, vue.toDisplayString(_ctx.strings.noEnd[_ctx.langEditor]), 1)) : vue.createCommentVNode("", true), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.onRunError, function (el, index) {
     return vue.openBlock(), vue.createElementBlock("div", {
       key: index,
       class: "sg1-game-error sg1-e-2"
     }, vue.toDisplayString(el), 1);
-  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.strings.nodeBadMix[_ctx.langEditor]) + " " + vue.toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : vue.createCommentVNode("", true), _ctx.urlToShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, vue.toDisplayString(_ctx.urlToShow), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), _ctx.preCachedImgList ? (vue.openBlock(), vue.createBlock(_component_PreCachedImg, {
+  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.strings.nodeBadMix[_ctx.langEditor]) + " " + vue.toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : vue.createCommentVNode("", true), _ctx.urlToShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, vue.toDisplayString(_ctx.urlToShow), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), _ctx.showToast ? (vue.openBlock(), vue.createBlock(_component_ToastContainer, {
     key: 3,
+    ref: "ToastContainerRef"
+  }, null, 512)) : vue.createCommentVNode("", true), _ctx.preCachedImgList ? (vue.openBlock(), vue.createBlock(_component_PreCachedImg, {
+    key: 4,
     editorUsage: _ctx.editorUsage,
     preCachedImgList: _ctx.preCachedImgList,
     onSetImgsLoaded: _ctx.setImgsLoaded
-  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 4)) : vue.createCommentVNode("", true);
-}var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n";
-styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-18b591d2] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-18b591d2] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-18b591d2] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-18b591d2] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-18b591d2] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-18b591d2] {\n\t\tcolor: #67ed72;\n}\n";
+  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 6)) : vue.createCommentVNode("", true);
+}var css_248z$1 = "\nbody {\r\n  margin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\r\n  margin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\r\n  grid-column: 1/3;\r\n  padding: 20px;\r\n  background-color: whitesmoke;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\r\n  font-family: monospace;\r\n  font-size: 16px;\r\n  color: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\r\n  max-width: calc(100% - 50px);\r\n  max-width: 992px;\r\n  aspect-ratio: 3/2;\r\n  max-height: calc(100vh - 50px);\r\n  margin-top: 25px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n  display: grid;\r\n  grid-template-rows: 70% 30%;\r\n  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\r\n  grid-template-rows: 100% 0;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\r\n  max-width: calc(100% - 25px);\r\n  margin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\r\n  content: \"◆\";\r\n  display: inline-block;\r\n  margin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  width: 2em;\r\n  height: 2em;\r\n  position: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\r\n  content: \"\";\r\n  width: 0;\r\n  height: 0;\r\n  border-style: solid;\r\n  border-width: 1em 1em 0 1em;\r\n  border-color: grey transparent transparent transparent;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\r\n  grid-column: 1/3;\r\n  grid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\r\n  position: relative;\r\n  overflow: hidden;\n}\r\n";
+styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-264c4d09]:not(.sg1-no-theme) {\r\n  display: grid;\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  background-color: #282828;\n}\n.sg1-load-screen[data-v-264c4d09] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.sg1-log-app[data-v-264c4d09] {\r\n  grid-row-start: 1;\r\n  grid-column-start: 1;\r\n  grid-row-end: 7;\r\n  grid-column-end: 9;\r\n  flex-direction: column;\r\n  max-width: 100% !important;\r\n  overflow: hidden;\r\n\r\n  background-color: #282828;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.sg1-log-app > *[data-v-264c4d09] {\r\n  font-size: 15px;\r\n  max-width: 100%;\r\n  padding-right: 20px;\r\n  padding-left: 20px;\r\n  width: 100%;\r\n  text-align: center;\r\n  font-family: monospace;\n}\n.sg1-game-error[data-v-264c4d09] {\r\n  color: #ed6767;\n}\n.sg1-game-message[data-v-264c4d09] {\r\n  color: #67ed72;\n}\r\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-18b591d2";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
+script.__scopeId = "data-v-264c4d09";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         componentName = _ref2[0],

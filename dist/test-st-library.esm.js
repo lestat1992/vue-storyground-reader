@@ -1,4 +1,4 @@
-import { openBlock, createElementBlock, normalizeStyle, createElementVNode, normalizeClass, createCommentVNode, toDisplayString, resolveComponent, Fragment, renderList, createVNode, createBlock, pushScopeId, popScopeId, defineComponent } from 'vue';
+import { openBlock, createElementBlock, normalizeStyle, createElementVNode, normalizeClass, createCommentVNode, toDisplayString, pushScopeId, popScopeId, resolveComponent, Fragment, renderList, createVNode, createBlock, defineComponent } from 'vue';
 
 function createCommonjsModule(fn, basedir, module) {
 	return module = {
@@ -388,27 +388,27 @@ let boxIllustration = {
     }
   }
 };
-var script$a = boxIllustration;
+var script$b = boxIllustration;
 
-const _hoisted_1$9 = {
+const _hoisted_1$a = {
   class: "sg1-inner-box"
 };
-const _hoisted_2$9 = ["src"];
-const _hoisted_3$5 = ["src", "srcset", "sizes"];
-function render$a(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_2$a = ["src"];
+const _hoisted_3$6 = ["src", "srcset", "sizes"];
+function render$b(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     class: "sg1-box-illustration",
     style: normalizeStyle(_ctx.stylesObj.boxIllustration)
-  }, [createElementVNode("div", _hoisted_1$9, [_ctx.editorUsage ? (openBlock(), createElementBlock("img", {
+  }, [createElementVNode("div", _hoisted_1$a, [_ctx.editorUsage ? (openBlock(), createElementBlock("img", {
     key: 0,
     class: "sg1-box-img",
     src: _ctx.illustration.srcFull[0]
-  }, null, 8, _hoisted_2$9)) : (openBlock(), createElementBlock("img", {
+  }, null, 8, _hoisted_2$a)) : (openBlock(), createElementBlock("img", {
     key: 1,
     src: _ctx.imgPathPart + '-' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['width'] + 'x' + _ctx.style['img-sizes'][_ctx.style['img-sizes'].length - 1]['height'] + '.jpg',
     srcset: _ctx.responsiveImages.srcset,
     sizes: _ctx.responsiveImages.sizes
-  }, null, 8, _hoisted_3$5))])], 4);
+  }, null, 8, _hoisted_3$6))])], 4);
 }
 
 function styleInject(css, ref) {
@@ -438,11 +438,10 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$b = "\n.sg1-box-illustration[data-v-6de28332] {\n\t\tgrid-column-start: 2;\n\t\tgrid-column-end: 3;\n\t\tgrid-row-start: 2;\n\t\tgrid-row-end: 3;\n}\n.sg1-inner-box[data-v-6de28332] {\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n.sg1-inner-box img[data-v-6de28332] {\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tobject-fit: cover;\n\t\tobject-position: center;\n\t\tdisplay: block;\n}\n";
-styleInject(css_248z$b);
+var css_248z$c = "\n.sg1-game-gridnot:not(.sg1-no-theme) .sg1-box-illustration {\r\n  grid-column-start: 2;\r\n  grid-column-end: 3;\r\n  grid-row-start: 2;\r\n  grid-row-end: 3;\n}\n.sg1-inner-box {\r\n  width: 100%;\r\n  height: 100%;\n}\n.sg1-inner-box img {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\r\n  display: block;\n}\r\n";
+styleInject(css_248z$c);
 
-script$a.render = render$a;
-script$a.__scopeId = "data-v-6de28332";
+script$b.render = render$b;
 
 let nextTabSketch$1 = `
 <svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -536,11 +535,11 @@ let NextTab$1 = {
 
   }
 };
-var script$9 = NextTab$1;
+var script$a = NextTab$1;
 
-const _hoisted_1$8 = ["innerHTML"];
-const _hoisted_2$8 = ["innerHTML"];
-function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$9 = ["innerHTML"];
+const _hoisted_2$9 = ["innerHTML"];
+function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   return _ctx.svgData ? (openBlock(), createElementBlock("div", {
     key: 0,
     class: normalizeClass(['sg1-' + _ctx.stylesObj.iconSingleArrow['type'] + ' sg1-animation-' + _ctx.animation, "sg1-next-tab-wrapper"])
@@ -550,20 +549,20 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
       width: _ctx.stylesObj.iconSingleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_1$8), createElementVNode("div", {
+  }, null, 12, _hoisted_1$9), createElementVNode("div", {
     class: "sg1-svg-shadow",
     style: normalizeStyle({
       width: _ctx.stylesObj.iconSingleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_2$8)], 2)) : createCommentVNode("", true);
+  }, null, 12, _hoisted_2$9)], 2)) : createCommentVNode("", true);
 }
 
-var css_248z$a = "\n.sg1-next-tab-wrapper[data-v-07a96db8] {\r\n\t\twidth: auto;\r\n\t\tdisplay: inline-flex;\r\n\t\tcursor: pointer;\r\n\t\tposition: relative;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-next-tab-wrapper[data-v-07a96db8]:hover {\r\n\t\topacity: 0.75;\n}\n.sg1-next-tab-wrapper:hover .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\topacity: 0;\r\n\t\tanimation: none;\n}\n.sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tposition: absolute;\r\n\t\ttop: 0;\r\n\t\tleft: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\r\n\r\n\t/* scroll-down */\n.sg1-animation-scroll-down .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tanimation: sg1-scroll-down-07a96db8 2s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-scroll-down[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\n}\n.sg1-animation-scroll-down[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\n}\n@keyframes sg1-scroll-down-07a96db8 {\n0% {\r\n\t\t\ttransform: translateY(0);\r\n\t\t\topacity: 0.5;\n}\n100% {\r\n\t\t\ttransform: translateY(35%);\r\n\t\t\topacity: 0;\n}\n}\r\n\r\n\t/* shining */\n.sg1-animation-shining[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\r\n\t\tanimation: sg1-shining-07a96db8 1s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-shining[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\r\n\t\tanimation: none;\n}\n@keyframes sg1-shining-07a96db8 {\n0% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n50% {\r\n\t\t\topacity: 0.5;\r\n\t\t\ttransform: translateY(0) scale(0.95);\n}\n100% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n}\r\n";
-styleInject(css_248z$a);
+var css_248z$b = "\n.sg1-next-tab-wrapper[data-v-07a96db8] {\r\n\t\twidth: auto;\r\n\t\tdisplay: inline-flex;\r\n\t\tcursor: pointer;\r\n\t\tposition: relative;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-next-tab-wrapper[data-v-07a96db8]:hover {\r\n\t\topacity: 0.75;\n}\n.sg1-next-tab-wrapper:hover .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\topacity: 0;\r\n\t\tanimation: none;\n}\n.sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tposition: absolute;\r\n\t\ttop: 0;\r\n\t\tleft: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\r\n\t\ttransition: opacity 0.35s;\r\n\t\ttransition-timing-function: ease-out;\n}\r\n\r\n\t/* scroll-down */\n.sg1-animation-scroll-down .sg1-svg-shadow[data-v-07a96db8] {\r\n\t\tanimation: sg1-scroll-down-07a96db8 2s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-scroll-down[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\n}\n.sg1-animation-scroll-down[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\n}\n@keyframes sg1-scroll-down-07a96db8 {\n0% {\r\n\t\t\ttransform: translateY(0);\r\n\t\t\topacity: 0.5;\n}\n100% {\r\n\t\t\ttransform: translateY(35%);\r\n\t\t\topacity: 0;\n}\n}\r\n\r\n\t/* shining */\n.sg1-animation-shining[data-v-07a96db8] {\r\n\t\ttransition: transform 0.35s;\r\n\t\ttransition-timing-function: ease-out;\r\n\t\ttransform: translateY(0) scale(0.95);\r\n\t\tanimation: sg1-shining-07a96db8 1s infinite;\r\n\t\tanimation-timing-function: ease-out;\n}\n.sg1-animation-shining[data-v-07a96db8]:hover {\r\n\t\ttransform: translateY(10%) scale(1);\r\n\t\tanimation: none;\n}\n@keyframes sg1-shining-07a96db8 {\n0% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n50% {\r\n\t\t\topacity: 0.5;\r\n\t\t\ttransform: translateY(0) scale(0.95);\n}\n100% {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: translateY(0) scale(1);\n}\n}\r\n";
+styleInject(css_248z$b);
 
-script$9.render = render$9;
-script$9.__scopeId = "data-v-07a96db8";
+script$a.render = render$a;
+script$a.__scopeId = "data-v-07a96db8";
 
 let choseTabHexagon = `
 <svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -685,22 +684,24 @@ let NextTab = {
 
   methods: {
     init() {
-      if (this.stylesObj.iconMultipleArrow["type"]) {
-        let stringName = this.stylesObj.iconMultipleArrow["type"];
+      if (this.stylesObj) {
+        if (this.stylesObj.iconMultipleArrow["type"]) {
+          let stringName = this.stylesObj.iconMultipleArrow["type"];
 
-        if (stringName == "letter" || stringName == "number") {
-          this.svgData = false;
-          this.svgDataActive = false;
+          if (stringName == "letter" || stringName == "number") {
+            this.svgData = false;
+            this.svgDataActive = false;
 
-          if (stringName == "letter") {
-            let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            this.indexListText = alphabet[this.index];
+            if (stringName == "letter") {
+              let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+              this.indexListText = alphabet[this.index];
+            } else {
+              this.indexListText = this.index + 1 + ".";
+            }
           } else {
-            this.indexListText = this.index + 1 + ".";
+            this.indexListText = false;
+            this.initSvg();
           }
-        } else {
-          this.indexListText = false;
-          this.initSvg();
         }
       }
     },
@@ -741,14 +742,32 @@ let NextTab = {
 
   }
 };
-var script$8 = NextTab;
+var script$9 = NextTab;
 
-const _hoisted_1$7 = ["innerHTML"];
-const _hoisted_2$7 = ["innerHTML"];
-const _hoisted_3$4 = ["innerHTML"];
-const _hoisted_4$2 = ["innerHTML"];
-function render$8(_ctx, _cache, $props, $setup, $data, $options) {
-  return _ctx.stylesObj.iconMultipleArrow['type'] ? (openBlock(), createElementBlock("div", {
+const _withScopeId$1 = n => (pushScopeId("data-v-68d5b6a0"), n = n(), popScopeId(), n);
+
+const _hoisted_1$8 = {
+  key: 0,
+  style: {
+    "dispaly": "contents"
+  }
+};
+const _hoisted_2$8 = ["innerHTML"];
+const _hoisted_3$5 = ["innerHTML"];
+const _hoisted_4$3 = ["innerHTML"];
+const _hoisted_5$3 = ["innerHTML"];
+const _hoisted_6$1 = {
+  key: 1,
+  class: "sg1-chose-item"
+};
+
+const _hoisted_7$1 = /*#__PURE__*/_withScopeId$1(() => /*#__PURE__*/createElementVNode("div", {
+  class: "list-item"
+}, null, -1));
+
+const _hoisted_8$1 = ["innerHTML"];
+function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  return _ctx.stylesObj ? (openBlock(), createElementBlock("div", _hoisted_1$8, [_ctx.stylesObj.iconMultipleArrow['type'] ? (openBlock(), createElementBlock("div", {
     key: 0,
     class: normalizeClass([{
       'use-active-item': _ctx.svgDataActive
@@ -772,14 +791,14 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
       minWidth: _ctx.stylesObj.iconMultipleArrow['size']
     }),
     innerHTML: _ctx.svgData
-  }, null, 12, _hoisted_1$7), _ctx.svgDataActive ? (openBlock(), createElementBlock("div", {
+  }, null, 12, _hoisted_2$8), _ctx.svgDataActive ? (openBlock(), createElementBlock("div", {
     key: 0,
     class: "sg1-svg-hover-wraper",
     style: normalizeStyle({
       minWidth: _ctx.stylesObj.iconMultipleArrow['size']
     }),
     innerHTML: _ctx.svgDataActive
-  }, null, 12, _hoisted_2$7)) : createCommentVNode("", true)], 6)) : (openBlock(), createElementBlock("div", {
+  }, null, 12, _hoisted_3$5)) : createCommentVNode("", true)], 6)) : (openBlock(), createElementBlock("div", {
     key: 1,
     class: normalizeClass('sg1-type-' + _ctx.stylesObj.iconMultipleArrow['type']),
     style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
@@ -789,7 +808,7 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, toDisplayString(_ctx.indexListText), 7)), createElementVNode("span", {
     innerHTML: _ctx.text
-  }, null, 8, _hoisted_3$4)], 6)) : (openBlock(), createElementBlock("div", {
+  }, null, 8, _hoisted_4$3)], 6)) : (openBlock(), createElementBlock("div", {
     key: 1,
     class: "sg1-chose-item",
     style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
@@ -799,14 +818,16 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, [createElementVNode("span", {
     innerHTML: _ctx.text
-  }, null, 8, _hoisted_4$2)], 4));
+  }, null, 8, _hoisted_5$3)], 4))])) : (openBlock(), createElementBlock("div", _hoisted_6$1, [_hoisted_7$1, createElementVNode("span", {
+    innerHTML: _ctx.text
+  }, null, 8, _hoisted_8$1)]));
 }
 
-var css_248z$9 = "\n.sg1-chose-item[data-v-73468562] {\n\t\tdisplay: inline-flex;\n\t\tmargin-bottom: 1em;\n\t\tmax-width: 100%;\n\t\twidth: auto;\n\t\tcursor: pointer;\n}\n.sg1-icon-wrapper[data-v-73468562] {\n\t\tmargin-right: 0.5em;\n\t\tposition: relative;\n}\n.sg1-svg-hover-wraper[data-v-73468562] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\topacity: 0;\n}\n.sg1-chose-item[data-v-73468562] {\n\t\tfont-size: inherit;\n\t\tfont-family: inherit;\n}\n.sg1-chose-item[data-v-73468562],\n\t.sg1-svg-wraper[data-v-73468562],\n\t.sg1-svg-hover-wraper[data-v-73468562] {\n\t\ttransition: opacity 0.35s;\n\t\ttransition-timing-function: ease-out;\n}\n.sg1-chose-item[data-v-73468562]:hover {\n\t\topacity: 0.75;\n}\n.sg1-chose-item:hover .sg1-svg-hover-wraper[data-v-73468562] {\n\t\topacity: 1;\n}\n.sg1-chose-item.use-active-item:hover .sg1-svg-wraper[data-v-73468562] {\n\t\topacity: 0;\n}\n.sg1-type-number[data-v-73468562],\n\t.sg1-type-letter[data-v-73468562] {\n\t\tmargin-right: 0.5em;\n}\n";
-styleInject(css_248z$9);
+var css_248z$a = "\n.sg1-chose-item[data-v-68d5b6a0] {\r\n  display: inline-flex;\r\n  margin-bottom: 1em;\r\n  max-width: 100%;\r\n  width: auto;\r\n  cursor: pointer;\n}\n.sg1-icon-wrapper[data-v-68d5b6a0] {\r\n  margin-right: 0.5em;\r\n  position: relative;\n}\n.sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  opacity: 0;\n}\n.sg1-chose-item[data-v-68d5b6a0] {\r\n  font-size: inherit;\r\n  font-family: inherit;\n}\n.sg1-chose-item[data-v-68d5b6a0],\r\n.sg1-svg-wraper[data-v-68d5b6a0],\r\n.sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  transition: opacity 0.35s;\r\n  transition-timing-function: ease-out;\n}\n.sg1-chose-item[data-v-68d5b6a0]:hover {\r\n  opacity: 0.75;\n}\n.sg1-chose-item:hover .sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  opacity: 1;\n}\n.sg1-chose-item.use-active-item:hover .sg1-svg-wraper[data-v-68d5b6a0] {\r\n  opacity: 0;\n}\n.sg1-type-number[data-v-68d5b6a0],\r\n.sg1-type-letter[data-v-68d5b6a0] {\r\n  margin-right: 0.5em;\n}\r\n";
+styleInject(css_248z$a);
 
-script$8.render = render$8;
-script$8.__scopeId = "data-v-73468562";
+script$9.render = render$9;
+script$9.__scopeId = "data-v-68d5b6a0";
 
 //returns a copy of the object
 function deepCopy(obj) {
@@ -900,16 +921,16 @@ function sortChose(currentTabs) {
 let boxNarration = {
   name: "boxNarration",
   components: {
-    NextTab: script$9,
-    ChooseTab: script$8
+    NextTab: script$a,
+    ChooseTab: script$9
   },
   props: {
     currentTabs: {},
     nextTabsChose: {},
     lang: {},
-    emitReedBeams2: {},
     stylesObj: {}
   },
+  emits: ["emitReedBeams2"],
   computed: {
     currentTabsReordered: function () {
       return sortChose(this.currentTabs);
@@ -929,21 +950,21 @@ let boxNarration = {
 
   }
 };
-var script$7 = boxNarration;
+var script$8 = boxNarration;
 
-const _hoisted_1$6 = {
+const _hoisted_1$7 = {
   class: "sg1-box-narration"
 };
-const _hoisted_2$6 = ["innerHTML"];
-const _hoisted_3$3 = {
+const _hoisted_2$7 = ["innerHTML"];
+const _hoisted_3$4 = {
   key: 0
 };
-function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+function render$8(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_ChooseTab = resolveComponent("ChooseTab");
 
   const _component_NextTab = resolveComponent("NextTab");
 
-  return openBlock(), createElementBlock(Fragment, null, [createElementVNode("div", _hoisted_1$6, [createElementVNode("div", {
+  return openBlock(), createElementBlock(Fragment, null, [createElementVNode("div", _hoisted_1$7, [createElementVNode("div", {
     class: "sg1-tab-results",
     style: normalizeStyle(_ctx.stylesObj.tabResultsMaxHeight)
   }, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.currentTabsReordered, (tab, index) => {
@@ -959,7 +980,7 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
         ..._ctx.stylesObj.paddingBottomNextTab
       }),
       innerHTML: _ctx.fixText(tab.text[_ctx.lang])
-    }, null, 12, _hoisted_2$6)) : (openBlock(), createElementBlock("div", {
+    }, null, 12, _hoisted_2$7)) : (openBlock(), createElementBlock("div", {
       key: 1,
       style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
         ..._ctx.stylesObj.fontWeightListSelected,
@@ -976,7 +997,7 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     return openBlock(), createElementBlock("div", {
       key: tab.id,
       class: normalizeClass(_ctx.nextTabsChose.length == 1 ? 'sg1-label-description' : 'sg1-label-multiple-chose')
-    }, [tab.id ? (openBlock(), createElementBlock("div", _hoisted_3$3, [createVNode(_component_ChooseTab, {
+    }, [tab.id ? (openBlock(), createElementBlock("div", _hoisted_3$4, [createVNode(_component_ChooseTab, {
       index: index,
       text: _ctx.fixText(tab.text[_ctx.lang]),
       stylesObj: _ctx.stylesObj,
@@ -986,17 +1007,22 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     key: 0,
     class: "sg1-single-beem-foward-box",
     style: normalizeStyle(_ctx.stylesObj.paddingTopNextTab)
-  }, [createVNode(_component_NextTab, {
+  }, [_ctx.stylesObj ? (openBlock(), createBlock(_component_NextTab, {
+    key: 0,
     stylesObj: _ctx.stylesObj,
     onClick: _cache[0] || (_cache[0] = $event => _ctx.emitReedBeams3(_ctx.currentTabs[0].id))
-  }, null, 8, ["stylesObj"])], 4)) : createCommentVNode("", true)], 64);
+  }, null, 8, ["stylesObj"])) : (openBlock(), createElementBlock("div", {
+    key: 1,
+    onClick: _cache[1] || (_cache[1] = $event => _ctx.emitReedBeams3(_ctx.currentTabs[0].id)),
+    class: "sg1-single-beem-icon"
+  }))], 4)) : createCommentVNode("", true)], 64);
 }
 
-var css_248z$8 = "\n.sg1-tab-results[data-v-1932bea5] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-1932bea5] {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n}\n.sg1-box-narration[data-v-1932bea5] {\n\t\tposition: relative;\n\t\tz-index: 10;\n\t\tmax-height: inherit;\n\t\tmin-height: inherit;\n\t\toverflow-y: auto;\n\t\tflex-grow: 1;\n}\n";
-styleInject(css_248z$8);
+var css_248z$9 = "\n.sg1-tab-results[data-v-3b0d3f8e] {\r\n  flex-grow: 1;\r\n  overflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-3b0d3f8e] {\r\n  display: flex;\r\n  justify-content: center;\n}\n.sg1-box-narration[data-v-3b0d3f8e] {\r\n  position: relative;\r\n  z-index: 10;\r\n  max-height: inherit;\r\n  min-height: inherit;\r\n  overflow-y: auto;\r\n  flex-grow: 1;\n}\r\n";
+styleInject(css_248z$9);
 
-script$7.render = render$7;
-script$7.__scopeId = "data-v-1932bea5";
+script$8.render = render$8;
+script$8.__scopeId = "data-v-3b0d3f8e";
 
 let boxNarrationGameEnd = {
   name: "boxNarrationGameEnd",
@@ -1024,14 +1050,14 @@ let boxNarrationGameEnd = {
 
   }
 };
-var script$6 = boxNarrationGameEnd;
+var script$7 = boxNarrationGameEnd;
 
-const _hoisted_1$5 = {
+const _hoisted_1$6 = {
   class: "sg1-box-narration"
 };
-const _hoisted_2$5 = ["innerHTML"];
-function render$6(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$5, [createElementVNode("div", {
+const _hoisted_2$6 = ["innerHTML"];
+function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$6, [createElementVNode("div", {
     class: "sg1-tab-results",
     style: normalizeStyle(_ctx.stylesObj.tabResultsMaxHeight)
   }, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.currentTabs, (tab, index) => {
@@ -1046,15 +1072,15 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
         ..._ctx.stylesObj.fontSize1
       }),
       innerHTML: _ctx.fixText(tab.text[_ctx.lang])
-    }, null, 12, _hoisted_2$5)) : createCommentVNode("", true)], 2);
+    }, null, 12, _hoisted_2$6)) : createCommentVNode("", true)], 2);
   }), 128))], 4)]);
 }
 
-var css_248z$7 = "\n.sg1-tab-results[data-v-9c79f44c] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-9c79f44c] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n";
-styleInject(css_248z$7);
+var css_248z$8 = "\n.sg1-tab-results[data-v-9c79f44c] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-9c79f44c] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n";
+styleInject(css_248z$8);
 
-script$6.render = render$6;
-script$6.__scopeId = "data-v-9c79f44c";
+script$7.render = render$7;
+script$7.__scopeId = "data-v-9c79f44c";
 
 let boxNarrationGameOver = {
   name: "boxNarrationGameOver",
@@ -1080,14 +1106,14 @@ let boxNarrationGameOver = {
 
   }
 };
-var script$5 = boxNarrationGameOver;
+var script$6 = boxNarrationGameOver;
 
-const _hoisted_1$4 = {
+const _hoisted_1$5 = {
   class: "sg1-box-narration"
 };
-const _hoisted_2$4 = ["innerHTML"];
-function render$5(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$4, [createElementVNode("div", {
+const _hoisted_2$5 = ["innerHTML"];
+function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$5, [createElementVNode("div", {
     class: "sg1-tab-results",
     style: normalizeStyle(_ctx.stylesObj.tabResultsMaxHeight)
   }, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.currentTabs, (tab, index) => {
@@ -1104,15 +1130,15 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
       }),
       innerHTML: _ctx.fixText(tab.text[_ctx.lang]),
       class: "sg1-replay-link"
-    }, null, 12, _hoisted_2$4)) : createCommentVNode("", true)], 2);
+    }, null, 12, _hoisted_2$5)) : createCommentVNode("", true)], 2);
   }), 128))], 4)]);
 }
 
-var css_248z$6 = "\n.sg1-tab-results[data-v-3117e596] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-3117e596] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n.sg1-replay-link[data-v-3117e596] {\n\t\ttext-decoration: underline;\n\t\tcursor: pointer;\n}\n";
-styleInject(css_248z$6);
+var css_248z$7 = "\n.sg1-tab-results[data-v-3117e596] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-3117e596] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n.sg1-replay-link[data-v-3117e596] {\n\t\ttext-decoration: underline;\n\t\tcursor: pointer;\n}\n";
+styleInject(css_248z$7);
 
-script$5.render = render$5;
-script$5.__scopeId = "data-v-3117e596";
+script$6.render = render$6;
+script$6.__scopeId = "data-v-3117e596";
 
 let bgSketch = `
 <svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -1330,38 +1356,38 @@ let BgBoxText = {
 
   }
 };
-var script$4 = BgBoxText;
+var script$5 = BgBoxText;
 
-const _hoisted_1$3 = {
+const _hoisted_1$4 = {
   class: "sg1-bg-wrapper"
 };
-const _hoisted_2$3 = ["width", "height"];
-function render$4(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$3, [_ctx.isCanvas ? (openBlock(), createElementBlock("canvas", {
+const _hoisted_2$4 = ["width", "height"];
+function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$4, [_ctx.isCanvas ? (openBlock(), createElementBlock("canvas", {
     key: 0,
     width: _ctx.width,
     height: _ctx.height,
     id: "sg1-st-canvas-bg"
-  }, null, 8, _hoisted_2$3)) : (openBlock(), createElementBlock("div", {
+  }, null, 8, _hoisted_2$4)) : (openBlock(), createElementBlock("div", {
     key: 1,
     class: "sg1-st-bg",
     style: normalizeStyle(_ctx.styleStBg)
   }, null, 4))]);
 }
 
-var css_248z$5 = "\n.sg1-bg-wrapper[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n.sg1-st-bg[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
-styleInject(css_248z$5);
+var css_248z$6 = "\n.sg1-bg-wrapper[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n.sg1-st-bg[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
+styleInject(css_248z$6);
 
-script$4.render = render$4;
-script$4.__scopeId = "data-v-25293889";
+script$5.render = render$5;
+script$5.__scopeId = "data-v-25293889";
 
 let boxText = {
   name: "boxText",
   components: {
-    boxnarration: script$7,
-    gameEnd: script$6,
-    gameOver: script$5,
-    BgBoxText: script$4
+    boxnarration: script$8,
+    gameEnd: script$7,
+    gameOver: script$6,
+    BgBoxText: script$5
   },
   props: {
     narrationBox: {},
@@ -1383,9 +1409,9 @@ let boxText = {
 
   }
 };
-var script$3 = boxText;
+var script$4 = boxText;
 
-function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_BgBoxText = resolveComponent("BgBoxText");
 
   const _component_boxnarration = resolveComponent("boxnarration");
@@ -1399,23 +1425,24 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
     style: normalizeStyle({ ..._ctx.stylesObj.boxText,
       ..._ctx.stylesObj.boxTextPadding
     })
-  }, [createVNode(_component_BgBoxText, {
-    stylesObj: _ctx.stylesObj
-  }, null, 8, ["stylesObj"]), _ctx.narrationBox == 'default' || _ctx.narrationBox == 'descriptions' || _ctx.narrationBox == 'chose' ? (openBlock(), createBlock(_component_boxnarration, {
+  }, [_ctx.stylesObj ? (openBlock(), createBlock(_component_BgBoxText, {
     key: 0,
+    stylesObj: _ctx.stylesObj
+  }, null, 8, ["stylesObj"])) : createCommentVNode("", true), _ctx.narrationBox == 'default' || _ctx.narrationBox == 'descriptions' || _ctx.narrationBox == 'chose' ? (openBlock(), createBlock(_component_boxnarration, {
+    key: 1,
     lang: _ctx.lang,
     "current-tabs": _ctx.currentTabs,
     nextTabsChose: _ctx.nextTabsChose,
     stylesObj: _ctx.stylesObj,
     onEmitReedBeams2: _ctx.emitReedBeams1
   }, null, 8, ["lang", "current-tabs", "nextTabsChose", "stylesObj", "onEmitReedBeams2"])) : createCommentVNode("", true), _ctx.narrationBox == 'end' ? (openBlock(), createBlock(_component_gameEnd, {
-    key: 1,
+    key: 2,
     lang: _ctx.lang,
     "current-tabs": _ctx.currentTabs,
     stylesObj: _ctx.stylesObj,
     onEmitReedBeams2: _ctx.emitReedBeams1
   }, null, 8, ["lang", "current-tabs", "stylesObj", "onEmitReedBeams2"])) : createCommentVNode("", true), _ctx.narrationBox == 'game over' ? (openBlock(), createBlock(_component_gameOver, {
-    key: 2,
+    key: 3,
     lang: _ctx.lang,
     "current-tabs": _ctx.currentTabs,
     stylesObj: _ctx.stylesObj,
@@ -1424,11 +1451,11 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["lang", "current-tabs", "stylesObj", "onEmitReedBeams2", "onGameIntentLoad3"])) : createCommentVNode("", true)], 4);
 }
 
-var css_248z$4 = "\n.sg1-wrapper-box-text[data-v-76b41285] {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tposition: relative;\n\t\tflex-grow: 1;\n\t\theight: auto;\n}\n";
-styleInject(css_248z$4);
+var css_248z$5 = "\n.sg1-wrapper-box-text[data-v-34060e5e] {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: relative;\r\n  flex-grow: 1;\r\n  height: auto;\n}\r\n";
+styleInject(css_248z$5);
 
-script$3.render = render$3;
-script$3.__scopeId = "data-v-76b41285";
+script$4.render = render$4;
+script$4.__scopeId = "data-v-34060e5e";
 
 let PreCachedImg = {
   name: "PreCachedImg",
@@ -1452,56 +1479,56 @@ let PreCachedImg = {
     }
   }
 };
-var script$2 = PreCachedImg;
+var script$3 = PreCachedImg;
 
-const _hoisted_1$2 = {
+const _hoisted_1$3 = {
   class: "sg1-pre-cached-img-wrapper"
 };
-const _hoisted_2$2 = {
+const _hoisted_2$3 = {
   key: 0
 };
-const _hoisted_3$2 = ["src"];
-const _hoisted_4$1 = {
+const _hoisted_3$3 = ["src"];
+const _hoisted_4$2 = {
   key: 1
 };
-const _hoisted_5$1 = ["src", "srcset", "sizes"];
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$2, [_ctx.editorUsage ? (openBlock(), createElementBlock("div", _hoisted_2$2, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.preCachedImgList, (el, index) => {
+const _hoisted_5$2 = ["src", "srcset", "sizes"];
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$3, [_ctx.editorUsage ? (openBlock(), createElementBlock("div", _hoisted_2$3, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.preCachedImgList, (el, index) => {
     return openBlock(), createElementBlock("img", {
       key: index,
       class: "sg1-box-img",
       src: el,
       onLoad: _cache[0] || (_cache[0] = $event => _ctx.imgsLoaded++)
-    }, null, 40, _hoisted_3$2);
-  }), 128))])) : (openBlock(), createElementBlock("div", _hoisted_4$1, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.preCachedImgList, (el, index) => {
+    }, null, 40, _hoisted_3$3);
+  }), 128))])) : (openBlock(), createElementBlock("div", _hoisted_4$2, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.preCachedImgList, (el, index) => {
     return openBlock(), createElementBlock("img", {
       key: index,
       src: el.src,
       srcset: el.srcset,
       sizes: el.sizes,
       onLoad: _cache[1] || (_cache[1] = $event => _ctx.imgsLoaded++)
-    }, null, 40, _hoisted_5$1);
+    }, null, 40, _hoisted_5$2);
   }), 128))]))]);
 }
 
-var css_248z$3 = "\n.sg1-pre-cached-img-wrapper[data-v-50ed9ac2] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
-styleInject(css_248z$3);
+var css_248z$4 = "\n.sg1-pre-cached-img-wrapper[data-v-50ed9ac2] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
+styleInject(css_248z$4);
 
-script$2.render = render$2;
-script$2.__scopeId = "data-v-50ed9ac2";
+script$3.render = render$3;
+script$3.__scopeId = "data-v-50ed9ac2";
 
 let spinnerBox = {
   name: "Spinner"
 };
-var script$1 = spinnerBox;
+var script$2 = spinnerBox;
 
 const _withScopeId = n => (pushScopeId("data-v-141b4ae7"), n = n(), popScopeId(), n);
 
-const _hoisted_1$1 = {
+const _hoisted_1$2 = {
   class: "sg1-spinner-box-media"
 };
 
-const _hoisted_2$1 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/createElementVNode("div", {
+const _hoisted_2$2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/createElementVNode("div", {
   class: "sg1-spinner sg1-pulse-container"
 }, [/*#__PURE__*/createElementVNode("div", {
   class: "sg1-pulse-bubble sg1-pulse-bubble-1"
@@ -1511,16 +1538,108 @@ const _hoisted_2$1 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/createElementV
   class: "sg1-pulse-bubble sg1-pulse-bubble-3"
 })], -1));
 
-const _hoisted_3$1 = [_hoisted_2$1];
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$1, _hoisted_3$1);
+const _hoisted_3$2 = [_hoisted_2$2];
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$2, _hoisted_3$2);
 }
 
-var css_248z$2 = "\n.sg1-spinner-box-media[data-v-141b4ae7] {\n\t\tbackground-color: #464646;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tanimation-name: sg1-fadein-141b4ae7;\n\t\tanimation-duration: 0.4s;\n\t\tanimation-timing-function: ease-out;\n}\n@keyframes sg1-fadein-141b4ae7 {\n0% {\n\t\t\topacity: 0;\n}\n100% {\n\t\t\topacity: 1;\n}\n}\n\n\t/* PULSE BUBBLES */\n.sg1-pulse-container[data-v-141b4ae7] {\n\t\twidth: 3em;\n\t\tfont-size: rem(15px);\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-pulse-bubble[data-v-141b4ae7] {\n\t\tfont-size: 1em;\n\t\twidth: 0.6em;\n\t\theight: 3em;\n\t\tbackground-color: #ffffff;\n}\n.sg1-pulse-bubble-1[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0s infinite alternate;\n}\n.sg1-pulse-bubble-2[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.15s infinite alternate;\n}\n.sg1-pulse-bubble-3[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.3s infinite alternate;\n}\n\n\t/* KEYFRAMES */\n@keyframes sg1-pulse-141b4ae7 {\nfrom {\n\t\t\topacity: 1;\n\t\t\ttransform: scale(1);\n}\nto {\n\t\t\topacity: 0.5;\n\t\t\ttransform: scale(0.8);\n}\n}\n";
+var css_248z$3 = "\n.sg1-spinner-box-media[data-v-141b4ae7] {\n\t\tbackground-color: #464646;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tanimation-name: sg1-fadein-141b4ae7;\n\t\tanimation-duration: 0.4s;\n\t\tanimation-timing-function: ease-out;\n}\n@keyframes sg1-fadein-141b4ae7 {\n0% {\n\t\t\topacity: 0;\n}\n100% {\n\t\t\topacity: 1;\n}\n}\n\n\t/* PULSE BUBBLES */\n.sg1-pulse-container[data-v-141b4ae7] {\n\t\twidth: 3em;\n\t\tfont-size: rem(15px);\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-pulse-bubble[data-v-141b4ae7] {\n\t\tfont-size: 1em;\n\t\twidth: 0.6em;\n\t\theight: 3em;\n\t\tbackground-color: #ffffff;\n}\n.sg1-pulse-bubble-1[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0s infinite alternate;\n}\n.sg1-pulse-bubble-2[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.15s infinite alternate;\n}\n.sg1-pulse-bubble-3[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.3s infinite alternate;\n}\n\n\t/* KEYFRAMES */\n@keyframes sg1-pulse-141b4ae7 {\nfrom {\n\t\t\topacity: 1;\n\t\t\ttransform: scale(1);\n}\nto {\n\t\t\topacity: 0.5;\n\t\t\ttransform: scale(0.8);\n}\n}\n";
+styleInject(css_248z$3);
+
+script$2.render = render$2;
+script$2.__scopeId = "data-v-141b4ae7";
+
+let ToastContainer = {
+  name: "ToastContainer",
+
+  data() {
+    return {
+      idToSet: 0,
+      toasts: [],
+      toastsFiltered: [],
+      tostToSee: 3
+    };
+  },
+
+  methods: {
+    addToast(params) {
+      this.idToSet = this.idToSet + 1;
+      let newToast = {
+        id: this.idToSet,
+        type: params.type,
+        title: params.title,
+        expanded: false,
+        content: params.content,
+        isUnmountening: false
+      };
+      this.toasts.push(newToast);
+    },
+
+    removeToast(id) {
+      this.toasts.find(el => el.id == id).isUnmountening = true;
+      setTimeout(() => {
+        this.toasts = this.toasts.filter(el => el.id !== id);
+      }, 1000);
+    },
+
+    expandToast(id) {
+      this.toasts.forEach(el => {
+        if (el.id == id) {
+          el.expanded = !el.expanded;
+        }
+      });
+    }
+
+  }
+};
+var script$1 = ToastContainer;
+
+const _hoisted_1$1 = {
+  key: 0,
+  class: "sg1-toast-container"
+};
+const _hoisted_2$1 = ["cose"];
+const _hoisted_3$1 = {
+  class: "sg1-head"
+};
+const _hoisted_4$1 = ["innerHTML"];
+const _hoisted_5$1 = ["onClick"];
+const _hoisted_6 = ["onClick"];
+const _hoisted_7 = {
+  class: "sg1-content"
+};
+const _hoisted_8 = {
+  class: "sg1-wrapper-pre"
+};
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return _ctx.toasts.length ? (openBlock(), createElementBlock("div", _hoisted_1$1, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.toasts, (toast, index) => {
+    return openBlock(), createElementBlock("div", {
+      key: toast.id,
+      class: normalizeClass([{
+        'sg1-active': toast.expanded,
+        'sg1-toast-faded-1': _ctx.toasts.length - index > _ctx.tostToSee,
+        'sg1-toast-faded-2': _ctx.toasts.length - index > _ctx.tostToSee + 1,
+        'sg1-toast-faded-3': _ctx.toasts.length - index > _ctx.tostToSee + 2,
+        'sg1-toast-fade-out': toast.isUnmountening
+      }, "sg1-toast"]),
+      cose: _ctx.toasts.length - index
+    }, [createElementVNode("div", _hoisted_3$1, [createElementVNode("span", {
+      class: "sg1-title",
+      innerHTML: toast.title
+    }, null, 8, _hoisted_4$1), createElementVNode("div", {
+      onClick: $event => _ctx.expandToast(toast.id),
+      class: "sg1-expand"
+    }, null, 8, _hoisted_5$1), createElementVNode("div", {
+      onClick: $event => _ctx.removeToast(toast.id),
+      class: "sg1-close-btn"
+    }, null, 8, _hoisted_6)]), createElementVNode("div", _hoisted_7, [createElementVNode("div", _hoisted_8, [createElementVNode("pre", null, toDisplayString(toast.content), 1)])])], 10, _hoisted_2$1);
+  }), 128))])) : createCommentVNode("", true);
+}
+
+var css_248z$2 = "\n.sg1-toast-container {\r\n  --sg1ToastColor1: rgb(49, 49, 49);\r\n  --sg1ToastColor2: rgb(82, 82, 82);\r\n  --sg1ToastColor3: rgb(231, 231, 231);\r\n  --sg1ToastColor4: rgb(0, 0, 0);\r\n\r\n  --sg1ToastBg: 10px;\r\n  --sg1ToastColorText: var(--sg1ToastColor3);\r\n  --sg1ToastPaddingVertical: 10px;\r\n  --sg1ToastPaddingHorizontal: 10px;\r\n  --sg1ToastMargin: 10px;\r\n  --sg1ToastSizeIconLine: 2px;\r\n\r\n  --sg1toastWidth: 300px;\r\n  --maxToastHeight: 600px;\r\n\r\n  --sg1toastFontFamily: monospace;\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: var(--sg1ToastMargin);\r\n  height: 100%;\r\n  transform: translate(100%);\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-end;\r\n  z-index: 100;\n}\n.sg1-toast-container * {\r\n  box-sizing: border-box;\n}\n.sg1-toast {\r\n  min-width: var(--sg1toastWidth);\r\n  max-width: var(--sg1toastWidth);\r\n  margin-bottom: var(--sg1ToastMargin);\r\n  transform: translateX(-100%);\r\n  border-radius: 4px;\r\n  background-color: var(--sg1ToastColor1);\r\n  box-shadow: 0 0 0 1px white;\r\n  animation-name: sg1-fadein;\r\n  animation-duration: 1s;\r\n  animation-timing-function: ease-out;\r\n  transition: 0.35s opacity;\r\n  transition-timing-function: ease-out;\n}\n@keyframes sg1-fadein {\n0% {\r\n    opacity: 0;\r\n    transform: translate(100%);\r\n    max-height: 0;\n}\n85% {\r\n    opacity: 1;\r\n    transform: translateX(-110%);\r\n    max-height: var(--maxToastHeight);\n}\n100% {\r\n    transform: translateX(-100%);\n}\n}\n.sg1-toast .sg1-head {\r\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 10px;\n}\n.sg1-toast .sg1-head .sg1-title {\r\n  font-size: 14px;\r\n  font-family: var(--sg1toastFontFamily);\r\n  color: var(--sg1ToastColorText);\n}\n.sg1-toast .sg1-head .title .sg1-id {\r\n  font-weight: 700;\n}\n.sg1-toast .sg1-content {\r\n  max-height: 0;\r\n  overflow: hidden;\r\n  padding: 0 var(--sg1ToastPaddingHorizontal);\r\n  position: relative;\n}\n.sg1-toast.sg1-active .sg1-content {\r\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\r\n  max-height: var(--maxToastHeight);\r\n  transition-timing-function: ease-out;\r\n  transition: 1s max-height, 0.5s padding;\n}\n.sg1-toast .sg1-content:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  height: 1px;\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor2);\n}\n.sg1-wrapper-pre {\r\n  width: 100%;\r\n  padding: calc(var(--sg1ToastPaddingVertical) / 2)\r\n    calc(var(--sg1ToastPaddingHorizontal) / 2);\r\n  background-color: var(--sg1ToastColor4);\r\n  border-radius: 4px;\n}\n.sg1-toast .sg1-content pre {\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor4);\r\n  font-size: 12px;\r\n  font-family: var(--sg1toastFontFamily);\r\n  color: var(--sg1ToastColorText);\r\n\r\n  margin-top: 0;\r\n  margin-bottom: 0;\n}\n.sg1-toast .sg1-close-btn,\r\n.sg1-toast .sg1-expand {\r\n  font-size: 16px;\r\n  min-width: 1em;\r\n  height: 1em;\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\n}\n.sg1-toast .sg1-close-btn:after,\r\n.sg1-toast .sg1-close-btn:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  display: block;\r\n  height: var(--sg1ToastSizeIconLine);\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor3);\n}\n.sg1-toast .sg1-close-btn:after {\r\n  transform: rotate(45%);\n}\n.sg1-toast .sg1-close-btn:before {\r\n  transform: rotate(-45%);\n}\n.sg1-toast .sg1-close-btn:before {\r\n  transform: translate(-50%, -50%) rotate(45deg);\r\n  top: 50%;\r\n  left: 50%;\n}\n.sg1-toast .sg1-close-btn:after {\r\n  transform: translate(-50%, -50%) rotate(-45deg);\r\n  top: 50%;\r\n  left: 50%;\n}\n.sg1-toast .sg1-expand {\r\n  margin-left: auto;\n}\n.sg1-toast .sg1-expand:after {\r\n  content: \"\";\r\n  width: 100%;\r\n  height: 100%;\r\n  position: absolute;\r\n  transform: rotate(45deg) scale(0.5);\r\n  border-top: calc(var(--sg1ToastSizeIconLine) * 2) solid var(--sg1ToastColor3);\r\n  border-right: calc(var(--sg1ToastSizeIconLine) * 2) solid\r\n    var(--sg1ToastColor3);\n}\n.sg1-toast.sg1-active .sg1-expand:after {\r\n  transform: rotate(135deg) scale(0.5);\n}\n.sg1-toast-faded-1 {\r\n  opacity: 0.5;\r\n  pointer-events: none;\n}\n.sg1-toast-faded-2 {\r\n  opacity: 0.25;\n}\n.sg1-toast-faded-3 {\r\n  opacity: 0;\n}\n.sg1-toast.sg1-toast-fade-out {\r\n  animation-name: sg1-fadeout;\r\n  animation-duration: 1s;\r\n  animation-timing-function: ease-out;\n}\n@keyframes sg1-fadeout {\n0% {\r\n    transform: translateX(-100%);\r\n    max-height: var(--maxToastHeight);\n}\n100% {\r\n    opacity: 0;\r\n    transform: translate(100%);\r\n    max-height: 0;\n}\n}\r\n";
 styleInject(css_248z$2);
 
 script$1.render = render$1;
-script$1.__scopeId = "data-v-141b4ae7";
 
 function gridLayout(id) {
   let boxIllustration;
@@ -1770,10 +1889,11 @@ function randomNum(min, max) {
 var script = /*#__PURE__*/defineComponent({
   name: "game",
   components: {
-    boxillustration: script$a,
-    boxText: script$3,
-    PreCachedImg: script$2,
-    Spinner: script$1
+    boxillustration: script$b,
+    boxText: script$4,
+    PreCachedImg: script$3,
+    Spinner: script$2,
+    ToastContainer: script$1
   },
   props: {
     editorUsage: {
@@ -1819,8 +1939,21 @@ var script = /*#__PURE__*/defineComponent({
     stopLink: {
       type: Boolean,
       default: false
+    },
+    useTheme: {
+      type: Boolean,
+      default: true
+    },
+    canEmit: {
+      type: Boolean,
+      default: true
+    },
+    showToast: {
+      type: Boolean,
+      default: false
     }
   },
+  emits: ["functionToEmitByTabs", "functionToEmitOnInit", "functionToEmitBeforeNavigation", "functionToEmitAfterNavigation"],
   data: function () {
     return {
       initialized: false,
@@ -1840,6 +1973,7 @@ var script = /*#__PURE__*/defineComponent({
       illustration: false,
       onRunError: [],
       listBadMixId: "",
+      isBadNodeMixForCose: [],
       gameLoaded: false,
       device: false,
       goToLink: false,
@@ -1856,6 +1990,7 @@ var script = /*#__PURE__*/defineComponent({
       handler() {
         if (this.stepToInit.font && this.stepToInit.img) {
           this.initialized = true;
+          this.$emit("functionToEmitOnInit");
         } else {
           this.initialized = false;
         }
@@ -1874,6 +2009,13 @@ var script = /*#__PURE__*/defineComponent({
       if (val == "game end" && this.goToLink) {
         this.initialized = false;
       }
+    },
+    currentTabs: {
+      handler() {
+        this.$emit("functionToEmitAfterNavigation");
+      },
+
+      deep: true
     }
   },
   computed: {
@@ -1902,95 +2044,106 @@ var script = /*#__PURE__*/defineComponent({
 
     /* Style */
     stylesObj: function () {
-      if (this.device) {
-        let gameGrid = {
-          width: this.width,
-          height: this.height,
-          gridTemplateColumns: this.gameData.style[this.device].margin + " repeat(6, 1fr) " + this.gameData.style[this.device].margin,
-          gridTemplateRows: this.gameData.style[this.device].margin + " repeat(4, 1fr) " + this.gameData.style[this.device].margin
-        };
-        let gridLayoutItem;
+      if (this.useTheme) {
+        if (this.device) {
+          let gameGrid = {
+            width: this.width,
+            height: this.height,
+            gridTemplateColumns: this.gameData.style[this.device].margin + " repeat(6, 1fr) " + this.gameData.style[this.device].margin,
+            gridTemplateRows: this.gameData.style[this.device].margin + " repeat(4, 1fr) " + this.gameData.style[this.device].margin
+          };
+          let gridLayoutItem;
 
-        if (this.disableIlustration == true) {
-          gridLayoutItem = gridLayout("a1f8");
+          if (this.disableIlustration == true) {
+            gridLayoutItem = gridLayout("a1f8");
+          } else {
+            gridLayoutItem = gridLayout(this.gameData.style[this.device]["layout-type"]);
+          }
+
+          let boxIllustration = { ...gridLayoutItem.boxIllustration
+          };
+          let boxText = { ...gridLayoutItem.boxText
+          };
+          let boxTextPadding = {
+            padding: this.gameData.style[this.device]["box-text-padding"]
+          };
+          let currentBoxHeight;
+
+          if (boxText.gridRowEnd != 7 && boxText.gridRowStart != 1) {
+            currentBoxHeight = "(( " + this.height + " - " + "(" + this.gameData.style[this.device].margin + "+" + this.gameData.style[this.device].margin + "))/" + 4 + ") * (" + boxText.gridRowEnd + " - " + boxText.gridRowStart + ")";
+          } else {
+            //boxText.gridRowEnd == 7 && boxText.gridRowStart == 1
+            currentBoxHeight = this.height;
+          }
+
+          let heightCalc = "calc( " + currentBoxHeight + " - " + this.gameData.style[this.device]["box-text-padding"] + " - " + this.gameData.style[this.device]["box-text-padding"] + " - (" + " + " + this.gameData.style[this.device]["box-text-padding"] + " + " + this.gameData.style["icon-single-arrow"]["size"] + "))";
+          let tabResultsMaxHeight = {
+            maxHeight: heightCalc,
+            minHeight: heightCalc
+          };
+          /* FONT */
+
+          let fontName = this.gameData.style["font-family"];
+          let commonFontFamily = {
+            fontFamily: this.gameData.style["font-family"]
+          };
+          let fontWeightList = this.gameData.style["font-weight"];
+          let fontWeightListSelected = {
+            fontWeight: this.gameData.style["font-weight-selected"]
+          };
+          let fontColor = {
+            color: this.gameData.style["color"]
+          };
+          let fontSize1 = {
+            fontSize: this.gameData.style[this.device]["font-size-1"]
+          };
+          /* single arrow next */
+
+          let iconSingleArrow = this.gameData.style["icon-single-arrow"];
+          /* multiple arrow next */
+
+          let iconMultipleArrow = this.gameData.style["icon-multiple-arrow"];
+          let paddingTopNextTab = {
+            paddingTop: this.gameData.style[this.device]["box-text-padding"]
+          };
+          let paddingBottomNextTab = {
+            paddingBottom: this.gameData.style[this.device]["box-text-padding"]
+          };
+          /* bg text box */
+
+          let bgStyle = {
+            bgType: this.gameData.style["bg-type"],
+            bgColor: this.gameData.style["bg-color"]
+          };
+          return {
+            gameGrid: gameGrid,
+            layoutID: this.gameData.style[this.device]["layout-type"],
+            boxIllustration: boxIllustration,
+            boxText: boxText,
+            fontName: fontName,
+            commonFontFamily: commonFontFamily,
+            boxTextPadding: boxTextPadding,
+            fontWeightList: fontWeightList,
+            fontWeightListSelected: fontWeightListSelected,
+            fontColor: fontColor,
+            fontSize1: fontSize1,
+            iconSingleArrow: iconSingleArrow,
+            iconMultipleArrow: iconMultipleArrow,
+            paddingTopNextTab: paddingTopNextTab,
+            paddingBottomNextTab: paddingBottomNextTab,
+            tabResultsMaxHeight: tabResultsMaxHeight,
+            bgStyle: bgStyle
+          };
         } else {
-          gridLayoutItem = gridLayout(this.gameData.style[this.device]["layout-type"]);
+          return false;
         }
-
-        let boxIllustration = { ...gridLayoutItem.boxIllustration
-        };
-        let boxText = { ...gridLayoutItem.boxText
-        };
-        let boxTextPadding = {
-          padding: this.gameData.style[this.device]["box-text-padding"]
-        };
-        let currentBoxHeight;
-
-        if (boxText.gridRowEnd != 7 && boxText.gridRowStart != 1) {
-          currentBoxHeight = "(( " + this.height + " - " + "(" + this.gameData.style[this.device].margin + "+" + this.gameData.style[this.device].margin + "))/" + 4 + ") * (" + boxText.gridRowEnd + " - " + boxText.gridRowStart + ")";
-        } else {
-          //boxText.gridRowEnd == 7 && boxText.gridRowStart == 1
-          currentBoxHeight = this.height;
-        }
-
-        let heightCalc = "calc( " + currentBoxHeight + " - " + this.gameData.style[this.device]["box-text-padding"] + " - " + this.gameData.style[this.device]["box-text-padding"] + " - (" + " + " + this.gameData.style[this.device]["box-text-padding"] + " + " + this.gameData.style["icon-single-arrow"]["size"] + "))";
-        let tabResultsMaxHeight = {
-          maxHeight: heightCalc,
-          minHeight: heightCalc
-        };
-        /* FONT */
-
-        let fontName = this.gameData.style["font-family"];
-        let commonFontFamily = {
-          fontFamily: this.gameData.style["font-family"]
-        };
-        let fontWeightList = this.gameData.style["font-weight"];
-        let fontWeightListSelected = {
-          fontWeight: this.gameData.style["font-weight-selected"]
-        };
-        let fontColor = {
-          color: this.gameData.style["color"]
-        };
-        let fontSize1 = {
-          fontSize: this.gameData.style[this.device]["font-size-1"]
-        };
-        /* single arrow next */
-
-        let iconSingleArrow = this.gameData.style["icon-single-arrow"];
-        /* multiple arrow next */
-
-        let iconMultipleArrow = this.gameData.style["icon-multiple-arrow"];
-        let paddingTopNextTab = {
-          paddingTop: this.gameData.style[this.device]["box-text-padding"]
-        };
-        let paddingBottomNextTab = {
-          paddingBottom: this.gameData.style[this.device]["box-text-padding"]
-        };
-        /* bg text box */
-
-        let bgStyle = {
-          bgType: this.gameData.style["bg-type"],
-          bgColor: this.gameData.style["bg-color"]
-        };
-        return {
-          gameGrid: gameGrid,
-          layoutID: this.gameData.style[this.device]["layout-type"],
-          boxIllustration: boxIllustration,
-          boxText: boxText,
-          fontName: fontName,
-          commonFontFamily: commonFontFamily,
-          boxTextPadding: boxTextPadding,
-          fontWeightList: fontWeightList,
-          fontWeightListSelected: fontWeightListSelected,
-          fontColor: fontColor,
-          fontSize1: fontSize1,
-          iconSingleArrow: iconSingleArrow,
-          iconMultipleArrow: iconMultipleArrow,
-          paddingTopNextTab: paddingTopNextTab,
-          paddingBottomNextTab: paddingBottomNextTab,
-          tabResultsMaxHeight: tabResultsMaxHeight,
-          bgStyle: bgStyle
-        };
+      } else {
+        return false;
+      }
+    },
+    logMessage: function () {
+      if (this.narrationBox == "false" || this.narrationBox == "node-bad-mix" || this.urlToShow) {
+        return true;
       } else {
         return false;
       }
@@ -2052,6 +2205,7 @@ var script = /*#__PURE__*/defineComponent({
 
     /* stabilisco tabs da vedere */
     navigation(newIdArray) {
+      this.$emit("functionToEmitBeforeNavigation");
       let tabs = this.gameData.story.tabs.filter(el => newIdArray.includes(el.id));
       let tabsToNavigate = this.ResoveTabsList(tabs);
 
@@ -2075,6 +2229,7 @@ var script = /*#__PURE__*/defineComponent({
               tabToAdd.push(newEl);
             }
           });
+          this.isBadNodeMixForCose = [];
           let testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
 
           if (testNextTabsChose.length == 1) {
@@ -2229,6 +2384,8 @@ var script = /*#__PURE__*/defineComponent({
         currentTab = this.gameData.story.tabs.find(el => el.id == tab);
       }
 
+      console.log("type: " + currentTab.type + "------------------------");
+
       switch (currentTab.type) {
         case "start":
           break;
@@ -2313,39 +2470,43 @@ var script = /*#__PURE__*/defineComponent({
           break;
 
         case "set stat":
-          let itemExist3 = this.gameData.stats.find(el => el.id == currentTab.idStat);
+          if (!isNext) {
+            let itemExist3 = this.gameData.stats.find(el => el.id == currentTab.idStat);
 
-          if (itemExist3) {
-            if (itemExist3.length == 0 || currentTab.operator == false) {
+            if (itemExist3) {
+              if (itemExist3.length == 0 || currentTab.operator == false) {
+                let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+                this.onRunError.push(error);
+                stop = true;
+              } else {
+                this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount);
+              }
+            } else {
               let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
               this.onRunError.push(error);
               stop = true;
-            } else {
-              this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount);
             }
-          } else {
-            let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-            this.onRunError.push(error);
-            stop = true;
           }
 
           break;
 
         case "set object":
-          let itemExist2 = this.gameData.items.find(el => el.id == currentTab.idObject);
+          if (!isNext) {
+            let itemExist2 = this.gameData.items.find(el => el.id == currentTab.idObject);
 
-          if (itemExist2) {
-            if (itemExist2.length == 0 || currentTab.operator == false) {
+            if (itemExist2) {
+              if (itemExist2.length == 0 || currentTab.operator == false) {
+                let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+                this.onRunError.push(error);
+                stop = true;
+              } else {
+                this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount);
+              }
+            } else {
               let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
               this.onRunError.push(error);
               stop = true;
-            } else {
-              this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount);
             }
-          } else {
-            let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-            this.onRunError.push(error);
-            stop = true;
           }
 
           break;
@@ -2414,7 +2575,27 @@ var script = /*#__PURE__*/defineComponent({
           break;
 
         case "image":
-          this.setImage(currentTab.img);
+          if (!isNext) {
+            this.setImage(currentTab.img);
+          }
+
+          break;
+
+        case "emit_function":
+          if (!isNext) {
+            if (this.canEmit) {
+              this.$emit("functionToEmitByTabs", currentTab.objToEmit);
+            }
+
+            if (this.showToast) {
+              this.$refs.ToastContainerRef.addToast({
+                type: currentTab.type.replaceAll(" ", "_"),
+                title: currentTab.humanName.default + ' <span class="sg1-id">ID: ' + currentTab.id + "</span>",
+                content: currentTab.objToEmit
+              });
+            }
+          }
+
           break;
       }
 
@@ -2692,8 +2873,14 @@ var script = /*#__PURE__*/defineComponent({
 
     /* STYLE ---------------------------------------- */
     init() {
-      this.setDevice();
-      this.LoadFont();
+      if (this.useTheme) {
+        this.setDevice();
+        this.LoadFont();
+      } else {
+        this.stepToInit.font = true;
+      }
+
+      console.log(this.preCachedImgList);
       this.setPreCacheImgList();
 
       if (this.preCachedImgList.length == 0) {
@@ -2762,6 +2949,37 @@ var script = /*#__PURE__*/defineComponent({
       } else {
         this.device = "mobile";
       }
+    },
+
+    /* data retriving & other feature----------------------------------------*/
+    getPlayerValues() {
+      return this.player.stats;
+    },
+
+    getCurrentTabValues() {
+      return this.currentTabs;
+    },
+
+    setStartPoint(value) {
+      let newStart;
+
+      if (typeof value === "string") {
+        newStart = this.gameData.story.tabs.find(el => el.name == value);
+      } else {
+        newStart = this.gameData.story.tabs.find(el => el.id == value);
+      }
+
+      if (newStart) {
+        this.navigation([newStart.id]);
+      }
+    },
+
+    setPlayerValues(value) {
+      this.player.stats = value;
+    },
+
+    setPlayerValues(value) {
+      this.player.stats = value;
     }
 
   }
@@ -2784,7 +3002,7 @@ const _hoisted_4 = {
   class: "sg1-game-message sg1-e-4"
 };
 const _hoisted_5 = {
-  key: 4,
+  key: 5,
   class: "sg1-load-screen"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -2792,15 +3010,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   const _component_boxText = resolveComponent("boxText");
 
+  const _component_ToastContainer = resolveComponent("ToastContainer");
+
   const _component_PreCachedImg = resolveComponent("PreCachedImg");
 
   const _component_Spinner = resolveComponent("Spinner");
 
-  return _ctx.stylesObj ? (openBlock(), createElementBlock("div", {
+  return _ctx.stylesObj || _ctx.useTheme == false ? (openBlock(), createElementBlock("div", {
     key: 0,
     style: normalizeStyle(_ctx.stylesObj.gameGrid),
-    class: "sg1-game-grid"
-  }, [_ctx.disableIlustration == false && _ctx.illustration && _ctx.initialized ? (openBlock(), createBlock(_component_boxillustration, {
+    class: normalizeClass([{
+      'sg1-no-theme': !_ctx.stylesObj,
+      'sg1-no-illustration': _ctx.disableIlustration == false || !_ctx.illustration,
+      'sg1-toast-wrapper': _ctx.showToast
+    }, "sg1-game-grid"])
+  }, [_ctx.disableIlustration == false && _ctx.illustration && _ctx.initialized && !_ctx.logMessage ? (openBlock(), createBlock(_component_boxillustration, {
     key: 0,
     editorUsage: _ctx.editorUsage,
     illustration: _ctx.illustration,
@@ -2808,7 +3032,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     pathMediaDir: _ctx.pathMediaDir,
     style: normalizeStyle(_ctx.gameData.style),
     stylesObj: _ctx.stylesObj
-  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style", "stylesObj"])) : createCommentVNode("", true), _ctx.initialized && _ctx.narrationBox !== false && _ctx.narrationBox !== 'node-bad-mix' ? (openBlock(), createBlock(_component_boxText, {
+  }, null, 8, ["editorUsage", "illustration", "indexMedia", "pathMediaDir", "style", "stylesObj"])) : createCommentVNode("", true), _ctx.initialized && _ctx.narrationBox !== false && _ctx.narrationBox !== 'node-bad-mix' && !_ctx.logMessage ? (openBlock(), createBlock(_component_boxText, {
     key: 1,
     narrationBox: _ctx.narrationBox,
     lang: _ctx.lang,
@@ -2817,27 +3041,30 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stylesObj: _ctx.stylesObj,
     onReedBeams: _ctx.reedBeams,
     onGameIntentLoad: _ctx.gameIntentLoad
-  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams", "onGameIntentLoad"])) : createCommentVNode("", true), _ctx.narrationBox == 'false' || _ctx.narrationBox == 'node-bad-mix' || _ctx.urlToShow ? (openBlock(), createElementBlock("div", _hoisted_1, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (openBlock(), createElementBlock("div", _hoisted_2, toDisplayString(_ctx.strings.noEnd[_ctx.langEditor]), 1)) : createCommentVNode("", true), (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.onRunError, (el, index) => {
+  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams", "onGameIntentLoad"])) : createCommentVNode("", true), _ctx.logMessage ? (openBlock(), createElementBlock("div", _hoisted_1, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (openBlock(), createElementBlock("div", _hoisted_2, toDisplayString(_ctx.strings.noEnd[_ctx.langEditor]), 1)) : createCommentVNode("", true), (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.onRunError, (el, index) => {
     return openBlock(), createElementBlock("div", {
       key: index,
       class: "sg1-game-error sg1-e-2"
     }, toDisplayString(el), 1);
-  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (openBlock(), createElementBlock("div", _hoisted_3, toDisplayString(_ctx.strings.nodeBadMix[_ctx.langEditor]) + " " + toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : createCommentVNode("", true), _ctx.urlToShow ? (openBlock(), createElementBlock("div", _hoisted_4, toDisplayString(_ctx.urlToShow), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), _ctx.preCachedImgList ? (openBlock(), createBlock(_component_PreCachedImg, {
+  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (openBlock(), createElementBlock("div", _hoisted_3, toDisplayString(_ctx.strings.nodeBadMix[_ctx.langEditor]) + " " + toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : createCommentVNode("", true), _ctx.urlToShow ? (openBlock(), createElementBlock("div", _hoisted_4, toDisplayString(_ctx.urlToShow), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), _ctx.showToast ? (openBlock(), createBlock(_component_ToastContainer, {
     key: 3,
+    ref: "ToastContainerRef"
+  }, null, 512)) : createCommentVNode("", true), _ctx.preCachedImgList ? (openBlock(), createBlock(_component_PreCachedImg, {
+    key: 4,
     editorUsage: _ctx.editorUsage,
     preCachedImgList: _ctx.preCachedImgList,
     onSetImgsLoaded: _ctx.setImgsLoaded
-  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : createCommentVNode("", true), !_ctx.initialized ? (openBlock(), createElementBlock("div", _hoisted_5, [createVNode(_component_Spinner)])) : createCommentVNode("", true)], 4)) : createCommentVNode("", true);
+  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : createCommentVNode("", true), !_ctx.initialized ? (openBlock(), createElementBlock("div", _hoisted_5, [createVNode(_component_Spinner)])) : createCommentVNode("", true)], 6)) : createCommentVNode("", true);
 }
 
-var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n";
+var css_248z$1 = "\nbody {\r\n  margin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\r\n  margin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\r\n  grid-column: 1/3;\r\n  padding: 20px;\r\n  background-color: whitesmoke;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\r\n  font-family: monospace;\r\n  font-size: 16px;\r\n  color: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\r\n  max-width: calc(100% - 50px);\r\n  max-width: 992px;\r\n  aspect-ratio: 3/2;\r\n  max-height: calc(100vh - 50px);\r\n  margin-top: 25px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n  display: grid;\r\n  grid-template-rows: 70% 30%;\r\n  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\r\n  grid-template-rows: 100% 0;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\r\n  max-width: calc(100% - 25px);\r\n  margin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\r\n  content: \"◆\";\r\n  display: inline-block;\r\n  margin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  width: 2em;\r\n  height: 2em;\r\n  position: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\r\n  content: \"\";\r\n  width: 0;\r\n  height: 0;\r\n  border-style: solid;\r\n  border-width: 1em 1em 0 1em;\r\n  border-color: grey transparent transparent transparent;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\r\n  grid-column: 1/3;\r\n  grid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\r\n  position: relative;\r\n  overflow: hidden;\n}\r\n";
 styleInject(css_248z$1);
 
-var css_248z = "\n.sg1-game-grid[data-v-18b591d2] {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-18b591d2] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-18b591d2] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-18b591d2] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-18b591d2] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-18b591d2] {\n\t\tcolor: #67ed72;\n}\n";
+var css_248z = "\n.sg1-game-grid[data-v-264c4d09]:not(.sg1-no-theme) {\r\n  display: grid;\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  background-color: #282828;\n}\n.sg1-load-screen[data-v-264c4d09] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.sg1-log-app[data-v-264c4d09] {\r\n  grid-row-start: 1;\r\n  grid-column-start: 1;\r\n  grid-row-end: 7;\r\n  grid-column-end: 9;\r\n  flex-direction: column;\r\n  max-width: 100% !important;\r\n  overflow: hidden;\r\n\r\n  background-color: #282828;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.sg1-log-app > *[data-v-264c4d09] {\r\n  font-size: 15px;\r\n  max-width: 100%;\r\n  padding-right: 20px;\r\n  padding-left: 20px;\r\n  width: 100%;\r\n  text-align: center;\r\n  font-family: monospace;\n}\n.sg1-game-error[data-v-264c4d09] {\r\n  color: #ed6767;\n}\n.sg1-game-message[data-v-264c4d09] {\r\n  color: #67ed72;\n}\r\n";
 styleInject(css_248z);
 
 script.render = render;
-script.__scopeId = "data-v-18b591d2";
+script.__scopeId = "data-v-264c4d09";
 
 /* eslint-disable import/prefer-default-export */
 
