@@ -24,7 +24,7 @@ import { defineComponent } from "vue";
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { TestStLibrarySample } from '@/entry.esm';
 
-import testMarta from "./cose/TestMarta.json";
+import testMarta from "./cose/test.json";
 import defaultIndexMedia from "./cose/media/indexMedia.json";
 
 export default defineComponent({
