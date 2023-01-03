@@ -121,9 +121,9 @@ let boxNarration = {
     currentTabs: {},
     nextTabsChose: {},
     lang: {},
-    emitReedBeams2: {},
     stylesObj: {},
   },
+  emits: ["emitReedBeams2"],
   computed: {
     currentTabsReordered: function () {
       return sortChose(this.currentTabs);

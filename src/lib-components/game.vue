@@ -167,15 +167,13 @@ export default /*#__PURE__*/ defineComponent({
       type: Boolean,
       default: false,
     },
-
-    //??????????? QUI
-    //PROVO CON EITS OPTION ?????
-    //https://v3-migration.vuejs.org/breaking-changes/emits-option.html
-    functionToEmitByTabs: {},
-    functionToEmitOnInit: {},
-    functionToEmitBeforeNavigation: {},
-    functionToEmiAfterNavigation: {},
   },
+  emits: [
+    "functionToEmitByTabs",
+    "functionToEmitOnInit",
+    "functionToEmitBeforeNavigation",
+    "functionToEmitAfterNavigation",
+  ],
   data: function () {
     return {
       initialized: false,
@@ -236,9 +234,7 @@ export default /*#__PURE__*/ defineComponent({
     },
     currentTabs: {
       handler() {
-        console.log(".");
-        this.$emit("functionToEmitBeforeNavigation");
-        this.$emit("functionToEmiAfterNavigation");
+        this.$emit("functionToEmitAfterNavigation");
       },
       deep: true,
     },
@@ -481,7 +477,7 @@ export default /*#__PURE__*/ defineComponent({
 
     /* stabilisco tabs da vedere */
     navigation(newIdArray) {
-      //this.$emit("functionToEmitBeforeNavigation");
+      this.$emit("functionToEmitBeforeNavigation");
 
       let tabs = this.gameData.story.tabs.filter((el) =>
         newIdArray.includes(el.id)
@@ -575,7 +571,6 @@ export default /*#__PURE__*/ defineComponent({
 
         this.currentTabs = tabsToNavigate;
       }
-      console.log("£££££");
     },
 
     //------------------------------------------------------
@@ -1390,7 +1385,7 @@ export default /*#__PURE__*/ defineComponent({
       return this.player.stats;
     },
 
-    getTabValues() {
+    getCurrentTabValues() {
       return this.currentTabs;
     },
 
