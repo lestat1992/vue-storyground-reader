@@ -1401,6 +1401,14 @@ export default /*#__PURE__*/ defineComponent({
         this.navigation([newStart.id]);
       }
     },
+
+    setPlayerValues(value) {
+      this.player.stats = value;
+    },
+
+    setPlayerValues(value) {
+      this.player.stats = value;
+    },
   },
 });
 </script>
