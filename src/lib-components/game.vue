@@ -7,7 +7,7 @@
       'sg1-no-illustration': disableIlustration == false || !illustration,
       'sg1-toast-wrapper': showToast,
     }"
-    class="sg1-game-grid"
+    class="sg1-game-grid sg1-game"
   >
     <boxillustration
       v-if="
@@ -155,6 +155,7 @@ export default /*#__PURE__*/ defineComponent({
       type: Boolean,
       default: false,
     },
+    //
     useTheme: {
       type: Boolean,
       default: true,
@@ -1400,10 +1401,6 @@ export default /*#__PURE__*/ defineComponent({
       if (newStart) {
         this.navigation([newStart.id]);
       }
-    },
-
-    setPlayerValues(value) {
-      this.player.stats = value;
     },
 
     setPlayerValues(value) {
