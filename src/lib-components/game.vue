@@ -169,12 +169,7 @@ export default /*#__PURE__*/ defineComponent({
       default: false,
     },
   },
-  emits: [
-    "functionToEmitByTabs",
-    "functionToEmitOnInit",
-    "functionToEmitBeforeNavigation",
-    "functionToEmitAfterNavigation",
-  ],
+  emits: ["emitByTabs", "onInit", "beforeNavigation", "afterNavigation"],
   data: function () {
     return {
       initialized: false,
@@ -215,7 +210,7 @@ export default /*#__PURE__*/ defineComponent({
       handler() {
         if (this.stepToInit.font && this.stepToInit.img) {
           this.initialized = true;
-          this.$emit("functionToEmitOnInit");
+          this.$emit("onInit");
         } else {
           this.initialized = false;
         }
@@ -235,7 +230,7 @@ export default /*#__PURE__*/ defineComponent({
     },
     currentTabs: {
       handler() {
-        this.$emit("functionToEmitAfterNavigation");
+        this.$emit("afterNavigation");
       },
       deep: true,
     },
@@ -478,7 +473,7 @@ export default /*#__PURE__*/ defineComponent({
 
     /* stabilisco tabs da vedere */
     navigation(newIdArray) {
-      this.$emit("functionToEmitBeforeNavigation");
+      this.$emit("beforeNavigation");
 
       let tabs = this.gameData.story.tabs.filter((el) =>
         newIdArray.includes(el.id)
@@ -954,7 +949,7 @@ export default /*#__PURE__*/ defineComponent({
         case "emit_function":
           if (!isNext) {
             if (this.canEmit) {
-              this.$emit("functionToEmitByTabs", currentTab.objToEmit);
+              this.$emit("emitByTabs", currentTab.objToEmit);
             }
             if (this.showToast) {
               this.$refs.ToastContainerRef.addToast({
