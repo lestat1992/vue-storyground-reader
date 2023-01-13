@@ -119,7 +119,7 @@ export default /*#__PURE__*/ defineComponent({
       type: Boolean,
       default: false,
     },
-    propLang: {
+    langStory: {
       type: String,
       default: "null-lang",
     },
@@ -419,8 +419,8 @@ export default /*#__PURE__*/ defineComponent({
     },
   },
   mounted() {
-    if (this.propLang !== "null-lang") {
-      this.lang = this.propLang;
+    if (this.langStory !== "null-lang") {
+      this.lang = this.langStory;
     } else {
       this.lang = this.gameData.postInfo.langList[0];
     }
