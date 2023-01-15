@@ -756,7 +756,7 @@ const _hoisted_2$8 = ["innerHTML"];
 const _hoisted_3$5 = ["innerHTML"];
 const _hoisted_4$3 = ["innerHTML"];
 const _hoisted_5$3 = ["innerHTML"];
-const _hoisted_6$1 = {
+const _hoisted_6$2 = {
   key: 1,
   class: "sg1-chose-item"
 };
@@ -818,7 +818,7 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, [createElementVNode("span", {
     innerHTML: _ctx.text
-  }, null, 8, _hoisted_5$3)], 4))])) : (openBlock(), createElementBlock("div", _hoisted_6$1, [_hoisted_7$1, createElementVNode("span", {
+  }, null, 8, _hoisted_5$3)], 4))])) : (openBlock(), createElementBlock("div", _hoisted_6$2, [_hoisted_7$1, createElementVNode("span", {
     innerHTML: _ctx.text
   }, null, 8, _hoisted_8$1)]));
 }
@@ -1604,7 +1604,7 @@ const _hoisted_3$1 = {
 };
 const _hoisted_4$1 = ["innerHTML"];
 const _hoisted_5$1 = ["onClick"];
-const _hoisted_6 = ["onClick"];
+const _hoisted_6$1 = ["onClick"];
 const _hoisted_7 = {
   class: "sg1-content"
 };
@@ -1632,7 +1632,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8, _hoisted_5$1), createElementVNode("div", {
       onClick: $event => _ctx.removeToast(toast.id),
       class: "sg1-close-btn"
-    }, null, 8, _hoisted_6)]), createElementVNode("div", _hoisted_7, [createElementVNode("div", _hoisted_8, [createElementVNode("pre", null, toDisplayString(toast.content), 1)])])], 10, _hoisted_2$1);
+    }, null, 8, _hoisted_6$1)]), createElementVNode("div", _hoisted_7, [createElementVNode("div", _hoisted_8, [createElementVNode("pre", null, toDisplayString(toast.content), 1)])])], 10, _hoisted_2$1);
   }), 128))])) : createCommentVNode("", true);
 }
 
@@ -1896,6 +1896,9 @@ var script = /*#__PURE__*/defineComponent({
     ToastContainer: script$1
   },
   props: {
+    idStory: {
+      default: false
+    },
     editorUsage: {
       type: Boolean,
       default: true
@@ -1904,7 +1907,7 @@ var script = /*#__PURE__*/defineComponent({
       type: Boolean,
       default: false
     },
-    propLang: {
+    langStory: {
       type: String,
       default: "null-lang"
     },
@@ -1940,6 +1943,7 @@ var script = /*#__PURE__*/defineComponent({
       type: Boolean,
       default: false
     },
+    //
     useTheme: {
       type: Boolean,
       default: true
@@ -1953,9 +1957,10 @@ var script = /*#__PURE__*/defineComponent({
       default: false
     }
   },
-  emits: ["functionToEmitByTabs", "functionToEmitOnInit", "functionToEmitBeforeNavigation", "functionToEmitAfterNavigation"],
+  emits: ["emitByTabs", "onInit", "beforeNavigation", "afterNavigation"],
   data: function () {
     return {
+      idRendered: false,
       initialized: false,
       stepToInit: {
         font: false,
@@ -1990,7 +1995,7 @@ var script = /*#__PURE__*/defineComponent({
       handler() {
         if (this.stepToInit.font && this.stepToInit.img) {
           this.initialized = true;
-          this.$emit("functionToEmitOnInit");
+          this.$emit("onInit");
         } else {
           this.initialized = false;
         }
@@ -2012,7 +2017,7 @@ var script = /*#__PURE__*/defineComponent({
     },
     currentTabs: {
       handler() {
-        this.$emit("functionToEmitAfterNavigation");
+        this.$emit("afterNavigation");
       },
 
       deep: true
@@ -2151,17 +2156,44 @@ var script = /*#__PURE__*/defineComponent({
   },
 
   mounted() {
-    if (this.propLang !== "null-lang") {
-      this.lang = this.propLang;
+    if (this.langStory !== "null-lang") {
+      this.lang = this.langStory;
     } else {
       this.lang = this.gameData.postInfo.langList[0];
     }
 
     this.gameIntentLoad();
+    /* |||||||||||||||||||| EVENTS |||||||||||||||||||||| */
+
+    window.addEventListener("getPlayerValues" + this.idRendered, event => {
+      localStorage.setItem("sg1Storage" + this.idRendered, JSON.stringify(this.getPlayerValues()));
+    });
+    window.addEventListener("getCurrentTabValues" + this.idRendered, event => {
+      localStorage.setItem("sg1Storage" + this.idRendered, JSON.stringify(this.getCurrentTabValues()));
+    });
+    window.addEventListener("setStartPoint" + this.idRendered, event => {
+      let value = JSON.parse(localStorage["sg1Storage" + this.idRendered]);
+      localStorage.removeItem("sg1Storage" + this.idRendered);
+      this.setStartPoint(value);
+    });
+    window.addEventListener("setPlayerValues" + this.idRendered, event => {
+      let value = JSON.parse(localStorage["sg1Storage" + this.idRendered]);
+      localStorage.removeItem("sg1Storage" + this.idRendered);
+      this.setPlayerValues(value);
+    });
   },
 
   created() {
     this.init();
+
+    if (this.idStory) {
+      this.idRendered = this.idStory;
+    } else if (this.gameData.id) {
+      this.idRendered = this.gameData.id;
+    } else {
+      this.idRendered = 0;
+    }
+
     window.addEventListener("resize", this.setDevice);
   },
 
@@ -2205,7 +2237,7 @@ var script = /*#__PURE__*/defineComponent({
 
     /* stabilisco tabs da vedere */
     navigation(newIdArray) {
-      this.$emit("functionToEmitBeforeNavigation");
+      this.$emit("beforeNavigation");
       let tabs = this.gameData.story.tabs.filter(el => newIdArray.includes(el.id));
       let tabsToNavigate = this.ResoveTabsList(tabs);
 
@@ -2584,7 +2616,7 @@ var script = /*#__PURE__*/defineComponent({
         case "emit_function":
           if (!isNext) {
             if (this.canEmit) {
-              this.$emit("functionToEmitByTabs", currentTab.objToEmit);
+              this.$emit("emitByTabs", currentTab.objToEmit);
             }
 
             if (this.showToast) {
@@ -2976,32 +3008,29 @@ var script = /*#__PURE__*/defineComponent({
 
     setPlayerValues(value) {
       this.player.stats = value;
-    },
-
-    setPlayerValues(value) {
-      this.player.stats = value;
     }
 
   }
 });
 
-const _hoisted_1 = {
+const _hoisted_1 = ["sg1-id-stroy"];
+const _hoisted_2 = {
   key: 2,
   class: "sg1-log-app"
 };
-const _hoisted_2 = {
+const _hoisted_3 = {
   key: 0,
   class: "sg1-game-error sg1-e-1"
 };
-const _hoisted_3 = {
+const _hoisted_4 = {
   key: 1,
   class: "sg1-game-error sg1-e-3"
 };
-const _hoisted_4 = {
+const _hoisted_5 = {
   key: 2,
   class: "sg1-game-message sg1-e-4"
 };
-const _hoisted_5 = {
+const _hoisted_6 = {
   key: 5,
   class: "sg1-load-screen"
 };
@@ -3018,12 +3047,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return _ctx.stylesObj || _ctx.useTheme == false ? (openBlock(), createElementBlock("div", {
     key: 0,
+    "sg1-id-stroy": _ctx.idStory,
     style: normalizeStyle(_ctx.stylesObj.gameGrid),
     class: normalizeClass([{
       'sg1-no-theme': !_ctx.stylesObj,
       'sg1-no-illustration': _ctx.disableIlustration == false || !_ctx.illustration,
       'sg1-toast-wrapper': _ctx.showToast
-    }, "sg1-game-grid"])
+    }, "sg1-game-grid sg1-game"])
   }, [_ctx.disableIlustration == false && _ctx.illustration && _ctx.initialized && !_ctx.logMessage ? (openBlock(), createBlock(_component_boxillustration, {
     key: 0,
     editorUsage: _ctx.editorUsage,
@@ -3041,12 +3071,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stylesObj: _ctx.stylesObj,
     onReedBeams: _ctx.reedBeams,
     onGameIntentLoad: _ctx.gameIntentLoad
-  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams", "onGameIntentLoad"])) : createCommentVNode("", true), _ctx.logMessage ? (openBlock(), createElementBlock("div", _hoisted_1, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (openBlock(), createElementBlock("div", _hoisted_2, toDisplayString(_ctx.strings.noEnd[_ctx.langEditor]), 1)) : createCommentVNode("", true), (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.onRunError, (el, index) => {
+  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams", "onGameIntentLoad"])) : createCommentVNode("", true), _ctx.logMessage ? (openBlock(), createElementBlock("div", _hoisted_2, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (openBlock(), createElementBlock("div", _hoisted_3, toDisplayString(_ctx.strings.noEnd[_ctx.langEditor]), 1)) : createCommentVNode("", true), (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.onRunError, (el, index) => {
     return openBlock(), createElementBlock("div", {
       key: index,
       class: "sg1-game-error sg1-e-2"
     }, toDisplayString(el), 1);
-  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (openBlock(), createElementBlock("div", _hoisted_3, toDisplayString(_ctx.strings.nodeBadMix[_ctx.langEditor]) + " " + toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : createCommentVNode("", true), _ctx.urlToShow ? (openBlock(), createElementBlock("div", _hoisted_4, toDisplayString(_ctx.urlToShow), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), _ctx.showToast ? (openBlock(), createBlock(_component_ToastContainer, {
+  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (openBlock(), createElementBlock("div", _hoisted_4, toDisplayString(_ctx.strings.nodeBadMix[_ctx.langEditor]) + " " + toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : createCommentVNode("", true), _ctx.urlToShow ? (openBlock(), createElementBlock("div", _hoisted_5, toDisplayString(_ctx.urlToShow), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), _ctx.showToast ? (openBlock(), createBlock(_component_ToastContainer, {
     key: 3,
     ref: "ToastContainerRef"
   }, null, 512)) : createCommentVNode("", true), _ctx.preCachedImgList ? (openBlock(), createBlock(_component_PreCachedImg, {
@@ -3054,17 +3084,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     editorUsage: _ctx.editorUsage,
     preCachedImgList: _ctx.preCachedImgList,
     onSetImgsLoaded: _ctx.setImgsLoaded
-  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : createCommentVNode("", true), !_ctx.initialized ? (openBlock(), createElementBlock("div", _hoisted_5, [createVNode(_component_Spinner)])) : createCommentVNode("", true)], 6)) : createCommentVNode("", true);
+  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : createCommentVNode("", true), !_ctx.initialized ? (openBlock(), createElementBlock("div", _hoisted_6, [createVNode(_component_Spinner)])) : createCommentVNode("", true)], 14, _hoisted_1)) : createCommentVNode("", true);
 }
 
-var css_248z$1 = "\nbody {\r\n  margin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\r\n  margin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\r\n  grid-column: 1/3;\r\n  padding: 20px;\r\n  background-color: whitesmoke;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\r\n  font-family: monospace;\r\n  font-size: 16px;\r\n  color: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\r\n  max-width: calc(100% - 50px);\r\n  max-width: 992px;\r\n  aspect-ratio: 3/2;\r\n  max-height: calc(100vh - 50px);\r\n  margin-top: 25px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n  display: grid;\r\n  grid-template-rows: 70% 30%;\r\n  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\r\n  grid-template-rows: 100% 0;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\r\n  max-width: calc(100% - 25px);\r\n  margin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\r\n  content: \"◆\";\r\n  display: inline-block;\r\n  margin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  width: 2em;\r\n  height: 2em;\r\n  position: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\r\n  content: \"\";\r\n  width: 0;\r\n  height: 0;\r\n  border-style: solid;\r\n  border-width: 1em 1em 0 1em;\r\n  border-color: grey transparent transparent transparent;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\r\n  grid-column: 1/3;\r\n  grid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\r\n  position: relative;\r\n  overflow: hidden;\n}\r\n";
+var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\n\t\tmargin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\n\t\tgrid-row: 1/3;\n\t\tpadding: 20px;\n\t\tbackground-color: whitesmoke;\n\t\toverflow: auto;\n\t\theight: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\n\t\tfont-family: monospace;\n\t\tfont-size: 16px;\n\t\tcolor: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\n\t\tmax-width: calc(100% - 50px);\n\t\tmax-width: 992px;\n\t\taspect-ratio: 1/1;\n\t\tmax-height: calc(100vh - 50px);\n\t\tmargin-top: 25px;\n\t\tmargin-right: auto;\n\t\tmargin-left: auto;\n\t\tdisplay: grid;\n\t\tgrid-template-rows: 70% 30%;\n\t\tbox-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\n\t\tgrid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\n\t\tmax-width: calc(100% - 25px);\n\t\tmargin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\n\t\tcontent: \"◆\";\n\t\tdisplay: inline-block;\n\t\tmargin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\n\t\tcursor: pointer;\n\t\tfont-size: 12px;\n\t\twidth: 2em;\n\t\theight: 2em;\n\t\tposition: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\n\t\tcontent: \"\";\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder-style: solid;\n\t\tborder-width: 1em 1em 0 1em;\n\t\tborder-color: grey transparent transparent transparent;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tobject-fit: cover;\n\t\tobject-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\n\t\tposition: relative;\n\t\toverflow: hidden;\n}\n";
 styleInject(css_248z$1);
 
-var css_248z = "\n.sg1-game-grid[data-v-264c4d09]:not(.sg1-no-theme) {\r\n  display: grid;\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  background-color: #282828;\n}\n.sg1-load-screen[data-v-264c4d09] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.sg1-log-app[data-v-264c4d09] {\r\n  grid-row-start: 1;\r\n  grid-column-start: 1;\r\n  grid-row-end: 7;\r\n  grid-column-end: 9;\r\n  flex-direction: column;\r\n  max-width: 100% !important;\r\n  overflow: hidden;\r\n\r\n  background-color: #282828;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.sg1-log-app > *[data-v-264c4d09] {\r\n  font-size: 15px;\r\n  max-width: 100%;\r\n  padding-right: 20px;\r\n  padding-left: 20px;\r\n  width: 100%;\r\n  text-align: center;\r\n  font-family: monospace;\n}\n.sg1-game-error[data-v-264c4d09] {\r\n  color: #ed6767;\n}\n.sg1-game-message[data-v-264c4d09] {\r\n  color: #67ed72;\n}\r\n";
+var css_248z = "\n.sg1-game-grid[data-v-5f489a16]:not(.sg1-no-theme) {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-5f489a16] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-5f489a16] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-5f489a16] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-5f489a16] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-5f489a16] {\n\t\tcolor: #67ed72;\n}\n";
 styleInject(css_248z);
 
 script.render = render;
-script.__scopeId = "data-v-264c4d09";
+script.__scopeId = "data-v-5f489a16";
 
 /* eslint-disable import/prefer-default-export */
 

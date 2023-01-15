@@ -152,7 +152,9 @@ var za={latin:"BESbswy","latin-ext":"\u00e7\u00f6\u00fc\u011f\u015f",cyrillic:"\
 Ca=/^(thin|(?:(?:extra|ultra)-?)?light|regular|book|medium|(?:(?:semi|demi|extra|ultra)-?)?bold|black|heavy|l|r|b|[1-9]00)?(n|i|normal|italic)?$/;
 function Da(a){for(var b=a.f.length,c=0;c<b;c++){var d=a.f[c].split(":"),e=d[0].replace(/\+/g," "),f=["n4"];if(2<=d.length){var g;var m=d[1];g=[];if(m)for(var m=m.split(","),h=m.length,l=0;l<h;l++){var k;k=m[l];if(k.match(/^[\w-]+$/)){var n=Ca.exec(k.toLowerCase());if(null==n)k="";else {k=n[2];k=null==k||""==k?"n":Ba[k];n=n[1];if(null==n||""==n)n="4";else var r=Aa[n],n=r?r:isNaN(n)?"4":n.substr(0,1);k=[k,n].join("");}}else k="";k&&g.push(k);}0<g.length&&(f=g);3==d.length&&(d=d[2],g=[],d=d?d.split(","):
 g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d));}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<f.length;d+=1)a.a.push(new G(e,f[d]));}}function Ea(a,b){this.c=a;this.a=b;}var Fa={Arimo:!0,Cousine:!0,Tinos:!0};Ea.prototype.load=function(a){var b=new B,c=this.c,d=new ta(this.a.api,this.a.text),e=this.a.families;va(d,e);var f=new ya(e);Da(f);z(c,wa(d),C(b));E(b,function(){a(f.a,f.c,Fa);});};function Ga(a,b){this.c=a;this.a=b;}Ga.prototype.load=function(a){var b=this.a.id,c=this.c.o;b?A(this.c,(this.a.api||"https://use.typekit.net")+"/"+b+".js",function(b){if(b)a([]);else if(c.Typekit&&c.Typekit.config&&c.Typekit.config.fn){b=c.Typekit.config.fn;for(var e=[],f=0;f<b.length;f+=2)for(var g=b[f],m=b[f+1],h=0;h<m.length;h++)e.push(new G(g,m[h]));try{c.Typekit.load({events:!1,classes:!1,async:!0});}catch(l){}a(e);}},2E3):a([]);};function Ha(a,b){this.c=a;this.f=b;this.a=[];}Ha.prototype.load=function(a){var b=this.f.id,c=this.c.o,d=this;b?(c.__webfontfontdeckmodule__||(c.__webfontfontdeckmodule__={}),c.__webfontfontdeckmodule__[b]=function(b,c){for(var g=0,m=c.fonts.length;g<m;++g){var h=c.fonts[g];d.a.push(new G(h.name,ga("font-weight:"+h.weight+";font-style:"+h.style)));}a(d.a);},A(this.c,(this.f.api||"https://f.fontdeck.com/s/css/js/")+ea(this.c)+"/"+b+".js",function(b){b&&a([]);})):a([]);};var Y=new oa(window);Y.a.c.custom=function(a,b){return new sa(b,a)};Y.a.c.fontdeck=function(a,b){return new Ha(b,a)};Y.a.c.monotype=function(a,b){return new ra(b,a)};Y.a.c.typekit=function(a,b){return new Ga(b,a)};Y.a.c.google=function(a,b){return new Ea(b,a)};var Z={load:p(Y.load,Y)};module.exports?module.exports=Z:(window.WebFont=Z,window.WebFontConfig&&Y.load(window.WebFontConfig));}());
-});var wrongTabsId = {
+});
+
+var WebFont = webfontloader;var wrongTabsId = {
 	en: "wrong tabs id",
 	it: "id tabs sbagliato"
 };
@@ -731,7 +733,7 @@ var _hoisted_2$8 = ["innerHTML"];
 var _hoisted_3$5 = ["innerHTML"];
 var _hoisted_4$3 = ["innerHTML"];
 var _hoisted_5$3 = ["innerHTML"];
-var _hoisted_6$1 = {
+var _hoisted_6$2 = {
   key: 1,
   class: "sg1-chose-item"
 };
@@ -779,7 +781,7 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
     style: vue.normalizeStyle(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.commonFontFamily), _ctx.stylesObj.fontWeightListSelected), _ctx.stylesObj.fontColor), _ctx.stylesObj.fontSize1))
   }, [vue.createElementVNode("span", {
     innerHTML: _ctx.text
-  }, null, 8, _hoisted_5$3)], 4))])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_6$1, [_hoisted_7$1, vue.createElementVNode("span", {
+  }, null, 8, _hoisted_5$3)], 4))])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_6$2, [_hoisted_7$1, vue.createElementVNode("span", {
     innerHTML: _ctx.text
   }, null, 8, _hoisted_8$1)]));
 }var css_248z$a = "\n.sg1-chose-item[data-v-68d5b6a0] {\r\n  display: inline-flex;\r\n  margin-bottom: 1em;\r\n  max-width: 100%;\r\n  width: auto;\r\n  cursor: pointer;\n}\n.sg1-icon-wrapper[data-v-68d5b6a0] {\r\n  margin-right: 0.5em;\r\n  position: relative;\n}\n.sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  opacity: 0;\n}\n.sg1-chose-item[data-v-68d5b6a0] {\r\n  font-size: inherit;\r\n  font-family: inherit;\n}\n.sg1-chose-item[data-v-68d5b6a0],\r\n.sg1-svg-wraper[data-v-68d5b6a0],\r\n.sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  transition: opacity 0.35s;\r\n  transition-timing-function: ease-out;\n}\n.sg1-chose-item[data-v-68d5b6a0]:hover {\r\n  opacity: 0.75;\n}\n.sg1-chose-item:hover .sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  opacity: 1;\n}\n.sg1-chose-item.use-active-item:hover .sg1-svg-wraper[data-v-68d5b6a0] {\r\n  opacity: 0;\n}\n.sg1-type-number[data-v-68d5b6a0],\r\n.sg1-type-letter[data-v-68d5b6a0] {\r\n  margin-right: 0.5em;\n}\r\n";
@@ -1365,7 +1367,7 @@ var _hoisted_3$1 = {
 };
 var _hoisted_4$1 = ["innerHTML"];
 var _hoisted_5$1 = ["onClick"];
-var _hoisted_6 = ["onClick"];
+var _hoisted_6$1 = ["onClick"];
 var _hoisted_7 = {
   class: "sg1-content"
 };
@@ -1397,7 +1399,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
         return _ctx.removeToast(toast.id);
       },
       class: "sg1-close-btn"
-    }, null, 8, _hoisted_6)]), vue.createElementVNode("div", _hoisted_7, [vue.createElementVNode("div", _hoisted_8, [vue.createElementVNode("pre", null, vue.toDisplayString(toast.content), 1)])])], 10, _hoisted_2$1);
+    }, null, 8, _hoisted_6$1)]), vue.createElementVNode("div", _hoisted_7, [vue.createElementVNode("div", _hoisted_8, [vue.createElementVNode("pre", null, vue.toDisplayString(toast.content), 1)])])], 10, _hoisted_2$1);
   }), 128))])) : vue.createCommentVNode("", true);
 }var css_248z$2 = "\n.sg1-toast-container {\r\n  --sg1ToastColor1: rgb(49, 49, 49);\r\n  --sg1ToastColor2: rgb(82, 82, 82);\r\n  --sg1ToastColor3: rgb(231, 231, 231);\r\n  --sg1ToastColor4: rgb(0, 0, 0);\r\n\r\n  --sg1ToastBg: 10px;\r\n  --sg1ToastColorText: var(--sg1ToastColor3);\r\n  --sg1ToastPaddingVertical: 10px;\r\n  --sg1ToastPaddingHorizontal: 10px;\r\n  --sg1ToastMargin: 10px;\r\n  --sg1ToastSizeIconLine: 2px;\r\n\r\n  --sg1toastWidth: 300px;\r\n  --maxToastHeight: 600px;\r\n\r\n  --sg1toastFontFamily: monospace;\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: var(--sg1ToastMargin);\r\n  height: 100%;\r\n  transform: translate(100%);\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-end;\r\n  z-index: 100;\n}\n.sg1-toast-container * {\r\n  box-sizing: border-box;\n}\n.sg1-toast {\r\n  min-width: var(--sg1toastWidth);\r\n  max-width: var(--sg1toastWidth);\r\n  margin-bottom: var(--sg1ToastMargin);\r\n  transform: translateX(-100%);\r\n  border-radius: 4px;\r\n  background-color: var(--sg1ToastColor1);\r\n  box-shadow: 0 0 0 1px white;\r\n  animation-name: sg1-fadein;\r\n  animation-duration: 1s;\r\n  animation-timing-function: ease-out;\r\n  transition: 0.35s opacity;\r\n  transition-timing-function: ease-out;\n}\n@keyframes sg1-fadein {\n0% {\r\n    opacity: 0;\r\n    transform: translate(100%);\r\n    max-height: 0;\n}\n85% {\r\n    opacity: 1;\r\n    transform: translateX(-110%);\r\n    max-height: var(--maxToastHeight);\n}\n100% {\r\n    transform: translateX(-100%);\n}\n}\n.sg1-toast .sg1-head {\r\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 10px;\n}\n.sg1-toast .sg1-head .sg1-title {\r\n  font-size: 14px;\r\n  font-family: var(--sg1toastFontFamily);\r\n  color: var(--sg1ToastColorText);\n}\n.sg1-toast .sg1-head .title .sg1-id {\r\n  font-weight: 700;\n}\n.sg1-toast .sg1-content {\r\n  max-height: 0;\r\n  overflow: hidden;\r\n  padding: 0 var(--sg1ToastPaddingHorizontal);\r\n  position: relative;\n}\n.sg1-toast.sg1-active .sg1-content {\r\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\r\n  max-height: var(--maxToastHeight);\r\n  transition-timing-function: ease-out;\r\n  transition: 1s max-height, 0.5s padding;\n}\n.sg1-toast .sg1-content:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  height: 1px;\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor2);\n}\n.sg1-wrapper-pre {\r\n  width: 100%;\r\n  padding: calc(var(--sg1ToastPaddingVertical) / 2)\r\n    calc(var(--sg1ToastPaddingHorizontal) / 2);\r\n  background-color: var(--sg1ToastColor4);\r\n  border-radius: 4px;\n}\n.sg1-toast .sg1-content pre {\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor4);\r\n  font-size: 12px;\r\n  font-family: var(--sg1toastFontFamily);\r\n  color: var(--sg1ToastColorText);\r\n\r\n  margin-top: 0;\r\n  margin-bottom: 0;\n}\n.sg1-toast .sg1-close-btn,\r\n.sg1-toast .sg1-expand {\r\n  font-size: 16px;\r\n  min-width: 1em;\r\n  height: 1em;\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\n}\n.sg1-toast .sg1-close-btn:after,\r\n.sg1-toast .sg1-close-btn:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  display: block;\r\n  height: var(--sg1ToastSizeIconLine);\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor3);\n}\n.sg1-toast .sg1-close-btn:after {\r\n  transform: rotate(45%);\n}\n.sg1-toast .sg1-close-btn:before {\r\n  transform: rotate(-45%);\n}\n.sg1-toast .sg1-close-btn:before {\r\n  transform: translate(-50%, -50%) rotate(45deg);\r\n  top: 50%;\r\n  left: 50%;\n}\n.sg1-toast .sg1-close-btn:after {\r\n  transform: translate(-50%, -50%) rotate(-45deg);\r\n  top: 50%;\r\n  left: 50%;\n}\n.sg1-toast .sg1-expand {\r\n  margin-left: auto;\n}\n.sg1-toast .sg1-expand:after {\r\n  content: \"\";\r\n  width: 100%;\r\n  height: 100%;\r\n  position: absolute;\r\n  transform: rotate(45deg) scale(0.5);\r\n  border-top: calc(var(--sg1ToastSizeIconLine) * 2) solid var(--sg1ToastColor3);\r\n  border-right: calc(var(--sg1ToastSizeIconLine) * 2) solid\r\n    var(--sg1ToastColor3);\n}\n.sg1-toast.sg1-active .sg1-expand:after {\r\n  transform: rotate(135deg) scale(0.5);\n}\n.sg1-toast-faded-1 {\r\n  opacity: 0.5;\r\n  pointer-events: none;\n}\n.sg1-toast-faded-2 {\r\n  opacity: 0.25;\n}\n.sg1-toast-faded-3 {\r\n  opacity: 0;\n}\n.sg1-toast.sg1-toast-fade-out {\r\n  animation-name: sg1-fadeout;\r\n  animation-duration: 1s;\r\n  animation-timing-function: ease-out;\n}\n@keyframes sg1-fadeout {\n0% {\r\n    transform: translateX(-100%);\r\n    max-height: var(--maxToastHeight);\n}\n100% {\r\n    opacity: 0;\r\n    transform: translate(100%);\r\n    max-height: 0;\n}\n}\r\n";
 styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
@@ -1653,6 +1655,9 @@ var script = /*#__PURE__*/vue.defineComponent({
     ToastContainer: script$1
   },
   props: {
+    idStory: {
+      default: false
+    },
     editorUsage: {
       type: Boolean,
       default: true
@@ -1661,7 +1666,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       type: Boolean,
       default: false
     },
-    propLang: {
+    langStory: {
       type: String,
       default: "null-lang"
     },
@@ -1697,6 +1702,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       type: Boolean,
       default: false
     },
+    //
     useTheme: {
       type: Boolean,
       default: true
@@ -1710,9 +1716,10 @@ var script = /*#__PURE__*/vue.defineComponent({
       default: false
     }
   },
-  emits: ["functionToEmitByTabs", "functionToEmitOnInit", "functionToEmitBeforeNavigation", "functionToEmitAfterNavigation"],
+  emits: ["emitByTabs", "onInit", "beforeNavigation", "afterNavigation"],
   data: function data() {
     return {
+      idRendered: false,
       initialized: false,
       stepToInit: {
         font: false,
@@ -1747,7 +1754,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       handler: function handler() {
         if (this.stepToInit.font && this.stepToInit.img) {
           this.initialized = true;
-          this.$emit("functionToEmitOnInit");
+          this.$emit("onInit");
         } else {
           this.initialized = false;
         }
@@ -1767,7 +1774,7 @@ var script = /*#__PURE__*/vue.defineComponent({
     },
     currentTabs: {
       handler: function handler() {
-        this.$emit("functionToEmitAfterNavigation");
+        this.$emit("afterNavigation");
       },
       deep: true
     }
@@ -1906,25 +1913,56 @@ var script = /*#__PURE__*/vue.defineComponent({
     }
   },
   mounted: function mounted() {
-    if (this.propLang !== "null-lang") {
-      this.lang = this.propLang;
+    var _this = this;
+
+    if (this.langStory !== "null-lang") {
+      this.lang = this.langStory;
     } else {
       this.lang = this.gameData.postInfo.langList[0];
     }
 
     this.gameIntentLoad();
+    /* |||||||||||||||||||| EVENTS |||||||||||||||||||||| */
+
+    window.addEventListener("getPlayerValues" + this.idRendered, function (event) {
+      localStorage.setItem("sg1Storage" + _this.idRendered, JSON.stringify(_this.getPlayerValues()));
+    });
+    window.addEventListener("getCurrentTabValues" + this.idRendered, function (event) {
+      localStorage.setItem("sg1Storage" + _this.idRendered, JSON.stringify(_this.getCurrentTabValues()));
+    });
+    window.addEventListener("setStartPoint" + this.idRendered, function (event) {
+      var value = JSON.parse(localStorage["sg1Storage" + _this.idRendered]);
+      localStorage.removeItem("sg1Storage" + _this.idRendered);
+
+      _this.setStartPoint(value);
+    });
+    window.addEventListener("setPlayerValues" + this.idRendered, function (event) {
+      var value = JSON.parse(localStorage["sg1Storage" + _this.idRendered]);
+      localStorage.removeItem("sg1Storage" + _this.idRendered);
+
+      _this.setPlayerValues(value);
+    });
   },
   created: function created() {
     this.init();
+
+    if (this.idStory) {
+      this.idRendered = this.idStory;
+    } else if (this.gameData.id) {
+      this.idRendered = this.gameData.id;
+    } else {
+      this.idRendered = 0;
+    }
+
     window.addEventListener("resize", this.setDevice);
   },
   destroyed: function destroyed() {
     window.removeEventListener("resize", this.setDevice);
   },
-  methods: _defineProperty({
+  methods: {
     /* |||||||||||||||||||| GAME CORE |||||||||||||||||||||| */
     gameIntentLoad: function gameIntentLoad() {
-      var _this = this;
+      var _this2 = this;
 
       this.playerState = "playing";
       this.player = {
@@ -1938,7 +1976,7 @@ var script = /*#__PURE__*/vue.defineComponent({
           var newStats = deepCopy(stats);
           newStats.level = 0;
 
-          _this.player.stats.push(newStats);
+          _this2.player.stats.push(newStats);
         });
       } //creo lista oggetti da visualizzare
 
@@ -1962,9 +2000,9 @@ var script = /*#__PURE__*/vue.defineComponent({
 
     /* stabilisco tabs da vedere */
     navigation: function navigation(newIdArray) {
-      var _this2 = this;
+      var _this3 = this;
 
-      this.$emit("functionToEmitBeforeNavigation");
+      this.$emit("beforeNavigation");
       var tabs = this.gameData.story.tabs.filter(function (el) {
         return newIdArray.includes(el.id);
       });
@@ -1986,7 +2024,7 @@ var script = /*#__PURE__*/vue.defineComponent({
           var single = false;
           this.gameData.story.beams.forEach(function (el) {
             if (tabsToNavigate[0].id == el.from) {
-              var newEl = _this2.gameData.story.tabs.find(function (el2) {
+              var newEl = _this3.gameData.story.tabs.find(function (el2) {
                 return el2.id == el.to;
               });
 
@@ -2053,7 +2091,7 @@ var script = /*#__PURE__*/vue.defineComponent({
     },
     //------------------------------------------------------
     ResoveTabsList: function ResoveTabsList(tabs) {
-      var _this3 = this;
+      var _this4 = this;
 
       var isNext = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var stop = false;
@@ -2069,12 +2107,12 @@ var script = /*#__PURE__*/vue.defineComponent({
         collectionOfTextualTabs.forEach(function (el) {
           if (!textualTabs.includes(el.type)) {
             allTextual = false;
-            newCollection = [].concat(_toConsumableArray(newCollection), _toConsumableArray(_this3.ResoveTab(el, isNext)));
+            newCollection = [].concat(_toConsumableArray(newCollection), _toConsumableArray(_this4.ResoveTab(el, isNext)));
           } else {
             var procedeToNewCollection = true;
 
             if (isNext) {
-              if (_this3.playerState != "playing") {
+              if (_this4.playerState != "playing") {
                 procedeToNewCollection = false;
               }
             }
@@ -2385,7 +2423,7 @@ var script = /*#__PURE__*/vue.defineComponent({
         case "emit_function":
           if (!isNext) {
             if (this.canEmit) {
-              this.$emit("functionToEmitByTabs", currentTab.objToEmit);
+              this.$emit("emitByTabs", currentTab.objToEmit);
             }
 
             if (this.showToast) {
@@ -2573,12 +2611,12 @@ var script = /*#__PURE__*/vue.defineComponent({
 
     /* animazione selettore */
     animatePaperSelector: function animatePaperSelector() {
-      var _this4 = this;
+      var _this5 = this;
 
       if (this.hoveCharacterSheet == true) {
         if (this.subTabCharacterSheet == "stats") {
           this.player.stats.forEach(function (element) {
-            if (element.id == _this4.seletedItem) {
+            if (element.id == _this5.seletedItem) {
               element.active = 2;
             } else {
               if (element.active != 0) {
@@ -2588,7 +2626,7 @@ var script = /*#__PURE__*/vue.defineComponent({
           });
         } else {
           this.playerItemFiltered.forEach(function (element) {
-            if (element.id == _this4.seletedItem) {
+            if (element.id == _this5.seletedItem) {
               element.active = 2;
             } else {
               if (element.active != 0) {
@@ -2610,7 +2648,7 @@ var script = /*#__PURE__*/vue.defineComponent({
 
     /* setto paper */
     setDescriptionPaper: function setDescriptionPaper(item) {
-      var _this5 = this;
+      var _this6 = this;
 
       this.seletedItem = item.id;
       this.animatePaperSelector();
@@ -2621,17 +2659,17 @@ var script = /*#__PURE__*/vue.defineComponent({
       this.itemTap = this.itemTap + 1; //Object.assign({},this.itemTap) + 1
 
       setTimeout(function () {
-        if (_this5.itemTap == 0) {
-          _this5.seletedItem = false;
+        if (_this6.itemTap == 0) {
+          _this6.seletedItem = false;
 
-          _this5.animatePaperSelector();
+          _this6.animatePaperSelector();
         }
       }, 4000);
     },
 
     /* setto lista oggetti da esporre  */
     setPlayerItemFiltered: function setPlayerItemFiltered() {
-      var _this6 = this;
+      var _this7 = this;
 
       var listItems = [];
       this.player.item.forEach(function (item) {
@@ -2640,7 +2678,7 @@ var script = /*#__PURE__*/vue.defineComponent({
         });
 
         if (found == undefined) {
-          var nCopy = _this6.player.item.filter(function (element) {
+          var nCopy = _this7.player.item.filter(function (element) {
             return element.id == item.id;
           }).length;
 
@@ -2707,35 +2745,35 @@ var script = /*#__PURE__*/vue.defineComponent({
       }
     },
     LoadFont: function LoadFont() {
-      var _this7 = this;
+      var _this8 = this;
 
       this.stepToInit.font = false;
-      webfontloader.load({
+      WebFont.load({
         google: {
           families: [this.stylesObj.fontName + ":" + this.stylesObj.fontWeightList.join()]
         },
         active: function active() {
-          _this7.stepToInit.font = true;
+          _this8.stepToInit.font = true;
         },
         inactive: function inactive() {
-          _this7.stepToInit.font = true;
+          _this8.stepToInit.font = true;
         }
       });
     },
     setPreCacheImgList: function setPreCacheImgList() {
-      var _this8 = this;
+      var _this9 = this;
 
       this.gameData.story.tabs.forEach(function (el) {
         if (el.img) {
-          if (!_this8.editorUsage) {
+          if (!_this9.editorUsage) {
             var data = {};
 
-            var name = _this8.indexMedia.find(function (el2) {
+            var name = _this9.indexMedia.find(function (el2) {
               return el2.Id == el.img.ID;
             }).name;
 
-            var imgPathPart = _this8.pathMediaDir + "/" + name;
-            var imgSize = _this8.gameData.style["img-sizes"];
+            var imgPathPart = _this9.pathMediaDir + "/" + name;
+            var imgSize = _this9.gameData.style["img-sizes"];
             /* list of srcset rules */
 
             imgSize.forEach(function (elImg, index) {
@@ -2756,9 +2794,9 @@ var script = /*#__PURE__*/vue.defineComponent({
               data.src = imgPathPart + "-" + imgSize[imgSize.length - 1]["width"] + "x" + imgSize[imgSize.length - 1]["height"] + ".jpg";
             });
 
-            _this8.preCachedImgList.push(data);
+            _this9.preCachedImgList.push(data);
           } else {
-            _this8.preCachedImgList.push(el.img.srcFull[0]);
+            _this9.preCachedImgList.push(el.img.srcFull[0]);
           }
         }
       });
@@ -2803,26 +2841,25 @@ var script = /*#__PURE__*/vue.defineComponent({
     setPlayerValues: function setPlayerValues(value) {
       this.player.stats = value;
     }
-  }, "setPlayerValues", function setPlayerValues(value) {
-    this.player.stats = value;
-  })
-});var _hoisted_1 = {
+  }
+});var _hoisted_1 = ["sg1-id-stroy"];
+var _hoisted_2 = {
   key: 2,
   class: "sg1-log-app"
 };
-var _hoisted_2 = {
+var _hoisted_3 = {
   key: 0,
   class: "sg1-game-error sg1-e-1"
 };
-var _hoisted_3 = {
+var _hoisted_4 = {
   key: 1,
   class: "sg1-game-error sg1-e-3"
 };
-var _hoisted_4 = {
+var _hoisted_5 = {
   key: 2,
   class: "sg1-game-message sg1-e-4"
 };
-var _hoisted_5 = {
+var _hoisted_6 = {
   key: 5,
   class: "sg1-load-screen"
 };
@@ -2839,12 +2876,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return _ctx.stylesObj || _ctx.useTheme == false ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
+    "sg1-id-stroy": _ctx.idStory,
     style: vue.normalizeStyle(_ctx.stylesObj.gameGrid),
     class: vue.normalizeClass([{
       'sg1-no-theme': !_ctx.stylesObj,
       'sg1-no-illustration': _ctx.disableIlustration == false || !_ctx.illustration,
       'sg1-toast-wrapper': _ctx.showToast
-    }, "sg1-game-grid"])
+    }, "sg1-game-grid sg1-game"])
   }, [_ctx.disableIlustration == false && _ctx.illustration && _ctx.initialized && !_ctx.logMessage ? (vue.openBlock(), vue.createBlock(_component_boxillustration, {
     key: 0,
     editorUsage: _ctx.editorUsage,
@@ -2862,12 +2900,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stylesObj: _ctx.stylesObj,
     onReedBeams: _ctx.reedBeams,
     onGameIntentLoad: _ctx.gameIntentLoad
-  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams", "onGameIntentLoad"])) : vue.createCommentVNode("", true), _ctx.logMessage ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, vue.toDisplayString(_ctx.strings.noEnd[_ctx.langEditor]), 1)) : vue.createCommentVNode("", true), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.onRunError, function (el, index) {
+  }, null, 8, ["narrationBox", "lang", "current-tabs", "nextTabsChose", "stylesObj", "onReedBeams", "onGameIntentLoad"])) : vue.createCommentVNode("", true), _ctx.logMessage ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, [_ctx.narrationBox == false && _ctx.onRunError.length == 0 ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.strings.noEnd[_ctx.langEditor]), 1)) : vue.createCommentVNode("", true), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.onRunError, function (el, index) {
     return vue.openBlock(), vue.createElementBlock("div", {
       key: index,
       class: "sg1-game-error sg1-e-2"
     }, vue.toDisplayString(el), 1);
-  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.strings.nodeBadMix[_ctx.langEditor]) + " " + vue.toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : vue.createCommentVNode("", true), _ctx.urlToShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, vue.toDisplayString(_ctx.urlToShow), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), _ctx.showToast ? (vue.openBlock(), vue.createBlock(_component_ToastContainer, {
+  }), 128)), _ctx.narrationBox == 'node-bad-mix' ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, vue.toDisplayString(_ctx.strings.nodeBadMix[_ctx.langEditor]) + " " + vue.toDisplayString(_ctx.listBadMixId) + " ) ", 1)) : vue.createCommentVNode("", true), _ctx.urlToShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5, vue.toDisplayString(_ctx.urlToShow), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), _ctx.showToast ? (vue.openBlock(), vue.createBlock(_component_ToastContainer, {
     key: 3,
     ref: "ToastContainerRef"
   }, null, 512)) : vue.createCommentVNode("", true), _ctx.preCachedImgList ? (vue.openBlock(), vue.createBlock(_component_PreCachedImg, {
@@ -2875,11 +2913,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     editorUsage: _ctx.editorUsage,
     preCachedImgList: _ctx.preCachedImgList,
     onSetImgsLoaded: _ctx.setImgsLoaded
-  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 6)) : vue.createCommentVNode("", true);
-}var css_248z$1 = "\nbody {\r\n  margin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\r\n  margin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\r\n  grid-column: 1/3;\r\n  padding: 20px;\r\n  background-color: whitesmoke;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\r\n  font-family: monospace;\r\n  font-size: 16px;\r\n  color: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\r\n  max-width: calc(100% - 50px);\r\n  max-width: 992px;\r\n  aspect-ratio: 3/2;\r\n  max-height: calc(100vh - 50px);\r\n  margin-top: 25px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n  display: grid;\r\n  grid-template-rows: 70% 30%;\r\n  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\r\n  grid-template-rows: 100% 0;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\r\n  max-width: calc(100% - 25px);\r\n  margin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\r\n  content: \"◆\";\r\n  display: inline-block;\r\n  margin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  width: 2em;\r\n  height: 2em;\r\n  position: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\r\n  content: \"\";\r\n  width: 0;\r\n  height: 0;\r\n  border-style: solid;\r\n  border-width: 1em 1em 0 1em;\r\n  border-color: grey transparent transparent transparent;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\r\n  grid-column: 1/3;\r\n  grid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\r\n  position: relative;\r\n  overflow: hidden;\n}\r\n";
-styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-264c4d09]:not(.sg1-no-theme) {\r\n  display: grid;\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  background-color: #282828;\n}\n.sg1-load-screen[data-v-264c4d09] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.sg1-log-app[data-v-264c4d09] {\r\n  grid-row-start: 1;\r\n  grid-column-start: 1;\r\n  grid-row-end: 7;\r\n  grid-column-end: 9;\r\n  flex-direction: column;\r\n  max-width: 100% !important;\r\n  overflow: hidden;\r\n\r\n  background-color: #282828;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.sg1-log-app > *[data-v-264c4d09] {\r\n  font-size: 15px;\r\n  max-width: 100%;\r\n  padding-right: 20px;\r\n  padding-left: 20px;\r\n  width: 100%;\r\n  text-align: center;\r\n  font-family: monospace;\n}\n.sg1-game-error[data-v-264c4d09] {\r\n  color: #ed6767;\n}\n.sg1-game-message[data-v-264c4d09] {\r\n  color: #67ed72;\n}\r\n";
+  }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_6, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 14, _hoisted_1)) : vue.createCommentVNode("", true);
+}var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\n\t\tmargin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\n\t\tgrid-row: 1/3;\n\t\tpadding: 20px;\n\t\tbackground-color: whitesmoke;\n\t\toverflow: auto;\n\t\theight: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\n\t\tfont-family: monospace;\n\t\tfont-size: 16px;\n\t\tcolor: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\n\t\tmax-width: calc(100% - 50px);\n\t\tmax-width: 992px;\n\t\taspect-ratio: 1/1;\n\t\tmax-height: calc(100vh - 50px);\n\t\tmargin-top: 25px;\n\t\tmargin-right: auto;\n\t\tmargin-left: auto;\n\t\tdisplay: grid;\n\t\tgrid-template-rows: 70% 30%;\n\t\tbox-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\n\t\tgrid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\n\t\tmax-width: calc(100% - 25px);\n\t\tmargin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\n\t\tcontent: \"◆\";\n\t\tdisplay: inline-block;\n\t\tmargin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\n\t\tcursor: pointer;\n\t\tfont-size: 12px;\n\t\twidth: 2em;\n\t\theight: 2em;\n\t\tposition: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\n\t\tcontent: \"\";\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder-style: solid;\n\t\tborder-width: 1em 1em 0 1em;\n\t\tborder-color: grey transparent transparent transparent;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tobject-fit: cover;\n\t\tobject-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\n\t\tposition: relative;\n\t\toverflow: hidden;\n}\n";
+styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-5f489a16]:not(.sg1-no-theme) {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-5f489a16] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-5f489a16] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-5f489a16] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-5f489a16] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-5f489a16] {\n\t\tcolor: #67ed72;\n}\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-264c4d09";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
+script.__scopeId = "data-v-5f489a16";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         componentName = _ref2[0],
