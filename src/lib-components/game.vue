@@ -1,6 +1,7 @@
 <template>
 	<div
 		v-if="stylesObj || useTheme == false"
+		:sg1-id-stroy="idStory"
 		:style="stylesObj.gameGrid"
 		:class="{
       'sg1-no-theme': !stylesObj,
@@ -126,6 +127,7 @@
 			ToastContainer: ToastContainer,
 		},
 		props: {
+			idStory: { default: false },
 			editorUsage: {
 				type: Boolean,
 				default: true,
@@ -187,6 +189,7 @@
 		emits: ["emitByTabs", "onInit", "beforeNavigation", "afterNavigation"],
 		data: function () {
 			return {
+				idRendered: false,
 				initialized: false,
 				stepToInit: {
 					font: false,
@@ -440,10 +443,45 @@
 				this.lang = this.gameData.postInfo.langList[0];
 			}
 			this.gameIntentLoad();
+
+			/* |||||||||||||||||||| EVENTS |||||||||||||||||||||| */
+
+			window.addEventListener("getPlayerValues" + this.idRendered, (event) => {
+				localStorage.setItem(
+					"sg1Storage" + this.idRendered,
+					JSON.stringify(this.getPlayerValues())
+				);
+			});
+			window.addEventListener(
+				"getCurrentTabValues" + this.idRendered,
+				(event) => {
+					localStorage.setItem(
+						"sg1Storage" + this.idRendered,
+						JSON.stringify(this.getCurrentTabValues())
+					);
+				}
+			);
+			window.addEventListener("setStartPoint" + this.idRendered, (event) => {
+				let value = JSON.parse(localStorage["sg1Storage" + this.idRendered]);
+				localStorage.removeItem("sg1Storage" + this.idRendered);
+				this.setStartPoint(value);
+			});
+			window.addEventListener("setPlayerValues" + this.idRendered, (event) => {
+				let value = JSON.parse(localStorage["sg1Storage" + this.idRendered]);
+				localStorage.removeItem("sg1Storage" + this.idRendered);
+				this.setPlayerValues(value);
+			});
 		},
 
 		created() {
 			this.init();
+			if (this.idStory) {
+				this.idRendered = this.idStory;
+			} else if (this.gameData.id) {
+				this.idRendered = this.gameData.id;
+			} else {
+				this.idRendered = 0;
+			}
 			window.addEventListener("resize", this.setDevice);
 		},
 		destroyed() {
