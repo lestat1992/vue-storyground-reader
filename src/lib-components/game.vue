@@ -717,7 +717,6 @@ export default /*#__PURE__*/ defineComponent({
       if (index == 100) {
         stop = true;
       }
-      console.log("type: " + currentTab.type + "------------------------");
       switch (currentTab.type) {
         case "start":
           break;
@@ -1317,8 +1316,6 @@ export default /*#__PURE__*/ defineComponent({
       } else {
         this.stepToInit.font = true;
       }
-
-      console.log(this.preCachedImgList);
 
       this.setPreCacheImgList();
 
