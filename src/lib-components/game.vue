@@ -112,7 +112,10 @@ export default /*#__PURE__*/ defineComponent({
     ToastContainer: ToastContainer,
   },
   props: {
-    idStory: { default: false },
+    idStory: {
+      type: Number,
+      default: 0,
+    },
     editorUsage: {
       type: Boolean,
       default: true,
@@ -171,7 +174,7 @@ export default /*#__PURE__*/ defineComponent({
       default: false,
     },
   },
-  emits: ["emitByTabs", "onInit", "beforeNavigation", "afterNavigation"],
+  emits: ["emitByNodes", "onInit", "beforeNavigation", "afterNavigation"],
   data: function () {
     return {
       idRendered: false,
@@ -987,7 +990,7 @@ export default /*#__PURE__*/ defineComponent({
         case "emit_function":
           if (!isNext) {
             if (this.canEmit) {
-              this.$emit("emitByTabs", currentTab.objToEmit);
+              this.$emit("emitByNodes", currentTab.objToEmit);
             }
             if (this.showToast) {
               this.$refs.ToastContainerRef.addToast({

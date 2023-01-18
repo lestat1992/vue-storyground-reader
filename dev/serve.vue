@@ -8,7 +8,7 @@
       :useTheme="false"
       :canEmit="true"
       :showToast="true"
-      @functionToEmitByTabs="EmitByTabs"
+      @functionToemitByNodes="emitByNodes"
       @functionToEmitOnInit="EmitOnInit"
       @functionToEmitBeforeNavigation="EmitBeforeNavigation"
       @functionToEmitAfterNavigation="EmitAfterNavigation"
@@ -39,7 +39,7 @@ export default defineComponent({
     };
   },
   methods: {
-    EmitByTabs(params) {
+    emitByNodes(params) {
       console.log("CIAOOOOONE!");
       console.log(params);
     },
