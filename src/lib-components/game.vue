@@ -449,10 +449,10 @@ export default /*#__PURE__*/ defineComponent({
         );
       }
     );
-    window.addEventListener("setStartPoint" + this.idRendered, (event) => {
+    window.addEventListener("setStartNode" + this.idRendered, (event) => {
       let value = JSON.parse(localStorage["sg1Storage" + this.idRendered]);
       localStorage.removeItem("sg1Storage" + this.idRendered);
-      this.setStartPoint(value);
+      this.setStartNode(value);
     });
     window.addEventListener("setPlayerValues" + this.idRendered, (event) => {
       let value = JSON.parse(localStorage["sg1Storage" + this.idRendered]);
@@ -1423,7 +1423,7 @@ export default /*#__PURE__*/ defineComponent({
       return this.currentTabs;
     },
 
-    setStartPoint(value) {
+    setStartNode(value) {
       let newStart;
       if (typeof value === "string") {
         newStart = this.gameData.story.tabs.find((el) => el.name == value);

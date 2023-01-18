@@ -61,7 +61,7 @@ export default defineComponent({
       console.log(values);
     },
     setStart() {
-      this.$refs.gameRef.setStartPoint(1);
+      this.$refs.gameRef.setStartNode(1);
     },
   },
 });
