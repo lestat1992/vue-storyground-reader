@@ -57,7 +57,7 @@ export default defineComponent({
       console.log(values);
     },
     getTabData() {
-      let values = this.$refs.gameRef.getCurrentTabsValues();
+      let values = this.$refs.gameRef.getCurrentNodesValues();
       console.log(values);
     },
     setStart() {

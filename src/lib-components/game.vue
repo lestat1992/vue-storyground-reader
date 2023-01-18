@@ -441,11 +441,11 @@ export default /*#__PURE__*/ defineComponent({
       );
     });
     window.addEventListener(
-      "getCurrentTabsValues" + this.idRendered,
+      "getCurrentNodesValues" + this.idRendered,
       (event) => {
         localStorage.setItem(
           "sg1Storage" + this.idRendered,
-          JSON.stringify(this.getCurrentTabsValues())
+          JSON.stringify(this.getCurrentNodesValues())
         );
       }
     );
@@ -1419,7 +1419,7 @@ export default /*#__PURE__*/ defineComponent({
       return this.player.stats;
     },
 
-    getCurrentTabsValues() {
+    getCurrentNodesValues() {
       return this.currentTabs;
     },
 
