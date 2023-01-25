@@ -190,6 +190,7 @@ export default /*#__PURE__*/ defineComponent({
       player: {
         item: [],
       },
+      playerSimulation: {},
       currentTabs: [],
       nextTabsChose: [],
 
@@ -548,6 +549,7 @@ export default /*#__PURE__*/ defineComponent({
           });
 
           this.isBadNodeMixForCose = [];
+
           let testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
 
           if (testNextTabsChose.length == 1) {
@@ -628,6 +630,11 @@ export default /*#__PURE__*/ defineComponent({
         collectionOfTextualTabs.forEach((el) => {
           if (!textualTabs.includes(el.type)) {
             allTextual = false;
+
+            //creo clone nel caso si tratti di isNext
+            if (isNext) {
+              this.playerSimulation = deepCopy(this.player);
+            }
 
             newCollection = [...newCollection, ...this.ResoveTab(el, isNext)];
           } else {
@@ -732,6 +739,11 @@ export default /*#__PURE__*/ defineComponent({
           if (!isNext) {
             this.playerState = "game over";
             tabToAdd.push(currentTab);
+          } else {
+            stop = true;
+            let error =
+              this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+            this.onRunError.push(error);
           }
           stop = true;
 
@@ -755,6 +767,9 @@ export default /*#__PURE__*/ defineComponent({
             }
           } else {
             stop = true;
+            let error =
+              this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+            this.onRunError.push(error);
           }
           break;
         case "redirect":
@@ -807,27 +822,11 @@ export default /*#__PURE__*/ defineComponent({
           break;
 
         case "set stat":
-          if (!isNext) {
-            let itemExist3 = this.gameData.stats.find(
-              (el) => el.id == currentTab.idStat
-            );
-            if (itemExist3) {
-              if (itemExist3.length == 0 || currentTab.operator == false) {
-                let error =
-                  this.strings.expressionIncoplete[this.langEditor] +
-                  " ( ID: " +
-                  currentTab.id +
-                  " )";
-                this.onRunError.push(error);
-                stop = true;
-              } else {
-                this.modifyStat(
-                  currentTab.idStat,
-                  currentTab.operator,
-                  currentTab.ammount
-                );
-              }
-            } else {
+          let itemExist3 = this.gameData.stats.find(
+            (el) => el.id == currentTab.idStat
+          );
+          if (itemExist3) {
+            if (itemExist3.length == 0 || currentTab.operator == false) {
               let error =
                 this.strings.expressionIncoplete[this.langEditor] +
                 " ( ID: " +
@@ -835,33 +834,33 @@ export default /*#__PURE__*/ defineComponent({
                 " )";
               this.onRunError.push(error);
               stop = true;
+            } else {
+              this.modifyStat(
+                currentTab.idStat,
+                currentTab.operator,
+                currentTab.ammount,
+                isNext
+              );
             }
+          } else {
+            let error =
+              this.strings.expressionIncoplete[this.langEditor] +
+              " ( ID: " +
+              currentTab.id +
+              " )";
+            this.onRunError.push(error);
+            stop = true;
           }
+
           break;
 
         case "set object":
-          if (!isNext) {
-            let itemExist2 = this.gameData.items.find(
-              (el) => el.id == currentTab.idObject
-            );
+          let itemExist2 = this.gameData.items.find(
+            (el) => el.id == currentTab.idObject
+          );
 
-            if (itemExist2) {
-              if (itemExist2.length == 0 || currentTab.operator == false) {
-                let error =
-                  this.strings.expressionIncoplete[this.langEditor] +
-                  " ( ID: " +
-                  currentTab.id +
-                  " )";
-                this.onRunError.push(error);
-                stop = true;
-              } else {
-                this.modifyItem(
-                  currentTab.idObject,
-                  currentTab.operator,
-                  currentTab.ammount
-                );
-              }
-            } else {
+          if (itemExist2) {
+            if (itemExist2.length == 0 || currentTab.operator == false) {
               let error =
                 this.strings.expressionIncoplete[this.langEditor] +
                 " ( ID: " +
@@ -869,14 +868,37 @@ export default /*#__PURE__*/ defineComponent({
                 " )";
               this.onRunError.push(error);
               stop = true;
+            } else {
+              this.modifyItem(
+                currentTab.idObject,
+                currentTab.operator,
+                currentTab.ammount,
+                isNext
+              );
             }
+          } else {
+            let error =
+              this.strings.expressionIncoplete[this.langEditor] +
+              " ( ID: " +
+              currentTab.id +
+              " )";
+            this.onRunError.push(error);
+            stop = true;
           }
+
           break;
 
         case "if stat":
-          let statToCheck = this.player.stats.find(
-            (element) => element.id == currentTab.idStat
-          );
+          let statToCheck;
+          if (!isNext) {
+            statToCheck = this.player.stats.find(
+              (element) => element.id == currentTab.idStat
+            );
+          } else {
+            statToCheck = this.playerSimulation.stats.find(
+              (element) => element.id == currentTab.idStat
+            );
+          }
 
           if (statToCheck) {
             /* controllo che non siano presenti errori nella espressione */
@@ -927,9 +949,16 @@ export default /*#__PURE__*/ defineComponent({
           break;
 
         case "if item":
-          let itemToCheck = this.player.item.filter(
-            (element) => element.id == currentTab.idObject
-          ).length;
+          let itemToCheck;
+          if (!isNext) {
+            itemToCheck = this.player.item.filter(
+              (element) => element.id == currentTab.idObject
+            ).length;
+          } else {
+            itemToCheck = this.playerSimulation.item.filter(
+              (element) => element.id == currentTab.idObject
+            ).length;
+          }
 
           /* controllo che non siano presenti errori nella espressione */
 
@@ -951,7 +980,8 @@ export default /*#__PURE__*/ defineComponent({
               let status2 = operatorResolve(
                 itemToCheck,
                 currentTab.operator,
-                currentTab.ammount
+                currentTab.ammount,
+                isNext
               );
 
               if (status2) {
@@ -1021,15 +1051,22 @@ export default /*#__PURE__*/ defineComponent({
     },
 
     /* modify stat */
-    modifyStat(idStat, operator, ammount) {
+    modifyStat(idStat, operator, ammount, isNext = false) {
       let totalResult = [];
 
       let chosenStat = this.gameData.stats.find(
         (element) => element.id == idStat
       );
-      let playerStat = this.player.stats.find(
-        (element) => element.id == idStat
-      );
+
+      let playerStat;
+
+      if (!isNext) {
+        playerStat = this.player.stats.find((element) => element.id == idStat);
+      } else {
+        playerStat = this.playerSimulation.stats.find(
+          (element) => element.id == idStat
+        );
+      }
 
       let resultAmmount;
       let use;
@@ -1087,16 +1124,23 @@ export default /*#__PURE__*/ defineComponent({
     },
 
     /* modify item */
-    modifyItem(idObject, operator, ammount) {
+    modifyItem(idObject, operator, ammount, isNext = false) {
       let totalResult = [];
 
       //elemento da usare
       const chosenItem = this.gameData.items.find(
         (element) => element.id == idObject
       );
-      const nItemPlayer = this.player.item.filter(
-        (el) => el.id == chosenItem.id
-      ).length;
+      let nItemPlayer;
+      if (!isNext) {
+        nItemPlayer = this.player.item.filter(
+          (el) => el.id == chosenItem.id
+        ).length;
+      } else {
+        nItemPlayer = this.playerSimulation.item.filter(
+          (el) => el.id == chosenItem.id
+        ).length;
+      }
 
       let resultAmmount;
       let use;
