@@ -126,10 +126,30 @@ let boxNarration = {
   emits: ["emitReedBeams2"],
   computed: {
     currentTabsReordered: function () {
-      return sortChose(this.currentTabs);
+      let listIds = [];
+      let newList = [];
+
+      sortChose(this.currentTabs).forEach((el) => {
+        if (!listIds.includes(el.id)) {
+          listIds.push(el.id);
+          newList.push(el);
+        }
+      });
+
+      return newList;
     },
     nextTabsChoseReordered: function () {
-      return sortChose(this.nextTabsChose);
+      let listIds = [];
+      let newList = [];
+
+      sortChose(this.nextTabsChose).forEach((el) => {
+        if (!listIds.includes(el.id)) {
+          listIds.push(el.id);
+          newList.push(el);
+        }
+      });
+
+      return newList;
     },
   },
   methods: {
