@@ -373,11 +373,9 @@ let boxIllustration = {
       };
       this["style"]["img-sizes"].forEach((el, index) => {
         data.srcset = data.srcset + this.imgPathPart + "-" + el.width + "x" + el.height + ".jpg " + el.width + "w";
-
         if (index + 1 != this["style"]["img-sizes"].length) {
           data.srcset = data.srcset + ",";
         }
-
         if (index + 1 != this["style"]["img-sizes"].length) {
           data.sizes = data.sizes + "( max-width:" + el.width + "px ) " + el.width + "px, ";
         } else {
@@ -497,42 +495,34 @@ let NextTab$1 = {
       handler() {
         this.initSvg();
       },
-
       deep: true
     }
   },
-
   mounted() {
     this.initSvg();
   },
-
   methods: {
     initSvg() {
       let stringName = this.stylesObj.iconSingleArrow["type"];
       let svgString;
-
       switch (stringName) {
         case "sketch":
           svgString = nextTabSketch$2;
           this.animation = "shining";
           break;
-
         case "minimal2":
           svgString = nextTabMinimal2$1;
           this.animation = "scroll-down";
           this.svgShadow = true;
           break;
-
         default:
           svgString = nextTabMinimal1$1;
           this.animation = "scroll-down";
           this.svgShadow = true;
           break;
       }
-
       this.svgData = svgColorChange(svgString, this.stylesObj.iconSingleArrow["color"]);
     }
-
   }
 };
 var script$a = NextTab$1;
@@ -673,25 +663,20 @@ let NextTab = {
       handler() {
         this.init();
       },
-
       deep: true
     }
   },
-
   mounted() {
     this.init();
   },
-
   methods: {
     init() {
       if (this.stylesObj) {
         if (this.stylesObj.iconMultipleArrow["type"]) {
           let stringName = this.stylesObj.iconMultipleArrow["type"];
-
           if (stringName == "letter" || stringName == "number") {
             this.svgData = false;
             this.svgDataActive = false;
-
             if (stringName == "letter") {
               let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
               this.indexListText = alphabet[this.index];
@@ -705,33 +690,27 @@ let NextTab = {
         }
       }
     },
-
     initSvg() {
       this.svgDataActive = false;
       let stringName = this.stylesObj.iconMultipleArrow["type"];
       let svgString;
       let listElement;
-
       switch (stringName) {
         case "sketch":
           listElement = [choseTabSketch5, choseTabSketch5, choseTabSketch5, choseTabSketch5, choseTabSketch5];
           this.initSvgActive(choseTabSketchActive$1);
           break;
-
         case "hexagon":
           listElement = [choseTabHexagon$1];
           this.initSvgActive(choseTabHexagonActive);
           break;
-
         case "minimal1":
           listElement = [choseTabMinimal$1];
           this.initSvgActive(false);
       }
-
       svgString = listElement[Math.floor(Math.random() * listElement.length)];
       this.svgData = svgColorChange(svgString, this.stylesObj.iconMultipleArrow["color"]);
     },
-
     initSvgActive(activeSvgString) {
       if (activeSvgString) {
         this.svgDataActive = svgColorChange(activeSvgString, this.stylesObj.iconMultipleArrow["color"]);
@@ -739,13 +718,11 @@ let NextTab = {
         this.svgDataActive = false;
       }
     }
-
   }
 };
 var script$9 = NextTab;
 
 const _withScopeId$1 = n => (pushScopeId("data-v-68d5b6a0"), n = n(), popScopeId(), n);
-
 const _hoisted_1$8 = {
   key: 0,
   style: {
@@ -760,11 +737,9 @@ const _hoisted_6$2 = {
   key: 1,
   class: "sg1-chose-item"
 };
-
 const _hoisted_7$1 = /*#__PURE__*/_withScopeId$1(() => /*#__PURE__*/createElementVNode("div", {
   class: "list-item"
 }, null, -1));
-
 const _hoisted_8$1 = ["innerHTML"];
 function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return _ctx.stylesObj ? (openBlock(), createElementBlock("div", _hoisted_1$8, [_ctx.stylesObj.iconMultipleArrow['type'] ? (openBlock(), createElementBlock("div", {
@@ -772,7 +747,8 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
     class: normalizeClass([{
       'use-active-item': _ctx.svgDataActive
     }, "sg1-chose-item"]),
-    style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
+    style: normalizeStyle({
+      ..._ctx.stylesObj.commonFontFamily,
       ..._ctx.stylesObj.fontWeightListSelected,
       ..._ctx.stylesObj.fontColor,
       ..._ctx.stylesObj.fontSize1
@@ -780,7 +756,8 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   }, [_ctx.svgData ? (openBlock(), createElementBlock("div", {
     key: 0,
     class: normalizeClass(['type-' + _ctx.stylesObj.iconMultipleArrow['type'], "sg1-icon-wrapper"]),
-    style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
+    style: normalizeStyle({
+      ..._ctx.stylesObj.commonFontFamily,
       ..._ctx.stylesObj.fontWeightListSelected,
       ..._ctx.stylesObj.fontColor,
       ..._ctx.stylesObj.fontSize1
@@ -801,7 +778,8 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 12, _hoisted_3$5)) : createCommentVNode("", true)], 6)) : (openBlock(), createElementBlock("div", {
     key: 1,
     class: normalizeClass('sg1-type-' + _ctx.stylesObj.iconMultipleArrow['type']),
-    style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
+    style: normalizeStyle({
+      ..._ctx.stylesObj.commonFontFamily,
       ..._ctx.stylesObj.fontWeightListSelected,
       ..._ctx.stylesObj.fontColor,
       ..._ctx.stylesObj.fontSize1
@@ -811,7 +789,8 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, _hoisted_4$3)], 6)) : (openBlock(), createElementBlock("div", {
     key: 1,
     class: "sg1-chose-item",
-    style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
+    style: normalizeStyle({
+      ..._ctx.stylesObj.commonFontFamily,
       ..._ctx.stylesObj.fontWeightListSelected,
       ..._ctx.stylesObj.fontColor,
       ..._ctx.stylesObj.fontSize1
@@ -832,7 +811,6 @@ script$9.__scopeId = "data-v-68d5b6a0";
 //returns a copy of the object
 function deepCopy(obj) {
   var rv;
-
   switch (typeof obj) {
     case "object":
       if (obj === null) {
@@ -845,18 +823,15 @@ function deepCopy(obj) {
             // deep copies of the entries
             rv = obj.map(deepCopy);
             break;
-
           case "[object Date]":
             // Clone the date
             rv = new Date(obj);
             break;
-
           case "[object RegExp]":
             // Clone the RegExp
             rv = new RegExp(obj);
             break;
           // ...probably a few others
-
           default:
             // Some other kind of object, deep-copy its
             // properties into a new object
@@ -867,24 +842,23 @@ function deepCopy(obj) {
             break;
         }
       }
-
       break;
-
     default:
       // It's a primitive, copy via assignment
       rv = obj;
       break;
   }
-
   return rv;
 }
 
 function fixText(stingText) {
-  let textString = JSON.stringify(stingText); //let res = textString.replace(/(?:\\[rn])+/g, "<br>");
+  let textString = JSON.stringify(stingText);
 
+  //let res = textString.replace(/(?:\\[rn])+/g, "<br>");
   let res = textString.replace(/(\\r\\)+/g, `<br>\\`);
   res = res.replace(/(\\r)+/g, `<br>`);
   return JSON.parse(res);
+
   /*
   let str = JSON.stringify(stingText);
    String.prototype.fakeReplace = function (str, newstr) {
@@ -917,7 +891,6 @@ function sortChose(currentTabs) {
     return newOrder;
   }
 }
-
 let boxNarration = {
   name: "boxNarration",
   components: {
@@ -933,21 +906,35 @@ let boxNarration = {
   emits: ["emitReedBeams2"],
   computed: {
     currentTabsReordered: function () {
-      return sortChose(this.currentTabs);
+      let listIds = [];
+      let newList = [];
+      sortChose(this.currentTabs).forEach(el => {
+        if (!listIds.includes(el.id)) {
+          listIds.push(el.id);
+          newList.push(el);
+        }
+      });
+      return newList;
     },
     nextTabsChoseReordered: function () {
-      return sortChose(this.nextTabsChose);
+      let listIds = [];
+      let newList = [];
+      sortChose(this.nextTabsChose).forEach(el => {
+        if (!listIds.includes(el.id)) {
+          listIds.push(el.id);
+          newList.push(el);
+        }
+      });
+      return newList;
     }
   },
   methods: {
     emitReedBeams3(id) {
       this.$emit("emitReedBeams2", id);
     },
-
     fixText(text) {
       return fixText(text);
     }
-
   }
 };
 var script$8 = boxNarration;
@@ -961,9 +948,7 @@ const _hoisted_3$4 = {
 };
 function render$8(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_ChooseTab = resolveComponent("ChooseTab");
-
   const _component_NextTab = resolveComponent("NextTab");
-
   return openBlock(), createElementBlock(Fragment, null, [createElementVNode("div", _hoisted_1$7, [createElementVNode("div", {
     class: "sg1-tab-results",
     style: normalizeStyle(_ctx.stylesObj.tabResultsMaxHeight)
@@ -973,7 +958,8 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
       class: normalizeClass(_ctx.currentTabs.length == 1 ? 'sg1-label-description' : 'sg1-label-multiple-chose')
     }, [_ctx.currentTabs.length == 1 ? (openBlock(), createElementBlock("div", {
       key: 0,
-      style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
+      style: normalizeStyle({
+        ..._ctx.stylesObj.commonFontFamily,
         ..._ctx.stylesObj.fontWeightListSelected,
         ..._ctx.stylesObj.fontColor,
         ..._ctx.stylesObj.fontSize1,
@@ -982,7 +968,8 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
       innerHTML: _ctx.fixText(tab.text[_ctx.lang])
     }, null, 12, _hoisted_2$7)) : (openBlock(), createElementBlock("div", {
       key: 1,
-      style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
+      style: normalizeStyle({
+        ..._ctx.stylesObj.commonFontFamily,
         ..._ctx.stylesObj.fontWeightListSelected,
         ..._ctx.stylesObj.fontColor,
         ..._ctx.stylesObj.fontSize1
@@ -1018,11 +1005,11 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
   }))], 4)) : createCommentVNode("", true)], 64);
 }
 
-var css_248z$9 = "\n.sg1-tab-results[data-v-3b0d3f8e] {\r\n  flex-grow: 1;\r\n  overflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-3b0d3f8e] {\r\n  display: flex;\r\n  justify-content: center;\n}\n.sg1-box-narration[data-v-3b0d3f8e] {\r\n  position: relative;\r\n  z-index: 10;\r\n  max-height: inherit;\r\n  min-height: inherit;\r\n  overflow-y: auto;\r\n  flex-grow: 1;\n}\r\n";
+var css_248z$9 = "\n.sg1-tab-results[data-v-066ddc8e] {\r\n  flex-grow: 1;\r\n  overflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-066ddc8e] {\r\n  display: flex;\r\n  justify-content: center;\n}\n.sg1-box-narration[data-v-066ddc8e] {\r\n  position: relative;\r\n  z-index: 10;\r\n  max-height: inherit;\r\n  min-height: inherit;\r\n  overflow-y: auto;\r\n  flex-grow: 1;\n}\r\n";
 styleInject(css_248z$9);
 
 script$8.render = render$8;
-script$8.__scopeId = "data-v-3b0d3f8e";
+script$8.__scopeId = "data-v-066ddc8e";
 
 let boxNarrationGameEnd = {
   name: "boxNarrationGameEnd",
@@ -1032,22 +1019,18 @@ let boxNarrationGameEnd = {
     reedbeams: {},
     stylesObj: {}
   },
-
   mounted() {
     if (this.currentTabs[0].openNewPage) {
       window.open(this.currentTabs[0].url[this.lang], "_self");
     }
   },
-
   methods: {
     reedBeams(id) {
       this.$emit("reedbeams", id);
     },
-
     fixText(text) {
       return fixText(text);
     }
-
   }
 };
 var script$7 = boxNarrationGameEnd;
@@ -1066,7 +1049,8 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
       class: normalizeClass(_ctx.currentTabs.length == 1 ? 'sg1-label-description' : 'sg1-label-multiple-chose')
     }, [_ctx.currentTabs.length == 1 ? (openBlock(), createElementBlock("div", {
       key: 0,
-      style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
+      style: normalizeStyle({
+        ..._ctx.stylesObj.commonFontFamily,
         ..._ctx.stylesObj.fontWeightListSelected,
         ..._ctx.stylesObj.fontColor,
         ..._ctx.stylesObj.fontSize1
@@ -1095,15 +1079,12 @@ let boxNarrationGameOver = {
     reedBeams(id) {
       this.$emit("reedbeams", id);
     },
-
     fixText(text) {
       return fixText(text);
     },
-
     gameIntentLoad4() {
       this.$emit("gameIntentLoad3");
     }
-
   }
 };
 var script$6 = boxNarrationGameOver;
@@ -1123,7 +1104,8 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
     }, [_ctx.currentTabs.length == 1 ? (openBlock(), createElementBlock("div", {
       key: 0,
       onClick: _cache[0] || (_cache[0] = $event => _ctx.gameIntentLoad4()),
-      style: normalizeStyle({ ..._ctx.stylesObj.commonFontFamily,
+      style: normalizeStyle({
+        ..._ctx.stylesObj.commonFontFamily,
         ..._ctx.stylesObj.fontWeightListSelected,
         ..._ctx.stylesObj.fontColor,
         ..._ctx.stylesObj.fontSize1
@@ -1262,29 +1244,24 @@ function drawCanvasBg(dimension, bgStyle, layoutID) {
   let svgString = svgColorChange(bgSketch$1, bgStyle.bgColor);
   let maxSizeTexture = 400;
   let NTexture = Math.ceil(dimension.height / maxSizeTexture);
-
   for (let index = 0; index < NTexture; index++) {
     // crea un meccanismo tipo space betweeen
     let x = 0;
     let y = index * maxSizeTexture;
     createTexture(svgString, x, y, maxSizeTexture, maxSizeTexture);
   }
-
   function createTexture(string, x, y, w, h) {
     var img1 = new Image();
-
     img1.onload = function () {
       context.save();
       context.drawImage(img1, x, y, w, h);
     };
-
     img1.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(string);
     context.fillStyle = "pink";
     context.fillRect(0, 0, 100, 100);
     context.restore();
   }
   /* */
-
 }
 
 let BgBoxText = {
@@ -1303,27 +1280,22 @@ let BgBoxText = {
       styleStBg: {}
     };
   },
-
   mounted() {
     this.init();
     window.addEventListener("resize", this.init);
   },
-
   destroyed() {
     window.removeEventListener("resize", this.init);
   },
-
   methods: {
     init() {
       /* constrollo se il box test è attaccato ai bordi */
       let canUseRadious = false;
-
       if (this.borderRadiousLayout.includes(this.stylesObj.layoutID)) {
         canUseRadious = true;
       }
+
       /* controllo se è un canvas */
-
-
       if (this.canvasTypeArray.includes(this.stylesObj.bgStyle.bgType)) {
         this.isCanvas = true;
         this.width = document.getElementsByClassName("bg-wrapper")[0].clientWidth;
@@ -1336,13 +1308,11 @@ let BgBoxText = {
         }, 100);
       } else {
         this.isCanvas = false;
-
         if (this.stylesObj.bgStyle.bgType == "minimal1") {
           this.styleStBg = {
             backgroundColor: this.stylesObj.bgStyle.bgColor,
             boxShadow: "0 0 4px 2px rgba(14,14,14,0.45)"
           };
-
           if (canUseRadious) {
             this.styleStBg.borderRadius = "20px";
           }
@@ -1353,7 +1323,6 @@ let BgBoxText = {
         }
       }
     }
-
   }
 };
 var script$5 = BgBoxText;
@@ -1402,27 +1371,22 @@ let boxText = {
     emitReedBeams1(id) {
       this.$emit("reedBeams", id);
     },
-
     gameIntentLoad2() {
       this.$emit("gameIntentLoad");
     }
-
   }
 };
 var script$4 = boxText;
 
 function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_BgBoxText = resolveComponent("BgBoxText");
-
   const _component_boxnarration = resolveComponent("boxnarration");
-
   const _component_gameEnd = resolveComponent("gameEnd");
-
   const _component_gameOver = resolveComponent("gameOver");
-
   return openBlock(), createElementBlock("div", {
     class: "sg1-wrapper-box-text",
-    style: normalizeStyle({ ..._ctx.stylesObj.boxText,
+    style: normalizeStyle({
+      ..._ctx.stylesObj.boxText,
       ..._ctx.stylesObj.boxTextPadding
     })
   }, [_ctx.stylesObj ? (openBlock(), createBlock(_component_BgBoxText, {
@@ -1464,13 +1428,11 @@ let PreCachedImg = {
     editorUsage: {},
     setImgsLoaded: {}
   },
-
   data() {
     return {
       imgsLoaded: 0
     };
   },
-
   watch: {
     imgsLoaded: function () {
       if (this.imgsLoaded == this.preCachedImgList.length) {
@@ -1523,11 +1485,9 @@ let spinnerBox = {
 var script$2 = spinnerBox;
 
 const _withScopeId = n => (pushScopeId("data-v-141b4ae7"), n = n(), popScopeId(), n);
-
 const _hoisted_1$2 = {
   class: "sg1-spinner-box-media"
 };
-
 const _hoisted_2$2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/createElementVNode("div", {
   class: "sg1-spinner sg1-pulse-container"
 }, [/*#__PURE__*/createElementVNode("div", {
@@ -1537,7 +1497,6 @@ const _hoisted_2$2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/createElementV
 }), /*#__PURE__*/createElementVNode("div", {
   class: "sg1-pulse-bubble sg1-pulse-bubble-3"
 })], -1));
-
 const _hoisted_3$2 = [_hoisted_2$2];
 function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$2, _hoisted_3$2);
@@ -1551,7 +1510,6 @@ script$2.__scopeId = "data-v-141b4ae7";
 
 let ToastContainer = {
   name: "ToastContainer",
-
   data() {
     return {
       idToSet: 0,
@@ -1560,7 +1518,6 @@ let ToastContainer = {
       tostToSee: 3
     };
   },
-
   methods: {
     addToast(params) {
       this.idToSet = this.idToSet + 1;
@@ -1574,14 +1531,12 @@ let ToastContainer = {
       };
       this.toasts.push(newToast);
     },
-
     removeToast(id) {
       this.toasts.find(el => el.id == id).isUnmountening = true;
       setTimeout(() => {
         this.toasts = this.toasts.filter(el => el.id !== id);
       }, 1000);
     },
-
     expandToast(id) {
       this.toasts.forEach(el => {
         if (el.id == id) {
@@ -1589,7 +1544,6 @@ let ToastContainer = {
         }
       });
     }
-
   }
 };
 var script$1 = ToastContainer;
@@ -1644,7 +1598,6 @@ script$1.render = render$1;
 function gridLayout(id) {
   let boxIllustration;
   let boxText;
-
   switch (id) {
     case "a6f8":
       boxIllustration = {
@@ -1660,7 +1613,6 @@ function gridLayout(id) {
         gridColumnEnd: 9
       };
       break;
-
     case "a5f8":
       boxIllustration = {
         gridRowStart: 1,
@@ -1675,7 +1627,6 @@ function gridLayout(id) {
         gridColumnEnd: 9
       };
       break;
-
     case "a1f3":
       boxIllustration = {
         gridRowStart: 1,
@@ -1690,7 +1641,6 @@ function gridLayout(id) {
         gridColumnEnd: 4
       };
       break;
-
     case "a1f4":
       boxIllustration = {
         gridRowStart: 1,
@@ -1705,7 +1655,6 @@ function gridLayout(id) {
         gridColumnEnd: 5
       };
       break;
-
     case "d3e6":
       boxIllustration = {
         gridRowStart: 1,
@@ -1720,7 +1669,6 @@ function gridLayout(id) {
         gridColumnEnd: 7
       };
       break;
-
     case "b3c6":
       boxIllustration = {
         gridRowStart: 1,
@@ -1735,9 +1683,7 @@ function gridLayout(id) {
         gridColumnEnd: 7
       };
       break;
-
     /* all screen */
-
     case "a1f8":
       boxIllustration = {
         gridRowStart: 1,
@@ -1752,7 +1698,6 @@ function gridLayout(id) {
         gridColumnEnd: 9
       };
       break;
-
     case "b2e3":
       boxIllustration = {
         gridRowStart: 1,
@@ -1767,7 +1712,6 @@ function gridLayout(id) {
         gridColumnEnd: 4
       };
       break;
-
     case "b2e4":
       boxIllustration = {
         gridRowStart: 1,
@@ -1782,7 +1726,6 @@ function gridLayout(id) {
         gridColumnEnd: 5
       };
       break;
-
     case "b6e7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1797,7 +1740,6 @@ function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     case "b5e7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1812,7 +1754,6 @@ function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     case "e2e7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1827,7 +1768,6 @@ function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     case "b2b7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1842,7 +1782,6 @@ function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     case "d2e7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1857,9 +1796,7 @@ function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     /* mobile */
-
     case "d1f8":
       boxIllustration = {
         gridRowStart: 1,
@@ -1875,7 +1812,6 @@ function gridLayout(id) {
       };
       break;
   }
-
   return {
     boxIllustration: boxIllustration,
     boxText: boxText
@@ -1885,7 +1821,6 @@ function gridLayout(id) {
 function randomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 var script = /*#__PURE__*/defineComponent({
   name: "game",
   components: {
@@ -1897,7 +1832,8 @@ var script = /*#__PURE__*/defineComponent({
   },
   props: {
     idStory: {
-      default: false
+      type: Number,
+      default: 0
     },
     editorUsage: {
       type: Boolean,
@@ -1957,7 +1893,7 @@ var script = /*#__PURE__*/defineComponent({
       default: false
     }
   },
-  emits: ["emitByTabs", "onInit", "beforeNavigation", "afterNavigation"],
+  emits: ["emitByNodes", "onInit", "beforeNavigation", "afterNavigation"],
   data: function () {
     return {
       idRendered: false,
@@ -1973,6 +1909,7 @@ var script = /*#__PURE__*/defineComponent({
       player: {
         item: []
       },
+      playerSimulation: {},
       currentTabs: [],
       nextTabsChose: [],
       illustration: false,
@@ -2000,14 +1937,12 @@ var script = /*#__PURE__*/defineComponent({
           this.initialized = false;
         }
       },
-
       deep: true
     },
     gameData: {
       handler() {
         this.LoadFont();
       },
-
       deep: true
     },
     playerState: function (val) {
@@ -2019,7 +1954,6 @@ var script = /*#__PURE__*/defineComponent({
       handler() {
         this.$emit("afterNavigation");
       },
-
       deep: true
     }
   },
@@ -2034,7 +1968,6 @@ var script = /*#__PURE__*/defineComponent({
           } else {
             let allowed = ["chose"];
             let listTypeCheck = this.currentTabs.filter(element => allowed.includes(element.type));
-
             if (listTypeCheck.length == this.currentTabs.length) {
               return "default";
             } else {
@@ -2046,7 +1979,6 @@ var script = /*#__PURE__*/defineComponent({
         }
       }
     },
-
     /* Style */
     stylesObj: function () {
       if (this.useTheme) {
@@ -2058,34 +1990,33 @@ var script = /*#__PURE__*/defineComponent({
             gridTemplateRows: this.gameData.style[this.device].margin + " repeat(4, 1fr) " + this.gameData.style[this.device].margin
           };
           let gridLayoutItem;
-
           if (this.disableIlustration == true) {
             gridLayoutItem = gridLayout("a1f8");
           } else {
             gridLayoutItem = gridLayout(this.gameData.style[this.device]["layout-type"]);
           }
-
-          let boxIllustration = { ...gridLayoutItem.boxIllustration
+          let boxIllustration = {
+            ...gridLayoutItem.boxIllustration
           };
-          let boxText = { ...gridLayoutItem.boxText
+          let boxText = {
+            ...gridLayoutItem.boxText
           };
           let boxTextPadding = {
             padding: this.gameData.style[this.device]["box-text-padding"]
           };
           let currentBoxHeight;
-
           if (boxText.gridRowEnd != 7 && boxText.gridRowStart != 1) {
             currentBoxHeight = "(( " + this.height + " - " + "(" + this.gameData.style[this.device].margin + "+" + this.gameData.style[this.device].margin + "))/" + 4 + ") * (" + boxText.gridRowEnd + " - " + boxText.gridRowStart + ")";
           } else {
             //boxText.gridRowEnd == 7 && boxText.gridRowStart == 1
             currentBoxHeight = this.height;
           }
-
           let heightCalc = "calc( " + currentBoxHeight + " - " + this.gameData.style[this.device]["box-text-padding"] + " - " + this.gameData.style[this.device]["box-text-padding"] + " - (" + " + " + this.gameData.style[this.device]["box-text-padding"] + " + " + this.gameData.style["icon-single-arrow"]["size"] + "))";
           let tabResultsMaxHeight = {
             maxHeight: heightCalc,
             minHeight: heightCalc
           };
+
           /* FONT */
 
           let fontName = this.gameData.style["font-family"];
@@ -2102,11 +2033,11 @@ var script = /*#__PURE__*/defineComponent({
           let fontSize1 = {
             fontSize: this.gameData.style[this.device]["font-size-1"]
           };
+
           /* single arrow next */
-
           let iconSingleArrow = this.gameData.style["icon-single-arrow"];
-          /* multiple arrow next */
 
+          /* multiple arrow next */
           let iconMultipleArrow = this.gameData.style["icon-multiple-arrow"];
           let paddingTopNextTab = {
             paddingTop: this.gameData.style[this.device]["box-text-padding"]
@@ -2115,7 +2046,6 @@ var script = /*#__PURE__*/defineComponent({
             paddingBottom: this.gameData.style[this.device]["box-text-padding"]
           };
           /* bg text box */
-
           let bgStyle = {
             bgType: this.gameData.style["bg-type"],
             bgColor: this.gameData.style["bg-color"]
@@ -2154,27 +2084,26 @@ var script = /*#__PURE__*/defineComponent({
       }
     }
   },
-
   mounted() {
     if (this.langStory !== "null-lang") {
       this.lang = this.langStory;
     } else {
       this.lang = this.gameData.postInfo.langList[0];
     }
-
     this.gameIntentLoad();
+
     /* |||||||||||||||||||| EVENTS |||||||||||||||||||||| */
 
     window.addEventListener("getPlayerValues" + this.idRendered, event => {
       localStorage.setItem("sg1Storage" + this.idRendered, JSON.stringify(this.getPlayerValues()));
     });
-    window.addEventListener("getCurrentTabValues" + this.idRendered, event => {
-      localStorage.setItem("sg1Storage" + this.idRendered, JSON.stringify(this.getCurrentTabValues()));
+    window.addEventListener("getCurrentNodesValues" + this.idRendered, event => {
+      localStorage.setItem("sg1Storage" + this.idRendered, JSON.stringify(this.getCurrentNodesValues()));
     });
-    window.addEventListener("setStartPoint" + this.idRendered, event => {
+    window.addEventListener("setStartNode" + this.idRendered, event => {
       let value = JSON.parse(localStorage["sg1Storage" + this.idRendered]);
       localStorage.removeItem("sg1Storage" + this.idRendered);
-      this.setStartPoint(value);
+      this.setStartNode(value);
     });
     window.addEventListener("setPlayerValues" + this.idRendered, event => {
       let value = JSON.parse(localStorage["sg1Storage" + this.idRendered]);
@@ -2182,10 +2111,8 @@ var script = /*#__PURE__*/defineComponent({
       this.setPlayerValues(value);
     });
   },
-
   created() {
     this.init();
-
     if (this.idStory) {
       this.idRendered = this.idStory;
     } else if (this.gameData.id) {
@@ -2193,39 +2120,36 @@ var script = /*#__PURE__*/defineComponent({
     } else {
       this.idRendered = 0;
     }
-
     window.addEventListener("resize", this.setDevice);
   },
-
   destroyed() {
     window.removeEventListener("resize", this.setDevice);
   },
-
   methods: {
     /* |||||||||||||||||||| GAME CORE |||||||||||||||||||||| */
+
     gameIntentLoad() {
       this.playerState = "playing";
       this.player = {
         stats: [],
         item: []
       };
-      /* carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist */
 
+      /* carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist */
       if (this.gameData.stats) {
         this.gameData.stats.forEach(stats => {
           let newStats = deepCopy(stats);
           newStats.level = 0;
           this.player.stats.push(newStats);
         });
-      } //creo lista oggetti da visualizzare
+      }
 
-
+      //creo lista oggetti da visualizzare
       this.setPlayerItemFiltered();
-      /* apro la tab di inizio */
 
+      /* apro la tab di inizio */
       let startPointArray = [];
       let startPointId = this.gameData.story.tabs.find(element => element.gameStart);
-
       if (startPointId) {
         startPointArray.push(startPointId.id);
         this.navigation(startPointArray);
@@ -2234,24 +2158,24 @@ var script = /*#__PURE__*/defineComponent({
         this.onRunError.push(error);
       }
     },
-
     /* stabilisco tabs da vedere */
     navigation(newIdArray) {
       this.$emit("beforeNavigation");
       let tabs = this.gameData.story.tabs.filter(el => newIdArray.includes(el.id));
       let tabsToNavigate = this.ResoveTabsList(tabs);
-
       if (tabsToNavigate.length == 0 && this.playerState != "game end") {
         let error = this.strings.wrongTabsId[this.langEditor];
-        this.onRunError.push(error); //setto nextTabsChose
+        this.onRunError.push(error);
 
+        //setto nextTabsChose
         this.nextTabsChose = [];
       } else {
         if (tabsToNavigate.length == 1) {
-          this.singleBeemFoward = true; //setto nextTabsChose ---------------------------
+          this.singleBeemFoward = true;
+
+          //setto nextTabsChose ---------------------------
 
           /* trovo nodi successivi */
-
           let tabToAdd = [];
           let error = false;
           let single = false;
@@ -2263,7 +2187,6 @@ var script = /*#__PURE__*/defineComponent({
           });
           this.isBadNodeMixForCose = [];
           let testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
-
           if (testNextTabsChose.length == 1) {
             if (testNextTabsChose[0].type == "descriptions" || testNextTabsChose[0].type == "game over") {
               single = true;
@@ -2276,7 +2199,6 @@ var script = /*#__PURE__*/defineComponent({
               }
             });
           }
-
           if (single) {
             this.nextTabsChose = [];
           } else {
@@ -2288,85 +2210,83 @@ var script = /*#__PURE__*/defineComponent({
             } else {
               this.nextTabsChose = testNextTabsChose;
             }
-          } //-------------------------------------
+          }
+
+          //-------------------------------------
+
           //setto immagine
-
-
           if (tabsToNavigate[0].img) {
             this.setImage(tabsToNavigate[0].img);
-          } //salvo dati
+          }
 
-
+          //salvo dati
           if (tabsToNavigate[0].save == true) {
             this.saveData();
           }
         } else {
           this.singleBeemFoward = false;
-          /* controllo se tab to add sono tutti chose */
 
+          /* controllo se tab to add sono tutti chose */
           let allChose = true;
           tabsToNavigate.forEach(el => {
             if (el.type != "chose") {
               allChose = false;
             }
           });
-
           if (allChose) {
             this.nextTabsChose = [];
           }
         }
-
         this.currentTabs = tabsToNavigate;
       }
     },
-
     //------------------------------------------------------
+
     ResoveTabsList(tabs) {
       let isNext = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       let stop = false;
       let n = 0;
       const textualTabs = this.textualTabs;
       let collectionOfTextualTabs = tabs;
-
       while (stop == false) {
         n++;
         let allTextual = true;
-        let newCollection = []; //controllo chi è testuale e chi no
+        let newCollection = [];
 
+        //controllo chi è testuale e chi no
         collectionOfTextualTabs.forEach(el => {
           if (!textualTabs.includes(el.type)) {
             allTextual = false;
+
+            //creo clone nel caso si tratti di isNext
+            if (isNext) {
+              this.playerSimulation = deepCopy(this.player);
+            }
             newCollection = [...newCollection, ...this.ResoveTab(el, isNext)];
           } else {
             let procedeToNewCollection = true;
-
             if (isNext) {
               if (this.playerState != "playing") {
                 procedeToNewCollection = false;
               }
             }
-
             if (procedeToNewCollection) {
               newCollection.push(el);
             }
           }
         });
         collectionOfTextualTabs = newCollection;
-
         if (allTextual == true || n >= 100) {
           stop = true;
         }
       }
-
       return collectionOfTextualTabs;
     },
-
     /* risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab */
     ResoveTab(tab, isNext) {
       function operatorResolve(dn1, operator, dn2) {
         const n1 = parseInt(dn1);
         const n2 = parseInt(dn2);
-
         switch (operator) {
           case ">":
             if (n1 > n2) {
@@ -2374,28 +2294,24 @@ var script = /*#__PURE__*/defineComponent({
             } else {
               return false;
             }
-
           case ">=":
             if (n1 >= n2) {
               return true;
             } else {
               return false;
             }
-
           case "<":
             if (n1 < n2) {
               return true;
             } else {
               return false;
             }
-
           case "<=":
             if (n1 <= n2) {
               return true;
             } else {
               return false;
             }
-
           case "==":
             if (n1 == n2) {
               return true;
@@ -2404,50 +2320,42 @@ var script = /*#__PURE__*/defineComponent({
             }
         }
       }
-
       let tabToAdd = [];
       let stop = false;
       let currentTab;
-
       if (typeof tab === "object") {
         currentTab = tab;
       } else {
         /* si tratta di una inizializzazione (è l'id di un nodo start) */
         currentTab = this.gameData.story.tabs.find(el => el.id == tab);
       }
-
-      console.log("type: " + currentTab.type + "------------------------");
-
       switch (currentTab.type) {
         case "start":
           break;
-
         case "descriptions":
           tabToAdd.push(currentTab);
           stop = true;
           break;
-
         case "chose":
           tabToAdd.push(currentTab);
           stop = true;
           break;
-
         case "game over":
           if (!isNext) {
             this.playerState = "game over";
             tabToAdd.push(currentTab);
+          } else {
+            stop = true;
+            let error = this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+            this.onRunError.push(error);
           }
-
           stop = true;
           break;
-
         case "end":
           if (!isNext) {
             this.playerState = "game end";
-
             if (currentTab.openNewPage) {
               this.goToLink = true;
-
               if (this.stopLink) {
                 this.urlToShow = this.strings.urlRedirect[this.langEditor] + ": " + currentTab.url[this.lang];
               } else {
@@ -2459,13 +2367,12 @@ var script = /*#__PURE__*/defineComponent({
             }
           } else {
             stop = true;
+            let error = this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+            this.onRunError.push(error);
           }
-
           break;
-
         case "redirect":
           let errorRedirect = false;
-
           if (currentTab.listRedirectId.length > 0) {
             currentTab.listRedirectId.forEach(el => {
               if (!el) {
@@ -2475,17 +2382,14 @@ var script = /*#__PURE__*/defineComponent({
           } else {
             errorRedirect = this.strings.linkNodeEmpty[this.langEditor] + " ( ID: " + currentTab.id + " )";
           }
-
           if (errorRedirect == false) {
             let idRedirect;
-
             if (currentTab.listRedirectId.length == 1) {
               idRedirect = currentTab.listRedirectId[0];
             } else {
               let indexRandom = randomNum(0, currentTab.listRedirectId.length - 1);
               idRedirect = currentTab.listRedirectId[indexRandom];
             }
-
             let tabToRedirect = this.gameData.story.tabs.find(element => element.id == idRedirect);
             currentTab = tabToRedirect;
           } else {
@@ -2493,68 +2397,59 @@ var script = /*#__PURE__*/defineComponent({
             this.onRunError.push(error);
             stop = true;
           }
-
           if (errorRedirect) {
             this.onRunError.push(errorRedirect);
             stop = true;
           }
-
           break;
-
         case "set stat":
-          if (!isNext) {
-            let itemExist3 = this.gameData.stats.find(el => el.id == currentTab.idStat);
-
-            if (itemExist3) {
-              if (itemExist3.length == 0 || currentTab.operator == false) {
-                let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-                this.onRunError.push(error);
-                stop = true;
-              } else {
-                this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount);
-              }
-            } else {
+          let itemExist3 = this.gameData.stats.find(el => el.id == currentTab.idStat);
+          if (itemExist3) {
+            if (itemExist3.length == 0 || currentTab.operator == false) {
               let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
               this.onRunError.push(error);
               stop = true;
+            } else {
+              this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount, isNext);
             }
+          } else {
+            let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            this.onRunError.push(error);
+            stop = true;
           }
-
           break;
-
         case "set object":
-          if (!isNext) {
-            let itemExist2 = this.gameData.items.find(el => el.id == currentTab.idObject);
-
-            if (itemExist2) {
-              if (itemExist2.length == 0 || currentTab.operator == false) {
-                let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-                this.onRunError.push(error);
-                stop = true;
-              } else {
-                this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount);
-              }
-            } else {
+          let itemExist2 = this.gameData.items.find(el => el.id == currentTab.idObject);
+          if (itemExist2) {
+            if (itemExist2.length == 0 || currentTab.operator == false) {
               let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
               this.onRunError.push(error);
               stop = true;
+            } else {
+              this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount, isNext);
             }
+          } else {
+            let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            this.onRunError.push(error);
+            stop = true;
           }
-
           break;
-
         case "if stat":
-          let statToCheck = this.player.stats.find(element => element.id == currentTab.idStat);
-
+          let statToCheck;
+          if (!isNext) {
+            statToCheck = this.player.stats.find(element => element.id == currentTab.idStat);
+          } else {
+            statToCheck = this.playerSimulation.stats.find(element => element.id == currentTab.idStat);
+          }
           if (statToCheck) {
             /* controllo che non siano presenti errori nella espressione */
+
             if (currentTab.ammount === false || currentTab.ammount == undefined || currentTab.operator == false) {
               let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
               this.onRunError.push(error);
               stop = true;
             } else {
               let status = operatorResolve(statToCheck.level, currentTab.operator, currentTab.ammount);
-
               if (status) {
                 let tabsTrue = this.gameData.story.tabs.filter(element => currentTab.trueId.includes(element.id));
                 tabToAdd = tabsTrue;
@@ -2570,16 +2465,19 @@ var script = /*#__PURE__*/defineComponent({
             this.onRunError.push(error);
             stop = true;
           }
-
           break;
-
         case "if item":
-          let itemToCheck = this.player.item.filter(element => element.id == currentTab.idObject).length;
+          let itemToCheck;
+          if (!isNext) {
+            itemToCheck = this.player.item.filter(element => element.id == currentTab.idObject).length;
+          } else {
+            itemToCheck = this.playerSimulation.item.filter(element => element.id == currentTab.idObject).length;
+          }
+
           /* controllo che non siano presenti errori nella espressione */
+
           //controllo se esiste l'oggetto
-
           let itemExist = this.gameData.items.find(el => el.id == currentTab.idObject);
-
           if (itemExist) {
             if (itemExist.length == 0 || currentTab.operator == false) {
               let error = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
@@ -2587,7 +2485,6 @@ var script = /*#__PURE__*/defineComponent({
               stop = true;
             } else {
               let status2 = operatorResolve(itemToCheck, currentTab.operator, currentTab.ammount);
-
               if (status2) {
                 let tabsTrue = this.gameData.story.tabs.filter(element => currentTab.trueId.includes(element.id));
                 tabToAdd = tabsTrue;
@@ -2603,22 +2500,17 @@ var script = /*#__PURE__*/defineComponent({
             this.onRunError.push(error);
             stop = true;
           }
-
           break;
-
         case "image":
           if (!isNext) {
             this.setImage(currentTab.img);
           }
-
           break;
-
         case "emit_function":
           if (!isNext) {
             if (this.canEmit) {
-              this.$emit("emitByTabs", currentTab.objToEmit);
+              this.$emit("emitByNodes", currentTab.objToEmit);
             }
-
             if (this.showToast) {
               this.$refs.ToastContainerRef.addToast({
                 type: currentTab.type.replaceAll(" ", "_"),
@@ -2627,10 +2519,8 @@ var script = /*#__PURE__*/defineComponent({
               });
             }
           }
-
           break;
       }
-
       if (stop == false) {
         /* trovo nodi successivi perchè il corrente nodo non si può visualizzare */
         this.gameData.story.beams.forEach(el => {
@@ -2640,101 +2530,103 @@ var script = /*#__PURE__*/defineComponent({
         });
         stop = true;
       }
-
       return tabToAdd;
     },
-
     /* modify stat */
     modifyStat(idStat, operator, ammount) {
+      let isNext = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
       let chosenStat = this.gameData.stats.find(element => element.id == idStat);
-      let playerStat = this.player.stats.find(element => element.id == idStat);
+      let playerStat;
+      if (!isNext) {
+        playerStat = this.player.stats.find(element => element.id == idStat);
+      } else {
+        playerStat = this.playerSimulation.stats.find(element => element.id == idStat);
+      }
       let resultAmmount;
       let use;
-
       switch (operator) {
         case "+":
           resultAmmount = ammount;
           use = 1;
           break;
-
         case "-":
           resultAmmount = ammount;
           use = 2;
           break;
-
         case "*":
           resultAmmount = parseInt(playerStat.level) * parseInt(ammount);
           use = 1;
           break;
-
         case "/":
           resultAmmount = Math.floor(parseInt(playerStat.level) / parseInt(ammount));
           use = 2;
           break;
-
         case "=":
           resultAmmount = ammount;
           use = 5;
           break;
-      } //  + *
+      }
 
-
+      //  + *
       if (use == 1) {
         /* controllo se giocatore ha statistica */
         playerStat.level = parseInt(playerStat.level) + parseInt(resultAmmount);
-      } //  - /
+      }
 
-
+      //  - /
       if (use == 2) {
         /* controllo se giocatore ha statistica */
         playerStat.level = parseInt(playerStat.level) - parseInt(resultAmmount);
-      } //  =
+      }
 
-
+      //  =
       if (use == 5) {
         playerStat.level = resultAmmount;
-      } //CORREZIONI VALORE ---------------------
+      }
 
-
+      //CORREZIONI VALORE ---------------------
       if (playerStat.level > chosenStat.max) {
         playerStat.level = chosenStat.max;
       }
-
       if (playerStat.level < 0 && !isNaN(playerStat.level)) {
         playerStat.level = 0;
-      } //---------------------------------------
-
+      }
+      //---------------------------------------
     },
 
     /* modify item */
     modifyItem(idObject, operator, ammount) {
+      let isNext = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
 
+      //elemento da usare
       const chosenItem = this.gameData.items.find(element => element.id == idObject);
-      const nItemPlayer = this.player.item.filter(el => el.id == chosenItem.id).length;
+      let nItemPlayer;
+      if (!isNext) {
+        nItemPlayer = this.player.item.filter(el => el.id == chosenItem.id).length;
+      } else {
+        nItemPlayer = this.playerSimulation.item.filter(el => el.id == chosenItem.id).length;
+      }
       let resultAmmount;
-      let use; //resolve
+      let use;
 
+      //resolve
       switch (operator) {
         case "+":
           resultAmmount = ammount;
           use = 1;
           break;
-
         case "-":
           resultAmmount = ammount;
           use = 2;
           break;
-
         case "*":
           resultAmmount = parseInt(nItemPlayer) * parseInt(ammount);
           use = 1;
           break;
-
         case "/":
           resultAmmount = parseInt(nItemPlayer) - Math.floor(parseInt(nItemPlayer) / parseInt(ammount));
           use = 2;
           break;
-
         case "=":
           if (ammount < nItemPlayer) {
             resultAmmount = nItemPlayer - ammount;
@@ -2743,23 +2635,19 @@ var script = /*#__PURE__*/defineComponent({
             resultAmmount = ammount - nItemPlayer;
             use = 1;
           }
-
           break;
       }
-
       if (use == 1) {
         for (let index = 0; index < resultAmmount; index++) {
           this.player.item.push(chosenItem);
         }
       }
-
       if (use == 2) {
         let newArray = [];
         let nPushed = 0;
         this.player.item.forEach(element => {
           if (chosenItem.id == element.id) {
             nPushed++;
-
             if (nPushed <= nItemPlayer - resultAmmount) {
               newArray.push(element);
             }
@@ -2768,14 +2656,14 @@ var script = /*#__PURE__*/defineComponent({
           }
         });
         this.player.item = newArray;
-      } //setto lista oggetti
+      }
+
+      //setto lista oggetti
       //this.player.item = totalResult
+
       //rifaccio lista oggetti da visualizzare
-
-
       this.setPlayerItemFiltered();
     },
-
     //------------------------------------------------------
 
     /* leggo beem da punto di inizio a punto di fine */
@@ -2788,13 +2676,10 @@ var script = /*#__PURE__*/defineComponent({
       });
       this.navigation(newIdArray);
     },
-
     saveData() {},
-
     setImage(imageName) {
       this.illustration = imageName;
     },
-
     /* ||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
     /* animazione selettore */
@@ -2823,7 +2708,6 @@ var script = /*#__PURE__*/defineComponent({
         }
       }
     },
-
     clearAnimatePaperSelector() {
       this.player.stats.forEach(element => {
         element.active = 0;
@@ -2832,7 +2716,6 @@ var script = /*#__PURE__*/defineComponent({
         element.active = 0;
       });
     },
-
     /* setto paper */
     setDescriptionPaper(item) {
       this.seletedItem = item.id;
@@ -2840,9 +2723,7 @@ var script = /*#__PURE__*/defineComponent({
       this.descriptionPaperName = item.name[this.lang];
       this.descriptionPaperDescription = item.description[this.lang];
       this.oldItemTap = this.itemTap; //Object.assign({},this.itemTap)
-
       this.itemTap = this.itemTap + 1; //Object.assign({},this.itemTap) + 1
-
       setTimeout(() => {
         if (this.itemTap == 0) {
           this.seletedItem = false;
@@ -2850,13 +2731,11 @@ var script = /*#__PURE__*/defineComponent({
         }
       }, 4000);
     },
-
     /* setto lista oggetti da esporre  */
     setPlayerItemFiltered() {
       let listItems = [];
       this.player.item.forEach(item => {
         let found = listItems.find(element => element.id == item.id);
-
         if (found == undefined) {
           let nCopy = this.player.item.filter(element => element.id == item.id).length;
           let newItem = Object.assign({}, item);
@@ -2866,7 +2745,6 @@ var script = /*#__PURE__*/defineComponent({
       });
       this.playerItemFiltered = listItems;
     },
-
     /* lista nodi badMix */
     setListBadMixId() {
       let BadMixList = "";
@@ -2877,33 +2755,29 @@ var script = /*#__PURE__*/defineComponent({
       });
       this.listBadMixId = BadMixList;
     },
-
     /* PROJECT X ------------------------------------- */
+
     activateDemo() {
       //full screen
       function requestFullScreen(element) {
         // Supports most browsers and their versions.
         var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
-
         if (requestMethod) {
           // Native full screen.
           requestMethod.call(element);
         } else if (typeof window.ActiveXObject !== "undefined") {
           // Older IE.
           var wscript = new ActiveXObject("WScript.Shell");
-
           if (wscript !== null) {
             wscript.SendKeys("{F11}");
           }
         }
       }
-
       var elem = document.body; // Make the body go full screen.
-
       requestFullScreen(elem);
     },
-
     /* STYLE ---------------------------------------- */
+
     init() {
       if (this.useTheme) {
         this.setDevice();
@@ -2911,15 +2785,11 @@ var script = /*#__PURE__*/defineComponent({
       } else {
         this.stepToInit.font = true;
       }
-
-      console.log(this.preCachedImgList);
       this.setPreCacheImgList();
-
       if (this.preCachedImgList.length == 0) {
         this.stepToInit.img = true;
       }
     },
-
     LoadFont() {
       this.stepToInit.font = false;
       WebFont.load({
@@ -2934,7 +2804,6 @@ var script = /*#__PURE__*/defineComponent({
         }
       });
     },
-
     setPreCacheImgList() {
       this.gameData.story.tabs.forEach(el => {
         if (el.img) {
@@ -2943,23 +2812,19 @@ var script = /*#__PURE__*/defineComponent({
             let name = this.indexMedia.find(el2 => el2.Id == el.img.ID).name;
             let imgPathPart = this.pathMediaDir + "/" + name;
             let imgSize = this.gameData.style["img-sizes"];
-            /* list of srcset rules */
 
+            /* list of srcset rules */
             imgSize.forEach((elImg, index) => {
               data.srcset = data.srcset + imgPathPart + "-" + elImg.width + "x" + elImg.height + ".jpg " + elImg.width + "w";
-
               if (index + 1 != imgSize.length) {
                 data.srcset = data.srcset + ",";
               }
-
               if (index + 1 != imgSize.length) {
                 data.sizes = data.sizes + "( max-width:" + elImg.width + "px ) " + elImg.width + "px, ";
               } else {
                 data.sizes = data.sizes + elImg.width + "px";
               }
               /* fallback src */
-
-
               data.src = imgPathPart + "-" + imgSize[imgSize.length - 1]["width"] + "x" + imgSize[imgSize.length - 1]["height"] + ".jpg";
             });
             this.preCachedImgList.push(data);
@@ -2969,11 +2834,9 @@ var script = /*#__PURE__*/defineComponent({
         }
       });
     },
-
     setImgsLoaded() {
       this.stepToInit.img = true;
     },
-
     /* dom method handler */
     setDevice() {
       if (window.innerWidth > 992) {
@@ -2982,34 +2845,28 @@ var script = /*#__PURE__*/defineComponent({
         this.device = "mobile";
       }
     },
-
     /* data retriving & other feature----------------------------------------*/
+
     getPlayerValues() {
       return this.player.stats;
     },
-
-    getCurrentTabValues() {
+    getCurrentNodesValues() {
       return this.currentTabs;
     },
-
-    setStartPoint(value) {
+    setStartNode(value) {
       let newStart;
-
       if (typeof value === "string") {
         newStart = this.gameData.story.tabs.find(el => el.name == value);
       } else {
         newStart = this.gameData.story.tabs.find(el => el.id == value);
       }
-
       if (newStart) {
         this.navigation([newStart.id]);
       }
     },
-
     setPlayerValues(value) {
       this.player.stats = value;
     }
-
   }
 });
 
@@ -3036,15 +2893,10 @@ const _hoisted_6 = {
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_boxillustration = resolveComponent("boxillustration");
-
   const _component_boxText = resolveComponent("boxText");
-
   const _component_ToastContainer = resolveComponent("ToastContainer");
-
   const _component_PreCachedImg = resolveComponent("PreCachedImg");
-
   const _component_Spinner = resolveComponent("Spinner");
-
   return _ctx.stylesObj || _ctx.useTheme == false ? (openBlock(), createElementBlock("div", {
     key: 0,
     "sg1-id-stroy": _ctx.idStory,
@@ -3087,14 +2939,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : createCommentVNode("", true), !_ctx.initialized ? (openBlock(), createElementBlock("div", _hoisted_6, [createVNode(_component_Spinner)])) : createCommentVNode("", true)], 14, _hoisted_1)) : createCommentVNode("", true);
 }
 
-var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\n\t\tmargin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\n\t\tgrid-row: 1/3;\n\t\tpadding: 20px;\n\t\tbackground-color: whitesmoke;\n\t\toverflow: auto;\n\t\theight: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\n\t\tfont-family: monospace;\n\t\tfont-size: 16px;\n\t\tcolor: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\n\t\tmax-width: calc(100% - 50px);\n\t\tmax-width: 992px;\n\t\taspect-ratio: 1/1;\n\t\tmax-height: calc(100vh - 50px);\n\t\tmargin-top: 25px;\n\t\tmargin-right: auto;\n\t\tmargin-left: auto;\n\t\tdisplay: grid;\n\t\tgrid-template-rows: 70% 30%;\n\t\tbox-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\n\t\tgrid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\n\t\tmax-width: calc(100% - 25px);\n\t\tmargin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\n\t\tcontent: \"◆\";\n\t\tdisplay: inline-block;\n\t\tmargin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\n\t\tcursor: pointer;\n\t\tfont-size: 12px;\n\t\twidth: 2em;\n\t\theight: 2em;\n\t\tposition: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\n\t\tcontent: \"\";\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder-style: solid;\n\t\tborder-width: 1em 1em 0 1em;\n\t\tborder-color: grey transparent transparent transparent;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tobject-fit: cover;\n\t\tobject-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\n\t\tposition: relative;\n\t\toverflow: hidden;\n}\n";
+var css_248z$1 = "\nbody {\r\n  margin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\r\n  margin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\r\n  grid-row: 1/3;\r\n  padding: 20px;\r\n  background-color: whitesmoke;\r\n  overflow: auto;\r\n  height: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\r\n  grid-column: 1/3;\r\n  grid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\r\n  font-family: monospace;\r\n  font-size: 16px;\r\n  color: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\r\n  max-width: calc(100% - 50px);\r\n  max-width: 992px;\r\n  aspect-ratio: 1/1;\r\n  max-height: calc(100vh - 50px);\r\n  margin-top: 25px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n  display: grid;\r\n  grid-template-rows: 70% 30%;\r\n  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\r\n  grid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\r\n  max-width: calc(100% - 25px);\r\n  margin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\r\n  content: \"◆\";\r\n  display: inline-block;\r\n  margin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  width: 2em;\r\n  height: 2em;\r\n  position: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\r\n  content: \"\";\r\n  width: 0;\r\n  height: 0;\r\n  border-style: solid;\r\n  border-width: 1em 1em 0 1em;\r\n  border-color: grey transparent transparent transparent;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\r\n  grid-column: 1/3;\r\n  grid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\r\n  position: relative;\r\n  overflow: hidden;\n}\r\n";
 styleInject(css_248z$1);
 
-var css_248z = "\n.sg1-game-grid[data-v-5f489a16]:not(.sg1-no-theme) {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-5f489a16] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-5f489a16] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-5f489a16] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-5f489a16] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-5f489a16] {\n\t\tcolor: #67ed72;\n}\n";
+var css_248z = "\n.sg1-game-grid[data-v-34e481d5]:not(.sg1-no-theme) {\r\n  display: grid;\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  background-color: #282828;\n}\n.sg1-load-screen[data-v-34e481d5] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.sg1-log-app[data-v-34e481d5] {\r\n  grid-row-start: 1;\r\n  grid-column-start: 1;\r\n  grid-row-end: 7;\r\n  grid-column-end: 9;\r\n  flex-direction: column;\r\n  max-width: 100% !important;\r\n  overflow: hidden;\r\n\r\n  background-color: #282828;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.sg1-log-app > *[data-v-34e481d5] {\r\n  font-size: 15px;\r\n  max-width: 100%;\r\n  padding-right: 20px;\r\n  padding-left: 20px;\r\n  width: 100%;\r\n  text-align: center;\r\n  font-family: monospace;\n}\n.sg1-game-error[data-v-34e481d5] {\r\n  color: #ed6767;\n}\n.sg1-game-message[data-v-34e481d5] {\r\n  color: #67ed72;\n}\r\n";
 styleInject(css_248z);
 
 script.render = render;
-script.__scopeId = "data-v-5f489a16";
+script.__scopeId = "data-v-34e481d5";
 
 /* eslint-disable import/prefer-default-export */
 
@@ -3105,11 +2957,12 @@ var components = /*#__PURE__*/Object.freeze({
 
 // Import vue components
 
+// install function executed by Vue.use()
 const install = function installTestStLibrary(app) {
   Object.entries(components).forEach(_ref => {
     let [componentName, component] = _ref;
     app.component(componentName, component);
   });
-}; // Create module definition for Vue.use()
+};
 
 export { install as default, script as game };

@@ -1,16 +1,13 @@
 'use strict';var vue=require('vue');function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
-
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
     enumerableOnly && (symbols = symbols.filter(function (sym) {
       return Object.getOwnPropertyDescriptor(object, sym).enumerable;
     })), keys.push.apply(keys, symbols);
   }
-
   return keys;
 }
-
 function _objectSpread2(target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = null != arguments[i] ? arguments[i] : {};
@@ -20,10 +17,8 @@ function _objectSpread2(target) {
       Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
     });
   }
-
   return target;
 }
-
 function _typeof(obj) {
   "@babel/helpers - typeof";
 
@@ -33,7 +28,6 @@ function _typeof(obj) {
     return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
   }, _typeof(obj);
 }
-
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -45,44 +39,33 @@ function _defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
-
   return obj;
 }
-
 function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
-
 function _toConsumableArray(arr) {
   return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
-
 function _arrayWithoutHoles(arr) {
   if (Array.isArray(arr)) return _arrayLikeToArray(arr);
 }
-
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
-
 function _iterableToArray(iter) {
   if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
-
 function _iterableToArrayLimit(arr, i) {
   var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-
   if (_i == null) return;
   var _arr = [];
   var _n = true;
   var _d = false;
-
   var _s, _e;
-
   try {
     for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
       _arr.push(_s.value);
-
       if (i && _arr.length === i) break;
     }
   } catch (err) {
@@ -95,10 +78,8 @@ function _iterableToArrayLimit(arr, i) {
       if (_d) throw _e;
     }
   }
-
   return _arr;
 }
-
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
   if (typeof o === "string") return _arrayLikeToArray(o, minLen);
@@ -107,19 +88,14 @@ function _unsupportedIterableToArray(o, minLen) {
   if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
-
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
-
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
   return arr2;
 }
-
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }function createCommonjsModule(fn, basedir, module) {
@@ -476,7 +452,6 @@ var defaultStory = {
   computed: {
     imgPathPart: function imgPathPart() {
       var _this = this;
-
       var name = this.indexMedia.find(function (el) {
         return el.Id == _this.illustration.ID;
       }).name;
@@ -484,18 +459,15 @@ var defaultStory = {
     },
     responsiveImages: function responsiveImages() {
       var _this2 = this;
-
       var data = {
         srcset: "",
         sizes: ""
       };
       this["style"]["img-sizes"].forEach(function (el, index) {
         data.srcset = data.srcset + _this2.imgPathPart + "-" + el.width + "x" + el.height + ".jpg " + el.width + "w";
-
         if (index + 1 != _this2["style"]["img-sizes"].length) {
           data.srcset = data.srcset + ",";
         }
-
         if (index + 1 != _this2["style"]["img-sizes"].length) {
           data.sizes = data.sizes + "( max-width:" + el.width + "px ) " + el.width + "px, ";
         } else {
@@ -586,26 +558,22 @@ var nextTabMinimal2$1 = nextTabMinimal2;function svgColorChange(stringSvg, color
     initSvg: function initSvg() {
       var stringName = this.stylesObj.iconSingleArrow["type"];
       var svgString;
-
       switch (stringName) {
         case "sketch":
           svgString = nextTabSketch$2;
           this.animation = "shining";
           break;
-
         case "minimal2":
           svgString = nextTabMinimal2$1;
           this.animation = "scroll-down";
           this.svgShadow = true;
           break;
-
         default:
           svgString = nextTabMinimal1$1;
           this.animation = "scroll-down";
           this.svgShadow = true;
           break;
       }
-
       this.svgData = svgColorChange(svgString, this.stylesObj.iconSingleArrow["color"]);
     }
   }
@@ -667,11 +635,9 @@ var choseTabMinimal$1 = choseTabMinimal;var NextTab = {
       if (this.stylesObj) {
         if (this.stylesObj.iconMultipleArrow["type"]) {
           var stringName = this.stylesObj.iconMultipleArrow["type"];
-
           if (stringName == "letter" || stringName == "number") {
             this.svgData = false;
             this.svgDataActive = false;
-
             if (stringName == "letter") {
               var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
               this.indexListText = alphabet[this.index];
@@ -690,23 +656,19 @@ var choseTabMinimal$1 = choseTabMinimal;var NextTab = {
       var stringName = this.stylesObj.iconMultipleArrow["type"];
       var svgString;
       var listElement;
-
       switch (stringName) {
         case "sketch":
           listElement = [choseTabSketch5, choseTabSketch5, choseTabSketch5, choseTabSketch5, choseTabSketch5];
           this.initSvgActive(choseTabSketchActive$1);
           break;
-
         case "hexagon":
           listElement = [choseTabHexagon$1];
           this.initSvgActive(choseTabHexagonActive);
           break;
-
         case "minimal1":
           listElement = [choseTabMinimal$1];
           this.initSvgActive(false);
       }
-
       svgString = listElement[Math.floor(Math.random() * listElement.length)];
       this.svgData = svgColorChange(svgString, this.stylesObj.iconMultipleArrow["color"]);
     },
@@ -722,7 +684,6 @@ var choseTabMinimal$1 = choseTabMinimal;var NextTab = {
 var script$9 = NextTab;var _withScopeId$1 = function _withScopeId(n) {
   return vue.pushScopeId("data-v-68d5b6a0"), n = n(), vue.popScopeId(), n;
 };
-
 var _hoisted_1$8 = {
   key: 0,
   style: {
@@ -737,13 +698,11 @@ var _hoisted_6$2 = {
   key: 1,
   class: "sg1-chose-item"
 };
-
 var _hoisted_7$1 = /*#__PURE__*/_withScopeId$1(function () {
   return /*#__PURE__*/vue.createElementVNode("div", {
     class: "list-item"
   }, null, -1);
 });
-
 var _hoisted_8$1 = ["innerHTML"];
 function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return _ctx.stylesObj ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$8, [_ctx.stylesObj.iconMultipleArrow['type'] ? (vue.openBlock(), vue.createElementBlock("div", {
@@ -789,7 +748,6 @@ styleInject(css_248z$a);script$9.render = render$9;
 script$9.__scopeId = "data-v-68d5b6a0";//returns a copy of the object
 function deepCopy(obj) {
   var rv;
-
   switch (_typeof(obj)) {
     case "object":
       if (obj === null) {
@@ -802,18 +760,15 @@ function deepCopy(obj) {
             // deep copies of the entries
             rv = obj.map(deepCopy);
             break;
-
           case "[object Date]":
             // Clone the date
             rv = new Date(obj);
             break;
-
           case "[object RegExp]":
             // Clone the RegExp
             rv = new RegExp(obj);
             break;
           // ...probably a few others
-
           default:
             // Some other kind of object, deep-copy its
             // properties into a new object
@@ -824,22 +779,21 @@ function deepCopy(obj) {
             break;
         }
       }
-
       break;
-
     default:
       // It's a primitive, copy via assignment
       rv = obj;
       break;
   }
-
   return rv;
 }function fixText(stingText) {
-  var textString = JSON.stringify(stingText); //let res = textString.replace(/(?:\\[rn])+/g, "<br>");
+  var textString = JSON.stringify(stingText);
 
+  //let res = textString.replace(/(?:\\[rn])+/g, "<br>");
   var res = textString.replace(/(\\r\\)+/g, "<br>\\");
   res = res.replace(/(\\r)+/g, "<br>");
   return JSON.parse(res);
+
   /*
   let str = JSON.stringify(stingText);
    String.prototype.fakeReplace = function (str, newstr) {
@@ -870,7 +824,6 @@ function deepCopy(obj) {
     return newOrder;
   }
 }
-
 var boxNarration = {
   name: "boxNarration",
   components: {
@@ -886,10 +839,26 @@ var boxNarration = {
   emits: ["emitReedBeams2"],
   computed: {
     currentTabsReordered: function currentTabsReordered() {
-      return sortChose(this.currentTabs);
+      var listIds = [];
+      var newList = [];
+      sortChose(this.currentTabs).forEach(function (el) {
+        if (!listIds.includes(el.id)) {
+          listIds.push(el.id);
+          newList.push(el);
+        }
+      });
+      return newList;
     },
     nextTabsChoseReordered: function nextTabsChoseReordered() {
-      return sortChose(this.nextTabsChose);
+      var listIds = [];
+      var newList = [];
+      sortChose(this.nextTabsChose).forEach(function (el) {
+        if (!listIds.includes(el.id)) {
+          listIds.push(el.id);
+          newList.push(el);
+        }
+      });
+      return newList;
     }
   },
   methods: {
@@ -910,9 +879,7 @@ var _hoisted_3$4 = {
 };
 function render$8(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ChooseTab = vue.resolveComponent("ChooseTab");
-
   var _component_NextTab = vue.resolveComponent("NextTab");
-
   return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createElementVNode("div", _hoisted_1$7, [vue.createElementVNode("div", {
     class: "sg1-tab-results",
     style: vue.normalizeStyle(_ctx.stylesObj.tabResultsMaxHeight)
@@ -964,9 +931,9 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     class: "sg1-single-beem-icon"
   }))], 4)) : vue.createCommentVNode("", true)], 64);
-}var css_248z$9 = "\n.sg1-tab-results[data-v-3b0d3f8e] {\r\n  flex-grow: 1;\r\n  overflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-3b0d3f8e] {\r\n  display: flex;\r\n  justify-content: center;\n}\n.sg1-box-narration[data-v-3b0d3f8e] {\r\n  position: relative;\r\n  z-index: 10;\r\n  max-height: inherit;\r\n  min-height: inherit;\r\n  overflow-y: auto;\r\n  flex-grow: 1;\n}\r\n";
+}var css_248z$9 = "\n.sg1-tab-results[data-v-066ddc8e] {\r\n  flex-grow: 1;\r\n  overflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-066ddc8e] {\r\n  display: flex;\r\n  justify-content: center;\n}\n.sg1-box-narration[data-v-066ddc8e] {\r\n  position: relative;\r\n  z-index: 10;\r\n  max-height: inherit;\r\n  min-height: inherit;\r\n  overflow-y: auto;\r\n  flex-grow: 1;\n}\r\n";
 styleInject(css_248z$9);script$8.render = render$8;
-script$8.__scopeId = "data-v-3b0d3f8e";var boxNarrationGameEnd = {
+script$8.__scopeId = "data-v-066ddc8e";var boxNarrationGameEnd = {
   name: "boxNarrationGameEnd",
   props: {
     currentTabs: {},
@@ -1060,29 +1027,24 @@ var bgSketch$1 = bgSketch;function drawCanvasBg(dimension, bgStyle, layoutID) {
   var svgString = svgColorChange(bgSketch$1, bgStyle.bgColor);
   var maxSizeTexture = 400;
   var NTexture = Math.ceil(dimension.height / maxSizeTexture);
-
   for (var index = 0; index < NTexture; index++) {
     // crea un meccanismo tipo space betweeen
     var x = 0;
     var y = index * maxSizeTexture;
     createTexture(svgString, x, y, maxSizeTexture, maxSizeTexture);
   }
-
   function createTexture(string, x, y, w, h) {
     var img1 = new Image();
-
     img1.onload = function () {
       context.save();
       context.drawImage(img1, x, y, w, h);
     };
-
     img1.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(string);
     context.fillStyle = "pink";
     context.fillRect(0, 0, 100, 100);
     context.restore();
   }
   /* */
-
 }var BgBoxText = {
   name: "BgBoxText",
   components: {},
@@ -1109,16 +1071,13 @@ var bgSketch$1 = bgSketch;function drawCanvasBg(dimension, bgStyle, layoutID) {
   methods: {
     init: function init() {
       var _this = this;
-
       /* constrollo se il box test è attaccato ai bordi */
       var canUseRadious = false;
-
       if (this.borderRadiousLayout.includes(this.stylesObj.layoutID)) {
         canUseRadious = true;
       }
+
       /* controllo se è un canvas */
-
-
       if (this.canvasTypeArray.includes(this.stylesObj.bgStyle.bgType)) {
         this.isCanvas = true;
         this.width = document.getElementsByClassName("bg-wrapper")[0].clientWidth;
@@ -1131,13 +1090,11 @@ var bgSketch$1 = bgSketch;function drawCanvasBg(dimension, bgStyle, layoutID) {
         }, 100);
       } else {
         this.isCanvas = false;
-
         if (this.stylesObj.bgStyle.bgType == "minimal1") {
           this.styleStBg = {
             backgroundColor: this.stylesObj.bgStyle.bgColor,
             boxShadow: "0 0 4px 2px rgba(14,14,14,0.45)"
           };
-
           if (canUseRadious) {
             this.styleStBg.borderRadius = "20px";
           }
@@ -1195,13 +1152,9 @@ script$5.__scopeId = "data-v-25293889";var boxText = {
 };
 var script$4 = boxText;function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_BgBoxText = vue.resolveComponent("BgBoxText");
-
   var _component_boxnarration = vue.resolveComponent("boxnarration");
-
   var _component_gameEnd = vue.resolveComponent("gameEnd");
-
   var _component_gameOver = vue.resolveComponent("gameOver");
-
   return vue.openBlock(), vue.createElementBlock("div", {
     class: "sg1-wrapper-box-text",
     style: vue.normalizeStyle(_objectSpread2(_objectSpread2({}, _ctx.stylesObj.boxText), _ctx.stylesObj.boxTextPadding))
@@ -1291,11 +1244,9 @@ script$3.__scopeId = "data-v-50ed9ac2";var spinnerBox = {
 var script$2 = spinnerBox;var _withScopeId = function _withScopeId(n) {
   return vue.pushScopeId("data-v-141b4ae7"), n = n(), vue.popScopeId(), n;
 };
-
 var _hoisted_1$2 = {
   class: "sg1-spinner-box-media"
 };
-
 var _hoisted_2$2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/vue.createElementVNode("div", {
     class: "sg1-spinner sg1-pulse-container"
@@ -1307,7 +1258,6 @@ var _hoisted_2$2 = /*#__PURE__*/_withScopeId(function () {
     class: "sg1-pulse-bubble sg1-pulse-bubble-3"
   })], -1);
 });
-
 var _hoisted_3$2 = [_hoisted_2$2];
 function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$2, _hoisted_3$2);
@@ -1338,7 +1288,6 @@ script$2.__scopeId = "data-v-141b4ae7";var ToastContainer = {
     },
     removeToast: function removeToast(id) {
       var _this = this;
-
       this.toasts.find(function (el) {
         return el.id == id;
       }).isUnmountening = true;
@@ -1405,7 +1354,6 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
 styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
   var boxIllustration;
   var boxText;
-
   switch (id) {
     case "a6f8":
       boxIllustration = {
@@ -1421,7 +1369,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 9
       };
       break;
-
     case "a5f8":
       boxIllustration = {
         gridRowStart: 1,
@@ -1436,7 +1383,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 9
       };
       break;
-
     case "a1f3":
       boxIllustration = {
         gridRowStart: 1,
@@ -1451,7 +1397,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 4
       };
       break;
-
     case "a1f4":
       boxIllustration = {
         gridRowStart: 1,
@@ -1466,7 +1411,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 5
       };
       break;
-
     case "d3e6":
       boxIllustration = {
         gridRowStart: 1,
@@ -1481,7 +1425,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 7
       };
       break;
-
     case "b3c6":
       boxIllustration = {
         gridRowStart: 1,
@@ -1496,9 +1439,7 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 7
       };
       break;
-
     /* all screen */
-
     case "a1f8":
       boxIllustration = {
         gridRowStart: 1,
@@ -1513,7 +1454,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 9
       };
       break;
-
     case "b2e3":
       boxIllustration = {
         gridRowStart: 1,
@@ -1528,7 +1468,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 4
       };
       break;
-
     case "b2e4":
       boxIllustration = {
         gridRowStart: 1,
@@ -1543,7 +1482,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 5
       };
       break;
-
     case "b6e7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1558,7 +1496,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     case "b5e7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1573,7 +1510,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     case "e2e7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1588,7 +1524,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     case "b2b7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1603,7 +1538,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     case "d2e7":
       boxIllustration = {
         gridRowStart: 1,
@@ -1618,9 +1552,7 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
         gridColumnEnd: 8
       };
       break;
-
     /* mobile */
-
     case "d1f8":
       boxIllustration = {
         gridRowStart: 1,
@@ -1636,7 +1568,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
       };
       break;
   }
-
   return {
     boxIllustration: boxIllustration,
     boxText: boxText
@@ -1644,7 +1575,6 @@ styleInject(css_248z$2);script$1.render = render$1;function gridLayout(id) {
 }function randomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 var script = /*#__PURE__*/vue.defineComponent({
   name: "game",
   components: {
@@ -1656,7 +1586,8 @@ var script = /*#__PURE__*/vue.defineComponent({
   },
   props: {
     idStory: {
-      default: false
+      type: Number,
+      default: 0
     },
     editorUsage: {
       type: Boolean,
@@ -1716,7 +1647,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       default: false
     }
   },
-  emits: ["emitByTabs", "onInit", "beforeNavigation", "afterNavigation"],
+  emits: ["emitByNodes", "onInit", "beforeNavigation", "afterNavigation"],
   data: function data() {
     return {
       idRendered: false,
@@ -1732,6 +1663,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       player: {
         item: []
       },
+      playerSimulation: {},
       currentTabs: [],
       nextTabsChose: [],
       illustration: false,
@@ -1792,7 +1724,6 @@ var script = /*#__PURE__*/vue.defineComponent({
             var listTypeCheck = this.currentTabs.filter(function (element) {
               return allowed.includes(element.type);
             });
-
             if (listTypeCheck.length == this.currentTabs.length) {
               return "default";
             } else {
@@ -1804,7 +1735,6 @@ var script = /*#__PURE__*/vue.defineComponent({
         }
       }
     },
-
     /* Style */
     stylesObj: function stylesObj() {
       if (this.useTheme) {
@@ -1816,34 +1746,29 @@ var script = /*#__PURE__*/vue.defineComponent({
             gridTemplateRows: this.gameData.style[this.device].margin + " repeat(4, 1fr) " + this.gameData.style[this.device].margin
           };
           var gridLayoutItem;
-
           if (this.disableIlustration == true) {
             gridLayoutItem = gridLayout("a1f8");
           } else {
             gridLayoutItem = gridLayout(this.gameData.style[this.device]["layout-type"]);
           }
-
           var _boxIllustration = _objectSpread2({}, gridLayoutItem.boxIllustration);
-
           var _boxText = _objectSpread2({}, gridLayoutItem.boxText);
-
           var boxTextPadding = {
             padding: this.gameData.style[this.device]["box-text-padding"]
           };
           var currentBoxHeight;
-
           if (_boxText.gridRowEnd != 7 && _boxText.gridRowStart != 1) {
             currentBoxHeight = "(( " + this.height + " - " + "(" + this.gameData.style[this.device].margin + "+" + this.gameData.style[this.device].margin + "))/" + 4 + ") * (" + _boxText.gridRowEnd + " - " + _boxText.gridRowStart + ")";
           } else {
             //boxText.gridRowEnd == 7 && boxText.gridRowStart == 1
             currentBoxHeight = this.height;
           }
-
           var heightCalc = "calc( " + currentBoxHeight + " - " + this.gameData.style[this.device]["box-text-padding"] + " - " + this.gameData.style[this.device]["box-text-padding"] + " - (" + " + " + this.gameData.style[this.device]["box-text-padding"] + " + " + this.gameData.style["icon-single-arrow"]["size"] + "))";
           var tabResultsMaxHeight = {
             maxHeight: heightCalc,
             minHeight: heightCalc
           };
+
           /* FONT */
 
           var fontName = this.gameData.style["font-family"];
@@ -1860,11 +1785,11 @@ var script = /*#__PURE__*/vue.defineComponent({
           var fontSize1 = {
             fontSize: this.gameData.style[this.device]["font-size-1"]
           };
+
           /* single arrow next */
-
           var iconSingleArrow = this.gameData.style["icon-single-arrow"];
-          /* multiple arrow next */
 
+          /* multiple arrow next */
           var iconMultipleArrow = this.gameData.style["icon-multiple-arrow"];
           var paddingTopNextTab = {
             paddingTop: this.gameData.style[this.device]["box-text-padding"]
@@ -1873,7 +1798,6 @@ var script = /*#__PURE__*/vue.defineComponent({
             paddingBottom: this.gameData.style[this.device]["box-text-padding"]
           };
           /* bg text box */
-
           var bgStyle = {
             bgType: this.gameData.style["bg-type"],
             bgColor: this.gameData.style["bg-color"]
@@ -1914,38 +1838,34 @@ var script = /*#__PURE__*/vue.defineComponent({
   },
   mounted: function mounted() {
     var _this = this;
-
     if (this.langStory !== "null-lang") {
       this.lang = this.langStory;
     } else {
       this.lang = this.gameData.postInfo.langList[0];
     }
-
     this.gameIntentLoad();
+
     /* |||||||||||||||||||| EVENTS |||||||||||||||||||||| */
 
     window.addEventListener("getPlayerValues" + this.idRendered, function (event) {
       localStorage.setItem("sg1Storage" + _this.idRendered, JSON.stringify(_this.getPlayerValues()));
     });
-    window.addEventListener("getCurrentTabValues" + this.idRendered, function (event) {
-      localStorage.setItem("sg1Storage" + _this.idRendered, JSON.stringify(_this.getCurrentTabValues()));
+    window.addEventListener("getCurrentNodesValues" + this.idRendered, function (event) {
+      localStorage.setItem("sg1Storage" + _this.idRendered, JSON.stringify(_this.getCurrentNodesValues()));
     });
-    window.addEventListener("setStartPoint" + this.idRendered, function (event) {
+    window.addEventListener("setStartNode" + this.idRendered, function (event) {
       var value = JSON.parse(localStorage["sg1Storage" + _this.idRendered]);
       localStorage.removeItem("sg1Storage" + _this.idRendered);
-
-      _this.setStartPoint(value);
+      _this.setStartNode(value);
     });
     window.addEventListener("setPlayerValues" + this.idRendered, function (event) {
       var value = JSON.parse(localStorage["sg1Storage" + _this.idRendered]);
       localStorage.removeItem("sg1Storage" + _this.idRendered);
-
       _this.setPlayerValues(value);
     });
   },
   created: function created() {
     this.init();
-
     if (this.idStory) {
       this.idRendered = this.idStory;
     } else if (this.gameData.id) {
@@ -1953,42 +1873,37 @@ var script = /*#__PURE__*/vue.defineComponent({
     } else {
       this.idRendered = 0;
     }
-
     window.addEventListener("resize", this.setDevice);
   },
   destroyed: function destroyed() {
     window.removeEventListener("resize", this.setDevice);
   },
   methods: {
-    /* |||||||||||||||||||| GAME CORE |||||||||||||||||||||| */
-    gameIntentLoad: function gameIntentLoad() {
+    /* |||||||||||||||||||| GAME CORE |||||||||||||||||||||| */gameIntentLoad: function gameIntentLoad() {
       var _this2 = this;
-
       this.playerState = "playing";
       this.player = {
         stats: [],
         item: []
       };
-      /* carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist */
 
+      /* carico liste statistiche con livello preimpostato a 0 se non presenti nella whitelist */
       if (this.gameData.stats) {
         this.gameData.stats.forEach(function (stats) {
           var newStats = deepCopy(stats);
           newStats.level = 0;
-
           _this2.player.stats.push(newStats);
         });
-      } //creo lista oggetti da visualizzare
+      }
 
-
+      //creo lista oggetti da visualizzare
       this.setPlayerItemFiltered();
-      /* apro la tab di inizio */
 
+      /* apro la tab di inizio */
       var startPointArray = [];
       var startPointId = this.gameData.story.tabs.find(function (element) {
         return element.gameStart;
       });
-
       if (startPointId) {
         startPointArray.push(startPointId.id);
         this.navigation(startPointArray);
@@ -1997,28 +1912,26 @@ var script = /*#__PURE__*/vue.defineComponent({
         this.onRunError.push(error);
       }
     },
-
-    /* stabilisco tabs da vedere */
-    navigation: function navigation(newIdArray) {
+    /* stabilisco tabs da vedere */navigation: function navigation(newIdArray) {
       var _this3 = this;
-
       this.$emit("beforeNavigation");
       var tabs = this.gameData.story.tabs.filter(function (el) {
         return newIdArray.includes(el.id);
       });
       var tabsToNavigate = this.ResoveTabsList(tabs);
-
       if (tabsToNavigate.length == 0 && this.playerState != "game end") {
         var error = this.strings.wrongTabsId[this.langEditor];
-        this.onRunError.push(error); //setto nextTabsChose
+        this.onRunError.push(error);
 
+        //setto nextTabsChose
         this.nextTabsChose = [];
       } else {
         if (tabsToNavigate.length == 1) {
-          this.singleBeemFoward = true; //setto nextTabsChose ---------------------------
+          this.singleBeemFoward = true;
+
+          //setto nextTabsChose ---------------------------
 
           /* trovo nodi successivi */
-
           var tabToAdd = [];
           var _error = false;
           var single = false;
@@ -2027,13 +1940,11 @@ var script = /*#__PURE__*/vue.defineComponent({
               var newEl = _this3.gameData.story.tabs.find(function (el2) {
                 return el2.id == el.to;
               });
-
               tabToAdd.push(newEl);
             }
           });
           this.isBadNodeMixForCose = [];
           var testNextTabsChose = this.ResoveTabsList(tabToAdd, true);
-
           if (testNextTabsChose.length == 1) {
             if (testNextTabsChose[0].type == "descriptions" || testNextTabsChose[0].type == "game over") {
               single = true;
@@ -2046,7 +1957,6 @@ var script = /*#__PURE__*/vue.defineComponent({
               }
             });
           }
-
           if (single) {
             this.nextTabsChose = [];
           } else {
@@ -2058,90 +1968,85 @@ var script = /*#__PURE__*/vue.defineComponent({
             } else {
               this.nextTabsChose = testNextTabsChose;
             }
-          } //-------------------------------------
+          }
+
+          //-------------------------------------
+
           //setto immagine
-
-
           if (tabsToNavigate[0].img) {
             this.setImage(tabsToNavigate[0].img);
-          } //salvo dati
+          }
 
-
+          //salvo dati
           if (tabsToNavigate[0].save == true) {
             this.saveData();
           }
         } else {
           this.singleBeemFoward = false;
-          /* controllo se tab to add sono tutti chose */
 
+          /* controllo se tab to add sono tutti chose */
           var allChose = true;
           tabsToNavigate.forEach(function (el) {
             if (el.type != "chose") {
               allChose = false;
             }
           });
-
           if (allChose) {
             this.nextTabsChose = [];
           }
         }
-
         this.currentTabs = tabsToNavigate;
       }
     },
     //------------------------------------------------------
     ResoveTabsList: function ResoveTabsList(tabs) {
       var _this4 = this;
-
       var isNext = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var stop = false;
       var n = 0;
       var textualTabs = this.textualTabs;
       var collectionOfTextualTabs = tabs;
-
       var _loop = function _loop() {
         n++;
         var allTextual = true;
-        var newCollection = []; //controllo chi è testuale e chi no
+        var newCollection = [];
 
+        //controllo chi è testuale e chi no
         collectionOfTextualTabs.forEach(function (el) {
           if (!textualTabs.includes(el.type)) {
             allTextual = false;
+
+            //creo clone nel caso si tratti di isNext
+            if (isNext) {
+              _this4.playerSimulation = deepCopy(_this4.player);
+            }
             newCollection = [].concat(_toConsumableArray(newCollection), _toConsumableArray(_this4.ResoveTab(el, isNext)));
           } else {
             var procedeToNewCollection = true;
-
             if (isNext) {
               if (_this4.playerState != "playing") {
                 procedeToNewCollection = false;
               }
             }
-
             if (procedeToNewCollection) {
               newCollection.push(el);
             }
           }
         });
         collectionOfTextualTabs = newCollection;
-
         if (allTextual == true || n >= 100) {
           stop = true;
         }
       };
-
       while (stop == false) {
         _loop();
       }
-
       return collectionOfTextualTabs;
     },
-
-    /* risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab */
-    ResoveTab: function ResoveTab(tab, isNext) {
+    /* risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab */ResoveTab: function ResoveTab(tab, isNext) {
       function operatorResolve(dn1, operator, dn2) {
         var n1 = parseInt(dn1);
         var n2 = parseInt(dn2);
-
         switch (operator) {
           case ">":
             if (n1 > n2) {
@@ -2149,28 +2054,24 @@ var script = /*#__PURE__*/vue.defineComponent({
             } else {
               return false;
             }
-
           case ">=":
             if (n1 >= n2) {
               return true;
             } else {
               return false;
             }
-
           case "<":
             if (n1 < n2) {
               return true;
             } else {
               return false;
             }
-
           case "<=":
             if (n1 <= n2) {
               return true;
             } else {
               return false;
             }
-
           case "==":
             if (n1 == n2) {
               return true;
@@ -2179,11 +2080,9 @@ var script = /*#__PURE__*/vue.defineComponent({
             }
         }
       }
-
       var tabToAdd = [];
       var stop = false;
       var currentTab;
-
       if (_typeof(tab) === "object") {
         currentTab = tab;
       } else {
@@ -2192,39 +2091,33 @@ var script = /*#__PURE__*/vue.defineComponent({
           return el.id == tab;
         });
       }
-
-      console.log("type: " + currentTab.type + "------------------------");
-
       switch (currentTab.type) {
         case "start":
           break;
-
         case "descriptions":
           tabToAdd.push(currentTab);
           stop = true;
           break;
-
         case "chose":
           tabToAdd.push(currentTab);
           stop = true;
           break;
-
         case "game over":
           if (!isNext) {
             this.playerState = "game over";
             tabToAdd.push(currentTab);
+          } else {
+            stop = true;
+            var error = this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+            this.onRunError.push(error);
           }
-
           stop = true;
           break;
-
         case "end":
           if (!isNext) {
             this.playerState = "game end";
-
             if (currentTab.openNewPage) {
               this.goToLink = true;
-
               if (this.stopLink) {
                 this.urlToShow = this.strings.urlRedirect[this.langEditor] + ": " + currentTab.url[this.lang];
               } else {
@@ -2236,13 +2129,12 @@ var script = /*#__PURE__*/vue.defineComponent({
             }
           } else {
             stop = true;
+            var _error2 = this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+            this.onRunError.push(_error2);
           }
-
           break;
-
         case "redirect":
           var errorRedirect = false;
-
           if (currentTab.listRedirectId.length > 0) {
             currentTab.listRedirectId.forEach(function (el) {
               if (!el) {
@@ -2252,99 +2144,84 @@ var script = /*#__PURE__*/vue.defineComponent({
           } else {
             errorRedirect = this.strings.linkNodeEmpty[this.langEditor] + " ( ID: " + currentTab.id + " )";
           }
-
           if (errorRedirect == false) {
             var idRedirect;
-
             if (currentTab.listRedirectId.length == 1) {
               idRedirect = currentTab.listRedirectId[0];
             } else {
               var indexRandom = randomNum(0, currentTab.listRedirectId.length - 1);
               idRedirect = currentTab.listRedirectId[indexRandom];
             }
-
             var tabToRedirect = this.gameData.story.tabs.find(function (element) {
               return element.id == idRedirect;
             });
             currentTab = tabToRedirect;
           } else {
-            var error = this.strings.redirectError[this.langEditor] + " ( ID: " + currentTab.id + " )";
-            this.onRunError.push(error);
+            var _error3 = this.strings.redirectError[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            this.onRunError.push(_error3);
             stop = true;
           }
-
           if (errorRedirect) {
             this.onRunError.push(errorRedirect);
             stop = true;
           }
-
           break;
-
         case "set stat":
-          if (!isNext) {
-            var itemExist3 = this.gameData.stats.find(function (el) {
-              return el.id == currentTab.idStat;
-            });
-
-            if (itemExist3) {
-              if (itemExist3.length == 0 || currentTab.operator == false) {
-                var _error2 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-
-                this.onRunError.push(_error2);
-                stop = true;
-              } else {
-                this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount);
-              }
-            } else {
-              var _error3 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-
-              this.onRunError.push(_error3);
-              stop = true;
-            }
-          }
-
-          break;
-
-        case "set object":
-          if (!isNext) {
-            var itemExist2 = this.gameData.items.find(function (el) {
-              return el.id == currentTab.idObject;
-            });
-
-            if (itemExist2) {
-              if (itemExist2.length == 0 || currentTab.operator == false) {
-                var _error4 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-
-                this.onRunError.push(_error4);
-                stop = true;
-              } else {
-                this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount);
-              }
-            } else {
-              var _error5 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-
-              this.onRunError.push(_error5);
-              stop = true;
-            }
-          }
-
-          break;
-
-        case "if stat":
-          var statToCheck = this.player.stats.find(function (element) {
-            return element.id == currentTab.idStat;
+          var itemExist3 = this.gameData.stats.find(function (el) {
+            return el.id == currentTab.idStat;
           });
-
-          if (statToCheck) {
-            /* controllo che non siano presenti errori nella espressione */
-            if (currentTab.ammount === false || currentTab.ammount == undefined || currentTab.operator == false) {
+          if (itemExist3) {
+            if (itemExist3.length == 0 || currentTab.operator == false) {
+              var _error4 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+              this.onRunError.push(_error4);
+              stop = true;
+            } else {
+              this.modifyStat(currentTab.idStat, currentTab.operator, currentTab.ammount, isNext);
+            }
+          } else {
+            var _error5 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            this.onRunError.push(_error5);
+            stop = true;
+          }
+          break;
+        case "set object":
+          var itemExist2 = this.gameData.items.find(function (el) {
+            return el.id == currentTab.idObject;
+          });
+          if (itemExist2) {
+            if (itemExist2.length == 0 || currentTab.operator == false) {
               var _error6 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-
               this.onRunError.push(_error6);
               stop = true;
             } else {
-              var status = operatorResolve(statToCheck.level, currentTab.operator, currentTab.ammount);
+              this.modifyItem(currentTab.idObject, currentTab.operator, currentTab.ammount, isNext);
+            }
+          } else {
+            var _error7 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            this.onRunError.push(_error7);
+            stop = true;
+          }
+          break;
+        case "if stat":
+          var statToCheck;
+          if (!isNext) {
+            statToCheck = this.player.stats.find(function (element) {
+              return element.id == currentTab.idStat;
+            });
+          } else {
+            statToCheck = this.playerSimulation.stats.find(function (element) {
+              return element.id == currentTab.idStat;
+            });
+          }
+          if (statToCheck) {
+            /* controllo che non siano presenti errori nella espressione */
 
+            if (currentTab.ammount === false || currentTab.ammount == undefined || currentTab.operator == false) {
+              var _error8 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+              this.onRunError.push(_error8);
+              stop = true;
+            } else {
+              var status = operatorResolve(statToCheck.level, currentTab.operator, currentTab.ammount);
               if (status) {
                 var tabsTrue = this.gameData.story.tabs.filter(function (element) {
                   return currentTab.trueId.includes(element.id);
@@ -2360,72 +2237,66 @@ var script = /*#__PURE__*/vue.defineComponent({
               }
             }
           } else {
-            var _error7 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-
-            this.onRunError.push(_error7);
+            var _error9 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            this.onRunError.push(_error9);
             stop = true;
           }
-
           break;
-
         case "if item":
-          var itemToCheck = this.player.item.filter(function (element) {
-            return element.id == currentTab.idObject;
-          }).length;
-          /* controllo che non siano presenti errori nella espressione */
-          //controllo se esiste l'oggetto
+          var itemToCheck;
+          if (!isNext) {
+            itemToCheck = this.player.item.filter(function (element) {
+              return element.id == currentTab.idObject;
+            }).length;
+          } else {
+            itemToCheck = this.playerSimulation.item.filter(function (element) {
+              return element.id == currentTab.idObject;
+            }).length;
+          }
 
+          /* controllo che non siano presenti errori nella espressione */
+
+          //controllo se esiste l'oggetto
           var itemExist = this.gameData.items.find(function (el) {
             return el.id == currentTab.idObject;
           });
-
           if (itemExist) {
             if (itemExist.length == 0 || currentTab.operator == false) {
-              var _error8 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-
-              this.onRunError.push(_error8);
+              var _error10 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+              this.onRunError.push(_error10);
               stop = true;
             } else {
               var status2 = operatorResolve(itemToCheck, currentTab.operator, currentTab.ammount);
-
               if (status2) {
                 var _tabsTrue = this.gameData.story.tabs.filter(function (element) {
                   return currentTab.trueId.includes(element.id);
                 });
-
                 tabToAdd = _tabsTrue;
                 stop = true;
               } else {
                 var _tabsFalse = this.gameData.story.tabs.filter(function (element) {
                   return currentTab.falseId.includes(element.id);
                 });
-
                 tabToAdd = _tabsFalse;
                 stop = true;
               }
             }
           } else {
-            var _error9 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
-
-            this.onRunError.push(_error9);
+            var _error11 = this.strings.expressionIncoplete[this.langEditor] + " ( ID: " + currentTab.id + " )";
+            this.onRunError.push(_error11);
             stop = true;
           }
-
           break;
-
         case "image":
           if (!isNext) {
             this.setImage(currentTab.img);
           }
-
           break;
-
         case "emit_function":
           if (!isNext) {
             if (this.canEmit) {
-              this.$emit("emitByTabs", currentTab.objToEmit);
+              this.$emit("emitByNodes", currentTab.objToEmit);
             }
-
             if (this.showToast) {
               this.$refs.ToastContainerRef.addToast({
                 type: currentTab.type.replaceAll(" ", "_"),
@@ -2434,10 +2305,8 @@ var script = /*#__PURE__*/vue.defineComponent({
               });
             }
           }
-
           break;
       }
-
       if (stop == false) {
         /* trovo nodi successivi perchè il corrente nodo non si può visualizzare */
         this.gameData.story.beams.forEach(function (el) {
@@ -2447,109 +2316,112 @@ var script = /*#__PURE__*/vue.defineComponent({
         });
         stop = true;
       }
-
       return tabToAdd;
     },
-
-    /* modify stat */
-    modifyStat: function modifyStat(idStat, operator, ammount) {
+    /* modify stat */modifyStat: function modifyStat(idStat, operator, ammount) {
+      var isNext = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
       var chosenStat = this.gameData.stats.find(function (element) {
         return element.id == idStat;
       });
-      var playerStat = this.player.stats.find(function (element) {
-        return element.id == idStat;
-      });
+      var playerStat;
+      if (!isNext) {
+        playerStat = this.player.stats.find(function (element) {
+          return element.id == idStat;
+        });
+      } else {
+        playerStat = this.playerSimulation.stats.find(function (element) {
+          return element.id == idStat;
+        });
+      }
       var resultAmmount;
       var use;
-
       switch (operator) {
         case "+":
           resultAmmount = ammount;
           use = 1;
           break;
-
         case "-":
           resultAmmount = ammount;
           use = 2;
           break;
-
         case "*":
           resultAmmount = parseInt(playerStat.level) * parseInt(ammount);
           use = 1;
           break;
-
         case "/":
           resultAmmount = Math.floor(parseInt(playerStat.level) / parseInt(ammount));
           use = 2;
           break;
-
         case "=":
           resultAmmount = ammount;
           use = 5;
           break;
-      } //  + *
+      }
 
-
+      //  + *
       if (use == 1) {
         /* controllo se giocatore ha statistica */
         playerStat.level = parseInt(playerStat.level) + parseInt(resultAmmount);
-      } //  - /
+      }
 
-
+      //  - /
       if (use == 2) {
         /* controllo se giocatore ha statistica */
         playerStat.level = parseInt(playerStat.level) - parseInt(resultAmmount);
-      } //  =
+      }
 
-
+      //  =
       if (use == 5) {
         playerStat.level = resultAmmount;
-      } //CORREZIONI VALORE ---------------------
+      }
 
-
+      //CORREZIONI VALORE ---------------------
       if (playerStat.level > chosenStat.max) {
         playerStat.level = chosenStat.max;
       }
-
       if (playerStat.level < 0 && !isNaN(playerStat.level)) {
         playerStat.level = 0;
-      } //---------------------------------------
-
+      }
+      //---------------------------------------
     },
+    /* modify item */modifyItem: function modifyItem(idObject, operator, ammount) {
+      var isNext = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
 
-    /* modify item */
-    modifyItem: function modifyItem(idObject, operator, ammount) {
-
+      //elemento da usare
       var chosenItem = this.gameData.items.find(function (element) {
         return element.id == idObject;
       });
-      var nItemPlayer = this.player.item.filter(function (el) {
-        return el.id == chosenItem.id;
-      }).length;
+      var nItemPlayer;
+      if (!isNext) {
+        nItemPlayer = this.player.item.filter(function (el) {
+          return el.id == chosenItem.id;
+        }).length;
+      } else {
+        nItemPlayer = this.playerSimulation.item.filter(function (el) {
+          return el.id == chosenItem.id;
+        }).length;
+      }
       var resultAmmount;
-      var use; //resolve
+      var use;
 
+      //resolve
       switch (operator) {
         case "+":
           resultAmmount = ammount;
           use = 1;
           break;
-
         case "-":
           resultAmmount = ammount;
           use = 2;
           break;
-
         case "*":
           resultAmmount = parseInt(nItemPlayer) * parseInt(ammount);
           use = 1;
           break;
-
         case "/":
           resultAmmount = parseInt(nItemPlayer) - Math.floor(parseInt(nItemPlayer) / parseInt(ammount));
           use = 2;
           break;
-
         case "=":
           if (ammount < nItemPlayer) {
             resultAmmount = nItemPlayer - ammount;
@@ -2558,23 +2430,19 @@ var script = /*#__PURE__*/vue.defineComponent({
             resultAmmount = ammount - nItemPlayer;
             use = 1;
           }
-
           break;
       }
-
       if (use == 1) {
         for (var index = 0; index < resultAmmount; index++) {
           this.player.item.push(chosenItem);
         }
       }
-
       if (use == 2) {
         var newArray = [];
         var nPushed = 0;
         this.player.item.forEach(function (element) {
           if (chosenItem.id == element.id) {
             nPushed++;
-
             if (nPushed <= nItemPlayer - resultAmmount) {
               newArray.push(element);
             }
@@ -2583,15 +2451,15 @@ var script = /*#__PURE__*/vue.defineComponent({
           }
         });
         this.player.item = newArray;
-      } //setto lista oggetti
+      }
+
+      //setto lista oggetti
       //this.player.item = totalResult
+
       //rifaccio lista oggetti da visualizzare
-
-
       this.setPlayerItemFiltered();
     },
     //------------------------------------------------------
-
     /* leggo beem da punto di inizio a punto di fine */
     reedBeams: function reedBeams(fromId) {
       var newIdArray = [];
@@ -2606,13 +2474,10 @@ var script = /*#__PURE__*/vue.defineComponent({
     setImage: function setImage(imageName) {
       this.illustration = imageName;
     },
-
     /* ||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
-
     /* animazione selettore */
     animatePaperSelector: function animatePaperSelector() {
       var _this5 = this;
-
       if (this.hoveCharacterSheet == true) {
         if (this.subTabCharacterSheet == "stats") {
           this.player.stats.forEach(function (element) {
@@ -2645,43 +2510,32 @@ var script = /*#__PURE__*/vue.defineComponent({
         element.active = 0;
       });
     },
-
-    /* setto paper */
-    setDescriptionPaper: function setDescriptionPaper(item) {
+    /* setto paper */setDescriptionPaper: function setDescriptionPaper(item) {
       var _this6 = this;
-
       this.seletedItem = item.id;
       this.animatePaperSelector();
       this.descriptionPaperName = item.name[this.lang];
       this.descriptionPaperDescription = item.description[this.lang];
       this.oldItemTap = this.itemTap; //Object.assign({},this.itemTap)
-
       this.itemTap = this.itemTap + 1; //Object.assign({},this.itemTap) + 1
-
       setTimeout(function () {
         if (_this6.itemTap == 0) {
           _this6.seletedItem = false;
-
           _this6.animatePaperSelector();
         }
       }, 4000);
     },
-
-    /* setto lista oggetti da esporre  */
-    setPlayerItemFiltered: function setPlayerItemFiltered() {
+    /* setto lista oggetti da esporre  */setPlayerItemFiltered: function setPlayerItemFiltered() {
       var _this7 = this;
-
       var listItems = [];
       this.player.item.forEach(function (item) {
         var found = listItems.find(function (element) {
           return element.id == item.id;
         });
-
         if (found == undefined) {
           var nCopy = _this7.player.item.filter(function (element) {
             return element.id == item.id;
           }).length;
-
           var newItem = Object.assign({}, item);
           newItem.amount = nCopy;
           listItems.push(newItem);
@@ -2689,9 +2543,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       });
       this.playerItemFiltered = listItems;
     },
-
-    /* lista nodi badMix */
-    setListBadMixId: function setListBadMixId() {
+    /* lista nodi badMix */setListBadMixId: function setListBadMixId() {
       var BadMixList = "";
       var allDescription = this.currentTabs.filter(function (el) {
         return el.type == "descriptions";
@@ -2702,51 +2554,39 @@ var script = /*#__PURE__*/vue.defineComponent({
       });
       this.listBadMixId = BadMixList;
     },
-
-    /* PROJECT X ------------------------------------- */
-    activateDemo: function activateDemo() {
+    /* PROJECT X ------------------------------------- */activateDemo: function activateDemo() {
       //full screen
       function requestFullScreen(element) {
         // Supports most browsers and their versions.
         var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
-
         if (requestMethod) {
           // Native full screen.
           requestMethod.call(element);
         } else if (typeof window.ActiveXObject !== "undefined") {
           // Older IE.
           var wscript = new ActiveXObject("WScript.Shell");
-
           if (wscript !== null) {
             wscript.SendKeys("{F11}");
           }
         }
       }
-
       var elem = document.body; // Make the body go full screen.
-
       requestFullScreen(elem);
     },
-
-    /* STYLE ---------------------------------------- */
-    init: function init() {
+    /* STYLE ---------------------------------------- */init: function init() {
       if (this.useTheme) {
         this.setDevice();
         this.LoadFont();
       } else {
         this.stepToInit.font = true;
       }
-
-      console.log(this.preCachedImgList);
       this.setPreCacheImgList();
-
       if (this.preCachedImgList.length == 0) {
         this.stepToInit.img = true;
       }
     },
     LoadFont: function LoadFont() {
       var _this8 = this;
-
       this.stepToInit.font = false;
       WebFont.load({
         google: {
@@ -2762,38 +2602,30 @@ var script = /*#__PURE__*/vue.defineComponent({
     },
     setPreCacheImgList: function setPreCacheImgList() {
       var _this9 = this;
-
       this.gameData.story.tabs.forEach(function (el) {
         if (el.img) {
           if (!_this9.editorUsage) {
             var data = {};
-
             var name = _this9.indexMedia.find(function (el2) {
               return el2.Id == el.img.ID;
             }).name;
-
             var imgPathPart = _this9.pathMediaDir + "/" + name;
             var imgSize = _this9.gameData.style["img-sizes"];
-            /* list of srcset rules */
 
+            /* list of srcset rules */
             imgSize.forEach(function (elImg, index) {
               data.srcset = data.srcset + imgPathPart + "-" + elImg.width + "x" + elImg.height + ".jpg " + elImg.width + "w";
-
               if (index + 1 != imgSize.length) {
                 data.srcset = data.srcset + ",";
               }
-
               if (index + 1 != imgSize.length) {
                 data.sizes = data.sizes + "( max-width:" + elImg.width + "px ) " + elImg.width + "px, ";
               } else {
                 data.sizes = data.sizes + elImg.width + "px";
               }
               /* fallback src */
-
-
               data.src = imgPathPart + "-" + imgSize[imgSize.length - 1]["width"] + "x" + imgSize[imgSize.length - 1]["height"] + ".jpg";
             });
-
             _this9.preCachedImgList.push(data);
           } else {
             _this9.preCachedImgList.push(el.img.srcFull[0]);
@@ -2804,26 +2636,21 @@ var script = /*#__PURE__*/vue.defineComponent({
     setImgsLoaded: function setImgsLoaded() {
       this.stepToInit.img = true;
     },
-
-    /* dom method handler */
-    setDevice: function setDevice() {
+    /* dom method handler */setDevice: function setDevice() {
       if (window.innerWidth > 992) {
         this.device = "desktop";
       } else {
         this.device = "mobile";
       }
     },
-
-    /* data retriving & other feature----------------------------------------*/
-    getPlayerValues: function getPlayerValues() {
+    /* data retriving & other feature----------------------------------------*/getPlayerValues: function getPlayerValues() {
       return this.player.stats;
     },
-    getCurrentTabValues: function getCurrentTabValues() {
+    getCurrentNodesValues: function getCurrentNodesValues() {
       return this.currentTabs;
     },
-    setStartPoint: function setStartPoint(value) {
+    setStartNode: function setStartNode(value) {
       var newStart;
-
       if (typeof value === "string") {
         newStart = this.gameData.story.tabs.find(function (el) {
           return el.name == value;
@@ -2833,7 +2660,6 @@ var script = /*#__PURE__*/vue.defineComponent({
           return el.id == value;
         });
       }
-
       if (newStart) {
         this.navigation([newStart.id]);
       }
@@ -2865,15 +2691,10 @@ var _hoisted_6 = {
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_boxillustration = vue.resolveComponent("boxillustration");
-
   var _component_boxText = vue.resolveComponent("boxText");
-
   var _component_ToastContainer = vue.resolveComponent("ToastContainer");
-
   var _component_PreCachedImg = vue.resolveComponent("PreCachedImg");
-
   var _component_Spinner = vue.resolveComponent("Spinner");
-
   return _ctx.stylesObj || _ctx.useTheme == false ? (vue.openBlock(), vue.createElementBlock("div", {
     key: 0,
     "sg1-id-stroy": _ctx.idStory,
@@ -2914,26 +2735,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     preCachedImgList: _ctx.preCachedImgList,
     onSetImgsLoaded: _ctx.setImgsLoaded
   }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_6, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 14, _hoisted_1)) : vue.createCommentVNode("", true);
-}var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\n\t\tmargin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\n\t\tgrid-row: 1/3;\n\t\tpadding: 20px;\n\t\tbackground-color: whitesmoke;\n\t\toverflow: auto;\n\t\theight: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\n\t\tfont-family: monospace;\n\t\tfont-size: 16px;\n\t\tcolor: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\n\t\tmax-width: calc(100% - 50px);\n\t\tmax-width: 992px;\n\t\taspect-ratio: 1/1;\n\t\tmax-height: calc(100vh - 50px);\n\t\tmargin-top: 25px;\n\t\tmargin-right: auto;\n\t\tmargin-left: auto;\n\t\tdisplay: grid;\n\t\tgrid-template-rows: 70% 30%;\n\t\tbox-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\n\t\tgrid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\n\t\tmax-width: calc(100% - 25px);\n\t\tmargin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\n\t\tcontent: \"◆\";\n\t\tdisplay: inline-block;\n\t\tmargin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\n\t\tcursor: pointer;\n\t\tfont-size: 12px;\n\t\twidth: 2em;\n\t\theight: 2em;\n\t\tposition: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\n\t\tcontent: \"\";\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder-style: solid;\n\t\tborder-width: 1em 1em 0 1em;\n\t\tborder-color: grey transparent transparent transparent;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tobject-fit: cover;\n\t\tobject-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\n\t\tposition: relative;\n\t\toverflow: hidden;\n}\n";
-styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-5f489a16]:not(.sg1-no-theme) {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-5f489a16] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-5f489a16] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-5f489a16] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-5f489a16] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-5f489a16] {\n\t\tcolor: #67ed72;\n}\n";
+}var css_248z$1 = "\nbody {\r\n  margin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\r\n  margin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\r\n  grid-row: 1/3;\r\n  padding: 20px;\r\n  background-color: whitesmoke;\r\n  overflow: auto;\r\n  height: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\r\n  grid-column: 1/3;\r\n  grid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\r\n  font-family: monospace;\r\n  font-size: 16px;\r\n  color: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\r\n  max-width: calc(100% - 50px);\r\n  max-width: 992px;\r\n  aspect-ratio: 1/1;\r\n  max-height: calc(100vh - 50px);\r\n  margin-top: 25px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n  display: grid;\r\n  grid-template-rows: 70% 30%;\r\n  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\r\n  grid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\r\n  max-width: calc(100% - 25px);\r\n  margin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\r\n  content: \"◆\";\r\n  display: inline-block;\r\n  margin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  width: 2em;\r\n  height: 2em;\r\n  position: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\r\n  content: \"\";\r\n  width: 0;\r\n  height: 0;\r\n  border-style: solid;\r\n  border-width: 1em 1em 0 1em;\r\n  border-color: grey transparent transparent transparent;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\r\n  grid-column: 1/3;\r\n  grid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\r\n  position: relative;\r\n  overflow: hidden;\n}\r\n";
+styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-34e481d5]:not(.sg1-no-theme) {\r\n  display: grid;\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  background-color: #282828;\n}\n.sg1-load-screen[data-v-34e481d5] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.sg1-log-app[data-v-34e481d5] {\r\n  grid-row-start: 1;\r\n  grid-column-start: 1;\r\n  grid-row-end: 7;\r\n  grid-column-end: 9;\r\n  flex-direction: column;\r\n  max-width: 100% !important;\r\n  overflow: hidden;\r\n\r\n  background-color: #282828;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.sg1-log-app > *[data-v-34e481d5] {\r\n  font-size: 15px;\r\n  max-width: 100%;\r\n  padding-right: 20px;\r\n  padding-left: 20px;\r\n  width: 100%;\r\n  text-align: center;\r\n  font-family: monospace;\n}\n.sg1-game-error[data-v-34e481d5] {\r\n  color: #ed6767;\n}\n.sg1-game-message[data-v-34e481d5] {\r\n  color: #67ed72;\n}\r\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-5f489a16";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});var install = function installTestStLibrary(app) {
+script.__scopeId = "data-v-34e481d5";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});// install function executed by Vue.use()
+var install = function installTestStLibrary(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
-        componentName = _ref2[0],
-        component = _ref2[1];
-
-    app.component(componentName, component);
-  });
-}; // Create module definition for Vue.use()
-var components=/*#__PURE__*/Object.freeze({__proto__:null,'default':install,game:script});// only expose one global var, with component exports exposed as properties of
-// that global var (eg. plugin.component)
-
-Object.entries(components).forEach(function (_ref) {
-  var _ref2 = _slicedToArray(_ref, 2),
       componentName = _ref2[0],
       component = _ref2[1];
-
+    app.component(componentName, component);
+  });
+};var components=/*#__PURE__*/Object.freeze({__proto__:null,'default':install,game:script});// Attach named exports directly to plugin. IIFE/CJS will
+// only expose one global var, with component exports exposed as properties of
+// that global var (eg. plugin.component)
+Object.entries(components).forEach(function (_ref) {
+  var _ref2 = _slicedToArray(_ref, 2),
+    componentName = _ref2[0],
+    component = _ref2[1];
   if (componentName !== 'default') {
     install[componentName] = component;
   }
