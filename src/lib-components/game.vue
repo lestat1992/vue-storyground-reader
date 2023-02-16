@@ -1018,16 +1018,17 @@ export default /*#__PURE__*/ defineComponent({
 
         case "emit_function":
           if (!isNext) {
-            //create obj to emit  ################################
+
+
             let objToEmitComputed = {};
             currentTab.objToEmit.forEach((emitId) => {
               this.player.stats.forEach((vars) => {
                 if (emitId == vars.id) {
-                  objToEmitComputed[vars.name.en] = vars.value;
+                  objToEmitComputed[vars.name.en] = vars.level;
                 }
               });
             });
-            //###################################################
+
 
             if (this.canEmit) {
               this.$emit("emitByNodes", objToEmitComputed);
