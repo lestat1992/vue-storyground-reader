@@ -1018,8 +1018,19 @@ export default /*#__PURE__*/ defineComponent({
 
         case "emit_function":
           if (!isNext) {
+            //create obj to emit  ################################
+            let objToEmitComputed = {};
+            currentTab.objToEmit.forEach((emitId) => {
+              this.player.stats.forEach((vars) => {
+                if (emitId == vars.id) {
+                  objToEmitComputed[vars.name.en] = vars.value;
+                }
+              });
+            });
+            //###################################################
+
             if (this.canEmit) {
-              this.$emit("emitByNodes", currentTab.objToEmit);
+              this.$emit("emitByNodes", objToEmitComputed);
             }
             if (this.showToast) {
               this.$refs.ToastContainerRef.addToast({
@@ -1029,7 +1040,7 @@ export default /*#__PURE__*/ defineComponent({
                   ' <span class="sg1-id">ID: ' +
                   currentTab.id +
                   "</span>",
-                content: currentTab.objToEmit,
+                content: objToEmitComputed,
               });
             }
           }
