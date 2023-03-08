@@ -2044,6 +2044,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       return collectionOfTextualTabs;
     },
     /* risolvo singole tab logiche tab e passo a quelle successive il risultato è un'array di tab */ResoveTab: function ResoveTab(tab, isNext) {
+      var _this5 = this;
       function operatorResolve(dn1, operator, dn2) {
         var n1 = parseInt(dn1);
         var n2 = parseInt(dn2);
@@ -2294,14 +2295,22 @@ var script = /*#__PURE__*/vue.defineComponent({
           break;
         case "emit_function":
           if (!isNext) {
+            var objToEmitComputed = {};
+            currentTab.objToEmit.forEach(function (emitId) {
+              _this5.player.stats.forEach(function (vars) {
+                if (emitId == vars.id) {
+                  objToEmitComputed[vars.name.en] = vars.level;
+                }
+              });
+            });
             if (this.canEmit) {
-              this.$emit("emitByNodes", currentTab.objToEmit);
+              this.$emit("emitByNodes", objToEmitComputed);
             }
             if (this.showToast) {
               this.$refs.ToastContainerRef.addToast({
                 type: currentTab.type.replaceAll(" ", "_"),
                 title: currentTab.humanName.default + ' <span class="sg1-id">ID: ' + currentTab.id + "</span>",
-                content: currentTab.objToEmit
+                content: objToEmitComputed
               });
             }
           }
@@ -2477,11 +2486,11 @@ var script = /*#__PURE__*/vue.defineComponent({
     /* ||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
     /* animazione selettore */
     animatePaperSelector: function animatePaperSelector() {
-      var _this5 = this;
+      var _this6 = this;
       if (this.hoveCharacterSheet == true) {
         if (this.subTabCharacterSheet == "stats") {
           this.player.stats.forEach(function (element) {
-            if (element.id == _this5.seletedItem) {
+            if (element.id == _this6.seletedItem) {
               element.active = 2;
             } else {
               if (element.active != 0) {
@@ -2491,7 +2500,7 @@ var script = /*#__PURE__*/vue.defineComponent({
           });
         } else {
           this.playerItemFiltered.forEach(function (element) {
-            if (element.id == _this5.seletedItem) {
+            if (element.id == _this6.seletedItem) {
               element.active = 2;
             } else {
               if (element.active != 0) {
@@ -2511,7 +2520,7 @@ var script = /*#__PURE__*/vue.defineComponent({
       });
     },
     /* setto paper */setDescriptionPaper: function setDescriptionPaper(item) {
-      var _this6 = this;
+      var _this7 = this;
       this.seletedItem = item.id;
       this.animatePaperSelector();
       this.descriptionPaperName = item.name[this.lang];
@@ -2519,21 +2528,21 @@ var script = /*#__PURE__*/vue.defineComponent({
       this.oldItemTap = this.itemTap; //Object.assign({},this.itemTap)
       this.itemTap = this.itemTap + 1; //Object.assign({},this.itemTap) + 1
       setTimeout(function () {
-        if (_this6.itemTap == 0) {
-          _this6.seletedItem = false;
-          _this6.animatePaperSelector();
+        if (_this7.itemTap == 0) {
+          _this7.seletedItem = false;
+          _this7.animatePaperSelector();
         }
       }, 4000);
     },
     /* setto lista oggetti da esporre  */setPlayerItemFiltered: function setPlayerItemFiltered() {
-      var _this7 = this;
+      var _this8 = this;
       var listItems = [];
       this.player.item.forEach(function (item) {
         var found = listItems.find(function (element) {
           return element.id == item.id;
         });
         if (found == undefined) {
-          var nCopy = _this7.player.item.filter(function (element) {
+          var nCopy = _this8.player.item.filter(function (element) {
             return element.id == item.id;
           }).length;
           var newItem = Object.assign({}, item);
@@ -2586,31 +2595,31 @@ var script = /*#__PURE__*/vue.defineComponent({
       }
     },
     LoadFont: function LoadFont() {
-      var _this8 = this;
+      var _this9 = this;
       this.stepToInit.font = false;
       WebFont.load({
         google: {
           families: [this.stylesObj.fontName + ":" + this.stylesObj.fontWeightList.join()]
         },
         active: function active() {
-          _this8.stepToInit.font = true;
+          _this9.stepToInit.font = true;
         },
         inactive: function inactive() {
-          _this8.stepToInit.font = true;
+          _this9.stepToInit.font = true;
         }
       });
     },
     setPreCacheImgList: function setPreCacheImgList() {
-      var _this9 = this;
+      var _this10 = this;
       this.gameData.story.tabs.forEach(function (el) {
         if (el.img) {
-          if (!_this9.editorUsage) {
+          if (!_this10.editorUsage) {
             var data = {};
-            var name = _this9.indexMedia.find(function (el2) {
+            var name = _this10.indexMedia.find(function (el2) {
               return el2.Id == el.img.ID;
             }).name;
-            var imgPathPart = _this9.pathMediaDir + "/" + name;
-            var imgSize = _this9.gameData.style["img-sizes"];
+            var imgPathPart = _this10.pathMediaDir + "/" + name;
+            var imgSize = _this10.gameData.style["img-sizes"];
 
             /* list of srcset rules */
             imgSize.forEach(function (elImg, index) {
@@ -2626,9 +2635,9 @@ var script = /*#__PURE__*/vue.defineComponent({
               /* fallback src */
               data.src = imgPathPart + "-" + imgSize[imgSize.length - 1]["width"] + "x" + imgSize[imgSize.length - 1]["height"] + ".jpg";
             });
-            _this9.preCachedImgList.push(data);
+            _this10.preCachedImgList.push(data);
           } else {
-            _this9.preCachedImgList.push(el.img.srcFull[0]);
+            _this10.preCachedImgList.push(el.img.srcFull[0]);
           }
         }
       });
@@ -2736,9 +2745,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSetImgsLoaded: _ctx.setImgsLoaded
   }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : vue.createCommentVNode("", true), !_ctx.initialized ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_6, [vue.createVNode(_component_Spinner)])) : vue.createCommentVNode("", true)], 14, _hoisted_1)) : vue.createCommentVNode("", true);
 }var css_248z$1 = "\nbody {\r\n  margin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\r\n  margin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\r\n  grid-row: 1/3;\r\n  padding: 20px;\r\n  background-color: whitesmoke;\r\n  overflow: auto;\r\n  height: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\r\n  grid-column: 1/3;\r\n  grid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\r\n  font-family: monospace;\r\n  font-size: 16px;\r\n  color: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\r\n  max-width: calc(100% - 50px);\r\n  max-width: 992px;\r\n  aspect-ratio: 1/1;\r\n  max-height: calc(100vh - 50px);\r\n  margin-top: 25px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n  display: grid;\r\n  grid-template-rows: 70% 30%;\r\n  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\r\n  grid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\r\n  max-width: calc(100% - 25px);\r\n  margin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\r\n  content: \"◆\";\r\n  display: inline-block;\r\n  margin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  width: 2em;\r\n  height: 2em;\r\n  position: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\r\n  content: \"\";\r\n  width: 0;\r\n  height: 0;\r\n  border-style: solid;\r\n  border-width: 1em 1em 0 1em;\r\n  border-color: grey transparent transparent transparent;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\r\n  grid-column: 1/3;\r\n  grid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\r\n  position: relative;\r\n  overflow: hidden;\n}\r\n";
-styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-34e481d5]:not(.sg1-no-theme) {\r\n  display: grid;\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  background-color: #282828;\n}\n.sg1-load-screen[data-v-34e481d5] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.sg1-log-app[data-v-34e481d5] {\r\n  grid-row-start: 1;\r\n  grid-column-start: 1;\r\n  grid-row-end: 7;\r\n  grid-column-end: 9;\r\n  flex-direction: column;\r\n  max-width: 100% !important;\r\n  overflow: hidden;\r\n\r\n  background-color: #282828;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.sg1-log-app > *[data-v-34e481d5] {\r\n  font-size: 15px;\r\n  max-width: 100%;\r\n  padding-right: 20px;\r\n  padding-left: 20px;\r\n  width: 100%;\r\n  text-align: center;\r\n  font-family: monospace;\n}\n.sg1-game-error[data-v-34e481d5] {\r\n  color: #ed6767;\n}\n.sg1-game-message[data-v-34e481d5] {\r\n  color: #67ed72;\n}\r\n";
+styleInject(css_248z$1);var css_248z = "\n.sg1-game-grid[data-v-03924fc8]:not(.sg1-no-theme) {\r\n  display: grid;\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  background-color: #282828;\n}\n.sg1-load-screen[data-v-03924fc8] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.sg1-log-app[data-v-03924fc8] {\r\n  grid-row-start: 1;\r\n  grid-column-start: 1;\r\n  grid-row-end: 7;\r\n  grid-column-end: 9;\r\n  flex-direction: column;\r\n  max-width: 100% !important;\r\n  overflow: hidden;\r\n\r\n  background-color: #282828;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.sg1-log-app > *[data-v-03924fc8] {\r\n  font-size: 15px;\r\n  max-width: 100%;\r\n  padding-right: 20px;\r\n  padding-left: 20px;\r\n  width: 100%;\r\n  text-align: center;\r\n  font-family: monospace;\n}\n.sg1-game-error[data-v-03924fc8] {\r\n  color: #ed6767;\n}\n.sg1-game-message[data-v-03924fc8] {\r\n  color: #67ed72;\n}\r\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-34e481d5";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});// install function executed by Vue.use()
+script.__scopeId = "data-v-03924fc8";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,game:script});// install function executed by Vue.use()
 var install = function installTestStLibrary(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
