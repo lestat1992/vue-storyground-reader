@@ -1,16 +1,26 @@
-<!--TEST BASE-->
+<!--event-->
 <template>
+  <div v-if="counter" class="counter">
+    afterNavigation called {{ counter }} times
+  </div>
   <div id="app">
-    <game :gameData="jsonStory" />
+    <game @afterNavigation="this.counter++" />
   </div>
 </template>
+<style>
+.counter {
+  font-size: 14px;
+  font-family: monospace;
+  padding: 14px;
+  color: red;
+  text-align: center;
+}
+</style>
 <script>
-import jsonStory from "./jsonStory.json";
-
 export default {
   data() {
     return {
-      jsonStory: jsonStory,
+      counter: 0,
     };
   },
 };
