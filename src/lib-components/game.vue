@@ -122,7 +122,7 @@ export default /*#__PURE__*/ defineComponent({
     },
     disableIlustration: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     langStory: {
       type: String,
@@ -163,7 +163,7 @@ export default /*#__PURE__*/ defineComponent({
     //
     useTheme: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     canEmit: {
       type: Boolean,
@@ -1018,8 +1018,6 @@ export default /*#__PURE__*/ defineComponent({
 
         case "emit_function":
           if (!isNext) {
-
-
             let objToEmitComputed = {};
             currentTab.objToEmit.forEach((emitId) => {
               this.player.stats.forEach((vars) => {
@@ -1028,7 +1026,6 @@ export default /*#__PURE__*/ defineComponent({
                 }
               });
             });
-
 
             if (this.canEmit) {
               this.$emit("emitByNodes", objToEmitComputed);
