@@ -7,7 +7,26 @@ To see the docs [click here](https://storygroundeditor.com/devs/).
 Here's your first example to get you started:
 
 ```vue
-<game :gameData="jsonStory" />
+<template>
+  <div id="app">
+    <game :gameData="jsonStory" />
+  </div>
+</template>
+<script>
+import { game } from "vue-storyground-reader";
+import jsonStory from "./jsonStory.json";
+
+export default {
+  components: {
+    game,
+  },
+  data() {
+    return {
+      jsonStory: jsonStory,
+    };
+  },
+};
+</script>
 ```
 
 ### License

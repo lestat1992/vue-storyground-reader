@@ -1,27 +1,39 @@
-<!--event-->
+<!--METHODS-->
 <template>
-  <div v-if="counter" class="counter">
-    afterNavigation called {{ counter }} times
-  </div>
   <div id="app">
-    <game @afterNavigation="this.counter++" />
+    <game ref="gameRef" />
+  </div>
+  <div class="btns-box">
+    <button @click="setNewData()" id="btn-set-info">Set new data!</button>
+    <button @click="retriveData()" id="btn-info">Give me player data!</button>
   </div>
 </template>
 <style>
-.counter {
-  font-size: 14px;
+.btns-box {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+
+button {
+  font-size: 18px;
   font-family: monospace;
-  padding: 14px;
-  color: red;
-  text-align: center;
+  margin-right: 10px;
 }
 </style>
+
 <script>
 export default {
-  data() {
-    return {
-      counter: 0,
-    };
+  data() {},
+  methods: {
+    setNewData() {
+      this.$refs.gameRef.setPlayerValues([
+        { randomUslessValue: Math.floor(Math.random() * 100) },
+      ]);
+    },
+    retriveData() {
+      alert(JSON.stringify(this.$refs.gameRef.getPlayerValues()));
+    },
   },
 };
 </script>
