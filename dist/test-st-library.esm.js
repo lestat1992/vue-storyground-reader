@@ -1882,7 +1882,7 @@ var script = /*#__PURE__*/defineComponent({
     //
     useTheme: {
       type: Boolean,
-      default: true
+      default: false
     },
     canEmit: {
       type: Boolean,
@@ -2346,9 +2346,15 @@ var script = /*#__PURE__*/defineComponent({
             tabToAdd.push(currentTab);
           } else {
             stop = true;
-            let error = this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
-            this.onRunError.push(error);
+
+            /*
+                        //REMOVED111
+                       let error =
+                         this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+                       this.onRunError.push(error);
+                       */
           }
+
           stop = true;
           break;
         case "end":
@@ -2367,9 +2373,15 @@ var script = /*#__PURE__*/defineComponent({
             }
           } else {
             stop = true;
-            let error = this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
-            this.onRunError.push(error);
+
+            /*
+                        //REMOVED111
+                       let error =
+                         this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+                       this.onRunError.push(error);
+                       */
           }
+
           break;
         case "redirect":
           let errorRedirect = false;
@@ -2947,14 +2959,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : createCommentVNode("", true), !_ctx.initialized ? (openBlock(), createElementBlock("div", _hoisted_6, [createVNode(_component_Spinner)])) : createCommentVNode("", true)], 14, _hoisted_1)) : createCommentVNode("", true);
 }
 
-var css_248z$1 = "\nbody {\r\n  margin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\r\n  margin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\r\n  grid-row: 1/3;\r\n  padding: 20px;\r\n  background-color: whitesmoke;\r\n  overflow: auto;\r\n  height: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\r\n  grid-column: 1/3;\r\n  grid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\r\n  font-family: monospace;\r\n  font-size: 16px;\r\n  color: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\r\n  max-width: calc(100% - 50px);\r\n  max-width: 992px;\r\n  aspect-ratio: 1/1;\r\n  max-height: calc(100vh - 50px);\r\n  margin-top: 25px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n  display: grid;\r\n  grid-template-rows: 70% 30%;\r\n  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\r\n  grid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\r\n  max-width: calc(100% - 25px);\r\n  margin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\r\n  content: \"◆\";\r\n  display: inline-block;\r\n  margin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\r\n  cursor: pointer;\r\n  font-size: 12px;\r\n  width: 2em;\r\n  height: 2em;\r\n  position: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\r\n  content: \"\";\r\n  width: 0;\r\n  height: 0;\r\n  border-style: solid;\r\n  border-width: 1em 1em 0 1em;\r\n  border-color: grey transparent transparent transparent;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\r\n  grid-column: 1/3;\r\n  grid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\r\n  position: relative;\r\n  overflow: hidden;\n}\r\n";
+var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\n\t\tmargin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\n\t\tgrid-row: 1/3;\n\t\tpadding: 20px;\n\t\tbackground-color: whitesmoke;\n\t\toverflow: auto;\n\t\theight: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\n\t\tfont-family: monospace;\n\t\tfont-size: 16px;\n\t\tcolor: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\n\t\tmax-width: calc(100% - 50px);\n\t\tmax-width: 992px;\n\t\taspect-ratio: 1/1;\n\t\tmax-height: calc(100vh - 50px);\n\t\tmargin-top: 25px;\n\t\tmargin-right: auto;\n\t\tmargin-left: auto;\n\t\tdisplay: grid;\n\t\tgrid-template-rows: 70% 30%;\n\t\tbox-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\n\t\tgrid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\n\t\tmax-width: calc(100% - 25px);\n\t\tmargin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\n\t\tcontent: \"◆\";\n\t\tdisplay: inline-block;\n\t\tmargin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\n\t\tcursor: pointer;\n\t\tfont-size: 12px;\n\t\twidth: 2em;\n\t\theight: 2em;\n\t\tposition: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\n\t\tcontent: \"\";\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder-style: solid;\n\t\tborder-width: 1em 1em 0 1em;\n\t\tborder-color: grey transparent transparent transparent;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tobject-fit: cover;\n\t\tobject-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\n\t\tposition: relative;\n\t\toverflow: hidden;\n}\n";
 styleInject(css_248z$1);
 
-var css_248z = "\n.sg1-game-grid[data-v-03924fc8]:not(.sg1-no-theme) {\r\n  display: grid;\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  background-color: #282828;\n}\n.sg1-load-screen[data-v-03924fc8] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.sg1-log-app[data-v-03924fc8] {\r\n  grid-row-start: 1;\r\n  grid-column-start: 1;\r\n  grid-row-end: 7;\r\n  grid-column-end: 9;\r\n  flex-direction: column;\r\n  max-width: 100% !important;\r\n  overflow: hidden;\r\n\r\n  background-color: #282828;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.sg1-log-app > *[data-v-03924fc8] {\r\n  font-size: 15px;\r\n  max-width: 100%;\r\n  padding-right: 20px;\r\n  padding-left: 20px;\r\n  width: 100%;\r\n  text-align: center;\r\n  font-family: monospace;\n}\n.sg1-game-error[data-v-03924fc8] {\r\n  color: #ed6767;\n}\n.sg1-game-message[data-v-03924fc8] {\r\n  color: #67ed72;\n}\r\n";
+var css_248z = "\n.sg1-game-grid[data-v-101a50ee]:not(.sg1-no-theme) {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-101a50ee] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-101a50ee] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-101a50ee] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-101a50ee] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-101a50ee] {\n\t\tcolor: #67ed72;\n}\n";
 styleInject(css_248z);
 
 script.render = render;
-script.__scopeId = "data-v-03924fc8";
+script.__scopeId = "data-v-101a50ee";
 
 /* eslint-disable import/prefer-default-export */
 
