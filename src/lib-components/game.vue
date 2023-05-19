@@ -208,97 +208,6 @@
 				playerSimulation: {},
 				currentTabs: [],
 				nextTabsChose: [],
-export default /*#__PURE__*/ defineComponent({
-  name: "game",
-  components: {
-    boxillustration: boxIllustration,
-    boxText: boxText,
-    PreCachedImg: PreCachedImg,
-    Spinner: Spinner,
-    ToastContainer: ToastContainer,
-  },
-  props: {
-    idStory: {
-      type: Number,
-      default: 0,
-    },
-    editorUsage: {
-      type: Boolean,
-      default: true,
-    },
-    disableIlustration: {
-      type: Boolean,
-      default: true,
-    },
-    langStory: {
-      type: String,
-      default: "null-lang",
-    },
-    langEditor: {
-      type: String,
-      default: "en",
-    },
-    strings: {
-      type: Object,
-      default: defaultStrings,
-    },
-    gameData: {
-      type: Object,
-      default: defaultStory,
-    },
-    indexMedia: {
-      type: Object,
-      default: defaultIndexMedia,
-    },
-    pathMediaDir: {
-      type: String,
-      default: "http://your-website/media",
-    },
-    width: {
-      type: String,
-      default: "100vw",
-    },
-    height: {
-      type: String,
-      default: "100vh",
-    },
-    stopLink: {
-      type: Boolean,
-      default: false,
-    },
-    //
-    useTheme: {
-      type: Boolean,
-      default: false,
-    },
-    canEmit: {
-      type: Boolean,
-      default: true,
-    },
-    showToast: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  emits: ["emitByNodes", "onInit", "beforeNavigation", "afterNavigation"],
-  data: function () {
-    return {
-      idRendered: false,
-      initialized: false,
-      stepToInit: {
-        font: false,
-        img: false,
-      },
-      preCachedImgList: [],
-      lang: false,
-      textualTabs: ["descriptions", "chose", "game over"],
-      playerState: "playing",
-      player: {
-        item: [],
-      },
-      playerSimulation: {},
-      currentTabs: [],
-      nextTabsChose: [],
 
 				illustration: false,
 
@@ -849,11 +758,11 @@ export default /*#__PURE__*/ defineComponent({
 							stop = true;
 
 							/*
-						              //REMOVED111
-							            let error =
-							              this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
-							            this.onRunError.push(error);
-							            */
+					              //REMOVED111
+						            let error =
+						              this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+						            this.onRunError.push(error);
+						            */
 						}
 						stop = true;
 
@@ -879,11 +788,11 @@ export default /*#__PURE__*/ defineComponent({
 							stop = true;
 
 							/*
-						              //REMOVED111
-							            let error =
-							              this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
-							            this.onRunError.push(error);
-							            */
+					              //REMOVED111
+						            let error =
+						              this.strings.nodeBadMix[this.langEditor] + currentTab.id + ")";
+						            this.onRunError.push(error);
+						            */
 						}
 						break;
 					case "redirect":
@@ -1140,16 +1049,6 @@ export default /*#__PURE__*/ defineComponent({
 									}
 								});
 							});
-        case "emit_function":
-          if (!isNext) {
-            let objToEmitComputed = {};
-            currentTab.objToEmit.forEach((emitId) => {
-              this.player.stats.forEach((vars) => {
-                if (emitId == vars.id) {
-                  objToEmitComputed[vars.name.en] = vars.level;
-                }
-              });
-            });
 
 							if (this.canEmit) {
 								this.$emit("emitByNodes", objToEmitComputed);
@@ -1168,23 +1067,6 @@ export default /*#__PURE__*/ defineComponent({
 						}
 						break;
 				}
-            if (this.canEmit) {
-              this.$emit("emitByNodes", objToEmitComputed);
-            }
-            if (this.showToast) {
-              this.$refs.ToastContainerRef.addToast({
-                type: currentTab.type.replaceAll(" ", "_"),
-                title:
-                  currentTab.humanName.default +
-                  ' <span class="sg1-id">ID: ' +
-                  currentTab.id +
-                  "</span>",
-                content: objToEmitComputed,
-              });
-            }
-          }
-          break;
-      }
 
 				if (stop == false) {
 					/* trovo nodi successivi perchè il corrente nodo non si può visualizzare */
