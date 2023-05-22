@@ -177,21 +177,20 @@ var defaultStrings = {
 	redirectError: redirectError,
 	urlRedirect: urlRedirect
 };var postInfo = {
-	title: "Placeholder",
-	lenghtDescriptionsNode: 400,
-	lenghtChoseNode: 20,
+	title: "John",
+	lenghtDescriptionsNode: 600,
+	lenghtChoseNode: 1000,
 	selectedWorkSpace: 1,
-	privateLink: false,
 	langList: [
-		"it",
 		"en"
 	],
+	selectedExample: false,
 	templateSelected: "White"
 };
 var erorList = {
 	noStart: false
 };
-var MaxId = 16;
+var MaxId = 250;
 var levels = [
 ];
 var achievements = [
@@ -199,6 +198,60 @@ var achievements = [
 var items = [
 ];
 var stats = [
+	{
+		id: 63,
+		name: {
+			en: "THE CLUB"
+		},
+		max: 1,
+		slug: "THE CLUB",
+		active: true
+	},
+	{
+		id: 73,
+		name: {
+			en: "sign"
+		},
+		max: 1,
+		slug: "sign",
+		active: true
+	},
+	{
+		id: 100,
+		name: {
+			en: "slingshot"
+		},
+		max: 1,
+		slug: "slingshot",
+		active: true
+	},
+	{
+		id: 101,
+		name: {
+			en: "invisibility cape"
+		},
+		max: 1,
+		slug: "invisibility cape",
+		active: true
+	},
+	{
+		id: 102,
+		name: {
+			en: "follower"
+		},
+		max: 1,
+		slug: "follower",
+		active: true
+	},
+	{
+		id: 170,
+		name: {
+			en: "HP"
+		},
+		max: 3,
+		slug: "HP",
+		active: true
+	}
 ];
 var story = {
 	tabs: [
@@ -208,46 +261,29 @@ var story = {
 				"default": "start"
 			},
 			level: 0,
-			name: "start",
+			name: "Maximilian the Magical Knight",
 			type: "start",
 			gameStart: true,
-			levelStart: false,
-			x: 607,
-			y: 68.8125
+			levelStart: true,
+			x: 342,
+			y: 9
 		},
 		{
 			id: 2,
 			humanName: {
-				"default": "text",
-				textImage: "text & image"
+				"default": "sentence",
+				textImage: "sentence & image"
 			},
 			level: 0,
 			name: "descriptions0",
 			text: {
-				it: "Questa è una storia segnaposto, sei interessato a proseguire?",
-				en: "This is a placeholder story"
+				en: "Maximilian, the Magical Knight, stretched his back and loudly yawned, scratching his butt clad in his heart-patterned boxers. He reached for his coffee mug that said “World's #1 Magical Knight” (that he had bought himself) and poured himself some of the dark liquid.\rAfter that he:"
 			},
 			type: "descriptions",
-			img: {
-				ID: 1315,
-				srcFull: [
-					"https://storygroundeditor.com/media-placeholder.jpg",
-					1920,
-					1080,
-					false
-				],
-				srcThumbnail: [
-					"https://storygroundeditor.com/media-placeholder.jpg",
-					150,
-					150,
-					true
-				],
-				post_name: "29695f55c408397b6eeb453fb59d40d9_img-1"
-			},
-			save: false,
+			img: false,
 			textRevision: false,
-			x: 576,
-			y: 189.8125
+			x: 344,
+			y: 121
 		},
 		{
 			id: 4,
@@ -257,62 +293,1190 @@ var story = {
 			level: 0,
 			name: "chose0",
 			text: {
-				it: "si",
-				en: "yes"
+				en: "Decided it was not worth adventuring that day and went back to sleep"
 			},
 			type: "chose",
 			textRevision: false,
-			x: 480,
-			y: 531.8125
+			x: 233,
+			y: 257
 		},
 		{
-			id: 5,
+			id: 6,
+			humanName: {
+				"default": "game over"
+			},
+			level: 0,
+			name: "game over0",
+			type: "game over",
+			text: {
+				en: "He shrugged, realised somebody else would take care of his knightly duties, and climbed back onto his bed, hugging his stuffed knight. Your adventure ends here."
+			},
+			img: false,
+			textRevision: false,
+			x: 231,
+			y: 340
+		},
+		{
+			id: 8,
 			humanName: {
 				"default": "choice"
 			},
 			level: 0,
 			name: "chose1",
 			text: {
-				it: "no",
-				en: "no"
+				en: "Reached for the newspaper"
 			},
 			type: "chose",
 			textRevision: false,
-			x: 781,
-			y: 595.8125
+			x: 433,
+			y: 257
 		},
 		{
 			id: 10,
 			humanName: {
-				"default": "text",
-				textImage: "text & image"
+				"default": "sentence",
+				textImage: "sentence & image"
 			},
 			level: 0,
 			name: "descriptions1",
 			text: {
-				it: "Non c'è molto altro da dire, come ti ho detto...",
-				en: "There isn't much more to say, as I told you...\r"
+				en: "He leafed through “Ye Magicale Newspapere (nowe withe extra Es!)” and found what he was looking for: the jobs listings. Being a magical knight was usually very profitable, but sometimes he found himself struggling lightly, so he had to get a one off job, usually escorting some nobles or slaying a mighty beast. His attention was caught by two offers:\r"
 			},
 			type: "descriptions",
 			img: false,
-			save: false,
 			textRevision: false,
-			x: 473,
-			y: 681.8125
+			x: 435,
+			y: 340
 		},
 		{
-			id: 11,
+			id: 12,
 			humanName: {
-				"default": "null"
+				"default": "choice"
 			},
 			level: 0,
-			type: "null",
-			x: 149,
-			y: 319.8125,
-			name: "null0"
+			name: "chose2",
+			text: {
+				en: "MAGICAL KNIGHT WANTED: WE ARE IN NEED OF A STRONG MAGICAL KNIGHT THAT CAN RID US OF THE EVIL SORCERER GREB-HAN, WHO HAUNTS OUR VILLAGE"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 335,
+			y: 481
 		},
 		{
-			id: 15,
+			id: 13,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose3",
+			text: {
+				en: "EVIL CORPORATION INC. IS LOOKING FOR A YOUNG, DYNAMIC RESOURCE TO JOIN OUR FAMILY-LIKE TEAM! WE ARE SEARCHING FOR A PRO-ACTIVE YOUNG MAN OR WOMAN WHO'S WILLING TO BE A TEAMPLAYER FOR THE COMPANY (DID WE MENTION THAT IT'S LIKE A FAMILY?) FOR A FULL TIME POSITION! SALARY: UNPAID INTERNSHIP"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 544,
+			y: 483
+		},
+		{
+			id: 16,
+			humanName: {
+				"default": "game over"
+			},
+			level: 0,
+			name: "game over1",
+			type: "game over",
+			text: {
+				en: "With the eagerness of somebody who has never been scammed in their life before, Maximilian clicked on the link and applied for the job, even though he wasn't seeing the ad on a computer; such was his wonder at this offer. To this day, he's still working there as an unpaid intern. Your adventure ends here."
+			},
+			img: false,
+			textRevision: false,
+			x: 546,
+			y: 589
+		},
+		{
+			id: 18,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions2",
+			text: {
+				en: "Sensing that an offer aimed at magical knight would be suitable for a magical knight like himself (as he was, in fact, a magical knight), Maximilian called the number listed on it on his trusty magical phone."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 334,
+			y: 590
+		},
+		{
+			id: 20,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions3",
+			text: {
+				en: "The woman on the other end of the line gave him an approximate idea of her village's location and in a few minutes he donned his magical armor and was ready to depart.\rHe mounted his trusty mare, Raila, and headed East, where the village was located. "
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 333,
+			y: 728
+		},
+		{
+			id: 23,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions4",
+			text: {
+				en: "After a few minutes he noticed a cave adorned with crushed skulls of all shapes and sizes. He immediately recognised the cave as a den of bonkers, a completely insane subspecies of goblins who vanquished their enemies by hitting them on the head with wooden clubs wielded with inhuman strength. He:"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 548,
+			y: 732
+		},
+		{
+			id: 25,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose4",
+			text: {
+				en: "Decided to enter the cave"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 330,
+			y: 878
+		},
+		{
+			id: 26,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose5",
+			text: {
+				en: "Left the cave alone"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 547,
+			y: 877
+		},
+		{
+			id: 27,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose6",
+			text: {
+				en: "Put up a sign to warn less experienced adventurers"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 759,
+			y: 878
+		},
+		{
+			id: 31,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions5",
+			text: {
+				en: "Maximilian decided that he couldn't bear the thought of all those goblins going unslayed, so he dismounted his horse and approached the entrance of the bonkers den...\rIn the dim light of the cave, he could sometimes hear the noise of skulls getting shattered, the main form of entertainment of the bonkers."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 83,
+			y: 981
+		},
+		{
+			id: 33,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions6",
+			text: {
+				en: "He would show them: he would destroy them all with his magical sword, denying them the glorious end every bonker wishes for (getting bonked on the head while trying to bonk some other creature). Bonked helmets of long-gone warriors cluttered the floor, as Maximilian reached the main chamber of the cave and saw three bonkers engaged in their favourite activity. He:"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 310,
+			y: 980
+		},
+		{
+			id: 35,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions7",
+			text: {
+				en: "Knowing full well the horrors of a full pack of bonkers, Maximilian decided that his quest was more important than a few mad goblins and steered clear of the cave\r"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 535,
+			y: 979
+		},
+		{
+			id: 37,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions8",
+			text: {
+				en: "Knowing full well the horrors of a full pack of bonkers, Maximilian nonetheless realised that not all adventurers were as familiar with them as he was, so he decided to warn them by hanging up a sign that said “DON'T BONKERS OPEN INSIDE”, referencing a popular TV show he liked."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 751,
+			y: 976
+		},
+		{
+			id: 39,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose7",
+			text: {
+				en: "Confronted them head on"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 91,
+			y: 1149
+		},
+		{
+			id: 41,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose8",
+			text: {
+				en: "Sneaked past them"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 313,
+			y: 1148
+		},
+		{
+			id: 43,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions9",
+			text: {
+				en: "Enraged by the savagery of the head-obsessed creatures, Maximilian let out a powerful “cowaBONKa!” as he descended on the three unsuspecting monsters and managed to cut two down before the third had time to react. The third being raised its club, and in response Maximilian:"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 37,
+			y: 1249
+		},
+		{
+			id: 45,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose9",
+			text: {
+				en: "Tried to parry the blow"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 18,
+			y: 1391
+		},
+		{
+			id: 47,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose10",
+			text: {
+				en: "Tried to cast a defensive spell"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 231,
+			y: 1390
+		},
+		{
+			id: 49,
+			humanName: {
+				"default": "game over"
+			},
+			level: 0,
+			name: "game over2",
+			type: "game over",
+			text: {
+				en: "Maximilian instinctively raised his sword to parry the bludgeon, but that week the bonker had been training extra hard at the gym, so the hit still went through. Maximilian fell, the last words he heard “ONKA BONKA!” as his adventure was ended prematurely by the creature's +5 wooden club.\r"
+			},
+			img: false,
+			textRevision: false,
+			x: 7,
+			y: 1479
+		},
+		{
+			id: 51,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions10",
+			text: {
+				en: "In a moment he quickly muttered the magic words and, before the club hit his helmeted noggin, the spell of unbonkability was active and the monster's weapon simply missed its mark. “Don't you know that diamond is unbonkable?”, he quipped, and the creature was vanquished by the sheer stupidity of the one-liner before Maximilian had the chance to finish it himself. "
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 226,
+			y: 1475
+		},
+		{
+			id: 53,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions11",
+			text: {
+				en: "Maximilian took a moment to recover and thought with some pride that his nerdy schoolmates had said a spell of unbonkability was a stupid idea. “Who's the stupid now, Steve?” he thought as he recognised his former's schoolmate's helmet among the monsters' loot, thouroughly bonked."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 435,
+			y: 1400
+		},
+		{
+			id: 55,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions12",
+			text: {
+				en: "Being cautious of their bonkable prowess, Maximilian thought the best course of action would be to sneak past the monsters, and he reached what years of playing online videogames taught him to be the treasure room. "
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 316,
+			y: 1237
+		},
+		{
+			id: 57,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions13",
+			text: {
+				en: "In a large chest he found the bonkers' most prized possession: THE CLUB, spelt in all caps. THE CLUB, a truly legendary instrument of bonkage, would certainly aid him in his fight against the evil sorcerer. “Ah yes, truly one of the clubs ever wielded”, he reflected.\r"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 648,
+			y: 1404
+		},
+		{
+			id: 60,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions14",
+			text: {
+				en: "Maximilian kept heading towards Greb-Han's fortress, as he started smelling a really unusual smell coming from a nearby building. It seemed out of place in his fantasy world, as the door had a very cyberpunk feeling to it. \rMaximilian:"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 905,
+			y: 1237
+		},
+		{
+			id: 62,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 63,
+			operator: "+",
+			ammount: 1,
+			x: 557,
+			y: 1232,
+			name: "set stat0"
+		},
+		{
+			id: 66,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose11",
+			text: {
+				en: "Entered the building"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 871,
+			y: 1388
+		},
+		{
+			id: 69,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions15",
+			text: {
+				en: "Immediately after entering the strange building, he got a tutorial notification from his magical helmet explaining to him what lurked inside the cave. “Crap, I thought I disabled those”, he muttered, as the message informed him that the cave dwellers were skeletrons. He immediately assumed the message had a typo in it, but it was actually the monsters' name. Skeletrons were born out of a fantasy author making a spelling mistake while writing his novel. "
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 869,
+			y: 1473
+		},
+		{
+			id: 71,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions16",
+			text: {
+				en: "The added R in their name would prove fruitful, though, as it would change the nature of the skeletons and give them the abilities and features of robots.\rThe neon lights made the building very hard to get lost into, and it wasn't very intricate anyway, but standing between Maximilian and what seemed to be a treasure chest was a gigantic skeletron. It looked like a human skeleton, but it was made of metal and its eye sockets were filled with a strange, seemingly artificial glow. Maximilian:"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 433,
+			y: 1533
+		},
+		{
+			id: 78,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose12",
+			text: {
+				en: "Approached the titan"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 22,
+			y: 1628
+		},
+		{
+			id: 79,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose13",
+			text: {
+				en: "Circled around the titan"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 228,
+			y: 1628
+		},
+		{
+			id: 82,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions17",
+			text: {
+				en: "The robot didn't seem to be active, but Maximilian was suspicious. He approached it and:\r"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 22,
+			y: 1717
+		},
+		{
+			id: 84,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose14",
+			text: {
+				en: "Gave the building a wide berth"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 1099,
+			y: 1394
+		},
+		{
+			id: 86,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions18",
+			text: {
+				en: "Maximilian was largely suspicious of this out of place location and its curious smell of brand new car, so he thought his best bet would be to leave the dungeon be and didn't even bother considering a sign, this time. "
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 1087,
+			y: 1476
+		},
+		{
+			id: 88,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose15",
+			text: {
+				en: "Talked to it"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 20,
+			y: 1861
+		},
+		{
+			id: 89,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose16",
+			text: {
+				en: "Hit it as hard as he could with his sword"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 242,
+			y: 1801
+		},
+		{
+			id: 92,
+			humanName: {
+				"default": "game over"
+			},
+			level: 0,
+			name: "game over3",
+			type: "game over",
+			text: {
+				en: "Noticing the creature's gargantuan size, Maximilian decided ignoring it would be wiser than fighting it. It didn't seem to be active anyway. As soon as he started opening the chest and turned away from it, though, the giant swung at him, said “-PLAYER NAME-:YOUR ADVENTURE ENDS HERE” and sent Maximilian back to the beginning of the game. Your adventure ends here, but you probably figured that out already."
+			},
+			img: false,
+			textRevision: false,
+			x: 235,
+			y: 1723
+		},
+		{
+			id: 94,
+			humanName: {
+				"default": "game over"
+			},
+			level: 0,
+			name: "game over4",
+			type: "game over",
+			text: {
+				en: "Maximilian readied his mighty sword, swung at the robot with all his might and the blade simply bounced off. The skeletron picked him up effortlessly, yelled “-PLAYER NAME-:YOUR ADVENTURE ENDS HERE” and sent Maximilian back to the beginning of the game. Your adventure ends here.\r"
+			},
+			img: false,
+			textRevision: false,
+			x: 241,
+			y: 1885
+		},
+		{
+			id: 96,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions19",
+			text: {
+				en: "Sensing that the construct was probably aware, and simply waiting for him to do something first, Maximilian started talking to it. The towering creature asked: “WHAT ARE YOUR ORDERS?”"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 25,
+			y: 1947
+		},
+		{
+			id: 98,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions20",
+			text: {
+				en: "Maximilian, eyeing the treasure chest while drooling slightly at the prospect of a powerful item, responded:\r“Allow me to loot the building”. \r“AS YOU ORDER”, replied the skeletron, and left Maximilian free to do what he wanted to.\nMaximilian opened the chest while the skeletron kept watching over the entrance, and inside found a slingshot and some ammo for it.\n“Did I just risk getting bodied by a giant robot skeleton for this!?” he thought, cursing the fact he was just a character in a story."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 238,
+			y: 1966
+		},
+		{
+			id: 103,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions21",
+			text: {
+				en: "The village was getting closer and closer and Maximilian was starting to sense Greb-Han's presence in the surrounding area. Before meeting the sorcerer, however, he decided he needed to explore the area in case some servant of his enemy was lurking around. "
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 685,
+			y: 1629
+		},
+		{
+			id: 105,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions22",
+			text: {
+				en: "He saw a small, isolated hut which was clearly inhabited by somebody who was up to something, so he approached the tiny house. He knocked on the door, and an old lady welcomed him. She seemed innocent enough, so Maximilian wasn't sure whether he should trust his instincts. \rThe lady invited him for a drink and he accepted. She presented him with a chalice containing a bubbling liquid, and Maximilian:"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 447,
+			y: 1813
+		},
+		{
+			id: 107,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose17",
+			text: {
+				en: "Downed the beverage"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 446,
+			y: 1955
+		},
+		{
+			id: 109,
+			humanName: {
+				"default": "game over"
+			},
+			level: 0,
+			name: "game over5",
+			type: "game over",
+			text: {
+				en: "Thirst was too much of a burden for the weary magical knight, so Maximilian gulped down the content of the chalice in a moment. Unfortunately, letting his guard down would prove his undoing, as the malicious old lady had filled the liquid with a powerful laxative, so Maximilian had to spend the rest of his adventure using the restroom. Your adventure ends here"
+			},
+			img: false,
+			textRevision: false,
+			x: 446,
+			y: 2043
+		},
+		{
+			id: 111,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose18",
+			text: {
+				en: "Exerted caution"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 659,
+			y: 1958
+		},
+		{
+			id: 113,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions23",
+			text: {
+				en: "Maximilian had read too many comic books to trust an apparently innocent old lady offering him a steaming hot liquid, so he knew what to do: he waited for the old woman to turn around and then emptied the content of his cup in a nearby houseplant. He tried not to think too hard about the fact it immediately withered and confronted the old lady.\r"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 666,
+			y: 2046
+		},
+		{
+			id: 115,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions24",
+			text: {
+				en: "She admitted to being a servant of Greb-Han's, but didn't hide her distaste for that man, as indicated by her words: “I don't hide my distaste for that man”. “She doesn't hide her distaste for that man”, Maximilian noticed thoughtfully. She then offered her help if Maximilian would forgive her for her action. Maximilian had to make a choice:"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 232,
+			y: 2161
+		},
+		{
+			id: 117,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose19",
+			text: {
+				en: "He would forgive her. She had only tried to poison him, after all"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 63,
+			y: 2303
+		},
+		{
+			id: 118,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose20",
+			text: {
+				en: "He would leave her alone, but wouldn't accept her help"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 286,
+			y: 2304
+		},
+		{
+			id: 121,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions25",
+			text: {
+				en: "Well, what the heck! The old lady had only poisoned him, he was used to much worse pranks at the magical knight academy. He agreed to forgive the lady, who thanked him and handed him what looked like a an old cape. Maximilian cast a spell of detection on it and immediately understood that it was enchanted so to make the wearer invisible temporarily. He reached the village."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 61,
+			y: 2401
+		},
+		{
+			id: 123,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 101,
+			operator: "+",
+			ammount: 1,
+			x: 61,
+			y: 2546,
+			name: "set stat1"
+		},
+		{
+			id: 125,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions26",
+			text: {
+				en: "Offended by the old lady's attempt at thwarting his mission, Maximilian spat on the floor and refused to be helped by her, knowing too well that she may be trying to trick him. He left the tiny hut without turning back and headed towards the nearby village.\r"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 286,
+			y: 2398
+		},
+		{
+			id: 127,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions27",
+			text: {
+				en: "At the village, Maximilian saw a few people gathering in the town square, and as he got closer, the people started cheering for him and celebrating the arrival of the magical knight. \rAs his heart was filled with pride, Maximilian asked them to tell him all they could about the evil Greb-Han. \rThe same woman he had spoken to welcomed him in her house and explained the lore of Greb-Han. The sorcerer had taken residence in an ancient castle not too far from the village, and he had cast a very powerful spell that prevented them all from leaving, sort of like a barrier."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 283,
+			y: 2550
+		},
+		{
+			id: 130,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions28",
+			text: {
+				en: "Unfortunately, now that Maximilian was inside the village, he was also stuck in the village until Greb-Han was defeated. He liked to terrorise the villagers by taking away their supplies and what few gold coins they had and occasionally got from other people who unknowingly entered the barrier.\rMax cracked his knuckles, cracked his neck, cracked every other crackable bone he had and got ready to fight."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 283,
+			y: 2683
+		},
+		{
+			id: 132,
+			humanName: {
+				"default": "if stat"
+			},
+			level: 0,
+			type: "if stat",
+			idStat: 73,
+			operator: ">=",
+			ammount: 1,
+			trueId: [
+				134
+			],
+			falseId: [
+				136
+			],
+			x: 283,
+			y: 2823,
+			name: "if stat0"
+		},
+		{
+			id: 134,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions29",
+			text: {
+				en: "Before leaving for the castle, which was conveniently placed inside the barrier so that Greb-Han had a way to reach the people to exact his tribute, Maximilian met a young girl, dressed in what looked like a slightly less advanced armor than his, but magical and powerful nonetheless.\rShe approached Maximilian and explained that she had found herself here during her travels, and that she was mercifully saved from a pack of bonkers by a sign somebody had put outside their den. She was deathly afraid of bonkers, so fighting them would have proven too much for her."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 62,
+			y: 2942
+		},
+		{
+			id: 136,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions30",
+			text: {
+				en: "Maximilian reached the castle, cracked his gauntleted knuckles again and prepared to enter. He was soon greeted by the sorcerer, who stood at a high balcony and taunted him saying that he would have to face his gauntlet before being able to lay a finger on him. Maximilian looked at his armored glove, confused, Greb-Han sighed and disappeared in the depths of the castle.\rMaximilian found himself in a room with three doors, one of which was unlocked. As he opened it, he was teleported in a strange arena with an armored figure more than twice his size, with a blue armor and a bright red helmet.\r"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 409,
+			y: 2927
+		},
+		{
+			id: 140,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 73,
+			operator: "+",
+			ammount: 1,
+			x: 901,
+			y: 1114,
+			name: "set stat2"
+		},
+		{
+			id: 145,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions31",
+			text: {
+				en: "Remembering the absolute power of the bonkers, Maximilian channelled their bonkness in the mythical artefact he had found in their lair: THE CLUB (in all caps). He leaped in the air, despite his heavy armor, and delivered an immensely powerful bonking to the giant, who just disappeared in a white mist. Max beat his chest like a crazed gorilla and was teleported back to the room with the three doors. The second one was now open."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 97,
+			y: 3267
+		},
+		{
+			id: 155,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions33",
+			text: {
+				en: "Maximilian cursed in a kid-friendly way and got ready to fight against this behemoth. He was an incredibly skilled swordsman, and had he had a strong weapon capable of bonking the creature, he would have been victorious pretty easily. Luckily, though, the young nameless girl from the village who had survived the bonkers thanks to his indirect intervention was there to assist. She distracted the monster long enough for Maximilian to defeat it, though in doing so she suffered some wounds. She was ok, but wouldn't be able to assist with further trials."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 337,
+			y: 3281
+		},
+		{
+			id: 157,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions34",
+			text: {
+				en: "Maximilian entered the second room, and immediately found himself in a room with eyes painted on every wall. Creepiness aside, he knew this was probably another trial, so he advanced carefully. As soon as he entered the peripheral vision of one of the eyes, it shot an arrow towards him. He was quick enough to avoid it, but without magical assistance, it would be hard to reach the end of the room unscathed. On the other end of it was, he was sure of this, the way forward."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 238,
+			y: 3482
+		},
+		{
+			id: 161,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 100,
+			operator: "+",
+			ammount: 1,
+			x: 14,
+			y: 2105,
+			name: "set stat4"
+		},
+		{
+			id: 164,
+			humanName: {
+				"default": "if stat"
+			},
+			level: 0,
+			type: "if stat",
+			idStat: 101,
+			operator: ">=",
+			ammount: 1,
+			trueId: [
+				166
+			],
+			falseId: [
+				167
+			],
+			x: 127,
+			y: 3660,
+			name: "if stat3"
+		},
+		{
+			id: 166,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions35",
+			text: {
+				en: "He donned the cape of invisibility that the old lady had given him, knowing that if it was a trap, it couldn't possibly make this situation any worse. He took a timid step, ready to back off in case the cape proved to attract even more arrows or something, but to his surprise, the eyes seemed actually unable to see him when he was wearing it. Undisturbed by them, he reached the opposite side of the room and was once again teleported in the now familiar room with the three doors. The last one was open...\r"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 74,
+			y: 3808
+		},
+		{
+			id: 167,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions36",
+			text: {
+				en: "Maximilian knew he was going to get hit at least a couple of times, so he meditated for a second, adjusted his breath and then broke into a mad dash waving his arms like a lunatic, hoping that by sheer luck the arrows would miss him. He arrived at the end of the room, but he did take one arrow to the knee, though the outdated reference to pop culture hurt much more than the wound. He was once again teleported in the now familiar room with the three doors. The last one was open..."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 363,
+			y: 3767
+		},
+		{
+			id: 171,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions37",
+			text: {
+				en: "He entered the final door and was greeted by Greb-Han himself, grinning on top of a staircase, menacingly. “Welcome to the true test, magical dork!”, he taunted Maximilian, and chugged a potion whose label said “potion of infinite mana, keep away from children and wizards”. It said that in the sense that it spoke words... look, it's magic, ok? Anyway, Greb-Han started throwing fireball after fireball at the main character, who did his best to climb the staircase while dodging them.\r"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 188,
+			y: 3962
+		},
+		{
+			id: 174,
+			humanName: {
+				"default": "if stat"
+			},
+			level: 0,
+			type: "if stat",
+			idStat: 100,
+			operator: ">=",
+			ammount: 1,
+			trueId: [
+				178
+			],
+			falseId: [
+				176
+			],
+			x: 186,
+			y: 4113,
+			name: "if stat4"
+		},
+		{
+			id: 176,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions38",
+			text: {
+				en: "Maximilian did his best to try and avoid the fireballs, but he was bound to be hit by some."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 364,
+			y: 4218
+		},
+		{
+			id: 178,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions39",
+			text: {
+				en: "Channeling his inner spiky-haired yellow boy, Maximilian pulled out his non-magical slingshot which he thought would be useless and started shooting at the sorcerer.\r“Yo, dude, cut it out!”, the evil old man cried, as he was hit square in the forehead. Maximilian took advantage of his lapse in concentration to be upon him and knocked him out with one single punch. \rHe then convinced the sorcerer, under the threat of a big bonk, to leave the village alone."
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 54,
+			y: 4227
+		},
+		{
+			id: 216,
+			humanName: {
+				"default": "sentence",
+				textImage: "sentence & image"
+			},
+			level: 0,
+			name: "descriptions39",
+			text: {
+				en: "Maximilian cursed in a kid-friendly way and got ready to fight against this behemoth. He was an incredibly skilled swordsman, and had he had a strong weapon capable of bonking the creature, he would have been victorious pretty easily, but as it was, he had to rely on his magical sword alone. The giant was very capable as well, and before Maximilian was able to defeat him, he suffered a couple bruises. Still, when the opponent was vanquished and disappeared in a white mist as a result, the knight was back to the room with the three doors. The second one was now open\r"
+			},
+			type: "descriptions",
+			img: false,
+			textRevision: false,
+			x: 583,
+			y: 3300
+		},
+		{
+			id: 219,
 			humanName: {
 				"default": "end"
 			},
@@ -320,55 +1484,646 @@ var story = {
 			name: "end0",
 			type: "end",
 			text: {
-				it: "Allora esci da questa pagina",
-				en: ""
+				en: "Congratulations! You have completed Maximilian's story, the village is now free and he got payed. Everyone wins! Except Greb-Han, but he's evil, so it's fine."
 			},
 			img: false,
 			textRevision: false,
-			x: 884,
-			y: 839.8125,
 			openNewPage: false,
 			url: {
-				it: "",
 				en: ""
-			}
+			},
+			x: 127,
+			y: 4655
+		},
+		{
+			id: 222,
+			humanName: {
+				"default": "if variable"
+			},
+			level: 0,
+			type: "if stat",
+			idStat: 63,
+			operator: ">=",
+			ammount: 1,
+			trueId: [
+				145
+			],
+			falseId: [
+				226
+			],
+			x: 222,
+			y: 3137,
+			name: "if stat3"
+		},
+		{
+			id: 226,
+			humanName: {
+				"default": "if variable"
+			},
+			level: 0,
+			type: "if stat",
+			idStat: 102,
+			operator: ">=",
+			ammount: 1,
+			trueId: [
+				155
+			],
+			falseId: [
+				216
+			],
+			x: 508,
+			y: 3177,
+			name: "if stat4"
+		},
+		{
+			id: 232,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 102,
+			operator: "+",
+			ammount: 1,
+			x: 14,
+			y: 3089,
+			name: "set stat4"
+		},
+		{
+			id: 235,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 170,
+			operator: "=",
+			ammount: 3,
+			x: 588,
+			y: 97,
+			name: "set stat5"
+		},
+		{
+			id: 238,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 170,
+			operator: "-",
+			ammount: 1,
+			x: 479,
+			y: 3453,
+			name: "set stat6"
+		},
+		{
+			id: 241,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 170,
+			operator: "-",
+			ammount: 1,
+			x: 493,
+			y: 3918,
+			name: "set stat7"
+		},
+		{
+			id: 244,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 170,
+			operator: "-",
+			ammount: 1,
+			x: 341,
+			y: 4369,
+			name: "set stat8"
+		},
+		{
+			id: 246,
+			humanName: {
+				"default": "if variable"
+			},
+			level: 0,
+			type: "if stat",
+			idStat: 170,
+			operator: ">",
+			ammount: 0,
+			trueId: [
+				219
+			],
+			falseId: [
+				249
+			],
+			x: 323,
+			y: 4493,
+			name: "if stat5"
+		},
+		{
+			id: 249,
+			humanName: {
+				"default": "game over"
+			},
+			level: 0,
+			name: "game over6",
+			type: "game over",
+			text: {
+				en: "Unfortunately, all the wounds Maximilian had suffered throughout the gauntlet proved to be too much, and he wasn't able to defeat Greb-Han... if only he had gathered some magical items, or at the very least a sidekick... your adventure ends here."
+			},
+			img: "",
+			textRevision: false,
+			x: 590,
+			y: 4632
 		}
 	],
 	beams: [
 		{
-			id: 3,
-			from: 1,
-			to: 2
-		},
-		{
-			id: 8,
+			id: 5,
 			from: 2,
 			to: 4
 		},
 		{
+			id: 7,
+			from: 4,
+			to: 6
+		},
+		{
 			id: 9,
 			from: 2,
-			to: 5
+			to: 8
 		},
 		{
-			id: 12,
-			from: 10,
-			to: 11
-		},
-		{
-			id: 13,
-			from: 11,
-			to: 2
-		},
-		{
-			id: 14,
-			from: 4,
+			id: 11,
+			from: 8,
 			to: 10
 		},
 		{
-			id: 16,
-			from: 5,
-			to: 15
+			id: 14,
+			from: 10,
+			to: 12
+		},
+		{
+			id: 15,
+			from: 10,
+			to: 13
+		},
+		{
+			id: 17,
+			from: 13,
+			to: 16
+		},
+		{
+			id: 19,
+			from: 12,
+			to: 18
+		},
+		{
+			id: 21,
+			from: 18,
+			to: 20
+		},
+		{
+			id: 24,
+			from: 20,
+			to: 23
+		},
+		{
+			id: 28,
+			from: 23,
+			to: 25
+		},
+		{
+			id: 29,
+			from: 23,
+			to: 26
+		},
+		{
+			id: 30,
+			from: 23,
+			to: 27
+		},
+		{
+			id: 32,
+			from: 25,
+			to: 31
+		},
+		{
+			id: 34,
+			from: 31,
+			to: 33
+		},
+		{
+			id: 36,
+			from: 26,
+			to: 35
+		},
+		{
+			id: 38,
+			from: 27,
+			to: 37
+		},
+		{
+			id: 40,
+			from: 33,
+			to: 39
+		},
+		{
+			id: 42,
+			from: 33,
+			to: 41
+		},
+		{
+			id: 44,
+			from: 39,
+			to: 43
+		},
+		{
+			id: 46,
+			from: 43,
+			to: 45
+		},
+		{
+			id: 48,
+			from: 43,
+			to: 47
+		},
+		{
+			id: 50,
+			from: 45,
+			to: 49
+		},
+		{
+			id: 52,
+			from: 47,
+			to: 51
+		},
+		{
+			id: 54,
+			from: 51,
+			to: 53
+		},
+		{
+			id: 56,
+			from: 41,
+			to: 55
+		},
+		{
+			id: 58,
+			from: 55,
+			to: 57
+		},
+		{
+			id: 59,
+			from: 53,
+			to: 57
+		},
+		{
+			id: 61,
+			from: 35,
+			to: 60
+		},
+		{
+			id: 64,
+			from: 57,
+			to: 62
+		},
+		{
+			id: 65,
+			from: 62,
+			to: 60
+		},
+		{
+			id: 67,
+			from: 60,
+			to: 66
+		},
+		{
+			id: 70,
+			from: 66,
+			to: 69
+		},
+		{
+			id: 72,
+			from: 69,
+			to: 71
+		},
+		{
+			id: 80,
+			from: 71,
+			to: 78
+		},
+		{
+			id: 81,
+			from: 71,
+			to: 79
+		},
+		{
+			id: 83,
+			from: 78,
+			to: 82
+		},
+		{
+			id: 85,
+			from: 60,
+			to: 84
+		},
+		{
+			id: 87,
+			from: 84,
+			to: 86
+		},
+		{
+			id: 90,
+			from: 82,
+			to: 88
+		},
+		{
+			id: 91,
+			from: 82,
+			to: 89
+		},
+		{
+			id: 93,
+			from: 79,
+			to: 92
+		},
+		{
+			id: 95,
+			from: 89,
+			to: 94
+		},
+		{
+			id: 97,
+			from: 88,
+			to: 96
+		},
+		{
+			id: 99,
+			from: 96,
+			to: 98
+		},
+		{
+			id: 106,
+			from: 103,
+			to: 105
+		},
+		{
+			id: 108,
+			from: 105,
+			to: 107
+		},
+		{
+			id: 110,
+			from: 107,
+			to: 109
+		},
+		{
+			id: 112,
+			from: 105,
+			to: 111
+		},
+		{
+			id: 114,
+			from: 111,
+			to: 113
+		},
+		{
+			id: 116,
+			from: 113,
+			to: 115
+		},
+		{
+			id: 119,
+			from: 115,
+			to: 117
+		},
+		{
+			id: 120,
+			from: 115,
+			to: 118
+		},
+		{
+			id: 122,
+			from: 117,
+			to: 121
+		},
+		{
+			id: 124,
+			from: 121,
+			to: 123
+		},
+		{
+			id: 126,
+			from: 118,
+			to: 125
+		},
+		{
+			id: 128,
+			from: 123,
+			to: 127
+		},
+		{
+			id: 129,
+			from: 125,
+			to: 127
+		},
+		{
+			id: 131,
+			from: 127,
+			to: 130
+		},
+		{
+			id: 133,
+			from: 130,
+			to: 132
+		},
+		{
+			id: 135,
+			from: 132,
+			to: 134,
+			use: "if"
+		},
+		{
+			id: 137,
+			from: 132,
+			to: 136,
+			use: "else"
+		},
+		{
+			id: 139,
+			from: 86,
+			to: 103
+		},
+		{
+			id: 141,
+			from: 37,
+			to: 140
+		},
+		{
+			id: 142,
+			from: 140,
+			to: 60
+		},
+		{
+			id: 158,
+			from: 145,
+			to: 157
+		},
+		{
+			id: 162,
+			from: 98,
+			to: 161
+		},
+		{
+			id: 163,
+			from: 161,
+			to: 103
+		},
+		{
+			id: 165,
+			from: 157,
+			to: 164
+		},
+		{
+			id: 168,
+			from: 164,
+			to: 166,
+			use: "if"
+		},
+		{
+			id: 169,
+			from: 164,
+			to: 167,
+			use: "else"
+		},
+		{
+			id: 172,
+			from: 166,
+			to: 171
+		},
+		{
+			id: 175,
+			from: 171,
+			to: 174
+		},
+		{
+			id: 177,
+			from: 174,
+			to: 176,
+			use: "else"
+		},
+		{
+			id: 179,
+			from: 174,
+			to: 178,
+			use: "if"
+		},
+		{
+			id: 220,
+			from: 178,
+			to: 219
+		},
+		{
+			id: 223,
+			from: 136,
+			to: 222
+		},
+		{
+			id: 224,
+			from: 222,
+			to: 145,
+			use: "if"
+		},
+		{
+			id: 227,
+			from: 222,
+			to: 226,
+			use: "else"
+		},
+		{
+			id: 228,
+			from: 155,
+			to: 157
+		},
+		{
+			id: 230,
+			from: 226,
+			to: 155,
+			use: "if"
+		},
+		{
+			id: 231,
+			from: 226,
+			to: 216,
+			use: "else"
+		},
+		{
+			id: 233,
+			from: 134,
+			to: 232
+		},
+		{
+			id: 234,
+			from: 232,
+			to: 136
+		},
+		{
+			id: 236,
+			from: 1,
+			to: 235
+		},
+		{
+			id: 237,
+			from: 235,
+			to: 2
+		},
+		{
+			id: 239,
+			from: 216,
+			to: 238
+		},
+		{
+			id: 240,
+			from: 238,
+			to: 157
+		},
+		{
+			id: 242,
+			from: 167,
+			to: 241
+		},
+		{
+			id: 243,
+			from: 241,
+			to: 171
+		},
+		{
+			id: 245,
+			from: 176,
+			to: 244
+		},
+		{
+			id: 247,
+			from: 244,
+			to: 246
+		},
+		{
+			id: 248,
+			from: 246,
+			to: 219,
+			use: "if"
+		},
+		{
+			id: 250,
+			from: 246,
+			to: 249,
+			use: "else"
 		}
 	]
 };
@@ -414,13 +2169,13 @@ var style = {
 		"font-size-1": "20px",
 		margin: "50px",
 		"box-text-padding": "25px",
-		"layout-type": "a6f8"
+		"layout-type": "a1f8"
 	},
 	mobile: {
 		"font-size-1": "18px",
 		margin: "100px",
 		"box-text-padding": "5vw",
-		"layout-type": "d1f8"
+		"layout-type": "a1f8"
 	}
 };
 var defaultStory = {
