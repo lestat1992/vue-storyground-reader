@@ -4,8 +4,10 @@
     <game ref="gameRef" />
   </div>
   <div class="btns-box">
-    <button @click="setNewData()" id="btn-set-info">Set HP to 1!</button>
-    <button @click="retriveData()" id="btn-info">Give me player data!</button>
+    <button @click="setNewData()" id="btn-set-info">💀 Set HP to 1 !</button>
+    <button @click="retriveData()" id="btn-info">
+      📝 Give me player data!
+    </button>
   </div>
 </template>
 <style>
@@ -27,14 +29,12 @@ export default {
   data() {},
   methods: {
     setNewData() {
-      console.log(this.$refs.gameRef.getPlayerValues());
+      let playerValues = this.$refs.gameRef.getPlayerValues();
 
-      let l = this.$refs.gameRef.getPlayerValues();
+      let hp = playerValues.find((el) => el.slug == "HP");
+      hp.level = 1;
 
-      let a = l.find((el) => el.slug == "HP");
-      a.level = 1;
-
-      this.$refs.gameRef.setPlayerValues([l]);
+      this.$refs.gameRef.setPlayerValues(playerValues);
     },
     retriveData() {
       alert(JSON.stringify(this.$refs.gameRef.getPlayerValues()));
