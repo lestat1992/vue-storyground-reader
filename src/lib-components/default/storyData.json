@@ -1,7 +1,6 @@
 {
-
   "postInfo": {
-    "title": "John",
+    "title": "Knight story",
     "lenghtDescriptionsNode": 600,
     "lenghtChoseNode": 1000,
     "selectedWorkSpace": 1,
@@ -10,7 +9,7 @@
     "templateSelected": "White"
   },
   "erorList": { "noStart": false },
-  "MaxId": 250,
+  "MaxId": 331,
   "levels": [],
   "achievements": [],
   "items": [],
@@ -56,6 +55,13 @@
       "max": 3,
       "slug": "HP",
       "active": true
+    },
+    {
+      "id": 303,
+      "name": { "en": "Illustrations" },
+      "max": 100,
+      "slug": "Illustrations",
+      "active": false
     }
   ],
   "story": {
@@ -68,8 +74,8 @@
         "type": "start",
         "gameStart": true,
         "levelStart": true,
-        "x": 342,
-        "y": 9
+        "x": 706,
+        "y": 104
       },
       {
         "id": 2,
@@ -82,8 +88,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 344,
-        "y": 121
+        "x": 708,
+        "y": 423
       },
       {
         "id": 4,
@@ -95,8 +101,8 @@
         },
         "type": "chose",
         "textRevision": false,
-        "x": 233,
-        "y": 257
+        "x": 424,
+        "y": 662
       },
       {
         "id": 6,
@@ -109,8 +115,8 @@
         },
         "img": false,
         "textRevision": false,
-        "x": 231,
-        "y": 340
+        "x": 419,
+        "y": 829
       },
       {
         "id": 8,
@@ -120,8 +126,8 @@
         "text": { "en": "Reached for the newspaper" },
         "type": "chose",
         "textRevision": false,
-        "x": 433,
-        "y": 257
+        "x": 844,
+        "y": 660
       },
       {
         "id": 10,
@@ -134,8 +140,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 435,
-        "y": 340
+        "x": 843,
+        "y": 1152
       },
       {
         "id": 12,
@@ -147,8 +153,8 @@
         },
         "type": "chose",
         "textRevision": false,
-        "x": 335,
-        "y": 481
+        "x": 494,
+        "y": 1299
       },
       {
         "id": 13,
@@ -160,8 +166,8 @@
         },
         "type": "chose",
         "textRevision": false,
-        "x": 544,
-        "y": 483
+        "x": 1078,
+        "y": 1314
       },
       {
         "id": 16,
@@ -174,8 +180,8 @@
         },
         "img": false,
         "textRevision": false,
-        "x": 546,
-        "y": 589
+        "x": 1086,
+        "y": 1468
       },
       {
         "id": 18,
@@ -188,8 +194,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 334,
-        "y": 590
+        "x": 495,
+        "y": 1739
       },
       {
         "id": 20,
@@ -202,8 +208,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 333,
-        "y": 728
+        "x": 508,
+        "y": 1919
       },
       {
         "id": 23,
@@ -216,8 +222,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 548,
-        "y": 732
+        "x": 508,
+        "y": 2078
       },
       {
         "id": 25,
@@ -227,8 +233,8 @@
         "text": { "en": "Decided to enter the cave" },
         "type": "chose",
         "textRevision": false,
-        "x": 330,
-        "y": 878
+        "x": 451,
+        "y": 2239
       },
       {
         "id": 26,
@@ -238,8 +244,8 @@
         "text": { "en": "Left the cave alone" },
         "type": "chose",
         "textRevision": false,
-        "x": 547,
-        "y": 877
+        "x": 813,
+        "y": 2237
       },
       {
         "id": 27,
@@ -249,8 +255,8 @@
         "text": { "en": "Put up a sign to warn less experienced adventurers" },
         "type": "chose",
         "textRevision": false,
-        "x": 759,
-        "y": 878
+        "x": 1109,
+        "y": 2236
       },
       {
         "id": 31,
@@ -263,8 +269,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 83,
-        "y": 981
+        "x": 426,
+        "y": 2401
       },
       {
         "id": 33,
@@ -277,8 +283,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 310,
-        "y": 980
+        "x": 431,
+        "y": 2950
       },
       {
         "id": 35,
@@ -291,8 +297,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 535,
-        "y": 979
+        "x": 830,
+        "y": 2393
       },
       {
         "id": 37,
@@ -305,8 +311,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 751,
-        "y": 976
+        "x": 1127,
+        "y": 2400
       },
       {
         "id": 39,
@@ -316,8 +322,8 @@
         "text": { "en": "Confronted them head on" },
         "type": "chose",
         "textRevision": false,
-        "x": 91,
-        "y": 1149
+        "x": 175,
+        "y": 3120
       },
       {
         "id": 41,
@@ -327,8 +333,8 @@
         "text": { "en": "Sneaked past them" },
         "type": "chose",
         "textRevision": false,
-        "x": 313,
-        "y": 1148
+        "x": 638,
+        "y": 3162
       },
       {
         "id": 43,
@@ -341,8 +347,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 37,
-        "y": 1249
+        "x": 161,
+        "y": 3374
       },
       {
         "id": 45,
@@ -352,8 +358,8 @@
         "text": { "en": "Tried to parry the blow" },
         "type": "chose",
         "textRevision": false,
-        "x": 18,
-        "y": 1391
+        "x": 58,
+        "y": 3643
       },
       {
         "id": 47,
@@ -363,8 +369,8 @@
         "text": { "en": "Tried to cast a defensive spell" },
         "type": "chose",
         "textRevision": false,
-        "x": 231,
-        "y": 1390
+        "x": 336,
+        "y": 3639
       },
       {
         "id": 49,
@@ -377,8 +383,8 @@
         },
         "img": false,
         "textRevision": false,
-        "x": 7,
-        "y": 1479
+        "x": 56,
+        "y": 3748
       },
       {
         "id": 51,
@@ -391,8 +397,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 226,
-        "y": 1475
+        "x": 219,
+        "y": 4017
       },
       {
         "id": 53,
@@ -405,8 +411,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 435,
-        "y": 1400
+        "x": 274,
+        "y": 4270
       },
       {
         "id": 55,
@@ -419,8 +425,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 316,
-        "y": 1237
+        "x": 510,
+        "y": 4017
       },
       {
         "id": 57,
@@ -433,8 +439,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 648,
-        "y": 1404
+        "x": 435,
+        "y": 4552
       },
       {
         "id": 60,
@@ -447,8 +453,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 905,
-        "y": 1237
+        "x": 1150,
+        "y": 2800
       },
       {
         "id": 62,
@@ -458,8 +464,8 @@
         "idStat": 63,
         "operator": "+",
         "ammount": 1,
-        "x": 557,
-        "y": 1232,
+        "x": 992,
+        "y": 3697,
         "name": "set stat0"
       },
       {
@@ -470,8 +476,8 @@
         "text": { "en": "Entered the building" },
         "type": "chose",
         "textRevision": false,
-        "x": 871,
-        "y": 1388
+        "x": 1233,
+        "y": 3060
       },
       {
         "id": 69,
@@ -484,8 +490,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 869,
-        "y": 1473
+        "x": 1254,
+        "y": 3277
       },
       {
         "id": 71,
@@ -498,8 +504,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 433,
-        "y": 1533
+        "x": 1271,
+        "y": 3803
       },
       {
         "id": 78,
@@ -509,8 +515,8 @@
         "text": { "en": "Approached the titan" },
         "type": "chose",
         "textRevision": false,
-        "x": 22,
-        "y": 1628
+        "x": 1171,
+        "y": 4102
       },
       {
         "id": 79,
@@ -520,8 +526,8 @@
         "text": { "en": "Circled around the titan" },
         "type": "chose",
         "textRevision": false,
-        "x": 228,
-        "y": 1628
+        "x": 1397,
+        "y": 4103
       },
       {
         "id": 82,
@@ -534,8 +540,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 22,
-        "y": 1717
+        "x": 1174,
+        "y": 4287
       },
       {
         "id": 84,
@@ -545,8 +551,8 @@
         "text": { "en": "Gave the building a wide berth" },
         "type": "chose",
         "textRevision": false,
-        "x": 1099,
-        "y": 1394
+        "x": 1462,
+        "y": 3064
       },
       {
         "id": 86,
@@ -559,8 +565,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 1087,
-        "y": 1476
+        "x": 1511,
+        "y": 3261
       },
       {
         "id": 88,
@@ -570,8 +576,8 @@
         "text": { "en": "Talked to it" },
         "type": "chose",
         "textRevision": false,
-        "x": 20,
-        "y": 1861
+        "x": 1034,
+        "y": 4437
       },
       {
         "id": 89,
@@ -581,8 +587,8 @@
         "text": { "en": "Hit it as hard as he could with his sword" },
         "type": "chose",
         "textRevision": false,
-        "x": 242,
-        "y": 1801
+        "x": 1257,
+        "y": 4545
       },
       {
         "id": 92,
@@ -595,8 +601,8 @@
         },
         "img": false,
         "textRevision": false,
-        "x": 235,
-        "y": 1723
+        "x": 1418,
+        "y": 4255
       },
       {
         "id": 94,
@@ -609,8 +615,8 @@
         },
         "img": false,
         "textRevision": false,
-        "x": 241,
-        "y": 1885
+        "x": 1257,
+        "y": 4742
       },
       {
         "id": 96,
@@ -623,8 +629,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 25,
-        "y": 1947
+        "x": 1019,
+        "y": 4738
       },
       {
         "id": 98,
@@ -632,13 +638,13 @@
         "level": 0,
         "name": "descriptions20",
         "text": {
-          "en": "Maximilian, eyeing the treasure chest while drooling slightly at the prospect of a powerful item, responded:\r“Allow me to loot the building”. \r“AS YOU ORDER”, replied the skeletron, and left Maximilian free to do what he wanted to.\nMaximilian opened the chest while the skeletron kept watching over the entrance, and inside found a slingshot and some ammo for it.\n“Did I just risk getting bodied by a giant robot skeleton for this!?” he thought, cursing the fact he was just a character in a story."
+          "en": "Maximilian, eyeing the treasure chest while drooling slightly at the prospect of a powerful item, responded:\r“Allow me to loot the building”. \r“AS YOU ORDER”, replied the skeletron, and left Maximilian free to do what he wanted to.\rMaximilian opened the chest while the skeletron kept watching over the entrance, and inside found a slingshot and some ammo for it.\r“Did I just risk getting bodied by a giant robot skeleton for this!?” he thought, cursing the fact he was just a character in a story."
         },
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 238,
-        "y": 1966
+        "x": 1021,
+        "y": 5281
       },
       {
         "id": 103,
@@ -651,8 +657,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 685,
-        "y": 1629
+        "x": 1534,
+        "y": 3461
       },
       {
         "id": 105,
@@ -665,8 +671,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 447,
-        "y": 1813
+        "x": 1537,
+        "y": 3667
       },
       {
         "id": 107,
@@ -676,8 +682,8 @@
         "text": { "en": "Downed the beverage" },
         "type": "chose",
         "textRevision": false,
-        "x": 446,
-        "y": 1955
+        "x": 1657,
+        "y": 4101
       },
       {
         "id": 109,
@@ -690,8 +696,8 @@
         },
         "img": false,
         "textRevision": false,
-        "x": 446,
-        "y": 2043
+        "x": 1654,
+        "y": 4252
       },
       {
         "id": 111,
@@ -701,8 +707,8 @@
         "text": { "en": "Exerted caution" },
         "type": "chose",
         "textRevision": false,
-        "x": 659,
-        "y": 1958
+        "x": 1881,
+        "y": 3985
       },
       {
         "id": 113,
@@ -715,8 +721,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 666,
-        "y": 2046
+        "x": 1884,
+        "y": 4233
       },
       {
         "id": 115,
@@ -729,8 +735,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 232,
-        "y": 2161
+        "x": 1883,
+        "y": 4450
       },
       {
         "id": 117,
@@ -742,8 +748,8 @@
         },
         "type": "chose",
         "textRevision": false,
-        "x": 63,
-        "y": 2303
+        "x": 1954,
+        "y": 4657
       },
       {
         "id": 118,
@@ -755,8 +761,8 @@
         },
         "type": "chose",
         "textRevision": false,
-        "x": 286,
-        "y": 2304
+        "x": 1684,
+        "y": 4655
       },
       {
         "id": 121,
@@ -769,8 +775,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 61,
-        "y": 2401
+        "x": 1952,
+        "y": 4869
       },
       {
         "id": 123,
@@ -780,8 +786,8 @@
         "idStat": 101,
         "operator": "+",
         "ammount": 1,
-        "x": 61,
-        "y": 2546,
+        "x": 1949,
+        "y": 5060,
         "name": "set stat1"
       },
       {
@@ -795,8 +801,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 286,
-        "y": 2398
+        "x": 1680,
+        "y": 4866
       },
       {
         "id": 127,
@@ -809,8 +815,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 283,
-        "y": 2550
+        "x": 1842,
+        "y": 5258
       },
       {
         "id": 130,
@@ -823,8 +829,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 283,
-        "y": 2683
+        "x": 1845,
+        "y": 5471
       },
       {
         "id": 132,
@@ -836,8 +842,8 @@
         "ammount": 1,
         "trueId": [134],
         "falseId": [136],
-        "x": 283,
-        "y": 2823,
+        "x": 1847,
+        "y": 6019,
         "name": "if stat0"
       },
       {
@@ -851,8 +857,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 62,
-        "y": 2942
+        "x": 1740,
+        "y": 6176
       },
       {
         "id": 136,
@@ -865,8 +871,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 409,
-        "y": 2927
+        "x": 1975,
+        "y": 6177
       },
       {
         "id": 140,
@@ -876,8 +882,8 @@
         "idStat": 73,
         "operator": "+",
         "ammount": 1,
-        "x": 901,
-        "y": 1114,
+        "x": 1213,
+        "y": 2600,
         "name": "set stat2"
       },
       {
@@ -891,8 +897,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 97,
-        "y": 3267
+        "x": 1768,
+        "y": 6560
       },
       {
         "id": 155,
@@ -905,8 +911,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 337,
-        "y": 3281
+        "x": 1978,
+        "y": 6773
       },
       {
         "id": 157,
@@ -919,8 +925,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 238,
-        "y": 3482
+        "x": 1772,
+        "y": 7135
       },
       {
         "id": 161,
@@ -930,8 +936,8 @@
         "idStat": 100,
         "operator": "+",
         "ammount": 1,
-        "x": 14,
-        "y": 2105,
+        "x": 1002,
+        "y": 5506,
         "name": "set stat4"
       },
       {
@@ -944,8 +950,8 @@
         "ammount": 1,
         "trueId": [166],
         "falseId": [167],
-        "x": 127,
-        "y": 3660,
+        "x": 1771,
+        "y": 7300,
         "name": "if stat3"
       },
       {
@@ -959,8 +965,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 74,
-        "y": 3808
+        "x": 1565,
+        "y": 7484
       },
       {
         "id": 167,
@@ -973,8 +979,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 363,
-        "y": 3767
+        "x": 1821,
+        "y": 7468
       },
       {
         "id": 171,
@@ -987,8 +993,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 188,
-        "y": 3962
+        "x": 1646,
+        "y": 7867
       },
       {
         "id": 174,
@@ -1000,8 +1006,8 @@
         "ammount": 1,
         "trueId": [178],
         "falseId": [176],
-        "x": 186,
-        "y": 4113,
+        "x": 1647,
+        "y": 8420,
         "name": "if stat4"
       },
       {
@@ -1015,8 +1021,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 364,
-        "y": 4218
+        "x": 1821,
+        "y": 8581
       },
       {
         "id": 178,
@@ -1029,8 +1035,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 54,
-        "y": 4227
+        "x": 1537,
+        "y": 8574
       },
       {
         "id": 216,
@@ -1043,8 +1049,8 @@
         "type": "descriptions",
         "img": false,
         "textRevision": false,
-        "x": 583,
-        "y": 3300
+        "x": 2229,
+        "y": 6778
       },
       {
         "id": 219,
@@ -1059,8 +1065,8 @@
         "textRevision": false,
         "openNewPage": false,
         "url": { "en": "" },
-        "x": 127,
-        "y": 4655
+        "x": 1565,
+        "y": 9113
       },
       {
         "id": 222,
@@ -1072,8 +1078,8 @@
         "ammount": 1,
         "trueId": [145],
         "falseId": [226],
-        "x": 222,
-        "y": 3137,
+        "x": 1976,
+        "y": 6358,
         "name": "if stat3"
       },
       {
@@ -1086,8 +1092,8 @@
         "ammount": 1,
         "trueId": [155],
         "falseId": [216],
-        "x": 508,
-        "y": 3177,
+        "x": 2023,
+        "y": 6579,
         "name": "if stat4"
       },
       {
@@ -1098,8 +1104,8 @@
         "idStat": 102,
         "operator": "+",
         "ammount": 1,
-        "x": 14,
-        "y": 3089,
+        "x": 1734,
+        "y": 6350,
         "name": "set stat4"
       },
       {
@@ -1110,8 +1116,8 @@
         "idStat": 170,
         "operator": "=",
         "ammount": 3,
-        "x": 588,
-        "y": 97,
+        "x": 706,
+        "y": 264,
         "name": "set stat5"
       },
       {
@@ -1122,8 +1128,8 @@
         "idStat": 170,
         "operator": "-",
         "ammount": 1,
-        "x": 479,
-        "y": 3453,
+        "x": 2140,
+        "y": 7016,
         "name": "set stat6"
       },
       {
@@ -1134,8 +1140,8 @@
         "idStat": 170,
         "operator": "-",
         "ammount": 1,
-        "x": 493,
-        "y": 3918,
+        "x": 1825,
+        "y": 7667,
         "name": "set stat7"
       },
       {
@@ -1146,8 +1152,8 @@
         "idStat": 170,
         "operator": "-",
         "ammount": 1,
-        "x": 341,
-        "y": 4369,
+        "x": 1821,
+        "y": 8755,
         "name": "set stat8"
       },
       {
@@ -1160,8 +1166,8 @@
         "ammount": 0,
         "trueId": [219],
         "falseId": [249],
-        "x": 323,
-        "y": 4493,
+        "x": 1821,
+        "y": 8912,
         "name": "if stat5"
       },
       {
@@ -1173,47 +1179,247 @@
         "text": {
           "en": "Unfortunately, all the wounds Maximilian had suffered throughout the gauntlet proved to be too much, and he wasn't able to defeat Greb-Han... if only he had gathered some magical items, or at the very least a sidekick... your adventure ends here."
         },
-        "img": "",
+        "img": false,
         "textRevision": false,
-        "x": 590,
-        "y": 4632
+        "x": 1870,
+        "y": 9117
+      },
+      {
+        "id": 251,
+        "humanName": { "default": "emit" },
+        "level": 0,
+        "type": "emit_function",
+        "objToEmit": [303],
+        "x": 843,
+        "y": 984,
+        "name": "emit function0"
+      },
+      {
+        "id": 254,
+        "humanName": { "default": "choice" },
+        "level": 0,
+        "name": "chose21",
+        "text": { "en": "illustrazione giornale" },
+        "type": "chose",
+        "textRevision": false,
+        "x": 1692,
+        "y": 1136
+      },
+      {
+        "id": 259,
+        "humanName": { "default": "emit" },
+        "level": 0,
+        "type": "emit_function",
+        "objToEmit": [303],
+        "x": 491,
+        "y": 1582,
+        "name": "emit function2"
+      },
+      {
+        "id": 263,
+        "humanName": { "default": "emit" },
+        "level": 0,
+        "type": "emit_function",
+        "objToEmit": [303],
+        "x": 426,
+        "y": 2797,
+        "name": "emit function3"
+      },
+      {
+        "id": 275,
+        "humanName": { "default": "emit" },
+        "level": 0,
+        "type": "emit_function",
+        "objToEmit": [303],
+        "x": 638,
+        "y": 3641,
+        "name": "emit function6"
+      },
+      {
+        "id": 283,
+        "humanName": { "default": "emit" },
+        "level": 0,
+        "type": "emit_function",
+        "objToEmit": [303],
+        "x": 845,
+        "y": 4136,
+        "name": "emit function6 copy"
+      },
+      {
+        "id": 286,
+        "humanName": { "default": "emit" },
+        "level": 0,
+        "type": "emit_function",
+        "objToEmit": [303],
+        "x": 1267,
+        "y": 3617,
+        "name": "emit function8"
+      },
+      {
+        "id": 291,
+        "humanName": { "default": "emit" },
+        "level": 0,
+        "type": "emit_function",
+        "objToEmit": [303],
+        "x": 1020,
+        "y": 5100,
+        "name": "emit function8"
+      },
+      {
+        "id": 295,
+        "humanName": { "default": "emit" },
+        "level": 0,
+        "type": "emit_function",
+        "objToEmit": [303],
+        "x": 1852,
+        "y": 5828,
+        "name": "emit function9"
+      },
+      {
+        "id": 299,
+        "humanName": { "default": "emit" },
+        "level": 0,
+        "type": "emit_function",
+        "objToEmit": [303],
+        "x": 1647,
+        "y": 8249,
+        "name": "emit function10"
+      },
+      {
+        "id": 304,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "set stat",
+        "idStat": 303,
+        "operator": "=",
+        "ammount": 2,
+        "x": 845,
+        "y": 818,
+        "name": "set stat9"
+      },
+      {
+        "id": 308,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "set stat",
+        "idStat": 303,
+        "operator": "=",
+        "ammount": 1,
+        "x": 490,
+        "y": 1439,
+        "name": "set stat9 copy"
+      },
+      {
+        "id": 311,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "set stat",
+        "idStat": 303,
+        "operator": "=",
+        "ammount": 3,
+        "x": 423,
+        "y": 2578,
+        "name": "set stat11"
+      },
+      {
+        "id": 314,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "set stat",
+        "idStat": 303,
+        "operator": "=",
+        "ammount": 1,
+        "x": 642,
+        "y": 3411,
+        "name": "set stat12"
+      },
+      {
+        "id": 317,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "set stat",
+        "idStat": 303,
+        "operator": "=",
+        "ammount": 1,
+        "x": 445,
+        "y": 4852,
+        "name": "set stat13"
+      },
+      {
+        "id": 320,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "set stat",
+        "idStat": 303,
+        "operator": "=",
+        "ammount": 3,
+        "x": 1271,
+        "y": 3459,
+        "name": "set stat14"
+      },
+      {
+        "id": 323,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "set stat",
+        "idStat": 303,
+        "operator": "=",
+        "ammount": 1,
+        "x": 1022,
+        "y": 4918,
+        "name": "set stat15"
+      },
+      {
+        "id": 326,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "set stat",
+        "idStat": 303,
+        "operator": "=",
+        "ammount": 3,
+        "x": 1846,
+        "y": 5666,
+        "name": "set stat16"
+      },
+      {
+        "id": 329,
+        "humanName": { "default": "set variable" },
+        "level": 0,
+        "type": "set stat",
+        "idStat": 303,
+        "operator": "=",
+        "ammount": 4,
+        "x": 1649,
+        "y": 8076,
+        "name": "set stat17"
       }
     ],
     "beams": [
       { "id": 5, "from": 2, "to": 4 },
       { "id": 7, "from": 4, "to": 6 },
       { "id": 9, "from": 2, "to": 8 },
-      { "id": 11, "from": 8, "to": 10 },
       { "id": 14, "from": 10, "to": 12 },
-      { "id": 15, "from": 10, "to": 13 },
       { "id": 17, "from": 13, "to": 16 },
-      { "id": 19, "from": 12, "to": 18 },
       { "id": 21, "from": 18, "to": 20 },
       { "id": 24, "from": 20, "to": 23 },
       { "id": 28, "from": 23, "to": 25 },
       { "id": 29, "from": 23, "to": 26 },
       { "id": 30, "from": 23, "to": 27 },
       { "id": 32, "from": 25, "to": 31 },
-      { "id": 34, "from": 31, "to": 33 },
       { "id": 36, "from": 26, "to": 35 },
       { "id": 38, "from": 27, "to": 37 },
       { "id": 40, "from": 33, "to": 39 },
       { "id": 42, "from": 33, "to": 41 },
-      { "id": 44, "from": 39, "to": 43 },
       { "id": 46, "from": 43, "to": 45 },
       { "id": 48, "from": 43, "to": 47 },
-      { "id": 50, "from": 45, "to": 49 },
       { "id": 52, "from": 47, "to": 51 },
       { "id": 54, "from": 51, "to": 53 },
-      { "id": 56, "from": 41, "to": 55 },
       { "id": 58, "from": 55, "to": 57 },
       { "id": 59, "from": 53, "to": 57 },
       { "id": 61, "from": 35, "to": 60 },
-      { "id": 64, "from": 57, "to": 62 },
       { "id": 65, "from": 62, "to": 60 },
       { "id": 67, "from": 60, "to": 66 },
       { "id": 70, "from": 66, "to": 69 },
-      { "id": 72, "from": 69, "to": 71 },
       { "id": 80, "from": 71, "to": 78 },
       { "id": 81, "from": 71, "to": 79 },
       { "id": 83, "from": 78, "to": 82 },
@@ -1221,10 +1427,8 @@
       { "id": 87, "from": 84, "to": 86 },
       { "id": 90, "from": 82, "to": 88 },
       { "id": 91, "from": 82, "to": 89 },
-      { "id": 93, "from": 79, "to": 92 },
       { "id": 95, "from": 89, "to": 94 },
       { "id": 97, "from": 88, "to": 96 },
-      { "id": 99, "from": 96, "to": 98 },
       { "id": 106, "from": 103, "to": 105 },
       { "id": 108, "from": 105, "to": 107 },
       { "id": 110, "from": 107, "to": 109 },
@@ -1239,7 +1443,6 @@
       { "id": 128, "from": 123, "to": 127 },
       { "id": 129, "from": 125, "to": 127 },
       { "id": 131, "from": 127, "to": 130 },
-      { "id": 133, "from": 130, "to": 132 },
       { "id": 135, "from": 132, "to": 134, "use": "if" },
       { "id": 137, "from": 132, "to": 136, "use": "else" },
       { "id": 139, "from": 86, "to": 103 },
@@ -1252,7 +1455,6 @@
       { "id": 168, "from": 164, "to": 166, "use": "if" },
       { "id": 169, "from": 164, "to": 167, "use": "else" },
       { "id": 172, "from": 166, "to": 171 },
-      { "id": 175, "from": 171, "to": 174 },
       { "id": 177, "from": 174, "to": 176, "use": "else" },
       { "id": 179, "from": 174, "to": 178, "use": "if" },
       { "id": 220, "from": 178, "to": 219 },
@@ -1273,7 +1475,38 @@
       { "id": 245, "from": 176, "to": 244 },
       { "id": 247, "from": 244, "to": 246 },
       { "id": 248, "from": 246, "to": 219, "use": "if" },
-      { "id": 250, "from": 246, "to": 249, "use": "else" }
+      { "id": 250, "from": 246, "to": 249, "use": "else" },
+      { "id": 253, "from": 251, "to": 10 },
+      { "id": 261, "from": 259, "to": 18 },
+      { "id": 265, "from": 263, "to": 33 },
+      { "id": 273, "from": 45, "to": 49 },
+      { "id": 279, "from": 275, "to": 55 },
+      { "id": 281, "from": 39, "to": 43 },
+      { "id": 285, "from": 283, "to": 62 },
+      { "id": 288, "from": 286, "to": 71 },
+      { "id": 290, "from": 79, "to": 92 },
+      { "id": 293, "from": 291, "to": 98 },
+      { "id": 297, "from": 295, "to": 132 },
+      { "id": 301, "from": 299, "to": 174 },
+      { "id": 305, "from": 8, "to": 304 },
+      { "id": 306, "from": 304, "to": 251 },
+      { "id": 307, "from": 10, "to": 13 },
+      { "id": 309, "from": 12, "to": 308 },
+      { "id": 310, "from": 308, "to": 259 },
+      { "id": 312, "from": 31, "to": 311 },
+      { "id": 313, "from": 311, "to": 263 },
+      { "id": 315, "from": 314, "to": 275 },
+      { "id": 316, "from": 41, "to": 314 },
+      { "id": 318, "from": 57, "to": 317 },
+      { "id": 319, "from": 317, "to": 283 },
+      { "id": 321, "from": 69, "to": 320 },
+      { "id": 322, "from": 320, "to": 286 },
+      { "id": 324, "from": 96, "to": 323 },
+      { "id": 325, "from": 323, "to": 291 },
+      { "id": 327, "from": 130, "to": 326 },
+      { "id": 328, "from": 326, "to": 295 },
+      { "id": 330, "from": 171, "to": 329 },
+      { "id": 331, "from": 329, "to": 299 }
     ]
   },
   "style": {
