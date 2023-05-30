@@ -85,7 +85,7 @@ var defaultStrings = {
 };
 
 var postInfo = {
-	title: "John",
+	title: "Knight story",
 	lenghtDescriptionsNode: 600,
 	lenghtChoseNode: 1000,
 	selectedWorkSpace: 1,
@@ -98,7 +98,7 @@ var postInfo = {
 var erorList = {
 	noStart: false
 };
-var MaxId = 250;
+var MaxId = 331;
 var levels = [
 ];
 var achievements = [
@@ -159,6 +159,15 @@ var stats = [
 		max: 3,
 		slug: "HP",
 		active: true
+	},
+	{
+		id: 303,
+		name: {
+			en: "Illustrations"
+		},
+		max: 100,
+		slug: "Illustrations",
+		active: false
 	}
 ];
 var story = {
@@ -173,8 +182,8 @@ var story = {
 			type: "start",
 			gameStart: true,
 			levelStart: true,
-			x: 342,
-			y: 9
+			x: 706,
+			y: 104
 		},
 		{
 			id: 2,
@@ -190,8 +199,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 344,
-			y: 121
+			x: 708,
+			y: 423
 		},
 		{
 			id: 4,
@@ -205,8 +214,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 233,
-			y: 257
+			x: 424,
+			y: 662
 		},
 		{
 			id: 6,
@@ -221,8 +230,8 @@ var story = {
 			},
 			img: false,
 			textRevision: false,
-			x: 231,
-			y: 340
+			x: 419,
+			y: 829
 		},
 		{
 			id: 8,
@@ -236,8 +245,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 433,
-			y: 257
+			x: 844,
+			y: 660
 		},
 		{
 			id: 10,
@@ -253,8 +262,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 435,
-			y: 340
+			x: 843,
+			y: 1152
 		},
 		{
 			id: 12,
@@ -268,8 +277,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 335,
-			y: 481
+			x: 494,
+			y: 1299
 		},
 		{
 			id: 13,
@@ -283,8 +292,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 544,
-			y: 483
+			x: 1078,
+			y: 1314
 		},
 		{
 			id: 16,
@@ -299,8 +308,8 @@ var story = {
 			},
 			img: false,
 			textRevision: false,
-			x: 546,
-			y: 589
+			x: 1086,
+			y: 1468
 		},
 		{
 			id: 18,
@@ -316,8 +325,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 334,
-			y: 590
+			x: 495,
+			y: 1739
 		},
 		{
 			id: 20,
@@ -333,8 +342,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 333,
-			y: 728
+			x: 508,
+			y: 1919
 		},
 		{
 			id: 23,
@@ -350,8 +359,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 548,
-			y: 732
+			x: 508,
+			y: 2078
 		},
 		{
 			id: 25,
@@ -365,8 +374,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 330,
-			y: 878
+			x: 451,
+			y: 2239
 		},
 		{
 			id: 26,
@@ -380,8 +389,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 547,
-			y: 877
+			x: 813,
+			y: 2237
 		},
 		{
 			id: 27,
@@ -395,8 +404,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 759,
-			y: 878
+			x: 1109,
+			y: 2236
 		},
 		{
 			id: 31,
@@ -412,8 +421,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 83,
-			y: 981
+			x: 426,
+			y: 2401
 		},
 		{
 			id: 33,
@@ -429,8 +438,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 310,
-			y: 980
+			x: 431,
+			y: 2950
 		},
 		{
 			id: 35,
@@ -446,8 +455,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 535,
-			y: 979
+			x: 830,
+			y: 2393
 		},
 		{
 			id: 37,
@@ -463,8 +472,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 751,
-			y: 976
+			x: 1127,
+			y: 2400
 		},
 		{
 			id: 39,
@@ -478,8 +487,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 91,
-			y: 1149
+			x: 175,
+			y: 3120
 		},
 		{
 			id: 41,
@@ -493,8 +502,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 313,
-			y: 1148
+			x: 638,
+			y: 3162
 		},
 		{
 			id: 43,
@@ -510,8 +519,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 37,
-			y: 1249
+			x: 161,
+			y: 3374
 		},
 		{
 			id: 45,
@@ -525,8 +534,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 18,
-			y: 1391
+			x: 58,
+			y: 3643
 		},
 		{
 			id: 47,
@@ -540,8 +549,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 231,
-			y: 1390
+			x: 336,
+			y: 3639
 		},
 		{
 			id: 49,
@@ -556,8 +565,8 @@ var story = {
 			},
 			img: false,
 			textRevision: false,
-			x: 7,
-			y: 1479
+			x: 56,
+			y: 3748
 		},
 		{
 			id: 51,
@@ -573,8 +582,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 226,
-			y: 1475
+			x: 219,
+			y: 4017
 		},
 		{
 			id: 53,
@@ -590,8 +599,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 435,
-			y: 1400
+			x: 274,
+			y: 4270
 		},
 		{
 			id: 55,
@@ -607,8 +616,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 316,
-			y: 1237
+			x: 510,
+			y: 4017
 		},
 		{
 			id: 57,
@@ -624,8 +633,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 648,
-			y: 1404
+			x: 435,
+			y: 4552
 		},
 		{
 			id: 60,
@@ -641,8 +650,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 905,
-			y: 1237
+			x: 1150,
+			y: 2800
 		},
 		{
 			id: 62,
@@ -654,8 +663,8 @@ var story = {
 			idStat: 63,
 			operator: "+",
 			ammount: 1,
-			x: 557,
-			y: 1232,
+			x: 992,
+			y: 3697,
 			name: "set stat0"
 		},
 		{
@@ -670,8 +679,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 871,
-			y: 1388
+			x: 1233,
+			y: 3060
 		},
 		{
 			id: 69,
@@ -687,8 +696,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 869,
-			y: 1473
+			x: 1254,
+			y: 3277
 		},
 		{
 			id: 71,
@@ -704,8 +713,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 433,
-			y: 1533
+			x: 1271,
+			y: 3803
 		},
 		{
 			id: 78,
@@ -719,8 +728,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 22,
-			y: 1628
+			x: 1171,
+			y: 4102
 		},
 		{
 			id: 79,
@@ -734,8 +743,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 228,
-			y: 1628
+			x: 1397,
+			y: 4103
 		},
 		{
 			id: 82,
@@ -751,8 +760,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 22,
-			y: 1717
+			x: 1174,
+			y: 4287
 		},
 		{
 			id: 84,
@@ -766,8 +775,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 1099,
-			y: 1394
+			x: 1462,
+			y: 3064
 		},
 		{
 			id: 86,
@@ -783,8 +792,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 1087,
-			y: 1476
+			x: 1511,
+			y: 3261
 		},
 		{
 			id: 88,
@@ -798,8 +807,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 20,
-			y: 1861
+			x: 1034,
+			y: 4437
 		},
 		{
 			id: 89,
@@ -813,8 +822,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 242,
-			y: 1801
+			x: 1257,
+			y: 4545
 		},
 		{
 			id: 92,
@@ -829,8 +838,8 @@ var story = {
 			},
 			img: false,
 			textRevision: false,
-			x: 235,
-			y: 1723
+			x: 1418,
+			y: 4255
 		},
 		{
 			id: 94,
@@ -845,8 +854,8 @@ var story = {
 			},
 			img: false,
 			textRevision: false,
-			x: 241,
-			y: 1885
+			x: 1257,
+			y: 4742
 		},
 		{
 			id: 96,
@@ -862,8 +871,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 25,
-			y: 1947
+			x: 1019,
+			y: 4738
 		},
 		{
 			id: 98,
@@ -874,13 +883,13 @@ var story = {
 			level: 0,
 			name: "descriptions20",
 			text: {
-				en: "Maximilian, eyeing the treasure chest while drooling slightly at the prospect of a powerful item, responded:\r“Allow me to loot the building”. \r“AS YOU ORDER”, replied the skeletron, and left Maximilian free to do what he wanted to.\nMaximilian opened the chest while the skeletron kept watching over the entrance, and inside found a slingshot and some ammo for it.\n“Did I just risk getting bodied by a giant robot skeleton for this!?” he thought, cursing the fact he was just a character in a story."
+				en: "Maximilian, eyeing the treasure chest while drooling slightly at the prospect of a powerful item, responded:\r“Allow me to loot the building”. \r“AS YOU ORDER”, replied the skeletron, and left Maximilian free to do what he wanted to.\rMaximilian opened the chest while the skeletron kept watching over the entrance, and inside found a slingshot and some ammo for it.\r“Did I just risk getting bodied by a giant robot skeleton for this!?” he thought, cursing the fact he was just a character in a story."
 			},
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 238,
-			y: 1966
+			x: 1021,
+			y: 5281
 		},
 		{
 			id: 103,
@@ -896,8 +905,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 685,
-			y: 1629
+			x: 1534,
+			y: 3461
 		},
 		{
 			id: 105,
@@ -913,8 +922,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 447,
-			y: 1813
+			x: 1537,
+			y: 3667
 		},
 		{
 			id: 107,
@@ -928,8 +937,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 446,
-			y: 1955
+			x: 1657,
+			y: 4101
 		},
 		{
 			id: 109,
@@ -944,8 +953,8 @@ var story = {
 			},
 			img: false,
 			textRevision: false,
-			x: 446,
-			y: 2043
+			x: 1654,
+			y: 4252
 		},
 		{
 			id: 111,
@@ -959,8 +968,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 659,
-			y: 1958
+			x: 1881,
+			y: 3985
 		},
 		{
 			id: 113,
@@ -976,8 +985,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 666,
-			y: 2046
+			x: 1884,
+			y: 4233
 		},
 		{
 			id: 115,
@@ -993,8 +1002,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 232,
-			y: 2161
+			x: 1883,
+			y: 4450
 		},
 		{
 			id: 117,
@@ -1008,8 +1017,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 63,
-			y: 2303
+			x: 1954,
+			y: 4657
 		},
 		{
 			id: 118,
@@ -1023,8 +1032,8 @@ var story = {
 			},
 			type: "chose",
 			textRevision: false,
-			x: 286,
-			y: 2304
+			x: 1684,
+			y: 4655
 		},
 		{
 			id: 121,
@@ -1040,8 +1049,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 61,
-			y: 2401
+			x: 1952,
+			y: 4869
 		},
 		{
 			id: 123,
@@ -1053,8 +1062,8 @@ var story = {
 			idStat: 101,
 			operator: "+",
 			ammount: 1,
-			x: 61,
-			y: 2546,
+			x: 1949,
+			y: 5060,
 			name: "set stat1"
 		},
 		{
@@ -1071,8 +1080,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 286,
-			y: 2398
+			x: 1680,
+			y: 4866
 		},
 		{
 			id: 127,
@@ -1088,8 +1097,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 283,
-			y: 2550
+			x: 1842,
+			y: 5258
 		},
 		{
 			id: 130,
@@ -1105,8 +1114,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 283,
-			y: 2683
+			x: 1845,
+			y: 5471
 		},
 		{
 			id: 132,
@@ -1124,8 +1133,8 @@ var story = {
 			falseId: [
 				136
 			],
-			x: 283,
-			y: 2823,
+			x: 1847,
+			y: 6019,
 			name: "if stat0"
 		},
 		{
@@ -1142,8 +1151,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 62,
-			y: 2942
+			x: 1740,
+			y: 6176
 		},
 		{
 			id: 136,
@@ -1159,8 +1168,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 409,
-			y: 2927
+			x: 1975,
+			y: 6177
 		},
 		{
 			id: 140,
@@ -1172,8 +1181,8 @@ var story = {
 			idStat: 73,
 			operator: "+",
 			ammount: 1,
-			x: 901,
-			y: 1114,
+			x: 1213,
+			y: 2600,
 			name: "set stat2"
 		},
 		{
@@ -1190,8 +1199,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 97,
-			y: 3267
+			x: 1768,
+			y: 6560
 		},
 		{
 			id: 155,
@@ -1207,8 +1216,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 337,
-			y: 3281
+			x: 1978,
+			y: 6773
 		},
 		{
 			id: 157,
@@ -1224,8 +1233,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 238,
-			y: 3482
+			x: 1772,
+			y: 7135
 		},
 		{
 			id: 161,
@@ -1237,8 +1246,8 @@ var story = {
 			idStat: 100,
 			operator: "+",
 			ammount: 1,
-			x: 14,
-			y: 2105,
+			x: 1002,
+			y: 5506,
 			name: "set stat4"
 		},
 		{
@@ -1257,8 +1266,8 @@ var story = {
 			falseId: [
 				167
 			],
-			x: 127,
-			y: 3660,
+			x: 1771,
+			y: 7300,
 			name: "if stat3"
 		},
 		{
@@ -1275,8 +1284,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 74,
-			y: 3808
+			x: 1565,
+			y: 7484
 		},
 		{
 			id: 167,
@@ -1292,8 +1301,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 363,
-			y: 3767
+			x: 1821,
+			y: 7468
 		},
 		{
 			id: 171,
@@ -1309,8 +1318,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 188,
-			y: 3962
+			x: 1646,
+			y: 7867
 		},
 		{
 			id: 174,
@@ -1328,8 +1337,8 @@ var story = {
 			falseId: [
 				176
 			],
-			x: 186,
-			y: 4113,
+			x: 1647,
+			y: 8420,
 			name: "if stat4"
 		},
 		{
@@ -1346,8 +1355,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 364,
-			y: 4218
+			x: 1821,
+			y: 8581
 		},
 		{
 			id: 178,
@@ -1363,8 +1372,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 54,
-			y: 4227
+			x: 1537,
+			y: 8574
 		},
 		{
 			id: 216,
@@ -1380,8 +1389,8 @@ var story = {
 			type: "descriptions",
 			img: false,
 			textRevision: false,
-			x: 583,
-			y: 3300
+			x: 2229,
+			y: 6778
 		},
 		{
 			id: 219,
@@ -1400,8 +1409,8 @@ var story = {
 			url: {
 				en: ""
 			},
-			x: 127,
-			y: 4655
+			x: 1565,
+			y: 9113
 		},
 		{
 			id: 222,
@@ -1419,8 +1428,8 @@ var story = {
 			falseId: [
 				226
 			],
-			x: 222,
-			y: 3137,
+			x: 1976,
+			y: 6358,
 			name: "if stat3"
 		},
 		{
@@ -1439,8 +1448,8 @@ var story = {
 			falseId: [
 				216
 			],
-			x: 508,
-			y: 3177,
+			x: 2023,
+			y: 6579,
 			name: "if stat4"
 		},
 		{
@@ -1453,8 +1462,8 @@ var story = {
 			idStat: 102,
 			operator: "+",
 			ammount: 1,
-			x: 14,
-			y: 3089,
+			x: 1734,
+			y: 6350,
 			name: "set stat4"
 		},
 		{
@@ -1467,8 +1476,8 @@ var story = {
 			idStat: 170,
 			operator: "=",
 			ammount: 3,
-			x: 588,
-			y: 97,
+			x: 706,
+			y: 264,
 			name: "set stat5"
 		},
 		{
@@ -1481,8 +1490,8 @@ var story = {
 			idStat: 170,
 			operator: "-",
 			ammount: 1,
-			x: 479,
-			y: 3453,
+			x: 2140,
+			y: 7016,
 			name: "set stat6"
 		},
 		{
@@ -1495,8 +1504,8 @@ var story = {
 			idStat: 170,
 			operator: "-",
 			ammount: 1,
-			x: 493,
-			y: 3918,
+			x: 1825,
+			y: 7667,
 			name: "set stat7"
 		},
 		{
@@ -1509,8 +1518,8 @@ var story = {
 			idStat: 170,
 			operator: "-",
 			ammount: 1,
-			x: 341,
-			y: 4369,
+			x: 1821,
+			y: 8755,
 			name: "set stat8"
 		},
 		{
@@ -1529,8 +1538,8 @@ var story = {
 			falseId: [
 				249
 			],
-			x: 323,
-			y: 4493,
+			x: 1821,
+			y: 8912,
 			name: "if stat5"
 		},
 		{
@@ -1544,10 +1553,277 @@ var story = {
 			text: {
 				en: "Unfortunately, all the wounds Maximilian had suffered throughout the gauntlet proved to be too much, and he wasn't able to defeat Greb-Han... if only he had gathered some magical items, or at the very least a sidekick... your adventure ends here."
 			},
-			img: "",
+			img: false,
 			textRevision: false,
-			x: 590,
-			y: 4632
+			x: 1870,
+			y: 9117
+		},
+		{
+			id: 251,
+			humanName: {
+				"default": "emit"
+			},
+			level: 0,
+			type: "emit_function",
+			objToEmit: [
+				303
+			],
+			x: 843,
+			y: 984,
+			name: "emit function0"
+		},
+		{
+			id: 254,
+			humanName: {
+				"default": "choice"
+			},
+			level: 0,
+			name: "chose21",
+			text: {
+				en: "illustrazione giornale"
+			},
+			type: "chose",
+			textRevision: false,
+			x: 1692,
+			y: 1136
+		},
+		{
+			id: 259,
+			humanName: {
+				"default": "emit"
+			},
+			level: 0,
+			type: "emit_function",
+			objToEmit: [
+				303
+			],
+			x: 491,
+			y: 1582,
+			name: "emit function2"
+		},
+		{
+			id: 263,
+			humanName: {
+				"default": "emit"
+			},
+			level: 0,
+			type: "emit_function",
+			objToEmit: [
+				303
+			],
+			x: 426,
+			y: 2797,
+			name: "emit function3"
+		},
+		{
+			id: 275,
+			humanName: {
+				"default": "emit"
+			},
+			level: 0,
+			type: "emit_function",
+			objToEmit: [
+				303
+			],
+			x: 638,
+			y: 3641,
+			name: "emit function6"
+		},
+		{
+			id: 283,
+			humanName: {
+				"default": "emit"
+			},
+			level: 0,
+			type: "emit_function",
+			objToEmit: [
+				303
+			],
+			x: 845,
+			y: 4136,
+			name: "emit function6 copy"
+		},
+		{
+			id: 286,
+			humanName: {
+				"default": "emit"
+			},
+			level: 0,
+			type: "emit_function",
+			objToEmit: [
+				303
+			],
+			x: 1267,
+			y: 3617,
+			name: "emit function8"
+		},
+		{
+			id: 291,
+			humanName: {
+				"default": "emit"
+			},
+			level: 0,
+			type: "emit_function",
+			objToEmit: [
+				303
+			],
+			x: 1020,
+			y: 5100,
+			name: "emit function8"
+		},
+		{
+			id: 295,
+			humanName: {
+				"default": "emit"
+			},
+			level: 0,
+			type: "emit_function",
+			objToEmit: [
+				303
+			],
+			x: 1852,
+			y: 5828,
+			name: "emit function9"
+		},
+		{
+			id: 299,
+			humanName: {
+				"default": "emit"
+			},
+			level: 0,
+			type: "emit_function",
+			objToEmit: [
+				303
+			],
+			x: 1647,
+			y: 8249,
+			name: "emit function10"
+		},
+		{
+			id: 304,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 303,
+			operator: "=",
+			ammount: 2,
+			x: 845,
+			y: 818,
+			name: "set stat9"
+		},
+		{
+			id: 308,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 303,
+			operator: "=",
+			ammount: 1,
+			x: 490,
+			y: 1439,
+			name: "set stat9 copy"
+		},
+		{
+			id: 311,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 303,
+			operator: "=",
+			ammount: 3,
+			x: 423,
+			y: 2578,
+			name: "set stat11"
+		},
+		{
+			id: 314,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 303,
+			operator: "=",
+			ammount: 1,
+			x: 642,
+			y: 3411,
+			name: "set stat12"
+		},
+		{
+			id: 317,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 303,
+			operator: "=",
+			ammount: 1,
+			x: 445,
+			y: 4852,
+			name: "set stat13"
+		},
+		{
+			id: 320,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 303,
+			operator: "=",
+			ammount: 3,
+			x: 1271,
+			y: 3459,
+			name: "set stat14"
+		},
+		{
+			id: 323,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 303,
+			operator: "=",
+			ammount: 1,
+			x: 1022,
+			y: 4918,
+			name: "set stat15"
+		},
+		{
+			id: 326,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 303,
+			operator: "=",
+			ammount: 3,
+			x: 1846,
+			y: 5666,
+			name: "set stat16"
+		},
+		{
+			id: 329,
+			humanName: {
+				"default": "set variable"
+			},
+			level: 0,
+			type: "set stat",
+			idStat: 303,
+			operator: "=",
+			ammount: 4,
+			x: 1649,
+			y: 8076,
+			name: "set stat17"
 		}
 	],
 	beams: [
@@ -1567,29 +1843,14 @@ var story = {
 			to: 8
 		},
 		{
-			id: 11,
-			from: 8,
-			to: 10
-		},
-		{
 			id: 14,
 			from: 10,
 			to: 12
 		},
 		{
-			id: 15,
-			from: 10,
-			to: 13
-		},
-		{
 			id: 17,
 			from: 13,
 			to: 16
-		},
-		{
-			id: 19,
-			from: 12,
-			to: 18
 		},
 		{
 			id: 21,
@@ -1622,11 +1883,6 @@ var story = {
 			to: 31
 		},
 		{
-			id: 34,
-			from: 31,
-			to: 33
-		},
-		{
 			id: 36,
 			from: 26,
 			to: 35
@@ -1647,11 +1903,6 @@ var story = {
 			to: 41
 		},
 		{
-			id: 44,
-			from: 39,
-			to: 43
-		},
-		{
 			id: 46,
 			from: 43,
 			to: 45
@@ -1662,11 +1913,6 @@ var story = {
 			to: 47
 		},
 		{
-			id: 50,
-			from: 45,
-			to: 49
-		},
-		{
 			id: 52,
 			from: 47,
 			to: 51
@@ -1675,11 +1921,6 @@ var story = {
 			id: 54,
 			from: 51,
 			to: 53
-		},
-		{
-			id: 56,
-			from: 41,
-			to: 55
 		},
 		{
 			id: 58,
@@ -1697,11 +1938,6 @@ var story = {
 			to: 60
 		},
 		{
-			id: 64,
-			from: 57,
-			to: 62
-		},
-		{
 			id: 65,
 			from: 62,
 			to: 60
@@ -1715,11 +1951,6 @@ var story = {
 			id: 70,
 			from: 66,
 			to: 69
-		},
-		{
-			id: 72,
-			from: 69,
-			to: 71
 		},
 		{
 			id: 80,
@@ -1757,11 +1988,6 @@ var story = {
 			to: 89
 		},
 		{
-			id: 93,
-			from: 79,
-			to: 92
-		},
-		{
 			id: 95,
 			from: 89,
 			to: 94
@@ -1770,11 +1996,6 @@ var story = {
 			id: 97,
 			from: 88,
 			to: 96
-		},
-		{
-			id: 99,
-			from: 96,
-			to: 98
 		},
 		{
 			id: 106,
@@ -1847,11 +2068,6 @@ var story = {
 			to: 130
 		},
 		{
-			id: 133,
-			from: 130,
-			to: 132
-		},
-		{
 			id: 135,
 			from: 132,
 			to: 134,
@@ -1914,11 +2130,6 @@ var story = {
 			id: 172,
 			from: 166,
 			to: 171
-		},
-		{
-			id: 175,
-			from: 171,
-			to: 174
 		},
 		{
 			id: 177,
@@ -2032,6 +2243,161 @@ var story = {
 			from: 246,
 			to: 249,
 			use: "else"
+		},
+		{
+			id: 253,
+			from: 251,
+			to: 10
+		},
+		{
+			id: 261,
+			from: 259,
+			to: 18
+		},
+		{
+			id: 265,
+			from: 263,
+			to: 33
+		},
+		{
+			id: 273,
+			from: 45,
+			to: 49
+		},
+		{
+			id: 279,
+			from: 275,
+			to: 55
+		},
+		{
+			id: 281,
+			from: 39,
+			to: 43
+		},
+		{
+			id: 285,
+			from: 283,
+			to: 62
+		},
+		{
+			id: 288,
+			from: 286,
+			to: 71
+		},
+		{
+			id: 290,
+			from: 79,
+			to: 92
+		},
+		{
+			id: 293,
+			from: 291,
+			to: 98
+		},
+		{
+			id: 297,
+			from: 295,
+			to: 132
+		},
+		{
+			id: 301,
+			from: 299,
+			to: 174
+		},
+		{
+			id: 305,
+			from: 8,
+			to: 304
+		},
+		{
+			id: 306,
+			from: 304,
+			to: 251
+		},
+		{
+			id: 307,
+			from: 10,
+			to: 13
+		},
+		{
+			id: 309,
+			from: 12,
+			to: 308
+		},
+		{
+			id: 310,
+			from: 308,
+			to: 259
+		},
+		{
+			id: 312,
+			from: 31,
+			to: 311
+		},
+		{
+			id: 313,
+			from: 311,
+			to: 263
+		},
+		{
+			id: 315,
+			from: 314,
+			to: 275
+		},
+		{
+			id: 316,
+			from: 41,
+			to: 314
+		},
+		{
+			id: 318,
+			from: 57,
+			to: 317
+		},
+		{
+			id: 319,
+			from: 317,
+			to: 283
+		},
+		{
+			id: 321,
+			from: 69,
+			to: 320
+		},
+		{
+			id: 322,
+			from: 320,
+			to: 286
+		},
+		{
+			id: 324,
+			from: 96,
+			to: 323
+		},
+		{
+			id: 325,
+			from: 323,
+			to: 291
+		},
+		{
+			id: 327,
+			from: 130,
+			to: 326
+		},
+		{
+			id: 328,
+			from: 326,
+			to: 295
+		},
+		{
+			id: 330,
+			from: 171,
+			to: 329
+		},
+		{
+			id: 331,
+			from: 329,
+			to: 299
 		}
 	]
 };
@@ -2191,7 +2557,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$c = "\n.sg1-game-gridnot:not(.sg1-no-theme) .sg1-box-illustration {\r\n  grid-column-start: 2;\r\n  grid-column-end: 3;\r\n  grid-row-start: 2;\r\n  grid-row-end: 3;\n}\n.sg1-inner-box {\r\n  width: 100%;\r\n  height: 100%;\n}\n.sg1-inner-box img {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  object-position: center;\r\n  display: block;\n}\r\n";
+var css_248z$c = "\n.sg1-game-gridnot:not(.sg1-no-theme) .sg1-box-illustration {\n  grid-column-start: 2;\n  grid-column-end: 3;\n  grid-row-start: 2;\n  grid-row-end: 3;\n}\n.sg1-inner-box {\n  width: 100%;\n  height: 100%;\n}\n.sg1-inner-box img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center;\n  display: block;\n}\n";
 styleInject(css_248z$c);
 
 script$b.render = render$b;
@@ -2477,7 +2843,7 @@ let NextTab = {
 };
 var script$9 = NextTab;
 
-const _withScopeId$1 = n => (pushScopeId("data-v-68d5b6a0"), n = n(), popScopeId(), n);
+const _withScopeId$1 = n => (pushScopeId("data-v-05e9710a"), n = n(), popScopeId(), n);
 const _hoisted_1$8 = {
   key: 0,
   style: {
@@ -2557,11 +2923,11 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, _hoisted_8$1)]));
 }
 
-var css_248z$a = "\n.sg1-chose-item[data-v-68d5b6a0] {\r\n  display: inline-flex;\r\n  margin-bottom: 1em;\r\n  max-width: 100%;\r\n  width: auto;\r\n  cursor: pointer;\n}\n.sg1-icon-wrapper[data-v-68d5b6a0] {\r\n  margin-right: 0.5em;\r\n  position: relative;\n}\n.sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  opacity: 0;\n}\n.sg1-chose-item[data-v-68d5b6a0] {\r\n  font-size: inherit;\r\n  font-family: inherit;\n}\n.sg1-chose-item[data-v-68d5b6a0],\r\n.sg1-svg-wraper[data-v-68d5b6a0],\r\n.sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  transition: opacity 0.35s;\r\n  transition-timing-function: ease-out;\n}\n.sg1-chose-item[data-v-68d5b6a0]:hover {\r\n  opacity: 0.75;\n}\n.sg1-chose-item:hover .sg1-svg-hover-wraper[data-v-68d5b6a0] {\r\n  opacity: 1;\n}\n.sg1-chose-item.use-active-item:hover .sg1-svg-wraper[data-v-68d5b6a0] {\r\n  opacity: 0;\n}\n.sg1-type-number[data-v-68d5b6a0],\r\n.sg1-type-letter[data-v-68d5b6a0] {\r\n  margin-right: 0.5em;\n}\r\n";
+var css_248z$a = "\n.sg1-chose-item[data-v-05e9710a] {\n  display: inline-flex;\n  margin-bottom: 1em;\n  max-width: 100%;\n  width: auto;\n  cursor: pointer;\n}\n.sg1-icon-wrapper[data-v-05e9710a] {\n  margin-right: 0.5em;\n  position: relative;\n}\n.sg1-svg-hover-wraper[data-v-05e9710a] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n}\n.sg1-chose-item[data-v-05e9710a] {\n  font-size: inherit;\n  font-family: inherit;\n}\n.sg1-chose-item[data-v-05e9710a],\n.sg1-svg-wraper[data-v-05e9710a],\n.sg1-svg-hover-wraper[data-v-05e9710a] {\n  transition: opacity 0.35s;\n  transition-timing-function: ease-out;\n}\n.sg1-chose-item[data-v-05e9710a]:hover {\n  opacity: 0.75;\n}\n.sg1-chose-item:hover .sg1-svg-hover-wraper[data-v-05e9710a] {\n  opacity: 1;\n}\n.sg1-chose-item.use-active-item:hover .sg1-svg-wraper[data-v-05e9710a] {\n  opacity: 0;\n}\n.sg1-type-number[data-v-05e9710a],\n.sg1-type-letter[data-v-05e9710a] {\n  margin-right: 0.5em;\n}\n";
 styleInject(css_248z$a);
 
 script$9.render = render$9;
-script$9.__scopeId = "data-v-68d5b6a0";
+script$9.__scopeId = "data-v-05e9710a";
 
 //returns a copy of the object
 function deepCopy(obj) {
@@ -2616,11 +2982,11 @@ function fixText(stingText) {
 
   /*
   let str = JSON.stringify(stingText);
-   String.prototype.fakeReplace = function (str, newstr) {
+    String.prototype.fakeReplace = function (str, newstr) {
     return this.split(str).join(newstr);
   };
-   str = str.fakeReplace("MOSTRO/ANIMALE", "<br>");
-   return str;
+    str = str.fakeReplace("MOSTRO/ANIMALE", "<br>");
+    return str;
   */
 }
 
@@ -2760,11 +3126,11 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
   }))], 4)) : createCommentVNode("", true)], 64);
 }
 
-var css_248z$9 = "\n.sg1-tab-results[data-v-066ddc8e] {\r\n  flex-grow: 1;\r\n  overflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-066ddc8e] {\r\n  display: flex;\r\n  justify-content: center;\n}\n.sg1-box-narration[data-v-066ddc8e] {\r\n  position: relative;\r\n  z-index: 10;\r\n  max-height: inherit;\r\n  min-height: inherit;\r\n  overflow-y: auto;\r\n  flex-grow: 1;\n}\r\n";
+var css_248z$9 = "\n.sg1-tab-results[data-v-b2948926] {\n  flex-grow: 1;\n  overflow: auto;\n}\n.sg1-single-beem-foward-box[data-v-b2948926] {\n  display: flex;\n  justify-content: center;\n}\n.sg1-box-narration[data-v-b2948926] {\n  position: relative;\n  z-index: 10;\n  max-height: inherit;\n  min-height: inherit;\n  overflow-y: auto;\n  flex-grow: 1;\n}\n";
 styleInject(css_248z$9);
 
 script$8.render = render$8;
-script$8.__scopeId = "data-v-066ddc8e";
+script$8.__scopeId = "data-v-b2948926";
 
 let boxNarrationGameEnd = {
   name: "boxNarrationGameEnd",
@@ -2815,11 +3181,11 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128))], 4)]);
 }
 
-var css_248z$8 = "\n.sg1-tab-results[data-v-9c79f44c] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-9c79f44c] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n";
+var css_248z$8 = "\n.sg1-tab-results[data-v-71de34aa] {\r\n\t\tflex-grow: 1;\r\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-71de34aa] {\r\n\t\tposition: relative;\r\n\t\tmax-height: initial;\r\n\t\tmin-height: inherit;\r\n\t\tz-index: 10;\r\n\t\tflex-grow: 1;\n}\r\n";
 styleInject(css_248z$8);
 
 script$7.render = render$7;
-script$7.__scopeId = "data-v-9c79f44c";
+script$7.__scopeId = "data-v-71de34aa";
 
 let boxNarrationGameOver = {
   name: "boxNarrationGameOver",
@@ -2871,11 +3237,11 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128))], 4)]);
 }
 
-var css_248z$7 = "\n.sg1-tab-results[data-v-3117e596] {\n\t\tflex-grow: 1;\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-3117e596] {\n\t\tposition: relative;\n\t\tmax-height: initial;\n\t\tmin-height: inherit;\n\t\tz-index: 10;\n\t\tflex-grow: 1;\n}\n.sg1-replay-link[data-v-3117e596] {\n\t\ttext-decoration: underline;\n\t\tcursor: pointer;\n}\n";
+var css_248z$7 = "\n.sg1-tab-results[data-v-781100cb] {\r\n\t\tflex-grow: 1;\r\n\t\toverflow: auto;\n}\n.sg1-box-narration[data-v-781100cb] {\r\n\t\tposition: relative;\r\n\t\tmax-height: initial;\r\n\t\tmin-height: inherit;\r\n\t\tz-index: 10;\r\n\t\tflex-grow: 1;\n}\n.sg1-replay-link[data-v-781100cb] {\r\n\t\ttext-decoration: underline;\r\n\t\tcursor: pointer;\n}\r\n";
 styleInject(css_248z$7);
 
 script$6.render = render$6;
-script$6.__scopeId = "data-v-3117e596";
+script$6.__scopeId = "data-v-781100cb";
 
 let bgSketch = `
 <svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -3099,11 +3465,11 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 4))]);
 }
 
-var css_248z$6 = "\n.sg1-bg-wrapper[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n.sg1-st-bg[data-v-25293889] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n}\n";
+var css_248z$6 = "\n.sg1-bg-wrapper[data-v-4d0bc597] {\r\n\t\tposition: absolute;\r\n\t\ttop: 0;\r\n\t\tleft: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\n}\n.sg1-st-bg[data-v-4d0bc597] {\r\n\t\tposition: absolute;\r\n\t\ttop: 0;\r\n\t\tleft: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\n}\r\n";
 styleInject(css_248z$6);
 
 script$5.render = render$5;
-script$5.__scopeId = "data-v-25293889";
+script$5.__scopeId = "data-v-4d0bc597";
 
 let boxText = {
   name: "boxText",
@@ -3170,11 +3536,11 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["lang", "current-tabs", "stylesObj", "onEmitReedBeams2", "onGameIntentLoad3"])) : createCommentVNode("", true)], 4);
 }
 
-var css_248z$5 = "\n.sg1-wrapper-box-text[data-v-34060e5e] {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: relative;\r\n  flex-grow: 1;\r\n  height: auto;\n}\r\n";
+var css_248z$5 = "\n.sg1-wrapper-box-text[data-v-04f92bcb] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  flex-grow: 1;\n  height: auto;\n}\n";
 styleInject(css_248z$5);
 
 script$4.render = render$4;
-script$4.__scopeId = "data-v-34060e5e";
+script$4.__scopeId = "data-v-04f92bcb";
 
 let PreCachedImg = {
   name: "PreCachedImg",
@@ -3228,18 +3594,18 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128))]))]);
 }
 
-var css_248z$4 = "\n.sg1-pre-cached-img-wrapper[data-v-50ed9ac2] {\n\t\tposition: fixed;\n\t\tmax-height: 0;\n\t\tmax-width: 0;\n\t\toverflow: hidden;\n\t\tvisibility: hidden;\n}\n";
+var css_248z$4 = "\n.sg1-pre-cached-img-wrapper[data-v-ce90a93c] {\r\n\t\tposition: fixed;\r\n\t\tmax-height: 0;\r\n\t\tmax-width: 0;\r\n\t\toverflow: hidden;\r\n\t\tvisibility: hidden;\n}\r\n";
 styleInject(css_248z$4);
 
 script$3.render = render$3;
-script$3.__scopeId = "data-v-50ed9ac2";
+script$3.__scopeId = "data-v-ce90a93c";
 
 let spinnerBox = {
   name: "Spinner"
 };
 var script$2 = spinnerBox;
 
-const _withScopeId = n => (pushScopeId("data-v-141b4ae7"), n = n(), popScopeId(), n);
+const _withScopeId = n => (pushScopeId("data-v-b25f5cc6"), n = n(), popScopeId(), n);
 const _hoisted_1$2 = {
   class: "sg1-spinner-box-media"
 };
@@ -3257,11 +3623,11 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$2, _hoisted_3$2);
 }
 
-var css_248z$3 = "\n.sg1-spinner-box-media[data-v-141b4ae7] {\n\t\tbackground-color: #464646;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tanimation-name: sg1-fadein-141b4ae7;\n\t\tanimation-duration: 0.4s;\n\t\tanimation-timing-function: ease-out;\n}\n@keyframes sg1-fadein-141b4ae7 {\n0% {\n\t\t\topacity: 0;\n}\n100% {\n\t\t\topacity: 1;\n}\n}\n\n\t/* PULSE BUBBLES */\n.sg1-pulse-container[data-v-141b4ae7] {\n\t\twidth: 3em;\n\t\tfont-size: rem(15px);\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-pulse-bubble[data-v-141b4ae7] {\n\t\tfont-size: 1em;\n\t\twidth: 0.6em;\n\t\theight: 3em;\n\t\tbackground-color: #ffffff;\n}\n.sg1-pulse-bubble-1[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0s infinite alternate;\n}\n.sg1-pulse-bubble-2[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.15s infinite alternate;\n}\n.sg1-pulse-bubble-3[data-v-141b4ae7] {\n\t\tanimation: sg1-pulse-141b4ae7 0.6s ease 0.3s infinite alternate;\n}\n\n\t/* KEYFRAMES */\n@keyframes sg1-pulse-141b4ae7 {\nfrom {\n\t\t\topacity: 1;\n\t\t\ttransform: scale(1);\n}\nto {\n\t\t\topacity: 0.5;\n\t\t\ttransform: scale(0.8);\n}\n}\n";
+var css_248z$3 = "\n.sg1-spinner-box-media[data-v-b25f5cc6] {\r\n\t\tbackground-color: #464646;\r\n\t\tposition: absolute;\r\n\t\ttop: 50%;\r\n\t\tleft: 50%;\r\n\t\ttransform: translate(-50%, -50%);\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\r\n\t\tanimation-name: sg1-fadein-b25f5cc6;\r\n\t\tanimation-duration: 0.4s;\r\n\t\tanimation-timing-function: ease-out;\n}\n@keyframes sg1-fadein-b25f5cc6 {\n0% {\r\n\t\t\topacity: 0;\n}\n100% {\r\n\t\t\topacity: 1;\n}\n}\r\n\r\n\t/* PULSE BUBBLES */\n.sg1-pulse-container[data-v-b25f5cc6] {\r\n\t\twidth: 3em;\r\n\t\tfont-size: rem(15px);\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\talign-items: center;\r\n\t\tposition: absolute;\r\n\t\ttop: 50%;\r\n\t\tleft: 50%;\r\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-pulse-bubble[data-v-b25f5cc6] {\r\n\t\tfont-size: 1em;\r\n\t\twidth: 0.6em;\r\n\t\theight: 3em;\r\n\t\tbackground-color: #ffffff;\n}\n.sg1-pulse-bubble-1[data-v-b25f5cc6] {\r\n\t\tanimation: sg1-pulse-b25f5cc6 0.6s ease 0s infinite alternate;\n}\n.sg1-pulse-bubble-2[data-v-b25f5cc6] {\r\n\t\tanimation: sg1-pulse-b25f5cc6 0.6s ease 0.15s infinite alternate;\n}\n.sg1-pulse-bubble-3[data-v-b25f5cc6] {\r\n\t\tanimation: sg1-pulse-b25f5cc6 0.6s ease 0.3s infinite alternate;\n}\r\n\r\n\t/* KEYFRAMES */\n@keyframes sg1-pulse-b25f5cc6 {\nfrom {\r\n\t\t\topacity: 1;\r\n\t\t\ttransform: scale(1);\n}\nto {\r\n\t\t\topacity: 0.5;\r\n\t\t\ttransform: scale(0.8);\n}\n}\r\n";
 styleInject(css_248z$3);
 
 script$2.render = render$2;
-script$2.__scopeId = "data-v-141b4ae7";
+script$2.__scopeId = "data-v-b25f5cc6";
 
 let ToastContainer = {
   name: "ToastContainer",
@@ -3345,7 +3711,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128))])) : createCommentVNode("", true);
 }
 
-var css_248z$2 = "\n.sg1-toast-container {\r\n  --sg1ToastColor1: rgb(49, 49, 49);\r\n  --sg1ToastColor2: rgb(82, 82, 82);\r\n  --sg1ToastColor3: rgb(231, 231, 231);\r\n  --sg1ToastColor4: rgb(0, 0, 0);\r\n\r\n  --sg1ToastBg: 10px;\r\n  --sg1ToastColorText: var(--sg1ToastColor3);\r\n  --sg1ToastPaddingVertical: 10px;\r\n  --sg1ToastPaddingHorizontal: 10px;\r\n  --sg1ToastMargin: 10px;\r\n  --sg1ToastSizeIconLine: 2px;\r\n\r\n  --sg1toastWidth: 300px;\r\n  --maxToastHeight: 600px;\r\n\r\n  --sg1toastFontFamily: monospace;\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: var(--sg1ToastMargin);\r\n  height: 100%;\r\n  transform: translate(100%);\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-end;\r\n  z-index: 100;\n}\n.sg1-toast-container * {\r\n  box-sizing: border-box;\n}\n.sg1-toast {\r\n  min-width: var(--sg1toastWidth);\r\n  max-width: var(--sg1toastWidth);\r\n  margin-bottom: var(--sg1ToastMargin);\r\n  transform: translateX(-100%);\r\n  border-radius: 4px;\r\n  background-color: var(--sg1ToastColor1);\r\n  box-shadow: 0 0 0 1px white;\r\n  animation-name: sg1-fadein;\r\n  animation-duration: 1s;\r\n  animation-timing-function: ease-out;\r\n  transition: 0.35s opacity;\r\n  transition-timing-function: ease-out;\n}\n@keyframes sg1-fadein {\n0% {\r\n    opacity: 0;\r\n    transform: translate(100%);\r\n    max-height: 0;\n}\n85% {\r\n    opacity: 1;\r\n    transform: translateX(-110%);\r\n    max-height: var(--maxToastHeight);\n}\n100% {\r\n    transform: translateX(-100%);\n}\n}\n.sg1-toast .sg1-head {\r\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 10px;\n}\n.sg1-toast .sg1-head .sg1-title {\r\n  font-size: 14px;\r\n  font-family: var(--sg1toastFontFamily);\r\n  color: var(--sg1ToastColorText);\n}\n.sg1-toast .sg1-head .title .sg1-id {\r\n  font-weight: 700;\n}\n.sg1-toast .sg1-content {\r\n  max-height: 0;\r\n  overflow: hidden;\r\n  padding: 0 var(--sg1ToastPaddingHorizontal);\r\n  position: relative;\n}\n.sg1-toast.sg1-active .sg1-content {\r\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\r\n  max-height: var(--maxToastHeight);\r\n  transition-timing-function: ease-out;\r\n  transition: 1s max-height, 0.5s padding;\n}\n.sg1-toast .sg1-content:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  height: 1px;\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor2);\n}\n.sg1-wrapper-pre {\r\n  width: 100%;\r\n  padding: calc(var(--sg1ToastPaddingVertical) / 2)\r\n    calc(var(--sg1ToastPaddingHorizontal) / 2);\r\n  background-color: var(--sg1ToastColor4);\r\n  border-radius: 4px;\n}\n.sg1-toast .sg1-content pre {\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor4);\r\n  font-size: 12px;\r\n  font-family: var(--sg1toastFontFamily);\r\n  color: var(--sg1ToastColorText);\r\n\r\n  margin-top: 0;\r\n  margin-bottom: 0;\n}\n.sg1-toast .sg1-close-btn,\r\n.sg1-toast .sg1-expand {\r\n  font-size: 16px;\r\n  min-width: 1em;\r\n  height: 1em;\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  cursor: pointer;\n}\n.sg1-toast .sg1-close-btn:after,\r\n.sg1-toast .sg1-close-btn:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  display: block;\r\n  height: var(--sg1ToastSizeIconLine);\r\n  width: 100%;\r\n  background-color: var(--sg1ToastColor3);\n}\n.sg1-toast .sg1-close-btn:after {\r\n  transform: rotate(45%);\n}\n.sg1-toast .sg1-close-btn:before {\r\n  transform: rotate(-45%);\n}\n.sg1-toast .sg1-close-btn:before {\r\n  transform: translate(-50%, -50%) rotate(45deg);\r\n  top: 50%;\r\n  left: 50%;\n}\n.sg1-toast .sg1-close-btn:after {\r\n  transform: translate(-50%, -50%) rotate(-45deg);\r\n  top: 50%;\r\n  left: 50%;\n}\n.sg1-toast .sg1-expand {\r\n  margin-left: auto;\n}\n.sg1-toast .sg1-expand:after {\r\n  content: \"\";\r\n  width: 100%;\r\n  height: 100%;\r\n  position: absolute;\r\n  transform: rotate(45deg) scale(0.5);\r\n  border-top: calc(var(--sg1ToastSizeIconLine) * 2) solid var(--sg1ToastColor3);\r\n  border-right: calc(var(--sg1ToastSizeIconLine) * 2) solid\r\n    var(--sg1ToastColor3);\n}\n.sg1-toast.sg1-active .sg1-expand:after {\r\n  transform: rotate(135deg) scale(0.5);\n}\n.sg1-toast-faded-1 {\r\n  opacity: 0.5;\r\n  pointer-events: none;\n}\n.sg1-toast-faded-2 {\r\n  opacity: 0.25;\n}\n.sg1-toast-faded-3 {\r\n  opacity: 0;\n}\n.sg1-toast.sg1-toast-fade-out {\r\n  animation-name: sg1-fadeout;\r\n  animation-duration: 1s;\r\n  animation-timing-function: ease-out;\n}\n@keyframes sg1-fadeout {\n0% {\r\n    transform: translateX(-100%);\r\n    max-height: var(--maxToastHeight);\n}\n100% {\r\n    opacity: 0;\r\n    transform: translate(100%);\r\n    max-height: 0;\n}\n}\r\n";
+var css_248z$2 = "\n.sg1-toast-container {\n  --sg1ToastColor1: rgb(49, 49, 49);\n  --sg1ToastColor2: rgb(82, 82, 82);\n  --sg1ToastColor3: rgb(231, 231, 231);\n  --sg1ToastColor4: rgb(0, 0, 0);\n\n  --sg1ToastBg: 10px;\n  --sg1ToastColorText: var(--sg1ToastColor3);\n  --sg1ToastPaddingVertical: 10px;\n  --sg1ToastPaddingHorizontal: 10px;\n  --sg1ToastMargin: 10px;\n  --sg1ToastSizeIconLine: 2px;\n\n  --sg1toastWidth: 300px;\n  --maxToastHeight: 600px;\n\n  --sg1toastFontFamily: monospace;\n\n  position: absolute;\n  bottom: 0;\n  right: var(--sg1ToastMargin);\n  height: 100%;\n  transform: translate(100%);\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  z-index: 100;\n}\n.sg1-toast-container * {\n  box-sizing: border-box;\n}\n.sg1-toast {\n  min-width: var(--sg1toastWidth);\n  max-width: var(--sg1toastWidth);\n  margin-bottom: var(--sg1ToastMargin);\n  transform: translateX(-100%);\n  border-radius: 4px;\n  background-color: var(--sg1ToastColor1);\n  box-shadow: 0 0 0 1px white;\n  animation-name: sg1-fadein;\n  animation-duration: 1s;\n  animation-timing-function: ease-out;\n  transition: 0.35s opacity;\n  transition-timing-function: ease-out;\n}\n@keyframes sg1-fadein {\n0% {\n    opacity: 0;\n    transform: translate(100%);\n    max-height: 0;\n}\n85% {\n    opacity: 1;\n    transform: translateX(-110%);\n    max-height: var(--maxToastHeight);\n}\n100% {\n    transform: translateX(-100%);\n}\n}\n.sg1-toast .sg1-head {\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.sg1-toast .sg1-head .sg1-title {\n  font-size: 14px;\n  font-family: var(--sg1toastFontFamily);\n  color: var(--sg1ToastColorText);\n}\n.sg1-toast .sg1-head .title .sg1-id {\n  font-weight: 700;\n}\n.sg1-toast .sg1-content {\n  max-height: 0;\n  overflow: hidden;\n  padding: 0 var(--sg1ToastPaddingHorizontal);\n  position: relative;\n}\n.sg1-toast.sg1-active .sg1-content {\n  padding: var(--sg1ToastPaddingVertical) var(--sg1ToastPaddingHorizontal);\n  max-height: var(--maxToastHeight);\n  transition-timing-function: ease-out;\n  transition: 1s max-height, 0.5s padding;\n}\n.sg1-toast .sg1-content:before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 1px;\n  width: 100%;\n  background-color: var(--sg1ToastColor2);\n}\n.sg1-wrapper-pre {\n  width: 100%;\n  padding: calc(var(--sg1ToastPaddingVertical) / 2)\n    calc(var(--sg1ToastPaddingHorizontal) / 2);\n  background-color: var(--sg1ToastColor4);\n  border-radius: 4px;\n}\n.sg1-toast .sg1-content pre {\n  width: 100%;\n  background-color: var(--sg1ToastColor4);\n  font-size: 12px;\n  font-family: var(--sg1toastFontFamily);\n  color: var(--sg1ToastColorText);\n\n  margin-top: 0;\n  margin-bottom: 0;\n}\n.sg1-toast .sg1-close-btn,\n.sg1-toast .sg1-expand {\n  font-size: 16px;\n  min-width: 1em;\n  height: 1em;\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n.sg1-toast .sg1-close-btn:after,\n.sg1-toast .sg1-close-btn:before {\n  content: \"\";\n  position: absolute;\n  display: block;\n  height: var(--sg1ToastSizeIconLine);\n  width: 100%;\n  background-color: var(--sg1ToastColor3);\n}\n.sg1-toast .sg1-close-btn:after {\n  transform: rotate(45%);\n}\n.sg1-toast .sg1-close-btn:before {\n  transform: rotate(-45%);\n}\n.sg1-toast .sg1-close-btn:before {\n  transform: translate(-50%, -50%) rotate(45deg);\n  top: 50%;\n  left: 50%;\n}\n.sg1-toast .sg1-close-btn:after {\n  transform: translate(-50%, -50%) rotate(-45deg);\n  top: 50%;\n  left: 50%;\n}\n.sg1-toast .sg1-expand {\n  margin-left: auto;\n}\n.sg1-toast .sg1-expand:after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  transform: rotate(45deg) scale(0.5);\n  border-top: calc(var(--sg1ToastSizeIconLine) * 2) solid var(--sg1ToastColor3);\n  border-right: calc(var(--sg1ToastSizeIconLine) * 2) solid\n    var(--sg1ToastColor3);\n}\n.sg1-toast.sg1-active .sg1-expand:after {\n  transform: rotate(135deg) scale(0.5);\n}\n.sg1-toast-faded-1 {\n  opacity: 0.5;\n  pointer-events: none;\n}\n.sg1-toast-faded-2 {\n  opacity: 0.25;\n}\n.sg1-toast-faded-3 {\n  opacity: 0;\n}\n.sg1-toast.sg1-toast-fade-out {\n  animation-name: sg1-fadeout;\n  animation-duration: 1s;\n  animation-timing-function: ease-out;\n}\n@keyframes sg1-fadeout {\n0% {\n    transform: translateX(-100%);\n    max-height: var(--maxToastHeight);\n}\n100% {\n    opacity: 0;\n    transform: translate(100%);\n    max-height: 0;\n}\n}\n";
 styleInject(css_248z$2);
 
 script$1.render = render$1;
@@ -4702,14 +5068,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["editorUsage", "preCachedImgList", "onSetImgsLoaded"])) : createCommentVNode("", true), !_ctx.initialized ? (openBlock(), createElementBlock("div", _hoisted_6, [createVNode(_component_Spinner)])) : createCommentVNode("", true)], 14, _hoisted_1)) : createCommentVNode("", true);
 }
 
-var css_248z$1 = "\nbody {\n\t\tmargin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\n\t\tmargin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\n\t\tgrid-row: 1/3;\n\t\tpadding: 20px;\n\t\tbackground-color: whitesmoke;\n\t\toverflow: auto;\n\t\theight: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\n\t\tfont-family: monospace;\n\t\tfont-size: 16px;\n\t\tcolor: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\n\t\tmax-width: calc(100% - 50px);\n\t\tmax-width: 992px;\n\t\taspect-ratio: 1/1;\n\t\tmax-height: calc(100vh - 50px);\n\t\tmargin-top: 25px;\n\t\tmargin-right: auto;\n\t\tmargin-left: auto;\n\t\tdisplay: grid;\n\t\tgrid-template-rows: 70% 30%;\n\t\tbox-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\n\t\tgrid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\n\t\tmax-width: calc(100% - 25px);\n\t\tmargin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\n\t\tcontent: \"◆\";\n\t\tdisplay: inline-block;\n\t\tmargin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\n\t\tcursor: pointer;\n\t\tfont-size: 12px;\n\t\twidth: 2em;\n\t\theight: 2em;\n\t\tposition: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\n\t\tcontent: \"\";\n\t\twidth: 0;\n\t\theight: 0;\n\t\tborder-style: solid;\n\t\tborder-width: 1em 1em 0 1em;\n\t\tborder-color: grey transparent transparent transparent;\n\t\tposition: absolute;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\n\t\tgrid-column: 1/3;\n\t\tgrid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tobject-fit: cover;\n\t\tobject-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\n\t\tposition: relative;\n\t\toverflow: hidden;\n}\n";
+var css_248z$1 = "\nbody {\r\n\t\tmargin: 0;\n}\n.sg1-no-theme :where(.sg1-label-description) {\r\n\t\tmargin-bottom: 30px;\n}\n.sg1-no-theme :where(.sg1-wrapper-box-text) {\r\n\t\tgrid-row: 1/3;\r\n\t\tpadding: 20px;\r\n\t\tbackground-color: whitesmoke;\r\n\t\toverflow: auto;\r\n\t\theight: 100%;\n}\n.sg1-no-theme :where(.sg1-box-illustration) + :where(.sg1-wrapper-box-text) {\r\n\t\tgrid-column: 1/3;\r\n\t\tgrid-row: 2;\n}\n.sg1-no-theme :where(.sg1-tab-results) {\r\n\t\tfont-family: monospace;\r\n\t\tfont-size: 16px;\r\n\t\tcolor: grey;\n}\n.sg1-no-theme:is(.sg1-game-grid) {\r\n\t\tmax-width: calc(100% - 50px);\r\n\t\tmax-width: 992px;\r\n\t\taspect-ratio: 1/1;\r\n\t\tmax-height: calc(100vh - 50px);\r\n\t\tmargin-top: 25px;\r\n\t\tmargin-right: auto;\r\n\t\tmargin-left: auto;\r\n\t\tdisplay: grid;\r\n\t\tgrid-template-rows: 70% 30%;\r\n\t\tbox-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);\n}\n.sg1-no-theme:is(.sg1-game-grid):is(.sg1-no-illustration) {\r\n\t\tgrid-template-rows: 2fr 1fr;\n}\n.sg1-no-theme :where(.sg1-label-multiple-chose) {\r\n\t\tmax-width: calc(100% - 25px);\r\n\t\tmargin-left: 25px;\n}\n.sg1-no-theme :where(.list-item):before {\r\n\t\tcontent: \"◆\";\r\n\t\tdisplay: inline-block;\r\n\t\tmargin-right: 10px;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon) {\r\n\t\tcursor: pointer;\r\n\t\tfont-size: 12px;\r\n\t\twidth: 2em;\r\n\t\theight: 2em;\r\n\t\tposition: relative;\n}\n.sg1-no-theme :where(.sg1-single-beem-icon):before {\r\n\t\tcontent: \"\";\r\n\t\twidth: 0;\r\n\t\theight: 0;\r\n\t\tborder-style: solid;\r\n\t\tborder-width: 1em 1em 0 1em;\r\n\t\tborder-color: grey transparent transparent transparent;\r\n\t\tposition: absolute;\r\n\t\ttop: 50%;\r\n\t\tleft: 50%;\r\n\t\ttransform: translate(-50%, -50%);\n}\n.sg1-no-theme :where(.sg1-box-illustration) {\r\n\t\tgrid-column: 1/3;\r\n\t\tgrid-row: 1/1;\n}\n.sg1-no-theme :where(img) {\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\r\n\t\tobject-fit: cover;\r\n\t\tobject-position: center;\n}\n.sg1-game-grid:is(.sg1-toast-wrapper) {\r\n\t\tposition: relative;\r\n\t\toverflow: hidden;\n}\r\n";
 styleInject(css_248z$1);
 
-var css_248z = "\n.sg1-game-grid[data-v-19e2190c]:not(.sg1-no-theme) {\n\t\tdisplay: grid;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tposition: relative;\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-19e2190c] {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tleft: 0;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-19e2190c] {\n\t\tgrid-row-start: 1;\n\t\tgrid-column-start: 1;\n\t\tgrid-row-end: 7;\n\t\tgrid-column-end: 9;\n\t\tflex-direction: column;\n\t\tmax-width: 100% !important;\n\t\toverflow: hidden;\n\n\t\tbackground-color: #282828;\n\t\tz-index: 100;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-19e2190c] {\n\t\tfont-size: 15px;\n\t\tmax-width: 100%;\n\t\tpadding-right: 20px;\n\t\tpadding-left: 20px;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-19e2190c] {\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-19e2190c] {\n\t\tcolor: #67ed72;\n}\n";
+var css_248z = "\n.sg1-game-grid[data-v-4e4b882a]:not(.sg1-no-theme) {\r\n\t\tdisplay: grid;\r\n\t\theight: 100%;\r\n\t\twidth: 100%;\r\n\t\tposition: relative;\r\n\t\tbackground-color: #282828;\n}\n.sg1-load-screen[data-v-4e4b882a] {\r\n\t\tposition: absolute;\r\n\t\ttop: 0;\r\n\t\tleft: 0;\r\n\t\twidth: 100%;\r\n\t\theight: 100%;\r\n\t\tdisplay: flex;\r\n\t\talign-items: center;\r\n\t\tjustify-content: center;\n}\n.sg1-log-app[data-v-4e4b882a] {\r\n\t\tgrid-row-start: 1;\r\n\t\tgrid-column-start: 1;\r\n\t\tgrid-row-end: 7;\r\n\t\tgrid-column-end: 9;\r\n\t\tflex-direction: column;\r\n\t\tmax-width: 100% !important;\r\n\t\toverflow: hidden;\r\n\r\n\t\tbackground-color: #282828;\r\n\t\tz-index: 100;\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: center;\r\n\t\talign-items: center;\n}\n.sg1-log-app > *[data-v-4e4b882a] {\r\n\t\tfont-size: 15px;\r\n\t\tmax-width: 100%;\r\n\t\tpadding-right: 20px;\r\n\t\tpadding-left: 20px;\r\n\t\twidth: 100%;\r\n\t\ttext-align: center;\r\n\t\tfont-family: monospace;\n}\n.sg1-game-error[data-v-4e4b882a] {\r\n\t\tcolor: #ed6767;\n}\n.sg1-game-message[data-v-4e4b882a] {\r\n\t\tcolor: #67ed72;\n}\r\n";
 styleInject(css_248z);
 
 script.render = render;
-script.__scopeId = "data-v-19e2190c";
+script.__scopeId = "data-v-4e4b882a";
 
 /* eslint-disable import/prefer-default-export */
 
