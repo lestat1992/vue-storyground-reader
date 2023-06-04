@@ -189,7 +189,7 @@
 				default: false,
 			},
 		},
-		emits: ["emitByNodes", "onInit", "beforeNavigation", "afterNavigation"],
+		emits: ["emitByNodes", "onInit", "beforeNavigation", "afterNavigation", "setDataToEmit"],
 		data: function () {
 			return {
 				idRendered: false,
@@ -1039,6 +1039,8 @@
 							});
 
 							if (this.canEmit) {
+                //MODIFICATO11111
+                this.$emit("setDataToEmit", objToEmitComputed);
 								this.$emit("emitByNodes", objToEmitComputed);
 							}
 							if (this.showToast) {

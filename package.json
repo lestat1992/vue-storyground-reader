@@ -1,6 +1,6 @@
 {
   "name": "vue-storyground-reader",
-  "version": "1.3.0",
+  "version": "1.3.2",
   "description": "",
   "main": "dist/test-st-library.ssr.js",
   "browser": "dist/test-st-library.esm.js",

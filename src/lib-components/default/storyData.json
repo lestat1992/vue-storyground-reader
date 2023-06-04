@@ -149,7 +149,7 @@
         "level": 0,
         "name": "chose2",
         "text": {
-          "en": "MAGICAL KNIGHT WANTED: WE ARE IN NEED OF A STRONG MAGICAL KNIGHT THAT CAN RID US OF THE EVIL SORCERER GREB-HAN, WHO HAUNTS OUR VILLAGE"
+          "en": "Magical knight wanted: we are in need of a strong magical knight that can rid us of the evil sorcerer greb-han, who haunts our village"
         },
         "type": "chose",
         "textRevision": false,
@@ -162,7 +162,7 @@
         "level": 0,
         "name": "chose3",
         "text": {
-          "en": "EVIL CORPORATION INC. IS LOOKING FOR A YOUNG, DYNAMIC RESOURCE TO JOIN OUR FAMILY-LIKE TEAM! WE ARE SEARCHING FOR A PRO-ACTIVE YOUNG MAN OR WOMAN WHO'S WILLING TO BE A TEAMPLAYER FOR THE COMPANY (DID WE MENTION THAT IT'S LIKE A FAMILY?) FOR A FULL TIME POSITION! SALARY: UNPAID INTERNSHIP"
+          "en": "Evil corporation inc. is looking for a young, dynamic resource to join our family-like team! We are searching for a pro-active young man or woman who's willing to be a teamplayer for the company (did we mention that it's like a family?) for a full time position! Salary: unpaid internship"
         },
         "type": "chose",
         "textRevision": false,
